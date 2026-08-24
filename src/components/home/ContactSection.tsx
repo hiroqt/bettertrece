@@ -68,10 +68,10 @@ const ContactSection: React.FC = () => {
                 {t('contact.email', 'EMAIL')}
               </div>
               <a
-                href="mailto:contact@trece.gov.ph"
+                href="mailto:cmo@trecemartirescity.gov.ph"
                 className="text-sm sm:text-base font-bold text-emerald-700 hover:underline block mt-0.5 truncate"
               >
-                contact@trece.gov.ph
+                cmo@trecemartirescity.gov.ph
               </a>
               <div className="text-xs text-gray-500 mt-1">
                 {t('contact.emailResponse', 'Response within 2 business days')}

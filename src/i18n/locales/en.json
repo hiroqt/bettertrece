@@ -69,6 +69,7 @@
     "title": "BetterTrece.org",
     "subtitle": "A community-run portal to find information and services of the City of Trece Martires, Cavite.",
     "browseServices": "Browse Services",
+    "aboutProject": "About this project",
     "fullDemographics": "Full Demographics →",
     "cityProfileAndFacts": "City Profile & Key Facts",
     "capitalOfCavite": "Capital of Cavite",
@@ -84,16 +85,26 @@
     "populationSubtext": "Official PSA 2024 POPCEN (1.78% annual growth)",
     "populationBadge": "2024 POPCEN",
     "cityClassification": "City Classification",
-    "cityClassificationValue": "1st Class Component City",
+    "cityClassificationValue": "2nd Class Component City",
     "cityClassificationSubtext": "Land Area: 39.10 km² · Province of Cavite",
-    "cityClassificationBadge": "1st Class LGU"
+    "cityClassificationBadge": "2nd Class LGU",
+    "verifiedLguHub": "Official LGU & PSA Data Hub",
+    "registeredVoters": "Registered Voters",
+    "votersSubtext": "COMELEC 2025 · 20 Voting Centers",
+    "cityBudget": "Annual LGU Budget",
+    "budgetSubtext": "DOF-BLGF SRE 2024 (96.8% Collection)",
+    "quickExplore": "Quick Explore"
   },
   "services": {
     "badge": "Public Services Directory",
     "title": "City Services & Information",
     "description": "Access official City of Trece Martires government services quickly and easily.",
     "viewAll": "View all categories",
-    "learnMore": "Learn more"
+    "learnMore": "Learn more",
+    "viewAllCardTitle": "View All Services",
+    "viewAllCardDesc": "Explore the full directory of government services, requirements, citizen charters, and step-by-step guides.",
+    "viewAllCardAction": "Explore full directory",
+    "allCategoriesCount": "10 Categories"
   },
   "governmentActivity": {
     "badge": "Local Government Administration",
@@ -138,7 +149,7 @@
     "totalPopulation": "TOTAL POPULATION (2024 POPCEN)",
     "vs2020": "vs 2020",
     "landAreaStatus": "LAND AREA & STATUS",
-    "componentCity": "1st Class Component City",
+    "componentCity": "2nd Class Component City",
     "psgcCityCode": "PSGC CITY CODE",
     "regionNotice": "13 Barangays • Region IV-A (Cavite)"
   },

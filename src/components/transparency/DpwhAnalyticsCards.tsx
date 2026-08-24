@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import type { DPWHProject } from '../../types/dpwh';
 import type { DpwhProject } from '../../data/dpwhTransparency';
 import { getTreceAnalytics } from '../../services/dpwh';
+import { useCountUp } from '../../hooks/useCountUp';
 import {
   PieChart,
   HardHat,
@@ -24,6 +25,11 @@ export default function DpwhAnalyticsCards({
     return getTreceAnalytics(projects);
   }, [projects]);
 
+  const animatedTotalBudget = useCountUp(analytics.totalBudget, 1000);
+  const animatedTotalPaid = useCountUp(analytics.totalPaid, 1000);
+  const animatedAvgProgress = useCountUp(analytics.averageProgress, 900);
+  const animatedActiveCount = useCountUp(analytics.ongoingCount, 750);
+
   const formatPHP = (val: number) => {
     if (val >= 1_000_000_000) {
       return `₱${(val / 1_000_000_000).toFixed(2)}B`;
@@ -45,8 +51,8 @@ export default function DpwhAnalyticsCards({
             </span>
             <Wallet className="w-5 h-5" />
           </div>
-          <p className="text-2xl sm:text-3xl font-black text-blue-950 truncate">
-            {formatPHP(analytics.totalBudget)}
+          <p className="text-2xl sm:text-3xl font-black text-blue-950 truncate tracking-tight">
+            {formatPHP(animatedTotalBudget)}
           </p>
           <div className="text-xs text-blue-700/90 font-medium">
             ₱
@@ -64,8 +70,8 @@ export default function DpwhAnalyticsCards({
             </span>
             <TrendingUp className="w-5 h-5" />
           </div>
-          <p className="text-2xl sm:text-3xl font-black text-emerald-950 truncate">
-            {formatPHP(analytics.totalPaid)}
+          <p className="text-2xl sm:text-3xl font-black text-emerald-950 truncate tracking-tight">
+            {formatPHP(animatedTotalPaid)}
           </p>
           <div className="text-xs text-emerald-700/90 font-medium">
             {analytics.totalBudget > 0
@@ -81,8 +87,8 @@ export default function DpwhAnalyticsCards({
             </span>
             <CheckCircle2 className="w-5 h-5" />
           </div>
-          <p className="text-2xl sm:text-3xl font-black text-indigo-950">
-            {analytics.averageProgress}%
+          <p className="text-2xl sm:text-3xl font-black text-indigo-950 tracking-tight">
+            {animatedAvgProgress}%
           </p>
           <div className="text-xs text-indigo-700/90 font-medium">
             Across {analytics.totalProjects} Public Works Projects
@@ -96,8 +102,8 @@ export default function DpwhAnalyticsCards({
             </span>
             <HardHat className="w-5 h-5" />
           </div>
-          <p className="text-2xl sm:text-3xl font-black text-amber-950">
-            {analytics.ongoingCount}
+          <p className="text-2xl sm:text-3xl font-black text-amber-950 tracking-tight">
+            {animatedActiveCount}
           </p>
           <div className="text-xs text-amber-700/90 font-medium">
             {analytics.completedCount} Completed &bull;{' '}

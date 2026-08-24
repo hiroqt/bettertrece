@@ -13,6 +13,7 @@ import {
   ArrowUpRight,
   ShieldCheck,
 } from 'lucide-react';
+import AnimatedCounter from '../ui/AnimatedCounter';
 
 interface CityRevenueWidgetProps {
   initialYear?: number;
@@ -35,13 +36,6 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
 
   const currentData =
     CITY_BUDGET_REVENUE_DATA[selectedYear] || CITY_BUDGET_REVENUE_DATA[2026];
-
-  const formatPHP = (valInMillions: number) => {
-    if (valInMillions >= 1000) {
-      return `₱${(valInMillions / 1000).toFixed(2)}B`;
-    }
-    return `₱${valInMillions.toFixed(2)}M`;
-  };
 
   return (
     <div
@@ -98,7 +92,14 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
             className="text-3xl sm:text-4xl lg:text-[42px] font-black text-gray-900 tracking-tight leading-[1.15]"
           >
             Trece Martires collected{' '}
-            <span className="text-[#003893]">{currentData.headlineTotal}</span>{' '}
+            <span className="text-[#003893]">
+              <AnimatedCounter
+                value={currentData.totalReceipts / 1000}
+                prefix="₱"
+                suffix=" billion"
+                decimals={4}
+              />
+            </span>{' '}
             in{' '}
             <span className="whitespace-nowrap font-sans">
               FY {selectedYear}
@@ -123,14 +124,25 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
         <div className="bg-gradient-to-br from-[#00225e] to-[#003893] text-white p-6 rounded-2xl shadow-sm border border-blue-900/30 flex flex-col justify-between hover:shadow-md transition-all group">
           <div>
             <div className="text-3xl sm:text-4xl font-extrabold tracking-tight font-mono text-white">
-              {currentData.cards.cityTaxes.amount}
+              <AnimatedCounter
+                value={currentData.cards.cityTaxes.rawAmount}
+                prefix="₱"
+                suffix="M"
+                decimals={1}
+              />
             </div>
             <div className="text-sm sm:text-base font-medium text-blue-100 mt-2">
               From city taxes
             </div>
           </div>
           <div className="text-xs sm:text-sm text-amber-300 mt-4 pt-3 border-t border-white/15 font-semibold flex items-center justify-between">
-            <span>{currentData.cards.cityTaxes.percentage}</span>
+            <span>
+              <AnimatedCounter
+                value={parseFloat(currentData.cards.cityTaxes.percentage)}
+                suffix="% of the total"
+                decimals={1}
+              />
+            </span>
             <Receipt className="w-4 h-4 text-blue-200" aria-hidden="true" />
           </div>
         </div>
@@ -139,14 +151,25 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
         <div className="bg-gradient-to-br from-[#00225e] to-[#003893] text-white p-6 rounded-2xl shadow-sm border border-blue-900/30 flex flex-col justify-between hover:shadow-md transition-all group">
           <div>
             <div className="text-3xl sm:text-4xl font-extrabold tracking-tight font-mono text-white">
-              {currentData.cards.nonTaxSources.amount}
+              <AnimatedCounter
+                value={currentData.cards.nonTaxSources.rawAmount}
+                prefix="₱"
+                suffix="M"
+                decimals={1}
+              />
             </div>
             <div className="text-sm sm:text-base font-medium text-blue-100 mt-2">
               From non-tax sources
             </div>
           </div>
           <div className="text-xs sm:text-sm text-amber-300 mt-4 pt-3 border-t border-white/15 font-semibold flex items-center justify-between">
-            <span>{currentData.cards.nonTaxSources.percentage}</span>
+            <span>
+              <AnimatedCounter
+                value={parseFloat(currentData.cards.nonTaxSources.percentage)}
+                suffix="% of the total"
+                decimals={1}
+              />
+            </span>
             <Coins className="w-4 h-4 text-blue-200" aria-hidden="true" />
           </div>
         </div>
@@ -155,14 +178,27 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
         <div className="bg-gradient-to-br from-[#00225e] to-[#003893] text-white p-6 rounded-2xl shadow-sm border border-blue-900/30 flex flex-col justify-between hover:shadow-md transition-all group">
           <div>
             <div className="text-3xl sm:text-4xl font-extrabold tracking-tight font-mono text-white">
-              {currentData.cards.nationalTaxShare.amount}
+              <AnimatedCounter
+                value={currentData.cards.nationalTaxShare.rawAmount}
+                prefix="₱"
+                suffix="M"
+                decimals={1}
+              />
             </div>
             <div className="text-sm sm:text-base font-medium text-blue-100 mt-2">
               From the national tax share
             </div>
           </div>
           <div className="text-xs sm:text-sm text-amber-300 mt-4 pt-3 border-t border-white/15 font-semibold flex items-center justify-between">
-            <span>{currentData.cards.nationalTaxShare.percentage}</span>
+            <span>
+              <AnimatedCounter
+                value={parseFloat(
+                  currentData.cards.nationalTaxShare.percentage
+                )}
+                suffix="% of the total"
+                decimals={1}
+              />
+            </span>
             <Landmark className="w-4 h-4 text-blue-200" aria-hidden="true" />
           </div>
         </div>
@@ -171,7 +207,16 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
         <div className="bg-gradient-to-br from-[#00225e] to-[#003893] text-white p-6 rounded-2xl shadow-sm border border-blue-900/30 flex flex-col justify-between hover:shadow-md transition-all group">
           <div>
             <div className="text-3xl sm:text-4xl font-extrabold tracking-tight font-mono text-white flex items-center gap-1.5">
-              <span>{currentData.cards.yoyChange.value}</span>
+              {selectedYear === 2024 ? (
+                <span>Baseline</span>
+              ) : (
+                <AnimatedCounter
+                  value={parseFloat(currentData.cards.yoyChange.value)}
+                  prefix={currentData.cards.yoyChange.isPositive ? '+' : ''}
+                  suffix="%"
+                  decimals={1}
+                />
+              )}
               {currentData.cards.yoyChange.isPositive &&
                 selectedYear !== 2024 && (
                   <ArrowUpRight
@@ -223,7 +268,7 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
             aria-expanded={isExpanded}
             aria-controls="detailed-sre-panel"
             onClick={() => setIsExpanded(!isExpanded)}
-            className="w-full flex items-center justify-between p-3.5 bg-slate-50 hover:bg-blue-50/70 rounded-xl text-xs sm:text-sm font-bold text-[#003893] transition-all border border-slate-200/80 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#003893] group"
+            className="w-full flex items-center justify-between p-3.5 bg-slate-50 hover:bg-blue-50/70 rounded-xl text-xs sm:text-sm font-bold text-[#003893] transition-all border border-slate-200/80 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#003893] group cursor-pointer"
           >
             <div className="flex items-center gap-2">
               <Layers className="w-4 h-4 text-[#003893]" aria-hidden="true" />
@@ -259,7 +304,7 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
                   role="tab"
                   aria-selected={detailsTab === 'receipts'}
                   onClick={() => setDetailsTab('receipts')}
-                  className={`px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#003893] ${
+                  className={`px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#003893] cursor-pointer ${
                     detailsTab === 'receipts'
                       ? 'bg-[#00225e] text-white shadow-xs'
                       : 'text-slate-600 hover:bg-slate-100'
@@ -272,7 +317,7 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
                   role="tab"
                   aria-selected={detailsTab === 'expenditures'}
                   onClick={() => setDetailsTab('expenditures')}
-                  className={`px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#003893] ${
+                  className={`px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#003893] cursor-pointer ${
                     detailsTab === 'expenditures'
                       ? 'bg-[#00225e] text-white shadow-xs'
                       : 'text-slate-600 hover:bg-slate-100'
@@ -285,7 +330,7 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
                   role="tab"
                   aria-selected={detailsTab === 'comparison'}
                   onClick={() => setDetailsTab('comparison')}
-                  className={`px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#003893] ${
+                  className={`px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#003893] cursor-pointer ${
                     detailsTab === 'comparison'
                       ? 'bg-[#00225e] text-white shadow-xs'
                       : 'text-slate-600 hover:bg-slate-100'
@@ -305,8 +350,14 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
                         className="w-4 h-4 text-[#003893]"
                         aria-hidden="true"
                       />
-                      Local Tax Revenue Breakdown (₱
-                      {currentData.details.taxes.total.toFixed(2)}M)
+                      Local Tax Revenue Breakdown (
+                      <AnimatedCounter
+                        value={currentData.details.taxes.total}
+                        prefix="₱"
+                        suffix="M"
+                        decimals={2}
+                      />
+                      )
                     </h3>
                     <div className="divide-y divide-slate-200 text-xs sm:text-sm">
                       <div className="py-2 flex justify-between">
@@ -314,7 +365,12 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
                           Basic Real Property Tax (RPT)
                         </span>
                         <span className="font-mono font-bold text-slate-900">
-                          {formatPHP(currentData.details.taxes.basicRpt)}
+                          <AnimatedCounter
+                            value={currentData.details.taxes.basicRpt}
+                            prefix="₱"
+                            suffix="M"
+                            decimals={2}
+                          />
                         </span>
                       </div>
                       <div className="py-2 flex justify-between">
@@ -322,7 +378,12 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
                           Special Education Fund (SEF)
                         </span>
                         <span className="font-mono font-bold text-slate-900">
-                          {formatPHP(currentData.details.taxes.sef)}
+                          <AnimatedCounter
+                            value={currentData.details.taxes.sef}
+                            prefix="₱"
+                            suffix="M"
+                            decimals={2}
+                          />
                         </span>
                       </div>
                       <div className="py-2 flex justify-between">
@@ -330,7 +391,12 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
                           Business Tax (Largest Local Tax)
                         </span>
                         <span className="font-mono font-bold text-[#003893]">
-                          {formatPHP(currentData.details.taxes.businessTax)}
+                          <AnimatedCounter
+                            value={currentData.details.taxes.businessTax}
+                            prefix="₱"
+                            suffix="M"
+                            decimals={2}
+                          />
                         </span>
                       </div>
                       <div className="py-2 flex justify-between">
@@ -338,7 +404,12 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
                           Other Local Taxes
                         </span>
                         <span className="font-mono font-bold text-slate-900">
-                          {formatPHP(currentData.details.taxes.otherTaxes)}
+                          <AnimatedCounter
+                            value={currentData.details.taxes.otherTaxes}
+                            prefix="₱"
+                            suffix="M"
+                            decimals={2}
+                          />
                         </span>
                       </div>
                     </div>
@@ -359,7 +430,12 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
                           Regulatory Fees (Permits/Licenses)
                         </span>
                         <span className="font-mono font-bold text-slate-900">
-                          {formatPHP(currentData.details.nonTax.regulatoryFees)}
+                          <AnimatedCounter
+                            value={currentData.details.nonTax.regulatoryFees}
+                            prefix="₱"
+                            suffix="M"
+                            decimals={2}
+                          />
                         </span>
                       </div>
                       <div className="py-2 flex justify-between">
@@ -367,7 +443,12 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
                           Service / User Charges
                         </span>
                         <span className="font-mono font-bold text-slate-900">
-                          {formatPHP(currentData.details.nonTax.userCharges)}
+                          <AnimatedCounter
+                            value={currentData.details.nonTax.userCharges}
+                            prefix="₱"
+                            suffix="M"
+                            decimals={2}
+                          />
                         </span>
                       </div>
                       <div className="py-2 flex justify-between">
@@ -375,7 +456,12 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
                           National Tax Allotment (NTA Share)
                         </span>
                         <span className="font-mono font-bold text-[#003893]">
-                          {formatPHP(currentData.details.external.nta)}
+                          <AnimatedCounter
+                            value={currentData.details.external.nta}
+                            prefix="₱"
+                            suffix="M"
+                            decimals={2}
+                          />
                         </span>
                       </div>
                       <div className="py-2 flex justify-between">
@@ -383,7 +469,12 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
                           Grants / Aids / Donations
                         </span>
                         <span className="font-mono font-bold text-slate-900">
-                          {formatPHP(currentData.details.external.grantsAids)}
+                          <AnimatedCounter
+                            value={currentData.details.external.grantsAids}
+                            prefix="₱"
+                            suffix="M"
+                            decimals={2}
+                          />
                         </span>
                       </div>
                       <div className="py-2 flex justify-between">
@@ -391,9 +482,12 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
                           Loan Acquisitions / Borrowings
                         </span>
                         <span className="font-mono font-bold text-slate-900">
-                          {formatPHP(
-                            currentData.details.nonIncome.loanProceeds
-                          )}
+                          <AnimatedCounter
+                            value={currentData.details.nonIncome.loanProceeds}
+                            prefix="₱"
+                            suffix="M"
+                            decimals={2}
+                          />
                         </span>
                       </div>
                     </div>
@@ -410,9 +504,14 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
                         GENERAL SERVICES
                       </span>
                       <span className="text-xl font-bold font-mono text-slate-900 block mt-1">
-                        {formatPHP(
-                          currentData.details.expenditures.generalServices
-                        )}
+                        <AnimatedCounter
+                          value={
+                            currentData.details.expenditures.generalServices
+                          }
+                          prefix="₱"
+                          suffix="M"
+                          decimals={2}
+                        />
                       </span>
                       <span className="text-[11px] text-slate-500 mt-1 block">
                         Admin, governance, operations
@@ -423,9 +522,14 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
                         ECONOMIC SERVICES
                       </span>
                       <span className="text-xl font-bold font-mono text-slate-900 block mt-1">
-                        {formatPHP(
-                          currentData.details.expenditures.economicServices
-                        )}
+                        <AnimatedCounter
+                          value={
+                            currentData.details.expenditures.economicServices
+                          }
+                          prefix="₱"
+                          suffix="M"
+                          decimals={2}
+                        />
                       </span>
                       <span className="text-[11px] text-slate-500 mt-1 block">
                         Commerce, agriculture, livelihood
@@ -436,9 +540,14 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
                         SOCIAL SERVICES
                       </span>
                       <span className="text-xl font-bold font-mono text-slate-900 block mt-1">
-                        {formatPHP(
-                          currentData.details.expenditures.socialServices
-                        )}
+                        <AnimatedCounter
+                          value={
+                            currentData.details.expenditures.socialServices
+                          }
+                          prefix="₱"
+                          suffix="M"
+                          decimals={2}
+                        />
                       </span>
                       <span className="text-[11px] text-slate-500 mt-1 block">
                         Health, education, welfare
@@ -449,9 +558,12 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
                         CAPITAL OUTLAY (PPE)
                       </span>
                       <span className="text-xl font-bold font-mono text-slate-900 block mt-1">
-                        {formatPHP(
-                          currentData.details.expenditures.capitalOutlay
-                        )}
+                        <AnimatedCounter
+                          value={currentData.details.expenditures.capitalOutlay}
+                          prefix="₱"
+                          suffix="M"
+                          decimals={2}
+                        />
                       </span>
                       <span className="text-[11px] text-slate-500 mt-1 block">
                         Infrastructure &amp; public equipment
@@ -466,7 +578,13 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
                         Fund &amp; Cash Position Summary (FY {selectedYear})
                       </span>
                       <span className="font-mono text-base text-[#003893]">
-                        Ending Cash: {formatPHP(currentData.details.endingCash)}
+                        Ending Cash:{' '}
+                        <AnimatedCounter
+                          value={currentData.details.endingCash}
+                          prefix="₱"
+                          suffix="M"
+                          decimals={2}
+                        />
                       </span>
                     </div>
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 text-slate-800 font-mono">
@@ -474,29 +592,47 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
                         <span className="text-[11px] text-slate-600 block font-sans">
                           Beginning Cash
                         </span>
-                        {formatPHP(currentData.details.beginningCash)}
+                        <AnimatedCounter
+                          value={currentData.details.beginningCash}
+                          prefix="₱"
+                          suffix="M"
+                          decimals={2}
+                        />
                       </div>
                       <div>
                         <span className="text-[11px] text-slate-600 block font-sans">
                           Total Receipts
                         </span>
-                        {formatPHP(currentData.totalReceipts)}
+                        <AnimatedCounter
+                          value={currentData.totalReceipts}
+                          prefix="₱"
+                          suffix="M"
+                          decimals={2}
+                        />
                       </div>
                       <div>
                         <span className="text-[11px] text-slate-600 block font-sans">
                           Total Expenditures
                         </span>
-                        {formatPHP(
-                          currentData.details.expenditures.totalExpenditures
-                        )}
+                        <AnimatedCounter
+                          value={
+                            currentData.details.expenditures.totalExpenditures
+                          }
+                          prefix="₱"
+                          suffix="M"
+                          decimals={2}
+                        />
                       </div>
                       <div>
                         <span className="text-[11px] text-slate-600 block font-sans">
                           Continuing Approp.
                         </span>
-                        {formatPHP(
-                          currentData.details.continuingAppropriations
-                        )}
+                        <AnimatedCounter
+                          value={currentData.details.continuingAppropriations}
+                          prefix="₱"
+                          suffix="M"
+                          decimals={2}
+                        />
                       </div>
                     </div>
                   </div>

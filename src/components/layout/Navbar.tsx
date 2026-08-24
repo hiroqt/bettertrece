@@ -199,8 +199,8 @@ export const BetterTreceLogo: React.FC<{
           <span
             className={`text-xs font-bold px-1.5 py-0.5 rounded transition-colors ${
               isLight
-                ? 'text-blue-100 bg-white/20'
-                : 'text-gray-500 bg-gray-100'
+                ? 'text-white bg-white/20 border border-white/20'
+                : 'text-gray-600 bg-gray-100'
             }`}
           >
             .org
@@ -208,7 +208,7 @@ export const BetterTreceLogo: React.FC<{
         </div>
         <span
           className={`text-[10px] font-semibold tracking-wider uppercase transition-colors ${
-            isLight ? 'text-blue-200/90' : 'text-gray-500'
+            isLight ? 'text-blue-100' : 'text-gray-500'
           }`}
         >
           Trece Martires City, Cavite
@@ -463,12 +463,8 @@ const Navbar: React.FC = () => {
   };
 
   // Check if current page has a dark hero header at the top
-  const isDarkHeroPage =
-    location.pathname === '/' ||
-    location.pathname === '/government' ||
-    location.pathname === '/demographics' ||
-    location.pathname === '/municipal-profile' ||
-    location.pathname.startsWith('/transparency');
+  // All main pages in BetterTrece feature a dark navy/blue gradient hero header banner
+  const isDarkHeroPage = true;
 
   // Should navbar use light text theme (when transparent over dark hero)
   const isLightNavTheme = !isScrolled && isDarkHeroPage;
@@ -658,14 +654,14 @@ const Navbar: React.FC = () => {
                       <Link
                         to={item.href}
                         onClick={() => setActiveMegaMenu(null)}
-                        className={`flex items-center px-3.5 py-2 rounded-lg text-sm font-semibold transition-all duration-150 ${
+                        className={`flex items-center px-3.5 py-2 rounded-xl text-sm font-semibold transition-all duration-150 ${
                           isLightNavTheme
                             ? isActive || isHovered
                               ? 'bg-white/20 text-white font-bold shadow-xs'
-                              : 'text-white/90 hover:text-white hover:bg-white/10'
+                              : 'text-white hover:text-white hover:bg-white/15'
                             : isActive || isHovered
                               ? 'bg-blue-50 text-[#003893] font-bold'
-                              : 'text-gray-700 hover:text-[#003893] hover:bg-gray-50'
+                              : 'text-gray-800 hover:text-[#003893] hover:bg-gray-50'
                         }`}
                       >
                         <span>{getNavLabel(item.label)}</span>
@@ -674,7 +670,7 @@ const Navbar: React.FC = () => {
                             isHovered ? 'rotate-180' : ''
                           } ${
                             isLightNavTheme
-                              ? 'text-white/70'
+                              ? 'text-white/80'
                               : 'text-gray-500 group-hover:text-[#003893]'
                           }`}
                         />
@@ -682,14 +678,14 @@ const Navbar: React.FC = () => {
                     ) : (
                       <Link
                         to={item.href}
-                        className={`px-3.5 py-2 rounded-lg text-sm font-semibold transition-all block ${
+                        className={`px-3.5 py-2 rounded-xl text-sm font-semibold transition-all block ${
                           isLightNavTheme
                             ? isActive
                               ? 'bg-white/20 text-white font-bold shadow-xs'
-                              : 'text-white/90 hover:text-white hover:bg-white/10'
+                              : 'text-white hover:text-white hover:bg-white/15'
                             : isActive
                               ? 'bg-blue-50 text-[#003893] font-bold'
-                              : 'text-gray-700 hover:text-[#003893] hover:bg-gray-50'
+                              : 'text-gray-800 hover:text-[#003893] hover:bg-gray-50'
                         }`}
                       >
                         {getNavLabel(item.label)}

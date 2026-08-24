@@ -17,6 +17,12 @@ export default defineConfig({
         secure: false,
         rewrite: path => path.replace(/^\/dpwh-api/, ''),
       },
+      '/psa-api': {
+        target: 'https://classification.psa.gov.ph',
+        changeOrigin: true,
+        secure: false,
+        rewrite: path => path.replace(/^\/psa-api/, ''),
+      },
     },
   },
 });

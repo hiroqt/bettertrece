@@ -127,3 +127,43 @@ export async function getCategorySubcategories(
 export function isNestedCategory(slug: string): boolean {
   return slug in categoryIndexMap;
 }
+
+export interface ServiceCategoryWithPages extends Category {
+  pages: Subcategory[];
+  title?: string;
+  layout?: 'grid' | 'list';
+}
+
+let cachedAllServiceCategories: ServiceCategoryWithPages[] | null = null;
+
+export function getAllServiceCategoriesWithPages(): ServiceCategoryWithPages[] {
+  if (cachedAllServiceCategories) {
+    return cachedAllServiceCategories;
+  }
+  const result: ServiceCategoryWithPages[] = serviceCategories.categories.map(
+    cat => {
+      const yamlContent = categoryIndexMap[cat.slug];
+      let pages: Subcategory[] = [];
+      let title: string | undefined;
+      let layout: 'grid' | 'list' = 'list';
+      if (yamlContent) {
+        try {
+          const indexData = yaml.load(yamlContent) as CategoryIndexData;
+          pages = indexData.pages || [];
+          title = indexData.title;
+          layout = indexData.layout ?? 'list';
+        } catch (err) {
+          console.warn(`Failed to parse category ${cat.slug}`, err);
+        }
+      }
+      return {
+        ...cat,
+        pages,
+        title,
+        layout,
+      };
+    }
+  );
+  cachedAllServiceCategories = result;
+  return result;
+}

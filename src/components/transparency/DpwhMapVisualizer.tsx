@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react';
 import type { DpwhProject } from '../../data/dpwhTransparency';
+import type { DPWHProject } from '../../types/dpwh';
 import {
   MapPin,
   ExternalLink,
@@ -13,9 +14,11 @@ import {
   Compass,
 } from 'lucide-react';
 
+type AnyProject = DpwhProject | DPWHProject;
+
 interface DpwhMapVisualizerProps {
-  projects: DpwhProject[];
-  onSelectProject?: (project: DpwhProject) => void;
+  projects: AnyProject[];
+  onSelectProject?: (project: AnyProject) => void;
 }
 
 export default function DpwhMapVisualizer({
@@ -23,7 +26,7 @@ export default function DpwhMapVisualizer({
   onSelectProject,
 }: DpwhMapVisualizerProps) {
   // Default to first project with coordinates or Trece center
-  const [selectedProject, setSelectedProject] = useState<DpwhProject | null>(
+  const [selectedProject, setSelectedProject] = useState<AnyProject | null>(
     () => projects.find(p => p.latitude && p.longitude) || projects[0] || null
   );
   const [searchQuery, setSearchQuery] = useState('');
@@ -36,17 +39,14 @@ export default function DpwhMapVisualizer({
       if (!p.latitude || !p.longitude) return false;
       if (selectedCategory !== 'All' && p.category !== selectedCategory)
         return false;
-      if (
-        selectedBarangay !== 'All' &&
-        p.location.barangay !== selectedBarangay
-      )
-        return false;
+      const brgy = p.location?.barangay || '';
+      if (selectedBarangay !== 'All' && brgy !== selectedBarangay) return false;
       if (searchQuery.trim()) {
         const q = searchQuery.toLowerCase();
         const matches =
           p.contractId.toLowerCase().includes(q) ||
           p.description.toLowerCase().includes(q) ||
-          p.location.barangay.toLowerCase().includes(q) ||
+          brgy.toLowerCase().includes(q) ||
           p.contractor.toLowerCase().includes(q);
         if (!matches) return false;
       }
@@ -65,7 +65,8 @@ export default function DpwhMapVisualizer({
   const barangays = useMemo(() => {
     const set = new Set<string>();
     projects.forEach(p => {
-      if (p.location.barangay) set.add(p.location.barangay);
+      const b = p.location?.barangay;
+      if (b) set.add(b);
     });
     return ['All', ...Array.from(set).sort()];
   }, [projects]);
@@ -188,7 +189,7 @@ export default function DpwhMapVisualizer({
               <div className="flex items-center gap-2 truncate">
                 <MapPin className="w-4 h-4 text-amber-400 shrink-0" />
                 <span className="font-bold text-white truncate">
-                  {selectedProject.location.barangay}:{' '}
+                  {selectedProject.location?.barangay || 'Trece Martires City'}:{' '}
                   <span className="text-slate-300 font-normal">
                     {selectedProject.description}
                   </span>
@@ -287,7 +288,7 @@ export default function DpwhMapVisualizer({
                     <div className="flex items-center justify-between text-[11px] text-gray-500 pt-1 border-t border-gray-100">
                       <span className="inline-flex items-center gap-1 font-semibold text-blue-900">
                         <MapPin className="w-3 h-3 text-blue-500" />
-                        Brgy. {p.location.barangay}
+                        Brgy. {p.location?.barangay || 'Trece'}
                       </span>
                       <span className="font-black text-gray-900">
                         ₱

@@ -444,12 +444,12 @@ export const mainNavigation: MainNavItem[] = [
           ],
         },
         {
-          heading: 'PSA Standards',
+          heading: 'PSA Standards & Geocodes',
           items: [
             {
               title: 'PSGC Geocodes (0402122000)',
-              description: 'Philippine Standard Geographic Code',
-              href: '/demographics#psa-classifications',
+              description: 'Philippine Standard Geographic Code & API',
+              href: '/demographics',
               iconName: 'Binary',
               badge: 'PSGC',
             },
@@ -479,6 +479,10 @@ export const mainNavigation: MainNavItem[] = [
         statLabel: '10-Digit PSGC Geocode',
       },
     },
+  },
+  {
+    label: 'About',
+    href: '/about',
   },
   {
     label: 'Contact',
@@ -522,6 +526,10 @@ export const footerNavigation = {
         {
           label: 'Emergency Hotlines & Rescue',
           href: '/government#departments',
+        },
+        {
+          label: 'About This Project (Why I Built This)',
+          href: '/about',
         },
       ],
     },

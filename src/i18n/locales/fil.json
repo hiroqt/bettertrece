@@ -69,6 +69,7 @@
     "title": "BetterTrece.org",
     "subtitle": "Isang portal na pinapatakbo ng komunidad para sa impormasyon at serbisyo ng Lungsod ng Trece Martires, Cavite.",
     "browseServices": "Tingnan ang mga Serbisyo",
+    "aboutProject": "Tungkol sa proyektong ito",
     "fullDemographics": "Buong Demograpiko →",
     "cityProfileAndFacts": "Profile at Mahahalagang Impormasyon",
     "capitalOfCavite": "Kabisera ng Cavite",
@@ -84,16 +85,26 @@
     "populationSubtext": "Opisyal na PSA 2024 POPCEN (1.78% taunang paglago)",
     "populationBadge": "2024 POPCEN",
     "cityClassification": "Klasipikasyon ng Lungsod",
-    "cityClassificationValue": "1st Class Component City",
+    "cityClassificationValue": "2nd Class Component City",
     "cityClassificationSubtext": "Sukat ng Lupa: 39.10 km² · Lalawigan ng Cavite",
-    "cityClassificationBadge": "1st Class LGU"
+    "cityClassificationBadge": "2nd Class LGU",
+    "verifiedLguHub": "Opisyal na LGU & PSA Data Hub",
+    "registeredVoters": "Mga Rehistradong Botante",
+    "votersSubtext": "COMELEC 2025 · 20 Sentro ng Botohan",
+    "cityBudget": "Taunang Badyet ng Lungsod",
+    "budgetSubtext": "DOF-BLGF SRE 2024 (96.8% Koleksyon)",
+    "quickExplore": "Mabilisang Pag-explore"
   },
   "services": {
     "badge": "Direktoryo ng Serbisyong Publiko",
     "title": "Mga Serbisyo at Impormasyon ng Lungsod",
     "description": "Mabilis at madaling makuha ang mga opisyal na serbisyo ng Pamahalaang Lungsod ng Trece Martires.",
     "viewAll": "Tingnan ang lahat ng kategorya",
-    "learnMore": "Alamin ang higit pa"
+    "learnMore": "Alamin ang higit pa",
+    "viewAllCardTitle": "Tingnan ang Lahat ng Serbisyo",
+    "viewAllCardDesc": "Tuklasin ang kumpletong direktoryo ng mga serbisyo ng pamahalaan, mga kinakailangan, citizen charter, at mga gabay.",
+    "viewAllCardAction": "Galugarin ang buong direktoryo",
+    "allCategoriesCount": "10 Kategorya"
   },
   "governmentActivity": {
     "badge": "Pangangasiwa ng Lokal na Pamahalaan",
@@ -138,7 +149,7 @@
     "totalPopulation": "KABUUANG POPULASYON (2024 POPCEN)",
     "vs2020": "kumpara noong 2020",
     "landAreaStatus": "SUKAT NG LUPA AT KATAYUAN",
-    "componentCity": "1st Class Component City",
+    "componentCity": "2nd Class Component City",
     "psgcCityCode": "PSGC KODIGO NG LUNGSOD",
     "regionNotice": "13 Barangay • Rehiyon IV-A (Cavite)"
   },

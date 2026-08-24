@@ -13,7 +13,6 @@ import {
   Landmark,
   ArrowRight,
   FileSpreadsheet,
-  HardHat,
   Vote,
   TrendingUp,
   MapPin,
@@ -24,6 +23,7 @@ import {
   TRECE_MUNICIPAL_PROFILE,
   TRECE_VOTER_STATISTICS_2025,
 } from '../data/psaClassifications';
+import AnimatedCounter from '../components/ui/AnimatedCounter';
 
 const Home: React.FC = () => {
   const { t } = useTranslation();
@@ -96,15 +96,21 @@ const Home: React.FC = () => {
                   </span>
                 </div>
                 <div className="text-2xl sm:text-3xl font-black font-mono text-white">
-                  {TRECE_VOTER_STATISTICS_2025.registeredVoters.toLocaleString()}
+                  <AnimatedCounter
+                    value={TRECE_VOTER_STATISTICS_2025.registeredVoters}
+                  />
                 </div>
                 <div className="text-xs text-blue-200 mt-2 flex items-center justify-between">
                   <span>
-                    {TRECE_VOTER_STATISTICS_2025.votingCenters}{' '}
+                    <AnimatedCounter
+                      value={TRECE_VOTER_STATISTICS_2025.votingCenters}
+                    />{' '}
                     {t('demographicsSummary.votingCenters', 'Voting Centers')}
                   </span>
                   <span className="font-mono text-[11px] text-blue-300">
-                    {TRECE_VOTER_STATISTICS_2025.clusteredPrecincts}{' '}
+                    <AnimatedCounter
+                      value={TRECE_VOTER_STATISTICS_2025.clusteredPrecincts}
+                    />{' '}
                     {t('demographicsSummary.clusteredPrecincts', 'Clustered')}
                   </span>
                 </div>
@@ -122,14 +128,19 @@ const Home: React.FC = () => {
                   <Users className="w-4 h-4 text-[#003893]" />
                 </div>
                 <div className="text-2xl sm:text-3xl font-black text-gray-900 font-mono">
-                  {TRECE_MUNICIPAL_PROFILE.totalPopulation2024?.toLocaleString() ||
-                    '227,892'}
+                  <AnimatedCounter
+                    value={
+                      TRECE_MUNICIPAL_PROFILE.totalPopulation2024 || 227892
+                    }
+                  />
                 </div>
                 <div className="text-xs text-gray-500 mt-2 flex items-center gap-1">
                   <TrendingUp className="w-3.5 h-3.5 text-emerald-600" />
                   <span className="text-emerald-700 font-bold">+8.3%</span>{' '}
                   {t('demographicsSummary.vs2020', 'vs 2020')} (
-                  {TRECE_MUNICIPAL_PROFILE.totalPopulation2020.toLocaleString()}
+                  <AnimatedCounter
+                    value={TRECE_MUNICIPAL_PROFILE.totalPopulation2020}
+                  />
                   )
                 </div>
               </div>
@@ -146,7 +157,10 @@ const Home: React.FC = () => {
                   <Landmark className="w-4 h-4 text-emerald-600" />
                 </div>
                 <div className="text-2xl sm:text-3xl font-black text-gray-900 font-mono">
-                  {TRECE_MUNICIPAL_PROFILE.totalLandAreaKm2}{' '}
+                  <AnimatedCounter
+                    value={TRECE_MUNICIPAL_PROFILE.totalLandAreaKm2}
+                    decimals={2}
+                  />{' '}
                   <span className="text-base font-medium text-gray-500">
                     km²
                   </span>
@@ -191,7 +205,9 @@ const Home: React.FC = () => {
                     Brgy. Hugo Perez
                   </div>
                   <div className="text-xs text-gray-600 mt-0.5">
-                    48,920 residents (23.2% of city population)
+                    <AnimatedCounter value={48920} /> residents (
+                    <AnimatedCounter value={23.2} decimals={1} />% of city
+                    population)
                   </div>
                 </div>
               </div>
@@ -208,7 +224,8 @@ const Home: React.FC = () => {
                     Brgy. Aguado
                   </div>
                   <div className="text-xs text-gray-600 mt-0.5">
-                    +63.9% intercensal growth (36,248 residents)
+                    +<AnimatedCounter value={63.9} decimals={1} />% intercensal
+                    growth (<AnimatedCounter value={36248} /> residents)
                   </div>
                 </div>
               </div>
@@ -222,10 +239,11 @@ const Home: React.FC = () => {
                     Electoral Centers (2025)
                   </div>
                   <div className="text-sm font-bold text-gray-900">
-                    20 Voting Centers
+                    <AnimatedCounter value={20} /> Voting Centers
                   </div>
                   <div className="text-xs text-gray-600 mt-0.5">
-                    783 established &bull; 136 clustered precincts
+                    <AnimatedCounter value={783} /> established &bull;{' '}
+                    <AnimatedCounter value={136} /> clustered precincts
                   </div>
                 </div>
               </div>
@@ -239,19 +257,6 @@ const Home: React.FC = () => {
                 <FileSpreadsheet className="w-4 h-4 text-blue-200" />
                 <span>View Full Summary Demographics &amp; Census Data</span>
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link
-                to="/transparency/dpwh"
-                className="inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold px-4 py-2.5 rounded-xl text-xs sm:text-sm transition-all shadow-xs"
-              >
-                <HardHat className="w-4 h-4 text-slate-900" />
-                <span>DPWH Infrastructure Transparency</span>
-              </Link>
-              <Link
-                to="/demographics#psa-classifications"
-                className="inline-flex items-center gap-1.5 bg-white hover:bg-gray-100 text-gray-700 font-semibold px-4 py-2.5 rounded-xl text-xs sm:text-sm border border-gray-200 transition-all"
-              >
-                <span>9 PSA Classification Systems</span>
               </Link>
             </div>
           </div>

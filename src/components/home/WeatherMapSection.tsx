@@ -38,99 +38,6 @@ const DEFAULT_WEATHER: WeatherData = {
   isDay: true,
 };
 
-// Interactive presets for testing / previewing different atmospheric conditions
-const PRESET_MODES: {
-  id: string;
-  name: string;
-  emoji: string;
-  weather: WeatherData;
-}[] = [
-  {
-    id: 'live',
-    name: 'Live Trece Weather',
-    emoji: '📡',
-    weather: DEFAULT_WEATHER,
-  },
-  {
-    id: 'rain',
-    name: 'Rainy (Raindrops)',
-    emoji: '🌧️',
-    weather: {
-      temperature: 24,
-      apparentTemperature: 26,
-      weatherCode: 63, // Rain showers
-      windSpeed: 18,
-      humidity: 92,
-      isDay: true,
-    },
-  },
-  {
-    id: 'thunderstorm',
-    name: 'Thunderstorm',
-    emoji: '⛈️',
-    weather: {
-      temperature: 23,
-      apparentTemperature: 25,
-      weatherCode: 95, // Thunderstorm
-      windSpeed: 30,
-      humidity: 96,
-      isDay: false,
-    },
-  },
-  {
-    id: 'sunny',
-    name: 'Sunny Day',
-    emoji: '☀️',
-    weather: {
-      temperature: 33,
-      apparentTemperature: 38,
-      weatherCode: 0, // Clear sky
-      windSpeed: 10,
-      humidity: 58,
-      isDay: true,
-    },
-  },
-  {
-    id: 'cloudy',
-    name: 'Partly Cloudy',
-    emoji: '⛅',
-    weather: {
-      temperature: 29,
-      apparentTemperature: 32,
-      weatherCode: 2, // Partly cloudy
-      windSpeed: 14,
-      humidity: 74,
-      isDay: true,
-    },
-  },
-  {
-    id: 'clear-night',
-    name: 'Clear Night',
-    emoji: '🌙',
-    weather: {
-      temperature: 25,
-      apparentTemperature: 27,
-      weatherCode: 0, // Clear night
-      windSpeed: 8,
-      humidity: 82,
-      isDay: false,
-    },
-  },
-  {
-    id: 'fog',
-    name: 'Misty / Fog',
-    emoji: '🌫️',
-    weather: {
-      temperature: 22,
-      apparentTemperature: 23,
-      weatherCode: 45, // Fog
-      windSpeed: 4,
-      humidity: 98,
-      isDay: true,
-    },
-  },
-];
-
 function getWeatherDetails(
   code: number,
   isDay: boolean = true
@@ -279,7 +186,6 @@ function getWeatherBorderClasses(type: WeatherType): string {
 export default function WeatherMapSection() {
   const { t } = useTranslation();
   const [liveWeather, setLiveWeather] = useState<WeatherData>(DEFAULT_WEATHER);
-  const [selectedPreset, setSelectedPreset] = useState<string>('live');
   const [isLoading, setIsLoading] = useState(false);
   const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
 
@@ -316,18 +222,9 @@ export default function WeatherMapSection() {
     fetchWeather();
   }, []);
 
-  // Determine current active weather data (either live or selected preview preset)
-  const currentPreset = PRESET_MODES.find(p => p.id === selectedPreset);
-  const activeWeather =
-    selectedPreset === 'live'
-      ? liveWeather
-      : currentPreset
-        ? currentPreset.weather
-        : liveWeather;
-
   const weatherInfo = getWeatherDetails(
-    activeWeather.weatherCode,
-    activeWeather.isDay
+    liveWeather.weatherCode,
+    liveWeather.isDay
   );
   const WeatherIcon = weatherInfo.icon;
 
@@ -356,75 +253,36 @@ export default function WeatherMapSection() {
             </p>
           </div>
 
-          {/* Header Controls: Live Updates & Weather Preview Selector */}
+          {/* Header Controls: Live Updates Status & Refresh Button */}
           <div className="flex flex-wrap items-center gap-2">
-            <div className="flex items-center gap-1.5 p-1 bg-white/95 backdrop-blur-md rounded-2xl border border-slate-200/90 shadow-xs ring-1 ring-slate-900/5">
-              {PRESET_MODES.slice(0, 4).map(preset => {
-                const isActive = selectedPreset === preset.id;
-                return (
-                  <button
-                    key={preset.id}
-                    onClick={() => setSelectedPreset(preset.id)}
-                    className={`text-xs px-2.5 py-1.5 rounded-xl font-medium transition-all flex items-center gap-1 cursor-pointer ${
-                      isActive
-                        ? 'bg-[#003893] text-white shadow-xs font-semibold'
-                        : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100/80'
-                    }`}
-                    title={`Switch to ${preset.name}`}
-                  >
-                    <span>{preset.emoji}</span>
-                    <span className="hidden sm:inline">
-                      {preset.id === 'live'
-                        ? 'Live'
-                        : preset.name.split(' ')[0]}
-                    </span>
-                  </button>
-                );
-              })}
-
-              {/* Extra presets toggle / dropdown preview options */}
-              {PRESET_MODES.slice(4).map(preset => {
-                const isActive = selectedPreset === preset.id;
-                return (
-                  <button
-                    key={preset.id}
-                    onClick={() => setSelectedPreset(preset.id)}
-                    className={`text-xs px-2 py-1.5 rounded-xl font-medium transition-all flex items-center gap-1 cursor-pointer ${
-                      isActive
-                        ? 'bg-[#003893] text-white shadow-xs font-semibold'
-                        : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100/80'
-                    }`}
-                    title={`Switch to ${preset.name}`}
-                  >
-                    <span>{preset.emoji}</span>
-                    <span className="hidden md:inline">
-                      {preset.name.split(' ')[0]}
-                    </span>
-                  </button>
-                );
-              })}
+            <div className="inline-flex items-center gap-2 bg-emerald-50 text-emerald-800 border border-emerald-200/80 px-3 py-1.5 rounded-2xl text-xs font-semibold shadow-2xs">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span>Live Weather (Open-Meteo)</span>
             </div>
 
-            {selectedPreset === 'live' && lastUpdated && (
-              <button
-                onClick={fetchWeather}
-                disabled={isLoading}
-                title={t(
-                  'weather.refreshTitle',
-                  'Refresh live weather data from Open-Meteo'
-                )}
-                className="inline-flex items-center gap-1.5 text-xs text-gray-700 hover:text-[#003893] bg-white transition-all px-3 py-2 rounded-xl border border-slate-200/90 hover:border-blue-300 shadow-2xs ring-1 ring-slate-900/5 cursor-pointer font-medium"
-              >
-                <RefreshCw
-                  className={`w-3.5 h-3.5 text-[#003893] ${
-                    isLoading ? 'animate-spin' : ''
-                  }`}
-                />
-                <span className="hidden sm:inline">
-                  {t('weather.liveUpdates', 'Refresh')}
-                </span>
-              </button>
-            )}
+            <button
+              onClick={fetchWeather}
+              disabled={isLoading}
+              title={t(
+                'weather.refreshTitle',
+                'Refresh live weather data from Open-Meteo'
+              )}
+              className="inline-flex items-center gap-1.5 text-xs text-gray-700 hover:text-[#003893] bg-white transition-all px-3.5 py-2 rounded-2xl border border-slate-200/90 hover:border-blue-300 shadow-2xs ring-1 ring-slate-900/5 cursor-pointer font-semibold"
+            >
+              <RefreshCw
+                className={`w-3.5 h-3.5 text-[#003893] ${
+                  isLoading ? 'animate-spin' : ''
+                }`}
+              />
+              <span>
+                {lastUpdated
+                  ? `Updated ${lastUpdated.toLocaleTimeString([], {
+                      hour: '2-digit',
+                      minute: '2-digit',
+                    })}`
+                  : t('weather.liveUpdates', 'Refresh')}
+              </span>
+            </button>
           </div>
         </div>
 
@@ -453,13 +311,7 @@ export default function WeatherMapSection() {
                 <div
                   className={`text-[11px] sm:text-xs font-semibold px-3 py-1 rounded-full border backdrop-blur-md shadow-sm ring-1 ring-white/15 transition-all ${weatherInfo.badgeBg}`}
                 >
-                  {selectedPreset !== 'live' ? (
-                    <span className="flex items-center gap-1">
-                      <span>Preview: {currentPreset?.name}</span>
-                    </span>
-                  ) : (
-                    <span>{t('weather.caviteCenter', 'Cavite Center')}</span>
-                  )}
+                  <span>{t('weather.caviteCenter', 'Cavite Center')}</span>
                 </div>
               </div>
 
@@ -467,7 +319,7 @@ export default function WeatherMapSection() {
               <div className="my-auto py-4">
                 <div className="flex items-baseline gap-1">
                   <span className="text-6xl sm:text-7xl lg:text-8xl font-black tracking-tight leading-none text-white drop-shadow-[0_4px_16px_rgba(0,0,0,0.5)] font-mono">
-                    {activeWeather.temperature}°
+                    {liveWeather.temperature}°
                   </span>
                   <span className="text-2xl sm:text-3xl font-bold text-sky-100 drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] font-mono">
                     C
@@ -505,7 +357,7 @@ export default function WeatherMapSection() {
                       {t('weather.wind', 'Wind')}
                     </div>
                     <div className="truncate text-white font-bold">
-                      {activeWeather.windSpeed} km/h
+                      {liveWeather.windSpeed} km/h
                     </div>
                   </div>
                 </div>
@@ -518,7 +370,7 @@ export default function WeatherMapSection() {
                       {t('weather.feelsLike', 'Feels Like')}
                     </div>
                     <div className="truncate text-white font-bold">
-                      {activeWeather.apparentTemperature}°C
+                      {liveWeather.apparentTemperature}°C
                     </div>
                   </div>
                 </div>
@@ -531,7 +383,7 @@ export default function WeatherMapSection() {
                       {t('weather.humidity', 'Humidity')}
                     </div>
                     <div className="truncate text-white font-bold">
-                      {activeWeather.humidity}%
+                      {liveWeather.humidity}%
                     </div>
                   </div>
                 </div>

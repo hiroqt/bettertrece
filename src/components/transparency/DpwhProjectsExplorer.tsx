@@ -1,4 +1,5 @@
 import { useState, useMemo, useRef, useEffect } from 'react';
+import type { DPWHProject } from '../../types/dpwh';
 import {
   ALL_DPWH_PROJECTS,
   DPWH_CATEGORIES,
@@ -73,7 +74,9 @@ export default function DpwhProjectsExplorer() {
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
 
   // Modal inspection
-  const [activeProject, setActiveProject] = useState<DpwhProject | null>(null);
+  const [activeProject, setActiveProject] = useState<
+    DPWHProject | DpwhProject | null
+  >(null);
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
   // Search input ref for keyboard shortcut focus

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import type { DPWHProject } from '../../types/dpwh';
 import { DpwhProject } from '../../data/dpwhTransparency';
 import {
   X,
@@ -14,7 +15,7 @@ import {
 } from 'lucide-react';
 
 interface DpwhProjectModalProps {
-  project: DpwhProject | null;
+  project: DPWHProject | DpwhProject | null;
   onClose: () => void;
 }
 

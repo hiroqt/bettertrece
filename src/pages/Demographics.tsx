@@ -5,6 +5,7 @@ import Section from '../components/ui/Section';
 import Breadcrumbs from '../components/ui/Breadcrumbs';
 import BarangayPsgcTable from '../components/demographics/BarangayPsgcTable';
 import PsaClassificationExplorer from '../components/demographics/PsaClassificationExplorer';
+import AnimatedCounter from '../components/ui/AnimatedCounter';
 import {
   TRECE_MUNICIPAL_PROFILE,
   TRECE_VOTER_STATISTICS_2025,
@@ -32,14 +33,20 @@ export default function Demographics() {
   >(null);
 
   const activeTab = userSelectedTab ?? getTabFromHash(location.hash);
-  const setActiveTab = (tab: 'overview' | 'classifications') =>
+  const setActiveTab = (tab: 'overview' | 'classifications') => {
     setUserSelectedTab(tab);
+    window.history.replaceState(
+      null,
+      '',
+      tab === 'classifications' ? '#psa-classifications' : '#overview'
+    );
+  };
 
   const breadcrumbItems = [
     { label: 'Home', href: '/' },
     { label: 'Statistics', href: '/government/reports-and-statistics' },
     {
-      label: 'Summary Demographics & PSA Classifications',
+      label: 'Summary Demographics & PSA Standards',
       href: '/demographics',
     },
   ];
@@ -48,8 +55,8 @@ export default function Demographics() {
     <>
       <SEO
         title="Summary Demographics & PSA Classification Systems | BetterTrece"
-        description="Official summary demographics for Trece Martires City, Cavite (PSGC 042122000), COMELEC 2025 registered voters (121,194 voters), 13 Barangays census data, and PSA Standard Classification Systems."
-        keywords="Trece Martires summary demographics, registered voters 2025, COMELEC Trece, PSGC, PSA classification, Cavite census, 13 barangays"
+        description="Official summary demographics for Trece Martires City, Cavite (PSGC 042122000), COMELEC 2025 registered voters (121,194 voters), 13 Barangays census data, and PSA PSGC API standards."
+        keywords="Trece Martires summary demographics, registered voters 2025, COMELEC Trece, PSGC API, PSA classification, Cavite census, 13 barangays, Philippine Standard Geographic Code"
       />
 
       <main className="flex-grow bg-slate-50/50 pb-16">
@@ -73,7 +80,9 @@ export default function Demographics() {
                   <span className="px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 inline-flex items-center gap-1">
                     <Vote className="w-3 h-3" />
                     <span>
-                      {TRECE_VOTER_STATISTICS_2025.registeredVoters.toLocaleString()}{' '}
+                      <AnimatedCounter
+                        value={TRECE_VOTER_STATISTICS_2025.registeredVoters}
+                      />{' '}
                       Registered Voters (2025)
                     </span>
                   </span>
@@ -84,9 +93,10 @@ export default function Demographics() {
                 </h1>
 
                 <p className="text-sm sm:text-base text-blue-100/90 leading-relaxed">
-                  Explore summary demographics, COMELEC 2025 electoral registry,
-                  13 barangays population census, and the 9 Philippine
-                  Statistics Authority (PSA) Standard Classification Systems.
+                  Explore official summary demographics, COMELEC 2025 electoral
+                  registry, 13 barangays population census, integrated
+                  Philippine Statistics Authority (PSA) PSGC API data, and 9
+                  standard classification systems.
                 </p>
               </div>
 
@@ -105,13 +115,13 @@ export default function Demographics() {
           </div>
         </section>
 
-        {/* Tab Navigation */}
+        {/* Tab Navigation (Clean 2 Tabs) */}
         <div className="sticky top-0 z-20 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-xs">
           <div className="container mx-auto px-4 max-w-7xl">
             <div className="flex items-center gap-2 overflow-x-auto py-2">
               <button
                 onClick={() => setActiveTab('overview')}
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap ${
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap cursor-pointer ${
                   activeTab === 'overview'
                     ? 'bg-[#003893] text-white shadow-xs'
                     : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
@@ -123,7 +133,7 @@ export default function Demographics() {
 
               <button
                 onClick={() => setActiveTab('classifications')}
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap ${
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap cursor-pointer ${
                   activeTab === 'classifications'
                     ? 'bg-[#003893] text-white shadow-xs'
                     : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
@@ -154,9 +164,10 @@ export default function Demographics() {
                 </p>
               </div>
 
+              {/* 1. Electoral & Demographic Summary Cards + Unified Official PSA REST API Table */}
               <BarangayPsgcTable />
 
-              {/* Dataset Metadata & Provenance Callout */}
+              {/* 2. Dataset Metadata & Provenance Callout */}
               <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-xs">
                 <div className="flex items-center gap-2 mb-3 text-gray-900 font-bold text-base">
                   <Database className="w-5 h-5 text-[#003893]" />
@@ -170,8 +181,13 @@ export default function Demographics() {
                     <div className="font-bold text-gray-900">COMELEC EBAD</div>
                     <div className="text-gray-500 mt-0.5">
                       May 12, 2025 Elections (
-                      {TRECE_VOTER_STATISTICS_2025.registeredVoters.toLocaleString()}{' '}
-                      voters, {TRECE_VOTER_STATISTICS_2025.votingCenters}{' '}
+                      <AnimatedCounter
+                        value={TRECE_VOTER_STATISTICS_2025.registeredVoters}
+                      />{' '}
+                      voters,{' '}
+                      <AnimatedCounter
+                        value={TRECE_VOTER_STATISTICS_2025.votingCenters}
+                      />{' '}
                       centers)
                     </div>
                   </div>
@@ -181,11 +197,13 @@ export default function Demographics() {
                       Population Census
                     </div>
                     <div className="font-bold text-gray-900">
-                      PSA 2020 CPH &amp; 2015 POPCEN
+                      PSA 2024 POPCEN &amp; 2020 CPH
                     </div>
                     <div className="text-gray-500 mt-0.5">
-                      {TRECE_MUNICIPAL_PROFILE.totalPopulation2020.toLocaleString()}{' '}
-                      residents (+35.2% growth)
+                      <AnimatedCounter
+                        value={TRECE_MUNICIPAL_PROFILE.totalPopulation2024}
+                      />{' '}
+                      residents ({TRECE_MUNICIPAL_PROFILE.populationGrowthRate})
                     </div>
                   </div>
 
@@ -206,16 +224,20 @@ export default function Demographics() {
                       Land Area &amp; Status
                     </div>
                     <div className="font-bold text-gray-900">
-                      {TRECE_MUNICIPAL_PROFILE.totalLandAreaKm2} km²
+                      <AnimatedCounter
+                        value={TRECE_MUNICIPAL_PROFILE.totalLandAreaKm2}
+                        decimals={2}
+                      />{' '}
+                      km²
                     </div>
                     <div className="text-gray-500 mt-0.5">
-                      1st Class Component City (RA 981)
+                      2nd Class Component City (RA 981)
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Information Cards Strip */}
+              {/* 4. Information Cards Strip */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-5 pt-2">
                 <div className="bg-white p-5 rounded-2xl border border-gray-200 shadow-xs">
                   <div className="w-9 h-9 rounded-xl bg-blue-50 text-[#003893] flex items-center justify-center mb-3">

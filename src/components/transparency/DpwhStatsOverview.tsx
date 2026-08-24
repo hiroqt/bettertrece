@@ -1,4 +1,5 @@
 import { DpwhSummaryStats } from '../../data/dpwhTransparency';
+import { useCountUp } from '../../hooks/useCountUp';
 import {
   Building2,
   TrendingUp,
@@ -18,6 +19,15 @@ export default function DpwhStatsOverview({
   stats,
   currentFilter,
 }: DpwhStatsOverviewProps) {
+  // Smooth number counting animations on load / filter change
+  const animatedBudget = useCountUp(stats.totalBudget, 1000);
+  const animatedPaid = useCountUp(stats.totalPaid, 1000);
+  const animatedProgress = useCountUp(stats.avgProgress, 900);
+  const animatedCompleted = useCountUp(stats.completedCount, 750);
+  const animatedOngoing = useCountUp(stats.ongoingCount, 750);
+  const animatedTerminated = useCountUp(stats.terminatedCount, 750);
+  const animatedProjects = useCountUp(stats.totalProjects, 750);
+
   const formatPHP = (val: number) => {
     if (val >= 1_000_000_000) {
       return `₱${(val / 1_000_000_000).toFixed(2)}B`;
@@ -31,18 +41,18 @@ export default function DpwhStatsOverview({
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
       {/* Total Trece Martires Investment */}
-      <div className="bg-gradient-to-br from-[#00225e] to-[#003893] text-white p-5 rounded-2xl shadow-sm border border-blue-800/40 relative overflow-hidden">
+      <div className="bg-gradient-to-br from-[#00225e] to-[#003893] text-white p-5 rounded-2xl shadow-sm border border-blue-800/40 relative overflow-hidden transition-all">
         <div className="absolute top-0 right-0 -mr-4 -mt-4 w-24 h-24 bg-amber-400/10 rounded-full blur-xl pointer-events-none" />
         <div className="flex items-center justify-between text-blue-200 text-xs font-semibold mb-2">
           <span>CITY INFRASTRUCTURE BUDGET</span>
           <Landmark className="w-4 h-4 text-amber-300" />
         </div>
-        <div className="text-2xl sm:text-3xl font-black font-mono text-white">
-          {formatPHP(stats.totalBudget)}
+        <div className="text-2xl sm:text-3xl font-black font-mono text-white tracking-tight">
+          {formatPHP(animatedBudget)}
         </div>
         <div className="text-xs text-blue-100/90 mt-2 flex items-center gap-1.5 font-medium">
           <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-          <span>{stats.totalProjects} DPWH Projects in Trece Martires</span>
+          <span>{animatedProjects} DPWH Projects in Trece Martires</span>
         </div>
       </div>
 
@@ -52,8 +62,8 @@ export default function DpwhStatsOverview({
           <span>DISBURSED / COMPLETED VALUE</span>
           <Building2 className="w-4 h-4 text-[#003893]" />
         </div>
-        <div className="text-2xl sm:text-3xl font-black text-gray-900 font-mono">
-          {formatPHP(stats.totalPaid)}
+        <div className="text-2xl sm:text-3xl font-black text-gray-900 font-mono tracking-tight">
+          {formatPHP(animatedPaid)}
         </div>
         <div className="text-xs text-gray-500 mt-2 flex items-center gap-1">
           <MapPin className="w-3.5 h-3.5 text-[#003893]" />
@@ -68,15 +78,15 @@ export default function DpwhStatsOverview({
           <TrendingUp className="w-4 h-4 text-emerald-600" />
         </div>
         <div className="text-2xl sm:text-3xl font-black text-gray-900 font-mono flex items-baseline gap-2">
-          <span>{stats.avgProgress}%</span>
+          <span>{animatedProgress}%</span>
           <span className="text-xs font-semibold text-emerald-600">
             Completion
           </span>
         </div>
         <div className="w-full bg-gray-100 rounded-full h-2 mt-3 overflow-hidden">
           <div
-            className="bg-emerald-500 h-2 rounded-full transition-all duration-500"
-            style={{ width: `${Math.min(100, stats.avgProgress)}%` }}
+            className="bg-emerald-500 h-2 rounded-full transition-all duration-700 ease-out"
+            style={{ width: `${Math.min(100, animatedProgress)}%` }}
           />
         </div>
       </div>
@@ -92,14 +102,14 @@ export default function DpwhStatsOverview({
             <span className="text-xs text-gray-500 font-medium">Completed</span>
             <span className="text-lg font-bold text-emerald-700 font-mono flex items-center gap-1">
               <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-              {stats.completedCount}
+              {animatedCompleted}
             </span>
           </div>
           <div className="h-8 w-px bg-gray-200" />
           <div className="flex flex-col">
             <span className="text-xs text-gray-500 font-medium">On-Going</span>
             <span className="text-lg font-bold text-amber-600 font-mono">
-              {stats.ongoingCount}
+              {animatedOngoing}
             </span>
           </div>
           <div className="h-8 w-px bg-gray-200" />
@@ -108,7 +118,7 @@ export default function DpwhStatsOverview({
               Terminated
             </span>
             <span className="text-lg font-bold text-gray-400 font-mono">
-              {stats.terminatedCount}
+              {animatedTerminated}
             </span>
           </div>
         </div>

@@ -10,6 +10,7 @@ import Government from './pages/Government';
 import Demographics from './pages/Demographics';
 import DpwhTransparency from './pages/DpwhTransparency';
 import Search from './pages/Search';
+import About from './pages/About';
 import { isMeilisearchEnabled } from './lib/meilisearch';
 import { BrowserRouter as Router, Routes, Route } from 'react-router';
 
@@ -23,6 +24,8 @@ function App() {
             <ScrollToTop />
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/why-i-built-this" element={<About />} />
               <Route path="/demographics" element={<Demographics />} />
               <Route path="/municipal-profile" element={<Demographics />} />
               <Route path="/transparency" element={<DpwhTransparency />} />

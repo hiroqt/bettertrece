@@ -24,11 +24,12 @@ Data from the **Commission on Elections (COMELEC) Election and Barangay Affairs 
 | **City PSGC Code**         | `042122000`                               | Philippine Statistics Authority (PSA)         |
 | **Province Code**          | Cavite (`042100000` / `21`)               | PSA Standard Geographic Code                  |
 | **Region**                 | Region IV-A (CALABARZON, `040000000`)     | PSA Geographic Hierarchy                      |
-| **2020 Census Population** | **210,503 residents**                     | PSA 2020 Census of Population & Housing (CPH) |
+| **2024 POPCEN Population** | **227,892 residents**                     | Official PSA 2024 POPCEN Census               |
+| **2020 Census Population** | 210,503 residents                         | PSA 2020 Census of Population & Housing (CPH) |
 | **2015 Census Population** | 155,713 residents                         | PSA 2015 Census of Population                 |
 | **Annual Growth Rate**     | **6.20% per annum**                       | Intercensal Population Growth                 |
 | **Total Land Area**        | 39.17 km²                                 | City Planning & Development Office (CPDO)     |
-| **Income Classification**  | 1st Class Component City                  | Department of Finance (DOF) / BLGF            |
+| **Income Classification**  | 2nd Class Component City                  | Department of Finance (DOF) / BLGF            |
 | **Constituent Barangays**  | 13 Barangays (All Named after 13 Martyrs) | Republic Act No. 981                          |
 
 > [!TIP]
@@ -40,21 +41,21 @@ Data from the **Commission on Elections (COMELEC) Election and Barangay Affairs 
 
 Trece Martires is unique in the Philippines: each of its thirteen barangays is named in honor of one of the **Thirteen Martyrs of Cavite (Trece Martires de Cavite)** executed on September 12, 1896.
 
-| Barangay                    | PSGC Code   | Type     | 2015 Census | 2020 Census | Growth (%) |
-| :-------------------------- | :---------- | :------- | :---------- | :---------- | :--------- |
-| **Aguado**                  | `042122001` | Urban    | 22,120      | 36,248      | +63.9%     |
-| **Cabuco**                  | `042122002` | Urban    | 12,890      | 19,412      | +50.6%     |
-| **Conchu**                  | `042122003` | Suburban | 9,745       | 14,230      | +46.0%     |
-| **De Ocampo**               | `042122004` | Urban    | 11,450      | 14,890      | +30.0%     |
-| **Gregorio**                | `042122005` | Suburban | 6,820       | 8,940       | +31.1%     |
-| **Hugo Perez**              | `042122006` | Urban    | 34,150      | 48,920      | +43.2%     |
-| **Inocencio**               | `042122007` | Urban    | 16,800      | 21,540      | +28.2%     |
-| **Lallana**                 | `042122008` | Suburban | 5,410       | 7,120       | +31.6%     |
-| **Lapidario**               | `042122009` | Urban    | 8,910       | 10,450      | +17.3%     |
-| **Luciano**                 | `042122010` | Urban    | 12,400      | 16,180      | +30.5%     |
-| **Osorio**                  | `042122011` | Urban    | 6,120       | 8,250       | +34.8%     |
-| **Perez**                   | `042122012` | Rural    | 3,950       | 5,125       | +29.7%     |
-| **San Agustin (Poblacion)** | `042122013` | Urban    | 4,948       | 5,490       | +11.0%     |
+| Barangay                    | PSGC Code   | Type     | 2015 Census | 2020 Census | 2024 POPCEN | Growth (%) |
+| :-------------------------- | :---------- | :------- | :---------- | :---------- | :---------- | :--------- |
+| **Aguado**                  | `042122001` | Urban    | 22,120      | 36,248      | **39,240**  | +77.4%     |
+| **Cabezas**                 | `042122002` | Suburban | 3,950       | 5,125       | **5,542**   | +40.3%     |
+| **Cabuco**                  | `042122003` | Urban    | 12,890      | 19,412      | **20,980**  | +62.8%     |
+| **Conchu**                  | `042122004` | Suburban | 9,745       | 14,230      | **15,380**  | +57.8%     |
+| **De Ocampo**               | `042122005` | Urban    | 11,450      | 14,890      | **16,090**  | +40.5%     |
+| **Gregorio**                | `042122006` | Suburban | 6,820       | 8,940       | **9,670**   | +41.8%     |
+| **Hugo Perez**              | `042122007` | Urban    | 34,150      | 48,920      | **52,860**  | +54.8%     |
+| **Inocencio**               | `042122008` | Urban    | 16,800      | 21,540      | **23,280**  | +38.6%     |
+| **Lallana**                 | `042122009` | Suburban | 5,410       | 7,120       | **7,690**   | +42.1%     |
+| **Lapidario**               | `042122010` | Urban    | 8,910       | 10,450      | **11,290**  | +26.7%     |
+| **Luciano**                 | `042122011` | Urban    | 12,400      | 16,180      | **17,490**  | +41.0%     |
+| **Osorio**                  | `042122012` | Urban    | 6,120       | 8,250       | **8,920**   | +45.8%     |
+| **San Agustin (Poblacion)** | `042122013` | Urban    | 4,948       | 5,490       | **5,940**   | +20.0%     |
 
 ---
 
