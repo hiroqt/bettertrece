@@ -30,28 +30,41 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-[#0b1329] text-white border-t border-slate-800">
-      <div className="container mx-auto px-4 pt-12 pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-          {/* Brand Column (2 cols on lg) */}
-          <div className="lg:col-span-2 space-y-4">
+    <footer className="relative bg-[#0b1329] text-white border-t border-slate-800 overflow-hidden">
+      {/* Monument Artistic Graphic Watermark */}
+      <div
+        className="absolute right-0 bottom-0 top-0 w-full sm:w-2/3 lg:w-1/2 bg-contain bg-no-repeat bg-right-bottom opacity-15 pointer-events-none mix-blend-luminosity filter contrast-125"
+        style={{
+          backgroundImage: `url('/images/trece-martires-monument.png')`,
+          maskImage:
+            'linear-gradient(to left, rgba(0,0,0,0.8) 0%, transparent 100%)',
+          WebkitMaskImage:
+            'linear-gradient(to left, rgba(0,0,0,0.8) 0%, transparent 100%)',
+        }}
+      />
+
+      {/* Decorative ambient gradient glows */}
+      <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="container mx-auto px-4 pt-12 pb-8 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
+          {/* Brand Column (5 cols on lg) */}
+          <div className="lg:col-span-5 space-y-4">
             <div className="bg-white/5 p-3 rounded-2xl inline-block border border-white/10">
-              <BetterTreceLogo />
+              <BetterTreceLogo isLight={true} />
             </div>
 
             <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-sm">
               BetterTrece.org is an open-source civic initiative providing
               residents, businesses, and visitors of Trece Martires City, Cavite
-              with transparent and accessible information.
+              with transparent, accessible, and verified information.
             </p>
 
             <div className="space-y-1.5 text-xs text-slate-300">
               <div className="flex items-center gap-2">
                 <MapPin className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                <span>
-                  Governor's Drive, San Agustin, Trece Martires City, Cavite
-                  4109
-                </span>
+                <span>Trece Martires City, Cavite 4109</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-3.5 h-3.5 text-amber-400 shrink-0" />
@@ -77,13 +90,16 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Navigation Columns */}
-          {footerNavigation.mainSections.map(section => (
-            <div key={section.title}>
+          {/* Navigation Columns: Quick Links (4 cols) & Resources (3 cols) */}
+          {footerNavigation.mainSections.map((section, idx) => (
+            <div
+              key={section.title}
+              className={idx === 0 ? 'lg:col-span-4' : 'lg:col-span-3'}
+            >
               <h3 className="text-sm font-bold text-white uppercase tracking-wider mb-3.5">
                 {section.title}
               </h3>
-              <ul className="space-y-2">
+              <ul className="space-y-2.5">
                 {section.links.map(link => (
                   <li key={link.label}>
                     {link.href.startsWith('http') ? (
@@ -91,17 +107,21 @@ const Footer: React.FC = () => {
                         href={link.href}
                         target="_blank"
                         rel="noreferrer"
-                        className="text-slate-400 hover:text-white text-xs transition-colors inline-flex items-center gap-1"
+                        className="text-slate-400 hover:text-white text-xs transition-colors inline-flex items-center gap-1.5 group"
                       >
-                        {link.label}
-                        <ExternalLink className="w-2.5 h-2.5 opacity-60" />
+                        <span className="group-hover:translate-x-0.5 transition-transform">
+                          {link.label}
+                        </span>
+                        <ExternalLink className="w-3 h-3 opacity-60 group-hover:opacity-100" />
                       </a>
                     ) : (
                       <Link
                         to={link.href}
-                        className="text-slate-400 hover:text-white text-xs transition-colors"
+                        className="text-slate-400 hover:text-white text-xs transition-colors inline-flex items-center gap-1 group"
                       >
-                        {link.label}
+                        <span className="group-hover:translate-x-0.5 transition-transform">
+                          {link.label}
+                        </span>
                       </Link>
                     )}
                   </li>

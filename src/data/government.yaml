@@ -41,7 +41,7 @@ categories:
     description: 'Access local government reports, statistical data, and performance metrics.'
     icon: 'ChartBar'
     subcategories:
-      - name: 'City Demographics & 13 Barangays'
+      - name: 'Summary Demographics'
         slug: 'demographics'
       - name: 'PSA Standard Classification Systems'
         slug: 'psa-classifications'

@@ -1,9 +1,10 @@
 {
   "GOVERNMENT_NAME": "City of Trece Martires",
-  "MAYOR": "Gemma B. Lubigan",
+  "MAYOR": "Hon. Gemma Buendia-Lubigan",
   "MAYOR_HE_SHE": "she",
   "HONORIFIC_TITLE": "Honorable",
-  "VICE_MAYOR": "Romeo L. Montehermoso Jr.",
+  "VICE_MAYOR": "Hon. Romeo Bobby Montehermoso Jr.",
   "VICE_MAYOR_HE_SHE": "he",
-  "YEAR_ELECTED": "2025"
+  "TERM": "2023–2026",
+  "LAST_VERIFIED": "2026-08-24"
 }

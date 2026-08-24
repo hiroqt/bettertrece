@@ -1,165 +1,65 @@
-# Your Mayor
+# Executive Leadership — City of Trece Martires
 
-Find out about your Mayor and Vice Mayor, including upcoming events, the Mayor's Community Assistance Program, mayoral history, and information about other historic roles in the local government unit.
-
----
-
-# Your Mayor and Vice Mayor
-
-The **Mayor** is the chief executive official of the **Local Government Unit of {GOVERNMENT_NAME}**. The Mayor is elected by residents during the **Philippine National and Local Elections**, which are held every three years.
-
-The Mayor serves as the head of the local government and is responsible for implementing programs, policies, and development initiatives approved by the **Sangguniang Panlungsod / Sangguniang Bayan (City or Municipal Council)**.
-
-The Mayor’s duties include representing the LGU during official functions, leading local development programs, overseeing city or municipal services, and ensuring that public services are effectively delivered to residents.
-
-The **current Mayor is {MAYOR}.**
-
-**Mayor {MAYOR}** was elected as **Mayor of {GOVERNMENT_NAME}** during the **{YEAR_ELECTED} National and Local Elections**.
+Find information about the executive leadership of the City of Trece Martires, including the City Mayor, City Vice Mayor, official duties, executive mandate, and public services for the 2023–2026 term.
 
 ---
 
-## Mayor of {GOVERNMENT_NAME}
+## Executive Officials (Term 2023–2026)
 
-**Image Caption**
-
-Mayor of **{GOVERNMENT_NAME}**, **{MAYOR}**
-
----
-
-### Biography of the Mayor
-
-Mayor **{MAYOR}** has been serving the people of **{GOVERNMENT_NAME}** since **{YEAR_ELECTED}**.
-
-Mayor **{MAYOR}** is known for championing initiatives related to:
-
-- Local economic development
-- Public health and social services
-- Infrastructure and urban development
-- Community empowerment and participation
-
-Outside of official duties, Mayor **{MAYOR}** works closely with barangay leaders, civic organizations, and private sector partners to support programs that benefit the community.
+| Level    | Position            | Official Name                         | Status / Role                   | Last Verified |
+| :------- | :------------------ | :------------------------------------ | :------------------------------ | :------------ |
+| **City** | **City Mayor**      | **Hon. Gemma Buendia-Lubigan**        | Chief Executive Officer         | `2026-08-24`  |
+| **City** | **City Vice Mayor** | **Hon. Romeo Bobby Montehermoso Jr.** | Presiding Officer, City Council | `2026-08-24`  |
 
 ---
 
-### Mayor's Community Assistance Program
+## Office of the City Mayor
 
-During the current term, Mayor **{MAYOR}** supports several initiatives aimed at improving the welfare of residents under the theme **"[PROGRAM THEME]"**.
+The **City Mayor** is the chief executive official of the **Local Government Unit of the City of Trece Martires**. The Mayor is elected by registered voters during the **Philippine National and Local Elections**.
 
-Programs supported include:
+The Mayor serves as the head of the city government and is responsible for implementing local programs, policies, executive orders, and development initiatives approved by the **Sangguniang Panlungsod (City Council)**.
 
-- **[PROGRAM NAME 1]** – Supporting education and youth development
-- **[PROGRAM NAME 2]** – Providing livelihood assistance to families
-- **[PROGRAM NAME 3]** – Strengthening disaster preparedness and community resilience
+### Mandates and Responsibilities
 
-You can read more about these initiatives on the **Mayor's Community Programs page**.
-
----
-
-# Vice Mayor
+- **Executive Direction**: Leading city development programs and managing administrative offices.
+- **Public Welfare**: Ensuring public safety, health services, social welfare programs, and disaster resilience.
+- **Economic Growth**: Promoting local trade, micro-enterprise support, tourism, and business licensing reforms.
+- **Inter-Agency Coordination**: Collaborating with national agencies (DILG, DPWH, DSWD, PNP, BFP) and the 13 constituent barangays.
 
 ---
 
-## Biography of the Vice Mayor
+## Office of the City Vice Mayor
 
-**{VICE_MAYOR}** currently serves as the **Vice Mayor of {GOVERNMENT_NAME}**.
+The **Vice Mayor** serves as the presiding officer of the **Sangguniang Panlungsod (City Council)**, ensuring that legislative sessions are conducted properly and that city ordinances and resolutions effectively address community needs.
 
-The Vice Mayor presides over the **Sangguniang Panlungsod / Sangguniang Bayan**, ensuring legislative sessions run properly and that ordinances and resolutions support the development goals of the local government.
+### Duties and Succession
 
-Vice Mayor **{VICE_MAYOR}** was elected during the **{YEAR_ELECTED} National and Local Elections**.
-
-Vice Mayor **{VICE_MAYOR}** supports initiatives focused on:
-
-- community welfare
-- legislative development
-- economic and social progress
+- **Presiding Officer**: Presides over regular and special legislative sessions of the Sangguniang Panlungsod.
+- **Acting Mayor**: Assumes the duties and powers of the City Mayor in cases of temporary absence or vacancy, in accordance with the Local Government Code of 1991 (Republic Act No. 7160).
+- **Civic Representation**: Represents the City of Trece Martires in ceremonial functions and public forums.
 
 ---
 
-# About the Office of the Vice Mayor
+## Municipal Leadership Hierarchy
 
-The **Vice Mayor** performs legislative functions and presides over meetings of the **City or Municipal Council**.
-
-When the Mayor is unable to perform official duties due to travel, illness, or other official commitments, the **Vice Mayor assumes responsibilities as Acting Mayor**, in accordance with Philippine local government laws.
-
-The Vice Mayor may also represent the city or municipality in official functions, civic ceremonies, and community events when designated by the Mayor.
-
----
-
-# Invite the Mayor to Your Event
-
-Residents, organizations, and institutions may invite the Mayor to attend official community activities such as:
-
-- community celebrations
-- school programs
-- civic ceremonies
-- government events
-
-To request the Mayor’s attendance, please submit a formal invitation to the **Office of the Mayor**.
-
-Required information:
-
-- Name of organization
-- Event title
-- Date and time
-- Event location
-- Contact person and details
+```
+Trece Martires City Government
+│
+├── Mayor: Hon. Gemma Buendia-Lubigan
+│   └── City Administrator & Executive Departments
+│
+├── Vice Mayor: Hon. Romeo Bobby Montehermoso Jr.
+│   └── Sangguniang Panlungsod (10 Councilors + ABC + SK)
+│
+└── 13 Constituent Barangays
+    └── Punong Barangays (Barangay Captains)
+```
 
 ---
 
-# Mayor's Events and News
+## Contact the Executive Offices
 
-Stay updated with the latest activities of the Mayor, including:
-
-- community visits
-- project launches
-- public consultations
-- official ceremonies
-
-Updates will be posted regularly on the **official website and social media channels of {GOVERNMENT_NAME}**.
-
----
-
-# Mayoral History and Key Facts
-
-The Office of the Mayor plays a vital role in guiding the development of **{GOVERNMENT_NAME}**.
-
-Key responsibilities include:
-
-- implementing local development plans
-- overseeing local government operations
-- managing emergency and disaster response
-- representing the LGU in regional and national engagements
-
-A historical list of previous mayors and key milestones of the city or municipality can be found on the **Mayoral History page**.
-
----
-
-# Other Historic Roles in the LGU
-
-The local government also recognizes other important civic and ceremonial roles that have contributed to the history of **{GOVERNMENT_NAME}**, including:
-
-- former municipal presidents
-- distinguished public servants
-- honorary community leaders
-
-These roles reflect the legacy of leadership and public service within the community.
-
----
-
-# Contact the Mayor's Office
-
-**Office of the Mayor**
-City/Municipal Hall of **{GOVERNMENT_NAME}**
-
-**Address:**
-[STREET ADDRESS]
-[CITY / PROVINCE / POSTAL CODE]
-
-**Telephone:**
-[PHONE NUMBER]
-
-**Email:**
-[EMAIL ADDRESS]
-
-**Website:**
-[OFFICIAL WEBSITE URL]
+- **Office**: Trece Martires City Hall Compound, Brgy. San Agustin (Poblacion), Trece Martires City, Cavite
+- **Hotlines**: (046) 419-0125 / (046) 419-0286 / 0961-992-1998
+- **Term**: 2023–2026
+- **Last Verified**: August 24, 2026

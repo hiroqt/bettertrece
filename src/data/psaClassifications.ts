@@ -28,6 +28,7 @@ export interface BarangayPsgcData {
   historicalName: string;
   type: string;
   desc: string;
+  captain?: string;
   population2015: number;
   population2020: number;
   growthRate: string;
@@ -279,21 +280,46 @@ export const PSA_CLASSIFICATIONS: PsaClassification[] = [
   },
 ];
 
-export const TRECE_CITY_DEMOGRAPHICS = {
-  cityName: 'City of Trece Martires',
+export const TRECE_MUNICIPAL_PROFILE = {
+  cityName: 'Trece Martires City',
+  officialTitle: 'City of Trece Martires (Capital of Cavite)',
   province: 'Cavite',
   region: 'Region IV-A (CALABARZON)',
-  psgcCityCode: '042122000',
+  psgc10DigitCode: '0402122000',
+  psgcCityCode: '0402122000',
+  correspondenceCode: '042122000',
   psgcProvinceCode: '042100000',
   psgcRegionCode: '040000000',
   charterYear: 1954,
   republicAct: 'Republic Act No. 981',
   totalLandAreaKm2: 39.17,
+  totalPopulation2024: 227892,
   totalPopulation2020: 210503,
   totalPopulation2015: 155713,
   populationGrowthRate: '6.20% per annum',
   totalBarangays: 13,
-  incomeClass: '1st Class Component City',
+  cityClassification: 'Component City',
+  incomeClass: '2nd Class',
+};
+
+export const TRECE_CITY_DEMOGRAPHICS = TRECE_MUNICIPAL_PROFILE;
+
+export const TRECE_VOTER_STATISTICS_2025 = {
+  electionName: 'May 12, 2025 National and Local Elections',
+  sourceAgency:
+    'Commission on Elections (COMELEC) - Election and Barangay Affairs Department (EBAD)',
+  asOfDate: 'January 23, 2025',
+  cityName: 'City of Trece Martires',
+  provinceName: 'Cavite',
+  regionName: 'Region IV-A (CALABARZON)',
+  registeredVoters: 121194,
+  establishedPrecincts: 783,
+  clusteredPrecincts: 136,
+  votingCenters: 20,
+  caviteProvinceTotalVoters: 2447362,
+  caviteProvinceVotingCenters: 467,
+  caviteProvinceClusteredPrecincts: 2991,
+  caviteProvinceEstablishedPrecincts: 15797,
 };
 
 export const TRECE_BARANGAYS_PSGC: BarangayPsgcData[] = [
@@ -303,6 +329,7 @@ export const TRECE_BARANGAYS_PSGC: BarangayPsgcData[] = [
     historicalName: 'Named after Eugenio Cabezas / Crispulo Aguado',
     type: 'Residential & Community',
     desc: 'Dense residential subdivisions, community clinics, and youth education centers.',
+    captain: 'Jaimer M. Sierra',
     population2015: 22120,
     population2020: 36248,
     growthRate: '+63.9%',
@@ -314,6 +341,7 @@ export const TRECE_BARANGAYS_PSGC: BarangayPsgcData[] = [
     historicalName: 'Named after Feliciano Cabuco',
     type: 'Growing Urban Corridor',
     desc: 'Rapidly growing residential zones, transport terminals, and commercial centers.',
+    captain: 'Mark Albert Montehermoso',
     population2015: 12890,
     population2020: 19412,
     growthRate: '+50.6%',
@@ -325,6 +353,7 @@ export const TRECE_BARANGAYS_PSGC: BarangayPsgcData[] = [
     historicalName: 'Named after Agapito Conchu',
     type: 'Agri-Residential Zone',
     desc: 'Green spaces, agricultural enterprises, and expanding housing developments.',
+    captain: 'Irene R. Aure',
     population2015: 9745,
     population2020: 14230,
     growthRate: '+46.0%',
@@ -336,6 +365,7 @@ export const TRECE_BARANGAYS_PSGC: BarangayPsgcData[] = [
     historicalName: 'Named after Francisco Ocampo',
     type: 'Commercial & Transport Hub',
     desc: 'High-density commercial avenue along Trece-Indang Road with banks and retailers.',
+    captain: 'Nelson Lubigan Montehermoso',
     population2015: 11450,
     population2020: 14890,
     growthRate: '+30.0%',
@@ -347,6 +377,7 @@ export const TRECE_BARANGAYS_PSGC: BarangayPsgcData[] = [
     historicalName: 'Named after Maximo Gregorio',
     type: 'Residential Community',
     desc: 'Peaceful residential neighborhoods with local primary schools and barangay hall.',
+    captain: 'Eliseo C. Dela Luya',
     population2015: 6820,
     population2020: 8940,
     growthRate: '+31.1%',
@@ -358,6 +389,7 @@ export const TRECE_BARANGAYS_PSGC: BarangayPsgcData[] = [
     historicalName: 'Named after Hugo Perez',
     type: 'Major Urban & Enterprise Corridor',
     desc: 'Major population center with industrial parks, enterprise strips, and schools.',
+    captain: 'Raymundo A. Villa',
     population2015: 34150,
     population2020: 48920,
     growthRate: '+43.2%',
@@ -369,6 +401,7 @@ export const TRECE_BARANGAYS_PSGC: BarangayPsgcData[] = [
     historicalName: 'Named after Maximo Inocencio',
     type: 'Civic & Educational Hub',
     desc: 'Active civic center, school zones, and thriving local market stalls.',
+    captain: 'Rosendo P. Dilidli',
     population2015: 16800,
     population2020: 21540,
     growthRate: '+28.2%',
@@ -380,6 +413,7 @@ export const TRECE_BARANGAYS_PSGC: BarangayPsgcData[] = [
     historicalName: 'Named after Antonio San Agustin / Lallana',
     type: 'Community & Livelihood',
     desc: 'Livelihood cooperatives, farming plots, and suburban residences.',
+    captain: 'Cecilia M. Decillo',
     population2015: 5410,
     population2020: 7120,
     growthRate: '+31.6%',
@@ -391,6 +425,7 @@ export const TRECE_BARANGAYS_PSGC: BarangayPsgcData[] = [
     historicalName: 'Named after Severino Lapidario',
     type: 'Historic & Civic District',
     desc: 'Central historical district, community civic spaces, and public facilities.',
+    captain: 'Remelyn D. Sierra',
     population2015: 8910,
     population2020: 10450,
     growthRate: '+17.3%',
@@ -402,6 +437,7 @@ export const TRECE_BARANGAYS_PSGC: BarangayPsgcData[] = [
     historicalName: 'Named after Victoriano Luciano',
     type: 'Institutional & Healthcare Hub',
     desc: 'Home of General Emilio Aguinaldo Memorial Hospital (GEAMH) and provincial annexes.',
+    captain: 'Luisito R. Diloy',
     population2015: 12400,
     population2020: 16180,
     growthRate: '+30.5%',
@@ -413,6 +449,7 @@ export const TRECE_BARANGAYS_PSGC: BarangayPsgcData[] = [
     historicalName: 'Named after Francisco Osorio',
     type: 'Commercial & Transport Junction',
     desc: 'Key junction along Governor’s Drive with commercial centers and transport loops.',
+    captain: 'Robert E. Penus',
     population2015: 6120,
     population2020: 8250,
     growthRate: '+34.8%',
@@ -421,9 +458,10 @@ export const TRECE_BARANGAYS_PSGC: BarangayPsgcData[] = [
   {
     psgcCode: '042122012',
     name: 'Perez',
-    historicalName: 'Named after Perez family / Martyrs',
+    historicalName: 'Named after Perez family / Martyrs (Cabezas)',
     type: 'Rural Health & Community',
     desc: 'Barangay health centers, community chapels, and active farmers cooperatives.',
+    captain: 'Jaddy C. Alarca',
     population2015: 3950,
     population2020: 5125,
     growthRate: '+29.7%',
@@ -435,6 +473,7 @@ export const TRECE_BARANGAYS_PSGC: BarangayPsgcData[] = [
     historicalName: 'Seat of City Hall & Provincial Capitol',
     type: 'City Proper / Government Capitol',
     desc: 'The official seat of Trece Martires City Hall, Cavite Provincial Capitol, and courts.',
+    captain: 'Cornelio L. De Sagun',
     population2015: 4948,
     population2020: 5490,
     growthRate: '+11.0%',

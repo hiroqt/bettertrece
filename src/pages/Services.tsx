@@ -52,16 +52,18 @@ const Services: React.FC = () => {
           description={`All services provided by the ${import.meta.env.VITE_GOVERNMENT_NAME} government. Find what you need for citizenship, business, education, and more.`}
           keywords="government services, public services, local government, civic services"
         />
-        <ServicesSection
-          title={`All local government services`}
-          description={`All services provided by the ${import.meta.env.VITE_GOVERNMENT_NAME} government. Find what you need for citizenship, business, education, and more.`}
-        />
+        <div className="pt-28 sm:pt-32">
+          <ServicesSection
+            title={`All local government services`}
+            description={`All services provided by the ${import.meta.env.VITE_GOVERNMENT_NAME} government. Find what you need for citizenship, business, education, and more.`}
+          />
+        </div>
       </>
     );
   }
   if (!categoryData) {
     return (
-      <Section className="p-3 mb-12">
+      <Section className="p-3 mb-12 pt-32 sm:pt-36">
         <Breadcrumbs className="mb-8" />
         <Banner
           type="error"
@@ -80,7 +82,7 @@ const Services: React.FC = () => {
         description={categoryData.description}
         keywords={`${categoryData.category}, government services, public services, local government`}
       />
-      <Section className="p-3 mb-12">
+      <Section className="p-3 mb-12 pt-32 sm:pt-36">
         <Breadcrumbs className="mb-8" />
         <Icon className="h-8 w-8 mb-4 text-primary-600 rounded-md" />
         <Heading>{categoryData.category || category}</Heading>

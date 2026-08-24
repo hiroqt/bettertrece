@@ -5,7 +5,10 @@ import Section from '../components/ui/Section';
 import Breadcrumbs from '../components/ui/Breadcrumbs';
 import BarangayPsgcTable from '../components/demographics/BarangayPsgcTable';
 import PsaClassificationExplorer from '../components/demographics/PsaClassificationExplorer';
-import { TRECE_CITY_DEMOGRAPHICS } from '../data/psaClassifications';
+import {
+  TRECE_MUNICIPAL_PROFILE,
+  TRECE_VOTER_STATISTICS_2025,
+} from '../data/psaClassifications';
 import {
   Users,
   MapPin,
@@ -13,6 +16,7 @@ import {
   ExternalLink,
   BookOpen,
   Database,
+  Vote,
 } from 'lucide-react';
 
 const getTabFromHash = (hash: string): 'overview' | 'classifications' => {
@@ -34,20 +38,23 @@ export default function Demographics() {
   const breadcrumbItems = [
     { label: 'Home', href: '/' },
     { label: 'Statistics', href: '/government/reports-and-statistics' },
-    { label: 'City Demographics & PSA Classifications', href: '/demographics' },
+    {
+      label: 'Summary Demographics & PSA Classifications',
+      href: '/demographics',
+    },
   ];
 
   return (
     <>
       <SEO
-        title="City Demographics & PSA Classification Systems | BetterTrece"
-        description="Comprehensive demographic data for Trece Martires City, Cavite (PSGC 042122000), 13 Barangays census data, and official Philippine Statistics Authority (PSA) Standard Classification Systems."
-        keywords="Trece Martires demographics, PSGC, PSA classification, PSOC, PCOICOP, PSIC, PCPC, PSCC, PSCED, PSCCS, PTSCS, Cavite census, open data"
+        title="Summary Demographics & PSA Classification Systems | BetterTrece"
+        description="Official summary demographics for Trece Martires City, Cavite (PSGC 042122000), COMELEC 2025 registered voters (121,194 voters), 13 Barangays census data, and PSA Standard Classification Systems."
+        keywords="Trece Martires summary demographics, registered voters 2025, COMELEC Trece, PSGC, PSA classification, Cavite census, 13 barangays"
       />
 
       <main className="flex-grow bg-slate-50/50 pb-16">
         {/* Top Header Banner */}
-        <section className="bg-gradient-to-r from-slate-900 via-[#00225e] to-[#003893] text-white py-10 sm:py-14 border-b border-blue-900/40 shadow-inner">
+        <section className="bg-gradient-to-r from-slate-900 via-[#00225e] to-[#003893] text-white pt-36 sm:pt-40 lg:pt-44 pb-10 sm:pb-14 border-b border-blue-900/40 shadow-inner">
           <div className="container mx-auto px-4 max-w-7xl">
             <Breadcrumbs
               items={breadcrumbItems}
@@ -58,22 +65,28 @@ export default function Demographics() {
               <div className="space-y-3 max-w-3xl">
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider bg-amber-400/20 text-amber-300 border border-amber-400/30">
-                    Official Statistics &amp; Standards
+                    Official Municipal Profile
                   </span>
                   <span className="px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-white/10 text-blue-100">
-                    PSA Reference: {TRECE_CITY_DEMOGRAPHICS.psgcCityCode}
+                    PSGC: {TRECE_MUNICIPAL_PROFILE.psgcCityCode}
+                  </span>
+                  <span className="px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 inline-flex items-center gap-1">
+                    <Vote className="w-3 h-3" />
+                    <span>
+                      {TRECE_VOTER_STATISTICS_2025.registeredVoters.toLocaleString()}{' '}
+                      Registered Voters (2025)
+                    </span>
                   </span>
                 </div>
 
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
-                  Trece Martires Demographics &amp; PSA Classifications
+                  Trece Martires Summary Demographics &amp; PSA Standards
                 </h1>
 
                 <p className="text-sm sm:text-base text-blue-100/90 leading-relaxed">
-                  Explore official demographic metrics, 13 barangays census
-                  statistics, and the 9 Philippine Statistics Authority (PSA)
-                  Standard Classification Systems for civic research, planning,
-                  and open-data API integration.
+                  Explore summary demographics, COMELEC 2025 electoral registry,
+                  13 barangays population census, and the 9 Philippine
+                  Statistics Authority (PSA) Standard Classification Systems.
                 </p>
               </div>
 
@@ -105,7 +118,7 @@ export default function Demographics() {
                 }`}
               >
                 <Users className="w-4 h-4" />
-                <span>City Demographics &amp; 13 Barangays</span>
+                <span>Summary Demographics</span>
               </button>
 
               <button
@@ -129,16 +142,15 @@ export default function Demographics() {
             <Section className="space-y-8">
               <div>
                 <span className="text-xs font-bold uppercase tracking-wider text-[#003893] bg-blue-50 px-2.5 py-1 rounded">
-                  Geographic &amp; Census Overview
+                  Municipal &amp; Electoral Profile
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mt-2">
-                  Trece Martires City Demographics &amp; PSGC Directory
+                  Summary Demographics &amp; PSGC Directory
                 </h2>
                 <p className="text-sm text-gray-600 mt-1 max-w-3xl">
-                  Official Philippine Standard Geographic Code (PSGC) registry
-                  and population census data from the Philippine Statistics
-                  Authority (PSA) for Trece Martires City and its 13 constituent
-                  barangays.
+                  Official summary demographics from the Philippine Statistics
+                  Authority (PSA), COMELEC May 2025 voter registration
+                  statistics, and 13 constituent barangays geocode registry.
                 </p>
               </div>
 
@@ -148,30 +160,32 @@ export default function Demographics() {
               <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-xs">
                 <div className="flex items-center gap-2 mb-3 text-gray-900 font-bold text-base">
                   <Database className="w-5 h-5 text-[#003893]" />
-                  <h3>About the Displayed Dataset</h3>
+                  <h3>About the Displayed Datasets &amp; Sources</h3>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
                   <div className="bg-slate-50 p-3.5 rounded-xl border border-slate-100">
                     <div className="text-gray-500 font-semibold mb-1">
-                      Primary Source
+                      Electoral Registry Data
                     </div>
-                    <div className="font-bold text-gray-900">
-                      Philippine Statistics Authority (PSA)
-                    </div>
+                    <div className="font-bold text-gray-900">COMELEC EBAD</div>
                     <div className="text-gray-500 mt-0.5">
-                      Republic of the Philippines
+                      May 12, 2025 Elections (
+                      {TRECE_VOTER_STATISTICS_2025.registeredVoters.toLocaleString()}{' '}
+                      voters, {TRECE_VOTER_STATISTICS_2025.votingCenters}{' '}
+                      centers)
                     </div>
                   </div>
 
                   <div className="bg-slate-50 p-3.5 rounded-xl border border-slate-100">
                     <div className="text-gray-500 font-semibold mb-1">
-                      Census Period
+                      Population Census
                     </div>
                     <div className="font-bold text-gray-900">
-                      2020 CPH &amp; 2015 POPCEN
+                      PSA 2020 CPH &amp; 2015 POPCEN
                     </div>
                     <div className="text-gray-500 mt-0.5">
-                      Intercensal Growth: +35.2%
+                      {TRECE_MUNICIPAL_PROFILE.totalPopulation2020.toLocaleString()}{' '}
+                      residents (+35.2% growth)
                     </div>
                   </div>
 
@@ -189,11 +203,13 @@ export default function Demographics() {
 
                   <div className="bg-slate-50 p-3.5 rounded-xl border border-slate-100">
                     <div className="text-gray-500 font-semibold mb-1">
-                      City Land Area
+                      Land Area &amp; Status
                     </div>
-                    <div className="font-bold text-gray-900">39.17 km²</div>
+                    <div className="font-bold text-gray-900">
+                      {TRECE_MUNICIPAL_PROFILE.totalLandAreaKm2} km²
+                    </div>
                     <div className="text-gray-500 mt-0.5">
-                      CPDO / City Hall Records
+                      1st Class Component City (RA 981)
                     </div>
                   </div>
                 </div>

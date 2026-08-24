@@ -6,9 +6,9 @@ description: 'Access local government reports, statistical data, demographics, a
 layout: 'grid'
 
 pages:
-  - name: 'City Demographics & 13 Barangays'
+  - name: 'Summary Demographics'
     slug: 'demographics'
-    description: 'Official population census data, land area metrics, and Philippine Standard Geographic Code (PSGC) registry for Trece Martires City and its 13 constituent barangays.'
+    description: 'Official municipal profile, COMELEC May 2025 registered voters (121,194 voters), PSA population census data, and Philippine Standard Geographic Code (PSGC) registry for Trece Martires City and its 13 constituent barangays.'
   - name: 'PSA Standard Classification Systems'
     slug: 'psa-classifications'
     description: 'Access the 9 Philippine Statistics Authority (PSA) Standard Classification Systems (PSGC, PSOC, PCOICOP, PSIC, PCPC, PSCC, PSCED, PSCCS, PTSCS) and REST API documentation.'

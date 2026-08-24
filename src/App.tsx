@@ -24,6 +24,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/demographics" element={<Demographics />} />
+              <Route path="/municipal-profile" element={<Demographics />} />
               <Route path="/transparency" element={<DpwhTransparency />} />
               <Route path="/transparency/dpwh" element={<DpwhTransparency />} />
               <Route path="/services/:category" element={<Services />} />

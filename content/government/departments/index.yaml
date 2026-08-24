@@ -4,7 +4,14 @@
 pages:
   - name: 'Executive'
     slug: 'executive'
-    description: "Find out about your Mayor and Vice Mayor, including upcoming events, the Mayor's Community Assistance Program, mayoral history, and information about other historic roles in the local government unit."
+    description: "Find out about your Mayor and Vice Mayor, including official duties, executive leadership, term 2023–2026, and community assistance programs."
   - name: 'Legislative'
     slug: 'legislative'
-    description: 'As of the current term, the Sangguniang Panlungsod (City Council) of Trece Martires City has elected councilors, with the Vice Mayor as the presiding officer of the council.'
+    description: 'Sangguniang Panlungsod (City Council) of Trece Martires City: 10 elected councilors, ABC President, and SK Federation President presided by the Vice Mayor.'
+  - name: 'Barangay Officials & Captains'
+    slug: 'barangays'
+    description: 'Official directory of the 13 Barangays of Trece Martires City and their elected Barangay Captains (Punong Barangay) for the 2023–2026 term.'
+  - name: 'Elected Officials & City Hierarchy'
+    slug: 'elected-officials'
+    description: 'Comprehensive municipal leadership hierarchy: Mayor, Vice Mayor, Sangguniang Panlungsod, ABC, SK, and all 13 Barangay Captains.'
+

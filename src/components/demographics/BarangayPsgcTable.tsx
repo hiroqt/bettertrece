@@ -1,7 +1,8 @@
 import { useState, useMemo } from 'react';
 import {
   TRECE_BARANGAYS_PSGC,
-  TRECE_CITY_DEMOGRAPHICS,
+  TRECE_MUNICIPAL_PROFILE,
+  TRECE_VOTER_STATISTICS_2025,
   BarangayPsgcData,
 } from '../../data/psaClassifications';
 import {
@@ -13,6 +14,10 @@ import {
   Users,
   MapPin,
   ArrowUpDown,
+  Vote,
+  CheckSquare2,
+  Layers,
+  School,
 } from 'lucide-react';
 
 export default function BarangayPsgcTable() {
@@ -36,7 +41,9 @@ export default function BarangayPsgcTable() {
         brgy.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         brgy.psgcCode.includes(searchQuery) ||
         brgy.type.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        brgy.historicalName.toLowerCase().includes(searchQuery.toLowerCase());
+        brgy.historicalName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        (brgy.captain &&
+          brgy.captain.toLowerCase().includes(searchQuery.toLowerCase()));
 
       const matchesFilter =
         filterType === 'All' || brgy.urbanRural === filterType;
@@ -69,22 +76,112 @@ export default function BarangayPsgcTable() {
   };
 
   return (
-    <div className="space-y-6">
-      {/* Demographic KPI Summary Cards */}
+    <div className="space-y-8">
+      {/* 1. ELECTORAL & REGISTERED VOTERS PROFILE (COMELEC 2025) */}
+      <div className="bg-gradient-to-br from-slate-900 via-[#00225e] to-indigo-950 text-white rounded-3xl p-6 sm:p-8 shadow-md border border-blue-900/40 relative overflow-hidden">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/10 pb-5 mb-6">
+          <div className="space-y-1">
+            <div className="flex items-center gap-2">
+              <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-400/20 text-amber-300 border border-amber-400/30 inline-flex items-center gap-1.5">
+                <Vote className="w-3.5 h-3.5" />
+                <span>Electoral &amp; Voters Profile</span>
+              </span>
+              <span className="text-[11px] font-mono text-blue-200">
+                {TRECE_VOTER_STATISTICS_2025.electionName}
+              </span>
+            </div>
+            <h3 className="text-xl sm:text-2xl font-black text-white">
+              City of Trece Martires — Official Voter Registry
+            </h3>
+            <p className="text-xs text-blue-200">
+              Based on official data from the{' '}
+              <strong>{TRECE_VOTER_STATISTICS_2025.sourceAgency}</strong> as of{' '}
+              <strong>{TRECE_VOTER_STATISTICS_2025.asOfDate}</strong>.
+            </p>
+          </div>
+
+          <div className="text-right shrink-0 hidden sm:block">
+            <div className="text-xs text-blue-300 uppercase tracking-wider font-semibold">
+              Cavite Province Total
+            </div>
+            <div className="text-lg font-bold font-mono text-white">
+              {TRECE_VOTER_STATISTICS_2025.caviteProvinceTotalVoters.toLocaleString()}{' '}
+              voters
+            </div>
+          </div>
+        </div>
+
+        {/* 4 Voter Stats Cards */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="bg-white/10 backdrop-blur-xs p-4 sm:p-5 rounded-2xl border border-white/15">
+            <div className="flex items-center justify-between text-blue-200 text-xs font-semibold mb-2">
+              <span>REGISTERED VOTERS</span>
+              <Users className="w-4 h-4 text-amber-300" />
+            </div>
+            <div className="text-2xl sm:text-3xl font-black font-mono text-white">
+              {TRECE_VOTER_STATISTICS_2025.registeredVoters.toLocaleString()}
+            </div>
+            <div className="text-[11px] text-blue-200 mt-2">
+              City of Trece Martires
+            </div>
+          </div>
+
+          <div className="bg-white/10 backdrop-blur-xs p-4 sm:p-5 rounded-2xl border border-white/15">
+            <div className="flex items-center justify-between text-blue-200 text-xs font-semibold mb-2">
+              <span>VOTING CENTERS</span>
+              <School className="w-4 h-4 text-emerald-300" />
+            </div>
+            <div className="text-2xl sm:text-3xl font-black font-mono text-white">
+              {TRECE_VOTER_STATISTICS_2025.votingCenters}
+            </div>
+            <div className="text-[11px] text-blue-200 mt-2">
+              Designated school centers
+            </div>
+          </div>
+
+          <div className="bg-white/10 backdrop-blur-xs p-4 sm:p-5 rounded-2xl border border-white/15">
+            <div className="flex items-center justify-between text-blue-200 text-xs font-semibold mb-2">
+              <span>CLUSTERED PRECINCTS</span>
+              <CheckSquare2 className="w-4 h-4 text-blue-300" />
+            </div>
+            <div className="text-2xl sm:text-3xl font-black font-mono text-white">
+              {TRECE_VOTER_STATISTICS_2025.clusteredPrecincts}
+            </div>
+            <div className="text-[11px] text-blue-200 mt-2">
+              Active clustered precincts
+            </div>
+          </div>
+
+          <div className="bg-white/10 backdrop-blur-xs p-4 sm:p-5 rounded-2xl border border-white/15">
+            <div className="flex items-center justify-between text-blue-200 text-xs font-semibold mb-2">
+              <span>ESTABLISHED PRECINCTS</span>
+              <Layers className="w-4 h-4 text-purple-300" />
+            </div>
+            <div className="text-2xl sm:text-3xl font-black font-mono text-white">
+              {TRECE_VOTER_STATISTICS_2025.establishedPrecincts}
+            </div>
+            <div className="text-[11px] text-blue-200 mt-2">
+              Total established precincts
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 2. DEMOGRAPHIC & GEOGRAPHIC INDICATORS */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="bg-gradient-to-br from-blue-900 to-indigo-900 text-white p-5 rounded-2xl shadow-sm border border-blue-800/40">
-          <div className="flex items-center justify-between text-blue-200 text-xs font-semibold mb-2">
+        <div className="bg-white p-5 rounded-2xl border border-gray-200 shadow-xs">
+          <div className="flex items-center justify-between text-gray-500 text-xs font-semibold mb-2">
             <span>TOTAL POPULATION (2020)</span>
-            <Users className="w-4 h-4 text-blue-300" />
+            <Users className="w-4 h-4 text-[#003893]" />
           </div>
-          <div className="text-2xl sm:text-3xl font-black font-mono">
-            {TRECE_CITY_DEMOGRAPHICS.totalPopulation2020.toLocaleString()}
+          <div className="text-2xl sm:text-3xl font-black text-gray-900 font-mono">
+            {TRECE_MUNICIPAL_PROFILE.totalPopulation2020.toLocaleString()}
           </div>
-          <div className="text-xs text-blue-200 mt-2 flex items-center gap-1">
-            <TrendingUp className="w-3.5 h-3.5 text-emerald-400" />
-            <span className="text-emerald-300 font-bold">+35.2%</span> vs 2015
+          <div className="text-xs text-gray-500 mt-2 flex items-center gap-1">
+            <TrendingUp className="w-3.5 h-3.5 text-emerald-600" />
+            <span className="text-emerald-700 font-bold">+35.2%</span> vs 2015
             census (
-            {TRECE_CITY_DEMOGRAPHICS.totalPopulation2015.toLocaleString()})
+            {TRECE_MUNICIPAL_PROFILE.totalPopulation2015.toLocaleString()})
           </div>
         </div>
 
@@ -95,16 +192,16 @@ export default function BarangayPsgcTable() {
           </div>
           <div className="flex items-center gap-2">
             <span className="text-2xl font-black text-gray-900 font-mono">
-              {TRECE_CITY_DEMOGRAPHICS.psgcCityCode}
+              {TRECE_MUNICIPAL_PROFILE.psgcCityCode}
             </span>
             <button
               onClick={() =>
-                copyToClipboard(TRECE_CITY_DEMOGRAPHICS.psgcCityCode)
+                copyToClipboard(TRECE_MUNICIPAL_PROFILE.psgcCityCode)
               }
               className="p-1.5 hover:bg-gray-100 rounded-lg text-gray-400 hover:text-gray-700 transition-colors"
               title="Copy City PSGC Code"
             >
-              {copiedCode === TRECE_CITY_DEMOGRAPHICS.psgcCityCode ? (
+              {copiedCode === TRECE_MUNICIPAL_PROFILE.psgcCityCode ? (
                 <Check className="w-4 h-4 text-emerald-600" />
               ) : (
                 <Copy className="w-4 h-4" />
@@ -255,6 +352,14 @@ export default function BarangayPsgcTable() {
                       <div className="text-xs text-gray-500 line-clamp-1">
                         {brgy.historicalName}
                       </div>
+                      {brgy.captain && (
+                        <div className="text-[11px] font-semibold text-[#003893] mt-0.5 flex items-center gap-1">
+                          <span className="text-gray-400 font-normal">
+                            Captain:
+                          </span>
+                          <span>{brgy.captain}</span>
+                        </div>
+                      )}
                     </td>
 
                     <td className="py-3.5 px-4 whitespace-nowrap">

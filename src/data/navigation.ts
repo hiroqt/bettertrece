@@ -1,18 +1,38 @@
-import type { NavigationItem } from '../types';
-import { serviceCategories as servicesData } from './yamlLoader';
-
-interface Subcategory {
-  name: string;
-  slug: string;
+export interface MegaMenuItem {
+  title: string;
+  description?: string;
+  href: string;
+  iconName?: string;
+  badge?: string;
 }
 
-interface Category {
-  category: string;
-  slug: string;
-  subcategories: Subcategory[];
+export interface MegaMenuColumn {
+  heading: string;
+  items: MegaMenuItem[];
 }
 
-export const mainNavigation: NavigationItem[] = [
+export interface MegaMenuFeatured {
+  tag?: string;
+  title: string;
+  description: string;
+  href: string;
+  ctaText: string;
+  stat?: string;
+  statLabel?: string;
+}
+
+export interface MegaMenuSection {
+  columns: MegaMenuColumn[];
+  featured: MegaMenuFeatured;
+}
+
+export interface MainNavItem {
+  label: string;
+  href: string;
+  megaMenu?: MegaMenuSection;
+}
+
+export const mainNavigation: MainNavItem[] = [
   {
     label: 'Home',
     href: '/',
@@ -20,69 +40,438 @@ export const mainNavigation: NavigationItem[] = [
   {
     label: 'Services',
     href: '/services',
-    children: (servicesData.categories as Category[]).map(category => ({
-      label: category.category,
-      href: `/services/${category.slug}`,
-    })),
+    megaMenu: {
+      columns: [
+        {
+          heading: 'Business, Trade & Farming',
+          items: [
+            {
+              title: "Mayor's Business Permits",
+              description: 'Barangay clearance & BPLO business permits',
+              href: '/services/business/apply-for-barangay-clearance-and-mayors-business-permits',
+              iconName: 'Briefcase',
+            },
+            {
+              title: 'Business Tax & Renewals',
+              description: 'Annual business tax assessments & payments',
+              href: '/services/business/renew-permits-and-pay-local-business-taxes',
+              iconName: 'FileCheck',
+            },
+            {
+              title: 'Public Market Stalls',
+              description: 'Market leasing, permits & stall renewals',
+              href: '/services/business/rent-stalls-in-public-markets',
+              iconName: 'Store',
+            },
+            {
+              title: 'MSME & Tourism Expos',
+              description: 'Join local trade fairs & tourism promotions',
+              href: '/services/business/join-trade-fairs-business-expos-or-tourism-promotions',
+              iconName: 'TrendingUp',
+            },
+            {
+              title: 'Agriculture & Fisheries',
+              description: 'Seeds, fertilizer support & farming aid',
+              href: '/services/agriculture-fisheries',
+              iconName: 'Wheat',
+            },
+          ],
+        },
+        {
+          heading: 'Health, Education & Welfare',
+          items: [
+            {
+              title: 'Free Clinics & Basic Medicines',
+              description: 'Primary check-ups, vaccines & clinical care',
+              href: '/services/health-services/get-free-check-ups-basic-medicines-and-vaccines',
+              iconName: 'HeartPulse',
+            },
+            {
+              title: 'Hospital Confinement & Care',
+              description: 'GEAMH hospital treatment & medical aid',
+              href: '/services/health-services/go-to-the-local-hospital-for-treatment-or-confinement',
+              iconName: 'Building2',
+            },
+            {
+              title: 'Maternal & Immunization',
+              description: 'Prenatal guidance & child immunizations',
+              href: '/services/health-services/access-maternal-care-and-child-immunization',
+              iconName: 'Baby',
+            },
+            {
+              title: 'Local City Scholarships',
+              description: 'Educational financial assistance program',
+              href: '/services/education/apply-for-local-scholarships',
+              iconName: 'GraduationCap',
+            },
+            {
+              title: 'Daycare & Preschools',
+              description: 'Barangay early childhood education centers',
+              href: '/services/education/enroll-children-in-lgu-daycare-or-preschool-programs',
+              iconName: 'BookOpen',
+            },
+            {
+              title: 'Social Welfare Assistance',
+              description: 'Assistance for seniors, PWDs & indigent aid',
+              href: '/services/social-welfare',
+              iconName: 'Users',
+            },
+          ],
+        },
+        {
+          heading: 'Environment, Housing & Safety',
+          items: [
+            {
+              title: 'Garbage Schedules & Pickup',
+              description: 'Barangay solid waste collection timetable',
+              href: '/services/garbage-waste-disposal/check-garbage-collection-schedules-and-request-pickup',
+              iconName: 'Trash2',
+            },
+            {
+              title: 'Special & Hazardous Waste',
+              description: 'E-waste & toxic material collection requests',
+              href: '/services/garbage-waste-disposal/request-special-waste-collection-hazardous-materials-electronics',
+              iconName: 'AlertTriangle',
+            },
+            {
+              title: 'Housing & Land Use',
+              description: 'Zoning clearance & building permit guidance',
+              href: '/services/housing-land-use',
+              iconName: 'Home',
+            },
+            {
+              title: 'Infrastructure & Public Works',
+              description: 'Report road damage, drainage & facilities',
+              href: '/services/infrastructure-public-works',
+              iconName: 'Wrench',
+            },
+            {
+              title: 'Disaster Preparedness',
+              description: 'Evacuation centers & CDRRMO response',
+              href: '/services/disaster-preparedness',
+              iconName: 'Shield',
+            },
+            {
+              title: 'Environment Protection',
+              description: 'Clean-up drives & tree planting activities',
+              href: '/services/environment',
+              iconName: 'TreePine',
+            },
+          ],
+        },
+      ],
+      featured: {
+        tag: 'CITIZEN DIRECTORY',
+        title: 'All Municipal Services',
+        description:
+          'Step-by-step guides for permits, health services, scholarships, waste disposal, and social welfare programs.',
+        href: '/services',
+        ctaText: 'Browse All 10 Service Categories',
+        stat: '10 Categories',
+        statLabel: 'Full Service Index',
+      },
+    },
   },
   {
     label: 'Government',
     href: '/government',
-    children: [
-      {
-        label: 'Executive Department',
-        href: '/government/departments/executive',
+    megaMenu: {
+      columns: [
+        {
+          heading: 'Executive Leadership',
+          items: [
+            {
+              title: 'Executive Branch Overview',
+              description: 'City Mayor & Vice Mayor administration',
+              href: '/government#executive',
+              iconName: 'ShieldCheck',
+              badge: 'Executive',
+            },
+            {
+              title: 'Office of the City Mayor',
+              description: 'Hon. Gemma Buendia-Lubigan',
+              href: '/government/departments/executive',
+              iconName: 'Award',
+              badge: 'Mayor',
+            },
+            {
+              title: 'Office of the Vice Mayor',
+              description: 'Hon. Romeo Bobby Montehermoso Jr.',
+              href: '/government/departments/executive',
+              iconName: 'Landmark',
+              badge: 'Vice Mayor',
+            },
+            {
+              title: 'Executive Department Page',
+              description: 'Mayoral mandates & strategic goals',
+              href: '/government/departments/executive',
+              iconName: 'Building',
+            },
+          ],
+        },
+        {
+          heading: 'Legislative & Grassroots',
+          items: [
+            {
+              title: 'Sangguniang Panlungsod',
+              description: '10 City Councilors, ABC & SK Federation',
+              href: '/government#legislative',
+              iconName: 'Landmark',
+              badge: '12 Members',
+            },
+            {
+              title: '13 Constituent Barangays',
+              description: 'Directory of 13 Punong Barangays / Captains',
+              href: '/government#barangays',
+              iconName: 'MapPin',
+              badge: '13 Captains',
+            },
+            {
+              title: 'Legislative Department Page',
+              description: 'City Council ordinances & resolutions',
+              href: '/government/departments/legislative',
+              iconName: 'ScrollText',
+            },
+            {
+              title: '13 Barangays Department Page',
+              description: 'Constituent barangay governance profiles',
+              href: '/government/departments/barangays',
+              iconName: 'Building2',
+            },
+          ],
+        },
+        {
+          heading: 'Departments & Engagement',
+          items: [
+            {
+              title: 'Departments & Key Offices',
+              description: 'Explore municipal offices & bureaus',
+              href: '/government#departments',
+              iconName: 'Building2',
+            },
+            {
+              title: 'News & Announcements',
+              description: 'Official city news releases & advisories',
+              href: '/government/news',
+              iconName: 'Newspaper',
+            },
+            {
+              title: 'Guides & Regulations',
+              description: 'Municipal policies & regulatory rules',
+              href: '/government/guides-and-regulations',
+              iconName: 'BookOpen',
+            },
+            {
+              title: 'Public Consultations',
+              description: 'Participate in civic dialogues & hearings',
+              href: '/government/public-consultations',
+              iconName: 'MessagesSquare',
+            },
+            {
+              title: '24/7 Emergency Hotlines',
+              description: 'CDRRMO, BFP, PNP & City Health numbers',
+              href: '/government#hotlines',
+              iconName: 'Phone',
+            },
+          ],
+        },
+      ],
+      featured: {
+        tag: 'OFFICIAL LEADERSHIP',
+        title: 'City Government of Trece Martires',
+        description:
+          'Unified portal for executive leaders, Sangguniang Panlungsod lawmakers, 13 constituent barangays, and municipal offices.',
+        href: '/government',
+        ctaText: 'Open One-Page Portal',
+        stat: '2023–2026',
+        statLabel: 'Verified Term of Office',
       },
-      {
-        label: 'Legislative Department',
-        href: '/government/departments/legislative',
-      },
-      { label: 'City Departments', href: '/government/departments' },
-      { label: 'Barangays of Trece Martires', href: '/government#barangays' },
-      { label: 'News & Announcements', href: '/government/news' },
-      {
-        label: 'Guides & Regulations',
-        href: '/government/guides-and-regulations',
-      },
-    ],
+    },
   },
   {
     label: 'Transparency',
     href: '/transparency/dpwh',
-    children: [
-      {
-        label: 'DPWH Infrastructure Transparency',
+    megaMenu: {
+      columns: [
+        {
+          heading: 'Infrastructure Projects',
+          items: [
+            {
+              title: 'DPWH Infrastructure Tracker',
+              description: 'Public works monitoring across 13 barangays',
+              href: '/transparency/dpwh',
+              iconName: 'HardHat',
+              badge: 'Live Data',
+            },
+            {
+              title: 'Road & Bridge Modernization',
+              description: 'Governor’s Drive & road widening registry',
+              href: '/transparency/dpwh',
+              iconName: 'Route',
+            },
+            {
+              title: 'Flood Control & Drainage',
+              description: 'River dikes, waterways & drainage channels',
+              href: '/transparency/dpwh',
+              iconName: 'ShieldAlert',
+            },
+            {
+              title: 'Public School Buildings',
+              description: 'DepEd classrooms & educational facilities',
+              href: '/transparency/dpwh',
+              iconName: 'GraduationCap',
+            },
+          ],
+        },
+        {
+          heading: 'Fiscal Disclosures',
+          items: [
+            {
+              title: 'Full Disclosure Policy (FDP)',
+              description: 'DILG compliance & financial transparency',
+              href: '/government/transparency-documents/full-disclosure-policy',
+              iconName: 'FileSpreadsheet',
+            },
+            {
+              title: 'City Financial Statements (DBM)',
+              description: 'Receipts, expenditures & budget reports',
+              href: '/government/transparency-documents',
+              iconName: 'Coins',
+            },
+            {
+              title: 'Annual Procurement Plans',
+              description: 'Public bidding & contract awards',
+              href: '/government/transparency-documents',
+              iconName: 'FileText',
+            },
+          ],
+        },
+        {
+          heading: 'Open Governance & FOI',
+          items: [
+            {
+              title: 'City Ordinances & Resolutions',
+              description: 'Local legislation & council enactments',
+              href: '/government/guides-and-regulations',
+              iconName: 'Scale',
+            },
+            {
+              title: 'Public Consultations',
+              description: 'Citizen feedback & municipal hearing logs',
+              href: '/government/public-consultations',
+              iconName: 'MessageSquare',
+            },
+            {
+              title: 'Freedom of Information (eFOI)',
+              description: 'Request official public documents online',
+              href: 'https://www.foi.gov.ph',
+              iconName: 'ExternalLink',
+              badge: 'National',
+            },
+          ],
+        },
+      ],
+      featured: {
+        tag: 'OPEN DATA',
+        title: 'Infrastructure & Fiscal Transparency',
+        description:
+          'Explore 100+ DPWH public works, municipal budget disclosures, and Full Disclosure Policy compliance.',
         href: '/transparency/dpwh',
+        ctaText: 'View Infrastructure Tracker',
+        stat: '100+',
+        statLabel: 'Monitored Public Projects',
       },
-      {
-        label: 'Full Disclosure Policy & Documents',
-        href: '/government/transparency-documents',
-      },
-      {
-        label: 'City Ordinances & Resolutions',
-        href: '/government/guides-and-regulations',
-      },
-      {
-        label: 'Public Consultations',
-        href: '/government/public-consultations',
-      },
-      { label: 'Freedom of Information (FOI)', href: 'https://www.foi.gov.ph' },
-    ],
+    },
   },
   {
     label: 'Statistics',
     href: '/demographics',
-    children: [
-      { label: 'City Demographics & 13 Barangays', href: '/demographics' },
-      {
-        label: 'PSA Classification Systems',
-        href: '/demographics#psa-classifications',
+    megaMenu: {
+      columns: [
+        {
+          heading: 'Census & Demographics',
+          items: [
+            {
+              title: 'Summary Demographics Profile',
+              description: 'Population, land area & household density',
+              href: '/demographics',
+              iconName: 'Users',
+            },
+            {
+              title: '2024 POPCEN (227,892)',
+              description: 'Official Philippine Statistics Authority census',
+              href: '/demographics',
+              iconName: 'TrendingUp',
+              badge: '227,892',
+            },
+            {
+              title: '13 Barangays Census Growth',
+              description: 'Population comparison from 2015 to 2020',
+              href: '/demographics',
+              iconName: 'BarChart2',
+            },
+          ],
+        },
+        {
+          heading: 'Electoral Registry',
+          items: [
+            {
+              title: 'COMELEC 2025 Registered Voters',
+              description: '121,194 official registered city voters',
+              href: '/demographics',
+              iconName: 'Vote',
+              badge: '121,194',
+            },
+            {
+              title: 'Established Precincts (608)',
+              description: '14 voting centers across 13 barangays',
+              href: '/demographics',
+              iconName: 'CheckCircle2',
+            },
+            {
+              title: 'Cavite Provincial Total',
+              description: '2,456,536 provincial registered voters',
+              href: '/demographics',
+              iconName: 'Map',
+            },
+          ],
+        },
+        {
+          heading: 'PSA Standards',
+          items: [
+            {
+              title: 'PSGC Geocodes (0402122000)',
+              description: 'Philippine Standard Geographic Code',
+              href: '/demographics#psa-classifications',
+              iconName: 'Binary',
+              badge: 'PSGC',
+            },
+            {
+              title: '9 Standard Classifications',
+              description: 'PSIC, PSOC, PSCED, PSCC, PSIC standards',
+              href: '/demographics#psa-classifications',
+              iconName: 'Database',
+            },
+            {
+              title: 'Reports & Open Datasets',
+              description: 'Downloadable statistics and data feeds',
+              href: '/government/reports-and-statistics',
+              iconName: 'FileSpreadsheet',
+            },
+          ],
+        },
+      ],
+      featured: {
+        tag: 'OFFICIAL STATISTICS',
+        title: 'Trece Martires Data Explorer',
+        description:
+          'Verified PSA census, COMELEC voter registrations, 13 barangays demographics, and standard classification systems.',
+        href: '/demographics',
+        ctaText: 'Explore Demographics & PSGC',
+        stat: '0402122000',
+        statLabel: '10-Digit PSGC Geocode',
       },
-      {
-        label: 'Reports & Open Data',
-        href: '/government/reports-and-statistics',
-      },
-    ],
+    },
   },
   {
     label: 'Contact',
@@ -93,57 +482,77 @@ export const mainNavigation: NavigationItem[] = [
 export const footerNavigation = {
   mainSections: [
     {
-      title: 'About Trece Martires',
+      title: 'Quick Links',
       links: [
-        { label: 'About the City Portal', href: '/about' },
-        { label: 'The 13 Martyrs History', href: '/about' },
-        { label: 'City Barangays & PSGC', href: '/demographics' },
-        { label: 'Demographics & Statistics', href: '/demographics' },
-        { label: 'Accessibility', href: '/accessibility' },
-        { label: 'Civic Tech Community', href: 'https://bettergov.ph' },
-      ],
-    },
-    {
-      title: 'Popular Services',
-      links: [
-        { label: 'Business & Permits (BPLO)', href: '/services/business' },
         {
-          label: 'City Health Office Services',
+          label: "Mayor's Business Permits (BPLO)",
+          href: '/services/business/apply-for-barangay-clearance-and-mayors-business-permits',
+        },
+        {
+          label: 'City Health Office & Clinics',
           href: '/services/health-services',
         },
-        { label: 'Education & Scholarships', href: '/services/education' },
         {
-          label: 'Garbage & Waste Disposal',
-          href: '/services/garbage-waste-disposal',
+          label: '13 Barangays Directory',
+          href: '/government#barangays',
         },
         {
-          label: 'Social Welfare & Assistance',
-          href: '/services/social-welfare',
-        },
-        { label: 'Housing & Land Use', href: '/services/housing-land-use' },
-      ],
-    },
-    {
-      title: 'City Government',
-      links: [
-        { label: 'City Departments', href: '/government/departments' },
-        {
-          label: 'City Council & Ordinances',
-          href: '/government/departments/legislative',
-        },
-        {
-          label: 'DPWH Infrastructure Transparency',
+          label: 'DPWH Infrastructure Tracker',
           href: '/transparency/dpwh',
         },
         {
-          label: 'Transparency & FOI',
-          href: '/government/transparency-documents',
+          label: 'Garbage & Waste Collection',
+          href: '/services/garbage-waste-disposal',
         },
         {
-          label: 'Reports & Statistics',
-          href: '/government/reports-and-statistics',
+          label: 'Education & Scholarships',
+          href: '/services/education',
         },
-        { label: 'Emergency Hotlines', href: '#emergency' },
+        {
+          label: 'Summary Demographics & Census',
+          href: '/demographics',
+        },
+        {
+          label: 'Emergency Hotlines & Rescue',
+          href: '/government#departments',
+        },
+      ],
+    },
+    {
+      title: 'Resources',
+      links: [
+        {
+          label: 'PSA PSGC Geocodes (0402122000)',
+          href: '/demographics#psa-classifications',
+        },
+        {
+          label: 'PSA 2024 Population Census (POPCEN)',
+          href: '/demographics',
+        },
+        {
+          label: 'PSA OpenSTAT Portal',
+          href: 'https://openstat.psa.gov.ph',
+        },
+        {
+          label: 'DBM & DOF-BLGF City Revenue Data',
+          href: '/#city-revenue',
+        },
+        {
+          label: 'DBM Full Disclosure Policy (FDP)',
+          href: '/government/transparency-documents/full-disclosure-policy',
+        },
+        {
+          label: 'DBM Official Portal (dbm.gov.ph)',
+          href: 'https://www.dbm.gov.ph',
+        },
+        {
+          label: 'BetterGov Hugging Face Datasets',
+          href: 'https://huggingface.co/bettergov',
+        },
+        {
+          label: 'DPWH Infrastructure Transparency Data',
+          href: '/transparency/dpwh',
+        },
       ],
     },
   ],

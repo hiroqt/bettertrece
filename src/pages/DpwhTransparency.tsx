@@ -2,6 +2,7 @@ import { useState } from 'react';
 import SEO from '../components/SEO';
 import Breadcrumbs from '../components/ui/Breadcrumbs';
 import DpwhProjectsExplorer from '../components/transparency/DpwhProjectsExplorer';
+import CityRevenueWidget from '../components/transparency/CityRevenueWidget';
 import {
   Building2,
   HardHat,
@@ -10,32 +11,36 @@ import {
   Landmark,
   Layers,
   ArrowRight,
+  Coins,
 } from 'lucide-react';
 
 export default function DpwhTransparency() {
-  const [activeTab, setActiveTab] = useState<'explorer' | 'trece-focus'>(
-    'explorer'
-  );
+  const [activeTab, setActiveTab] = useState<
+    'explorer' | 'budget-revenue' | 'trece-focus'
+  >('explorer');
 
   const breadcrumbItems = [
     { label: 'Home', href: '/' },
     { label: 'Transparency', href: '/government/transparency-documents' },
-    { label: 'DPWH Infrastructure Projects', href: '/transparency/dpwh' },
+    {
+      label: 'City Financial & Infrastructure Transparency',
+      href: '/transparency',
+    },
   ];
 
   return (
     <>
       <SEO
-        title="DPWH Infrastructure Projects Registry | City of Trece Martires"
-        description="Official DPWH infrastructure projects transparency registry for Trece Martires City, Cavite. Track budgets, contractors, physical progress, and public works under Cavite 1st DEO."
-        keywords="DPWH Trece Martires, Cavite 1st DEO, Trece Martires infrastructure, Governor's Drive, Trece-Indang Road, public works, city projects"
+        title="Public Works & Financial Transparency | City of Trece Martires"
+        description="Official transparency portal for Trece Martires City, Cavite. Track DBM/DOF-BLGF city revenue collections, local taxes, expenditures, and DPWH infrastructure public works under Cavite 1st DEO."
+        keywords="Trece Martires budget, city revenue, DBM Trece Martires, DPWH Trece Martires, Cavite 1st DEO, public works, city taxes, SRE Trece Martires"
       />
 
       <main className="flex-grow bg-slate-50/50 pb-20">
         {/* Top Header Banner */}
         <section
           aria-label="Page Header"
-          className="bg-gradient-to-r from-slate-900 via-[#00225e] to-[#003893] text-white py-10 sm:py-14 border-b border-blue-900/40 shadow-inner"
+          className="bg-gradient-to-r from-slate-900 via-[#00225e] to-[#003893] text-white pt-36 sm:pt-40 lg:pt-44 pb-10 sm:pb-14 border-b border-blue-900/40 shadow-inner"
         >
           <div className="container mx-auto px-4 max-w-7xl">
             <Breadcrumbs
@@ -51,21 +56,25 @@ export default function DpwhTransparency() {
                       className="w-3.5 h-3.5 text-amber-300"
                       aria-hidden="true"
                     />
-                    City Public Works Registry
+                    Public Works &amp; Fiscal Transparency
                   </span>
                   <span className="px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-white/10 text-blue-100">
-                    DPWH Cavite 1st DEO
+                    DBM &bull; DOF-BLGF &bull; DPWH
                   </span>
                 </div>
 
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
-                  Trece Martires Infrastructure Projects
+                  Trece Martires Transparency Portal
                 </h1>
 
                 <p className="text-sm sm:text-base text-blue-100/90 leading-relaxed">
-                  Transparency portal for Department of Public Works and
-                  Highways (DPWH) contracts, approved budgets, contractors, and
-                  physical completion across the{' '}
+                  Open data access to the{' '}
+                  <strong className="text-amber-300">
+                    City Financial Statement of Receipts &amp; Expenditures
+                    (DBM)
+                  </strong>{' '}
+                  and the Department of Public Works and Highways (DPWH)
+                  infrastructure registry across the{' '}
                   <strong className="text-amber-300">
                     13 Barangays of Trece Martires City
                   </strong>
@@ -75,20 +84,20 @@ export default function DpwhTransparency() {
 
               <div className="flex flex-wrap items-center gap-3 shrink-0">
                 <div className="bg-white/10 backdrop-blur-xs px-4 py-2.5 rounded-2xl border border-white/20 text-xs font-medium text-blue-100 space-y-0.5">
-                  <div className="font-bold text-white">DPWH Jurisdiction</div>
-                  <div>Cavite 1st District Engineering Office</div>
+                  <div className="font-bold text-white">Official Sources</div>
+                  <div>DBM / DOF-BLGF &bull; DPWH Cavite 1st DEO</div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Sticky Tab Navigation (Reflowable without Horizontal Scroll) */}
+        {/* Sticky Tab Navigation */}
         <div className="sticky top-0 z-20 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-xs">
           <div className="container mx-auto px-4 max-w-7xl">
             <div
               role="tablist"
-              aria-label="DPWH Transparency Portal Sections"
+              aria-label="Transparency Portal Sections"
               className="flex flex-wrap items-center gap-2 py-2"
             >
               <button
@@ -104,7 +113,23 @@ export default function DpwhTransparency() {
                 }`}
               >
                 <Layers className="w-4 h-4" aria-hidden="true" />
-                <span>Projects Registry</span>
+                <span>DPWH Projects Registry</span>
+              </button>
+
+              <button
+                role="tab"
+                id="tab-budget-revenue"
+                aria-selected={activeTab === 'budget-revenue'}
+                aria-controls="panel-budget-revenue"
+                onClick={() => setActiveTab('budget-revenue')}
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#0a4d3c] min-h-[40px] ${
+                  activeTab === 'budget-revenue'
+                    ? 'bg-[#0a4d3c] text-white shadow-xs'
+                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                }`}
+              >
+                <Coins className="w-4 h-4" aria-hidden="true" />
+                <span>City Revenue &amp; Budget (DBM)</span>
               </button>
 
               <button
@@ -135,6 +160,17 @@ export default function DpwhTransparency() {
               aria-labelledby="tab-explorer"
             >
               <DpwhProjectsExplorer />
+            </div>
+          )}
+
+          {activeTab === 'budget-revenue' && (
+            <div
+              id="panel-budget-revenue"
+              role="tabpanel"
+              aria-labelledby="tab-budget-revenue"
+              className="space-y-8 animate-fadeIn"
+            >
+              <CityRevenueWidget />
             </div>
           )}
 

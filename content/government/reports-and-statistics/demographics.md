@@ -1,6 +1,19 @@
-# City Demographics & Population Profile — City of Trece Martires
+# Municipal Profile & Demographics — City of Trece Martires
 
-Explore the official demographic indicators, population growth, and Philippine Standard Geographic Code (PSGC) registry for the City of Trece Martires, Province of Cavite.
+Explore the official municipal indicators, electoral voter profile, population growth, and Philippine Standard Geographic Code (PSGC) registry for the City of Trece Martires, Province of Cavite.
+
+---
+
+## Electoral & Registered Voters Profile (COMELEC 2025)
+
+Data from the **Commission on Elections (COMELEC) Election and Barangay Affairs Department (EBAD)** as of **January 23, 2025** for the **May 12, 2025 National and Local Elections**:
+
+| Metric                      | City of Trece Martires | Cavite Province Total | Source                      |
+| :-------------------------- | :--------------------- | :-------------------- | :-------------------------- |
+| **Total Registered Voters** | **121,194**            | 2,447,362             | COMELEC EBAD (Jan 23, 2025) |
+| **Voting Centers**          | **20**                 | 467                   | COMELEC EBAD                |
+| **Clustered Precincts**     | **136**                | 2,991                 | COMELEC EBAD                |
+| **Established Precincts**   | **783**                | 15,797                | COMELEC EBAD                |
 
 ---
 
@@ -19,7 +32,7 @@ Explore the official demographic indicators, population growth, and Philippine S
 | **Constituent Barangays**  | 13 Barangays (All Named after 13 Martyrs) | Republic Act No. 981                          |
 
 > [!TIP]
-> For an interactive tabular view with live search, filters, and one-click PSGC copying, visit the dedicated [City Demographics Portal](/demographics).
+> For an interactive view with live search, filters, and one-click PSGC copying, visit the dedicated [Municipal Profile Portal](/demographics).
 
 ---
 
