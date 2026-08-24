@@ -19,7 +19,7 @@ export default function Hero() {
   const { t } = useTranslation();
 
   return (
-    <div className="relative bg-[#001438] text-white overflow-hidden pt-36 sm:pt-40 lg:pt-44 pb-14 lg:pb-20">
+    <div className="relative bg-[#001438] text-white overflow-hidden pt-44 sm:pt-44 lg:pt-48 pb-14 lg:pb-20">
       {/* Background Monument Image */}
       <div
         className="absolute inset-0 bg-cover bg-center opacity-60 sm:opacity-70 pointer-events-none"

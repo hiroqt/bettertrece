@@ -149,6 +149,49 @@ const getMegaIcon = (name?: string) => {
 import { BetterTreceLogo, TreceMonumentEmblem } from '../ui/TreceLogo';
 export { BetterTreceLogo, TreceMonumentEmblem };
 
+const EMERGENCY_HOTLINES = [
+  {
+    id: 'cdrrmo',
+    nameKey: 'navbar.cdrrmo',
+    defaultName: 'CDRRMO',
+    number: '0961-992-1998',
+    tel: '09619921998',
+    icon: Shield,
+    titleKey: 'navbar.callCdrrmo',
+    defaultTitle: 'Call CDRRMO Trece Martires',
+  },
+  {
+    id: 'bfp',
+    nameKey: 'navbar.bfp',
+    defaultName: 'Fire Station',
+    number: '046-415-1217',
+    tel: '0464151217',
+    icon: Flame,
+    titleKey: 'navbar.callBfp',
+    defaultTitle: 'Call City Fire Station',
+  },
+  {
+    id: 'pnp',
+    nameKey: 'navbar.pnp',
+    defaultName: 'Police Station',
+    number: '0949-184-9145',
+    tel: '09491849145',
+    icon: Phone,
+    titleKey: 'navbar.callPnp',
+    defaultTitle: 'Call City Police Station',
+  },
+  {
+    id: 'cityHealth',
+    nameKey: 'navbar.cityHealth',
+    defaultName: 'City Health',
+    number: '046-840-1705',
+    tel: '0468401705',
+    icon: HeartPulse,
+    titleKey: 'navbar.callCityHealth',
+    defaultTitle: 'Call City Health Office',
+  },
+];
+
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeMobileMenu, setActiveMobileMenu] = useState<string | null>(null);
@@ -412,75 +455,81 @@ const Navbar: React.FC = () => {
       }`}
     >
       {/* 1. TOP EMERGENCY HOTLINES BAR (Red) */}
-      <div className="bg-[#e00000] text-white text-xs sm:text-sm font-medium py-2 px-4 overflow-x-auto scrollbar-none border-b border-red-700/80 shadow-xs">
-        <div className="container mx-auto flex items-center justify-between min-w-max gap-6 max-w-7xl">
-          <div className="flex items-center gap-2 font-black tracking-wider text-white uppercase shrink-0 text-xs sm:text-sm">
-            <PhoneCall className="w-4 h-4 animate-pulse text-yellow-300 shrink-0" />
-            <span>{t('navbar.emergencyHotlines', 'EMERGENCY HOTLINES:')}</span>
+      <div className="bg-[#e00000] text-white text-xs sm:text-sm font-medium py-1.5 sm:py-2 px-3 sm:px-4 border-b border-red-700/80 shadow-xs">
+        <div className="container mx-auto max-w-7xl">
+          {/* A. MOBILE VIEW: Smooth Infinite Scrolling Marquee */}
+          <div className="flex sm:hidden items-center overflow-hidden w-full relative">
+            {/* Fixed Emergency Tag on Left */}
+            <div className="flex items-center gap-1.5 font-black tracking-wider text-yellow-300 uppercase shrink-0 text-[11px] bg-[#e00000] pr-2.5 z-10 shadow-[4px_0_8px_#e00000]">
+              <PhoneCall className="w-3.5 h-3.5 animate-pulse text-yellow-300 shrink-0" />
+              <span>{t('navbar.emergencyShort', 'HOTLINES:')}</span>
+            </div>
+
+            {/* Seamless Marquee Track */}
+            <div className="overflow-hidden flex-1 relative select-none">
+              <div className="animate-marquee flex items-center gap-6 py-0.5">
+                {[...EMERGENCY_HOTLINES, ...EMERGENCY_HOTLINES].map(
+                  (hotline, idx) => {
+                    const HotlineIcon = hotline.icon;
+                    return (
+                      <a
+                        key={`${hotline.id}-${idx}`}
+                        href={`tel:${hotline.tel}`}
+                        className="inline-flex items-center gap-1.5 text-xs text-white hover:text-yellow-200 shrink-0 group transition-colors"
+                        title={t(hotline.titleKey, hotline.defaultTitle)}
+                      >
+                        <HotlineIcon className="w-3.5 h-3.5 text-red-200 group-hover:text-yellow-200 shrink-0" />
+                        <span className="font-semibold text-red-100 group-hover:text-yellow-200">
+                          {t(hotline.nameKey, hotline.defaultName)}:
+                        </span>
+                        <span className="font-mono font-bold tracking-wide text-white group-hover:text-yellow-200">
+                          {hotline.number}
+                        </span>
+                        <span className="text-red-300/70 ml-2 select-none">
+                          •
+                        </span>
+                      </a>
+                    );
+                  }
+                )}
+              </div>
+            </div>
           </div>
 
-          <div className="flex items-center gap-4 sm:gap-6 text-xs sm:text-sm">
-            <a
-              href="tel:09619921998"
-              className="flex items-center gap-1.5 hover:text-yellow-200 transition-colors group"
-              title={t('navbar.callCdrrmo', 'Call CDRRMO Trece Martires')}
-            >
-              <Shield className="w-3.5 h-3.5 text-red-200 group-hover:text-yellow-200 shrink-0" />
-              <span className="font-semibold text-red-100 group-hover:text-yellow-200">
-                {t('navbar.cdrrmo', 'CDRRMO:')}
+          {/* B. TABLET & DESKTOP VIEW: Full Horizontal List */}
+          <div className="hidden sm:flex items-center justify-between min-w-max gap-6">
+            <div className="flex items-center gap-2 font-black tracking-wider text-white uppercase shrink-0 text-xs sm:text-sm">
+              <PhoneCall className="w-4 h-4 animate-pulse text-yellow-300 shrink-0" />
+              <span>
+                {t('navbar.emergencyHotlines', 'EMERGENCY HOTLINES:')}
               </span>
-              <span className="font-mono font-bold tracking-wide text-white group-hover:text-yellow-200">
-                0961-992-1998
-              </span>
-            </a>
+            </div>
 
-            <span className="text-red-300/80 select-none">|</span>
-
-            <a
-              href="tel:0464151217"
-              className="flex items-center gap-1.5 hover:text-yellow-200 transition-colors group"
-              title={t('navbar.callBfp', 'Call City Fire Station')}
-            >
-              <Flame className="w-3.5 h-3.5 text-red-200 group-hover:text-yellow-200 shrink-0" />
-              <span className="font-semibold text-red-100 group-hover:text-yellow-200">
-                {t('navbar.bfp', 'Fire Station:')}
-              </span>
-              <span className="font-mono font-bold tracking-wide text-white group-hover:text-yellow-200">
-                046-415-1217
-              </span>
-            </a>
-
-            <span className="text-red-300/80 select-none">|</span>
-
-            <a
-              href="tel:09491849145"
-              className="flex items-center gap-1.5 hover:text-yellow-200 transition-colors group"
-              title={t('navbar.callPnp', 'Call City Police Station')}
-            >
-              <Phone className="w-3.5 h-3.5 text-red-200 group-hover:text-yellow-200 shrink-0" />
-              <span className="font-semibold text-red-100 group-hover:text-yellow-200">
-                {t('navbar.pnp', 'Police Station:')}
-              </span>
-              <span className="font-mono font-bold tracking-wide text-white group-hover:text-yellow-200">
-                0949-184-9145
-              </span>
-            </a>
-
-            <span className="text-red-300/80 select-none">|</span>
-
-            <a
-              href="tel:0468401705"
-              className="flex items-center gap-1.5 hover:text-yellow-200 transition-colors group"
-              title={t('navbar.callCityHealth', 'Call City Health Office')}
-            >
-              <HeartPulse className="w-3.5 h-3.5 text-red-200 group-hover:text-yellow-200 shrink-0" />
-              <span className="font-semibold text-red-100 group-hover:text-yellow-200">
-                {t('navbar.cityHealth', 'City Health:')}
-              </span>
-              <span className="font-mono font-bold tracking-wide text-white group-hover:text-yellow-200">
-                046-840-1705
-              </span>
-            </a>
+            <div className="flex items-center gap-4 sm:gap-6 text-xs sm:text-sm">
+              {EMERGENCY_HOTLINES.map((hotline, idx) => {
+                const HotlineIcon = hotline.icon;
+                return (
+                  <React.Fragment key={hotline.id}>
+                    {idx > 0 && (
+                      <span className="text-red-300/80 select-none">|</span>
+                    )}
+                    <a
+                      href={`tel:${hotline.tel}`}
+                      className="flex items-center gap-1.5 hover:text-yellow-200 transition-colors group"
+                      title={t(hotline.titleKey, hotline.defaultTitle)}
+                    >
+                      <HotlineIcon className="w-3.5 h-3.5 text-red-200 group-hover:text-yellow-200 shrink-0" />
+                      <span className="font-semibold text-red-100 group-hover:text-yellow-200">
+                        {t(hotline.nameKey, hotline.defaultName)}:
+                      </span>
+                      <span className="font-mono font-bold tracking-wide text-white group-hover:text-yellow-200">
+                        {hotline.number}
+                      </span>
+                    </a>
+                  </React.Fragment>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
@@ -552,7 +601,7 @@ const Navbar: React.FC = () => {
         }`}
       >
         <div className="container mx-auto px-4 max-w-7xl">
-          <div className="flex justify-between items-center py-3">
+          <div className="flex justify-between items-center py-2.5 sm:py-3">
             {/* Brand Logo */}
             <Link to="/" className="group flex items-center">
               <BetterTreceLogo isLight={isLightNavTheme} />

@@ -81,7 +81,7 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
           {/* Main Headline */}
           <h2
             id="city-revenue-headline"
-            className="text-3xl sm:text-4xl lg:text-[42px] font-black text-gray-900 tracking-tight leading-[1.15]"
+            className="text-2xl sm:text-4xl lg:text-[42px] font-black text-gray-900 tracking-tight leading-[1.15]"
           >
             Trece Martires collected{' '}
             <span className="text-[#003893]">

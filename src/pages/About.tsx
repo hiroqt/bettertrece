@@ -135,7 +135,7 @@ const About: React.FC = () => {
 
       <main className="flex-grow bg-slate-50 min-h-screen">
         {/* HERO SECTION */}
-        <section className="relative bg-[#001438] text-white pt-36 sm:pt-40 lg:pt-44 pb-16 lg:pb-20 overflow-hidden">
+        <section className="relative bg-[#001438] text-white pt-44 sm:pt-44 lg:pt-48 pb-16 lg:pb-20 overflow-hidden">
           {/* Background image & gradient overlay */}
           <div
             className="absolute inset-0 bg-cover bg-center opacity-40 pointer-events-none"

@@ -253,7 +253,7 @@ const Services: React.FC = () => {
     if (!categoryData) {
       return (
         <main className="flex-grow bg-slate-50/50 pb-20">
-          <section className="bg-gradient-to-r from-slate-900 via-[#00225e] to-[#003893] text-white pt-36 sm:pt-40 pb-12">
+          <section className="bg-gradient-to-r from-slate-900 via-[#00225e] to-[#003893] text-white pt-44 sm:pt-44 lg:pt-48 pb-12">
             <div className="container mx-auto px-4 max-w-7xl">
               <Breadcrumbs
                 items={[
@@ -298,7 +298,7 @@ const Services: React.FC = () => {
 
         <main className="flex-grow bg-slate-50/50 pb-20">
           {/* Top Hero Banner */}
-          <section className="bg-gradient-to-r from-slate-900 via-[#00225e] to-[#003893] text-white pt-36 sm:pt-40 lg:pt-44 pb-10 sm:pb-14 border-b border-blue-900/40 shadow-inner">
+          <section className="bg-gradient-to-r from-slate-900 via-[#00225e] to-[#003893] text-white pt-44 sm:pt-44 lg:pt-48 pb-10 sm:pb-14 border-b border-blue-900/40 shadow-inner">
             <div className="container mx-auto px-4 max-w-7xl">
               <Breadcrumbs items={breadcrumbs} className="mb-6 text-blue-200" />
 
@@ -348,8 +348,8 @@ const Services: React.FC = () => {
             </div>
           </section>
 
-          {/* Sticky Category Switcher Bar */}
-          <div className="sticky top-0 z-20 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-xs">
+          {/* Category Switcher Bar */}
+          <div className="bg-white border-b border-gray-200 shadow-xs">
             <div className="container mx-auto px-4 max-w-7xl">
               <div className="flex items-center gap-2 py-2.5 overflow-x-auto no-scrollbar scroll-smooth">
                 <Link
@@ -608,7 +608,7 @@ const Services: React.FC = () => {
 
       <main className="flex-grow bg-slate-50/50 pb-20">
         {/* Top Header Hero */}
-        <section className="bg-gradient-to-r from-slate-900 via-[#00225e] to-[#003893] text-white pt-36 sm:pt-40 lg:pt-44 pb-12 sm:pb-16 border-b border-blue-900/40 shadow-inner">
+        <section className="bg-gradient-to-r from-slate-900 via-[#00225e] to-[#003893] text-white pt-44 sm:pt-44 lg:pt-48 pb-12 sm:pb-16 border-b border-blue-900/40 shadow-inner">
           <div className="container mx-auto px-4 max-w-7xl">
             <Breadcrumbs
               items={[
@@ -694,8 +694,8 @@ const Services: React.FC = () => {
           </div>
         </section>
 
-        {/* Sticky Category Quick Jump Bar */}
-        <div className="sticky top-0 z-20 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-xs">
+        {/* Category Quick Jump Bar */}
+        <div className="bg-white border-b border-gray-200 shadow-xs">
           <div className="container mx-auto px-4 max-w-7xl">
             <div className="flex items-center gap-2 py-2.5 overflow-x-auto no-scrollbar scroll-smooth">
               <span className="text-xs font-bold text-gray-500 uppercase tracking-wider shrink-0 mr-1 hidden sm:inline">

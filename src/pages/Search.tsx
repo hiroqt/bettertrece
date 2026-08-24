@@ -40,7 +40,7 @@ export default function Search() {
   }, [query]);
 
   return (
-    <main className="container mx-auto px-4 pt-36 sm:pt-40 lg:pt-44 pb-16 max-w-3xl">
+    <main className="container mx-auto px-4 pt-44 sm:pt-44 lg:pt-48 pb-16 max-w-3xl">
       <h1 className="text-2xl font-bold text-gray-900 mb-6">Search</h1>
 
       <div className="relative mb-8">

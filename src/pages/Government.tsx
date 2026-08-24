@@ -216,7 +216,7 @@ export default function Government() {
   if (category) {
     if (!categoryData) {
       return (
-        <Section className="p-3 mb-12 pt-32 sm:pt-36">
+        <Section className="p-3 mb-12 pt-44 sm:pt-44 lg:pt-48">
           <Breadcrumbs className="mb-8" />
           <Banner
             type="error"
@@ -235,7 +235,7 @@ export default function Government() {
           description={categoryData.description}
           keywords={`${categoryData.category}, government services, public services, local government`}
         />
-        <Section className="p-3 mb-12 pt-32 sm:pt-36">
+        <Section className="p-3 mb-12 pt-44 sm:pt-44 lg:pt-48">
           <Breadcrumbs className="mb-8" />
           <div className="flex items-center gap-3 mb-4">
             <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#003893] flex items-center justify-center">
@@ -313,7 +313,7 @@ export default function Government() {
 
       <main className="flex-grow bg-slate-50/50 pb-20">
         {/* Top Header Hero */}
-        <section className="bg-gradient-to-r from-slate-900 via-[#00225e] to-[#003893] text-white pt-36 sm:pt-40 lg:pt-44 pb-10 sm:pb-14 border-b border-blue-900/40 shadow-inner">
+        <section className="bg-gradient-to-r from-slate-900 via-[#00225e] to-[#003893] text-white pt-44 sm:pt-44 lg:pt-48 pb-10 sm:pb-14 border-b border-blue-900/40 shadow-inner">
           <div className="container mx-auto px-4 max-w-7xl">
             <Breadcrumbs
               items={[
@@ -367,8 +367,8 @@ export default function Government() {
           </div>
         </section>
 
-        {/* Sticky Mobile Jump-To-Section Bar */}
-        <div className="lg:hidden sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-gray-200 py-2.5 px-4 shadow-xs">
+        {/* Mobile Jump-To-Section Bar */}
+        <div className="lg:hidden bg-white border-b border-gray-200 py-2.5 px-4 shadow-xs">
           <div className="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
             <span className="text-[11px] font-bold text-gray-400 uppercase shrink-0">
               Jump to:
@@ -395,7 +395,7 @@ export default function Government() {
             {/* ==========================================
                 LEFT COLUMN: STICKY SIDEBAR NAVIGATION
                 ========================================== */}
-            <aside className="hidden lg:block lg:col-span-3 sticky top-24 space-y-4">
+            <aside className="hidden lg:block lg:col-span-3 sticky top-36 space-y-4">
               <nav
                 aria-label="Government Sections"
                 className="bg-white rounded-2xl border border-gray-200 shadow-xs p-4 overflow-hidden"
@@ -468,7 +468,7 @@ export default function Government() {
               <section
                 id="executive"
                 aria-labelledby="heading-executive"
-                className="scroll-mt-24 space-y-5"
+                className="scroll-mt-36 sm:scroll-mt-40 space-y-5"
               >
                 <div>
                   <h2
@@ -586,7 +586,7 @@ export default function Government() {
               <section
                 id="legislative"
                 aria-labelledby="heading-legislative"
-                className="scroll-mt-24 space-y-5 pt-4"
+                className="scroll-mt-36 sm:scroll-mt-40 space-y-5 pt-4"
               >
                 <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
                   <div>
@@ -689,7 +689,7 @@ export default function Government() {
               <section
                 id="barangays"
                 aria-labelledby="heading-barangays"
-                className="scroll-mt-24 space-y-5 pt-4"
+                className="scroll-mt-36 sm:scroll-mt-40 space-y-5 pt-4"
               >
                 <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
                   <div>
@@ -784,7 +784,7 @@ export default function Government() {
               <section
                 id="departments"
                 aria-labelledby="heading-departments"
-                className="scroll-mt-24 space-y-5 pt-4"
+                className="scroll-mt-36 sm:scroll-mt-40 space-y-5 pt-4"
               >
                 <div>
                   <h2
@@ -840,7 +840,7 @@ export default function Government() {
               <section
                 id="transparency"
                 aria-labelledby="heading-transparency"
-                className="scroll-mt-24 space-y-5 pt-4"
+                className="scroll-mt-36 sm:scroll-mt-40 space-y-5 pt-4"
               >
                 <div>
                   <h2
@@ -957,7 +957,7 @@ export default function Government() {
               <section
                 id="hotlines"
                 aria-labelledby="heading-hotlines"
-                className="scroll-mt-24 space-y-5 pt-4"
+                className="scroll-mt-36 sm:scroll-mt-40 space-y-5 pt-4"
               >
                 <div>
                   <h2

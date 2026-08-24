@@ -210,7 +210,7 @@ export default function Document({
   if (loading) {
     return (
       <main className="flex-grow bg-slate-50/50 pb-20">
-        <section className="bg-gradient-to-r from-slate-900 via-[#00225e] to-[#003893] text-white pt-36 sm:pt-40 pb-16">
+        <section className="bg-gradient-to-r from-slate-900 via-[#00225e] to-[#003893] text-white pt-44 sm:pt-44 lg:pt-48 pb-16">
           <div className="container mx-auto px-4 max-w-7xl">
             <div className="animate-pulse space-y-4 max-w-2xl">
               <div className="h-4 bg-white/20 rounded w-48" />
@@ -235,7 +235,7 @@ export default function Document({
   if (error || (!nestedIndex && !markdownContent)) {
     return (
       <main className="flex-grow bg-slate-50/50 pb-20">
-        <section className="bg-gradient-to-r from-slate-900 via-[#00225e] to-[#003893] text-white pt-36 sm:pt-40 pb-14 border-b border-blue-900/40">
+        <section className="bg-gradient-to-r from-slate-900 via-[#00225e] to-[#003893] text-white pt-44 sm:pt-44 lg:pt-48 pb-14 border-b border-blue-900/40">
           <div className="container mx-auto px-4 max-w-7xl">
             <Breadcrumbs
               items={[
@@ -281,7 +281,7 @@ export default function Document({
         />
 
         <main className="flex-grow bg-slate-50/50 pb-20">
-          <section className="bg-gradient-to-r from-slate-900 via-[#00225e] to-[#003893] text-white pt-36 sm:pt-40 lg:pt-44 pb-10 sm:pb-14 border-b border-blue-900/40 shadow-inner">
+          <section className="bg-gradient-to-r from-slate-900 via-[#00225e] to-[#003893] text-white pt-44 sm:pt-44 lg:pt-48 pb-10 sm:pb-14 border-b border-blue-900/40 shadow-inner">
             <div className="container mx-auto px-4 max-w-7xl">
               <Breadcrumbs
                 items={breadcrumbItems}
@@ -352,7 +352,7 @@ export default function Document({
 
       <main className="flex-grow bg-slate-50/50 pb-20">
         {/* Top Hero Banner */}
-        <section className="bg-gradient-to-r from-slate-900 via-[#00225e] to-[#003893] text-white pt-36 sm:pt-40 lg:pt-44 pb-10 sm:pb-14 border-b border-blue-900/40 shadow-inner print:hidden">
+        <section className="bg-gradient-to-r from-slate-900 via-[#00225e] to-[#003893] text-white pt-44 sm:pt-44 lg:pt-48 pb-10 sm:pb-14 border-b border-blue-900/40 shadow-inner print:hidden">
           <div className="container mx-auto px-4 max-w-7xl">
             <Breadcrumbs
               items={breadcrumbItems}
@@ -443,7 +443,7 @@ export default function Document({
             {/* Left Main Reading Area */}
             <div className="lg:col-span-8 space-y-6">
               {/* Document Content Card */}
-              <article className="bg-white rounded-3xl p-6 sm:p-10 border border-gray-200 shadow-sm markdown-content">
+              <article className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 lg:p-10 border border-gray-200 shadow-sm markdown-content">
                 <ReactMarkdown
                   remarkPlugins={[remarkGfm]}
                   components={markdownComponents}

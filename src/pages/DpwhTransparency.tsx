@@ -102,7 +102,7 @@ export default function DpwhTransparency() {
         {/* Top Header Banner */}
         <section
           aria-label="Page Header"
-          className="bg-gradient-to-r from-slate-900 via-[#00225e] to-[#003893] text-white pt-36 sm:pt-40 lg:pt-44 pb-10 sm:pb-14 border-b border-blue-900/40 shadow-inner"
+          className="bg-gradient-to-r from-slate-900 via-[#00225e] to-[#003893] text-white pt-44 sm:pt-44 lg:pt-48 pb-10 sm:pb-14 border-b border-blue-900/40 shadow-inner"
         >
           <div className="container mx-auto px-4 max-w-7xl">
             <Breadcrumbs
@@ -147,13 +147,13 @@ export default function DpwhTransparency() {
           </div>
         </section>
 
-        {/* Sticky Tab Navigation - 3 Unified Tabs */}
-        <div className="sticky top-0 z-20 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-xs">
+        {/* Tab Navigation - 3 Unified Tabs */}
+        <div className="bg-white border-b border-gray-200 shadow-xs">
           <div className="container mx-auto px-4 max-w-7xl">
             <div
               role="tablist"
               aria-label="Transparency Portal Sections"
-              className="flex flex-wrap items-center gap-2 py-2"
+              className="flex items-center sm:flex-wrap gap-2 py-2 overflow-x-auto no-scrollbar scroll-smooth"
             >
               {/* Tab 1: City Revenue & Budget (Default) */}
               <button
