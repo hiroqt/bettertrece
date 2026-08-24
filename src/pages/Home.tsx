@@ -1,18 +1,14 @@
 import React from 'react';
 import Hero from '../components/sections/Hero';
 import ServicesSection from '../components/home/ServicesSection';
-import GovernmentActivitySection from '../components/home/GovernmentActivitySection';
+import WeatherMapSection from '../components/home/WeatherMapSection';
+import ContactSection from '../components/home/ContactSection';
 import CityRevenueWidget from '../components/transparency/CityRevenueWidget';
 import SEO from '../components/SEO';
 import { Link } from 'react-router';
 import {
-  Shield,
-  Phone,
   Users,
-  Building,
   ExternalLink,
-  Flame,
-  HeartPulse,
   Landmark,
   ArrowRight,
   FileSpreadsheet,
@@ -40,7 +36,7 @@ const Home: React.FC = () => {
         {/* 1. HERO & SEARCH HUB */}
         <Hero />
 
-        {/* 3. CITY REVENUE & FISCAL TRANSPARENCY SECTION (DBM / DOF-BLGF) - FULL WIDTH */}
+        {/* 2. CITY REVENUE & FISCAL TRANSPARENCY SECTION (DBM / DOF-BLGF) - FULL WIDTH */}
         <section
           id="city-revenue"
           aria-labelledby="city-revenue-headline"
@@ -51,8 +47,11 @@ const Home: React.FC = () => {
           </div>
         </section>
 
-        {/* 4. CITY SERVICES SECTION */}
+        {/* 3. CITY SERVICES SECTION */}
         <ServicesSection />
+
+        {/* 4. WEATHER & GEOGRAPHICAL MAP SECTION */}
+        <WeatherMapSection />
 
         {/* 5. SUMMARY DEMOGRAPHICS SECTION */}
         <section
@@ -230,158 +229,8 @@ const Home: React.FC = () => {
           </div>
         </section>
 
-        {/* 5. GOVERNMENT & DEPARTMENTS SECTION */}
-        <GovernmentActivitySection />
-
-        {/* 6. EMERGENCY CONTACTS DIRECTORY */}
-        <section
-          id="contact"
-          className="py-12 lg:py-16 bg-[#00225e] text-white"
-        >
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-10">
-                <span className="text-xs font-bold uppercase tracking-widest text-amber-400 bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20">
-                  24/7 Public Assistance
-                </span>
-                <h2 className="text-2xl sm:text-3xl font-black text-white mt-3">
-                  Trece Martires Emergency & Support Hotline Directory
-                </h2>
-                <p className="text-blue-200 text-sm mt-2">
-                  Immediate assistance numbers for disaster management, fire,
-                  police, and health emergencies.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {/* CDRRMO */}
-                <div className="bg-white/10 backdrop-blur-xs p-5 rounded-2xl border border-white/15 hover:bg-white/15 transition-all">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 rounded-xl bg-red-600/80 text-white flex items-center justify-center shrink-0">
-                      <Shield className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-base text-white">
-                        CDRRMO Trece Martires
-                      </h3>
-                      <p className="text-xs text-blue-200">
-                        Disaster Risk Reduction & Rescue
-                      </p>
-                    </div>
-                  </div>
-                  <div className="space-y-1.5 text-sm font-mono">
-                    <a
-                      href="tel:09619921998"
-                      className="flex items-center gap-2 hover:text-amber-300"
-                    >
-                      <Phone className="w-3.5 h-3.5" /> 0961-992-1998 (Smart)
-                    </a>
-                    <a
-                      href="tel:0464190125"
-                      className="flex items-center gap-2 hover:text-amber-300"
-                    >
-                      <Phone className="w-3.5 h-3.5" /> (046) 419-0125
-                      (Landline)
-                    </a>
-                  </div>
-                </div>
-
-                {/* BFP Fire */}
-                <div className="bg-white/10 backdrop-blur-xs p-5 rounded-2xl border border-white/15 hover:bg-white/15 transition-all">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 rounded-xl bg-amber-500/80 text-white flex items-center justify-center shrink-0">
-                      <Flame className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-base text-white">
-                        BFP Trece Martires Fire Station
-                      </h3>
-                      <p className="text-xs text-blue-200">
-                        Fire Prevention & Response
-                      </p>
-                    </div>
-                  </div>
-                  <div className="space-y-1.5 text-sm font-mono">
-                    <a
-                      href="tel:0464151217"
-                      className="flex items-center gap-2 hover:text-amber-300"
-                    >
-                      <Phone className="w-3.5 h-3.5" /> (046) 415-1217 /
-                      419-0268
-                    </a>
-                    <a
-                      href="tel:09223850551"
-                      className="flex items-center gap-2 hover:text-amber-300"
-                    >
-                      <Phone className="w-3.5 h-3.5" /> 0922-385-0551 (Mobile)
-                    </a>
-                  </div>
-                </div>
-
-                {/* PNP Police */}
-                <div className="bg-white/10 backdrop-blur-xs p-5 rounded-2xl border border-white/15 hover:bg-white/15 transition-all">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 rounded-xl bg-blue-600/80 text-white flex items-center justify-center shrink-0">
-                      <Building className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-base text-white">
-                        PNP Trece Martires Police Station
-                      </h3>
-                      <p className="text-xs text-blue-200">
-                        Law Enforcement & Public Peace
-                      </p>
-                    </div>
-                  </div>
-                  <div className="space-y-1.5 text-sm font-mono">
-                    <a
-                      href="tel:09491849145"
-                      className="flex items-center gap-2 hover:text-amber-300"
-                    >
-                      <Phone className="w-3.5 h-3.5" /> 0949-184-9145 (Smart)
-                    </a>
-                    <a
-                      href="tel:0464190286"
-                      className="flex items-center gap-2 hover:text-amber-300"
-                    >
-                      <Phone className="w-3.5 h-3.5" /> (046) 419-0286
-                      (Landline)
-                    </a>
-                  </div>
-                </div>
-
-                {/* City Health Office */}
-                <div className="bg-white/10 backdrop-blur-xs p-5 rounded-2xl border border-white/15 hover:bg-white/15 transition-all">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 rounded-xl bg-emerald-600/80 text-white flex items-center justify-center shrink-0">
-                      <HeartPulse className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-base text-white">
-                        City Health Office (CHO)
-                      </h3>
-                      <p className="text-xs text-blue-200">
-                        Public Clinic & Medical Services
-                      </p>
-                    </div>
-                  </div>
-                  <div className="space-y-1.5 text-sm font-mono">
-                    <a
-                      href="tel:0468401705"
-                      className="flex items-center gap-2 hover:text-amber-300"
-                    >
-                      <Phone className="w-3.5 h-3.5" /> (046) 840-1705 /
-                      419-1065
-                    </a>
-                    <div className="text-xs text-blue-200 font-sans">
-                      San Agustin, Trece Martires City Hall Compound
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* 6. CONTACT US SECTION */}
+        <ContactSection />
 
         {/* 7. CIVIC TECH COMMUNITY BANNER */}
         <section className="py-12 bg-white border-t border-gray-100">

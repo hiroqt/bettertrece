@@ -373,58 +373,74 @@ const Navbar: React.FC = () => {
       }`}
     >
       {/* 1. TOP EMERGENCY HOTLINES BAR (Red) */}
-      <div className="bg-[#e00000] text-white text-xs font-medium py-1.5 px-4 overflow-x-auto scrollbar-none border-b border-red-700">
+      <div className="bg-[#e00000] text-white text-xs sm:text-sm font-medium py-2 px-4 overflow-x-auto scrollbar-none border-b border-red-700/80 shadow-xs">
         <div className="container mx-auto flex items-center justify-between min-w-max gap-6 max-w-7xl">
-          <div className="flex items-center gap-2 font-bold tracking-wide text-white uppercase shrink-0">
-            <PhoneCall className="w-3.5 h-3.5 animate-pulse text-yellow-300" />
-            <span>EMERGENCY HOTLINES</span>
+          <div className="flex items-center gap-2 font-black tracking-wider text-white uppercase shrink-0 text-xs sm:text-sm">
+            <PhoneCall className="w-4 h-4 animate-pulse text-yellow-300 shrink-0" />
+            <span>EMERGENCY HOTLINES:</span>
           </div>
 
-          <div className="flex items-center gap-4 sm:gap-6 text-[11px] sm:text-xs">
+          <div className="flex items-center gap-4 sm:gap-6 text-xs sm:text-sm">
             <a
               href="tel:09619921998"
-              className="flex items-center gap-1.5 hover:text-yellow-200 transition-colors"
+              className="flex items-center gap-1.5 hover:text-yellow-200 transition-colors group"
               title="Call CDRRMO Trece Martires"
             >
-              <Shield className="w-3 h-3 text-red-200" />
-              <span className="font-semibold">CDRRMO:</span>
-              <span className="font-mono">0961-992-1998</span>
+              <Shield className="w-3.5 h-3.5 text-red-200 group-hover:text-yellow-200 shrink-0" />
+              <span className="font-semibold text-red-100 group-hover:text-yellow-200">
+                CDRRMO:
+              </span>
+              <span className="font-mono font-bold tracking-wide text-white group-hover:text-yellow-200">
+                0961-992-1998
+              </span>
             </a>
 
-            <span className="text-red-300">|</span>
+            <span className="text-red-300/80 select-none">|</span>
 
             <a
               href="tel:0464151217"
-              className="flex items-center gap-1.5 hover:text-yellow-200 transition-colors"
+              className="flex items-center gap-1.5 hover:text-yellow-200 transition-colors group"
               title="Call City Fire Station"
             >
-              <Flame className="w-3 h-3 text-red-200" />
-              <span className="font-semibold">City Fire Station:</span>
-              <span className="font-mono">046-415-1217</span>
+              <Flame className="w-3.5 h-3.5 text-red-200 group-hover:text-yellow-200 shrink-0" />
+              <span className="font-semibold text-red-100 group-hover:text-yellow-200">
+                Fire Station:
+              </span>
+              <span className="font-mono font-bold tracking-wide text-white group-hover:text-yellow-200">
+                046-415-1217
+              </span>
             </a>
 
-            <span className="text-red-300">|</span>
+            <span className="text-red-300/80 select-none">|</span>
 
             <a
               href="tel:09491849145"
-              className="flex items-center gap-1.5 hover:text-yellow-200 transition-colors"
+              className="flex items-center gap-1.5 hover:text-yellow-200 transition-colors group"
               title="Call City Police Station"
             >
-              <Phone className="w-3 h-3 text-red-200" />
-              <span className="font-semibold">City Police Station:</span>
-              <span className="font-mono">0949-184-9145</span>
+              <Phone className="w-3.5 h-3.5 text-red-200 group-hover:text-yellow-200 shrink-0" />
+              <span className="font-semibold text-red-100 group-hover:text-yellow-200">
+                Police Station:
+              </span>
+              <span className="font-mono font-bold tracking-wide text-white group-hover:text-yellow-200">
+                0949-184-9145
+              </span>
             </a>
 
-            <span className="text-red-300">|</span>
+            <span className="text-red-300/80 select-none">|</span>
 
             <a
               href="tel:0468401705"
-              className="flex items-center gap-1.5 hover:text-yellow-200 transition-colors"
+              className="flex items-center gap-1.5 hover:text-yellow-200 transition-colors group"
               title="Call City Health Office"
             >
-              <HeartPulse className="w-3 h-3 text-red-200" />
-              <span className="font-semibold">City Health Office:</span>
-              <span className="font-mono">046-840-1705</span>
+              <HeartPulse className="w-3.5 h-3.5 text-red-200 group-hover:text-yellow-200 shrink-0" />
+              <span className="font-semibold text-red-100 group-hover:text-yellow-200">
+                City Health:
+              </span>
+              <span className="font-mono font-bold tracking-wide text-white group-hover:text-yellow-200">
+                046-840-1705
+              </span>
             </a>
           </div>
         </div>

@@ -133,11 +133,16 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-slate-800 mt-10 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
-            <p>
-              © {new Date().getFullYear()} BetterTrece.org • Built with
-              BetterGov Open Source Platform
-            </p>
-            <div className="flex flex-wrap gap-4 text-xs">
+            <div className="text-center md:text-left space-y-1">
+              <p>
+                © {new Date().getFullYear()} BetterTrece.org • Built by{' '}
+                <span className="text-white font-semibold">Arnel Baylon</span>
+              </p>
+              <p className="text-[11px] text-slate-400">
+                All public information sourced from official government portals.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-4 text-xs items-center justify-center md:justify-end">
               <a
                 href="https://bettergov.ph"
                 target="_blank"
