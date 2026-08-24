@@ -17,7 +17,6 @@ import {
   Code2,
   FileJson,
   Database,
-  Terminal,
   Download,
   Info,
   RefreshCw,
@@ -283,10 +282,6 @@ except requests.exceptions.RequestException as e:
       <div className="p-5 sm:p-6 bg-gradient-to-r from-slate-900 via-[#00225e] to-[#003893] text-white flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="space-y-1">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="px-2.5 py-0.5 rounded-full text-xs font-black uppercase tracking-wider bg-amber-400/20 text-amber-300 border border-amber-400/30 inline-flex items-center gap-1.5">
-              <Terminal className="w-3.5 h-3.5" />
-              <span>Official PSA REST API</span>
-            </span>
             <span className="px-2.5 py-0.5 rounded-full text-xs font-mono font-bold bg-white/10 text-blue-100">
               v{version}
             </span>

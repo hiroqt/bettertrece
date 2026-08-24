@@ -288,9 +288,6 @@ export default function Document({
                 className="mb-6 text-blue-200"
               />
               <div className="space-y-3 max-w-3xl">
-                <span className="px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider bg-amber-400/20 text-amber-300 border border-amber-400/30">
-                  {sectionLabel} Index Directory
-                </span>
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
                   {nestedIndex.title || documentSlug}
                 </h1>
@@ -368,7 +365,7 @@ export default function Document({
                   {categoryData && (
                     <Link
                       to={`${sectionHref}/${category}`}
-                      className="px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider bg-amber-400/20 text-amber-300 border border-amber-400/30 flex items-center gap-1.5 hover:bg-amber-400/30 transition-colors"
+                      className="px-3 py-1 rounded-full text-xs font-bold bg-amber-400/20 text-amber-300 border border-amber-400/30 flex items-center gap-1.5 hover:bg-amber-400/30 transition-colors"
                     >
                       <CategoryIcon
                         iconName={categoryData.icon}

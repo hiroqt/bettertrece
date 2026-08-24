@@ -8,7 +8,6 @@ import {
   Landmark,
   Vote,
   Compass,
-  Info,
 } from 'lucide-react';
 import {
   TRECE_MUNICIPAL_PROFILE,
@@ -41,26 +40,21 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* LEFT COLUMN: HERO HEADLINE & CTAs (6 cols on lg) */}
           <div className="lg:col-span-6 space-y-6">
-            {/* Quick Hero Badge */}
-            <div className="inline-flex items-center gap-2 bg-[#002566] border border-[#1e4a9e] px-3.5 py-1.5 rounded-full shadow-md">
-              <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-              <span className="text-xs font-bold uppercase tracking-wider text-amber-300">
-                {t('hero.capitalOfCavite', 'Capital of Cavite')}
-              </span>
-              <span className="text-blue-300/40 text-xs">|</span>
-              <span className="text-xs font-semibold text-blue-100">
-                {t('hero.cityClassificationValue', '2nd Class Component City')}
-              </span>
-            </div>
-
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.1]">
               Better<span className="text-yellow-300">Trece</span>.org
             </h1>
 
+            <p className="text-xl sm:text-2xl font-bold text-amber-300 tracking-tight leading-snug">
+              {t(
+                'hero.tagline',
+                'Transparent Governance & Accessible Public Services'
+              )}
+            </p>
+
             <p className="text-base sm:text-lg text-blue-100/95 leading-relaxed max-w-xl font-normal">
               {t(
                 'hero.subtitle',
-                'A community-run portal to find information and services of the City of Trece Martires, Cavite.'
+                'The verified open civic portal for Trece Martires City, Cavite. Access city services, track public infrastructure projects, and explore transparent municipal data for all 13 barangays.'
               )}
             </p>
 
@@ -70,15 +64,20 @@ export default function Hero() {
                 className="inline-flex items-center justify-center gap-2 bg-white text-[#003893] hover:bg-blue-50 font-bold px-6 py-3 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-200 text-sm sm:text-base group"
               >
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform text-[#003893]" />
-                <span>{t('hero.browseServices', 'Browse Services')}</span>
+                <span>{t('hero.browseServices', 'Explore City Services')}</span>
               </Link>
 
               <Link
-                to="/about"
+                to="/transparency/dpwh"
                 className="inline-flex items-center justify-center gap-2 bg-[#002a70] hover:bg-[#003893] text-white border border-[#2b59a8] font-semibold px-5 py-3 rounded-lg shadow-lg transition-all duration-200 text-sm sm:text-base hover:border-amber-400/50 hover:text-amber-300 group"
               >
-                <Info className="w-4 h-4 text-amber-300 group-hover:scale-110 transition-transform" />
-                <span>{t('hero.aboutProject', 'About this project')}</span>
+                <ShieldCheck className="w-4 h-4 text-amber-300 group-hover:scale-110 transition-transform" />
+                <span>
+                  {t(
+                    'hero.transparencyProjects',
+                    'Public Works & Transparency'
+                  )}
+                </span>
               </Link>
             </div>
           </div>
@@ -96,7 +95,7 @@ export default function Hero() {
                     <h2 className="text-sm font-bold text-white leading-tight">
                       {t(
                         'hero.cityProfileAndFacts',
-                        'City Profile & Key Facts'
+                        'Open Governance & City Data'
                       )}
                     </h2>
                     <p className="text-xs text-blue-200">
@@ -104,14 +103,10 @@ export default function Hero() {
                         'hero.cityClassificationValue',
                         '2nd Class Component City'
                       )}{' '}
-                      · RA 981
+                      · Seat of Cavite Province
                     </p>
                   </div>
                 </div>
-
-                <span className="bg-amber-400 text-slate-950 font-extrabold text-[11px] uppercase tracking-wider px-2.5 py-1 rounded shadow-xs">
-                  {t('hero.capitalOfCavite', 'Capital of Cavite')}
-                </span>
               </div>
 
               {/* 4 Clean Solid Stat Cards (2x2 Grid) */}

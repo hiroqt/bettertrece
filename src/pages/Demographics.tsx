@@ -71,9 +71,6 @@ export default function Demographics() {
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
               <div className="space-y-3 max-w-3xl">
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider bg-amber-400/20 text-amber-300 border border-amber-400/30">
-                    Official Municipal Profile
-                  </span>
                   <span className="px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-white/10 text-blue-100">
                     PSGC: {TRECE_MUNICIPAL_PROFILE.psgcCityCode}
                   </span>
@@ -151,10 +148,7 @@ export default function Demographics() {
           {activeTab === 'overview' && (
             <Section className="space-y-8">
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-[#003893] bg-blue-50 px-2.5 py-1 rounded">
-                  Municipal &amp; Electoral Profile
-                </span>
-                <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mt-2">
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900">
                   Summary Demographics &amp; PSGC Directory
                 </h2>
                 <p className="text-sm text-gray-600 mt-1 max-w-3xl">

@@ -16,7 +16,6 @@ import {
   MapPin,
   RefreshCw,
   Droplets,
-  Sparkles,
 } from 'lucide-react';
 import WeatherCardBackground, { WeatherType } from './WeatherCardBackground';
 
@@ -238,10 +237,6 @@ export default function WeatherMapSection() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6 sm:mb-8">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-[#003893] text-xs font-semibold uppercase tracking-wider mb-2 shadow-2xs">
-              <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-              <span>{t('weather.liveUpdates', 'Real-Time Climate')}</span>
-            </div>
             <h2 className="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight">
               {t('weather.title', 'Weather & Geographical Map')}
             </h2>

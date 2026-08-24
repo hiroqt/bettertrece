@@ -48,16 +48,8 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
       {/* 1. Header Section */}
       <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6 pb-6">
         <div className="space-y-3 max-w-2xl">
-          {/* Badge & Year Switcher */}
+          {/* Year Switcher */}
           <div className="flex flex-wrap items-center gap-3">
-            <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#003893] bg-blue-50 px-3 py-1 rounded-full border border-blue-200/70 inline-flex items-center gap-1.5 shadow-2xs">
-              <span
-                className="w-2 h-2 rounded-full bg-[#003893] animate-pulse"
-                aria-hidden="true"
-              />
-              CITY REVENUE
-            </span>
-
             {/* Year Selector Tabs */}
             <div
               role="tablist"

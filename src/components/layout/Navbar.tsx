@@ -146,77 +146,8 @@ const getMegaIcon = (name?: string) => {
   }
 };
 
-export const BetterTreceLogo: React.FC<{
-  className?: string;
-  isLight?: boolean;
-}> = ({ className = 'h-12', isLight = false }) => {
-  return (
-    <div className={`flex items-center gap-3 ${className}`}>
-      {/* Emblem / Sun & 13 Rays Symbol for the 13 Martyrs / Trece Martires */}
-      <div className="relative flex items-center justify-center w-11 h-11 rounded-xl bg-gradient-to-br from-amber-400 via-amber-500 to-yellow-600 shadow-md p-1.5 shrink-0 group-hover:scale-105 transition-transform">
-        <svg
-          viewBox="0 0 100 100"
-          className="w-full h-full text-white fill-current drop-shadow-sm"
-        >
-          {/* Sun Center */}
-          <circle cx="50" cy="50" r="18" fill="#ffffff" />
-          {/* Stylized Sun Rays (13 rays for the 13 Martyrs of Cavite) */}
-          {[...Array(13)].map((_, i) => {
-            const angle = (i * 360) / 13;
-            return (
-              <line
-                key={i}
-                x1="50"
-                y1="50"
-                x2="50"
-                y2="20"
-                stroke="#ffffff"
-                strokeWidth="5"
-                strokeLinecap="round"
-                transform={`rotate(${angle} 50 50)`}
-              />
-            );
-          })}
-          {/* Center Monument / Star Emblem */}
-          <polygon
-            points="50,38 54,46 62,47 56,53 58,62 50,57 42,62 44,53 38,47 46,46"
-            fill="#003893"
-          />
-        </svg>
-      </div>
-      <div className="flex flex-col">
-        <div className="flex items-baseline gap-1">
-          <span
-            className={`font-extrabold text-xl tracking-tight font-sans transition-colors ${
-              isLight ? 'text-white' : 'text-gray-900'
-            }`}
-          >
-            Better
-            <span className={isLight ? 'text-yellow-300' : 'text-[#003893]'}>
-              Trece
-            </span>
-          </span>
-          <span
-            className={`text-xs font-bold px-1.5 py-0.5 rounded transition-colors ${
-              isLight
-                ? 'text-white bg-white/20 border border-white/20'
-                : 'text-gray-600 bg-gray-100'
-            }`}
-          >
-            .org
-          </span>
-        </div>
-        <span
-          className={`text-[10px] font-semibold tracking-wider uppercase transition-colors ${
-            isLight ? 'text-blue-100' : 'text-gray-500'
-          }`}
-        >
-          Trece Martires City, Cavite
-        </span>
-      </div>
-    </div>
-  );
-};
+import { BetterTreceLogo, TreceMonumentEmblem } from '../ui/TreceLogo';
+export { BetterTreceLogo, TreceMonumentEmblem };
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);

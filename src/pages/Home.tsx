@@ -62,10 +62,7 @@ const Home: React.FC = () => {
         >
           <div className="container mx-auto px-4 max-w-7xl">
             <div className="text-center max-w-2xl mx-auto mb-10">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#003893] bg-blue-50 px-2.5 py-1 rounded">
-                {t('demographicsSummary.badge', 'Summary Demographics')}
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mt-2">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900">
                 {t(
                   'demographicsSummary.title',
                   'City Profile & Summary Demographics'
@@ -270,9 +267,6 @@ const Home: React.FC = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto bg-gradient-to-br from-slate-900 to-[#00225e] text-white rounded-3xl p-8 sm:p-10 shadow-xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6">
               <div className="space-y-2 text-center md:text-left">
-                <span className="text-xs font-bold text-amber-400 uppercase tracking-wider">
-                  Open Source • Volunteer Driven • Civic Tech
-                </span>
                 <h3 className="text-2xl font-bold text-white">
                   Join the BetterTrece Community
                 </h3>

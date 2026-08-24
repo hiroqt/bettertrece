@@ -326,10 +326,6 @@ export default function Government() {
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
               <div className="space-y-3 max-w-3xl">
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider bg-amber-400/20 text-amber-300 border border-amber-400/30 flex items-center gap-1.5">
-                    <ShieldCheck className="w-3.5 h-3.5" />
-                    <span>Official City Government</span>
-                  </span>
                   <span className="px-2.5 py-0.5 rounded-full text-xs font-mono bg-white/10 text-blue-100 border border-white/15 flex items-center gap-1">
                     <Calendar className="w-3 h-3 text-amber-300" />
                     <span>Term: {OFFICIALS_METADATA.term}</span>
@@ -475,12 +471,9 @@ export default function Government() {
                 className="scroll-mt-24 space-y-5"
               >
                 <div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#003893] bg-blue-50 px-2.5 py-1 rounded">
-                    LEADERSHIP
-                  </span>
                   <h2
                     id="heading-executive"
-                    className="text-2xl sm:text-3xl font-extrabold text-gray-900 mt-2 tracking-tight"
+                    className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight"
                   >
                     Executive Branch
                   </h2>
@@ -597,12 +590,9 @@ export default function Government() {
               >
                 <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
                   <div>
-                    <span className="text-xs font-bold uppercase tracking-wider text-[#003893] bg-blue-50 px-2.5 py-1 rounded">
-                      LAWMAKERS
-                    </span>
                     <h2
                       id="heading-legislative"
-                      className="text-2xl sm:text-3xl font-extrabold text-gray-900 mt-2 tracking-tight"
+                      className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight"
                     >
                       Legislative Branch
                     </h2>
@@ -703,12 +693,9 @@ export default function Government() {
               >
                 <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
                   <div>
-                    <span className="text-xs font-bold uppercase tracking-wider text-[#003893] bg-blue-50 px-2.5 py-1 rounded">
-                      GRASSROOTS LEADERSHIP
-                    </span>
                     <h2
                       id="heading-barangays"
-                      className="text-2xl sm:text-3xl font-extrabold text-gray-900 mt-2 tracking-tight"
+                      className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight"
                     >
                       13 Constituent Barangays &amp; Captains
                     </h2>
@@ -800,12 +787,9 @@ export default function Government() {
                 className="scroll-mt-24 space-y-5 pt-4"
               >
                 <div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#003893] bg-blue-50 px-2.5 py-1 rounded">
-                    DEPARTMENTS
-                  </span>
                   <h2
                     id="heading-departments"
-                    className="text-2xl sm:text-3xl font-extrabold text-gray-900 mt-2 tracking-tight"
+                    className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight"
                   >
                     Departments &amp; Key Offices
                   </h2>
@@ -859,12 +843,9 @@ export default function Government() {
                 className="scroll-mt-24 space-y-5 pt-4"
               >
                 <div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#003893] bg-blue-50 px-2.5 py-1 rounded">
-                    OPEN GOVERNANCE
-                  </span>
                   <h2
                     id="heading-transparency"
-                    className="text-2xl sm:text-3xl font-extrabold text-gray-900 mt-2 tracking-tight"
+                    className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight"
                   >
                     Civic Transparency &amp; Reports
                   </h2>
@@ -979,12 +960,9 @@ export default function Government() {
                 className="scroll-mt-24 space-y-5 pt-4"
               >
                 <div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-2.5 py-1 rounded">
-                    EMERGENCY &amp; 24/7 SUPPORT
-                  </span>
                   <h2
                     id="heading-hotlines"
-                    className="text-2xl sm:text-3xl font-extrabold text-gray-900 mt-2 tracking-tight"
+                    className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight"
                   >
                     Public Assistance &amp; Hotlines
                   </h2>

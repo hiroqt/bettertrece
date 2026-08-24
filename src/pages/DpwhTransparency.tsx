@@ -113,13 +113,6 @@ export default function DpwhTransparency() {
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
               <div className="space-y-3 max-w-3xl">
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider bg-emerald-400/20 text-emerald-300 border border-emerald-400/30 flex items-center gap-1.5">
-                    <Coins
-                      className="w-3.5 h-3.5 text-emerald-300"
-                      aria-hidden="true"
-                    />
-                    Fiscal Transparency &amp; Public Works
-                  </span>
                   <span className="px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-white/10 text-blue-100">
                     DBM &bull; DOF-BLGF &bull; DPWH
                   </span>

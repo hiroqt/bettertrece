@@ -22,7 +22,6 @@ import {
   Baby,
   AlertTriangle,
   FileText,
-  Sparkles,
   LayoutGrid,
 } from 'lucide-react';
 import { serviceCategories } from '../../data/yamlLoader';
@@ -83,13 +82,9 @@ export default function ServicesSection({
     <Section className="py-12 lg:py-16 bg-slate-50/60 border-b border-gray-100">
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
         <div>
-          <span className="text-xs font-bold uppercase tracking-wider text-[#003893] bg-blue-50 px-2.5 py-1 rounded inline-flex items-center gap-1.5">
-            <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-            <span>{t('services.badge', 'Public Services Directory')}</span>
-          </span>
           <Heading
             level={2}
-            className="text-2xl sm:text-3xl font-extrabold text-gray-900 mt-2"
+            className="text-2xl sm:text-3xl font-extrabold text-gray-900"
           >
             {title || t('services.title', 'City Services & Information')}
           </Heading>

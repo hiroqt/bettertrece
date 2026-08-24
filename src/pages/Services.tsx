@@ -14,7 +14,6 @@ import {
   X,
   ArrowRight,
   ChevronRight,
-  ShieldCheck,
   Building2,
   Heart,
   GraduationCap,
@@ -306,13 +305,6 @@ const Services: React.FC = () => {
               <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
                 <div className="space-y-3 max-w-3xl">
                   <div className="flex flex-wrap items-center gap-2">
-                    <span className="px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider bg-amber-400/20 text-amber-300 border border-amber-400/30 flex items-center gap-1.5">
-                      <CategoryIcon
-                        iconName={categoryData.icon}
-                        className="w-3.5 h-3.5"
-                      />
-                      <span>City Service Category</span>
-                    </span>
                     <span className="px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-white/10 text-blue-100 border border-white/15">
                       {categoryIndex.pages.length} Detailed Guides
                     </span>
@@ -629,10 +621,6 @@ const Services: React.FC = () => {
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
               <div className="space-y-3 max-w-3xl">
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider bg-amber-400/20 text-amber-300 border border-amber-400/30 flex items-center gap-1.5">
-                    <ShieldCheck className="w-3.5 h-3.5" />
-                    <span>Citizen Services Directory</span>
-                  </span>
                   <span className="px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-white/10 text-blue-100 border border-white/15">
                     10 Categories &bull; {totalGuidesCount}+ Detailed Guides
                   </span>
@@ -874,10 +862,7 @@ const Services: React.FC = () => {
               <section className="space-y-6">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                   <div>
-                    <span className="text-xs font-bold uppercase tracking-wider text-[#003893] bg-blue-50 px-2.5 py-1 rounded">
-                      Browse By Category
-                    </span>
-                    <h2 className="text-xl sm:text-2xl font-black text-gray-900 mt-1.5">
+                    <h2 className="text-xl sm:text-2xl font-black text-gray-900">
                       All 10 Local Government Service Categories
                     </h2>
                   </div>
@@ -964,9 +949,6 @@ const Services: React.FC = () => {
           <section className="mt-14 bg-gradient-to-br from-slate-900 to-[#00225e] text-white rounded-3xl p-6 sm:p-10 shadow-xl border border-blue-900/40 relative overflow-hidden">
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 relative z-10">
               <div className="space-y-2 max-w-2xl">
-                <span className="text-xs font-bold text-amber-400 uppercase tracking-wider">
-                  Citizen Support &amp; Emergency Assistance
-                </span>
                 <h3 className="text-2xl font-bold text-white">
                   Need Help or Urgent Public Service Assistance?
                 </h3>

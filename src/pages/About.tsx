@@ -14,6 +14,10 @@ import {
   MapPin,
   Landmark,
   HelpCircle,
+  Quote,
+  Sparkles,
+  Smartphone,
+  Globe2,
 } from 'lucide-react';
 import SEO from '../components/SEO';
 import Breadcrumbs from '../components/ui/Breadcrumbs';
@@ -21,26 +25,30 @@ import Breadcrumbs from '../components/ui/Breadcrumbs';
 const About: React.FC = () => {
   const pillars = [
     {
+      number: '01',
       icon: ShieldCheck,
-      color: 'text-amber-400 bg-amber-500/10 border-amber-500/20',
+      color: 'text-amber-500 bg-amber-500/10 border-amber-500/20',
       title: 'Open Governance & Transparency',
       desc: 'Integrating verified public datasets from DOF-BLGF, DBM, PSA, and DPWH so citizens can track local budgets and public works with complete clarity.',
     },
     {
+      number: '02',
       icon: Users,
-      color: 'text-blue-400 bg-blue-500/10 border-blue-500/20',
+      color: 'text-blue-500 bg-blue-500/10 border-blue-500/20',
       title: 'Citizen-First Civic Usability',
       desc: 'Transforming complex administrative procedures into clear, step-by-step guides in English and Filipino, accessible on any smartphone or computer.',
     },
     {
+      number: '03',
       icon: Zap,
-      color: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
+      color: 'text-emerald-500 bg-emerald-500/10 border-emerald-500/20',
       title: 'Modern & Lightning-Fast Tech',
-      desc: 'Built with cutting-edge web technologies—React, TypeScript, and Vite. Zero ads, zero bloat, zero tracking scripts, and instant page transitions.',
+      desc: 'Built with modern web technologies including React, TypeScript, and Vite. Zero ads, zero bloat, zero tracking scripts, and instant page transitions.',
     },
     {
+      number: '04',
       icon: Layers,
-      color: 'text-purple-400 bg-purple-500/10 border-purple-500/20',
+      color: 'text-purple-500 bg-purple-500/10 border-purple-500/20',
       title: 'Community & Open Source',
       desc: 'An open-source initiative built for the public good. Anyone can view the codebase, verify data transformations, and contribute improvements.',
     },
@@ -91,6 +99,29 @@ const About: React.FC = () => {
     {
       q: 'How can I contribute or report incorrect information?',
       a: 'BetterTrece is an open-source civic project. You can submit suggestions, report data inaccuracies, or contribute improvements directly through our open GitHub repository or by reaching out to the development team.',
+    },
+  ];
+
+  const featureHighlights = [
+    {
+      icon: Globe2,
+      label: 'Bilingual Support',
+      desc: 'English & Filipino',
+    },
+    {
+      icon: Smartphone,
+      label: 'Mobile Optimized',
+      desc: 'Fast on all devices',
+    },
+    {
+      icon: ShieldCheck,
+      label: 'Verified Public Data',
+      desc: 'Official government records',
+    },
+    {
+      icon: Sparkles,
+      label: 'Zero Ads & Tracking',
+      desc: '100% Non-profit & open',
     },
   ];
 
@@ -177,38 +208,78 @@ const About: React.FC = () => {
               </div>
             </div>
 
-            <div className="prose prose-slate max-w-none text-gray-700 space-y-4 text-sm sm:text-base leading-relaxed">
+            <div className="text-gray-700 space-y-5 text-sm sm:text-base leading-relaxed">
               <p>
-                As a software engineer and long-time resident of Cavite, I have
+                As a software Developer and long-time resident of Cavite, I have
                 always believed that access to local public services, city
                 ordinances, and fiscal data should be effortless. Yet for years,
-                finding straightforward answers to everyday civic questions—such
-                as{' '}
-                <em>
-                  “Where do I apply for a business clearance?”, “What is our
-                  city’s budget?”, or “What are the active flood control
-                  projects in my barangay?”
-                </em>
-                —meant digging through scattered Facebook posts, unindexed PDF
+                finding straightforward answers to everyday civic questions,
+                such as{' '}
+                <strong className="text-gray-900 font-bold">
+                  “Where do I apply for a business clearance?”
+                </strong>
+                ,{' '}
+                <strong className="text-gray-900 font-bold">
+                  “What is our city’s budget?”
+                </strong>
+                , or{' '}
+                <strong className="text-gray-900 font-bold">
+                  “What are the active flood control projects in my barangay?”
+                </strong>
+                , meant digging through scattered Facebook posts, unindexed PDF
                 bulletins, or non-responsive websites.
               </p>
 
               <p>
-                I built <strong>BetterTrece.org</strong> to change that. I
-                wanted to prove what a modern, citizen-centric government portal
-                could look like when designed with speed, accessibility, and
-                uncompromising visual clarity.
+                I built{' '}
+                <strong className="text-gray-900 font-bold">
+                  BetterTrece.org
+                </strong>{' '}
+                to change that. I wanted to prove what a modern, citizen-centric
+                government portal could look like when designed with{' '}
+                <strong className="text-gray-900 font-bold">speed</strong>,{' '}
+                <strong className="text-gray-900 font-bold">
+                  accessibility
+                </strong>
+                , and{' '}
+                <strong className="text-gray-900 font-bold">
+                  uncompromising visual clarity
+                </strong>
+                .
               </p>
 
-              <div className="bg-blue-50/80 border-l-4 border-[#003893] p-4.5 rounded-r-xl my-6">
-                <p className="text-gray-900 font-semibold italic text-sm sm:text-base leading-snug">
-                  “Public data belongs to the public. When government
-                  information is clean, searchable, and transparent, citizens
-                  become more engaged, businesses flourish, and communities
-                  thrive.”
-                </p>
-                <div className="mt-2 text-xs font-bold text-[#003893]">
-                  — Arnel Baylon, Creator of BetterTrece.org
+              {/* MODERN QUOTE CARD */}
+              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#001f54]/5 via-blue-50/70 to-amber-50/40 border border-blue-200/80 p-6 sm:p-8 my-8 shadow-xs">
+                {/* Decorative background watermark */}
+                <Quote className="absolute right-4 -bottom-4 w-32 h-32 text-blue-900/[0.04] pointer-events-none" />
+
+                <div className="relative z-10 space-y-4">
+                  <div className="w-10 h-10 rounded-xl bg-[#003893] text-white flex items-center justify-center shadow-md shadow-blue-900/15 shrink-0">
+                    <Quote className="w-5 h-5 fill-current" />
+                  </div>
+
+                  <blockquote className="text-gray-900 font-bold text-base sm:text-lg lg:text-xl leading-snug sm:leading-normal tracking-tight">
+                    “Public data belongs to the public. When government
+                    information is clean, searchable, and transparent, citizens
+                    become more engaged, businesses flourish, and communities
+                    thrive.”
+                  </blockquote>
+
+                  <div className="border-t border-blue-200/60 pt-4 mt-4 flex items-center justify-between flex-wrap gap-3">
+                    <div>
+                      <div className="font-bold text-gray-900 text-sm sm:text-base leading-tight">
+                        Arnel Baylon
+                      </div>
+                      <div className="text-xs text-blue-800 font-semibold">
+                        Creator & Developer, BetterTrece.org
+                      </div>
+                    </div>
+
+                    <div className="inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full bg-blue-100/80 text-blue-900 border border-blue-200/60">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                      Civic Tech Initiative
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -217,20 +288,43 @@ const About: React.FC = () => {
                 PSA geocodes, COMELEC voter statistics, DBM revenue collections,
                 and DPWH infrastructure contracts into an intuitive, high-speed
                 web interface. Everything is organized to be accessible in both{' '}
-                <strong>English</strong> and <strong>Filipino</strong>,
+                <strong className="text-gray-900 font-bold">English</strong> and{' '}
+                <strong className="text-gray-900 font-bold">Filipino</strong>,
                 responsive on mobile phones, and completely free of advertising
                 or commercial trackers.
               </p>
+
+              {/* HIGHLIGHT CHIPS */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-3">
+                {featureHighlights.map((feat, idx) => {
+                  const FeatIcon = feat.icon;
+                  return (
+                    <div
+                      key={idx}
+                      className="bg-slate-50 border border-gray-200/90 rounded-xl p-3.5 flex flex-col justify-between"
+                    >
+                      <div className="w-7 h-7 rounded-lg bg-blue-50 text-[#003893] flex items-center justify-center mb-2">
+                        <FeatIcon className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold text-gray-900">
+                          {feat.label}
+                        </div>
+                        <div className="text-[11px] text-gray-500 font-medium mt-0.5">
+                          {feat.desc}
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </section>
 
           {/* SECTION 2: CORE PILLARS */}
           <section className="space-y-6">
             <div className="text-center max-w-2xl mx-auto">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#003893] bg-blue-50 px-2.5 py-1 rounded">
-                Our Foundation
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mt-2">
+              <h2 className="text-2xl sm:text-3xl font-black text-gray-900">
                 Four Pillars of BetterTrece
               </h2>
               <p className="text-gray-600 text-sm mt-1">
@@ -245,13 +339,18 @@ const About: React.FC = () => {
                 return (
                   <div
                     key={idx}
-                    className="bg-white rounded-2xl border border-gray-200 p-6 shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between"
+                    className="bg-white rounded-2xl border border-gray-200 p-6 shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between relative overflow-hidden group"
                   >
                     <div>
-                      <div
-                        className={`w-10 h-10 rounded-xl flex items-center justify-center border mb-4 ${pillar.color}`}
-                      >
-                        <Icon className="w-5 h-5" />
+                      <div className="flex items-center justify-between mb-4">
+                        <div
+                          className={`w-10 h-10 rounded-xl flex items-center justify-center border ${pillar.color}`}
+                        >
+                          <Icon className="w-5 h-5" />
+                        </div>
+                        <span className="text-xs font-black text-gray-300 font-mono tracking-wider group-hover:text-blue-600 transition-colors">
+                          {pillar.number}
+                        </span>
                       </div>
                       <h3 className="text-lg font-bold text-gray-900 mb-2">
                         {pillar.title}
@@ -284,8 +383,12 @@ const About: React.FC = () => {
 
             <p className="text-sm text-gray-600 mb-6 leading-relaxed">
               Every statistic, demographic metric, project budget, and legal
-              charter referenced on BetterTrece.org is grounded in official
-              government reports and open-data standards:
+              charter referenced on{' '}
+              <strong className="text-gray-900 font-bold">
+                BetterTrece.org
+              </strong>{' '}
+              is grounded in official government reports and open-data
+              standards:
             </p>
 
             <div className="divide-y divide-gray-100 border border-gray-200 rounded-xl overflow-hidden">
@@ -320,10 +423,7 @@ const About: React.FC = () => {
           {/* SECTION 4: FREQUENTLY ASKED QUESTIONS */}
           <section className="space-y-6">
             <div className="text-center max-w-2xl mx-auto">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#003893] bg-blue-50 px-2.5 py-1 rounded">
-                Questions & Answers
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mt-2">
+              <h2 className="text-2xl sm:text-3xl font-black text-gray-900">
                 Frequently Asked Questions
               </h2>
             </div>
