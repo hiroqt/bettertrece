@@ -8,6 +8,7 @@ import Services from './pages/Services';
 import Document from './pages/Document';
 import Government from './pages/Government';
 import Demographics from './pages/Demographics';
+import DpwhTransparency from './pages/DpwhTransparency';
 import Search from './pages/Search';
 import { isMeilisearchEnabled } from './lib/meilisearch';
 import { BrowserRouter as Router, Routes, Route } from 'react-router';
@@ -23,6 +24,8 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/demographics" element={<Demographics />} />
+              <Route path="/transparency" element={<DpwhTransparency />} />
+              <Route path="/transparency/dpwh" element={<DpwhTransparency />} />
               <Route path="/services/:category" element={<Services />} />
               <Route path="/services" element={<Services />} />
               <Route

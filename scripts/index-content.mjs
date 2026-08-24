@@ -94,22 +94,34 @@ async function indexContent() {
   const documents = [];
 
   // Index services
-  const servicesYaml = readFileSync(join(ROOT, 'src/data/services.yaml'), 'utf8');
+  const servicesYaml = readFileSync(
+    join(ROOT, 'src/data/services.yaml'),
+    'utf8'
+  );
   const servicesData = yaml.load(servicesYaml);
   for (const cat of servicesData.categories) {
-    documents.push(...loadMarkdownPages('services', cat.slug, cat.category, 'service'));
+    documents.push(
+      ...loadMarkdownPages('services', cat.slug, cat.category, 'service')
+    );
   }
 
   // Index government
   const govYaml = readFileSync(join(ROOT, 'src/data/government.yaml'), 'utf8');
   const govData = yaml.load(govYaml);
   for (const cat of govData.categories) {
-    documents.push(...loadMarkdownPages('government', cat.slug, cat.category, 'government'));
+    documents.push(
+      ...loadMarkdownPages('government', cat.slug, cat.category, 'government')
+    );
     // Also check nested subcategory indexes registered in yamlLoader
     if (cat.subcategories) {
       for (const sub of cat.subcategories) {
         documents.push(
-          ...loadMarkdownPages('government', `${cat.slug}/${sub.slug}`, sub.name, 'government')
+          ...loadMarkdownPages(
+            'government',
+            `${cat.slug}/${sub.slug}`,
+            sub.name,
+            'government'
+          )
         );
       }
     }
@@ -126,13 +138,31 @@ async function indexContent() {
   await index.updateSettings({
     searchableAttributes: ['title', 'description', 'content', 'category'],
     filterableAttributes: ['type', 'categorySlug'],
-    displayedAttributes: ['id', 'title', 'description', 'type', 'category', 'categorySlug', 'slug', 'url'],
-    rankingRules: ['words', 'typo', 'proximity', 'attribute', 'sort', 'exactness'],
+    displayedAttributes: [
+      'id',
+      'title',
+      'description',
+      'type',
+      'category',
+      'categorySlug',
+      'slug',
+      'url',
+    ],
+    rankingRules: [
+      'words',
+      'typo',
+      'proximity',
+      'attribute',
+      'sort',
+      'exactness',
+    ],
   });
 
   console.log(`Indexing ${documents.length} documents...`);
   const task = await index.addDocuments(documents, { primaryKey: 'id' });
-  console.log(`Done! Task ID: ${task.taskUid}. ${documents.length} documents queued for indexing.`);
+  console.log(
+    `Done! Task ID: ${task.taskUid}. ${documents.length} documents queued for indexing.`
+  );
 }
 
 indexContent().catch(err => {

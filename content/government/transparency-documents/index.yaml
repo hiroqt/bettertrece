@@ -1,0 +1,14 @@
+# Transparency Documents Pages
+# This file contains all the pages available under Transparency Documents
+
+title: 'Transparency Documents & Infrastructure Open Data'
+description: 'Access local government transparency disclosures, Full Disclosure Policy reports, and DPWH infrastructure project registries.'
+layout: 'grid'
+
+pages:
+  - name: 'DPWH Infrastructure Transparency'
+    slug: 'dpwh-transparency'
+    description: 'Track ongoing and completed DPWH public works contracts, GAA budgets, physical progress, and contractor data for Trece Martires City and Cavite DEOs.'
+  - name: 'Full Disclosure Policy'
+    slug: 'full-disclosure-policy'
+    description: 'Local government budget disclosures, quarterly financial statements, annual procurement plans, and municipal audit reports.'

@@ -17,6 +17,7 @@ import {
   Compass,
   ArrowRight,
   FileSpreadsheet,
+  HardHat,
 } from 'lucide-react';
 
 // 13 Historical Barangays of Trece Martires City (Named after the Thirteen Martyrs of Cavite)
@@ -211,6 +212,13 @@ const Home: React.FC = () => {
                 <FileSpreadsheet className="w-4 h-4 text-blue-200" />
                 <span>View Full Census Data &amp; PSGC Directory</span>
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <Link
+                to="/transparency/dpwh"
+                className="inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold px-4 py-2.5 rounded-xl text-xs sm:text-sm transition-all shadow-xs"
+              >
+                <HardHat className="w-4 h-4 text-slate-900" />
+                <span>DPWH Infrastructure Transparency</span>
               </Link>
               <Link
                 to="/demographics#psa-classifications"

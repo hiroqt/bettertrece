@@ -48,10 +48,14 @@ export const mainNavigation: NavigationItem[] = [
   },
   {
     label: 'Transparency',
-    href: '/government/transparency-documents',
+    href: '/transparency/dpwh',
     children: [
       {
-        label: 'Full Disclosure Policy',
+        label: 'DPWH Infrastructure Transparency',
+        href: '/transparency/dpwh',
+      },
+      {
+        label: 'Full Disclosure Policy & Documents',
         href: '/government/transparency-documents',
       },
       {
@@ -126,6 +130,10 @@ export const footerNavigation = {
         {
           label: 'City Council & Ordinances',
           href: '/government/departments/legislative',
+        },
+        {
+          label: 'DPWH Infrastructure Transparency',
+          href: '/transparency/dpwh',
         },
         {
           label: 'Transparency & FOI',

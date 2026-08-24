@@ -54,8 +54,10 @@ categories:
         slug: 'public-consultations'
   - category: 'Transparency Documents'
     slug: 'transparency-documents'
-    description: 'Access Freedom of Information releases and transparency documents for local government accountability.'
+    description: 'Access DPWH infrastructure transparency data, Full Disclosure Policy releases, and Freedom of Information documents.'
     icon: 'FileText'
     subcategories:
-      - name: 'Transparency Documents'
-        slug: 'transparency-documents'
+      - name: 'DPWH Infrastructure Transparency'
+        slug: 'dpwh-transparency'
+      - name: 'Full Disclosure Policy'
+        slug: 'full-disclosure-policy'
