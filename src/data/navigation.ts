@@ -290,9 +290,39 @@ export const mainNavigation: MainNavItem[] = [
   },
   {
     label: 'Transparency',
-    href: '/transparency/dpwh',
+    href: '/transparency',
     megaMenu: {
       columns: [
+        {
+          heading: 'Fiscal Disclosures & Budget',
+          items: [
+            {
+              title: 'City Revenue & Budget (DBM)',
+              description: 'Receipts, expenditures & budget reports',
+              href: '/transparency',
+              iconName: 'Coins',
+              badge: 'Live Data',
+            },
+            {
+              title: 'Full Disclosure Policy (FDP)',
+              description: 'DILG compliance & financial transparency',
+              href: '/government/transparency-documents/full-disclosure-policy',
+              iconName: 'FileSpreadsheet',
+            },
+            {
+              title: 'City Financial Statements (DBM)',
+              description: 'Official SRE and budget documents',
+              href: '/government/transparency-documents',
+              iconName: 'Building2',
+            },
+            {
+              title: 'Annual Procurement Plans',
+              description: 'Public bidding & contract awards',
+              href: '/government/transparency-documents',
+              iconName: 'FileText',
+            },
+          ],
+        },
         {
           heading: 'Infrastructure Projects',
           items: [
@@ -324,29 +354,6 @@ export const mainNavigation: MainNavItem[] = [
           ],
         },
         {
-          heading: 'Fiscal Disclosures',
-          items: [
-            {
-              title: 'Full Disclosure Policy (FDP)',
-              description: 'DILG compliance & financial transparency',
-              href: '/government/transparency-documents/full-disclosure-policy',
-              iconName: 'FileSpreadsheet',
-            },
-            {
-              title: 'City Financial Statements (DBM)',
-              description: 'Receipts, expenditures & budget reports',
-              href: '/government/transparency-documents',
-              iconName: 'Coins',
-            },
-            {
-              title: 'Annual Procurement Plans',
-              description: 'Public bidding & contract awards',
-              href: '/government/transparency-documents',
-              iconName: 'FileText',
-            },
-          ],
-        },
-        {
           heading: 'Open Governance & FOI',
           items: [
             {
@@ -372,14 +379,14 @@ export const mainNavigation: MainNavItem[] = [
         },
       ],
       featured: {
-        tag: 'OPEN DATA',
-        title: 'Infrastructure & Fiscal Transparency',
+        tag: 'FISCAL TRANSPARENCY',
+        title: 'City Revenue & Budget (DBM)',
         description:
-          'Explore 100+ DPWH public works, municipal budget disclosures, and Full Disclosure Policy compliance.',
-        href: '/transparency/dpwh',
-        ctaText: 'View Infrastructure Tracker',
-        stat: '100+',
-        statLabel: 'Monitored Public Projects',
+          'Explore Trece Martires City receipts, tax collections, expenditures, and 100+ DPWH infrastructure public works.',
+        href: '/transparency',
+        ctaText: 'View Revenue & Budget',
+        stat: '₱1.53B+',
+        statLabel: '2024 Total City Revenue',
       },
     },
   },

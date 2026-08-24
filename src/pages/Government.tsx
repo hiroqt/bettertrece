@@ -19,6 +19,7 @@ import {
   Shield,
   HeartPulse,
   HardHat,
+  Coins,
 } from 'lucide-react';
 import Breadcrumbs from '../components/ui/Breadcrumbs';
 import SEO from '../components/SEO';
@@ -868,12 +869,36 @@ export default function Government() {
                     Civic Transparency &amp; Reports
                   </h2>
                   <p className="text-gray-600 text-sm mt-1">
-                    Open access to DPWH infrastructure projects, municipal
-                    census demographics, and Full Disclosure Policy records.
+                    Open access to Trece Martires City revenue &amp; budget,
+                    DPWH infrastructure projects, municipal census demographics,
+                    and Full Disclosure Policy records.
                   </p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                  {/* City Revenue & Budget Card */}
+                  <Link
+                    to="/transparency"
+                    className="p-5 rounded-2xl bg-white border border-gray-200 hover:border-emerald-500 hover:shadow-md transition-all flex flex-col justify-between group"
+                  >
+                    <div className="space-y-2">
+                      <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center">
+                        <Coins className="w-5 h-5" />
+                      </div>
+                      <h3 className="text-base font-bold text-gray-900 group-hover:text-[#003893] transition-colors">
+                        City Revenue &amp; Budget
+                      </h3>
+                      <p className="text-xs text-gray-600 leading-relaxed">
+                        DBM / DOF-BLGF Statement of Receipts and Expenditures,
+                        local tax collections, and fiscal breakdowns.
+                      </p>
+                    </div>
+                    <div className="mt-4 pt-3 border-t border-gray-100 text-xs font-bold text-emerald-700 flex items-center justify-between">
+                      <span>View Revenue Data</span>
+                      <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </Link>
+
                   {/* DPWH Card */}
                   <Link
                     to="/transparency/dpwh"

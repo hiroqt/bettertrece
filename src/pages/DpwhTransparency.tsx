@@ -1,23 +1,85 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation, useSearchParams } from 'react-router';
 import SEO from '../components/SEO';
 import Breadcrumbs from '../components/ui/Breadcrumbs';
 import DpwhProjectsExplorer from '../components/transparency/DpwhProjectsExplorer';
 import CityRevenueWidget from '../components/transparency/CityRevenueWidget';
 import {
   Building2,
-  HardHat,
   ShieldCheck,
-  MapPin,
   Landmark,
   Layers,
   ArrowRight,
   Coins,
+  HardHat,
 } from 'lucide-react';
 
 export default function DpwhTransparency() {
+  const location = useLocation();
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const getInitialTab = (): 'budget-revenue' | 'explorer' | 'trece-focus' => {
+    const tabParam = searchParams.get('tab');
+    if (
+      tabParam === 'explorer' ||
+      tabParam === 'dpwh' ||
+      tabParam === 'api-tester' ||
+      tabParam === 'live-api'
+    ) {
+      return 'explorer';
+    }
+    if (tabParam === 'trece-focus' || tabParam === 'corridors') {
+      return 'trece-focus';
+    }
+    if (
+      tabParam === 'budget-revenue' ||
+      tabParam === 'revenue' ||
+      tabParam === 'budget'
+    ) {
+      return 'budget-revenue';
+    }
+
+    if (
+      location.pathname === '/transparency/dpwh' ||
+      location.hash === '#dpwh' ||
+      location.hash === '#explorer' ||
+      location.hash === '#api-tester'
+    ) {
+      return 'explorer';
+    }
+    if (location.hash === '#trece-focus') {
+      return 'trece-focus';
+    }
+
+    // Default to 'budget-revenue' (Revenue & Budget)
+    return 'budget-revenue';
+  };
+
   const [activeTab, setActiveTab] = useState<
-    'explorer' | 'budget-revenue' | 'trece-focus'
-  >('explorer');
+    'budget-revenue' | 'explorer' | 'trece-focus'
+  >(getInitialTab);
+
+  useEffect(() => {
+    setActiveTab(getInitialTab());
+  }, [location.pathname, location.hash, searchParams]);
+
+  const handleTabChange = (
+    tab: 'budget-revenue' | 'explorer' | 'trece-focus'
+  ) => {
+    setActiveTab(tab);
+    setSearchParams(
+      prev => {
+        const next = new URLSearchParams(prev);
+        if (tab === 'budget-revenue') {
+          next.delete('tab');
+        } else {
+          next.set('tab', tab);
+        }
+        return next;
+      },
+      { replace: true }
+    );
+  };
 
   const breadcrumbItems = [
     { label: 'Home', href: '/' },
@@ -31,7 +93,7 @@ export default function DpwhTransparency() {
   return (
     <>
       <SEO
-        title="Public Works & Financial Transparency | City of Trece Martires"
+        title="City Revenue & Financial Transparency | Trece Martires City"
         description="Official transparency portal for Trece Martires City, Cavite. Track DBM/DOF-BLGF city revenue collections, local taxes, expenditures, and DPWH infrastructure public works under Cavite 1st DEO."
         keywords="Trece Martires budget, city revenue, DBM Trece Martires, DPWH Trece Martires, Cavite 1st DEO, public works, city taxes, SRE Trece Martires"
       />
@@ -51,12 +113,12 @@ export default function DpwhTransparency() {
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
               <div className="space-y-3 max-w-3xl">
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider bg-amber-400/20 text-amber-300 border border-amber-400/30 flex items-center gap-1.5">
-                    <HardHat
-                      className="w-3.5 h-3.5 text-amber-300"
+                  <span className="px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider bg-emerald-400/20 text-emerald-300 border border-emerald-400/30 flex items-center gap-1.5">
+                    <Coins
+                      className="w-3.5 h-3.5 text-emerald-300"
                       aria-hidden="true"
                     />
-                    Public Works &amp; Fiscal Transparency
+                    Fiscal Transparency &amp; Public Works
                   </span>
                   <span className="px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-white/10 text-blue-100">
                     DBM &bull; DOF-BLGF &bull; DPWH
@@ -92,7 +154,7 @@ export default function DpwhTransparency() {
           </div>
         </section>
 
-        {/* Sticky Tab Navigation */}
+        {/* Sticky Tab Navigation - 3 Unified Tabs */}
         <div className="sticky top-0 z-20 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-xs">
           <div className="container mx-auto px-4 max-w-7xl">
             <div
@@ -100,28 +162,13 @@ export default function DpwhTransparency() {
               aria-label="Transparency Portal Sections"
               className="flex flex-wrap items-center gap-2 py-2"
             >
-              <button
-                role="tab"
-                id="tab-explorer"
-                aria-selected={activeTab === 'explorer'}
-                aria-controls="panel-explorer"
-                onClick={() => setActiveTab('explorer')}
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#003893] min-h-[40px] ${
-                  activeTab === 'explorer'
-                    ? 'bg-[#003893] text-white shadow-xs'
-                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
-                }`}
-              >
-                <Layers className="w-4 h-4" aria-hidden="true" />
-                <span>DPWH Projects Registry</span>
-              </button>
-
+              {/* Tab 1: City Revenue & Budget (Default) */}
               <button
                 role="tab"
                 id="tab-budget-revenue"
                 aria-selected={activeTab === 'budget-revenue'}
                 aria-controls="panel-budget-revenue"
-                onClick={() => setActiveTab('budget-revenue')}
+                onClick={() => handleTabChange('budget-revenue')}
                 className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#0a4d3c] min-h-[40px] ${
                   activeTab === 'budget-revenue'
                     ? 'bg-[#0a4d3c] text-white shadow-xs'
@@ -132,12 +179,30 @@ export default function DpwhTransparency() {
                 <span>City Revenue &amp; Budget (DBM)</span>
               </button>
 
+              {/* Tab 2: DPWH Infrastructure Tracker (Unified: Directory, Map & Analytics) */}
+              <button
+                role="tab"
+                id="tab-explorer"
+                aria-selected={activeTab === 'explorer'}
+                aria-controls="panel-explorer"
+                onClick={() => handleTabChange('explorer')}
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#003893] min-h-[40px] ${
+                  activeTab === 'explorer'
+                    ? 'bg-[#003893] text-white shadow-xs'
+                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                }`}
+              >
+                <HardHat className="w-4 h-4" aria-hidden="true" />
+                <span>DPWH Infrastructure Tracker</span>
+              </button>
+
+              {/* Tab 3: Strategic Corridors & Facilities */}
               <button
                 role="tab"
                 id="tab-trece-focus"
                 aria-selected={activeTab === 'trece-focus'}
                 aria-controls="panel-trece-focus"
-                onClick={() => setActiveTab('trece-focus')}
+                onClick={() => handleTabChange('trece-focus')}
                 className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#003893] min-h-[40px] ${
                   activeTab === 'trece-focus'
                     ? 'bg-[#003893] text-white shadow-xs'
@@ -153,16 +218,6 @@ export default function DpwhTransparency() {
 
         {/* Content Container */}
         <div className="container mx-auto px-4 max-w-7xl mt-8">
-          {activeTab === 'explorer' && (
-            <div
-              id="panel-explorer"
-              role="tabpanel"
-              aria-labelledby="tab-explorer"
-            >
-              <DpwhProjectsExplorer />
-            </div>
-          )}
-
           {activeTab === 'budget-revenue' && (
             <div
               id="panel-budget-revenue"
@@ -171,6 +226,17 @@ export default function DpwhTransparency() {
               className="space-y-8 animate-fadeIn"
             >
               <CityRevenueWidget />
+            </div>
+          )}
+
+          {activeTab === 'explorer' && (
+            <div
+              id="panel-explorer"
+              role="tabpanel"
+              aria-labelledby="tab-explorer"
+              className="animate-fadeIn"
+            >
+              <DpwhProjectsExplorer />
             </div>
           )}
 
@@ -193,24 +259,25 @@ export default function DpwhTransparency() {
                   <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                     Trece Martires serves as the administrative capital of
                     Cavite, connecting major arteries like Governor’s Drive
-                    (Cavitex/SLEX connector), the Trece-Indang Road, and the
-                    Tejero-General Trias corridor.
+                    (connecting to Dasmariñas and Naic), Tanza–Trece Martires
+                    Road, and Trece Martires–Indang Road.
                   </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
                   <div className="bg-slate-50 p-5 rounded-2xl border border-gray-200 space-y-3">
                     <div className="flex items-center gap-2 text-[#003893] font-bold text-sm">
-                      <MapPin
+                      <Layers
                         className="w-4 h-4 text-amber-500"
                         aria-hidden="true"
                       />
-                      <span>Governor's Drive (S01947LZ)</span>
+                      <span>Governor’s Drive Multi-Lane Widening</span>
                     </div>
                     <p className="text-xs text-gray-600 leading-relaxed">
-                      Primary secondary road corridor crossing Brgy. Hugo Perez,
-                      Cabuco, and San Agustin. Ongoing and completed multi-lane
-                      widening and asset preservation programs.
+                      Primary east-west national arterial corridor passing
+                      through Hugo Perez, Osorio, Cabuco, and San Agustin.
+                      Ongoing and completed multi-lane widening and asset
+                      preservation programs.
                     </p>
                     <div className="text-[11px] font-mono text-gray-700 font-bold">
                       GAA Allocation: ₱77.20M (Completed)
@@ -269,7 +336,7 @@ export default function DpwhTransparency() {
                     </p>
                   </div>
                   <button
-                    onClick={() => setActiveTab('explorer')}
+                    onClick={() => handleTabChange('explorer')}
                     className="inline-flex items-center gap-1.5 bg-[#003893] text-white px-4 py-2.5 rounded-xl text-xs font-bold hover:bg-blue-800 transition-colors shrink-0 shadow-xs focus-visible:ring-2 focus-visible:ring-[#003893]"
                   >
                     <span>Browse Trece Projects</span>

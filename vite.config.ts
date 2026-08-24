@@ -9,5 +9,14 @@ export default defineConfig({
   server: {
     host: true,
     port: 5173,
+    allowedHosts: true,
+    proxy: {
+      '/dpwh-api': {
+        target: 'https://api.transparency.dpwh.gov.ph',
+        changeOrigin: true,
+        secure: false,
+        rewrite: path => path.replace(/^\/dpwh-api/, ''),
+      },
+    },
   },
 });
