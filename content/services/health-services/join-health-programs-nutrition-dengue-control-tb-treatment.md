@@ -1,6 +1,6 @@
-# Join Health Programs — Lapu-Lapu City (Nutrition, Dengue Control, TB Treatment)
+# Join Health Programs — Trece Martires City (Nutrition, Dengue Control, TB Treatment)
 
-Below are city-led and national programs you can join through your **Barangay Health Center** and the **City Health Office (CHO)**.
+Below are city-led and national programs you can join through your **Barangay Health Center** and the **Trece Martires City Health Office (CHO)**.
 
 ---
 
@@ -8,19 +8,19 @@ Below are city-led and national programs you can join through your **Barangay He
 
 **What’s offered**
 
-- Supplementary feeding for day-care children.
+- Supplementary feeding for day-care children and undernourished toddlers.
 - Community nutrition activities such as breastfeeding promotion, growth monitoring, and health education.
 - Special events during Nutrition Month (July) and city-wide wellness programs.
 
 **Who can join**
 
-- Day-care children and families identified by barangays or CSWD.
+- Day-care children and families identified by barangays or City Social Welfare & Development (CSWD).
 - Residents may also take part in open city nutrition events.
 
 **How to join**
 
 1. Visit your **Barangay Health Center** or ask the **Barangay Nutrition Scholar (BNS)** about ongoing feeding programs.
-2. Join community activities and city-wide nutrition events announced by the **City Health Office (CHO)** or City Information Office.
+2. Join community activities and city-wide nutrition events announced by the **Trece Martires City Health Office (CHO)** or City Information Office.
 
 **Cost:** Free for eligible beneficiaries.
 
@@ -30,9 +30,9 @@ Below are city-led and national programs you can join through your **Barangay He
 
 **What’s offered**
 
-- Community clean-up drives under the **ABKD (Aksyon Barangay Kontra Dengue)** program.
+- Community clean-up drives under the **ABKD (Aksyon Barangay Kontra Dengue)** program across Trece Martires barangays.
 - Daily “4 o’clock habit” — searching and destroying mosquito breeding sites.
-- Misting, fogging, and entomological surveys led by the CHO.
+- Misting, fogging, and entomological surveys led by the Trece Martires CHO.
 - Information campaigns during Dengue Awareness Month and rainy season.
 
 **How to join**
@@ -53,7 +53,7 @@ Below are city-led and national programs you can join through your **Barangay He
 
 **Where**
 
-- Lapu-Lapu City Health Office (DOTS facility) and affiliated barangay health centers.
+- Trece Martires City Health Office (DOTS facility) and affiliated barangay health stations.
 
 **How to join**
 
@@ -67,8 +67,8 @@ Below are city-led and national programs you can join through your **Barangay He
 
 ## Contact & Updates
 
-- **Barangay Health Centers** — First point of contact for nutrition, dengue, and TB programs.
-- **Lapu-Lapu City Health Office (CHO)** — Main office for program schedules and services.
+- **Barangay Health Centers (13 Barangays of Trece Martires)** — First point of contact for nutrition, dengue, and TB programs.
+- **Trece Martires City Health Office (CHO)** — Main office at City Hall Compound for program schedules and services. Hotline: (046) 419-1065.
 - **City Information Office** — Posts updates on city-wide campaigns and health events.
 
 ---

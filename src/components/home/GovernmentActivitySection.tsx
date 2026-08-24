@@ -3,8 +3,8 @@ import * as LucideIcons from 'lucide-react';
 import { Heading } from '../ui/Heading';
 import { Text } from '../ui/Text';
 import { useTranslation } from '../../hooks/useTranslation';
-import { Card, CardContent } from '@bettergov/kapwa/card';
 import { Link } from 'react-router';
+import { ArrowRight } from 'lucide-react';
 
 import { governmentCategories } from '../../data/yamlLoader';
 
@@ -36,43 +36,69 @@ export default function GovernmentActivitySection({
     const IconComponent = LucideIcons[
       category as keyof typeof LucideIcons
     ] as React.ComponentType<{ className?: string }>;
-    return IconComponent ? <IconComponent className="h-6 w-6" /> : null;
+    return IconComponent ? <IconComponent className="h-5 w-5" /> : null;
   };
 
   const displayedCategories = governmentCategories.categories as Category[];
 
   return (
-    <Section id="#government">
-      <Heading level={2}>{title || t('title')}</Heading>
-      <Text className="text-gray-600 mb-6">
-        {description || t('governmentActivity.description')}
-      </Text>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {displayedCategories.map(category => (
-          <Card
-            key={category.slug}
-            hoverable
-            className="border-t-4 border-primary-500"
+    <Section id="government" className="py-12 lg:py-16 bg-white">
+      <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+        <div>
+          <span className="text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-2.5 py-1 rounded">
+            Local Government Administration
+          </span>
+          <Heading
+            level={2}
+            className="text-2xl sm:text-3xl font-extrabold text-gray-900 mt-2"
           >
-            <Link
-              to={`/government/${category.slug}`}
-              className="mt-auto text-primary-600 hover:text-primary-700 font-medium transition-colors inline-flex items-center"
-            >
-              <CardContent className="flex flex-col h-full p-6">
-                <div className="flex gap-2">
-                  <div className="bg-primary-100 text-primary-600 p-3 rounded-md mb-4 self-start">
-                    {getIcon(category.icon)}
-                  </div>
+            {title ||
+              t('governmentActivity.title', 'City Government & Departments')}
+          </Heading>
+          <Text className="text-gray-600 mt-1 max-w-2xl text-sm sm:text-base">
+            {description ||
+              t(
+                'governmentActivity.description',
+                'Explore local government departments, agencies, and offices with their mandates and public records.'
+              )}
+          </Text>
+        </div>
 
-                  <h3 className="text-lg font-semibold mb-4 text-gray-900 self-center">
-                    {category.category}
-                  </h3>
-                </div>
-                <Text className="text-gray-800">{category.description}</Text>
-              </CardContent>
-            </Link>
-          </Card>
+        <Link
+          to="/government"
+          className="inline-flex items-center gap-1.5 text-sm font-bold text-[#003893] hover:text-blue-700 transition-colors group shrink-0"
+        >
+          <span>View all departments</span>
+          <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+        </Link>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+        {displayedCategories.map(category => (
+          <Link
+            key={category.slug}
+            to={`/government/${category.slug}`}
+            className="group flex flex-col justify-between p-5 bg-white rounded-xl border border-gray-200 hover:border-amber-300 hover:shadow-lg transition-all duration-200"
+          >
+            <div>
+              <div className="w-10 h-10 rounded-lg bg-amber-50 text-amber-700 group-hover:bg-amber-600 group-hover:text-white flex items-center justify-center mb-3.5 transition-colors">
+                {getIcon(category.icon)}
+              </div>
+
+              <h3 className="text-base font-bold text-gray-900 group-hover:text-amber-700 transition-colors mb-2 leading-snug">
+                {category.category}
+              </h3>
+
+              <p className="text-xs text-gray-600 leading-relaxed line-clamp-3 mb-4">
+                {category.description}
+              </p>
+            </div>
+
+            <div className="flex items-center text-xs font-semibold text-amber-700 group-hover:translate-x-1 transition-transform">
+              <span>View details</span>
+              <ArrowRight className="w-3.5 h-3.5 ml-1" />
+            </div>
+          </Link>
         ))}
       </div>
     </Section>

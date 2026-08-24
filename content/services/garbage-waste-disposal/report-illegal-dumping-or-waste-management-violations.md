@@ -1,6 +1,6 @@
-# Report Illegal Dumping & Waste Management Violations — Lapu-Lapu City
+# Report Illegal Dumping & Waste Management Violations — Trece Martires City
 
-Illegal dumping, open burning, and improper waste practices are violations of **Republic Act 9003 (Ecological Solid Waste Management Act)** and city ordinances. Residents are encouraged to report offenders to help keep Lapu-Lapu City clean and safe.
+Illegal dumping, open burning, and improper waste practices are violations of **Republic Act 9003 (Ecological Solid Waste Management Act)** and city ordinances. Residents are encouraged to report offenders to help keep Trece Martires City clean and safe.
 
 ---
 
@@ -19,18 +19,18 @@ Illegal dumping, open burning, and improper waste practices are violations of **
 ## 2) How to Report
 
 1. **Barangay Level (First Step)**
-   - Go to your **Barangay Hall** or message the **Barangay Facebook Page**.
+   - Go to your **Barangay Hall** in your respective barangay.
    - Ask for the **Barangay Environment/Solid Waste Committee**.
    - Provide: **exact location**, **type of violation**, **time/date**, and **photos/videos** if possible.
 
 2. **City Environment and Natural Resources Office (CENRO)**
-   - If the violation is large-scale, recurring, or unaddressed by the barangay, contact **CENRO** at City Hall.
-   - Phone: (032) 340-0004 (City Hall trunkline, ask for CENRO)
-   - Updates and announcements: [Lapu-Lapu City Government Facebook Page](https://www.facebook.com/lapulapucitygovernment)
+   - If the violation is large-scale, recurring, or unaddressed by the barangay, contact **CENRO** at Trece Martires City Hall.
+   - Phone: (046) 419-0268 / (046) 419-1065
+   - Updates and announcements: [Trece Martires City Government Facebook Page](https://facebook.com/trecemartirescity)
 
 3. **Other Hotlines**
-   - **City Information Office (CIO):** (032) 340-1615 (for reports and follow-up).
-   - **Philippine National Police (PNP):** for dumping that threatens public safety or involves large-scale transport.
+   - **Trece Martires PNP Police Station:** 0949-184-9145 / (046) 419-0286
+   - **CDRRMO Emergency Dispatch:** 0961-992-1998 / (046) 419-0125
 
 ---
 
@@ -62,4 +62,4 @@ Illegal dumping, open burning, and improper waste practices are violations of **
 
 ### Key Reminder
 
-✅ Reporting waste violations is a **civic duty**. By promptly alerting your barangay or CENRO, you help protect your community’s health, prevent flooding, and keep Lapu-Lapu City sustainable.
+✅ Reporting waste violations is a **civic duty**. By promptly alerting your barangay or CENRO, you help protect your community’s health, prevent flooding, and keep Trece Martires City clean and sustainable.

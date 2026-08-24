@@ -5,23 +5,33 @@
     "about": "About",
     "contact": "Contact",
     "services": "Services",
+    "government": "Government",
+    "transparency": "Transparency",
+    "statistics": "Statistics",
     "language": "Language"
   },
   "navigation": {
     "home": "Home",
     "about": "About",
     "services": "Services",
+    "government": "Government",
+    "transparency": "Transparency",
+    "statistics": "Statistics",
     "contact": "Contact",
-    "login": "Login",
-    "register": "Register"
+    "hotlines": "Hotlines"
   },
   "hero": {
-    "title": "Better Local Government",
-    "subtitle": "Transforming communities through digital innovation",
-    "cta": "Get Started"
+    "welcome": "WELCOME TO",
+    "title": "BetterTrece.org",
+    "subtitle": "A community-run portal to find information and services of the City of Trece Martires, Cavite.",
+    "cta": "Browse Services",
+    "contact": "Contact Us",
+    "search": "Search Services",
+    "searchPlaceholder": "Search for a service...",
+    "popular": "POPULAR SERVICES"
   },
   "footer": {
-    "copyright": "© 2026 Better Local Government. All rights reserved.",
+    "copyright": "© 2026 BetterTrece.org. All rights reserved.",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service"
   }

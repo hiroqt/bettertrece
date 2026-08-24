@@ -14,6 +14,10 @@ interface Category {
 
 export const mainNavigation: NavigationItem[] = [
   {
+    label: 'Home',
+    href: '/',
+  },
+  {
     label: 'Services',
     href: '/services',
     children: (servicesData.categories as Category[]).map(category => ({
@@ -23,57 +27,122 @@ export const mainNavigation: NavigationItem[] = [
   },
   {
     label: 'Government',
-    href: '/government/departments',
+    href: '/government',
+    children: [
+      {
+        label: 'Executive Department',
+        href: '/government/departments/executive',
+      },
+      {
+        label: 'Legislative Department',
+        href: '/government/departments/legislative',
+      },
+      { label: 'City Departments', href: '/government/departments' },
+      { label: 'Barangays of Trece Martires', href: '/government#barangays' },
+      { label: 'News & Announcements', href: '/government/news' },
+      {
+        label: 'Guides & Regulations',
+        href: '/government/guides-and-regulations',
+      },
+    ],
+  },
+  {
+    label: 'Transparency',
+    href: '/government/transparency-documents',
+    children: [
+      {
+        label: 'Full Disclosure Policy',
+        href: '/government/transparency-documents',
+      },
+      {
+        label: 'City Ordinances & Resolutions',
+        href: '/government/guides-and-regulations',
+      },
+      {
+        label: 'Public Consultations',
+        href: '/government/public-consultations',
+      },
+      { label: 'Freedom of Information (FOI)', href: 'https://www.foi.gov.ph' },
+    ],
+  },
+  {
+    label: 'Statistics',
+    href: '/demographics',
+    children: [
+      { label: 'City Demographics & 13 Barangays', href: '/demographics' },
+      {
+        label: 'PSA Classification Systems',
+        href: '/demographics#psa-classifications',
+      },
+      {
+        label: 'Reports & Open Data',
+        href: '/government/reports-and-statistics',
+      },
+    ],
+  },
+  {
+    label: 'Contact',
+    href: '#contact',
   },
 ];
 
 export const footerNavigation = {
   mainSections: [
     {
-      title: 'About',
+      title: 'About Trece Martires',
       links: [
-        { label: 'About the Portal', href: '/about' },
-        // { label: 'Privacy Policy', href: '/privacy' },
-        // { label: 'Terms of Use', href: '/terms' },
+        { label: 'About the City Portal', href: '/about' },
+        { label: 'The 13 Martyrs History', href: '/about' },
+        { label: 'City Barangays & PSGC', href: '/demographics' },
+        { label: 'Demographics & Statistics', href: '/demographics' },
         { label: 'Accessibility', href: '/accessibility' },
-        { label: 'Contact Us', href: '/about' },
-        { label: 'Community Discord', href: '/discord' },
+        { label: 'Civic Tech Community', href: 'https://bettergov.ph' },
       ],
     },
     {
-      title: 'Services',
+      title: 'Popular Services',
       links: [
-        { label: 'All Services', href: '/services' },
-        ...(servicesData.categories as Category[])
-          .slice(0, 6)
-          .map(category => ({
-            label: category.category,
-            href: `/services/${category.slug}`,
-          })),
-        { label: 'Hotlines', href: '/philippines/hotlines' },
-        { label: 'Holidays', href: '/philippines/holidays' },
+        { label: 'Business & Permits (BPLO)', href: '/services/business' },
+        {
+          label: 'City Health Office Services',
+          href: '/services/health-services',
+        },
+        { label: 'Education & Scholarships', href: '/services/education' },
+        {
+          label: 'Garbage & Waste Disposal',
+          href: '/services/garbage-waste-disposal',
+        },
+        {
+          label: 'Social Welfare & Assistance',
+          href: '/services/social-welfare',
+        },
+        { label: 'Housing & Land Use', href: '/services/housing-land-use' },
       ],
     },
     {
-      title: 'Government',
+      title: 'City Government',
       links: [
-        { label: 'Open Data', href: 'https://data.gov.ph' },
-        { label: 'Freedom of Information', href: 'https://www.foi.gov.ph' },
+        { label: 'City Departments', href: '/government/departments' },
         {
-          label: 'Contact Center',
-          href: 'https://contactcenterngbayan.gov.ph',
+          label: 'City Council & Ordinances',
+          href: '/government/departments/legislative',
         },
         {
-          label: 'Official Gazette',
-          href: 'https://www.officialgazette.gov.ph',
+          label: 'Transparency & FOI',
+          href: '/government/transparency-documents',
         },
+        {
+          label: 'Reports & Statistics',
+          href: '/government/reports-and-statistics',
+        },
+        { label: 'Emergency Hotlines', href: '#emergency' },
       ],
     },
   ],
   socialLinks: [
-    { label: 'Facebook', href: 'https://facebook.com/govph' },
-    { label: 'Twitter', href: 'https://twitter.com/govph' },
-    { label: 'Instagram', href: 'https://instagram.com/govph' },
-    { label: 'YouTube', href: 'https://youtube.com/govph' },
+    { label: 'Facebook', href: 'https://facebook.com/trecemartirescity' },
+    { label: 'Twitter', href: 'https://twitter.com/trecemartires' },
+    { label: 'Instagram', href: 'https://instagram.com/trecemartirescity' },
+    { label: 'YouTube', href: 'https://youtube.com/@trecemartirescity' },
   ],
 };

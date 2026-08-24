@@ -1,78 +1,69 @@
-# Enroll Children in LGU Daycare or Preschool Programs — Lapu-Lapu City
+# Enroll Children in LGU Daycare or Preschool Programs — Trece Martires City
 
-The Lapu-Lapu City Government, through the **City Social Welfare and Development Office (CSWDO)** and barangays, operates **daycare centers** and supports **public preschool education**.
+The Trece Martires City Government, through the **City Social Welfare and Development Office (CSWDO)** and the 13 barangays, operates **Early Childhood Care & Development (ECCD) daycare centers** and supports **public kindergarten education**.
 
 ---
 
-## 1) LGU Daycare Programs
+## 1) LGU Daycare (Child Development Centers)
 
 **What’s offered**
 
 - Early childhood care and development for children aged **3–4 years old**.
-- Daily activities on socialization, basic learning skills, play-based lessons, and health/nutrition monitoring.
-- Free or minimal-cost supplementary feeding (depending on barangay program).
+- Daily play-based learning, values education, social skills, and health/nutrition monitoring.
+- Supplementary feeding programs funded by the city and barangay.
 
 **Who can join**
 
-- Children aged **3–4 years old** who are residents of the barangay.
-- Priority is often given to **indigent families** or those referred by barangay officials.
+- Children aged **3–4 years old** residing in Trece Martires City.
+- Priority is given to **indigent families** and residents of the host barangay.
 
 **Requirements (typical)**
 
-- Child’s **birth certificate** (PSA copy or local civil registrar copy).
-- **Barangay clearance** or proof of residency.
-- 1×1 ID photo of the child (for records).
-- Filled-out **Daycare Enrollment Form** (available at the center).
+- Child’s **PSA Birth Certificate** (or Local Civil Registry copy).
+- **Barangay Certificate of Residency / Indigency**.
+- 1×1 or 2x2 ID photo of the child.
+- Accomplished **Child Development Center Enrollment Form**.
 
 **How to enroll**
 
-1. Visit your **Barangay Daycare Center** or **Barangay Hall** to ask for the enrollment schedule.
-2. Submit required documents and fill out the enrollment form.
-3. Attend the orientation session for parents/guardians (usually held before classes start).
+1. Visit your **Barangay Child Development Center (Daycare)** or **Barangay Hall** to check enrollment schedules.
+2. Submit required documents and complete the registration form with the Child Development Worker (CDW).
+3. Attend parent-teacher orientation prior to the start of the school year.
 
-**Cost:** Free (LGU-funded), though some barangays may request voluntary contributions for class materials.
+**Cost:** Free (LGU & Barangay supported).
 
 ---
 
-## 2) Public Preschool (Kindergarten)
+## 2) Public Kindergarten (DepEd)
 
 **What’s offered**
 
-- Department of Education (DepEd) **Kindergarten Program** for **5-year-old children**, implemented in public elementary schools.
-- Focus on school readiness: literacy, numeracy, and social skills.
+- Department of Education (DepEd) **Kindergarten Program** for **5-year-old children**, implemented in public elementary schools across Trece Martires City.
+- Curriculum covers foundational literacy, numeracy, social-emotional development, and physical motor skills.
 
 **Who can join**
 
-- Children aged **5 years old** by the opening of the school year.
-- Priority for residents within the school’s catchment area.
+- Children turning **5 years old** within the school year cutoff.
+- Residents within the public elementary school’s catchment area.
 
-**Requirements (typical DepEd)**
+**Requirements**
 
-- Child’s **birth certificate** (PSA).
+- Child’s **PSA Birth Certificate**.
+- Early Childhood Care Development (ECCD) checklist / card (if attended daycare).
 - Proof of residency (Barangay Certificate).
-- 2×2 ID photo of the child.
-- Accomplished **DepEd Kindergarten Registration Form** (given at school).
+- Accomplished **DepEd Basic Education Enrollment Form (BEEF)**.
 
 **How to enroll**
 
-1. Proceed to the **nearest public elementary school** during the announced **DepEd early registration** or regular enrollment period.
-2. Submit required documents to the school registrar.
-3. Attend orientation for parents and guardians.
+1. Proceed to the **nearest public elementary school** during the **DepEd Early Registration period** (usually January–March) or regular enrollment.
+2. Submit requirements to the kindergarten teacher / school registrar.
 
-**Cost:** Free (government-funded).
+**Cost:** Free (Mandatory & Universal Public Kindergarten).
 
 ---
 
 ## Contact & Updates
 
-- **Barangay Daycare Centers** — Enrollment schedules and requirements are usually announced by barangay officials.
-- **City Social Welfare and Development Office (CSWDO)** — Oversees daycare programs.
-- **DepEd Lapu-Lapu City Division** — Manages public kindergarten enrollment.
-
----
-
-### Quick Tips
-
-- Enroll early — daycare and preschool slots may be limited per barangay/school.
-- Keep copies of your child’s **birth certificate** and **barangay certificate** ready.
-- Attend parent orientations to understand your role in supporting your child’s early education.
+- **Barangay Child Development Centers** across the 13 barangays of Trece Martires.
+- **City Social Welfare and Development Office (CSWDO)** — Trece Martires City Hall Compound.
+- **DepEd Schools Division Office of Trece Martires City / SDO Cavite** — Manages public school kindergartens.

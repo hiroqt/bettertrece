@@ -5,23 +5,33 @@
     "about": "Tungkol",
     "contact": "Makipag-ugnayan",
     "services": "Mga Serbisyo",
+    "government": "Pamahalaan",
+    "transparency": "Katapatan",
+    "statistics": "Estadistika",
     "language": "Wika"
   },
   "navigation": {
     "home": "Tahanan",
     "about": "Tungkol",
     "services": "Mga Serbisyo",
+    "government": "Pamahalaan",
+    "transparency": "Katapatan",
+    "statistics": "Estadistika",
     "contact": "Makipag-ugnayan",
-    "login": "Mag-login",
-    "register": "Magparehistro"
+    "hotlines": "Mga Hotline"
   },
   "hero": {
-    "title": "Mas Mabuting Pamahalaang Lokal",
-    "subtitle": "Binabago ang mga komunidad sa pamamagitan ng digital na inobasyon",
-    "cta": "Magsimula"
+    "welcome": "MALIGAYANG PAGDATING SA",
+    "title": "BetterTrece.org",
+    "subtitle": "Isang portal na pinapatakbo ng komunidad para sa impormasyon at serbisyo ng Lungsod ng Trece Martires, Cavite.",
+    "cta": "Tingnan ang Serbisyo",
+    "contact": "Makipag-ugnayan",
+    "search": "Maghanap ng Serbisyo",
+    "searchPlaceholder": "Maghanap ng serbisyo...",
+    "popular": "MGA POPULAR NA SERBISYO"
   },
   "footer": {
-    "copyright": "© 2024 Mas Mabuting Pamahalaang Lokal. Lahat ng karapatan ay nakalaan.",
+    "copyright": "© 2026 BetterTrece.org. Lahat ng karapatan ay nakalaan.",
     "privacy": "Patakaran sa Privacy",
     "terms": "Mga Tuntunin ng Serbisyo"
   }

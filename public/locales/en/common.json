@@ -1,26 +1,30 @@
 {
-  "site_name": "Lapu Lapu City Portal",
-  "site_description": "A community-run portal for the Lapu Lapu City",
+  "site_name": "BetterTrece.org",
+  "site_description": "A community-run portal for the City of Trece Martires, Cavite",
   "hero": {
-    "title": "Welcome to BetterGov.ph",
-    "subtitle": "A community-run portal to find information of the Lapu Lapu City Government",
-    "nationalId": "National ID",
-    "birthCertificate": "Birth Certificate",
-    "businessRegistration": "Business Registration"
+    "welcome": "WELCOME TO",
+    "title": "BetterTrece.org",
+    "subtitle": "A community-run portal to find information and services of the City of Trece Martires, Cavite.",
+    "browseServices": "Browse Services",
+    "contactUs": "Contact Us",
+    "searchServices": "Search Services",
+    "searchPlaceholder": "Search for a service...",
+    "popularServices": "POPULAR SERVICES"
   },
   "services": {
     "title": "Services & Information",
-    "governmentServices": "Government Services",
-    "description": "Access official government services quickly and easily. Find what you need for citizenship, business, education, and more.",
+    "governmentServices": "City Government Services",
+    "description": "Access official City of Trece Martires government services quickly and easily. Find what you need for business, health, education, and community welfare.",
     "viewAll": "View All Services",
     "viewAllCategory": "View All"
   },
   "governmentActivity": {
-    "title": "Government Activity",
-    "description": "Stay updated with the latest government activities and announcements."
+    "title": "Government & Departments",
+    "description": "Explore offices, city administration, and latest news from Trece Martires City."
   },
   "weather": {
-    "title": "Weather Updates"
+    "title": "Weather Updates",
+    "location": "Trece Martires"
   },
   "forex": {
     "title": "Foreign Exchange Rates"
@@ -29,25 +33,29 @@
     "title": "Latest News & Updates"
   },
   "footer": {
-    "copyright": "© 2025 BetterGov. All content is public domain unless otherwise specified."
+    "copyright": "© 2026 BetterTrece.org. A Civic Tech community project for the City of Trece Martires, Cavite."
   },
   "navbar": {
-    "government": "Government",
+    "home": "Home",
     "services": "Services",
+    "government": "Government",
+    "transparency": "Transparency",
+    "statistics": "Statistics",
+    "contact": "Contact",
     "hotlines": "Hotlines",
     "holidays": "Holidays"
   },
+  "emergency": {
+    "title": "EMERGENCY HOTLINES",
+    "cdrrmo": "CDRRMO",
+    "fire": "City Fire Station",
+    "police": "City Police Station",
+    "health": "City Health Office"
+  },
   "joinUs": {
-    "stripTitle": "🚀 Join the #CivicTech Revolution",
-    "stripSubtitle": "Help build the future of the Philippines and governance through technology",
+    "stripTitle": "🚀 Join BetterTrece #CivicTech",
+    "stripSubtitle": "Help build digital tools and open government for Trece Martires City",
     "joinNow": "Join Now",
-    "discord": "Discord",
-    "bannerTitle": "Join the #CivicTech Revolution",
-    "bannerSubtitle": "Help build the future of the Philippines and governance through technology.",
-    "bannerHighlight": "Volunteer-led. Open source. Community-driven.",
-    "joinMovement": "Join Our Movement",
-    "or": "or",
-    "joinDiscord": "Join Discord",
-    "features": "🚀 Infrastructure • 💡 Mentorship • 🤝 Community • 🏢 Office Space"
+    "discord": "Discord"
   }
 }

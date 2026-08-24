@@ -4,79 +4,106 @@ import {
   Twitter,
   Instagram,
   Youtube,
-  CheckCircle2,
+  Globe,
+  MapPin,
+  Phone,
+  ExternalLink,
 } from 'lucide-react';
 import { footerNavigation } from '../../data/navigation';
 import { Link } from 'react-router';
-import { useTranslation } from 'react-i18next';
+import { BetterTreceLogo } from './Navbar';
 
 const Footer: React.FC = () => {
-  const { t } = useTranslation('common');
-
   const getSocialIcon = (label: string) => {
     switch (label) {
       case 'Facebook':
-        return <Facebook className="h-5 w-5" />;
+        return <Facebook className="h-4 w-4" />;
       case 'Twitter':
-        return <Twitter className="h-5 w-5" />;
+        return <Twitter className="h-4 w-4" />;
       case 'Instagram':
-        return <Instagram className="h-5 w-5" />;
+        return <Instagram className="h-4 w-4" />;
       case 'YouTube':
-        return <Youtube className="h-5 w-5" />;
+        return <Youtube className="h-4 w-4" />;
       default:
-        return null;
+        return <Globe className="h-4 w-4" />;
     }
   };
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-[#0b1329] text-white border-t border-slate-800">
       <div className="container mx-auto px-4 pt-12 pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div>
-            <div className="flex items-center mb-4">
-              <CheckCircle2 className="h-12 w-12 mr-3" />
-              {/* <img
-                src="/ph-logo.webp"
-                alt="Philippines Coat of Arms"
-                className="h-12 w-12 mr-3"
-              /> */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+          {/* Brand Column (2 cols on lg) */}
+          <div className="lg:col-span-2 space-y-4">
+            <div className="bg-white/5 p-3 rounded-2xl inline-block border border-white/10">
+              <BetterTreceLogo />
+            </div>
 
-              <div>
-                <div className="font-bold">{t('site_name')}</div>
-                <div className="text-xs text-gray-400">BetterGov.ph Portal</div>
+            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-sm">
+              BetterTrece.org is an open-source civic initiative providing
+              residents, businesses, and visitors of Trece Martires City, Cavite
+              with transparent and accessible information.
+            </p>
+
+            <div className="space-y-1.5 text-xs text-slate-300">
+              <div className="flex items-center gap-2">
+                <MapPin className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                <span>
+                  Governor's Drive, San Agustin, Trece Martires City, Cavite
+                  4109
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Phone className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                <span>
+                  City Hall Trunkline: (046) 419-0268 / (046) 419-1065
+                </span>
               </div>
             </div>
-            <p className="text-gray-400 text-sm mb-4">
-              A community portal providing Philippine citizens, businesses, and
-              visitors with information and services.
-            </p>
-            <div className="flex space-x-4">
+
+            <div className="flex space-x-3 pt-2">
               {footerNavigation.socialLinks.map(link => (
-                <Link
+                <a
                   key={link.label}
-                  to={link.href}
-                  className="text-gray-400 hover:text-white transition-colors"
+                  href={link.href}
+                  className="w-8 h-8 rounded-lg bg-white/10 hover:bg-[#003893] text-slate-300 hover:text-white flex items-center justify-center transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={link.label}
                 >
                   {getSocialIcon(link.label)}
-                </Link>
+                </a>
               ))}
             </div>
           </div>
 
+          {/* Navigation Columns */}
           {footerNavigation.mainSections.map(section => (
             <div key={section.title}>
-              <h3 className="text-lg font-semibold mb-4">{section.title}</h3>
+              <h3 className="text-sm font-bold text-white uppercase tracking-wider mb-3.5">
+                {section.title}
+              </h3>
               <ul className="space-y-2">
                 {section.links.map(link => (
                   <li key={link.label}>
-                    <Link
-                      to={link.href}
-                      className="text-gray-400 hover:text-white text-sm transition-colors"
-                    >
-                      {link.label}
-                    </Link>
+                    {link.href.startsWith('http') ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-slate-400 hover:text-white text-xs transition-colors inline-flex items-center gap-1"
+                      >
+                        {link.label}
+                        <ExternalLink className="w-2.5 h-2.5 opacity-60" />
+                      </a>
+                    ) : (
+                      <Link
+                        to={link.href}
+                        className="text-slate-400 hover:text-white text-xs transition-colors"
+                      >
+                        {link.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -84,42 +111,37 @@ const Footer: React.FC = () => {
           ))}
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              {t('footer.copyright')}
+        <div className="border-t border-slate-800 mt-10 pt-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
+            <p>
+              © {new Date().getFullYear()} BetterTrece.org • Built with
+              BetterGov Open Source Platform
             </p>
-            <div className="flex space-x-6">
-              {/* <a
-                href="/privacy"
-                className="text-gray-400 hover:text-white text-sm transition-colors"
-              >
-                Privacy Policy
-              </a>
+            <div className="flex flex-wrap gap-4 text-xs">
               <a
-                href="/terms"
-                className="text-gray-400 hover:text-white text-sm transition-colors"
+                href="https://bettergov.ph"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-white transition-colors"
               >
-                Terms of Use
-              </a> */}
-              <Link
-                to="https://github.com/bettergovph/bettergov"
-                className="text-gray-400 hover:text-white text-sm transition-colors"
+                BetterGov.ph
+              </a>
+              <span>•</span>
+              <a
+                href="https://github.com/bettergovph/bettergov"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-white transition-colors"
               >
-                Contribute at GitHub
-              </Link>
+                GitHub Repository
+              </a>
+              <span>•</span>
               <Link
                 to="/sitemap"
-                className="text-gray-400 hover:text-white text-sm transition-colors"
+                className="hover:text-white transition-colors"
               >
                 Sitemap
               </Link>
-              <a
-                href="/accessibility"
-                className="text-gray-400 hover:text-white text-sm transition-colors"
-              >
-                Accessibility
-              </a>
             </div>
           </div>
         </div>

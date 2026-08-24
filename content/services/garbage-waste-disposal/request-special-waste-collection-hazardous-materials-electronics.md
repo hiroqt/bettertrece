@@ -1,6 +1,6 @@
-# Request Special Collection Services for Hazardous Waste & E-Waste — Lapu-Lapu City
+# Request Special Collection Services for Hazardous Waste & E-Waste — Trece Martires City
 
-Hazardous and electronic wastes (e-waste) cannot be disposed of with regular garbage. The City Environment and Natural Resources Office (CENRO) and barangays coordinate **special collection drives** and drop-off services for these items.
+Hazardous and electronic wastes (e-waste) cannot be disposed of with regular garbage. The Trece Martires City Environment and Natural Resources Office (CENRO) and barangays coordinate **special collection drives** and drop-off services for these items.
 
 ---
 
@@ -16,7 +16,7 @@ Hazardous and electronic wastes (e-waste) cannot be disposed of with regular gar
 
 ## 2) How to Request Special Collection
 
-1. **Contact your Barangay Hall**
+1. **Contact your Barangay Hall (Trece Martires City)**
    - Ask for the **Barangay Environment Committee** or Solid Waste desk.
    - Provide details: type of waste, approximate volume, and your address.
 
@@ -44,11 +44,11 @@ Hazardous and electronic wastes (e-waste) cannot be disposed of with regular gar
 ## 4) Contact Information
 
 - **City Environment and Natural Resources Office (CENRO)**  
-  Lapu-Lapu City Hall, Government Complex, Brgy. Pajo  
-  Phone: (032) 340-0004 (City Hall trunkline, ask for CENRO)  
-  Updates: [Lapu-Lapu City Government Facebook Page](https://www.facebook.com/lapulapucitygovernment)
+  Trece Martires City Hall, Governor's Drive, San Agustin, Trece Martires City  
+  Phone: (046) 419-0268 / (046) 419-1065  
+  Updates: [Trece Martires City Government Facebook Page](https://facebook.com/trecemartirescity)
 
-- **Barangay Halls** — Environment/Solid Waste desk for barangay-level pickup scheduling.
+- **Barangay Halls** — Environment/Solid Waste desk across all 13 Trece Martires barangays.
 
 ---
 

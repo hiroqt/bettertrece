@@ -1,112 +1,66 @@
-# Apply for Local Scholarships — Lapu-Lapu City
+# Apply for Local Scholarships — Trece Martires City
 
-Use this guide to find **City/LGU**, **Congressional/partner**, **local college**, and **national** scholarship options you can apply for while based in **Lapu-Lapu City**.
+Use this guide to find **City/LGU**, **Provincial (Cavite)**, **State University**, and **national** scholarship options available to students in **Trece Martires City, Cavite**.
 
 ---
 
-## 1) City/LGU Scholarship Programs
+## 1) Trece Martires City Government Scholarship Program
 
-| Program                                           | Who it’s for                                                                                           | What it covers\*                                                          | Where to apply                  | Notes                                                                                                                                                                                                         |
-| ------------------------------------------------- | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Lapu-Lapu City Government College Scholarship** | Lapu-Lapu City residents (typically Senior High / incoming college; priority to low-income households) | Tuition/fees or full scholarship, depending on intake and partner schools | City Hall / posted online calls | The city has historically opened slots for poor residents and tied these to local HEIs during certain intakes. Check latest calls from City Hall / Office of the Mayor. :contentReference[oaicite:0]{index=0} |
-
-\*Coverage varies by year/partner school; always verify the current announcement.
+| Program                                                      | Who it’s for                                                                                            | What it covers                                                  | Where to apply                  | Notes                                                                            |
+| ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------- | ------------------------------- | -------------------------------------------------------------------------------- |
+| **Trece Martires City Educational Assistance & Scholarship** | Bona fide residents of Trece Martires City (13 barangays); graduating SHS and enrolled college students | Educational financial assistance / tuition subsidy per semester | City Hall — Office of the Mayor | Check periodic intake schedules posted by the City Government of Trece Martires. |
 
 **How to apply (typical flow)**
 
-1. Watch for the **official call for applications** from the **Lapu-Lapu City Government** (FB/website or City Information Office). :contentReference[oaicite:1]{index=1}
+1. Watch for the **official call for applications** from the **City Government of Trece Martires** (Facebook page & City Hall bulletins).
 2. Prepare documents (see **Common Requirements** below).
-3. Submit your application at the designated **LGU window/online form** and attend evaluation/orientation if shortlisted.
+3. Submit your application at the **City Mayor's Office / Scholarship Desk** at Trece Martires City Hall.
 
 ---
 
-## 2) Congressional / Partner Scholarship Slots
+## 2) Cavite Provincial Government Scholarship (PG-Cavite)
 
-| Program                                                                                       | Who it’s for                                   | What it covers                                          | Where to apply                                                                   | Notes                                                                                                                |
-| --------------------------------------------------------------------------------------------- | ---------------------------------------------- | ------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| **Mayor Junard “Ahong” Chan & First Lady Ma. Cynthia King-Chan Scholarship** (periodic calls) | City residents, course/partner-school specific | Tuition assistance/full scholarship depending on cohort | Calls posted by the **Office of the Mayor** / **Office of Rep. Cindi King-Chan** | Look for official FB announcements with the **requirements and deadlines**. :contentReference[oaicite:2]{index=2}    |
-| **International/partner school opportunities**                                                | Senior High/college grads                      | Tuition discounts/scholarships via MOUs                 | Via partner school announcements & City coordination                             | Example: Taiwan partner university opportunities highlighted by city partners. :contentReference[oaicite:3]{index=3} |
-
----
-
-## 3) Local Colleges & Their In-House Scholarships
-
-| School                                         | Scholarship page/info                                                        | Notes                                                                                                                                 |
-| ---------------------------------------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| **Lapu-Lapu City College (LLCC)**              | School site lists contacts; ask registrar/scholarship desk for current slots | City college; scholarship rules and timing set per semester. :contentReference[oaicite:4]{index=4}                                    |
-| **University of Cebu** (Mactan/Main system)    | Public scholarship lists & requirements                                      | UC posts scholarship requirements (e.g., academic honors, docs). Availability varies by campus. :contentReference[oaicite:5]{index=5} |
-| **LCIC (Lapulapu-Cebu International College)** | Scholarship page with program specifics                                      | Has its own discounts/scholarships; separate from LGU. :contentReference[oaicite:6]{index=6}                                          |
-
-> Tip: Even if you’re targeting an **LGU scholarship**, apply to your target school’s **in-house scholarship** too. Slots stack or complement depending on rules.
+| Program                                         | Who it’s for                                                          | What it covers                          | Where to apply                                  | Notes                                                                                                        |
+| ----------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------- | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| **Provincial Scholarship Program (PSP) Cavite** | Cavite resident college/university students with passing or honor GWA | Financial grants / semestral assistance | Cavite Provincial Capitol (Trece Martires City) | Apply at the Provincial Scholarship Program office inside the Provincial Capitol Compound in Trece Martires. |
 
 ---
 
-## 4) National Programs You Can Apply For While Based in Lapu-Lapu
+## 3) State University & Local College Opportunities
 
-| Program                                                             | Who it’s for                                                  | Typical coverage                                          | Where to file                                                                                                               |
-| ------------------------------------------------------------------- | ------------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| **CHED Merit Scholarship (CMSP)**                                   | Incoming/continuing college with merit + income criteria      | Stipend + book/tuition assistance (per CHED rules)        | CHED’s official calls/portals (watch national page) :contentReference[oaicite:7]{index=7}                                   |
-| **OWWA EDSP/ODSP** (for OFW dependents)                             | Qualified dependents of active OWWA members                   | EDSP up to ₱60k/yr; ODSP up to ₱20k/yr (amounts per call) | OWWA Scholarship portal; local **PESO Lapu-Lapu** often posts the call window :contentReference[oaicite:8]{index=8}         |
-| **Cebu Province scholarships** (if eligible as provincial resident) | Cebu Province residents (check city/province residency rules) | Tuition/stipend per program                               | Province announcements; verify residency eligibility vs. highly urbanized city status :contentReference[oaicite:9]{index=9} |
+| School                                                          | Program / Details                                                               | Notes                                                                                                    |
+| --------------------------------------------------------------- | ------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| **Cavite State University (CvSU) — Trece Martires City Campus** | RA 10931 Free Higher Education (Universal Access to Quality Tertiary Education) | Free tuition and miscellaneous fees for qualified undergraduate students enrolled in state universities. |
+| **TESDA Accredited Tech-Voc Training Centers (Trece Martires)** | TWSP (Training for Work Scholarship Program) & STEP                             | Free skills training with assessment fee subsidies and allowances.                                       |
+
+---
+
+## 4) National Scholarship Programs Available in Trece Martires
+
+| Program                                      | Who it’s for                                                      | Typical coverage                                          | Where to file                                                  |
+| -------------------------------------------- | ----------------------------------------------------------------- | --------------------------------------------------------- | -------------------------------------------------------------- |
+| **CHED Merit & Tulong Dunong Program (TDP)** | High school graduates with academic merit & financial criteria    | Tuition support + semestral allowance                     | [CHED Region IV-A (CALABARZON)](https://chedro4a.ched.gov.ph/) |
+| **DOST-SEI S&T Undergraduate Scholarship**   | STEM graduating students pursuing science and engineering courses | Monthly living allowance, tuition subsidy, book allowance | [DOST-SEI Portal](https://www.sei.dost.gov.ph/)                |
+| **OWWA EDSP/ODSP** (OFW Dependents)          | Qualified children/dependents of active OWWA OFW members          | Up to ₱60,000 / year education stipend                    | OWWA Region IV-A / PESO Trece Martires                         |
 
 ---
 
 ## Common Requirements (have these ready)
 
-- **Proof of residency** (Barangay Certificate)
-- **Birth certificate** (PSA)
-- **Report card/grades** (JHS/SHS/college)
-- **Good moral certificate** (from school)
-- **Income documents** (parents’ ITR/Certificate of Non-Filing/indigency, depending on program)
-- **Photos/ID** (2×2 or passport size)
-- **Admission/Enrollment proof** (if already admitted)
-
-(Exact lists vary per program; always follow the posted checklist.)
+- **Barangay Certificate of Residency** (from your Trece Martires barangay)
+- **PSA Birth Certificate**
+- **Report Card / Certificate of Grades (GWA)** (Form 138 / Transcript / COE)
+- **Certificate of Good Moral Character**
+- **Proof of Family Income** (ITR / Barangay Certificate of Indigency / Certificate of Low Income)
+- **2x2 ID Photos** (white background)
+- **School Registration / Enrollment Assessment Form**
 
 ---
 
 ## Step-by-Step: How to Apply
 
-1. **Pick your target programs**
-   - City/LGU scholarship (watch City Hall channels), school-based scholarship, and at least one national program.
-
-2. **Check the current call**
-   - Read the **eligibility, coverage, and deadline**. Save the announcement.
-
-3. **Assemble documents**
-   - Use the checklist above; request certificates early (Barangay, School Registrar, BIR/Barangay for income).
-
-4. **Submit**
-   - Follow the **specified portal or window**. Keep digital scans (PDF) for online filing.
-
-5. **Monitor & attend screening**
-   - Answer calls/emails, attend orientation/interviews, and **sign the scholarship agreement** if accepted.
-
-6. **Comply every term**
-   - Maintain the **required GWA**, submit grade reports on time, and **renew** each semester/year.
-
----
-
-## Where to Watch for Announcements
-
-- LCIC’s website → “Scholarship” section
-- University of Cebu’s “Scholarship & Study Grants” page
-- DepEd Lapu-Lapu City’s official site / memorandums
-- City Government announcements (City Hall / Information Office)
-
----
-
-### Example Applications Available Now
-
-- [LCIC Scholarship Page](https://lcic.edu.ph/scholarship.html)
-- [UC Scholarships & Study Grants](https://www.universityofcebu.net/p/scholarship.html)
-- [DOST-SEI S&T Scholarship (Grade 12 applicants)](https://depedlapulapu.net.ph/download/dm-no-723-s-2024-2025-dost-sei-s-t-undergraduate-scholarship-applications-for-grade-12-senior-high-school-students/)
-- [English Access Program (DepEd Lapu-Lapu)](https://depedlapulapu.net.ph/download/dm-no-064-s-2025-english-access-scholarship-program/)
-
----
-
-### Reminders
-
-- **Deadlines change every cycle.** Always follow the **current** call post.
-- **Coverage differs by program & year.** Read the fine print (tuition vs. full).
-- **Apply to multiple programs** to improve your chances and coverage.
+1. **Identify matching programs:** City scholarship, Provincial Capitol grant, and national DOST/CHED programs.
+2. **Review deadlines & guidelines:** Verify open enrollment cycles for each semester.
+3. **Assemble required documents:** Secure certifications in advance.
+4. **Submit before cutoff:** File via specified city desk or online portals.
+5. **Comply with grade requirements:** Maintain required GWA and submit proof of grades each term for seamless renewal.
