@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Hero from '../components/sections/Hero';
 import ServicesSection from '../components/home/ServicesSection';
 import WeatherMapSection from '../components/home/WeatherMapSection';
@@ -25,6 +26,7 @@ import {
 } from '../data/psaClassifications';
 
 const Home: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <>
       <SEO
@@ -61,14 +63,19 @@ const Home: React.FC = () => {
           <div className="container mx-auto px-4 max-w-7xl">
             <div className="text-center max-w-2xl mx-auto mb-10">
               <span className="text-xs font-bold uppercase tracking-wider text-[#003893] bg-blue-50 px-2.5 py-1 rounded">
-                Summary Demographics
+                {t('demographicsSummary.badge', 'Summary Demographics')}
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mt-2">
-                City Profile &amp; Summary Demographics
+                {t(
+                  'demographicsSummary.title',
+                  'City Profile & Summary Demographics'
+                )}
               </h2>
               <p className="text-gray-600 text-sm mt-2">
-                Key population census, registered voters, land area, and geocode
-                indicators for the City of Trece Martires.
+                {t(
+                  'demographicsSummary.description',
+                  'Key population census, registered voters, land area, and geocode indicators for the City of Trece Martires.'
+                )}
               </p>
             </div>
 
@@ -79,7 +86,10 @@ const Home: React.FC = () => {
                 <div className="flex items-center justify-between text-blue-200 text-xs font-semibold mb-2">
                   <span className="flex items-center gap-1.5 text-amber-300">
                     <Vote className="w-3.5 h-3.5" />
-                    REGISTERED VOTERS
+                    {t(
+                      'demographicsSummary.registeredVoters',
+                      'REGISTERED VOTERS'
+                    )}
                   </span>
                   <span className="text-[10px] bg-amber-400/20 text-amber-300 px-1.5 py-0.5 rounded font-mono">
                     2025
@@ -90,10 +100,12 @@ const Home: React.FC = () => {
                 </div>
                 <div className="text-xs text-blue-200 mt-2 flex items-center justify-between">
                   <span>
-                    {TRECE_VOTER_STATISTICS_2025.votingCenters} Voting Centers
+                    {TRECE_VOTER_STATISTICS_2025.votingCenters}{' '}
+                    {t('demographicsSummary.votingCenters', 'Voting Centers')}
                   </span>
                   <span className="font-mono text-[11px] text-blue-300">
-                    {TRECE_VOTER_STATISTICS_2025.clusteredPrecincts} Clustered
+                    {TRECE_VOTER_STATISTICS_2025.clusteredPrecincts}{' '}
+                    {t('demographicsSummary.clusteredPrecincts', 'Clustered')}
                   </span>
                 </div>
               </div>
@@ -101,7 +113,12 @@ const Home: React.FC = () => {
               {/* Total Population (PSA 2024 POPCEN) */}
               <div className="bg-white p-5 rounded-2xl border border-gray-200 shadow-xs">
                 <div className="flex items-center justify-between text-gray-500 text-xs font-semibold mb-2">
-                  <span>TOTAL POPULATION (2024 POPCEN)</span>
+                  <span>
+                    {t(
+                      'demographicsSummary.totalPopulation',
+                      'TOTAL POPULATION (2024 POPCEN)'
+                    )}
+                  </span>
                   <Users className="w-4 h-4 text-[#003893]" />
                 </div>
                 <div className="text-2xl sm:text-3xl font-black text-gray-900 font-mono">
@@ -110,8 +127,8 @@ const Home: React.FC = () => {
                 </div>
                 <div className="text-xs text-gray-500 mt-2 flex items-center gap-1">
                   <TrendingUp className="w-3.5 h-3.5 text-emerald-600" />
-                  <span className="text-emerald-700 font-bold">+8.3%</span> vs
-                  2020 (
+                  <span className="text-emerald-700 font-bold">+8.3%</span>{' '}
+                  {t('demographicsSummary.vs2020', 'vs 2020')} (
                   {TRECE_MUNICIPAL_PROFILE.totalPopulation2020.toLocaleString()}
                   )
                 </div>
@@ -120,7 +137,12 @@ const Home: React.FC = () => {
               {/* City Land Area & Income Status */}
               <div className="bg-white p-5 rounded-2xl border border-gray-200 shadow-xs">
                 <div className="flex items-center justify-between text-gray-500 text-xs font-semibold mb-2">
-                  <span>LAND AREA &amp; STATUS</span>
+                  <span>
+                    {t(
+                      'demographicsSummary.landAreaStatus',
+                      'LAND AREA & STATUS'
+                    )}
+                  </span>
                   <Landmark className="w-4 h-4 text-emerald-600" />
                 </div>
                 <div className="text-2xl sm:text-3xl font-black text-gray-900 font-mono">
@@ -130,21 +152,27 @@ const Home: React.FC = () => {
                   </span>
                 </div>
                 <div className="text-xs text-gray-500 mt-2">
-                  {TRECE_MUNICIPAL_PROFILE.incomeClass} Component City
+                  {TRECE_MUNICIPAL_PROFILE.incomeClass}{' '}
+                  {t('demographicsSummary.componentCity', 'Component City')}
                 </div>
               </div>
 
               {/* City PSGC Code */}
               <div className="bg-white p-5 rounded-2xl border border-gray-200 shadow-xs">
                 <div className="flex items-center justify-between text-gray-500 text-xs font-semibold mb-2">
-                  <span>PSGC CITY CODE</span>
+                  <span>
+                    {t('demographicsSummary.psgcCityCode', 'PSGC CITY CODE')}
+                  </span>
                   <MapPin className="w-4 h-4 text-[#003893]" />
                 </div>
                 <div className="text-2xl sm:text-3xl font-black text-gray-900 font-mono">
                   {TRECE_MUNICIPAL_PROFILE.psgcCityCode}
                 </div>
                 <div className="text-xs text-gray-500 mt-2">
-                  13 Barangays &bull; Region IV-A (Cavite)
+                  {t(
+                    'demographicsSummary.regionNotice',
+                    '13 Barangays • Region IV-A (Cavite)'
+                  )}
                 </div>
               </div>
             </div>

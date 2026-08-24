@@ -2,7 +2,7 @@ import Section from '../ui/Section';
 import * as LucideIcons from 'lucide-react';
 import { Heading } from '../ui/Heading';
 import { Text } from '../ui/Text';
-import { useTranslation } from '../../hooks/useTranslation';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router';
 import { ArrowRight } from 'lucide-react';
 
@@ -46,7 +46,7 @@ export default function GovernmentActivitySection({
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
         <div>
           <span className="text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-2.5 py-1 rounded">
-            Local Government Administration
+            {t('governmentActivity.badge', 'Local Government Administration')}
           </span>
           <Heading
             level={2}
@@ -68,7 +68,7 @@ export default function GovernmentActivitySection({
           to="/government"
           className="inline-flex items-center gap-1.5 text-sm font-bold text-[#003893] hover:text-blue-700 transition-colors group shrink-0"
         >
-          <span>View all departments</span>
+          <span>{t('governmentActivity.viewAll', 'View all departments')}</span>
           <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
         </Link>
       </div>
@@ -95,7 +95,7 @@ export default function GovernmentActivitySection({
             </div>
 
             <div className="flex items-center text-xs font-semibold text-amber-700 group-hover:translate-x-1 transition-transform">
-              <span>View details</span>
+              <span>{t('governmentActivity.viewDetails', 'View details')}</span>
               <ArrowRight className="w-3.5 h-3.5 ml-1" />
             </div>
           </Link>

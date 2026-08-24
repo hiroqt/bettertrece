@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   Facebook,
   Twitter,
@@ -14,6 +15,19 @@ import { Link } from 'react-router';
 import { BetterTreceLogo } from './Navbar';
 
 const Footer: React.FC = () => {
+  const { t } = useTranslation();
+
+  const getSectionTitle = (title: string) => {
+    switch (title.toLowerCase()) {
+      case 'quick links':
+        return t('footer.quickLinks', 'Quick Links');
+      case 'resources':
+        return t('footer.resources', 'Resources');
+      default:
+        return title;
+    }
+  };
+
   const getSocialIcon = (label: string) => {
     switch (label) {
       case 'Facebook':
@@ -56,20 +70,26 @@ const Footer: React.FC = () => {
             </div>
 
             <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-sm">
-              BetterTrece.org is an open-source civic initiative providing
-              residents, businesses, and visitors of Trece Martires City, Cavite
-              with transparent, accessible, and verified information.
+              {t(
+                'footer.description',
+                'BetterTrece.org is an open-source civic initiative providing residents, businesses, and visitors of Trece Martires City, Cavite with transparent, accessible, and verified information.'
+              )}
             </p>
 
             <div className="space-y-1.5 text-xs text-slate-300">
               <div className="flex items-center gap-2">
                 <MapPin className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                <span>Trece Martires City, Cavite 4109</span>
+                <span>
+                  {t('footer.address', 'Trece Martires City, Cavite 4109')}
+                </span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-3.5 h-3.5 text-amber-400 shrink-0" />
                 <span>
-                  City Hall Trunkline: (046) 419-0268 / (046) 419-1065
+                  {t(
+                    'footer.trunkline',
+                    'City Hall Trunkline: (046) 419-0268 / (046) 419-1065'
+                  )}
                 </span>
               </div>
             </div>
@@ -97,7 +117,7 @@ const Footer: React.FC = () => {
               className={idx === 0 ? 'lg:col-span-4' : 'lg:col-span-3'}
             >
               <h3 className="text-sm font-bold text-white uppercase tracking-wider mb-3.5">
-                {section.title}
+                {getSectionTitle(section.title)}
               </h3>
               <ul className="space-y-2.5">
                 {section.links.map(link => (
@@ -139,7 +159,10 @@ const Footer: React.FC = () => {
                 <span className="text-white font-semibold">Arnel Baylon</span>
               </p>
               <p className="text-[11px] text-slate-400">
-                All public information sourced from official government portals.
+                {t(
+                  'footer.dataSource',
+                  'All public information sourced from official government portals.'
+                )}
               </p>
             </div>
             <div className="flex flex-wrap gap-4 text-xs items-center justify-center md:justify-end">
@@ -165,7 +188,7 @@ const Footer: React.FC = () => {
                 to="/sitemap"
                 className="hover:text-white transition-colors"
               >
-                Sitemap
+                {t('footer.sitemap', 'Sitemap')}
               </Link>
             </div>
           </div>

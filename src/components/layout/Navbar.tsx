@@ -51,7 +51,7 @@ import {
   Database,
   Sparkles,
 } from 'lucide-react';
-import { mainNavigation } from '../../data/navigation';
+import { mainNavigation, type MegaMenuFeatured } from '../../data/navigation';
 import type { LanguageType } from '../../types/index';
 import { Link, useLocation } from 'react-router';
 import { useTranslation } from 'react-i18next';
@@ -223,7 +223,7 @@ const Navbar: React.FC = () => {
   const [activeMobileMenu, setActiveMobileMenu] = useState<string | null>(null);
   const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
-  const { i18n } = useTranslation('common');
+  const { t, i18n } = useTranslation();
   const location = useLocation();
 
   const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -346,9 +346,121 @@ const Navbar: React.FC = () => {
 
   const changeLanguage = (newLanguage: LanguageType) => {
     i18n.changeLanguage(newLanguage);
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem('i18nextLng', newLanguage);
+    }
   };
 
-  const currentLang = i18n.language || 'en';
+  const currentLang = (i18n.language || 'en').toLowerCase();
+  const isFil = currentLang.startsWith('fil') || currentLang.startsWith('tl');
+
+  const getNavLabel = (label: string) => {
+    switch (label.toLowerCase()) {
+      case 'home':
+        return t('navbar.home', 'Home');
+      case 'services':
+        return t('navbar.services', 'Services');
+      case 'government':
+        return t('navbar.government', 'Government');
+      case 'transparency':
+        return t('navbar.transparency', 'Transparency');
+      case 'statistics':
+        return t('navbar.statistics', 'Statistics');
+      case 'contact':
+        return t('navbar.contact', 'Contact');
+      default:
+        return label;
+    }
+  };
+
+  const getMegaMenuFeatured = (
+    navLabel: string,
+    defaultFeatured: MegaMenuFeatured
+  ): MegaMenuFeatured => {
+    switch (navLabel.toLowerCase()) {
+      case 'services':
+        return {
+          ...defaultFeatured,
+          tag: t(
+            'navbar.featuredDirectoryTag',
+            defaultFeatured.tag || 'CITIZEN DIRECTORY'
+          ),
+          title: t('navbar.featuredDirectoryTitle', defaultFeatured.title),
+          description: t(
+            'navbar.featuredDirectoryDesc',
+            defaultFeatured.description
+          ),
+          ctaText: t('navbar.featuredDirectoryCta', defaultFeatured.ctaText),
+          statLabel: t(
+            'navbar.featuredDirectoryStatLabel',
+            defaultFeatured.statLabel || ''
+          ),
+          stat: t('navbar.featuredDirectoryStat', defaultFeatured.stat || ''),
+        };
+      case 'government':
+        return {
+          ...defaultFeatured,
+          tag: t(
+            'navbar.featuredLeadershipTag',
+            defaultFeatured.tag || 'OFFICIAL LEADERSHIP'
+          ),
+          title: t('navbar.featuredLeadershipTitle', defaultFeatured.title),
+          description: t(
+            'navbar.featuredLeadershipDesc',
+            defaultFeatured.description
+          ),
+          ctaText: t('navbar.featuredLeadershipCta', defaultFeatured.ctaText),
+          statLabel: t(
+            'navbar.featuredLeadershipStatLabel',
+            defaultFeatured.statLabel || ''
+          ),
+          stat: t('navbar.featuredLeadershipStat', defaultFeatured.stat || ''),
+        };
+      case 'transparency':
+        return {
+          ...defaultFeatured,
+          tag: t(
+            'navbar.featuredTransparencyTag',
+            defaultFeatured.tag || 'OPEN DATA'
+          ),
+          title: t('navbar.featuredTransparencyTitle', defaultFeatured.title),
+          description: t(
+            'navbar.featuredTransparencyDesc',
+            defaultFeatured.description
+          ),
+          ctaText: t('navbar.featuredTransparencyCta', defaultFeatured.ctaText),
+          statLabel: t(
+            'navbar.featuredTransparencyStatLabel',
+            defaultFeatured.statLabel || ''
+          ),
+          stat: t(
+            'navbar.featuredTransparencyStat',
+            defaultFeatured.stat || ''
+          ),
+        };
+      case 'statistics':
+        return {
+          ...defaultFeatured,
+          tag: t(
+            'navbar.featuredStatisticsTag',
+            defaultFeatured.tag || 'OFFICIAL STATISTICS'
+          ),
+          title: t('navbar.featuredStatisticsTitle', defaultFeatured.title),
+          description: t(
+            'navbar.featuredStatisticsDesc',
+            defaultFeatured.description
+          ),
+          ctaText: t('navbar.featuredStatisticsCta', defaultFeatured.ctaText),
+          statLabel: t(
+            'navbar.featuredStatisticsStatLabel',
+            defaultFeatured.statLabel || ''
+          ),
+          stat: t('navbar.featuredStatisticsStat', defaultFeatured.stat || ''),
+        };
+      default:
+        return defaultFeatured;
+    }
+  };
 
   // Check if current page has a dark hero header at the top
   const isDarkHeroPage =
@@ -377,18 +489,18 @@ const Navbar: React.FC = () => {
         <div className="container mx-auto flex items-center justify-between min-w-max gap-6 max-w-7xl">
           <div className="flex items-center gap-2 font-black tracking-wider text-white uppercase shrink-0 text-xs sm:text-sm">
             <PhoneCall className="w-4 h-4 animate-pulse text-yellow-300 shrink-0" />
-            <span>EMERGENCY HOTLINES:</span>
+            <span>{t('navbar.emergencyHotlines', 'EMERGENCY HOTLINES:')}</span>
           </div>
 
           <div className="flex items-center gap-4 sm:gap-6 text-xs sm:text-sm">
             <a
               href="tel:09619921998"
               className="flex items-center gap-1.5 hover:text-yellow-200 transition-colors group"
-              title="Call CDRRMO Trece Martires"
+              title={t('navbar.callCdrrmo', 'Call CDRRMO Trece Martires')}
             >
               <Shield className="w-3.5 h-3.5 text-red-200 group-hover:text-yellow-200 shrink-0" />
               <span className="font-semibold text-red-100 group-hover:text-yellow-200">
-                CDRRMO:
+                {t('navbar.cdrrmo', 'CDRRMO:')}
               </span>
               <span className="font-mono font-bold tracking-wide text-white group-hover:text-yellow-200">
                 0961-992-1998
@@ -400,11 +512,11 @@ const Navbar: React.FC = () => {
             <a
               href="tel:0464151217"
               className="flex items-center gap-1.5 hover:text-yellow-200 transition-colors group"
-              title="Call City Fire Station"
+              title={t('navbar.callBfp', 'Call City Fire Station')}
             >
               <Flame className="w-3.5 h-3.5 text-red-200 group-hover:text-yellow-200 shrink-0" />
               <span className="font-semibold text-red-100 group-hover:text-yellow-200">
-                Fire Station:
+                {t('navbar.bfp', 'Fire Station:')}
               </span>
               <span className="font-mono font-bold tracking-wide text-white group-hover:text-yellow-200">
                 046-415-1217
@@ -416,11 +528,11 @@ const Navbar: React.FC = () => {
             <a
               href="tel:09491849145"
               className="flex items-center gap-1.5 hover:text-yellow-200 transition-colors group"
-              title="Call City Police Station"
+              title={t('navbar.callPnp', 'Call City Police Station')}
             >
               <Phone className="w-3.5 h-3.5 text-red-200 group-hover:text-yellow-200 shrink-0" />
               <span className="font-semibold text-red-100 group-hover:text-yellow-200">
-                Police Station:
+                {t('navbar.pnp', 'Police Station:')}
               </span>
               <span className="font-mono font-bold tracking-wide text-white group-hover:text-yellow-200">
                 0949-184-9145
@@ -432,11 +544,11 @@ const Navbar: React.FC = () => {
             <a
               href="tel:0468401705"
               className="flex items-center gap-1.5 hover:text-yellow-200 transition-colors group"
-              title="Call City Health Office"
+              title={t('navbar.callCityHealth', 'Call City Health Office')}
             >
               <HeartPulse className="w-3.5 h-3.5 text-red-200 group-hover:text-yellow-200 shrink-0" />
               <span className="font-semibold text-red-100 group-hover:text-yellow-200">
-                City Health:
+                {t('navbar.cityHealth', 'City Health:')}
               </span>
               <span className="font-mono font-bold tracking-wide text-white group-hover:text-yellow-200">
                 046-840-1705
@@ -556,7 +668,7 @@ const Navbar: React.FC = () => {
                               : 'text-gray-700 hover:text-[#003893] hover:bg-gray-50'
                         }`}
                       >
-                        <span>{item.label}</span>
+                        <span>{getNavLabel(item.label)}</span>
                         <ChevronDown
                           className={`ml-1 h-3.5 w-3.5 transition-transform duration-200 ${
                             isHovered ? 'rotate-180' : ''
@@ -580,7 +692,7 @@ const Navbar: React.FC = () => {
                               : 'text-gray-700 hover:text-[#003893] hover:bg-gray-50'
                         }`}
                       >
-                        {item.label}
+                        {getNavLabel(item.label)}
                       </Link>
                     )}
                   </div>
@@ -601,12 +713,14 @@ const Navbar: React.FC = () => {
                   type="button"
                   onClick={() => changeLanguage('en')}
                   className={`px-3 py-1 rounded-md transition-all ${
-                    currentLang.startsWith('en')
+                    !isFil
                       ? 'bg-white text-[#003893] shadow-xs font-bold'
                       : isLightNavTheme
                         ? 'text-white/80 hover:text-white'
                         : 'text-gray-600 hover:text-gray-900'
                   }`}
+                  aria-pressed={!isFil}
+                  title="Switch to English"
                 >
                   EN
                 </button>
@@ -614,12 +728,14 @@ const Navbar: React.FC = () => {
                   type="button"
                   onClick={() => changeLanguage('fil')}
                   className={`px-3 py-1 rounded-md transition-all ${
-                    currentLang.startsWith('fil')
+                    isFil
                       ? 'bg-white text-[#003893] shadow-xs font-bold'
                       : isLightNavTheme
                         ? 'text-white/80 hover:text-white'
                         : 'text-gray-600 hover:text-gray-900'
                   }`}
+                  aria-pressed={isFil}
+                  title="Lumipat sa Filipino"
                 >
                   FIL
                 </button>
@@ -640,12 +756,14 @@ const Navbar: React.FC = () => {
                   type="button"
                   onClick={() => changeLanguage('en')}
                   className={`px-2 py-0.5 rounded ${
-                    currentLang.startsWith('en')
+                    !isFil
                       ? 'bg-white text-[#003893] shadow-xs font-bold'
                       : isLightNavTheme
                         ? 'text-white/80'
                         : 'text-gray-600'
                   }`}
+                  aria-pressed={!isFil}
+                  title="Switch to English"
                 >
                   EN
                 </button>
@@ -653,12 +771,14 @@ const Navbar: React.FC = () => {
                   type="button"
                   onClick={() => changeLanguage('fil')}
                   className={`px-2 py-0.5 rounded ${
-                    currentLang.startsWith('fil')
+                    isFil
                       ? 'bg-white text-[#003893] shadow-xs font-bold'
                       : isLightNavTheme
                         ? 'text-white/80'
                         : 'text-gray-600'
                   }`}
+                  aria-pressed={isFil}
+                  title="Lumipat sa Filipino"
                 >
                   FIL
                 </button>
@@ -687,126 +807,133 @@ const Navbar: React.FC = () => {
             ACTIVE MEGA MENU PANEL AT NAV LEVEL
             (Anchored directly below the navigation bar across full container)
             ---------------------------------------------------- */}
-        {activeMegaMenuData && (
-          <div
-            className="absolute left-0 right-0 top-full pt-1.5 z-50 flex justify-center animate-in fade-in slide-in-from-top-1 duration-150"
-            onMouseEnter={handleMegaPanelMouseEnter}
-            onMouseLeave={handleMegaPanelMouseLeave}
-          >
-            <div className="container mx-auto px-4 max-w-7xl">
-              <div className="bg-white rounded-2xl shadow-2xl border border-gray-200/90 text-gray-900 p-6 lg:p-7 grid grid-cols-12 gap-6 ring-1 ring-black/5 overflow-hidden">
-                {/* 3 Categorized Columns (9 cols) */}
-                <div className="col-span-8 lg:col-span-9 grid grid-cols-3 gap-6">
-                  {activeMegaMenuData.columns.map(col => (
-                    <div key={col.heading} className="space-y-3">
-                      <div className="text-xs font-black uppercase tracking-wider text-[#003893] pb-1.5 border-b border-blue-100 flex items-center justify-between">
-                        <span>{col.heading}</span>
-                        <span className="text-[10px] text-gray-400 font-semibold font-mono">
-                          {col.items.length} links
-                        </span>
-                      </div>
+        {activeMegaMenuData &&
+          (() => {
+            const featuredData = activeMegaMenu
+              ? getMegaMenuFeatured(activeMegaMenu, activeMegaMenuData.featured)
+              : activeMegaMenuData.featured;
 
-                      <div className="space-y-1.5">
-                        {col.items.map(mItem => {
-                          const ItemIcon = getMegaIcon(mItem.iconName);
-                          const isExternal = mItem.href.startsWith('http');
+            return (
+              <div
+                className="absolute left-0 right-0 top-full pt-1.5 z-50 flex justify-center animate-in fade-in slide-in-from-top-1 duration-150"
+                onMouseEnter={handleMegaPanelMouseEnter}
+                onMouseLeave={handleMegaPanelMouseLeave}
+              >
+                <div className="container mx-auto px-4 max-w-7xl">
+                  <div className="bg-white rounded-2xl shadow-2xl border border-gray-200/90 text-gray-900 p-6 lg:p-7 grid grid-cols-12 gap-6 ring-1 ring-black/5 overflow-hidden">
+                    {/* 3 Categorized Columns (9 cols) */}
+                    <div className="col-span-8 lg:col-span-9 grid grid-cols-3 gap-6">
+                      {activeMegaMenuData.columns.map(col => (
+                        <div key={col.heading} className="space-y-3">
+                          <div className="text-xs font-black uppercase tracking-wider text-[#003893] pb-1.5 border-b border-blue-100 flex items-center justify-between">
+                            <span>{col.heading}</span>
+                            <span className="text-[10px] text-gray-400 font-semibold font-mono">
+                              {col.items.length} links
+                            </span>
+                          </div>
 
-                          const Content = (
-                            <div className="flex items-start gap-2.5 p-2 rounded-xl hover:bg-blue-50/80 transition-all duration-150 group/item">
-                              <div className="w-8 h-8 rounded-lg bg-blue-50 text-[#003893] group-hover/item:bg-[#003893] group-hover/item:text-white flex items-center justify-center shrink-0 transition-colors mt-0.5">
-                                <ItemIcon className="w-4 h-4" />
-                              </div>
-                              <div className="min-w-0 flex-1">
-                                <div className="flex items-center justify-between gap-1">
-                                  <div className="text-xs font-bold text-gray-900 group-hover/item:text-[#003893] transition-colors truncate">
-                                    {mItem.title}
+                          <div className="space-y-1.5">
+                            {col.items.map(mItem => {
+                              const ItemIcon = getMegaIcon(mItem.iconName);
+                              const isExternal = mItem.href.startsWith('http');
+
+                              const Content = (
+                                <div className="flex items-start gap-2.5 p-2 rounded-xl hover:bg-blue-50/80 transition-all duration-150 group/item">
+                                  <div className="w-8 h-8 rounded-lg bg-blue-50 text-[#003893] group-hover/item:bg-[#003893] group-hover/item:text-white flex items-center justify-center shrink-0 transition-colors mt-0.5">
+                                    <ItemIcon className="w-4 h-4" />
                                   </div>
-                                  {mItem.badge && (
-                                    <span className="text-[9px] font-extrabold uppercase px-1.5 py-0.2 rounded bg-amber-100 text-amber-900 shrink-0">
-                                      {mItem.badge}
-                                    </span>
-                                  )}
+                                  <div className="min-w-0 flex-1">
+                                    <div className="flex items-center justify-between gap-1">
+                                      <div className="text-xs font-bold text-gray-900 group-hover/item:text-[#003893] transition-colors truncate">
+                                        {mItem.title}
+                                      </div>
+                                      {mItem.badge && (
+                                        <span className="text-[9px] font-extrabold uppercase px-1.5 py-0.2 rounded bg-amber-100 text-amber-900 shrink-0">
+                                          {mItem.badge}
+                                        </span>
+                                      )}
+                                    </div>
+                                    {mItem.description && (
+                                      <p className="text-[11px] text-gray-500 line-clamp-1 mt-0.5 group-hover/item:text-gray-700">
+                                        {mItem.description}
+                                      </p>
+                                    )}
+                                  </div>
                                 </div>
-                                {mItem.description && (
-                                  <p className="text-[11px] text-gray-500 line-clamp-1 mt-0.5 group-hover/item:text-gray-700">
-                                    {mItem.description}
-                                  </p>
-                                )}
-                              </div>
-                            </div>
-                          );
+                              );
 
-                          return isExternal ? (
-                            <a
-                              key={mItem.title}
-                              href={mItem.href}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              onClick={closeMenu}
-                              className="block"
-                            >
-                              {Content}
-                            </a>
-                          ) : (
-                            <Link
-                              key={mItem.title}
-                              to={mItem.href}
-                              onClick={closeMenu}
-                              className="block"
-                            >
-                              {Content}
-                            </Link>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Side Featured Card (3 cols) */}
-                <div className="col-span-4 lg:col-span-3">
-                  <div className="bg-gradient-to-br from-[#003893] via-[#00225e] to-slate-900 text-white p-5 rounded-2xl h-full flex flex-col justify-between shadow-md border border-blue-800/40 relative overflow-hidden group/card">
-                    <div className="space-y-2 relative z-10">
-                      {activeMegaMenuData.featured.tag && (
-                        <span className="text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-400 text-slate-950 font-sans shadow-xs inline-block">
-                          {activeMegaMenuData.featured.tag}
-                        </span>
-                      )}
-                      <h4 className="text-base font-extrabold text-white tracking-tight leading-snug pt-1">
-                        {activeMegaMenuData.featured.title}
-                      </h4>
-                      <p className="text-xs text-blue-100/90 leading-relaxed">
-                        {activeMegaMenuData.featured.description}
-                      </p>
-                    </div>
-
-                    <div className="relative z-10 pt-4 mt-3 border-t border-white/15 space-y-3">
-                      {activeMegaMenuData.featured.stat && (
-                        <div className="flex items-center justify-between text-xs">
-                          <span className="text-[11px] text-blue-200">
-                            {activeMegaMenuData.featured.statLabel}
-                          </span>
-                          <span className="font-mono font-bold text-amber-300">
-                            {activeMegaMenuData.featured.stat}
-                          </span>
+                              return isExternal ? (
+                                <a
+                                  key={mItem.title}
+                                  href={mItem.href}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  onClick={closeMenu}
+                                  className="block"
+                                >
+                                  {Content}
+                                </a>
+                              ) : (
+                                <Link
+                                  key={mItem.title}
+                                  to={mItem.href}
+                                  onClick={closeMenu}
+                                  className="block"
+                                >
+                                  {Content}
+                                </Link>
+                              );
+                            })}
+                          </div>
                         </div>
-                      )}
+                      ))}
+                    </div>
 
-                      <Link
-                        to={activeMegaMenuData.featured.href}
-                        onClick={closeMenu}
-                        className="w-full inline-flex items-center justify-center gap-1.5 bg-white text-[#003893] hover:bg-blue-50 font-bold px-3.5 py-2 rounded-xl text-xs transition-colors shadow-sm"
-                      >
-                        <span>{activeMegaMenuData.featured.ctaText}</span>
-                        <ArrowRight className="w-3.5 h-3.5 group-hover/card:translate-x-0.5 transition-transform" />
-                      </Link>
+                    {/* Side Featured Card (3 cols) */}
+                    <div className="col-span-4 lg:col-span-3">
+                      <div className="bg-gradient-to-br from-[#003893] via-[#00225e] to-slate-900 text-white p-5 rounded-2xl h-full flex flex-col justify-between shadow-md border border-blue-800/40 relative overflow-hidden group/card">
+                        <div className="space-y-2 relative z-10">
+                          {featuredData.tag && (
+                            <span className="text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-400 text-slate-950 font-sans shadow-xs inline-block">
+                              {featuredData.tag}
+                            </span>
+                          )}
+                          <h4 className="text-base font-extrabold text-white tracking-tight leading-snug pt-1">
+                            {featuredData.title}
+                          </h4>
+                          <p className="text-xs text-blue-100/90 leading-relaxed">
+                            {featuredData.description}
+                          </p>
+                        </div>
+
+                        <div className="relative z-10 pt-4 mt-3 border-t border-white/15 space-y-3">
+                          {featuredData.stat && (
+                            <div className="flex items-center justify-between text-xs">
+                              <span className="text-[11px] text-blue-200">
+                                {featuredData.statLabel}
+                              </span>
+                              <span className="font-mono font-bold text-amber-300">
+                                {featuredData.stat}
+                              </span>
+                            </div>
+                          )}
+
+                          <Link
+                            to={featuredData.href}
+                            onClick={closeMenu}
+                            className="w-full inline-flex items-center justify-center gap-1.5 bg-white text-[#003893] hover:bg-blue-50 font-bold px-3.5 py-2 rounded-xl text-xs transition-colors shadow-sm"
+                          >
+                            <span>{featuredData.ctaText}</span>
+                            <ArrowRight className="w-3.5 h-3.5 group-hover/card:translate-x-0.5 transition-transform" />
+                          </Link>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        )}
+            );
+          })()}
 
         {/* Mobile Menu Accordion Drawer */}
         {isOpen && (
@@ -820,7 +947,7 @@ const Navbar: React.FC = () => {
                       className="w-full flex justify-between items-center py-2.5 text-sm font-bold text-gray-900"
                     >
                       <div className="flex items-center gap-2">
-                        <span>{item.label}</span>
+                        <span>{getNavLabel(item.label)}</span>
                         <span className="text-[10px] font-extrabold px-1.5 py-0.2 rounded bg-blue-50 text-[#003893]">
                           Menu
                         </span>
@@ -861,13 +988,21 @@ const Navbar: React.FC = () => {
                         ))}
 
                         <div className="pt-2 border-t border-gray-200">
-                          <Link
-                            to={item.megaMenu.featured.href}
-                            onClick={closeMenu}
-                            className="block text-center text-xs font-bold text-[#003893] bg-white p-2 rounded-lg border border-gray-200 shadow-xs"
-                          >
-                            {item.megaMenu.featured.ctaText} &rarr;
-                          </Link>
+                          {(() => {
+                            const mobileFeatured = getMegaMenuFeatured(
+                              item.label,
+                              item.megaMenu.featured
+                            );
+                            return (
+                              <Link
+                                to={mobileFeatured.href}
+                                onClick={closeMenu}
+                                className="block text-center text-xs font-bold text-[#003893] bg-white p-2 rounded-lg border border-gray-200 shadow-xs"
+                              >
+                                {mobileFeatured.ctaText} &rarr;
+                              </Link>
+                            );
+                          })()}
                         </div>
                       </div>
                     )}
@@ -878,7 +1013,7 @@ const Navbar: React.FC = () => {
                     onClick={closeMenu}
                     className="block py-2.5 text-sm font-bold text-gray-900 hover:text-[#003893]"
                   >
-                    {item.label}
+                    {getNavLabel(item.label)}
                   </Link>
                 )}
               </div>

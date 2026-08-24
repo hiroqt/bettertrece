@@ -1,8 +1,11 @@
 import React from 'react';
 import { Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router';
+import { useTranslation } from 'react-i18next';
 
 const ContactSection: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <section
       id="contact"
@@ -17,7 +20,7 @@ const ContactSection: React.FC = () => {
               id="contact-us-heading"
               className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight"
             >
-              Contact Us
+              {t('contact.title', 'Contact Us')}
             </h2>
           </div>
 
@@ -25,7 +28,9 @@ const ContactSection: React.FC = () => {
             to="/government"
             className="inline-flex items-center gap-1.5 text-sm font-bold text-[#003893] hover:text-blue-800 hover:underline transition-colors group"
           >
-            <span>View All Departments</span>
+            <span>
+              {t('contact.viewAllDepartments', 'View All Departments')}
+            </span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
           </Link>
         </div>
@@ -39,7 +44,7 @@ const ContactSection: React.FC = () => {
             </div>
             <div className="min-w-0">
               <div className="text-[11px] font-bold text-gray-500 uppercase tracking-wider">
-                PHONE
+                {t('contact.phone', 'PHONE')}
               </div>
               <a
                 href="tel:0464190268"
@@ -47,7 +52,9 @@ const ContactSection: React.FC = () => {
               >
                 (046) 419-0268
               </a>
-              <div className="text-xs text-gray-500 mt-1">Mon–Fri, 8AM–5PM</div>
+              <div className="text-xs text-gray-500 mt-1">
+                {t('contact.phoneHours', 'Mon–Fri, 8AM–5PM')}
+              </div>
             </div>
           </div>
 
@@ -58,7 +65,7 @@ const ContactSection: React.FC = () => {
             </div>
             <div className="min-w-0">
               <div className="text-[11px] font-bold text-gray-500 uppercase tracking-wider">
-                EMAIL
+                {t('contact.email', 'EMAIL')}
               </div>
               <a
                 href="mailto:contact@trece.gov.ph"
@@ -67,7 +74,7 @@ const ContactSection: React.FC = () => {
                 contact@trece.gov.ph
               </a>
               <div className="text-xs text-gray-500 mt-1">
-                Response within 2 business days
+                {t('contact.emailResponse', 'Response within 2 business days')}
               </div>
             </div>
           </div>
@@ -79,13 +86,16 @@ const ContactSection: React.FC = () => {
             </div>
             <div className="min-w-0">
               <div className="text-[11px] font-bold text-gray-500 uppercase tracking-wider">
-                ADDRESS
+                {t('contact.address', 'ADDRESS')}
               </div>
               <div className="text-sm sm:text-base font-bold text-amber-800 mt-0.5 truncate">
-                City Hall, Trece Martires City
+                {t('contact.cityHall', 'City Hall, Trece Martires City')}
               </div>
               <div className="text-xs text-gray-500 mt-1 line-clamp-1">
-                Gov. Drive, Brgy. San Agustin, Trece Martires, Cavite 4109
+                {t(
+                  'contact.addressDetail',
+                  'Gov. Drive, Brgy. San Agustin, Trece Martires, Cavite 4109'
+                )}
               </div>
             </div>
           </div>

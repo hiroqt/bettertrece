@@ -2,7 +2,7 @@ import Section from '../ui/Section';
 import * as LucideIcons from 'lucide-react';
 import { Heading } from '../ui/Heading';
 import { Text } from '../ui/Text';
-import { useTranslation } from '../../hooks/useTranslation';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router';
 import { ArrowRight } from 'lucide-react';
 
@@ -44,7 +44,7 @@ export default function ServicesSection({
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
         <div>
           <span className="text-xs font-bold uppercase tracking-wider text-[#003893] bg-blue-50 px-2.5 py-1 rounded">
-            Public Services Directory
+            {t('services.badge', 'Public Services Directory')}
           </span>
           <Heading
             level={2}
@@ -65,7 +65,7 @@ export default function ServicesSection({
           to="/services"
           className="inline-flex items-center gap-1.5 text-sm font-bold text-[#003893] hover:text-blue-700 transition-colors group shrink-0"
         >
-          <span>View all categories</span>
+          <span>{t('services.viewAll', 'View all categories')}</span>
           <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
         </Link>
       </div>
@@ -92,7 +92,7 @@ export default function ServicesSection({
             </div>
 
             <div className="flex items-center text-xs font-semibold text-[#003893] group-hover:translate-x-1 transition-transform">
-              <span>Learn more</span>
+              <span>{t('services.learnMore', 'Learn more')}</span>
               <ArrowRight className="w-3.5 h-3.5 ml-1" />
             </div>
           </Link>

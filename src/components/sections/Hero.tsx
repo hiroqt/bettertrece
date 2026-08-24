@@ -4,41 +4,68 @@ import { ArrowRight, ShieldCheck, Users, MapPin, Landmark } from 'lucide-react';
 import { TRECE_MUNICIPAL_PROFILE } from '../../data/psaClassifications';
 
 export default function Hero() {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
 
   const cityDetails = [
     {
-      title: 'Historical Origin',
-      value: 'Capital of Cavite',
-      subtext: `Named after the 13 Martyrs of Cavite (1896) · Chartered ${TRECE_MUNICIPAL_PROFILE.republicAct}`,
+      title: t('hero.historicalOrigin', 'Historical Origin'),
+      value: t('hero.historicalOriginValue', 'Capital of Cavite'),
+      subtext: t(
+        'hero.historicalOriginSubtext',
+        `Named after the 13 Martyrs of Cavite (1896) · Chartered ${TRECE_MUNICIPAL_PROFILE.republicAct}`
+      ),
       icon: Landmark,
-      badge: `Chartered ${TRECE_MUNICIPAL_PROFILE.charterYear}`,
+      badge: t(
+        'hero.charteredBadge',
+        `Chartered ${TRECE_MUNICIPAL_PROFILE.charterYear}`
+      ),
       badgeColor: 'text-amber-300 bg-amber-400/15 border-amber-400/30',
     },
     {
-      title: 'Barangays',
-      value: `${TRECE_MUNICIPAL_PROFILE.totalBarangays} Historical Barangays`,
-      subtext: 'All 13 barangays named in honor of the Thirteen Martyrs',
+      title: t('hero.barangays', 'Barangays'),
+      value: t(
+        'hero.barangaysValue',
+        `${TRECE_MUNICIPAL_PROFILE.totalBarangays} Historical Barangays`
+      ),
+      subtext: t(
+        'hero.barangaysSubtext',
+        'All 13 barangays named in honor of the Thirteen Martyrs'
+      ),
       icon: MapPin,
-      badge: `${TRECE_MUNICIPAL_PROFILE.totalBarangays} Barangays`,
+      badge: t(
+        'hero.barangaysBadge',
+        `${TRECE_MUNICIPAL_PROFILE.totalBarangays} Barangays`
+      ),
       badgeColor: 'text-blue-300 bg-blue-400/15 border-blue-400/30',
     },
     {
-      title: 'Population',
+      title: t('hero.population', 'Population'),
       value:
         TRECE_MUNICIPAL_PROFILE.totalPopulation2024?.toLocaleString() ||
         '227,892',
-      subtext: `Official PSA 2024 POPCEN (${TRECE_MUNICIPAL_PROFILE.populationGrowthRate})`,
+      subtext: t(
+        'hero.populationSubtext',
+        `Official PSA 2024 POPCEN (${TRECE_MUNICIPAL_PROFILE.populationGrowthRate})`
+      ),
       icon: Users,
-      badge: '2024 POPCEN',
+      badge: t('hero.populationBadge', '2024 POPCEN'),
       badgeColor: 'text-emerald-300 bg-emerald-400/15 border-emerald-400/30',
     },
     {
-      title: 'City Classification',
-      value: `${TRECE_MUNICIPAL_PROFILE.incomeClass} ${TRECE_MUNICIPAL_PROFILE.cityClassification}`,
-      subtext: `Land Area: ${TRECE_MUNICIPAL_PROFILE.totalLandAreaKm2} km² · Province of ${TRECE_MUNICIPAL_PROFILE.province}`,
+      title: t('hero.cityClassification', 'City Classification'),
+      value: t(
+        'hero.cityClassificationValue',
+        `${TRECE_MUNICIPAL_PROFILE.incomeClass} ${TRECE_MUNICIPAL_PROFILE.cityClassification}`
+      ),
+      subtext: t(
+        'hero.cityClassificationSubtext',
+        `Land Area: ${TRECE_MUNICIPAL_PROFILE.totalLandAreaKm2} km² · Province of ${TRECE_MUNICIPAL_PROFILE.province}`
+      ),
       icon: ShieldCheck,
-      badge: `${TRECE_MUNICIPAL_PROFILE.incomeClass} LGU`,
+      badge: t(
+        'hero.cityClassificationBadge',
+        `${TRECE_MUNICIPAL_PROFILE.incomeClass} LGU`
+      ),
       badgeColor: 'text-yellow-300 bg-yellow-400/15 border-yellow-400/30',
     },
   ];
@@ -89,7 +116,7 @@ export default function Hero() {
                 to="/demographics"
                 className="inline-flex items-center justify-center gap-2 bg-[#002a70]/70 hover:bg-[#002a70] text-white border border-white/30 font-semibold px-5 py-3 rounded-lg backdrop-blur-xs transition-all duration-200 text-sm sm:text-base hover:border-amber-400/50 hover:text-amber-300"
               >
-                <span>Full Demographics &rarr;</span>
+                <span>{t('hero.fullDemographics', 'Full Demographics →')}</span>
               </Link>
             </div>
           </div>
@@ -102,11 +129,11 @@ export default function Hero() {
                 <div className="flex items-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse" />
                   <span className="text-xs font-bold text-white uppercase tracking-wider">
-                    City Profile & Key Facts
+                    {t('hero.cityProfileAndFacts', 'City Profile & Key Facts')}
                   </span>
                 </div>
                 <span className="text-[11px] font-bold uppercase tracking-wider text-amber-300 bg-amber-400/15 border border-amber-400/25 px-2.5 py-0.5 rounded-md">
-                  Capital of Cavite
+                  {t('hero.capitalOfCavite', 'Capital of Cavite')}
                 </span>
               </div>
 
