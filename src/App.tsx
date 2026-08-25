@@ -13,6 +13,7 @@ import Search from './pages/Search';
 import About from './pages/About';
 import { isMeilisearchEnabled } from './lib/meilisearch';
 import { BrowserRouter as Router, Routes, Route } from 'react-router';
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
               <Route path="/:documentSlug" element={<Document />} />
             </Routes>
             <Footer />
+            <Analytics />
           </div>
         </NuqsAdapter>
       </Router>

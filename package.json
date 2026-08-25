@@ -30,6 +30,7 @@
   "dependencies": {
     "@bettergov/kapwa": "^1.2.4",
     "@tailwindcss/typography": "^0.5.18",
+    "@vercel/analytics": "^2.0.1",
     "clsx": "^2.1.1",
     "dotenv": "^17.2.2",
     "i18next": "^26.3.6",
