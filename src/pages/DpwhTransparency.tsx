@@ -4,6 +4,7 @@ import SEO from '../components/SEO';
 import Breadcrumbs from '../components/ui/Breadcrumbs';
 import DpwhProjectsExplorer from '../components/transparency/DpwhProjectsExplorer';
 import CityRevenueWidget from '../components/transparency/CityRevenueWidget';
+import CoaAuditWidget from '../components/transparency/CoaAuditWidget';
 import {
   Building2,
   ShieldCheck,
@@ -12,14 +13,24 @@ import {
   ArrowRight,
   Coins,
   HardHat,
+  FileCheck2,
 } from 'lucide-react';
 
 export default function DpwhTransparency() {
   const location = useLocation();
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const getInitialTab = (): 'budget-revenue' | 'explorer' | 'trece-focus' => {
+  const getInitialTab = ():
+    'budget-revenue' | 'explorer' | 'trece-focus' | 'audit' => {
     const tabParam = searchParams.get('tab');
+    if (
+      tabParam === 'audit' ||
+      tabParam === 'coa' ||
+      tabParam === 'aar' ||
+      tabParam === 'audit-report'
+    ) {
+      return 'audit';
+    }
     if (
       tabParam === 'explorer' ||
       tabParam === 'dpwh' ||
@@ -39,6 +50,9 @@ export default function DpwhTransparency() {
       return 'budget-revenue';
     }
 
+    if (location.hash === '#audit' || location.hash === '#coa') {
+      return 'audit';
+    }
     if (
       location.pathname === '/transparency/dpwh' ||
       location.hash === '#dpwh' ||
@@ -56,7 +70,7 @@ export default function DpwhTransparency() {
   };
 
   const [activeTab, setActiveTab] = useState<
-    'budget-revenue' | 'explorer' | 'trece-focus'
+    'budget-revenue' | 'explorer' | 'trece-focus' | 'audit'
   >(getInitialTab);
 
   useEffect(() => {
@@ -64,7 +78,7 @@ export default function DpwhTransparency() {
   }, [location.pathname, location.hash, searchParams]);
 
   const handleTabChange = (
-    tab: 'budget-revenue' | 'explorer' | 'trece-focus'
+    tab: 'budget-revenue' | 'explorer' | 'trece-focus' | 'audit'
   ) => {
     setActiveTab(tab);
     setSearchParams(
@@ -93,9 +107,9 @@ export default function DpwhTransparency() {
   return (
     <>
       <SEO
-        title="City Revenue & Financial Transparency | Trece Martires City"
-        description="Official transparency portal for Trece Martires City, Cavite. Track DBM/DOF-BLGF city revenue collections, local taxes, expenditures, and DPWH infrastructure public works under Cavite 1st DEO."
-        keywords="Trece Martires budget, city revenue, DBM Trece Martires, DPWH Trece Martires, Cavite 1st DEO, public works, city taxes, SRE Trece Martires"
+        title="City Revenue, COA Audit & Financial Transparency | Trece Martires City"
+        description="Official civic transparency portal for Trece Martires City, Cavite. Track COA Annual Audit Reports, DBM/DOF-BLGF city revenues, local budgets, and DPWH infrastructure public works."
+        keywords="Trece Martires budget, COA audit Trece Martires, COA AAR 2024, city revenue, DBM Trece Martires, DPWH Trece Martires, Cavite 1st DEO, public works, city taxes, SRE Trece Martires"
       />
 
       <main className="flex-grow bg-slate-50/50 pb-20">
@@ -114,7 +128,7 @@ export default function DpwhTransparency() {
               <div className="space-y-3 max-w-3xl">
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-white/10 text-blue-100">
-                    DBM &bull; DOF-BLGF &bull; DPWH
+                    COA &bull; DBM &bull; DOF-BLGF &bull; DPWH
                   </span>
                 </div>
 
@@ -125,10 +139,14 @@ export default function DpwhTransparency() {
                 <p className="text-sm sm:text-base text-blue-100/90 leading-relaxed">
                   Open data access to the{' '}
                   <strong className="text-amber-300">
+                    COA Annual Audit Report (AAR 2024)
+                  </strong>
+                  , the{' '}
+                  <strong className="text-amber-300">
                     City Financial Statement of Receipts &amp; Expenditures
                     (DBM)
-                  </strong>{' '}
-                  and the Department of Public Works and Highways (DPWH)
+                  </strong>
+                  , and the Department of Public Works and Highways (DPWH)
                   infrastructure registry across the{' '}
                   <strong className="text-amber-300">
                     13 Barangays of Trece Martires City
@@ -140,14 +158,14 @@ export default function DpwhTransparency() {
               <div className="flex flex-wrap items-center gap-3 shrink-0">
                 <div className="bg-white/10 backdrop-blur-xs px-4 py-2.5 rounded-2xl border border-white/20 text-xs font-medium text-blue-100 space-y-0.5">
                   <div className="font-bold text-white">Official Sources</div>
-                  <div>DBM / DOF-BLGF &bull; DPWH Cavite 1st DEO</div>
+                  <div>COA Reg. IV-A &bull; DBM / BLGF &bull; DPWH 1st DEO</div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Tab Navigation - 3 Unified Tabs */}
+        {/* Tab Navigation - 4 Unified Tabs */}
         <div className="bg-white border-b border-gray-200 shadow-xs">
           <div className="container mx-auto px-4 max-w-7xl">
             <div
@@ -172,7 +190,24 @@ export default function DpwhTransparency() {
                 <span>City Revenue &amp; Budget (DBM)</span>
               </button>
 
-              {/* Tab 2: DPWH Infrastructure Tracker (Unified: Directory, Map & Analytics) */}
+              {/* Tab 2: COA Annual Audit Report (2024) */}
+              <button
+                role="tab"
+                id="tab-audit"
+                aria-selected={activeTab === 'audit'}
+                aria-controls="panel-audit"
+                onClick={() => handleTabChange('audit')}
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#00225e] min-h-[40px] ${
+                  activeTab === 'audit'
+                    ? 'bg-[#00225e] text-white shadow-xs'
+                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                }`}
+              >
+                <FileCheck2 className="w-4 h-4" aria-hidden="true" />
+                <span>COA Annual Audit (2024)</span>
+              </button>
+
+              {/* Tab 3: DPWH Infrastructure Tracker (Unified: Directory, Map & Analytics) */}
               <button
                 role="tab"
                 id="tab-explorer"
@@ -189,7 +224,7 @@ export default function DpwhTransparency() {
                 <span>DPWH Infrastructure Tracker</span>
               </button>
 
-              {/* Tab 3: Strategic Corridors & Facilities */}
+              {/* Tab 4: Strategic Corridors & Facilities */}
               <button
                 role="tab"
                 id="tab-trece-focus"
@@ -219,6 +254,17 @@ export default function DpwhTransparency() {
               className="space-y-8 animate-fadeIn"
             >
               <CityRevenueWidget />
+            </div>
+          )}
+
+          {activeTab === 'audit' && (
+            <div
+              id="panel-audit"
+              role="tabpanel"
+              aria-labelledby="tab-audit"
+              className="space-y-8 animate-fadeIn"
+            >
+              <CoaAuditWidget />
             </div>
           )}
 

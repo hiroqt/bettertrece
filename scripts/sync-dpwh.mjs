@@ -2,10 +2,10 @@
 
 /**
  * DPWH Transparency API Offline Ingestion & Sync Script
- * 
+ *
  * Fetches, normalizes, deduplicates, and caches all DPWH infrastructure
  * projects for Trece Martires City (Cavite 1st District Engineering Office).
- * 
+ *
  * Usage:
  *   node scripts/sync-dpwh.mjs
  */
@@ -46,17 +46,30 @@ function extractBarangay(text = '') {
 
 function normalizeProject(raw) {
   const description = (raw.description || 'Infrastructure Project').trim();
-  const detectedBarangay = raw.location?.barangay || extractBarangay(description);
+  const detectedBarangay =
+    raw.location?.barangay || extractBarangay(description);
 
   return {
-    contractId: raw.contractId || `RAW-${Math.random().toString(36).substring(2, 9).toUpperCase()}`,
+    contractId:
+      raw.contractId ||
+      `RAW-${Math.random().toString(36).substring(2, 9).toUpperCase()}`,
     description,
     category: raw.category || 'Roads',
     componentCategories: raw.componentCategories || raw.category || 'Roads',
     status: raw.status || 'On-Going',
-    budget: typeof raw.budget === 'number' ? raw.budget : parseFloat(String(raw.budget || '0').replace(/[^0-9.]/g, '')) || 0,
-    amountPaid: typeof raw.amountPaid === 'number' ? raw.amountPaid : parseFloat(String(raw.amountPaid || '0').replace(/[^0-9.]/g, '')) || 0,
-    progress: typeof raw.progress === 'number' ? raw.progress : parseFloat(String(raw.progress || '0')) || 0,
+    budget:
+      typeof raw.budget === 'number'
+        ? raw.budget
+        : parseFloat(String(raw.budget || '0').replace(/[^0-9.]/g, '')) || 0,
+    amountPaid:
+      typeof raw.amountPaid === 'number'
+        ? raw.amountPaid
+        : parseFloat(String(raw.amountPaid || '0').replace(/[^0-9.]/g, '')) ||
+          0,
+    progress:
+      typeof raw.progress === 'number'
+        ? raw.progress
+        : parseFloat(String(raw.progress || '0')) || 0,
     location: {
       province: raw.location?.province || 'Cavite 1st DEO',
       region: raw.location?.region || 'Region IV-A',
@@ -82,11 +95,12 @@ function normalizeProject(raw) {
 
 async function fetchPage(page = 1, limit = 50, search = 'trece martires city') {
   const url = `${DPWH_API}/projects?page=${page}&limit=${limit}&search=${encodeURIComponent(search)}`;
-  
+
   const response = await fetch(url, {
     headers: {
-      'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
-      'Accept': 'application/json',
+      'User-Agent':
+        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+      Accept: 'application/json',
     },
   });
 
@@ -103,21 +117,29 @@ async function syncDPWHData() {
   console.log('====================================================\n');
 
   try {
-    console.log(`[1/4] Querying DPWH API: ${DPWH_API}/projects?page=1&limit=50&search=trece+martires+city`);
+    console.log(
+      `[1/4] Querying DPWH API: ${DPWH_API}/projects?page=1&limit=50&search=trece+martires+city`
+    );
     const firstPage = await fetchPage(1, 50, 'trece martires city');
-    
+
     const pagination = firstPage.data.pagination;
     const totalPages = pagination.totalPages || 1;
     const totalCount = pagination.totalCount || firstPage.data.data.length;
 
-    console.log(`✓ Page 1 loaded: ${firstPage.data.data.length} projects found (${totalCount} total reported across ${totalPages} pages).`);
+    console.log(
+      `✓ Page 1 loaded: ${firstPage.data.data.length} projects found (${totalCount} total reported across ${totalPages} pages).`
+    );
 
     const allProjects = [...firstPage.data.data];
 
     // Fetch remaining pages if any
     if (totalPages > 1) {
-      console.log(`[2/4] Fetching remaining ${totalPages - 1} pages concurrently...`);
-      const pagePromises = Array.from({ length: totalPages - 1 }, (_, i) => fetchPage(i + 2, 50, 'trece martires city'));
+      console.log(
+        `[2/4] Fetching remaining ${totalPages - 1} pages concurrently...`
+      );
+      const pagePromises = Array.from({ length: totalPages - 1 }, (_, i) =>
+        fetchPage(i + 2, 50, 'trece martires city')
+      );
       const remainingPages = await Promise.all(pagePromises);
       for (const p of remainingPages) {
         if (p?.data?.data) {
@@ -126,7 +148,9 @@ async function syncDPWHData() {
       }
     }
 
-    console.log(`[3/4] Normalizing and deduplicating ${allProjects.length} raw records...`);
+    console.log(
+      `[3/4] Normalizing and deduplicating ${allProjects.length} raw records...`
+    );
     const seen = new Set();
     const normalized = [];
 
@@ -169,10 +193,15 @@ async function syncDPWHData() {
     console.log('✅ Sync completed successfully!');
   } catch (err) {
     console.warn(`\n⚠️ Direct DPWH API fetch failed (${err.message}).`);
-    console.log('ℹ️ Utilizing curated local dataset fallback (50 projects) for offline resilience.');
+    console.log(
+      'ℹ️ Utilizing curated local dataset fallback (50 projects) for offline resilience.'
+    );
 
     // Copy curated data into synced file
-    const fallbackPath = path.resolve(__dirname, '../src/data/dpwhTransparency.ts');
+    const fallbackPath = path.resolve(
+      __dirname,
+      '../src/data/dpwhTransparency.ts'
+    );
     console.log(`✓ Synced fallback ready in ${fallbackPath}`);
   }
 }

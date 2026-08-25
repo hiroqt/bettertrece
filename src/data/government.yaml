@@ -57,6 +57,8 @@ categories:
     description: 'Access DPWH infrastructure transparency data, Full Disclosure Policy releases, and Freedom of Information documents.'
     icon: 'FileText'
     subcategories:
+      - name: 'COA Annual Audit Report (2024)'
+        slug: 'coa-audit-report-2024'
       - name: 'DPWH Infrastructure Transparency'
         slug: 'dpwh-transparency'
       - name: 'Full Disclosure Policy'

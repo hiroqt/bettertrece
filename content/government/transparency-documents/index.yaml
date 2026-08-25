@@ -6,6 +6,9 @@ description: 'Access local government transparency disclosures, Full Disclosure 
 layout: 'grid'
 
 pages:
+  - name: 'COA Annual Audit Report (2024)'
+    slug: 'coa-audit-report-2024'
+    description: 'Commission on Audit (COA) Calendar Year 2024 Annual Audit Report (AAR), 15 audit observations, Agency Action Plan (AAPSI), and Action Plan Monitoring Tool (APMT).'
   - name: 'DPWH Infrastructure Transparency'
     slug: 'dpwh-transparency'
     description: 'Track ongoing and completed DPWH public works contracts, GAA budgets, physical progress, and contractor data for Trece Martires City and Cavite DEOs.'
