@@ -99,10 +99,18 @@ export const mainNavigation: MainNavItem[] = [
               iconName: 'Baby',
             },
             {
+              title: 'Senior High Schools Directory',
+              description:
+                '16 Public & Private SHS schools & STEM/ABM/HUMSS/TVL strands',
+              href: '/services/education#schools',
+              iconName: 'GraduationCap',
+              badge: '16 Schools',
+            },
+            {
               title: 'Local City Scholarships',
               description: 'Educational financial assistance program',
               href: '/services/education/apply-for-local-scholarships',
-              iconName: 'GraduationCap',
+              iconName: 'Award',
             },
             {
               title: 'Daycare & Preschools',
@@ -405,6 +413,13 @@ export const mainNavigation: MainNavItem[] = [
               iconName: 'Users',
             },
             {
+              title: 'Senior High Schools (16)',
+              description: 'DepEd BEIS directory (4 Public, 12 Private SHS)',
+              href: '/demographics#education',
+              iconName: 'GraduationCap',
+              badge: '16 Schools',
+            },
+            {
               title: '2024 POPCEN (227,892)',
               description: 'Official Philippine Statistics Authority census',
               href: '/demographics',
@@ -516,8 +531,8 @@ export const footerNavigation = {
           href: '/services/garbage-waste-disposal',
         },
         {
-          label: 'Education & Scholarships',
-          href: '/services/education',
+          label: 'Education & Senior High Schools',
+          href: '/demographics#education',
         },
         {
           label: 'Summary Demographics & Census',

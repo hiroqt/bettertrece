@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { useParams, Link, useSearchParams } from 'react-router';
+import { useParams, Link, useSearchParams, useLocation } from 'react-router';
 import {
   serviceCategories,
   getCategorySubcategories,
@@ -9,6 +9,8 @@ import {
 } from '../data/yamlLoader';
 import Breadcrumbs from '../components/ui/Breadcrumbs';
 import SEO from '../components/SEO';
+import SchoolsExplorer from '../components/services/SchoolsExplorer';
+import { SCHOOLS_STATISTICS } from '../data/schoolsData';
 import {
   Search,
   X,
@@ -124,12 +126,38 @@ const POPULAR_SERVICES = [
 
 const Services: React.FC = () => {
   const { category } = useParams();
+  const location = useLocation();
   const [searchParams, setSearchParams] = useSearchParams();
 
   // Search & view states
   const initialSearchQuery = searchParams.get('q') || '';
   const [searchQuery, setSearchQuery] = useState(initialSearchQuery);
   const [layoutMode, setLayoutMode] = useState<'grid' | 'list'>('grid');
+
+  // Education category tab toggle: Citizen Charter Guides vs Senior High Schools
+  const [activeEducationTab, setActiveEducationTab] = useState<
+    'guides' | 'schools'
+  >(() => {
+    if (
+      location.hash === '#schools' ||
+      location.hash === '#senior-high' ||
+      location.hash === '#shs'
+    ) {
+      return 'schools';
+    }
+    return 'guides';
+  });
+
+  // Sync hash change
+  useEffect(() => {
+    if (
+      location.hash === '#schools' ||
+      location.hash === '#senior-high' ||
+      location.hash === '#shs'
+    ) {
+      setActiveEducationTab('schools');
+    }
+  }, [location.hash]);
 
   // Subcategories state for single category view
   const [categoryIndex, setCategoryIndex] = useState<CategoryIndex>({
@@ -388,167 +416,236 @@ const Services: React.FC = () => {
 
           {/* Category Content Area */}
           <div className="container mx-auto px-4 max-w-7xl mt-8">
-            {/* Filter & Search Strip */}
-            <div className="bg-white rounded-2xl p-4 border border-gray-200 shadow-xs mb-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-              {/* Search Within Category */}
-              <div className="relative w-full sm:max-w-md">
-                <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
-                <input
-                  type="text"
-                  value={searchQuery}
-                  onChange={handleSearchChange}
-                  placeholder={`Search in ${categoryData.category}...`}
-                  className="w-full pl-10 pr-9 py-2.5 text-xs sm:text-sm bg-slate-50 border border-gray-200 rounded-xl focus:outline-hidden focus:ring-2 focus:ring-[#003893] focus:bg-white transition-all text-gray-900 placeholder:text-gray-400"
-                />
-                {searchQuery && (
-                  <button
-                    onClick={clearSearch}
-                    aria-label="Clear search"
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 p-1"
-                  >
-                    <X className="w-3.5 h-3.5" />
-                  </button>
-                )}
-              </div>
-
-              {/* View layout toggle & Result Counter */}
-              <div className="flex items-center justify-between sm:justify-end w-full sm:w-auto gap-3 text-xs text-gray-600">
-                <span className="font-semibold">
-                  Showing {filteredSubcategories.length} of{' '}
-                  {categoryIndex.pages.length} guides
-                </span>
-                <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-xl border border-gray-200">
-                  <button
-                    onClick={() => setLayoutMode('grid')}
-                    title="Grid Layout"
-                    aria-label="Grid layout"
-                    className={`p-1.5 rounded-lg transition-all ${
-                      layoutMode === 'grid'
-                        ? 'bg-white text-[#003893] shadow-xs'
-                        : 'text-gray-500 hover:text-gray-800'
-                    }`}
-                  >
-                    <Grid className="w-4 h-4" />
-                  </button>
-                  <button
-                    onClick={() => setLayoutMode('list')}
-                    title="List Layout"
-                    aria-label="List layout"
-                    className={`p-1.5 rounded-lg transition-all ${
-                      layoutMode === 'list'
-                        ? 'bg-white text-[#003893] shadow-xs'
-                        : 'text-gray-500 hover:text-gray-800'
-                    }`}
-                  >
-                    <ListIcon className="w-4 h-4" />
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {loading ? (
-              <div className="flex flex-col items-center justify-center p-12 bg-white rounded-3xl border border-gray-200 text-center space-y-3">
-                <div className="w-10 h-10 border-3 border-blue-200 border-t-[#003893] rounded-full animate-spin" />
-                <p className="text-sm font-semibold text-gray-600">
-                  Loading service procedures...
-                </p>
-              </div>
-            ) : filteredSubcategories.length === 0 ? (
-              <div className="bg-white rounded-3xl p-10 border border-gray-200 text-center max-w-lg mx-auto shadow-xs space-y-4">
-                <div className="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mx-auto">
-                  <Search className="w-6 h-6" />
-                </div>
-                <div>
-                  <h3 className="text-base font-bold text-gray-900">
-                    No services found
-                  </h3>
-                  <p className="text-xs text-gray-600 mt-1">
-                    No service guides in &quot;{categoryData.category}&quot;
-                    matched &quot;{searchQuery}&quot;. Try a different search
-                    term.
-                  </p>
-                </div>
+            {/* Education Category Sub-tab Navigation */}
+            {category === 'education' && (
+              <div className="flex items-center gap-2 mb-8 bg-white p-1.5 rounded-2xl border border-gray-200 shadow-xs w-fit">
                 <button
-                  onClick={clearSearch}
-                  className="bg-[#003893] text-white hover:bg-blue-800 font-bold px-4 py-2 rounded-xl text-xs transition-colors"
+                  type="button"
+                  onClick={() => {
+                    setActiveEducationTab('guides');
+                    window.history.replaceState(
+                      null,
+                      '',
+                      '/services/education'
+                    );
+                  }}
+                  className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
+                    activeEducationTab === 'guides'
+                      ? 'bg-[#003893] text-white shadow-xs'
+                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+                  }`}
                 >
-                  Clear Search Filter
+                  <FileText className="w-4 h-4" />
+                  <span>Citizen Charter Guides</span>
+                  <span
+                    className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono font-bold ${
+                      activeEducationTab === 'guides'
+                        ? 'bg-white/20 text-white'
+                        : 'bg-gray-100 text-gray-700'
+                    }`}
+                  >
+                    {categoryIndex.pages.length}
+                  </span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    setActiveEducationTab('schools');
+                    window.history.replaceState(
+                      null,
+                      '',
+                      '/services/education#schools'
+                    );
+                  }}
+                  className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
+                    activeEducationTab === 'schools'
+                      ? 'bg-[#003893] text-white shadow-xs'
+                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+                  }`}
+                >
+                  <GraduationCap className="w-4 h-4" />
+                  <span>City Schools Directory</span>
+                  <span
+                    className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono font-bold ${
+                      activeEducationTab === 'schools'
+                        ? 'bg-white/20 text-white'
+                        : 'bg-blue-50 text-[#003893]'
+                    }`}
+                  >
+                    {SCHOOLS_STATISTICS.totalSchools}
+                  </span>
                 </button>
               </div>
+            )}
+
+            {category === 'education' && activeEducationTab === 'schools' ? (
+              <SchoolsExplorer />
             ) : (
               <>
-                {layoutMode === 'grid' ? (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                    {filteredSubcategories.map((sub, idx) => (
-                      <Link
-                        key={sub.slug || idx}
-                        to={`/services/${category}/${sub.slug}`}
-                        className="group bg-white rounded-2xl p-5 sm:p-6 border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all duration-200 flex flex-col justify-between"
+                {/* Filter & Search Strip */}
+                <div className="bg-white rounded-2xl p-4 border border-gray-200 shadow-xs mb-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+                  {/* Search Within Category */}
+                  <div className="relative w-full sm:max-w-md">
+                    <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                    <input
+                      type="text"
+                      value={searchQuery}
+                      onChange={handleSearchChange}
+                      placeholder={`Search in ${categoryData.category}...`}
+                      className="w-full pl-10 pr-9 py-2.5 text-xs sm:text-sm bg-slate-50 border border-gray-200 rounded-xl focus:outline-hidden focus:ring-2 focus:ring-[#003893] focus:bg-white transition-all text-gray-900 placeholder:text-gray-400"
+                    />
+                    {searchQuery && (
+                      <button
+                        onClick={clearSearch}
+                        aria-label="Clear search"
+                        className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 p-1"
                       >
-                        <div className="space-y-3">
-                          <div className="flex items-center justify-between gap-2">
-                            <span className="text-[11px] font-bold uppercase tracking-wider text-[#003893] bg-blue-50 px-2.5 py-1 rounded-lg">
-                              Step-by-Step Guide
-                            </span>
-                            <span className="text-[11px] font-mono text-gray-400">
-                              #{idx + 1}
-                            </span>
-                          </div>
+                        <X className="w-3.5 h-3.5" />
+                      </button>
+                    )}
+                  </div>
 
-                          <h3 className="text-base sm:text-lg font-bold text-gray-900 group-hover:text-[#003893] transition-colors leading-snug">
-                            {sub.name}
-                          </h3>
+                  {/* View layout toggle & Result Counter */}
+                  <div className="flex items-center justify-between sm:justify-end w-full sm:w-auto gap-3 text-xs text-gray-600">
+                    <span className="font-semibold">
+                      Showing {filteredSubcategories.length} of{' '}
+                      {categoryIndex.pages.length} guides
+                    </span>
+                    <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-xl border border-gray-200">
+                      <button
+                        onClick={() => setLayoutMode('grid')}
+                        title="Grid Layout"
+                        aria-label="Grid layout"
+                        className={`p-1.5 rounded-lg transition-all ${
+                          layoutMode === 'grid'
+                            ? 'bg-white text-[#003893] shadow-xs'
+                            : 'text-gray-500 hover:text-gray-800'
+                        }`}
+                      >
+                        <Grid className="w-4 h-4" />
+                      </button>
+                      <button
+                        onClick={() => setLayoutMode('list')}
+                        title="List Layout"
+                        aria-label="List layout"
+                        className={`p-1.5 rounded-lg transition-all ${
+                          layoutMode === 'list'
+                            ? 'bg-white text-[#003893] shadow-xs'
+                            : 'text-gray-500 hover:text-gray-800'
+                        }`}
+                      >
+                        <ListIcon className="w-4 h-4" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
 
-                          {sub.description && (
-                            <p className="text-xs sm:text-sm text-gray-600 leading-relaxed line-clamp-3">
-                              {sub.description}
-                            </p>
-                          )}
-                        </div>
-
-                        <div className="pt-4 mt-4 border-t border-gray-100 flex items-center justify-between text-xs font-semibold text-[#003893]">
-                          <span>Read Full Guide &amp; Requirements</span>
-                          <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-[#003893]" />
-                        </div>
-                      </Link>
-                    ))}
+                {loading ? (
+                  <div className="flex flex-col items-center justify-center p-12 bg-white rounded-3xl border border-gray-200 text-center space-y-3">
+                    <div className="w-10 h-10 border-3 border-blue-200 border-t-[#003893] rounded-full animate-spin" />
+                    <p className="text-sm font-semibold text-gray-600">
+                      Loading service procedures...
+                    </p>
+                  </div>
+                ) : filteredSubcategories.length === 0 ? (
+                  <div className="bg-white rounded-3xl p-10 border border-gray-200 text-center max-w-lg mx-auto shadow-xs space-y-4">
+                    <div className="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mx-auto">
+                      <Search className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <h3 className="text-base font-bold text-gray-900">
+                        No services found
+                      </h3>
+                      <p className="text-xs text-gray-600 mt-1">
+                        No service guides in &quot;{categoryData.category}&quot;
+                        matched &quot;{searchQuery}&quot;. Try a different
+                        search term.
+                      </p>
+                    </div>
+                    <button
+                      onClick={clearSearch}
+                      className="bg-[#003893] text-white hover:bg-blue-800 font-bold px-4 py-2 rounded-xl text-xs transition-colors"
+                    >
+                      Clear Search Filter
+                    </button>
                   </div>
                 ) : (
-                  <div className="space-y-3.5">
-                    {filteredSubcategories.map((sub, idx) => (
-                      <Link
-                        key={sub.slug || idx}
-                        to={`/services/${category}/${sub.slug}`}
-                        className="group bg-white rounded-2xl p-5 border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all duration-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
-                      >
-                        <div className="space-y-1.5 min-w-0">
-                          <div className="flex items-center gap-2">
-                            <span className="text-[10px] font-bold uppercase tracking-wider text-[#003893] bg-blue-50 px-2 py-0.5 rounded">
-                              Citizen Charter
-                            </span>
-                            <span className="text-xs font-semibold text-gray-500">
-                              Guide #{idx + 1}
-                            </span>
-                          </div>
-                          <h3 className="text-base sm:text-lg font-bold text-gray-900 group-hover:text-[#003893] transition-colors">
-                            {sub.name}
-                          </h3>
-                          {sub.description && (
-                            <p className="text-xs sm:text-sm text-gray-600 line-clamp-2">
-                              {sub.description}
-                            </p>
-                          )}
-                        </div>
+                  <>
+                    {layoutMode === 'grid' ? (
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                        {filteredSubcategories.map((sub, idx) => (
+                          <Link
+                            key={sub.slug || idx}
+                            to={`/services/${category}/${sub.slug}`}
+                            className="group bg-white rounded-2xl p-5 sm:p-6 border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all duration-200 flex flex-col justify-between"
+                          >
+                            <div className="space-y-3">
+                              <div className="flex items-center justify-between gap-2">
+                                <span className="text-[11px] font-bold uppercase tracking-wider text-[#003893] bg-blue-50 px-2.5 py-1 rounded-lg">
+                                  Step-by-Step Guide
+                                </span>
+                                <span className="text-[11px] font-mono text-gray-400">
+                                  #{idx + 1}
+                                </span>
+                              </div>
 
-                        <div className="flex items-center justify-between sm:justify-end gap-3 shrink-0 pt-3 sm:pt-0 border-t sm:border-t-0 border-gray-100">
-                          <span className="inline-flex items-center gap-1 text-xs font-bold text-[#003893] group-hover:underline">
-                            <span>Open Guide</span>
-                            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-                          </span>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
+                              <h3 className="text-base sm:text-lg font-bold text-gray-900 group-hover:text-[#003893] transition-colors leading-snug">
+                                {sub.name}
+                              </h3>
+
+                              {sub.description && (
+                                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed line-clamp-3">
+                                  {sub.description}
+                                </p>
+                              )}
+                            </div>
+
+                            <div className="pt-4 mt-4 border-t border-gray-100 flex items-center justify-between text-xs font-semibold text-[#003893]">
+                              <span>Read Full Guide &amp; Requirements</span>
+                              <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-[#003893]" />
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="space-y-3.5">
+                        {filteredSubcategories.map((sub, idx) => (
+                          <Link
+                            key={sub.slug || idx}
+                            to={`/services/${category}/${sub.slug}`}
+                            className="group bg-white rounded-2xl p-5 border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all duration-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+                          >
+                            <div className="space-y-1.5 min-w-0">
+                              <div className="flex items-center gap-2">
+                                <span className="text-[10px] font-bold uppercase tracking-wider text-[#003893] bg-blue-50 px-2 py-0.5 rounded">
+                                  Citizen Charter
+                                </span>
+                                <span className="text-xs font-semibold text-gray-500">
+                                  Guide #{idx + 1}
+                                </span>
+                              </div>
+                              <h3 className="text-base sm:text-lg font-bold text-gray-900 group-hover:text-[#003893] transition-colors">
+                                {sub.name}
+                              </h3>
+                              {sub.description && (
+                                <p className="text-xs sm:text-sm text-gray-600 line-clamp-2">
+                                  {sub.description}
+                                </p>
+                              )}
+                            </div>
+
+                            <div className="flex items-center justify-between sm:justify-end gap-3 shrink-0 pt-3 sm:pt-0 border-t sm:border-t-0 border-gray-100">
+                              <span className="inline-flex items-center gap-1 text-xs font-bold text-[#003893] group-hover:underline">
+                                <span>Open Guide</span>
+                                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                              </span>
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </>
                 )}
               </>
             )}

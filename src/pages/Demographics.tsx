@@ -5,11 +5,13 @@ import Section from '../components/ui/Section';
 import Breadcrumbs from '../components/ui/Breadcrumbs';
 import BarangayPsgcTable from '../components/demographics/BarangayPsgcTable';
 import PsaClassificationExplorer from '../components/demographics/PsaClassificationExplorer';
+import SchoolsExplorer from '../components/services/SchoolsExplorer';
 import AnimatedCounter from '../components/ui/AnimatedCounter';
 import {
   TRECE_MUNICIPAL_PROFILE,
   TRECE_VOTER_STATISTICS_2025,
 } from '../data/psaClassifications';
+import { SCHOOLS_STATISTICS } from '../data/schoolsData';
 import {
   Users,
   MapPin,
@@ -18,9 +20,19 @@ import {
   BookOpen,
   Database,
   Vote,
+  GraduationCap,
 } from 'lucide-react';
 
-const getTabFromHash = (hash: string): 'overview' | 'classifications' => {
+type DemographicsTab = 'overview' | 'education' | 'classifications';
+
+const getTabFromHash = (hash: string): DemographicsTab => {
+  if (
+    hash === '#education' ||
+    hash === '#schools' ||
+    hash === '#senior-high' ||
+    hash === '#shs'
+  )
+    return 'education';
   if (hash === '#psa-classifications' || hash === '#classifications')
     return 'classifications';
   return 'overview';
@@ -28,18 +40,16 @@ const getTabFromHash = (hash: string): 'overview' | 'classifications' => {
 
 export default function Demographics() {
   const location = useLocation();
-  const [userSelectedTab, setUserSelectedTab] = useState<
-    'overview' | 'classifications' | null
-  >(null);
+  const [userSelectedTab, setUserSelectedTab] =
+    useState<DemographicsTab | null>(null);
 
   const activeTab = userSelectedTab ?? getTabFromHash(location.hash);
-  const setActiveTab = (tab: 'overview' | 'classifications') => {
+  const setActiveTab = (tab: DemographicsTab) => {
     setUserSelectedTab(tab);
-    window.history.replaceState(
-      null,
-      '',
-      tab === 'classifications' ? '#psa-classifications' : '#overview'
-    );
+    let newHash = '#overview';
+    if (tab === 'education') newHash = '#education';
+    if (tab === 'classifications') newHash = '#psa-classifications';
+    window.history.replaceState(null, '', newHash);
   };
 
   const breadcrumbItems = [
@@ -54,9 +64,9 @@ export default function Demographics() {
   return (
     <>
       <SEO
-        title="Summary Demographics & PSA Classification Systems | BetterTrece"
-        description="Official summary demographics for Trece Martires City, Cavite (PSGC 042122000), COMELEC 2025 registered voters (121,194 voters), 13 Barangays census data, and PSA PSGC API standards."
-        keywords="Trece Martires summary demographics, registered voters 2025, COMELEC Trece, PSGC API, PSA classification, Cavite census, 13 barangays, Philippine Standard Geographic Code"
+        title="Summary Demographics, Senior High Schools & PSA Classification Systems | BetterTrece"
+        description="Official summary demographics for Trece Martires City, Cavite (PSGC 042122000), 12 DepEd Senior High Schools directory with STEM/ABM/HUMSS/GAS/TVL strands, COMELEC 2025 registered voters (121,194 voters), and PSA classification standards."
+        keywords="Trece Martires senior high schools, DepEd schools Trece, SHS strands ABM STEM HUMSS GAS TVL, Trece Martires summary demographics, registered voters 2025, COMELEC Trece, PSGC API, PSA classification, Cavite census, 13 barangays"
       />
 
       <main className="flex-grow bg-slate-50/50 pb-16">
@@ -83,17 +93,23 @@ export default function Demographics() {
                       Registered Voters (2025)
                     </span>
                   </span>
+                  <span className="px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-400/20 text-amber-300 border border-amber-400/30 inline-flex items-center gap-1">
+                    <GraduationCap className="w-3 h-3" />
+                    <span>
+                      {SCHOOLS_STATISTICS.totalSchools} DepEd Registered Schools
+                    </span>
+                  </span>
                 </div>
 
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
-                  Trece Martires Summary Demographics &amp; PSA Standards
+                  Trece Martires Demographics, Education &amp; Standards
                 </h1>
 
                 <p className="text-sm sm:text-base text-blue-100/90 leading-relaxed">
-                  Explore official summary demographics, COMELEC 2025 electoral
-                  registry, 13 barangays population census, integrated
-                  Philippine Statistics Authority (PSA) PSGC API data, and 9
-                  standard classification systems.
+                  Explore official summary demographics, all 60 DepEd public and
+                  private schools (Preschool, Elementary, JHS, SHS, Integrated),
+                  COMELEC 2025 electoral registry, 13 barangays population
+                  census, and 9 PSA standard classification systems.
                 </p>
               </div>
 
@@ -112,11 +128,12 @@ export default function Demographics() {
           </div>
         </section>
 
-        {/* Tab Navigation (Clean 2 Tabs) */}
-        <div className="bg-white border-b border-gray-200 shadow-xs">
+        {/* Tab Navigation (Clean 3 Tabs) */}
+        <div className="bg-white border-b border-gray-200 shadow-xs sticky top-[108px] z-30">
           <div className="container mx-auto px-4 max-w-7xl">
-            <div className="flex items-center gap-2 overflow-x-auto py-2">
+            <div className="flex items-center gap-2 overflow-x-auto py-2.5 no-scrollbar">
               <button
+                type="button"
                 onClick={() => setActiveTab('overview')}
                 className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap cursor-pointer ${
                   activeTab === 'overview'
@@ -129,6 +146,29 @@ export default function Demographics() {
               </button>
 
               <button
+                type="button"
+                onClick={() => setActiveTab('education')}
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap cursor-pointer ${
+                  activeTab === 'education'
+                    ? 'bg-[#003893] text-white shadow-xs'
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+                }`}
+              >
+                <GraduationCap className="w-4 h-4" />
+                <span>Schools Directory (DepEd)</span>
+                <span
+                  className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono font-bold ${
+                    activeTab === 'education'
+                      ? 'bg-white/20 text-white'
+                      : 'bg-blue-100 text-[#003893]'
+                  }`}
+                >
+                  {SCHOOLS_STATISTICS.totalSchools}
+                </span>
+              </button>
+
+              <button
+                type="button"
                 onClick={() => setActiveTab('classifications')}
                 className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap cursor-pointer ${
                   activeTab === 'classifications'
@@ -273,6 +313,12 @@ export default function Demographics() {
                   </p>
                 </div>
               </div>
+            </Section>
+          )}
+
+          {activeTab === 'education' && (
+            <Section className="space-y-6">
+              <SchoolsExplorer />
             </Section>
           )}
 
