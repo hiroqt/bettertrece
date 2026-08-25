@@ -101,7 +101,10 @@ export default function Government() {
   const location = useLocation();
 
   // State for single-page interactive view
-  const [activeSection, setActiveSection] = useState<SectionId>('executive');
+  const [activeSection, setActiveSection] = useState<SectionId>(() => {
+    const hashId = window.location.hash.replace('#', '') as SectionId;
+    return NAV_SECTIONS.some(s => s.id === hashId) ? hashId : 'executive';
+  });
   const [barangaySearch, setBarangaySearch] = useState('');
   const [councilSearch, setCouncilSearch] = useState('');
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
@@ -125,11 +128,21 @@ export default function Government() {
 
   useEffect(() => {
     if (category && categoryData) {
-      setLoading(true);
+      let isMounted = true;
       getCategorySubcategories(category)
-        .then(setCategoryIndex)
-        .catch(console.error)
-        .finally(() => setLoading(false));
+        .then(res => {
+          if (isMounted) {
+            setCategoryIndex(res);
+            setLoading(false);
+          }
+        })
+        .catch(err => {
+          console.error(err);
+          if (isMounted) setLoading(false);
+        });
+      return () => {
+        isMounted = false;
+      };
     }
   }, [category, categoryData]);
 
@@ -141,7 +154,6 @@ export default function Government() {
     if (location.hash) {
       const hashId = location.hash.replace('#', '') as SectionId;
       if (NAV_SECTIONS.some(s => s.id === hashId)) {
-        setActiveSection(hashId);
         const el = document.getElementById(hashId);
         if (el) {
           el.scrollIntoView({ behavior: 'smooth' });
@@ -877,6 +889,30 @@ export default function Government() {
                     </div>
                     <div className="mt-4 pt-3 border-t border-gray-100 text-xs font-bold text-emerald-700 flex items-center justify-between">
                       <span>View Revenue Data</span>
+                      <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </Link>
+
+                  {/* GAA National Budget Card */}
+                  <Link
+                    to="/transparency?tab=gaa"
+                    className="p-5 rounded-2xl bg-white border border-gray-200 hover:border-blue-700 hover:shadow-md transition-all flex flex-col justify-between group"
+                  >
+                    <div className="space-y-2">
+                      <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#00225e] flex items-center justify-center">
+                        <Landmark className="w-5 h-5" />
+                      </div>
+                      <h3 className="text-base font-bold text-gray-900 group-hover:text-[#003893] transition-colors">
+                        National Budget (GAA 2020–2026)
+                      </h3>
+                      <p className="text-xs text-gray-600 leading-relaxed">
+                        ₱6.06B in National Government appropriations for public
+                        high schools, DPWH flood dikes, road corridors, and
+                        academic buildings.
+                      </p>
+                    </div>
+                    <div className="mt-4 pt-3 border-t border-gray-100 text-xs font-bold text-[#00225e] flex items-center justify-between">
+                      <span>View National Budget</span>
                       <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </Link>

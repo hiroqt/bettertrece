@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
 import { useLocation, useSearchParams } from 'react-router';
 import SEO from '../components/SEO';
 import Breadcrumbs from '../components/ui/Breadcrumbs';
 import DpwhProjectsExplorer from '../components/transparency/DpwhProjectsExplorer';
 import CityRevenueWidget from '../components/transparency/CityRevenueWidget';
 import CoaAuditWidget from '../components/transparency/CoaAuditWidget';
+import GaaBudgetWidget from '../components/transparency/GaaBudgetWidget';
 import {
   Building2,
   ShieldCheck,
@@ -21,8 +21,16 @@ export default function DpwhTransparency() {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const getInitialTab = ():
-    'budget-revenue' | 'explorer' | 'trece-focus' | 'audit' => {
+    'budget-revenue' | 'gaa' | 'explorer' | 'trece-focus' | 'audit' => {
     const tabParam = searchParams.get('tab');
+    if (
+      tabParam === 'gaa' ||
+      tabParam === 'national-budget' ||
+      tabParam === 'national' ||
+      tabParam === 'appropriations'
+    ) {
+      return 'gaa';
+    }
     if (
       tabParam === 'audit' ||
       tabParam === 'coa' ||
@@ -50,6 +58,9 @@ export default function DpwhTransparency() {
       return 'budget-revenue';
     }
 
+    if (location.hash === '#gaa' || location.hash === '#national-budget') {
+      return 'gaa';
+    }
     if (location.hash === '#audit' || location.hash === '#coa') {
       return 'audit';
     }
@@ -69,18 +80,11 @@ export default function DpwhTransparency() {
     return 'budget-revenue';
   };
 
-  const [activeTab, setActiveTab] = useState<
-    'budget-revenue' | 'explorer' | 'trece-focus' | 'audit'
-  >(getInitialTab);
-
-  useEffect(() => {
-    setActiveTab(getInitialTab());
-  }, [location.pathname, location.hash, searchParams]);
+  const activeTab = getInitialTab();
 
   const handleTabChange = (
-    tab: 'budget-revenue' | 'explorer' | 'trece-focus' | 'audit'
+    tab: 'budget-revenue' | 'gaa' | 'explorer' | 'trece-focus' | 'audit'
   ) => {
-    setActiveTab(tab);
     setSearchParams(
       prev => {
         const next = new URLSearchParams(prev);
@@ -107,9 +111,9 @@ export default function DpwhTransparency() {
   return (
     <>
       <SEO
-        title="City Revenue, COA Audit & Financial Transparency | Trece Martires City"
-        description="Official civic transparency portal for Trece Martires City, Cavite. Track COA Annual Audit Reports, DBM/DOF-BLGF city revenues, local budgets, and DPWH infrastructure public works."
-        keywords="Trece Martires budget, COA audit Trece Martires, COA AAR 2024, city revenue, DBM Trece Martires, DPWH Trece Martires, Cavite 1st DEO, public works, city taxes, SRE Trece Martires"
+        title="City Revenue, COA Audit, GAA Budget & Financial Transparency | Trece Martires City"
+        description="Official civic transparency portal for Trece Martires City, Cavite. Track National GAA appropriations, COA Annual Audit Reports, DBM/DOF-BLGF city revenues, local budgets, and DPWH infrastructure public works."
+        keywords="Trece Martires budget, GAA Trece Martires, COA audit Trece Martires, COA AAR 2024, city revenue, DBM Trece Martires, DPWH Trece Martires, Cavite 1st DEO, public works, city taxes, SRE Trece Martires"
       />
 
       <main className="flex-grow bg-slate-50/50 pb-20">
@@ -128,7 +132,7 @@ export default function DpwhTransparency() {
               <div className="space-y-3 max-w-3xl">
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-white/10 text-blue-100">
-                    COA &bull; DBM &bull; DOF-BLGF &bull; DPWH
+                    GAA &bull; COA &bull; DBM &bull; DOF-BLGF &bull; DPWH
                   </span>
                 </div>
 
@@ -138,6 +142,10 @@ export default function DpwhTransparency() {
 
                 <p className="text-sm sm:text-base text-blue-100/90 leading-relaxed">
                   Open data access to the{' '}
+                  <strong className="text-emerald-300">
+                    National Budget (GAA 2020–2026)
+                  </strong>
+                  , the{' '}
                   <strong className="text-amber-300">
                     COA Annual Audit Report (AAR 2024)
                   </strong>
@@ -146,8 +154,7 @@ export default function DpwhTransparency() {
                     City Financial Statement of Receipts &amp; Expenditures
                     (DBM)
                   </strong>
-                  , and the Department of Public Works and Highways (DPWH)
-                  infrastructure registry across the{' '}
+                  , and DPWH infrastructure public works across the{' '}
                   <strong className="text-amber-300">
                     13 Barangays of Trece Martires City
                   </strong>
@@ -158,15 +165,17 @@ export default function DpwhTransparency() {
               <div className="flex flex-wrap items-center gap-3 shrink-0">
                 <div className="bg-white/10 backdrop-blur-xs px-4 py-2.5 rounded-2xl border border-white/20 text-xs font-medium text-blue-100 space-y-0.5">
                   <div className="font-bold text-white">Official Sources</div>
-                  <div>COA Reg. IV-A &bull; DBM / BLGF &bull; DPWH 1st DEO</div>
+                  <div>
+                    DBM GAA &bull; COA Reg. IV-A &bull; BLGF &bull; DPWH
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Tab Navigation - 4 Unified Tabs */}
-        <div className="bg-white border-b border-gray-200 shadow-xs">
+        {/* Tab Navigation - 5 Unified Tabs */}
+        <div className="bg-white border-b border-gray-200 shadow-xs sticky top-16 z-30">
           <div className="container mx-auto px-4 max-w-7xl">
             <div
               role="tablist"
@@ -190,7 +199,27 @@ export default function DpwhTransparency() {
                 <span>City Revenue &amp; Budget (DBM)</span>
               </button>
 
-              {/* Tab 2: COA Annual Audit Report (2024) */}
+              {/* Tab 2: GAA National Budget (2020–2026) */}
+              <button
+                role="tab"
+                id="tab-gaa"
+                aria-selected={activeTab === 'gaa'}
+                aria-controls="panel-gaa"
+                onClick={() => handleTabChange('gaa')}
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#00225e] min-h-[40px] ${
+                  activeTab === 'gaa'
+                    ? 'bg-[#00225e] text-white shadow-xs'
+                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                }`}
+              >
+                <Landmark
+                  className="w-4 h-4 text-blue-300"
+                  aria-hidden="true"
+                />
+                <span>National Budget (GAA 2020–2026)</span>
+              </button>
+
+              {/* Tab 3: COA Annual Audit Report (2024) */}
               <button
                 role="tab"
                 id="tab-audit"
@@ -207,7 +236,7 @@ export default function DpwhTransparency() {
                 <span>COA Annual Audit (2024)</span>
               </button>
 
-              {/* Tab 3: DPWH Infrastructure Tracker (Unified: Directory, Map & Analytics) */}
+              {/* Tab 4: DPWH Infrastructure Tracker */}
               <button
                 role="tab"
                 id="tab-explorer"
@@ -224,7 +253,7 @@ export default function DpwhTransparency() {
                 <span>DPWH Infrastructure Tracker</span>
               </button>
 
-              {/* Tab 4: Strategic Corridors & Facilities */}
+              {/* Tab 5: Strategic Corridors & Facilities */}
               <button
                 role="tab"
                 id="tab-trece-focus"
@@ -254,6 +283,17 @@ export default function DpwhTransparency() {
               className="space-y-8 animate-fadeIn"
             >
               <CityRevenueWidget />
+            </div>
+          )}
+
+          {activeTab === 'gaa' && (
+            <div
+              id="panel-gaa"
+              role="tabpanel"
+              aria-labelledby="tab-gaa"
+              className="space-y-8 animate-fadeIn"
+            >
+              <GaaBudgetWidget />
             </div>
           )}
 

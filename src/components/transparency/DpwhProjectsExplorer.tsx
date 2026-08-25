@@ -1,4 +1,5 @@
 import { useState, useMemo, useRef, useEffect } from 'react';
+import { Link } from 'react-router';
 import type { DPWHProject } from '../../types/dpwh';
 import {
   ALL_DPWH_PROJECTS,
@@ -38,7 +39,7 @@ import {
   CalendarDays,
   ChevronDown,
   RotateCcw,
-  Sparkles,
+  Landmark,
   PieChart,
   Map as MapIcon,
 } from 'lucide-react';
@@ -59,6 +60,9 @@ export default function DpwhProjectsExplorer() {
   const [pageSize, setPageSize] = useState<number>(10);
 
   // Filters state - Trece Martires Barangays & Categories
+  const [selectedSource, setSelectedSource] = useState<'all' | 'dpwh' | 'gaa'>(
+    'all'
+  );
   const [selectedBarangay, setSelectedBarangay] =
     useState<string>('All 13 Barangays');
   const [selectedCategory, setSelectedCategory] =
@@ -106,7 +110,15 @@ export default function DpwhProjectsExplorer() {
     setTimeout(() => setCopiedId(null), 2000);
   };
 
-  // Dynamic counts for dropdown categories and statuses
+  // Dynamic counts for dropdown categories, sources, and statuses
+  const sourceCounts = useMemo(() => {
+    return {
+      all: projects.length,
+      dpwh: projects.filter(p => !p.contractId.startsWith('GAA-')).length,
+      gaa: projects.filter(p => p.contractId.startsWith('GAA-')).length,
+    };
+  }, [projects]);
+
   const categoryCounts = useMemo(() => {
     const counts: Record<string, number> = {
       'All Categories': projects.length,
@@ -147,6 +159,20 @@ export default function DpwhProjectsExplorer() {
   const filteredProjects = useMemo(() => {
     return projects
       .filter(project => {
+        // Data Source Filter
+        if (
+          selectedSource === 'dpwh' &&
+          project.contractId.startsWith('GAA-')
+        ) {
+          return false;
+        }
+        if (
+          selectedSource === 'gaa' &&
+          !project.contractId.startsWith('GAA-')
+        ) {
+          return false;
+        }
+
         // Barangay Filter
         if (selectedBarangay !== 'All 13 Barangays') {
           if (
@@ -217,6 +243,7 @@ export default function DpwhProjectsExplorer() {
       });
   }, [
     projects,
+    selectedSource,
     selectedBarangay,
     selectedCategory,
     selectedStatus,
@@ -232,24 +259,54 @@ export default function DpwhProjectsExplorer() {
 
   // Pagination calculations
   const totalPages = Math.max(1, Math.ceil(filteredProjects.length / pageSize));
+  const safePage = Math.min(currentPage, totalPages);
   const paginatedProjects = useMemo(() => {
-    const start = (currentPage - 1) * pageSize;
+    const start = (safePage - 1) * pageSize;
     return filteredProjects.slice(start, start + pageSize);
-  }, [filteredProjects, currentPage, pageSize]);
+  }, [filteredProjects, safePage, pageSize]);
 
-  // Reset pagination to page 1 whenever filters, search, sort, or page size change
-  useEffect(() => {
+  // Generate responsive pagination range with ellipses
+  const paginationRange = useMemo(() => {
+    if (totalPages <= 7) {
+      return Array.from({ length: totalPages }, (_, i) => i + 1);
+    }
+    const siblingCount = 1;
+    const leftSibling = Math.max(currentPage - siblingCount, 1);
+    const rightSibling = Math.min(currentPage + siblingCount, totalPages);
+
+    const showLeftDots = leftSibling > 2;
+    const showRightDots = rightSibling < totalPages - 2;
+
+    if (!showLeftDots && showRightDots) {
+      const leftCount = 3 + 2 * siblingCount;
+      const leftRange = Array.from({ length: leftCount }, (_, i) => i + 1);
+      return [...leftRange, '...', totalPages];
+    }
+
+    if (showLeftDots && !showRightDots) {
+      const rightCount = 3 + 2 * siblingCount;
+      const rightRange = Array.from(
+        { length: rightCount },
+        (_, i) => totalPages - rightCount + i + 1
+      );
+      return [1, '...', ...rightRange];
+    }
+
+    if (showLeftDots && showRightDots) {
+      const middleRange = Array.from(
+        { length: rightSibling - leftSibling + 1 },
+        (_, i) => leftSibling + i
+      );
+      return [1, '...', ...middleRange, '...', totalPages];
+    }
+
+    return Array.from({ length: totalPages }, (_, i) => i + 1);
+  }, [totalPages, currentPage]);
+
+  const updateFilter = <T,>(setter: (val: T) => void, val: T) => {
+    setter(val);
     setCurrentPage(1);
-  }, [
-    selectedBarangay,
-    selectedCategory,
-    selectedStatus,
-    selectedYear,
-    searchQuery,
-    sortBy,
-    sortOrder,
-    pageSize,
-  ]);
+  };
 
   const toggleSort = (
     field: 'budget' | 'progress' | 'year' | 'id' | 'barangay'
@@ -428,6 +485,50 @@ export default function DpwhProjectsExplorer() {
       {/* VIEW 1: PROJECTS DIRECTORY & FILTERS */}
       {activeExplorerTab === 'directory' && (
         <div className="space-y-6 animate-fadeIn">
+          {/* GAA National Budget Integration Banner */}
+          <div className="bg-gradient-to-r from-slate-900 via-[#00225e] to-[#003893] rounded-3xl p-5 sm:p-7 text-white shadow-md border border-white/15 flex flex-col md:flex-row md:items-center justify-between gap-5 relative overflow-hidden">
+            <div className="space-y-2 max-w-2xl relative z-10">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-white/10 text-blue-200 border border-white/20">
+                <Landmark
+                  className="w-3.5 h-3.5 text-blue-300"
+                  aria-hidden="true"
+                />
+                <span>
+                  Source: BetterGov Hugging Face Datasets (bettergovph/gaa)
+                </span>
+              </div>
+              <h3 className="text-lg sm:text-xl font-black text-white tracking-tight">
+                ₱4.05B in National DPWH Appropriations for Trece Martires (GAA
+                2020–2026)
+              </h3>
+              <p className="text-xs sm:text-sm text-blue-100/90 leading-relaxed">
+                While this tracker monitors local contract execution and
+                physical progress, Congress enacted{' '}
+                <strong>793 national budget line items</strong> for Trece
+                Martires flood control revetments (Cañas &amp; Timalan rivers),
+                road bypass networks, and school facilities in the General
+                Appropriations Act.
+              </p>
+            </div>
+
+            <div className="shrink-0 relative z-10">
+              <Link
+                to="/transparency?tab=gaa"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white text-[#00225e] hover:bg-blue-50 text-xs font-bold transition-all shadow-xs focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-white"
+              >
+                <Landmark
+                  className="w-4 h-4 text-[#003893]"
+                  aria-hidden="true"
+                />
+                <span>View National GAA Budget</span>
+                <ChevronRight
+                  className="w-4 h-4 text-slate-400"
+                  aria-hidden="true"
+                />
+              </Link>
+            </div>
+          </div>
+
           {/* Enhanced Filter & Search Control Panel */}
           <section
             aria-label="Search and Categorization Filters"
@@ -438,7 +539,7 @@ export default function DpwhProjectsExplorer() {
               <div className="space-y-1">
                 <div className="flex items-center gap-2">
                   <span className="p-1.5 bg-blue-50 text-[#003893] rounded-lg">
-                    <Sparkles className="w-4 h-4" aria-hidden="true" />
+                    <SlidersHorizontal className="w-4 h-4" aria-hidden="true" />
                   </span>
                   <h3 className="text-base font-extrabold text-slate-900 tracking-tight">
                     Filter &amp; Search City Projects
@@ -485,6 +586,59 @@ export default function DpwhProjectsExplorer() {
               </div>
             </div>
 
+            {/* Data Source Filter Pills */}
+            <div className="flex flex-wrap items-center gap-2 pt-1 pb-1">
+              <span className="text-xs font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1.5 mr-1">
+                <Landmark
+                  className="w-3.5 h-3.5 text-[#003893]"
+                  aria-hidden="true"
+                />
+                Data Source:
+              </span>
+              <button
+                type="button"
+                onClick={() => {
+                  setSelectedSource('all');
+                  setCurrentPage(1);
+                }}
+                className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#003893] min-h-[34px] ${
+                  selectedSource === 'all'
+                    ? 'bg-[#00225e] text-white shadow-xs'
+                    : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                }`}
+              >
+                All Datasets ({sourceCounts.all})
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setSelectedSource('dpwh');
+                  setCurrentPage(1);
+                }}
+                className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#003893] min-h-[34px] ${
+                  selectedSource === 'dpwh'
+                    ? 'bg-[#00225e] text-white shadow-xs'
+                    : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                }`}
+              >
+                DPWH Local Contracts ({sourceCounts.dpwh})
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setSelectedSource('gaa');
+                  setCurrentPage(1);
+                }}
+                className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#003893] min-h-[34px] ${
+                  selectedSource === 'gaa'
+                    ? 'bg-[#00225e] text-white shadow-xs'
+                    : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                }`}
+              >
+                GAA National Budget ({sourceCounts.gaa})
+              </button>
+            </div>
+
             {/* Enhanced Search Bar & Categorization Controls Grid */}
             <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
               {/* Enhanced Search Bar (6 columns on MD+) */}
@@ -515,12 +669,12 @@ export default function DpwhProjectsExplorer() {
                     type="search"
                     placeholder="Search contract ID, project title, contractor, fund..."
                     value={searchQuery}
-                    onChange={e => setSearchQuery(e.target.value)}
+                    onChange={e => updateFilter(setSearchQuery, e.target.value)}
                     className="w-full pl-10 pr-14 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-sm focus:outline-hidden focus:ring-2 focus:ring-[#003893]/30 focus:border-[#003893] focus:bg-white transition-all text-slate-900 placeholder:text-slate-400 font-medium shadow-2xs min-h-[48px]"
                   />
                   {searchQuery && (
                     <button
-                      onClick={() => setSearchQuery('')}
+                      onClick={() => updateFilter(setSearchQuery, '')}
                       aria-label="Clear search input"
                       className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-800 bg-slate-200/80 hover:bg-slate-300 p-1.5 rounded-xl transition-colors focus-visible:ring-2 focus-visible:ring-[#003893]"
                     >
@@ -551,7 +705,9 @@ export default function DpwhProjectsExplorer() {
                   <select
                     id="category-select"
                     value={selectedCategory}
-                    onChange={e => setSelectedCategory(e.target.value)}
+                    onChange={e =>
+                      updateFilter(setSelectedCategory, e.target.value)
+                    }
                     className={`w-full appearance-none pl-3.5 pr-10 py-3 rounded-2xl text-xs sm:text-sm font-semibold transition-all focus:outline-hidden focus:ring-2 focus:ring-[#003893]/30 focus:border-[#003893] min-h-[48px] shadow-2xs cursor-pointer ${
                       selectedCategory !== 'All Categories'
                         ? 'bg-blue-50/70 border-[#003893] text-[#00225e]'
@@ -596,7 +752,9 @@ export default function DpwhProjectsExplorer() {
                   <select
                     id="status-select"
                     value={selectedStatus}
-                    onChange={e => setSelectedStatus(e.target.value)}
+                    onChange={e =>
+                      updateFilter(setSelectedStatus, e.target.value)
+                    }
                     className={`w-full appearance-none pl-3.5 pr-10 py-3 rounded-2xl text-xs sm:text-sm font-semibold transition-all focus:outline-hidden focus:ring-2 focus:ring-[#003893]/30 focus:border-[#003893] min-h-[48px] shadow-2xs cursor-pointer ${
                       selectedStatus !== 'All Statuses'
                         ? 'bg-blue-50/70 border-[#003893] text-[#00225e]'
@@ -641,7 +799,9 @@ export default function DpwhProjectsExplorer() {
                   <select
                     id="year-select"
                     value={selectedYear}
-                    onChange={e => setSelectedYear(e.target.value)}
+                    onChange={e =>
+                      updateFilter(setSelectedYear, e.target.value)
+                    }
                     className={`w-full appearance-none pl-3.5 pr-10 py-3 rounded-2xl text-xs sm:text-sm font-semibold transition-all focus:outline-hidden focus:ring-2 focus:ring-[#003893]/30 focus:border-[#003893] min-h-[48px] shadow-2xs cursor-pointer ${
                       selectedYear !== 'All Years'
                         ? 'bg-blue-50/70 border-[#003893] text-[#00225e]'
@@ -681,7 +841,9 @@ export default function DpwhProjectsExplorer() {
                 </span>
                 {selectedBarangay !== 'All 13 Barangays' && (
                   <button
-                    onClick={() => setSelectedBarangay('All 13 Barangays')}
+                    onClick={() =>
+                      updateFilter(setSelectedBarangay, 'All 13 Barangays')
+                    }
                     className="text-xs text-[#003893] hover:underline font-bold focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#003893] rounded"
                   >
                     Clear Barangay
@@ -699,7 +861,7 @@ export default function DpwhProjectsExplorer() {
                   return (
                     <button
                       key={brgy}
-                      onClick={() => setSelectedBarangay(brgy)}
+                      onClick={() => updateFilter(setSelectedBarangay, brgy)}
                       aria-pressed={isSelected}
                       className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#003893] focus-visible:ring-offset-2 min-h-[36px] flex items-center ${
                         isSelected
@@ -1333,83 +1495,147 @@ export default function DpwhProjectsExplorer() {
             </div>
           )}
 
-          {/* Citizen-Friendly Pagination Control Bar */}
+          {/* Citizen-Friendly Responsive Pagination Control Bar */}
           {filteredProjects.length > 0 && (
-            <div className="bg-white rounded-3xl border border-slate-200/80 p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
-              <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm text-slate-600 font-medium">
+            <nav
+              aria-label="Projects directory pagination"
+              className="bg-white rounded-3xl border border-slate-200/80 p-4 sm:p-5 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm"
+            >
+              {/* Left Side: Summary and Page Size Selector */}
+              <div className="flex flex-wrap items-center justify-between w-full md:w-auto gap-3 text-xs sm:text-sm text-slate-600 font-medium">
                 <span>
                   Showing{' '}
-                  <strong className="text-slate-900 font-extrabold">
+                  <strong className="text-slate-900 font-extrabold font-mono">
                     {(currentPage - 1) * pageSize + 1}
                   </strong>{' '}
                   to{' '}
-                  <strong className="text-slate-900 font-extrabold">
+                  <strong className="text-slate-900 font-extrabold font-mono">
                     {Math.min(currentPage * pageSize, filteredProjects.length)}
                   </strong>{' '}
                   of{' '}
-                  <strong className="text-slate-900 font-extrabold">
-                    {filteredProjects.length}
+                  <strong className="text-slate-900 font-extrabold font-mono">
+                    {filteredProjects.length.toLocaleString()}
                   </strong>{' '}
                   projects
                 </span>
 
                 <div className="flex items-center gap-1.5 pl-3 border-l border-slate-200">
-                  <span className="text-xs text-slate-500">Per page:</span>
-                  <select
-                    value={pageSize}
-                    onChange={e => setPageSize(Number(e.target.value))}
-                    className="bg-slate-50 border border-slate-200 rounded-xl px-2.5 py-1 text-xs font-bold text-slate-800 focus:outline-hidden focus:ring-2 focus:ring-[#003893] cursor-pointer"
+                  <label
+                    htmlFor="dpwh-page-size"
+                    className="text-xs text-slate-500 font-medium"
                   >
-                    <option value={10}>10</option>
-                    <option value={20}>20</option>
-                    <option value={50}>50</option>
+                    Per page:
+                  </label>
+                  <select
+                    id="dpwh-page-size"
+                    value={pageSize}
+                    onChange={e => {
+                      setPageSize(Number(e.target.value));
+                      setCurrentPage(1);
+                    }}
+                    className="bg-slate-50 border border-slate-200 rounded-xl px-2.5 py-1.5 text-xs font-bold text-slate-800 focus:outline-hidden focus:ring-2 focus:ring-[#003893] cursor-pointer min-h-[34px]"
+                  >
+                    <option value={10}>10 / page</option>
+                    <option value={20}>20 / page</option>
+                    <option value={50}>50 / page</option>
+                    <option value={100}>100 / page</option>
                   </select>
                 </div>
               </div>
 
-              {/* Page Number & Navigation Buttons */}
+              {/* Page Number & Navigation Controls */}
               {totalPages > 1 && (
-                <div className="flex items-center gap-1.5">
+                <div className="flex items-center justify-center gap-1 sm:gap-1.5 w-full md:w-auto flex-wrap">
+                  {/* First Page Quick Button */}
                   <button
-                    onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                    type="button"
+                    onClick={() => setCurrentPage(1)}
                     disabled={currentPage === 1}
-                    className="inline-flex items-center gap-1 px-3 py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-700 hover:bg-slate-50 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+                    aria-label="Go to first page"
+                    className="hidden sm:inline-flex items-center justify-center px-2.5 py-1.5 rounded-xl border border-slate-200 text-xs font-bold text-slate-700 hover:bg-slate-100 disabled:opacity-30 disabled:cursor-not-allowed transition-all min-h-[36px]"
                   >
-                    <ChevronLeft className="w-4 h-4" />
-                    <span className="hidden sm:inline">Prev</span>
+                    First
                   </button>
 
-                  <div className="flex items-center gap-1">
-                    {Array.from({ length: totalPages }, (_, i) => i + 1).map(
-                      page => (
-                        <button
-                          key={page}
-                          onClick={() => setCurrentPage(page)}
-                          className={`w-8 sm:w-9 h-8 sm:h-9 rounded-xl text-xs font-bold transition-all ${
-                            currentPage === page
-                              ? 'bg-[#003893] text-white shadow-xs'
-                              : 'text-slate-700 hover:bg-slate-100'
-                          }`}
-                        >
-                          {page}
-                        </button>
-                      )
-                    )}
+                  {/* Previous Page Button */}
+                  <button
+                    type="button"
+                    onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                    disabled={currentPage === 1}
+                    aria-label="Go to previous page"
+                    className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-bold text-slate-700 hover:bg-slate-100 disabled:opacity-30 disabled:cursor-not-allowed transition-all min-h-[36px]"
+                  >
+                    <ChevronLeft className="w-4 h-4" />
+                    <span>Prev</span>
+                  </button>
+
+                  {/* Mobile Compact Page Indicator */}
+                  <div className="sm:hidden px-3 py-1.5 text-xs font-bold text-slate-900 bg-slate-100 rounded-xl border border-slate-200 font-mono">
+                    Page {currentPage} of {totalPages}
                   </div>
 
+                  {/* Desktop / Tablet Numbered Page Buttons with Ellipses */}
+                  <div className="hidden sm:flex items-center gap-1 font-mono">
+                    {paginationRange.map((item, idx) => {
+                      if (item === '...') {
+                        return (
+                          <span
+                            key={`dots-${idx}`}
+                            className="w-8 h-8 flex items-center justify-center text-slate-400 font-bold text-xs"
+                            aria-hidden="true"
+                          >
+                            &hellip;
+                          </span>
+                        );
+                      }
+                      const pageNum = item as number;
+                      const isActive = currentPage === pageNum;
+                      return (
+                        <button
+                          key={pageNum}
+                          type="button"
+                          onClick={() => setCurrentPage(pageNum)}
+                          aria-label={`Page ${pageNum}`}
+                          aria-current={isActive ? 'page' : undefined}
+                          className={`w-9 h-9 rounded-xl text-xs font-bold transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#003893] ${
+                            isActive
+                              ? 'bg-[#00225e] text-white shadow-xs'
+                              : 'text-slate-700 hover:bg-slate-100 border border-transparent hover:border-slate-200'
+                          }`}
+                        >
+                          {pageNum}
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  {/* Next Page Button */}
                   <button
+                    type="button"
                     onClick={() =>
                       setCurrentPage(p => Math.min(totalPages, p + 1))
                     }
                     disabled={currentPage === totalPages}
-                    className="inline-flex items-center gap-1 px-3 py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-700 hover:bg-slate-50 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+                    aria-label="Go to next page"
+                    className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-bold text-slate-700 hover:bg-slate-100 disabled:opacity-30 disabled:cursor-not-allowed transition-all min-h-[36px]"
                   >
-                    <span className="hidden sm:inline">Next</span>
+                    <span>Next</span>
                     <ChevronRight className="w-4 h-4" />
+                  </button>
+
+                  {/* Last Page Quick Button */}
+                  <button
+                    type="button"
+                    onClick={() => setCurrentPage(totalPages)}
+                    disabled={currentPage === totalPages}
+                    aria-label="Go to last page"
+                    className="hidden sm:inline-flex items-center justify-center px-2.5 py-1.5 rounded-xl border border-slate-200 text-xs font-bold text-slate-700 hover:bg-slate-100 disabled:opacity-30 disabled:cursor-not-allowed transition-all min-h-[36px]"
+                  >
+                    Last
                   </button>
                 </div>
               )}
-            </div>
+            </nav>
           )}
         </div>
       )}

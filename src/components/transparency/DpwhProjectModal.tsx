@@ -12,6 +12,7 @@ import {
   CheckCircle2,
   AlertCircle,
   XCircle,
+  Landmark,
 } from 'lucide-react';
 
 interface DpwhProjectModalProps {
@@ -148,52 +149,49 @@ export default function DpwhProjectModal({
             {project.description}
           </h2>
 
-          <div className="flex flex-wrap items-center gap-4 mt-4 text-xs text-blue-100 font-medium">
-            <div className="flex items-center gap-1.5">
-              <Building2
-                className="w-4 h-4 text-amber-300"
-                aria-hidden="true"
-              />
+          <div className="flex flex-wrap items-center gap-4 mt-4 text-xs font-medium text-blue-100">
+            <span className="flex items-center gap-1">
+              <Building2 className="w-4 h-4 text-blue-300" aria-hidden="true" />
               <span>{project.category}</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <MapPin className="w-4 h-4 text-amber-300" aria-hidden="true" />
-              <span>
-                Barangay {project.location.barangay}, Trece Martires City
-              </span>
-            </div>
+            </span>
+            <span className="flex items-center gap-1">
+              <Calendar className="w-4 h-4 text-blue-300" aria-hidden="true" />
+              <span>Infra Year: {project.infraYear}</span>
+            </span>
+            <span className="flex items-center gap-1">
+              <MapPin className="w-4 h-4 text-blue-300" aria-hidden="true" />
+              <span>{project.location.province}</span>
+            </span>
           </div>
         </div>
 
         {/* Modal Body */}
-        <div className="p-6 sm:p-8 overflow-y-auto space-y-6 flex-grow text-gray-800">
-          {/* Key Metrics Grid */}
+        <div className="p-6 sm:p-7 space-y-6 overflow-y-auto">
+          {/* Key Financial Badges */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div className="bg-slate-50 p-4 rounded-2xl border border-gray-200">
-              <span className="text-xs font-semibold text-gray-600 uppercase tracking-wider block mb-1">
-                Approved Budget
+            <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+              <span className="text-xs font-bold text-slate-500 uppercase tracking-wider block">
+                Total Budget
               </span>
-              <span className="text-xl font-black text-gray-900 font-mono">
+              <p className="text-lg font-black text-[#00225e] font-mono mt-1">
                 {formatPHP(project.budget)}
-              </span>
+              </p>
             </div>
 
-            <div className="bg-slate-50 p-4 rounded-2xl border border-gray-200">
-              <span className="text-xs font-semibold text-gray-600 uppercase tracking-wider block mb-1">
-                Status &amp; Progress
+            <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+              <span className="text-xs font-bold text-slate-500 uppercase tracking-wider block">
+                Amount Disbursed
               </span>
-              <div className="flex items-center gap-2 mt-1">
-                {getStatusBadge(project.status)}
-              </div>
+              <p className="text-lg font-black text-[#00225e] font-mono mt-1">
+                {formatPHP(project.amountPaid)}
+              </p>
             </div>
 
-            <div className="bg-slate-50 p-4 rounded-2xl border border-gray-200">
-              <span className="text-xs font-semibold text-gray-600 uppercase tracking-wider block mb-1">
-                Fiscal Year (GAA)
+            <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+              <span className="text-xs font-bold text-slate-500 uppercase tracking-wider block">
+                Implementation Status
               </span>
-              <span className="text-xl font-black text-gray-900 font-mono">
-                {project.infraYear}
-              </span>
+              <div className="mt-1">{getStatusBadge(project.status)}</div>
             </div>
           </div>
 
@@ -245,11 +243,21 @@ export default function DpwhProjectModal({
 
               <div>
                 <span className="text-xs font-semibold text-gray-600 block">
-                  Fund Source / GAA Program
+                  Fund Source / Legislative GAA Program
                 </span>
                 <p className="font-medium text-gray-800 mt-0.5">
                   {project.sourceOfFunds || project.programName}
                 </p>
+                <a
+                  href="/transparency?tab=gaa"
+                  className="text-[11px] text-[#003893] hover:underline font-semibold inline-flex items-center gap-1 mt-1"
+                >
+                  <Landmark
+                    className="w-3 h-3 text-[#003893]"
+                    aria-hidden="true"
+                  />
+                  <span>View GAA National Budget Details</span>
+                </a>
               </div>
 
               <div>

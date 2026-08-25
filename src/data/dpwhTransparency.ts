@@ -1,7 +1,9 @@
+import gaaDpwhProjectsData from './gaa_dpwh_projects.json';
+
 /**
  * DPWH Infrastructure Transparency Data — City of Trece Martires, Cavite
  * Under the jurisdiction of DPWH Cavite 1st District Engineering Office (Trece Martires City)
- * Comprehensive Registry: 50 Official & Curated Projects across all 13 Barangays
+ * Comprehensive Registry: 843 Official Projects (50 Implementation Contracts + 793 GAA National Appropriations) across all 13 Barangays
  */
 
 export interface DpwhLocation {
@@ -1604,7 +1606,13 @@ export const TRECE_DPWH_PROJECTS: DpwhProject[] = [
   },
 ];
 
-export const ALL_DPWH_PROJECTS: DpwhProject[] = TRECE_DPWH_PROJECTS;
+export const GAA_DPWH_PROJECTS: DpwhProject[] =
+  gaaDpwhProjectsData as DpwhProject[];
+
+export const ALL_DPWH_PROJECTS: DpwhProject[] = [
+  ...TRECE_DPWH_PROJECTS,
+  ...GAA_DPWH_PROJECTS,
+];
 
 export function getDpwhSummaryStats(projects: DpwhProject[]): DpwhSummaryStats {
   let totalBudget = 0;
@@ -1660,7 +1668,16 @@ export const DPWH_STATUSES = [
   'Procurement',
 ];
 
-export const DPWH_YEARS = ['All Years', '2026', '2025', '2024', '2023', '2022'];
+export const DPWH_YEARS = [
+  'All Years',
+  '2026',
+  '2025',
+  '2024',
+  '2023',
+  '2022',
+  '2021',
+  '2020',
+];
 
 export const TRECE_BARANGAYS_FILTER = [
   'All 13 Barangays',

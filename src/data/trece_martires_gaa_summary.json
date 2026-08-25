@@ -1,0 +1,174 @@
+{
+  "dataset_name": "Philippine General Appropriations Act (GAA) - Trece Martires City, Cavite",
+  "source": "BetterGov Hugging Face Datasets (bettergovph/gaa - DBM GAA 2020-2026)",
+  "scope": "All line-item budget appropriations for national agencies, public high schools, and infrastructure in Trece Martires City, Cavite",
+  "total_records": 1761,
+  "years_covered": [2020, 2021, 2022, 2023, 2024, 2025, 2026],
+  "grand_total_php": 6065333000.0,
+  "grand_total_formatted": "₱6,065,333,000.00",
+  "totals_by_year": {
+    "2020": {
+      "record_count": 172,
+      "total_php": 791138000.0,
+      "total_formatted": "₱791,138,000.00"
+    },
+    "2021": {
+      "record_count": 138,
+      "total_php": 981376000.0,
+      "total_formatted": "₱981,376,000.00"
+    },
+    "2022": {
+      "record_count": 238,
+      "total_php": 1086275000.0,
+      "total_formatted": "₱1,086,275,000.00"
+    },
+    "2023": {
+      "record_count": 242,
+      "total_php": 602493000.0,
+      "total_formatted": "₱602,493,000.00"
+    },
+    "2024": {
+      "record_count": 308,
+      "total_php": 820737000.0,
+      "total_formatted": "₱820,737,000.00"
+    },
+    "2025": {
+      "record_count": 324,
+      "total_php": 1205159000.0,
+      "total_formatted": "₱1,205,159,000.00"
+    },
+    "2026": {
+      "record_count": 339,
+      "total_php": 578155000.0,
+      "total_formatted": "₱578,155,000.00"
+    }
+  },
+  "totals_by_department": {
+    "Department of Education (DepEd)": {
+      "record_count": 962,
+      "total_php": 2010706000.0,
+      "total_formatted": "₱2,010,706,000.00"
+    },
+    "Department of Public Works and Highways (DPWH)": {
+      "record_count": 793,
+      "total_php": 4054627000.0,
+      "total_formatted": "₱4,054,627,000.00"
+    },
+    "State Universities and Colleges (SUCs)": {
+      "record_count": 6,
+      "total_php": 0.0,
+      "total_formatted": "₱0.00"
+    }
+  },
+  "totals_by_sector": {
+    "Basic Education (DepEd)": {
+      "record_count": 962,
+      "total_php": 2010706000.0,
+      "total_formatted": "₱2,010,706,000.00"
+    },
+    "Flood Control & River Mitigation (DPWH)": {
+      "record_count": 75,
+      "total_php": 865000000.0,
+      "total_formatted": "₱865,000,000.00"
+    },
+    "Community & Public Buildings (DPWH)": {
+      "record_count": 232,
+      "total_php": 436890000.0,
+      "total_formatted": "₱436,890,000.00"
+    },
+    "Roads & Bridges (DPWH)": {
+      "record_count": 223,
+      "total_php": 1086870000.0,
+      "total_formatted": "₱1,086,870,000.00"
+    },
+    "Infrastructure (DPWH)": {
+      "record_count": 210,
+      "total_php": 1559205000.0,
+      "total_formatted": "₱1,559,205,000.00"
+    },
+    "School Buildings & Education Infra (DPWH)": {
+      "record_count": 53,
+      "total_php": 106662000.0,
+      "total_formatted": "₱106,662,000.00"
+    },
+    "Higher Education (SUCs / CvSU)": {
+      "record_count": 6,
+      "total_php": 0.0,
+      "total_formatted": "₱0.00"
+    }
+  },
+  "totals_by_expense_class": {
+    "Maintenance and Other Operating Expenses": {
+      "record_count": 607,
+      "total_php": 160748000.0,
+      "total_formatted": "₱160,748,000.00"
+    },
+    "Personnel Services": {
+      "record_count": 355,
+      "total_php": 1849958000.0,
+      "total_formatted": "₱1,849,958,000.00"
+    },
+    "Capital Outlays": {
+      "record_count": 139,
+      "total_php": 4054627000.0,
+      "total_formatted": "₱4,054,627,000.00"
+    },
+    "nan": {
+      "record_count": 660,
+      "total_php": 0.0,
+      "total_formatted": "₱0.00"
+    },
+    "Project / Program Header": {
+      "record_count": 0,
+      "total_php": 0.0,
+      "total_formatted": "₱0.00"
+    }
+  },
+  "schools_breakdown": {
+    "Eugenio Cabezas National High School": {
+      "record_count": 167,
+      "total_php": 50561000.0,
+      "total_formatted": "₱50,561,000.00"
+    },
+    "Francisco Osorio National High School": {
+      "record_count": 88,
+      "total_php": 63505000.0,
+      "total_formatted": "₱63,505,000.00"
+    },
+    "Luis Aguado National High School": {
+      "record_count": 229,
+      "total_php": 340024000.0,
+      "total_formatted": "₱340,024,000.00"
+    },
+    "Trece Martirez City National High School": {
+      "record_count": 151,
+      "total_php": 951614000.0,
+      "total_formatted": "₱951,614,000.00"
+    },
+    "Trece Martirez City National High School (Cochu Annex)": {
+      "record_count": 49,
+      "total_php": 4661000.0,
+      "total_formatted": "₱4,661,000.00"
+    },
+    "Trece Martires City Senior High School": {
+      "record_count": 55,
+      "total_php": 16219000.0,
+      "total_formatted": "₱16,219,000.00"
+    },
+    "Francisco Osorio Integrated Senior High School": {
+      "record_count": 125,
+      "total_php": 105820000.0,
+      "total_formatted": "₱105,820,000.00"
+    },
+    "Trece Martires City National High School": {
+      "record_count": 62,
+      "total_php": 474787000.0,
+      "total_formatted": "₱474,787,000.00"
+    },
+    "Trece Martires City National High School - Conchu Annex": {
+      "record_count": 36,
+      "total_php": 3515000.0,
+      "total_formatted": "₱3,515,000.00"
+    }
+  }
+}
