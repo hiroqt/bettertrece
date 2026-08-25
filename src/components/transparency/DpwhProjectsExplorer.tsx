@@ -9,7 +9,7 @@ import {
   TRECE_BARANGAYS_FILTER,
   getDpwhSummaryStats,
   DpwhProject,
-} from '../../data/dpwhTransparency';
+} from '../../data/transparency/dpwhTransparency';
 import DpwhStatsOverview from './DpwhStatsOverview';
 import DpwhProjectModal from './DpwhProjectModal';
 import DpwhMapVisualizer from './DpwhMapVisualizer';

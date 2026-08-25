@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import type { DPWHProject } from '../../types/dpwh';
-import type { DpwhProject } from '../../data/dpwhTransparency';
+import type { DpwhProject } from '../../data/transparency/dpwhTransparency';
 import { getTreceAnalytics } from '../../services/dpwh';
 import { useCountUp } from '../../hooks/useCountUp';
 import {

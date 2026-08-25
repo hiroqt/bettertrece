@@ -1,98 +1,117 @@
-# Government Services Data Management
+# BetterTrece Data Architecture
 
-This directory contains the services data for the government portal. The data is managed in YAML format for easier editing by non-technical users.
+This directory contains all localized datasets, classifications, governmental registries, transparency records, and portal schemas for BetterTrece.
 
-## Files
+The data layer is structured into modular domain categories with type definitions, barrel exports, and direct domain access.
 
-- `services.yaml` - The main data file in YAML format (human-readable, easy to edit)
-- `yamlLoader.ts` - Loads and parses the YAML file for the application
-- `government.yaml` - Government activities and information data
-- `navigation.ts` - Navigation structure for the application
-- `README.md` - This documentation file
+---
 
-## Content Design Principle
+## Directory Structure
 
-The services are designed with a user-centric approach that focuses on **what information they can get from the LGU for each service**. This way, it's framed as: **"If you ask, this is the info your LGU can give you."**
-
-This principle ensures that:
-
-- Services are described from the citizen's perspective
-- Information is presented as accessible and available upon request
-- The language is clear and actionable
-- Users understand they can actively seek information from their local government
-
-## How to Edit Services Data
-
-### For Non-Technical Users
-
-1. **Edit the YAML file**: Open `services.yaml` in any text editor
-2. **Follow the structure**: The file has a clear hierarchy:
-   - `categories` - List of service categories
-   - Each category has:
-     - `category` - The display name
-     - `slug` - URL-friendly identifier (lowercase, hyphens)
-     - `subcategories` - List of services within the category
-3. **Add new services**: Simply add new entries under the appropriate category
-4. **Remove services**: Delete the entire entry (including the `-` at the beginning)
-5. **Modify services**: Change the `name` or `slug` fields
-
-### YAML Formatting Tips
-
-- **Indentation matters**: Use 2 spaces for each level
-- **Lists start with `-`**: Each category and subcategory starts with a dash
-- **No commas needed**: Unlike JSON, YAML doesn't require commas
-- **Comments allowed**: Lines starting with `#` are comments and will be ignored
-- **Quotes optional**: For simple text, quotes are not required
-
-### Example: Adding a New Service
-
-```yaml
-- category: 'New Category'
-  slug: 'new-category'
-  description: 'Brief description of what this category covers and what services are available.'
-  subcategories:
-    - name: 'New Service'
-      slug: 'new-service'
-    - name: 'Another Service'
-      slug: 'another-service'
+```
+src/data/
+├── index.ts                      # Central barrel export for all data domains
+├── README.md                     # This documentation file
+│
+├── education/                    # Schools, Senior High School tracks, DepEd datasets
+│   ├── index.ts                  # Barrel export
+│   ├── schoolsData.ts            # Basic education & BEIS school profiles
+│   ├── seniorHighSchools.ts      # SHS academic/TVL tracks, strands & career info
+│   └── trece_schools_deped_2020_2021.json # Raw DepEd school masterlist
+│
+├── coa/                          # Commission on Audit (COA) Reports
+│   ├── index.ts                  # Barrel export
+│   └── coaAuditReport2024.ts     # 2024 Annual Audit Report (AAR) findings & observations
+│
+├── transparency/                 # Infrastructure, budget, national appropriations
+│   ├── index.ts                  # Barrel export
+│   ├── dpwhTransparency.ts       # DPWH project registry & summary metrics
+│   ├── gaaTransparencyData.ts    # GAA national appropriations breakdown (2020–2026)
+│   ├── cityBudgetRevenue.ts      # Trece Martires LGU budget, revenue & expenditure
+│   ├── gaa_dpwh_projects.json    # DPWH GAA raw records
+│   ├── gaa_records_compact.json  # Compact GAA records
+│   ├── trece_martires_gaa_2020_2026.csv # Full GAA dataset (CSV)
+│   ├── trece_martires_gaa_2020_2026.json # Full GAA dataset (JSON)
+│   └── trece_martires_gaa_summary.json  # GAA summary aggregation
+│
+├── demographics/                 # PSA classifications, PSGC codes, population
+│   ├── index.ts                  # Barrel export
+│   └── psaClassifications.ts     # Philippine Statistics Authority & PSGC datasets
+│
+├── government/                   # City officials, legislative board, departments
+│   ├── index.ts                  # Barrel export
+│   ├── electedOfficials.ts       # Executive, Sanggunian, and Barangay officials
+│   └── government.yaml           # Government departments & public directory metadata
+│
+├── services/                     # Citizen services directory & dynamic YAML loader
+│   ├── index.ts                  # Barrel export
+│   ├── services.yaml             # Core service taxonomy & categories
+│   └── yamlLoader.ts             # Service & government YAML loader utility
+│
+└── navigation/                   # Portal navigation & menu configurations
+    ├── index.ts                  # Barrel export
+    └── navigation.ts             # Header mega-menu, footer links, and route config
 ```
 
-### Example: Adding a New Subcategory
+---
 
-To add a new service to an existing category, simply add it to the subcategories list:
+## Domain Overview
 
-```yaml
-- category: 'Health Services'
-  slug: 'social-services'
-  description: 'Where to go for free check-ups, vaccines, and medicines...'
-  subcategories:
-    - name: 'Get free check-ups, basic medicines, and vaccines'
-      slug: 'get-free-check-ups-basic-medicines-and-vaccines'
-    - name: 'New Health Service' # Add this new service
-      slug: 'new-health-service' # Add this new slug
+### 1. Education (`src/data/education`)
+
+- **`schoolsData.ts`**: Master list of all 46 DepEd-managed and private basic education campuses in Trece Martires City (Preschool, Elementary, JHS, SHS, and Integrated Schools). Contains `TRECE_ALL_SCHOOLS`, `SCHOOL_LEVEL_CONFIG`, `SCHOOLS_STATISTICS`, and `TRECE_BARANGAYS_WITH_SCHOOLS`.
+- **`seniorHighSchools.ts`**: Comprehensive directory of Senior High School offerings, Academic (STEM, ABM, HUMSS, GAS) and TVL strands (HE, ICT, IA), student career pathways, and institutional statistics.
+- **`trece_schools_deped_2020_2021.json`**: Official DepEd BEIS dataset baseline.
+
+### 2. COA (`src/data/coa`)
+
+- **`coaAuditReport2024.ts`**: Independent audit observations from the Commission on Audit Regional Office IV-A (Local Government Audit Sector R4A-02, Team B). Includes financial ratios, SASDC collections, SEF statutory compliance, and prior-year recommendation tracking.
+
+### 3. Transparency & Public Finance (`src/data/transparency`)
+
+- **`dpwhTransparency.ts`**: DPWH national infrastructure projects across all 13 Trece Martires barangays, including contractor analytics, civil works status, and budget allocations.
+- **`gaaTransparencyData.ts`**: Line-item General Appropriations Act (GAA) national budget tracking for Trece Martires (FY 2020–2026).
+- **`cityBudgetRevenue.ts`**: City Government annual budget, National Tax Allotment (NTA), local tax revenues, and expenditure sectoral allocations.
+- **Raw Datasets**: Includes downloadable CSV and JSON files for open citizen research.
+
+### 4. Demographics (`src/data/demographics`)
+
+- **`psaClassifications.ts`**: Official Philippine Statistics Authority (PSA) and Philippine Standard Geographic Code (PSGC) data for Trece Martires City (`042122000`) and its 13 component barangays.
+
+### 5. Government (`src/data/government`)
+
+- **`electedOfficials.ts`**: City executive leadership, Sangguniang Panlungsod members, and Barangay Captains with official terms, committee assignments, and contact directory.
+- **`government.yaml`**: Hierarchical organization of city departments and municipal services.
+
+### 6. Services (`src/data/services`)
+
+- **`services.yaml`**: Citizen-facing service catalog organized by citizen need (civil registry, health, business permits, social welfare, agriculture, etc.).
+- **`yamlLoader.ts`**: Synchronous and asynchronous loader utilities for content pages and markdown integration.
+
+### 7. Navigation (`src/data/navigation`)
+
+- **`navigation.ts`**: Central navigation schema powering Navbar mega-menus, featured service links, mobile drawers, and Footer site maps.
+
+---
+
+## Import Conventions
+
+You can import data either from specific domain subdirectories or through the central barrel:
+
+```ts
+// Option A: Specific domain import (Recommended)
+import { TRECE_ALL_SCHOOLS, SCHOOLS_STATISTICS } from '@/data/education';
+import { COA_AUDIT_REPORT_2024_META } from '@/data/coa';
+import { TRECE_DPWH_PROJECTS } from '@/data/transparency';
+import { TRECE_BARANGAYS_PSGC } from '@/data/demographics';
+import { CITY_COUNCILORS } from '@/data/government';
+import { serviceCategories } from '@/data/services';
+import { mainNavigation } from '@/data/navigation';
+
+// Option B: Central root import
+import {
+  TRECE_ALL_SCHOOLS,
+  TRECE_DPWH_PROJECTS,
+  TRECE_BARANGAYS_PSGC,
+} from '@/data';
 ```
-
-## Development Workflow
-
-1. Edit `services.yaml` with your changes
-2. The application automatically loads the YAML file directly - no conversion needed!
-3. Changes are reflected immediately in development mode
-
-## File Structure
-
-```yaml
-categories:
-  - category: 'Category Name' # Display name
-    slug: 'category-slug' # URL identifier
-    subcategories:
-      - name: 'Service Name' # Display name
-        slug: 'service-slug' # URL identifier
-```
-
-## Benefits of YAML Format
-
-- ✅ **Human-readable**: Easy to understand the structure
-- ✅ **No syntax errors**: More forgiving than JSON
-- ✅ **Comments supported**: Can add explanatory notes
-- ✅ **Better hierarchy**: Clear visual structure with indentation
-- ✅ **Easy editing**: No need to worry about commas, brackets, or quotes

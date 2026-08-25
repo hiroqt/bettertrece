@@ -35,27 +35,27 @@ Content is stored as YAML and Markdown files under `content/`. Two parallel cont
 
 #### Services (`content/services/`)
 
-1. **`src/data/services.yaml`** — Top-level service categories (name, slug, icon, description). The `icon` field must be a valid Lucide React icon name.
+1. **`src/data/services/services.yaml`** — Top-level service categories (name, slug, icon, description). The `icon` field must be a valid Lucide React icon name.
 2. **`content/services/{category-slug}/index.yaml`** — Lists pages under each category (`pages:` array with `name`, `slug`, `description`).
 3. **`content/services/{category-slug}/{page-slug}.md`** — Actual markdown content for each service page.
 
 When adding a new service category, you must:
 
-- Add an entry to `src/data/services.yaml`
+- Add an entry to `src/data/services/services.yaml`
 - Create `content/services/{slug}/index.yaml`
-- Add the static import and mapping entry to `src/data/yamlLoader.ts` (`categoryIndexMap`)
+- Add the static import and mapping entry to `src/data/services/yamlLoader.ts` (`categoryIndexMap`)
 
 #### Government (`content/government/`)
 
-1. **`src/data/government.yaml`** — Top-level government categories (name, slug, icon, description).
+1. **`src/data/government/government.yaml`** — Top-level government categories (name, slug, icon, description).
 2. **`content/government/{category-slug}/index.yaml`** — Lists pages under each category.
 3. **`content/government/{category-slug}/{page-slug}.md`** — Markdown content for each department/office page.
 
 When adding a new government category, you must:
 
-- Add an entry to `src/data/government.yaml`
+- Add an entry to `src/data/government/government.yaml`
 - Create `content/government/{slug}/index.yaml`
-- Add the static import and mapping entry to `src/data/yamlLoader.ts` (`govCategoryIndexMap`)
+- Add the static import and mapping entry to `src/data/services/yamlLoader.ts` (`categoryIndexMap`)
 
 Markdown files are loaded dynamically via `import()` in `src/lib/markdownLoader.ts`. The title is extracted from the first `# Heading` and the description from the first paragraph.
 

@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react';
 import {
   PSA_CLASSIFICATIONS,
   PsaClassification,
-} from '../../data/psaClassifications';
+} from '../../data/demographics/psaClassifications';
 import {
   Search,
   ExternalLink,

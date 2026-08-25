@@ -200,7 +200,7 @@ Department pages support `{PLACEHOLDER}` tokens that are automatically replaced 
 
 To update official names or titles, **edit only the JSON file** — the markdown content updates automatically. If no JSON file exists, placeholders fall back to environment variables (`VITE_MAYOR`, etc.) or are left as-is.
 
-> **Note:** Adding a brand-new government _category_ (e.g., a section alongside `departments`) requires a developer to register it in `src/data/government.yaml` and `src/data/yamlLoader.ts`.
+> **Note:** Adding a brand-new government _category_ (e.g., a section alongside `departments`) requires a developer to register it in `src/data/government/government.yaml` and `src/data/services/yamlLoader.ts`.
 
 ---
 

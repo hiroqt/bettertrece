@@ -101,9 +101,9 @@ async function setupStarterKit() {
 
   // Files to update
   const filesToUpdate = [
-    'src/data/government.yaml',
-    'src/data/services.yaml',
-    'src/data/navigation.ts',
+    'src/data/government/government.yaml',
+    'src/data/services/services.yaml',
+    'src/data/navigation/navigation.ts',
     'src/i18n/locales/en.json',
     'src/i18n/locales/fil.json',
     'STARTER-KIT-README.md',

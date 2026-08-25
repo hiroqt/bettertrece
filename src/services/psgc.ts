@@ -8,7 +8,7 @@ import type {
 import {
   TRECE_BARANGAYS_PSGC,
   TRECE_MUNICIPAL_PROFILE,
-} from '../data/psaClassifications';
+} from '../data/demographics/psaClassifications';
 
 export const PSA_PSGC_BASE_URL = 'https://classification.psa.gov.ph/psgc';
 const CACHE_KEY_PREFIX = 'bettertrece_psgc_cache_';

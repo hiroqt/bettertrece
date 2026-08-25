@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import type { DPWHProject } from '../../types/dpwh';
-import { DpwhProject } from '../../data/dpwhTransparency';
+import { DpwhProject } from '../../data/transparency/dpwhTransparency';
 import {
   X,
   Copy,

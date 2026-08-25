@@ -28,13 +28,13 @@ import {
   CITY_COUNCILORS,
   BARANGAY_CAPTAINS,
   OFFICIALS_METADATA,
-} from '../data/electedOfficials';
+} from '../data/government/electedOfficials';
 import {
   governmentCategories,
   getCategorySubcategories,
   type Subcategory,
   type CategoryIndex,
-} from '../data/yamlLoader';
+} from '../data/services/yamlLoader';
 import { Card, CardContent } from '@bettergov/kapwa/card';
 import { Banner } from '@bettergov/kapwa/banner';
 import Section from '../components/ui/Section';

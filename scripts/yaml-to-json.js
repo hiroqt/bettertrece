@@ -8,8 +8,8 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const yamlPath = path.join(__dirname, '../src/data/services.yaml');
-const jsonPath = path.join(__dirname, '../src/data/services.json');
+const yamlPath = path.join(__dirname, '../src/data/services/services.yaml');
+const jsonPath = path.join(__dirname, '../src/data/services/services.json');
 
 try {
   // Read the YAML file

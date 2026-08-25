@@ -95,7 +95,7 @@ async function indexContent() {
 
   // Index services
   const servicesYaml = readFileSync(
-    join(ROOT, 'src/data/services.yaml'),
+    join(ROOT, 'src/data/services/services.yaml'),
     'utf8'
   );
   const servicesData = yaml.load(servicesYaml);
@@ -106,7 +106,10 @@ async function indexContent() {
   }
 
   // Index government
-  const govYaml = readFileSync(join(ROOT, 'src/data/government.yaml'), 'utf8');
+  const govYaml = readFileSync(
+    join(ROOT, 'src/data/government/government.yaml'),
+    'utf8'
+  );
   const govData = yaml.load(govYaml);
   for (const cat of govData.categories) {
     documents.push(

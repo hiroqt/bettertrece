@@ -6,8 +6,8 @@ import {
   TRECE_BARANGAYS_WITH_SCHOOLS,
   type SchoolLevel,
   type SchoolSector,
-} from '../../data/schoolsData';
-import { SHS_STRANDS } from '../../data/seniorHighSchools';
+} from '../../data/education/schoolsData';
+import { SHS_STRANDS } from '../../data/education/seniorHighSchools';
 import AnimatedCounter from '../ui/AnimatedCounter';
 import {
   GraduationCap,

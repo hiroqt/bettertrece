@@ -1,6 +1,9 @@
 import React, { useState, useMemo } from 'react';
-import { gaaSummary, topGaaProjects } from '../../data/gaaTransparencyData';
-import gaaRecordsData from '../../data/gaa_records_compact.json';
+import {
+  gaaSummary,
+  topGaaProjects,
+} from '../../data/transparency/gaaTransparencyData';
+import gaaRecordsData from '../../data/transparency/gaa_records_compact.json';
 import {
   Landmark,
   GraduationCap,
@@ -246,7 +249,7 @@ export const GaaBudgetWidget: React.FC<{ className?: string }> = ({
 
             <div className="flex flex-wrap items-center gap-2 shrink-0">
               <a
-                href="/src/data/trece_martires_gaa_2020_2026.csv"
+                href="/src/data/transparency/trece_martires_gaa_2020_2026.csv"
                 download="trece_martires_gaa_2020_2026.csv"
                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white text-[#00225e] text-xs font-bold hover:bg-blue-50 transition-all shadow-xs focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-white"
                 aria-label="Download Trece Martires GAA Dataset as CSV"
@@ -258,7 +261,7 @@ export const GaaBudgetWidget: React.FC<{ className?: string }> = ({
                 <span>Download CSV</span>
               </a>
               <a
-                href="/src/data/trece_martires_gaa_2020_2026.json"
+                href="/src/data/transparency/trece_martires_gaa_2020_2026.json"
                 download="trece_martires_gaa_2020_2026.json"
                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-bold transition-all border border-white/20 shadow-xs focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-white"
                 aria-label="Download Trece Martires GAA Dataset as JSON"

@@ -10,7 +10,7 @@ import {
   Phone,
   ExternalLink,
 } from 'lucide-react';
-import { footerNavigation } from '../../data/navigation';
+import { footerNavigation } from '../../data/navigation/navigation';
 import { Link } from 'react-router';
 import { BetterTreceLogo } from './Navbar';
 

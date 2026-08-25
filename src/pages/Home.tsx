@@ -22,7 +22,7 @@ import {
 import {
   TRECE_MUNICIPAL_PROFILE,
   TRECE_VOTER_STATISTICS_2025,
-} from '../data/psaClassifications';
+} from '../data/demographics/psaClassifications';
 import AnimatedCounter from '../components/ui/AnimatedCounter';
 
 const Home: React.FC = () => {

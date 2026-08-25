@@ -18,7 +18,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const DPWH_API = 'https://api.transparency.dpwh.gov.ph';
-const OUTPUT_FILE = path.resolve(__dirname, '../src/data/dpwhSyncedData.json');
+const OUTPUT_FILE = path.resolve(
+  __dirname,
+  '../src/data/transparency/dpwhSyncedData.json'
+);
 
 const BARANGAYS = [
   'San Agustin',
@@ -200,7 +203,7 @@ async function syncDPWHData() {
     // Copy curated data into synced file
     const fallbackPath = path.resolve(
       __dirname,
-      '../src/data/dpwhTransparency.ts'
+      '../src/data/transparency/dpwhTransparency.ts'
     );
     console.log(`✓ Synced fallback ready in ${fallbackPath}`);
   }

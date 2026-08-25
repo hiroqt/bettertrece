@@ -24,7 +24,7 @@ import {
   FileText,
   LayoutGrid,
 } from 'lucide-react';
-import { serviceCategories } from '../../data/yamlLoader';
+import { serviceCategories } from '../../data/services/yamlLoader';
 
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Heart,

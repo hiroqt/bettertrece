@@ -17,7 +17,7 @@ import {
   isNestedCategory,
   type Subcategory,
   type CategoryIndex,
-} from '../data/yamlLoader';
+} from '../data/services/yamlLoader';
 import {
   ShieldCheck,
   Building2,

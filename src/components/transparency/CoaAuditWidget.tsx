@@ -8,7 +8,7 @@ import {
   COA_SEF_COMPLIANCE_AUDIT_2024,
   AuditCategory,
   ValidationStatus,
-} from '../../data/coaAuditReport2024';
+} from '../../data/coa/coaAuditReport2024';
 import {
   FileCheck2,
   AlertCircle,

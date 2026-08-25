@@ -4,7 +4,7 @@ import {
   SHS_STRANDS,
   SHS_STATISTICS,
   type ShsStrandCode,
-} from '../../data/seniorHighSchools';
+} from '../../data/education/seniorHighSchools';
 import AnimatedCounter from '../ui/AnimatedCounter';
 import {
   GraduationCap,

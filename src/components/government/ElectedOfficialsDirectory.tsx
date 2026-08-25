@@ -4,7 +4,7 @@ import {
   CITY_COUNCILORS,
   BARANGAY_CAPTAINS,
   OFFICIALS_METADATA,
-} from '../../data/electedOfficials';
+} from '../../data/government/electedOfficials';
 import {
   Landmark,
   ShieldCheck,

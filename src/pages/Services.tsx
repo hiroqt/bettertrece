@@ -6,11 +6,11 @@ import {
   getAllServiceCategoriesWithPages,
   type Subcategory,
   type CategoryIndex,
-} from '../data/yamlLoader';
+} from '../data/services/yamlLoader';
 import Breadcrumbs from '../components/ui/Breadcrumbs';
 import SEO from '../components/SEO';
 import SchoolsExplorer from '../components/services/SchoolsExplorer';
-import { SCHOOLS_STATISTICS } from '../data/schoolsData';
+import { SCHOOLS_STATISTICS } from '../data/education/schoolsData';
 import {
   Search,
   X,

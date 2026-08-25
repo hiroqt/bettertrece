@@ -112,7 +112,7 @@ colors: {
 
 #### Government Information
 
-Edit `src/data/government.yaml`:
+Edit `src/data/government/government.yaml`:
 
 ```yaml
 name: 'City of Trece Martires'
@@ -128,7 +128,7 @@ area: '58.10 km²'
 
 #### Services Configuration
 
-Edit `src/data/services.yaml` to customize service categories:
+Edit `src/data/services/services.yaml` to customize service categories:
 
 ```yaml
 categories:
@@ -145,7 +145,7 @@ categories:
 1. Create a new folder in `content/services/`
 2. Add an `index.yaml` file with service pages
 3. Create markdown files for each service
-4. Update `src/data/services.yaml` to include the new category
+4. Update `src/data/services/services.yaml` to include the new category
 
 #### Content Writing Guidelines
 

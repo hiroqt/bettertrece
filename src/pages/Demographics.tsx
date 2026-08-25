@@ -10,8 +10,8 @@ import AnimatedCounter from '../components/ui/AnimatedCounter';
 import {
   TRECE_MUNICIPAL_PROFILE,
   TRECE_VOTER_STATISTICS_2025,
-} from '../data/psaClassifications';
-import { SCHOOLS_STATISTICS } from '../data/schoolsData';
+} from '../data/demographics/psaClassifications';
+import { SCHOOLS_STATISTICS } from '../data/education/schoolsData';
 import {
   Users,
   MapPin,

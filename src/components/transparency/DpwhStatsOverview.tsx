@@ -1,4 +1,4 @@
-import { DpwhSummaryStats } from '../../data/dpwhTransparency';
+import { DpwhSummaryStats } from '../../data/transparency/dpwhTransparency';
 import { useCountUp } from '../../hooks/useCountUp';
 import {
   Building2,

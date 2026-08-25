@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {
   CITY_BUDGET_REVENUE_DATA,
   SOURCE_ATTRIBUTION,
-} from '../../data/cityBudgetRevenue';
+} from '../../data/transparency/cityBudgetRevenue';
 import {
   Landmark,
   Receipt,

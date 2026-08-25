@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import type { DpwhProject } from '../../data/dpwhTransparency';
+import type { DpwhProject } from '../../data/transparency/dpwhTransparency';
 import type { DPWHProject } from '../../types/dpwh';
 import {
   MapPin,

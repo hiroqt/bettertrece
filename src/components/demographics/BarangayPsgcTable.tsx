@@ -4,7 +4,7 @@ import {
   TRECE_MUNICIPAL_PROFILE,
   TRECE_VOTER_STATISTICS_2025,
   BarangayPsgcData,
-} from '../../data/psaClassifications';
+} from '../../data/demographics/psaClassifications';
 import AnimatedCounter from '../ui/AnimatedCounter';
 import {
   Search,

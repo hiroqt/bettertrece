@@ -8,7 +8,7 @@ import type {
   ContractorAnalytics,
   DPWHCacheRecord,
 } from '../types/dpwh';
-import { TRECE_DPWH_PROJECTS } from '../data/dpwhTransparency';
+import { TRECE_DPWH_PROJECTS } from '../data/transparency/dpwhTransparency';
 
 const CACHE_KEY = 'bettertrece_dpwh_cache_v2';
 const DEFAULT_CACHE_TTL = 1000 * 60 * 60 * 2; // 2 hours
@@ -325,7 +325,7 @@ export async function getTreceProjectsWithFallback(
   }
 }
 
-import type { DpwhProject } from '../data/dpwhTransparency';
+import type { DpwhProject } from '../data/transparency/dpwhTransparency';
 
 /**
  * Generate comprehensive analytical breakdowns for Trece Martires projects

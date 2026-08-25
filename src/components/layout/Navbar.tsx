@@ -51,7 +51,10 @@ import {
   Database,
   Sparkles,
 } from 'lucide-react';
-import { mainNavigation, type MegaMenuFeatured } from '../../data/navigation';
+import {
+  mainNavigation,
+  type MegaMenuFeatured,
+} from '../../data/navigation/navigation';
 import type { LanguageType } from '../../types/index';
 import { Link, useLocation } from 'react-router';
 import { useTranslation } from 'react-i18next';
