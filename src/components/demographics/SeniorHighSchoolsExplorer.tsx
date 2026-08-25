@@ -7,13 +7,11 @@ import {
 } from '../../data/education/seniorHighSchools';
 import AnimatedCounter from '../ui/AnimatedCounter';
 import {
-  GraduationCap,
   Search,
   X,
   Copy,
   Check,
   Building2,
-  CheckCircle2,
   Grid,
   List as ListIcon,
   Info,
@@ -80,32 +78,12 @@ export default function SeniorHighSchoolsExplorer() {
   return (
     <div className="space-y-8">
       {/* 1. Header Overview & Summary Statistics */}
-      <div className="bg-gradient-to-br from-slate-900 via-[#00225e] to-[#003893] text-white rounded-3xl p-6 sm:p-8 shadow-xl border border-blue-900/40 relative overflow-hidden">
-        {/* Background glow & accents */}
-        <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 -ml-16 -mb-16 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
-
+      <div className="bg-gradient-to-r from-[#001f54] via-[#00225e] to-[#003893] text-white rounded-3xl p-6 sm:p-8 shadow-lg border border-blue-900/40 relative overflow-hidden">
         <div className="relative z-10 space-y-6">
-          <div className="flex flex-wrap items-center justify-between gap-4">
-            <div className="flex items-center gap-2">
-              <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-400/20 text-amber-300 border border-amber-400/30 flex items-center gap-1.5">
-                <GraduationCap className="w-3.5 h-3.5" />
-                <span>DepEd Basic Education Information System (BEIS)</span>
-              </span>
-              <span className="hidden sm:inline-flex px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 items-center gap-1">
-                <CheckCircle2 className="w-3 h-3" />
-                <span>Public &amp; Private Directory</span>
-              </span>
-            </div>
-
-            <div className="text-xs text-blue-200/90 font-mono">
-              Trece Martires City &bull; Region IV-A (Cavite)
-            </div>
-          </div>
-
           <div className="max-w-3xl space-y-2">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
-              Senior High Schools &amp; Strand Directory
+              <span className="text-amber-300">Senior High Schools</span> &amp;
+              Strand Directory
             </h2>
             <p className="text-sm sm:text-base text-blue-100/90 leading-relaxed">
               Explore all {SHS_STATISTICS.totalSchools} DepEd-recognized Senior
@@ -119,51 +97,51 @@ export default function SeniorHighSchoolsExplorer() {
 
           {/* Quick Metrics Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 pt-2">
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/15">
-              <div className="text-xs text-blue-200 font-medium mb-1">
+            <div className="bg-gradient-to-br from-[#001438]/80 to-[#00225e]/80 backdrop-blur-md rounded-2xl p-4 border border-blue-400/20 text-white">
+              <div className="text-xs text-blue-200 font-semibold mb-1">
                 Total SHS Schools
               </div>
-              <div className="text-2xl sm:text-3xl font-black text-white font-mono">
+              <div className="text-2xl sm:text-3xl font-black text-amber-300 font-mono">
                 <AnimatedCounter value={SHS_STATISTICS.totalSchools} />
               </div>
-              <div className="text-[11px] text-blue-200/80 mt-0.5">
+              <div className="text-xs text-blue-200/80 mt-0.5">
                 {SHS_STATISTICS.publicSchools} Public &bull;{' '}
                 {SHS_STATISTICS.privateSchools} Private
               </div>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/15">
-              <div className="text-xs text-amber-200 font-medium mb-1">
+            <div className="bg-gradient-to-br from-[#001438]/80 to-[#00225e]/80 backdrop-blur-md rounded-2xl p-4 border border-blue-400/20 text-white">
+              <div className="text-xs text-blue-200 font-semibold mb-1">
                 Available Strands
               </div>
               <div className="text-2xl sm:text-3xl font-black text-amber-300 font-mono">
                 <AnimatedCounter value={SHS_STATISTICS.totalStrands} />
               </div>
-              <div className="text-[11px] text-blue-200/80 mt-0.5">
+              <div className="text-xs text-blue-200/80 mt-0.5">
                 Academic &amp; TVL Tracks
               </div>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/15">
-              <div className="text-xs text-emerald-200 font-medium mb-1">
+            <div className="bg-gradient-to-br from-[#001438]/80 to-[#00225e]/80 backdrop-blur-md rounded-2xl p-4 border border-blue-400/20 text-white">
+              <div className="text-xs text-blue-200 font-semibold mb-1">
                 DepEd Public SHS
               </div>
-              <div className="text-2xl sm:text-3xl font-black text-emerald-300 font-mono">
+              <div className="text-2xl sm:text-3xl font-black text-amber-300 font-mono">
                 <AnimatedCounter value={SHS_STATISTICS.publicSchools} />
               </div>
-              <div className="text-[11px] text-blue-200/80 mt-0.5">
+              <div className="text-xs text-blue-200/80 mt-0.5">
                 Free Public Tuition
               </div>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/15">
-              <div className="text-xs text-purple-200 font-medium mb-1">
+            <div className="bg-gradient-to-br from-[#001438]/80 to-[#00225e]/80 backdrop-blur-md rounded-2xl p-4 border border-blue-400/20 text-white">
+              <div className="text-xs text-blue-200 font-semibold mb-1">
                 5-Strand Campuses
               </div>
-              <div className="text-2xl sm:text-3xl font-black text-purple-300 font-mono">
+              <div className="text-2xl sm:text-3xl font-black text-amber-300 font-mono">
                 <AnimatedCounter value={SHS_STATISTICS.allStrandsCount} />
               </div>
-              <div className="text-[11px] text-blue-200/80 mt-0.5">
+              <div className="text-xs text-blue-200/80 mt-0.5">
                 Offering All 5 Strands
               </div>
             </div>
@@ -172,16 +150,16 @@ export default function SeniorHighSchoolsExplorer() {
       </div>
 
       {/* 2. Strand Distribution Visual Overview Bar */}
-      <div className="bg-white rounded-2xl p-5 border border-gray-200 shadow-xs space-y-3">
+      <div className="bg-white rounded-2xl p-5 border border-zinc-200 shadow-2xs space-y-3">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <div className="flex items-center gap-2">
-            <Layers className="w-4 h-4 text-[#003893]" />
-            <h3 className="font-bold text-gray-900 text-sm sm:text-base">
+            <Layers className="w-4 h-4 text-zinc-900" />
+            <h3 className="font-bold text-zinc-900 text-sm sm:text-base">
               Senior High School Strand Availability in Trece Martires (
               {SHS_STATISTICS.totalSchools} Institutions)
             </h3>
           </div>
-          <span className="text-xs text-gray-500 font-medium">
+          <span className="text-xs text-zinc-500 font-medium">
             Click any strand pill below to filter institutions
           </span>
         </div>
@@ -199,23 +177,26 @@ export default function SeniorHighSchoolsExplorer() {
                 onClick={() => setSelectedStrand(isSelected ? 'ALL' : code)}
                 className={`p-3 rounded-xl border text-left transition-all cursor-pointer ${
                   isSelected
-                    ? 'ring-2 ring-[#003893] shadow-sm bg-blue-50/50 border-[#003893]'
-                    : 'bg-slate-50/70 border-gray-200 hover:border-gray-300 hover:bg-slate-100/70'
+                    ? 'bg-[#003893] text-white border-[#003893] shadow-2xs'
+                    : 'bg-zinc-50 hover:bg-zinc-100 border-zinc-200 text-zinc-800 hover:border-zinc-300'
                 }`}
               >
-                <div className="flex items-center justify-between mb-1">
+                <div className="flex items-center justify-between gap-1 mb-1">
+                  <span className="font-black text-xs font-mono">{code}</span>
                   <span
-                    className={`px-2 py-0.5 rounded-md text-xs font-black ${strand.badgeColor.bg} ${strand.badgeColor.border} border`}
+                    className={`text-xs px-1.5 py-0.2 rounded-md font-mono font-bold ${
+                      isSelected
+                        ? 'bg-blue-800 text-white'
+                        : 'bg-zinc-200 text-zinc-800'
+                    }`}
                   >
-                    {code}
-                  </span>
-                  <span className="font-mono font-bold text-xs text-gray-700">
-                    {count} / {SHS_STATISTICS.totalSchools}
+                    {count}
                   </span>
                 </div>
                 <div
-                  className="text-[11px] font-medium text-gray-600 truncate"
-                  title={strand.name}
+                  className={`text-xs font-semibold line-clamp-1 ${
+                    isSelected ? 'text-blue-100' : 'text-zinc-600'
+                  }`}
                 >
                   {code === 'GAS'
                     ? 'General Academic'

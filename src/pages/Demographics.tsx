@@ -19,7 +19,6 @@ import {
   ExternalLink,
   BookOpen,
   Database,
-  Vote,
   GraduationCap,
 } from 'lucide-react';
 
@@ -52,15 +51,6 @@ export default function Demographics() {
     window.history.replaceState(null, '', newHash);
   };
 
-  const breadcrumbItems = [
-    { label: 'Home', href: '/' },
-    { label: 'Statistics', href: '/government/reports-and-statistics' },
-    {
-      label: 'Summary Demographics & PSA Standards',
-      href: '/demographics',
-    },
-  ];
-
   return (
     <>
       <SEO
@@ -70,39 +60,23 @@ export default function Demographics() {
       />
 
       <main className="flex-grow bg-slate-50/50 pb-16">
-        {/* Top Header Banner */}
-        <section className="bg-gradient-to-r from-slate-900 via-[#00225e] to-[#003893] text-white pt-44 sm:pt-44 lg:pt-48 pb-10 sm:pb-14 border-b border-blue-900/40 shadow-inner">
+        {/* Top Hero Banner */}
+        <section className="bg-gradient-to-r from-[#001f54] via-[#00225e] to-[#003893] text-white pt-44 sm:pt-44 lg:pt-48 pb-12 sm:pb-16 border-b border-blue-900/40 shadow-inner">
           <div className="container mx-auto px-4 max-w-7xl">
             <Breadcrumbs
-              items={breadcrumbItems}
+              items={[
+                { label: 'Home', href: '/' },
+                { label: 'Demographics & Education' },
+              ]}
               className="mb-6 text-blue-200"
             />
 
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
               <div className="space-y-3 max-w-3xl">
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-white/10 text-blue-100">
-                    PSGC: {TRECE_MUNICIPAL_PROFILE.psgcCityCode}
-                  </span>
-                  <span className="px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 inline-flex items-center gap-1">
-                    <Vote className="w-3 h-3" />
-                    <span>
-                      <AnimatedCounter
-                        value={TRECE_VOTER_STATISTICS_2025.registeredVoters}
-                      />{' '}
-                      Registered Voters (2025)
-                    </span>
-                  </span>
-                  <span className="px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-400/20 text-amber-300 border border-amber-400/30 inline-flex items-center gap-1">
-                    <GraduationCap className="w-3 h-3" />
-                    <span>
-                      {SCHOOLS_STATISTICS.totalSchools} DepEd Registered Schools
-                    </span>
-                  </span>
-                </div>
-
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
-                  Trece Martires Demographics, Education &amp; Standards
+                  Trece Martires{' '}
+                  <span className="text-amber-300">Demographics</span>,
+                  Education &amp; Standards
                 </h1>
 
                 <p className="text-sm sm:text-base text-blue-100/90 leading-relaxed">
@@ -118,10 +92,10 @@ export default function Demographics() {
                   href="https://classification.psa.gov.ph"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-white text-slate-950 hover:bg-amber-300 font-bold px-4 py-2.5 rounded-xl text-xs sm:text-sm transition-all shadow-md"
+                  className="inline-flex items-center gap-2 bg-white text-[#00225e] hover:bg-blue-50 font-bold px-4 py-2.5 rounded-xl text-xs sm:text-sm transition-all shadow-md"
                 >
                   <span>PSA Classification Portal</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
+                  <ExternalLink className="w-3.5 h-3.5 text-[#00225e]" />
                 </a>
               </div>
             </div>
@@ -129,16 +103,16 @@ export default function Demographics() {
         </section>
 
         {/* Tab Navigation (Clean 3 Tabs) */}
-        <div className="bg-white border-b border-gray-200 shadow-xs sticky top-[108px] z-30">
+        <div className="bg-white border-b border-zinc-200 shadow-2xs sticky top-[108px] z-30">
           <div className="container mx-auto px-4 max-w-7xl">
             <div className="flex items-center gap-2 overflow-x-auto py-2.5 no-scrollbar">
               <button
                 type="button"
                 onClick={() => setActiveTab('overview')}
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap cursor-pointer ${
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap cursor-pointer ${
                   activeTab === 'overview'
-                    ? 'bg-[#003893] text-white shadow-xs'
-                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+                    ? 'bg-[#003893] text-white shadow-2xs'
+                    : 'text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100'
                 }`}
               >
                 <Users className="w-4 h-4" />
@@ -148,19 +122,19 @@ export default function Demographics() {
               <button
                 type="button"
                 onClick={() => setActiveTab('education')}
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap cursor-pointer ${
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap cursor-pointer ${
                   activeTab === 'education'
-                    ? 'bg-[#003893] text-white shadow-xs'
-                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+                    ? 'bg-[#003893] text-white shadow-2xs'
+                    : 'text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100'
                 }`}
               >
                 <GraduationCap className="w-4 h-4" />
                 <span>Schools Directory (DepEd)</span>
                 <span
-                  className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono font-bold ${
+                  className={`text-xs px-1.5 py-0.2 rounded-md font-mono font-semibold ${
                     activeTab === 'education'
-                      ? 'bg-white/20 text-white'
-                      : 'bg-blue-100 text-[#003893]'
+                      ? 'bg-blue-800 text-white'
+                      : 'bg-zinc-100 text-zinc-800 border border-zinc-200'
                   }`}
                 >
                   {SCHOOLS_STATISTICS.totalSchools}
@@ -170,10 +144,10 @@ export default function Demographics() {
               <button
                 type="button"
                 onClick={() => setActiveTab('classifications')}
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap cursor-pointer ${
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap cursor-pointer ${
                   activeTab === 'classifications'
-                    ? 'bg-[#003893] text-white shadow-xs'
-                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+                    ? 'bg-[#003893] text-white shadow-2xs'
+                    : 'text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100'
                 }`}
               >
                 <FileSpreadsheet className="w-4 h-4" />

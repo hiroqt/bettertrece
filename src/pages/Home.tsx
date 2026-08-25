@@ -79,32 +79,32 @@ const Home: React.FC = () => {
             {/* Core KPI Metrics Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
               {/* Registered Voters (COMELEC 2025) */}
-              <div className="bg-gradient-to-br from-slate-900 via-[#00225e] to-indigo-950 text-white p-5 rounded-2xl shadow-sm border border-blue-900/40 relative overflow-hidden">
-                <div className="flex items-center justify-between text-blue-200 text-xs font-semibold mb-2">
-                  <span className="flex items-center gap-1.5 text-amber-300">
-                    <Vote className="w-3.5 h-3.5" />
+              <div className="bg-white p-5 rounded-2xl border border-zinc-200 shadow-2xs hover:border-zinc-400 hover:shadow-xs transition-all">
+                <div className="flex items-center justify-between text-zinc-500 text-xs font-semibold mb-2">
+                  <span className="flex items-center gap-1.5 text-zinc-600">
+                    <Vote className="w-4 h-4 text-zinc-900" />
                     {t(
                       'demographicsSummary.registeredVoters',
                       'REGISTERED VOTERS'
                     )}
                   </span>
-                  <span className="text-[10px] bg-amber-400/20 text-amber-300 px-1.5 py-0.5 rounded font-mono">
+                  <span className="text-xs bg-zinc-100 text-zinc-600 px-2 py-0.5 rounded font-mono">
                     2025
                   </span>
                 </div>
-                <div className="text-2xl sm:text-3xl font-black font-mono text-white">
+                <div className="text-2xl sm:text-3xl font-black font-mono text-zinc-900">
                   <AnimatedCounter
                     value={TRECE_VOTER_STATISTICS_2025.registeredVoters}
                   />
                 </div>
-                <div className="text-xs text-blue-200 mt-2 flex items-center justify-between">
+                <div className="text-xs text-zinc-600 mt-2 flex items-center justify-between">
                   <span>
                     <AnimatedCounter
                       value={TRECE_VOTER_STATISTICS_2025.votingCenters}
                     />{' '}
                     {t('demographicsSummary.votingCenters', 'Voting Centers')}
                   </span>
-                  <span className="font-mono text-[11px] text-blue-300">
+                  <span className="font-mono text-xs text-zinc-500">
                     <AnimatedCounter
                       value={TRECE_VOTER_STATISTICS_2025.clusteredPrecincts}
                     />{' '}
@@ -114,26 +114,26 @@ const Home: React.FC = () => {
               </div>
 
               {/* Total Population (PSA 2024 POPCEN) */}
-              <div className="bg-white p-5 rounded-2xl border border-gray-200 shadow-xs">
-                <div className="flex items-center justify-between text-gray-500 text-xs font-semibold mb-2">
+              <div className="bg-white p-5 rounded-2xl border border-zinc-200 shadow-2xs hover:border-zinc-400 hover:shadow-xs transition-all">
+                <div className="flex items-center justify-between text-zinc-500 text-xs font-semibold mb-2">
                   <span>
                     {t(
                       'demographicsSummary.totalPopulation',
                       'TOTAL POPULATION (2024 POPCEN)'
                     )}
                   </span>
-                  <Users className="w-4 h-4 text-[#003893]" />
+                  <Users className="w-4 h-4 text-zinc-900" />
                 </div>
-                <div className="text-2xl sm:text-3xl font-black text-gray-900 font-mono">
+                <div className="text-2xl sm:text-3xl font-black text-zinc-900 font-mono">
                   <AnimatedCounter
                     value={
                       TRECE_MUNICIPAL_PROFILE.totalPopulation2024 || 227892
                     }
                   />
                 </div>
-                <div className="text-xs text-gray-500 mt-2 flex items-center gap-1">
-                  <TrendingUp className="w-3.5 h-3.5 text-emerald-600" />
-                  <span className="text-emerald-700 font-bold">+8.3%</span>{' '}
+                <div className="text-xs text-zinc-600 mt-2 flex items-center gap-1">
+                  <TrendingUp className="w-3.5 h-3.5 text-zinc-900" />
+                  <span className="text-zinc-900 font-bold">+8.3%</span>{' '}
                   {t('demographicsSummary.vs2020', 'vs 2020')} (
                   <AnimatedCounter
                     value={TRECE_MUNICIPAL_PROFILE.totalPopulation2020}
@@ -143,43 +143,43 @@ const Home: React.FC = () => {
               </div>
 
               {/* City Land Area & Income Status */}
-              <div className="bg-white p-5 rounded-2xl border border-gray-200 shadow-xs">
-                <div className="flex items-center justify-between text-gray-500 text-xs font-semibold mb-2">
+              <div className="bg-white p-5 rounded-2xl border border-zinc-200 shadow-2xs hover:border-zinc-400 hover:shadow-xs transition-all">
+                <div className="flex items-center justify-between text-zinc-500 text-xs font-semibold mb-2">
                   <span>
                     {t(
                       'demographicsSummary.landAreaStatus',
                       'LAND AREA & STATUS'
                     )}
                   </span>
-                  <Landmark className="w-4 h-4 text-emerald-600" />
+                  <Landmark className="w-4 h-4 text-zinc-900" />
                 </div>
-                <div className="text-2xl sm:text-3xl font-black text-gray-900 font-mono">
+                <div className="text-2xl sm:text-3xl font-black text-zinc-900 font-mono">
                   <AnimatedCounter
                     value={TRECE_MUNICIPAL_PROFILE.totalLandAreaKm2}
                     decimals={2}
                   />{' '}
-                  <span className="text-base font-medium text-gray-500">
+                  <span className="text-base font-normal text-zinc-500">
                     km²
                   </span>
                 </div>
-                <div className="text-xs text-gray-500 mt-2">
+                <div className="text-xs text-zinc-600 mt-2">
                   {TRECE_MUNICIPAL_PROFILE.incomeClass}{' '}
                   {t('demographicsSummary.componentCity', 'Component City')}
                 </div>
               </div>
 
               {/* City PSGC Code */}
-              <div className="bg-white p-5 rounded-2xl border border-gray-200 shadow-xs">
-                <div className="flex items-center justify-between text-gray-500 text-xs font-semibold mb-2">
+              <div className="bg-white p-5 rounded-2xl border border-zinc-200 shadow-2xs hover:border-zinc-400 hover:shadow-xs transition-all">
+                <div className="flex items-center justify-between text-zinc-500 text-xs font-semibold mb-2">
                   <span>
                     {t('demographicsSummary.psgcCityCode', 'PSGC CITY CODE')}
                   </span>
-                  <MapPin className="w-4 h-4 text-[#003893]" />
+                  <MapPin className="w-4 h-4 text-zinc-900" />
                 </div>
-                <div className="text-2xl sm:text-3xl font-black text-gray-900 font-mono">
+                <div className="text-2xl sm:text-3xl font-black text-zinc-900 font-mono">
                   {TRECE_MUNICIPAL_PROFILE.psgcCityCode}
                 </div>
-                <div className="text-xs text-gray-500 mt-2">
+                <div className="text-xs text-zinc-600 mt-2">
                   {t(
                     'demographicsSummary.regionNotice',
                     '13 Barangays • Region IV-A (Cavite)'
@@ -190,18 +190,18 @@ const Home: React.FC = () => {
 
             {/* Fast Facts Breakdown Strip */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-              <div className="bg-white p-4.5 rounded-2xl border border-gray-200 shadow-xs flex items-start gap-3.5">
-                <div className="w-9 h-9 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center shrink-0">
-                  <Building2 className="w-5 h-5" />
+              <div className="bg-white p-4.5 rounded-2xl border border-zinc-200 shadow-2xs flex items-start gap-3.5">
+                <div className="w-9 h-9 rounded-xl bg-zinc-100 text-zinc-900 border border-zinc-200 flex items-center justify-center shrink-0">
+                  <Building2 className="w-5 h-5 text-zinc-900" />
                 </div>
                 <div>
-                  <div className="text-xs text-gray-500 font-semibold">
+                  <div className="text-xs text-zinc-500 font-semibold">
                     Highest Population Barangay
                   </div>
-                  <div className="text-sm font-bold text-gray-900">
+                  <div className="text-sm font-bold text-zinc-900">
                     Brgy. Hugo Perez
                   </div>
-                  <div className="text-xs text-gray-600 mt-0.5">
+                  <div className="text-xs text-zinc-600 mt-0.5">
                     <AnimatedCounter value={48920} /> residents (
                     <AnimatedCounter value={23.2} decimals={1} />% of city
                     population)
@@ -209,36 +209,36 @@ const Home: React.FC = () => {
                 </div>
               </div>
 
-              <div className="bg-white p-4.5 rounded-2xl border border-gray-200 shadow-xs flex items-start gap-3.5">
-                <div className="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0">
-                  <TrendingUp className="w-5 h-5" />
+              <div className="bg-white p-4.5 rounded-2xl border border-zinc-200 shadow-2xs flex items-start gap-3.5">
+                <div className="w-9 h-9 rounded-xl bg-zinc-100 text-zinc-900 border border-zinc-200 flex items-center justify-center shrink-0">
+                  <TrendingUp className="w-5 h-5 text-zinc-900" />
                 </div>
                 <div>
-                  <div className="text-xs text-gray-500 font-semibold">
+                  <div className="text-xs text-zinc-500 font-semibold">
                     Fastest Growth Barangay
                   </div>
-                  <div className="text-sm font-bold text-gray-900">
+                  <div className="text-sm font-bold text-zinc-900">
                     Brgy. Aguado
                   </div>
-                  <div className="text-xs text-gray-600 mt-0.5">
+                  <div className="text-xs text-zinc-600 mt-0.5">
                     +<AnimatedCounter value={63.9} decimals={1} />% intercensal
                     growth (<AnimatedCounter value={36248} /> residents)
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white p-4.5 rounded-2xl border border-gray-200 shadow-xs flex items-start gap-3.5">
-                <div className="w-9 h-9 rounded-xl bg-blue-50 text-[#003893] flex items-center justify-center shrink-0">
-                  <School className="w-5 h-5" />
+              <div className="bg-white p-4.5 rounded-2xl border border-zinc-200 shadow-2xs flex items-start gap-3.5">
+                <div className="w-9 h-9 rounded-xl bg-zinc-100 text-zinc-900 border border-zinc-200 flex items-center justify-center shrink-0">
+                  <School className="w-5 h-5 text-zinc-900" />
                 </div>
                 <div>
-                  <div className="text-xs text-gray-500 font-semibold">
+                  <div className="text-xs text-zinc-500 font-semibold">
                     Electoral Centers (2025)
                   </div>
-                  <div className="text-sm font-bold text-gray-900">
+                  <div className="text-sm font-bold text-zinc-900">
                     <AnimatedCounter value={20} /> Voting Centers
                   </div>
-                  <div className="text-xs text-gray-600 mt-0.5">
+                  <div className="text-xs text-zinc-600 mt-0.5">
                     <AnimatedCounter value={783} /> established &bull;{' '}
                     <AnimatedCounter value={136} /> clustered precincts
                   </div>
@@ -249,11 +249,11 @@ const Home: React.FC = () => {
             <div className="text-center flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link
                 to="/demographics"
-                className="inline-flex items-center gap-2 bg-[#003893] hover:bg-blue-800 text-white font-bold px-5 py-2.5 rounded-xl text-xs sm:text-sm transition-all shadow-xs group"
+                className="inline-flex items-center gap-2 bg-[#003893] hover:bg-[#00225e] text-white font-semibold px-5 py-2.5 rounded-xl text-xs sm:text-sm transition-all shadow-xs group"
               >
                 <FileSpreadsheet className="w-4 h-4 text-blue-200" />
                 <span>View Full Summary Demographics &amp; Census Data</span>
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-3.5 h-3.5 text-blue-200 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </div>
@@ -263,17 +263,20 @@ const Home: React.FC = () => {
         <ContactSection />
 
         {/* 7. CIVIC TECH COMMUNITY BANNER */}
-        <section className="py-12 bg-white border-t border-gray-100">
+        <section className="py-12 bg-white border-t border-zinc-200">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto bg-gradient-to-br from-slate-900 to-[#00225e] text-white rounded-3xl p-8 sm:p-10 shadow-xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="max-w-4xl mx-auto bg-gradient-to-r from-[#001f54] via-[#00225e] to-[#003893] text-white rounded-3xl p-8 sm:p-10 shadow-lg border border-blue-900/30 flex flex-col md:flex-row items-center justify-between gap-6">
               <div className="space-y-2 text-center md:text-left">
                 <h3 className="text-2xl font-bold text-white">
-                  Join the BetterTrece Community
+                  Join the Better<span className="text-amber-300">Trece</span>{' '}
+                  Community
                 </h3>
-                <p className="text-sm text-slate-300 max-w-lg">
-                  BetterTrece is an open community initiative to help provide
-                  accessible digital portals and open data for the citizens of
-                  Trece Martires City.
+                <p className="text-sm text-blue-100/90 max-w-lg">
+                  Better
+                  <span className="text-amber-300 font-semibold">Trece</span> is
+                  an open community initiative to help provide accessible
+                  digital portals and open data for the citizens of Trece
+                  Martires City.
                 </p>
               </div>
 
@@ -282,10 +285,10 @@ const Home: React.FC = () => {
                   href="https://bettergov.ph/join-us"
                   target="_blank"
                   rel="noreferrer"
-                  className="bg-white text-slate-900 hover:bg-amber-300 hover:text-slate-950 font-bold px-5 py-2.5 rounded-xl text-sm transition-all flex items-center gap-1.5"
+                  className="bg-white text-[#00225e] hover:bg-blue-50 font-bold px-5 py-2.5 rounded-xl text-sm transition-all flex items-center gap-1.5 shadow-sm"
                 >
                   <span>Join Movement</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
+                  <ExternalLink className="w-3.5 h-3.5 text-[#00225e]" />
                 </a>
                 <a
                   href="https://github.com/bettergovph/bettergov"

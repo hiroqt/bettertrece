@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useParams, Link } from 'react-router';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -19,8 +19,6 @@ import {
   type CategoryIndex,
 } from '../data/services/yamlLoader';
 import {
-  ShieldCheck,
-  Building2,
   Clock,
   Phone,
   Printer,
@@ -29,60 +27,12 @@ import {
   ChevronRight,
   ArrowRight,
   ArrowLeft,
-  FileText,
-  Heart,
-  GraduationCap,
-  Users,
-  Wheat,
-  Wrench,
-  Trash2,
-  TreePine,
-  Shield,
-  Home as HomeIcon,
-  Briefcase,
-  Store,
-  FileCheck,
-  TrendingUp,
-  Baby,
-  AlertTriangle,
   Info,
-  CheckCircle2,
 } from 'lucide-react';
 
 interface DocumentProps {
   theme?: string;
   categoryType?: 'service' | 'government';
-}
-
-const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
-  Heart,
-  GraduationCap,
-  Building2,
-  Users,
-  Wheat,
-  Wrench,
-  Trash2,
-  TreePine,
-  Shield,
-  Home: HomeIcon,
-  Briefcase,
-  Store,
-  FileCheck,
-  TrendingUp,
-  Baby,
-  AlertTriangle,
-  FileText,
-};
-
-function CategoryIcon({
-  iconName,
-  className,
-}: {
-  iconName?: string;
-  className?: string;
-}) {
-  const Icon = (iconName && ICON_MAP[iconName]) || FileText;
-  return <Icon className={className} />;
 }
 
 export default function Document({
@@ -281,7 +231,7 @@ export default function Document({
         />
 
         <main className="flex-grow bg-slate-50/50 pb-20">
-          <section className="bg-gradient-to-r from-slate-900 via-[#00225e] to-[#003893] text-white pt-44 sm:pt-44 lg:pt-48 pb-10 sm:pb-14 border-b border-blue-900/40 shadow-inner">
+          <section className="bg-gradient-to-r from-[#001f54] via-[#00225e] to-[#003893] text-white pt-44 sm:pt-44 lg:pt-48 pb-10 sm:pb-14 border-b border-blue-900/40 shadow-inner">
             <div className="container mx-auto px-4 max-w-7xl">
               <Breadcrumbs
                 items={breadcrumbItems}
@@ -306,22 +256,22 @@ export default function Document({
                 <Link
                   key={page.slug ?? i}
                   to={`${sectionHref}/${category}/${documentSlug}/${page.slug}`}
-                  className="group bg-white rounded-2xl p-5 sm:p-6 border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all flex flex-col justify-between"
+                  className="group bg-white rounded-2xl p-5 sm:p-6 border border-zinc-200 hover:border-[#003893] hover:shadow-xs transition-all flex flex-col justify-between"
                 >
                   <div className="space-y-2">
                     <span className="text-[11px] font-bold uppercase tracking-wider text-[#003893] bg-blue-50 px-2.5 py-1 rounded-lg">
                       Citizen Guide
                     </span>
-                    <h3 className="text-base font-bold text-gray-900 group-hover:text-[#003893] transition-colors">
+                    <h3 className="text-base font-bold text-zinc-900 group-hover:text-[#003893] transition-colors">
                       {page.name}
                     </h3>
                     {page.description && (
-                      <p className="text-xs text-gray-600 line-clamp-3">
+                      <p className="text-xs text-zinc-600 line-clamp-3">
                         {page.description}
                       </p>
                     )}
                   </div>
-                  <div className="pt-4 mt-4 border-t border-gray-100 flex items-center justify-between text-xs font-semibold text-[#003893]">
+                  <div className="pt-4 mt-4 border-t border-zinc-100 flex items-center justify-between text-xs font-semibold text-[#003893]">
                     <span>Read Details</span>
                     <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -338,6 +288,15 @@ export default function Document({
 
   // Filter sibling pages to exclude current page
   const otherSiblingGuides = siblingPages.filter(p => p.slug !== documentSlug);
+  const currentGuideIndex = siblingPages.findIndex(
+    p => p.slug === documentSlug
+  );
+  const prevGuide =
+    currentGuideIndex > 0 ? siblingPages[currentGuideIndex - 1] : null;
+  const nextGuide =
+    currentGuideIndex >= 0 && currentGuideIndex < siblingPages.length - 1
+      ? siblingPages[currentGuideIndex + 1]
+      : null;
 
   return (
     <>
@@ -350,9 +309,9 @@ export default function Document({
         keywords={`${markdownContent.title || documentSlug}, ${categoryData?.category || ''}, Trece Martires city services, public procedures, citizen guide, Cavite`}
       />
 
-      <main className="flex-grow bg-slate-50/50 pb-20">
+      <main className="flex-grow bg-zinc-50/50 pb-20">
         {/* Top Hero Banner */}
-        <section className="bg-gradient-to-r from-slate-900 via-[#00225e] to-[#003893] text-white pt-44 sm:pt-44 lg:pt-48 pb-10 sm:pb-14 border-b border-blue-900/40 shadow-inner print:hidden">
+        <section className="bg-gradient-to-r from-[#001f54] via-[#00225e] to-[#003893] text-white pt-44 sm:pt-44 lg:pt-48 pb-10 sm:pb-14 border-b border-blue-900/40 shadow-inner print:hidden">
           <div className="container mx-auto px-4 max-w-7xl">
             <Breadcrumbs
               items={breadcrumbItems}
@@ -361,28 +320,6 @@ export default function Document({
 
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
               <div className="space-y-3 max-w-3xl">
-                <div className="flex flex-wrap items-center gap-2">
-                  {categoryData && (
-                    <Link
-                      to={`${sectionHref}/${category}`}
-                      className="px-3 py-1 rounded-full text-xs font-bold bg-amber-400/20 text-amber-300 border border-amber-400/30 flex items-center gap-1.5 hover:bg-amber-400/30 transition-colors"
-                    >
-                      <CategoryIcon
-                        iconName={categoryData.icon}
-                        className="w-3.5 h-3.5"
-                      />
-                      <span>{categoryData.category}</span>
-                    </Link>
-                  )}
-                  <span className="px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-white/10 text-blue-100 border border-white/15">
-                    Official Citizen Charter
-                  </span>
-                  <span className="px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 flex items-center gap-1">
-                    <CheckCircle2 className="w-3 h-3" />
-                    <span>Verified Guidelines</span>
-                  </span>
-                </div>
-
                 <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-tight">
                   {markdownContent.title || documentSlug}
                 </h1>
@@ -398,7 +335,7 @@ export default function Document({
               <div className="flex flex-wrap items-center gap-2.5 shrink-0">
                 <button
                   onClick={handleCopyLink}
-                  className="inline-flex items-center gap-1.5 bg-white/10 hover:bg-white/20 text-white px-3.5 py-2.5 rounded-xl text-xs font-bold transition-all border border-white/20 shadow-xs focus:ring-2 focus:ring-amber-300"
+                  className="inline-flex items-center gap-1.5 bg-white/10 hover:bg-white/20 text-white px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all border border-white/20 shadow-xs focus:ring-2 focus:ring-white"
                 >
                   {copied ? (
                     <>
@@ -407,7 +344,7 @@ export default function Document({
                     </>
                   ) : (
                     <>
-                      <Copy className="w-4 h-4 text-amber-300" />
+                      <Copy className="w-4 h-4 text-blue-200" />
                       <span>Copy Link</span>
                     </>
                   )}
@@ -415,7 +352,7 @@ export default function Document({
 
                 <button
                   onClick={handlePrint}
-                  className="inline-flex items-center gap-1.5 bg-white/10 hover:bg-white/20 text-white px-3.5 py-2.5 rounded-xl text-xs font-bold transition-all border border-white/20 shadow-xs focus:ring-2 focus:ring-amber-300"
+                  className="inline-flex items-center gap-1.5 bg-white/10 hover:bg-white/20 text-white px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all border border-white/20 shadow-xs focus:ring-2 focus:ring-white"
                 >
                   <Printer className="w-4 h-4 text-blue-200" />
                   <span>Print Guide</span>
@@ -424,9 +361,9 @@ export default function Document({
                 {category && (
                   <Link
                     to={`${sectionHref}/${category}`}
-                    className="inline-flex items-center gap-1.5 bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold px-4 py-2.5 rounded-xl text-xs transition-all shadow-xs"
+                    className="inline-flex items-center gap-1.5 bg-white hover:bg-blue-50 text-[#00225e] font-bold px-4 py-2.5 rounded-xl text-xs transition-all shadow-xs"
                   >
-                    <ArrowLeft className="w-3.5 h-3.5" />
+                    <ArrowLeft className="w-3.5 h-3.5 text-[#00225e]" />
                     <span>
                       Back to {categoryData?.category || sectionLabel}
                     </span>
@@ -443,7 +380,7 @@ export default function Document({
             {/* Left Main Reading Area */}
             <div className="lg:col-span-8 space-y-6">
               {/* Document Content Card */}
-              <article className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 lg:p-10 border border-gray-200 shadow-sm markdown-content">
+              <article className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 lg:p-10 border border-zinc-200 shadow-2xs markdown-content">
                 <ReactMarkdown
                   remarkPlugins={[remarkGfm]}
                   components={markdownComponents}
@@ -451,22 +388,58 @@ export default function Document({
                   {markdownContent.content}
                 </ReactMarkdown>
 
-                {/* Bottom Callout in Article */}
-                <div className="mt-10 pt-6 border-t border-gray-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs text-gray-500">
-                  <div className="flex items-center gap-2">
-                    <ShieldCheck className="w-4 h-4 text-emerald-600" />
-                    <span>
-                      Public service information verified by BetterTrece civic
-                      open data initiative.
-                    </span>
+                {/* Bottom Navigation between guides */}
+                <div className="mt-12 pt-6 border-t border-zinc-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+                  {prevGuide ? (
+                    <Link
+                      to={`${sectionHref}/${category}/${prevGuide.slug}`}
+                      className="group flex items-center gap-2.5 text-xs text-zinc-600 hover:text-zinc-900 transition-colors w-full sm:w-auto p-3 rounded-xl hover:bg-zinc-50 border border-transparent hover:border-zinc-200"
+                    >
+                      <ArrowLeft className="w-4 h-4 text-zinc-400 group-hover:text-zinc-900 transition-transform group-hover:-translate-x-0.5" />
+                      <div className="text-left">
+                        <div className="text-[10px] text-zinc-400 uppercase font-semibold">
+                          Previous Guide
+                        </div>
+                        <div className="font-bold text-zinc-900 line-clamp-1">
+                          {prevGuide.name}
+                        </div>
+                      </div>
+                    </Link>
+                  ) : (
+                    <div />
+                  )}
+
+                  {nextGuide && (
+                    <Link
+                      to={`${sectionHref}/${category}/${nextGuide.slug}`}
+                      className="group flex items-center gap-2.5 text-xs text-zinc-600 hover:text-zinc-900 transition-colors w-full sm:w-auto p-3 rounded-xl hover:bg-zinc-50 border border-transparent hover:border-zinc-200 justify-end text-right"
+                    >
+                      <div className="text-right">
+                        <div className="text-[10px] text-zinc-400 uppercase font-semibold">
+                          Next Guide
+                        </div>
+                        <div className="font-bold text-zinc-900 line-clamp-1">
+                          {nextGuide.name}
+                        </div>
+                      </div>
+                      <ArrowRight className="w-4 h-4 text-zinc-400 group-hover:text-zinc-900 transition-transform group-hover:translate-x-0.5" />
+                    </Link>
+                  )}
+                </div>
+
+                {/* Back to Category Footer Button */}
+                <div className="mt-6 pt-4 border-t border-zinc-100 flex items-center justify-between">
+                  <div className="text-xs text-zinc-400">
+                    Source: City of Trece Martires Citizen&apos;s Charter
                   </div>
+
                   {category && (
                     <Link
                       to={`${sectionHref}/${category}`}
-                      className="font-bold text-[#003893] hover:underline inline-flex items-center gap-1 shrink-0"
+                      className="inline-flex items-center gap-1 text-xs font-bold text-zinc-900 hover:underline"
                     >
                       <span>
-                        Explore all {categoryData?.category || ''} guides
+                        All {categoryData?.category || sectionLabel} Services
                       </span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
@@ -479,42 +452,42 @@ export default function Document({
             <aside className="lg:col-span-4 space-y-6">
               <div className="space-y-6 lg:sticky lg:top-24">
                 {/* At a Glance Box */}
-                <div className="bg-white rounded-2xl p-5 border border-gray-200 shadow-xs space-y-4">
-                  <div className="flex items-center gap-2 text-[#003893] font-bold text-xs uppercase tracking-wider">
-                    <Info className="w-4 h-4 text-amber-500" />
+                <div className="bg-white rounded-2xl p-5 border border-zinc-200 shadow-2xs space-y-4">
+                  <div className="flex items-center gap-2 text-zinc-900 font-bold text-xs uppercase tracking-wider">
+                    <Info className="w-4 h-4 text-zinc-900" />
                     <span>Quick Summary</span>
                   </div>
 
-                  <div className="space-y-3 text-xs divide-y divide-gray-100">
+                  <div className="space-y-3 text-xs divide-y divide-zinc-100">
                     {categoryData && (
                       <div className="pt-2 flex items-start justify-between gap-2">
-                        <span className="text-gray-500">Category:</span>
+                        <span className="text-zinc-500">Category:</span>
                         <Link
                           to={`${sectionHref}/${category}`}
-                          className="font-bold text-[#003893] hover:underline text-right"
+                          className="font-bold text-zinc-900 hover:underline text-right"
                         >
                           {categoryData.category}
                         </Link>
                       </div>
                     )}
                     <div className="pt-2.5 flex items-start justify-between gap-2">
-                      <span className="text-gray-500">Service Type:</span>
-                      <span className="font-semibold text-gray-900 text-right">
+                      <span className="text-zinc-500">Service Type:</span>
+                      <span className="font-semibold text-zinc-900 text-right">
                         Local City Government Service
                       </span>
                     </div>
                     <div className="pt-2.5 flex items-start justify-between gap-2">
-                      <span className="text-gray-500 flex items-center gap-1">
-                        <Clock className="w-3 h-3 text-amber-500" />
+                      <span className="text-zinc-500 flex items-center gap-1">
+                        <Clock className="w-3 h-3 text-zinc-900" />
                         <span>Office Hours:</span>
                       </span>
-                      <span className="font-semibold text-gray-900 text-right">
+                      <span className="font-semibold text-zinc-900 text-right">
                         Mon–Fri, 8:00 AM – 5:00 PM
                       </span>
                     </div>
                     <div className="pt-2.5 flex items-start justify-between gap-2">
-                      <span className="text-gray-500">Location:</span>
-                      <span className="font-semibold text-gray-900 text-right">
+                      <span className="text-zinc-500">Location:</span>
+                      <span className="font-semibold text-zinc-900 text-right">
                         City Hall / Barangay Offices
                       </span>
                     </div>
@@ -523,12 +496,12 @@ export default function Document({
 
                 {/* Sibling Guides in Same Category */}
                 {otherSiblingGuides.length > 0 && (
-                  <div className="bg-white rounded-2xl p-5 border border-gray-200 shadow-xs space-y-3">
+                  <div className="bg-white rounded-2xl p-5 border border-zinc-200 shadow-2xs space-y-3">
                     <div className="flex items-center justify-between">
-                      <h3 className="text-xs font-bold uppercase tracking-wider text-gray-700">
+                      <h3 className="text-xs font-bold uppercase tracking-wider text-zinc-700">
                         More {categoryData?.category || 'Related'} Guides
                       </h3>
-                      <span className="text-[11px] text-gray-400 font-mono">
+                      <span className="text-xs text-zinc-400 font-mono">
                         {otherSiblingGuides.length}
                       </span>
                     </div>
@@ -538,11 +511,11 @@ export default function Document({
                         <li key={gIdx}>
                           <Link
                             to={`${sectionHref}/${category}/${guide.slug}`}
-                            className="group/item flex items-start gap-2 p-2.5 rounded-xl hover:bg-blue-50/80 transition-colors border border-transparent hover:border-blue-100"
+                            className="group/item flex items-start gap-2 p-2.5 rounded-xl hover:bg-zinc-50 transition-colors border border-transparent hover:border-zinc-200"
                           >
-                            <ChevronRight className="w-3.5 h-3.5 text-gray-400 group-hover/item:text-[#003893] shrink-0 mt-0.5" />
+                            <ChevronRight className="w-3.5 h-3.5 text-zinc-400 group-hover/item:text-zinc-900 shrink-0 mt-0.5" />
                             <div className="min-w-0">
-                              <div className="text-xs font-bold text-gray-800 group-hover/item:text-[#003893] transition-colors line-clamp-2 leading-snug">
+                              <div className="text-xs font-semibold text-zinc-800 group-hover/item:text-zinc-900 transition-colors line-clamp-2 leading-snug">
                                 {guide.name}
                               </div>
                             </div>
@@ -552,10 +525,10 @@ export default function Document({
                     </ul>
 
                     {category && (
-                      <div className="pt-2 border-t border-gray-100">
+                      <div className="pt-2 border-t border-zinc-100">
                         <Link
                           to={`${sectionHref}/${category}`}
-                          className="text-xs font-bold text-[#003893] hover:underline flex items-center justify-between"
+                          className="text-xs font-bold text-zinc-900 hover:underline flex items-center justify-between"
                         >
                           <span>
                             View Full {categoryData?.category} Directory
@@ -567,10 +540,10 @@ export default function Document({
                   </div>
                 )}
 
-                {/* Emergency & Citizen Hotlines Callout */}
-                <div className="bg-gradient-to-br from-slate-900 to-[#00225e] text-white rounded-2xl p-5 shadow-sm space-y-3 border border-blue-900/30">
-                  <div className="flex items-center gap-2 text-amber-300 font-bold text-xs uppercase tracking-wider">
-                    <Phone className="w-4 h-4" />
+                {/* Emergency & Citizen Hotlines Callout - Blue Gradient Card */}
+                <div className="bg-gradient-to-br from-[#001f54] to-[#003893] text-white rounded-2xl p-5 shadow-2xs space-y-3 border border-blue-900/30">
+                  <div className="flex items-center gap-2 text-blue-200 font-bold text-xs uppercase tracking-wider">
+                    <Phone className="w-4 h-4 text-blue-200" />
                     <span>24/7 Citizen Hotlines</span>
                   </div>
                   <p className="text-xs text-blue-100/90 leading-relaxed">
@@ -580,9 +553,9 @@ export default function Document({
                   <div className="pt-2 flex items-center gap-2">
                     <Link
                       to="/government#hotlines"
-                      className="inline-flex items-center gap-1.5 bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold px-3.5 py-2 rounded-xl text-xs transition-colors shadow-xs"
+                      className="inline-flex items-center gap-1.5 bg-white hover:bg-blue-50 text-[#00225e] font-bold px-3.5 py-2 rounded-xl text-xs transition-colors shadow-2xs"
                     >
-                      <Phone className="w-3.5 h-3.5" />
+                      <Phone className="w-3.5 h-3.5 text-[#00225e]" />
                       <span>View All Hotlines</span>
                     </Link>
                   </div>

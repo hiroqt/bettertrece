@@ -27,28 +27,24 @@ const About: React.FC = () => {
     {
       number: '01',
       icon: ShieldCheck,
-      color: 'text-amber-500 bg-amber-500/10 border-amber-500/20',
       title: 'Open Governance & Transparency',
       desc: 'Integrating verified public datasets from DOF-BLGF, DBM, PSA, and DPWH so citizens can track local budgets and public works with complete clarity.',
     },
     {
       number: '02',
       icon: Users,
-      color: 'text-blue-500 bg-blue-500/10 border-blue-500/20',
       title: 'Citizen-First Civic Usability',
       desc: 'Transforming complex administrative procedures into clear, step-by-step guides in English and Filipino, accessible on any smartphone or computer.',
     },
     {
       number: '03',
       icon: Zap,
-      color: 'text-emerald-500 bg-emerald-500/10 border-emerald-500/20',
       title: 'Modern & Lightning-Fast Tech',
       desc: 'Built with modern web technologies including React, TypeScript, and Vite. Zero ads, zero bloat, zero tracking scripts, and instant page transitions.',
     },
     {
       number: '04',
       icon: Layers,
-      color: 'text-purple-500 bg-purple-500/10 border-purple-500/20',
       title: 'Community & Open Source',
       desc: 'An open-source initiative built for the public good. Anyone can view the codebase, verify data transformations, and contribute improvements.',
     },
@@ -135,23 +131,10 @@ const About: React.FC = () => {
 
       <main className="flex-grow bg-slate-50 min-h-screen">
         {/* HERO SECTION */}
-        <section className="relative bg-[#001438] text-white pt-44 sm:pt-44 lg:pt-48 pb-16 lg:pb-20 overflow-hidden">
-          {/* Background image & gradient overlay */}
-          <div
-            className="absolute inset-0 bg-cover bg-center opacity-40 pointer-events-none"
-            style={{
-              backgroundImage: `url('/images/trece-martires-monument.png')`,
-            }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#001438] via-[#00225e]/90 to-[#002868]/75 pointer-events-none" />
-
-          {/* Decorative glows */}
-          <div className="absolute top-0 right-1/4 w-96 h-96 bg-amber-400/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 left-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
-
+        <section className="relative bg-gradient-to-r from-[#001f54] via-[#00225e] to-[#003893] text-white pt-44 sm:pt-44 lg:pt-48 pb-16 lg:pb-20 overflow-hidden border-b border-blue-900/40">
           <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-5xl">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-tight">
-              Why I Built <span className="text-yellow-300">BetterTrece</span>
+              Why I Built Better<span className="text-amber-300">Trece</span>
               .org
             </h1>
 
@@ -162,17 +145,17 @@ const About: React.FC = () => {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4 items-center text-xs sm:text-sm text-blue-200">
-              <span className="flex items-center gap-1.5 bg-white/10 px-3 py-1.5 rounded-lg border border-white/15">
-                <MapPin className="w-4 h-4 text-amber-400" />
+              <span className="flex items-center gap-1.5 bg-white/10 px-3 py-1.5 rounded-lg border border-white/20 text-white">
+                <MapPin className="w-4 h-4 text-blue-200" />
                 Trece Martires City, Cavite
               </span>
-              <span className="flex items-center gap-1.5 bg-white/10 px-3 py-1.5 rounded-lg border border-white/15">
-                <Landmark className="w-4 h-4 text-emerald-400" />
+              <span className="flex items-center gap-1.5 bg-white/10 px-3 py-1.5 rounded-lg border border-white/20 text-white">
+                <Landmark className="w-4 h-4 text-blue-200" />
                 2nd Class Component City
               </span>
-              <span className="flex items-center gap-1.5 bg-white/10 px-3 py-1.5 rounded-lg border border-white/15">
-                <Code className="w-4 h-4 text-blue-400" />
-                Open Source & Non-Profit
+              <span className="flex items-center gap-1.5 bg-white/10 px-3 py-1.5 rounded-lg border border-white/20 text-white">
+                <Code className="w-4 h-4 text-blue-200" />
+                Open Source &amp; Non-Profit
               </span>
             </div>
           </div>
@@ -195,35 +178,35 @@ const About: React.FC = () => {
           {/* SECTION 1: THE SPARK & DEVELOPER'S STORY */}
           <section className="bg-white rounded-2xl border border-gray-200 p-6 sm:p-10 shadow-xs">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#003893] flex items-center justify-center font-bold">
-                <Heart className="w-5 h-5 text-red-500 fill-red-500" />
+              <div className="w-10 h-10 rounded-xl bg-zinc-100 text-zinc-900 border border-zinc-200 flex items-center justify-center font-bold">
+                <Heart className="w-5 h-5 text-zinc-900" />
               </div>
               <div>
-                <h2 className="text-xl sm:text-2xl font-black text-gray-900">
+                <h2 className="text-xl sm:text-2xl font-black text-zinc-900">
                   The Story Behind the Project
                 </h2>
-                <p className="text-xs text-gray-500">
+                <p className="text-xs text-zinc-500">
                   A personal note from the creator, Arnel Baylon
                 </p>
               </div>
             </div>
 
-            <div className="text-gray-700 space-y-5 text-sm sm:text-base leading-relaxed">
+            <div className="text-zinc-700 space-y-5 text-sm sm:text-base leading-relaxed">
               <p>
                 As a software Developer and long-time resident of Cavite, I have
                 always believed that access to local public services, city
                 ordinances, and fiscal data should be effortless. Yet for years,
                 finding straightforward answers to everyday civic questions,
                 such as{' '}
-                <strong className="text-gray-900 font-bold">
+                <strong className="text-zinc-900 font-bold">
                   “Where do I apply for a business clearance?”
                 </strong>
                 ,{' '}
-                <strong className="text-gray-900 font-bold">
+                <strong className="text-zinc-900 font-bold">
                   “What is our city’s budget?”
                 </strong>
                 , or{' '}
-                <strong className="text-gray-900 font-bold">
+                <strong className="text-zinc-900 font-bold">
                   “What are the active flood control projects in my barangay?”
                 </strong>
                 , meant digging through scattered Facebook posts, unindexed PDF
@@ -232,51 +215,47 @@ const About: React.FC = () => {
 
               <p>
                 I built{' '}
-                <strong className="text-gray-900 font-bold">
+                <strong className="text-zinc-900 font-bold">
                   BetterTrece.org
                 </strong>{' '}
                 to change that. I wanted to prove what a modern, citizen-centric
                 government portal could look like when designed with{' '}
-                <strong className="text-gray-900 font-bold">speed</strong>,{' '}
-                <strong className="text-gray-900 font-bold">
+                <strong className="text-zinc-900 font-bold">speed</strong>,{' '}
+                <strong className="text-zinc-900 font-bold">
                   accessibility
                 </strong>
                 , and{' '}
-                <strong className="text-gray-900 font-bold">
+                <strong className="text-zinc-900 font-bold">
                   uncompromising visual clarity
                 </strong>
                 .
               </p>
 
               {/* MODERN QUOTE CARD */}
-              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#001f54]/5 via-blue-50/70 to-amber-50/40 border border-blue-200/80 p-6 sm:p-8 my-8 shadow-xs">
-                {/* Decorative background watermark */}
-                <Quote className="absolute right-4 -bottom-4 w-32 h-32 text-blue-900/[0.04] pointer-events-none" />
-
+              <div className="relative overflow-hidden rounded-2xl bg-zinc-50 border border-zinc-200 p-6 sm:p-8 my-8 shadow-2xs">
                 <div className="relative z-10 space-y-4">
-                  <div className="w-10 h-10 rounded-xl bg-[#003893] text-white flex items-center justify-center shadow-md shadow-blue-900/15 shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-zinc-900 text-white flex items-center justify-center shadow-xs shrink-0">
                     <Quote className="w-5 h-5 fill-current" />
                   </div>
 
-                  <blockquote className="text-gray-900 font-bold text-base sm:text-lg lg:text-xl leading-snug sm:leading-normal tracking-tight">
+                  <blockquote className="text-zinc-900 font-bold text-base sm:text-lg lg:text-xl leading-snug sm:leading-normal tracking-tight">
                     “Public data belongs to the public. When government
                     information is clean, searchable, and transparent, citizens
                     become more engaged, businesses flourish, and communities
                     thrive.”
                   </blockquote>
 
-                  <div className="border-t border-blue-200/60 pt-4 mt-4 flex items-center justify-between flex-wrap gap-3">
+                  <div className="border-t border-zinc-200 pt-4 mt-4 flex items-center justify-between flex-wrap gap-3">
                     <div>
-                      <div className="font-bold text-gray-900 text-sm sm:text-base leading-tight">
+                      <div className="font-bold text-zinc-900 text-sm sm:text-base leading-tight">
                         Arnel Baylon
                       </div>
-                      <div className="text-xs text-blue-800 font-semibold">
+                      <div className="text-xs text-zinc-600 font-medium">
                         Creator & Developer, BetterTrece.org
                       </div>
                     </div>
 
-                    <div className="inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full bg-blue-100/80 text-blue-900 border border-blue-200/60">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                    <div className="inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-900 border border-zinc-200">
                       Civic Tech Initiative
                     </div>
                   </div>
@@ -288,8 +267,8 @@ const About: React.FC = () => {
                 PSA geocodes, COMELEC voter statistics, DBM revenue collections,
                 and DPWH infrastructure contracts into an intuitive, high-speed
                 web interface. Everything is organized to be accessible in both{' '}
-                <strong className="text-gray-900 font-bold">English</strong> and{' '}
-                <strong className="text-gray-900 font-bold">Filipino</strong>,
+                <strong className="text-zinc-900 font-bold">English</strong> and{' '}
+                <strong className="text-zinc-900 font-bold">Filipino</strong>,
                 responsive on mobile phones, and completely free of advertising
                 or commercial trackers.
               </p>
@@ -301,16 +280,16 @@ const About: React.FC = () => {
                   return (
                     <div
                       key={idx}
-                      className="bg-slate-50 border border-gray-200/90 rounded-xl p-3.5 flex flex-col justify-between"
+                      className="bg-white border border-zinc-200 rounded-xl p-3.5 flex flex-col justify-between shadow-2xs"
                     >
-                      <div className="w-7 h-7 rounded-lg bg-blue-50 text-[#003893] flex items-center justify-center mb-2">
-                        <FeatIcon className="w-4 h-4" />
+                      <div className="w-8 h-8 rounded-lg bg-zinc-100 text-zinc-900 border border-zinc-200 flex items-center justify-center mb-2">
+                        <FeatIcon className="w-4 h-4 text-zinc-900" />
                       </div>
                       <div>
-                        <div className="text-xs font-bold text-gray-900">
+                        <div className="text-xs font-bold text-zinc-900">
                           {feat.label}
                         </div>
-                        <div className="text-[11px] text-gray-500 font-medium mt-0.5">
+                        <div className="text-xs text-zinc-600 font-normal mt-0.5">
                           {feat.desc}
                         </div>
                       </div>
@@ -324,10 +303,10 @@ const About: React.FC = () => {
           {/* SECTION 2: CORE PILLARS */}
           <section className="space-y-6">
             <div className="text-center max-w-2xl mx-auto">
-              <h2 className="text-2xl sm:text-3xl font-black text-gray-900">
+              <h2 className="text-2xl sm:text-3xl font-black text-zinc-900">
                 Four Pillars of BetterTrece
               </h2>
-              <p className="text-gray-600 text-sm mt-1">
+              <p className="text-zinc-600 text-sm mt-1">
                 The design and engineering principles guiding every feature we
                 build.
               </p>
@@ -339,23 +318,21 @@ const About: React.FC = () => {
                 return (
                   <div
                     key={idx}
-                    className="bg-white rounded-2xl border border-gray-200 p-6 shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between relative overflow-hidden group"
+                    className="bg-white rounded-2xl border border-zinc-200 p-6 shadow-2xs hover:border-zinc-400 hover:shadow-xs transition-all flex flex-col justify-between relative"
                   >
                     <div>
                       <div className="flex items-center justify-between mb-4">
-                        <div
-                          className={`w-10 h-10 rounded-xl flex items-center justify-center border ${pillar.color}`}
-                        >
-                          <Icon className="w-5 h-5" />
+                        <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-zinc-100 text-zinc-900 border border-zinc-200">
+                          <Icon className="w-5 h-5 text-zinc-900" />
                         </div>
-                        <span className="text-xs font-black text-gray-300 font-mono tracking-wider group-hover:text-blue-600 transition-colors">
+                        <span className="text-xs font-bold text-zinc-400 font-mono">
                           {pillar.number}
                         </span>
                       </div>
-                      <h3 className="text-lg font-bold text-gray-900 mb-2">
+                      <h3 className="text-base sm:text-lg font-bold text-zinc-900 mb-2">
                         {pillar.title}
                       </h3>
-                      <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+                      <p className="text-zinc-600 text-xs sm:text-sm leading-relaxed">
                         {pillar.desc}
                       </p>
                     </div>
@@ -366,43 +343,43 @@ const About: React.FC = () => {
           </section>
 
           {/* SECTION 3: OFFICIAL DATA SOURCES & INTEGRATIONS */}
-          <section className="bg-white rounded-2xl border border-gray-200 p-6 sm:p-10 shadow-xs">
+          <section className="bg-white rounded-2xl border border-zinc-200 p-6 sm:p-10 shadow-2xs">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold">
-                <BarChart3 className="w-5 h-5" />
+              <div className="w-10 h-10 rounded-xl bg-zinc-100 text-zinc-900 border border-zinc-200 flex items-center justify-center font-bold">
+                <BarChart3 className="w-5 h-5 text-zinc-900" />
               </div>
               <div>
-                <h2 className="text-xl sm:text-2xl font-black text-gray-900">
+                <h2 className="text-xl sm:text-2xl font-black text-zinc-900">
                   Data Sourcing & Integrity
                 </h2>
-                <p className="text-xs text-gray-500">
+                <p className="text-xs text-zinc-500">
                   Direct links to official Philippine public record sources
                 </p>
               </div>
             </div>
 
-            <p className="text-sm text-gray-600 mb-6 leading-relaxed">
+            <p className="text-sm text-zinc-600 mb-6 leading-relaxed">
               Every statistic, demographic metric, project budget, and legal
               charter referenced on{' '}
-              <strong className="text-gray-900 font-bold">
+              <strong className="text-zinc-900 font-bold">
                 BetterTrece.org
               </strong>{' '}
               is grounded in official government reports and open-data
               standards:
             </p>
 
-            <div className="divide-y divide-gray-100 border border-gray-200 rounded-xl overflow-hidden">
+            <div className="divide-y divide-zinc-100 border border-zinc-200 rounded-xl overflow-hidden">
               {dataSources.map((source, index) => (
                 <div
                   key={index}
-                  className="p-4 sm:p-5 hover:bg-slate-50/80 transition-colors flex flex-col sm:flex-row sm:items-center justify-between gap-3"
+                  className="p-4 sm:p-5 hover:bg-zinc-50 transition-colors flex flex-col sm:flex-row sm:items-center justify-between gap-3"
                 >
                   <div className="space-y-1">
-                    <div className="font-bold text-gray-900 text-sm sm:text-base flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                    <div className="font-bold text-zinc-900 text-sm sm:text-base flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-zinc-900 shrink-0" />
                       {source.name}
                     </div>
-                    <p className="text-xs text-gray-600 leading-relaxed max-w-2xl pl-6">
+                    <p className="text-xs text-zinc-600 leading-relaxed max-w-2xl pl-6">
                       {source.scope}
                     </p>
                   </div>
@@ -410,10 +387,10 @@ const About: React.FC = () => {
                     href={source.url}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#003893] hover:text-blue-700 bg-blue-50 px-3 py-1.5 rounded-lg shrink-0 self-start sm:self-center transition-colors"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-900 hover:text-zinc-700 bg-zinc-100 border border-zinc-200 px-3 py-1.5 rounded-lg shrink-0 self-start sm:self-center transition-colors"
                   >
                     <span>Visit Source</span>
-                    <ExternalLink className="w-3.5 h-3.5" />
+                    <ExternalLink className="w-3.5 h-3.5 text-zinc-600" />
                   </a>
                 </div>
               ))}
@@ -423,7 +400,7 @@ const About: React.FC = () => {
           {/* SECTION 4: FREQUENTLY ASKED QUESTIONS */}
           <section className="space-y-6">
             <div className="text-center max-w-2xl mx-auto">
-              <h2 className="text-2xl sm:text-3xl font-black text-gray-900">
+              <h2 className="text-2xl sm:text-3xl font-black text-zinc-900">
                 Frequently Asked Questions
               </h2>
             </div>
@@ -432,13 +409,13 @@ const About: React.FC = () => {
               {faqs.map((faq, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-2xl border border-gray-200 p-6 shadow-xs"
+                  className="bg-white rounded-2xl border border-zinc-200 p-6 shadow-2xs"
                 >
-                  <h3 className="font-bold text-gray-900 text-base mb-2 flex items-start gap-2">
-                    <HelpCircle className="w-5 h-5 text-amber-500 shrink-0 mt-0.5" />
+                  <h3 className="font-bold text-zinc-900 text-base mb-2 flex items-start gap-2">
+                    <HelpCircle className="w-5 h-5 text-zinc-900 shrink-0 mt-0.5" />
                     <span>{faq.q}</span>
                   </h3>
-                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed pl-7">
+                  <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed pl-7">
                     {faq.a}
                   </p>
                 </div>
@@ -447,32 +424,32 @@ const About: React.FC = () => {
           </section>
 
           {/* SECTION 5: CTA BANNER */}
-          <section className="bg-gradient-to-br from-[#001438] via-[#00225e] to-[#003893] text-white rounded-3xl p-8 sm:p-12 shadow-xl relative overflow-hidden text-center">
+          <section className="bg-gradient-to-r from-[#001f54] via-[#00225e] to-[#003893] text-white rounded-3xl p-8 sm:p-12 shadow-lg border border-blue-900/30 text-center">
             <div className="relative z-10 max-w-2xl mx-auto space-y-6">
               <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
                 Explore Trece Martires City Today
               </h2>
-              <p className="text-blue-100 text-sm sm:text-base leading-relaxed">
+              <p className="text-blue-100/90 text-sm sm:text-base leading-relaxed">
                 Discover government service guides, inspect 100+ DPWH
                 infrastructure projects, or explore official city demographics.
               </p>
               <div className="flex flex-wrap justify-center gap-4 pt-2">
                 <Link
                   to="/services"
-                  className="inline-flex items-center gap-2 bg-white text-[#003893] hover:bg-blue-50 font-bold px-6 py-3 rounded-xl shadow-lg transition-all text-sm group"
+                  className="inline-flex items-center gap-2 bg-white text-[#00225e] hover:bg-blue-50 font-bold px-6 py-3 rounded-xl shadow-md transition-all text-sm group"
                 >
                   <span>Browse Services</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                  <ArrowRight className="w-4 h-4 text-[#00225e] group-hover:translate-x-0.5 transition-transform" />
                 </Link>
                 <Link
                   to="/demographics"
-                  className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/30 font-semibold px-6 py-3 rounded-xl transition-all text-sm"
+                  className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-6 py-3 rounded-xl transition-all text-sm"
                 >
                   <span>City Demographics</span>
                 </Link>
                 <Link
                   to="/transparency/dpwh"
-                  className="inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold px-6 py-3 rounded-xl shadow-lg transition-all text-sm"
+                  className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-6 py-3 rounded-xl transition-all text-sm"
                 >
                   <span>DPWH Projects</span>
                 </Link>

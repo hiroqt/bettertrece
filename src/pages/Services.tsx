@@ -31,8 +31,6 @@ import {
   FileText,
   Layers,
   Sparkles,
-  CheckCircle2,
-  Info,
   Grid,
   List as ListIcon,
   Briefcase,
@@ -326,22 +324,12 @@ const Services: React.FC = () => {
 
         <main className="flex-grow bg-slate-50/50 pb-20">
           {/* Top Hero Banner */}
-          <section className="bg-gradient-to-r from-slate-900 via-[#00225e] to-[#003893] text-white pt-44 sm:pt-44 lg:pt-48 pb-10 sm:pb-14 border-b border-blue-900/40 shadow-inner">
+          <section className="bg-gradient-to-r from-[#001f54] via-[#00225e] to-[#003893] text-white pt-44 sm:pt-44 lg:pt-48 pb-10 sm:pb-14 border-b border-blue-900/40 shadow-inner">
             <div className="container mx-auto px-4 max-w-7xl">
               <Breadcrumbs items={breadcrumbs} className="mb-6 text-blue-200" />
 
               <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
                 <div className="space-y-3 max-w-3xl">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-white/10 text-blue-100 border border-white/15">
-                      {categoryIndex.pages.length} Detailed Guides
-                    </span>
-                    <span className="px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 flex items-center gap-1">
-                      <CheckCircle2 className="w-3 h-3" />
-                      <span>Official Citizen Charter</span>
-                    </span>
-                  </div>
-
                   <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
                     {categoryData.category}
                   </h1>
@@ -352,11 +340,11 @@ const Services: React.FC = () => {
                 </div>
 
                 {/* Fast Service Metadata Card */}
-                <div className="flex items-center gap-4 bg-white/10 backdrop-blur-md p-4 sm:p-5 rounded-2xl border border-white/15 shrink-0 max-w-md">
-                  <div className="w-12 h-12 rounded-xl bg-amber-400/20 text-amber-300 flex items-center justify-center shrink-0">
+                <div className="flex items-center gap-4 bg-gradient-to-br from-[#001f54]/90 to-[#002e7a]/90 p-4 sm:p-5 rounded-2xl border border-blue-400/30 shrink-0 max-w-md">
+                  <div className="w-12 h-12 rounded-xl bg-white/15 text-white flex items-center justify-center shrink-0">
                     <CategoryIcon
                       iconName={categoryData.icon}
-                      className="w-6 h-6"
+                      className="w-6 h-6 text-blue-200"
                     />
                   </div>
                   <div className="space-y-0.5 text-xs text-blue-100">
@@ -364,10 +352,10 @@ const Services: React.FC = () => {
                       Citizen Charter Directory
                     </div>
                     <div className="flex items-center gap-1 text-blue-200">
-                      <Clock className="w-3 h-3 text-amber-300" />
+                      <Clock className="w-3 h-3 text-blue-200" />
                       <span>Mon–Fri, 8:00 AM – 5:00 PM</span>
                     </div>
-                    <div className="text-[11px] text-blue-200/80">
+                    <div className="text-xs text-blue-200/80">
                       City Government of Trece Martires
                     </div>
                   </div>
@@ -578,32 +566,23 @@ const Services: React.FC = () => {
                           <Link
                             key={sub.slug || idx}
                             to={`/services/${category}/${sub.slug}`}
-                            className="group bg-white rounded-2xl p-5 sm:p-6 border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all duration-200 flex flex-col justify-between"
+                            className="group bg-white rounded-2xl p-5 sm:p-6 border border-zinc-200 hover:border-zinc-400 hover:shadow-xs transition-all duration-150 flex flex-col justify-between"
                           >
                             <div className="space-y-3">
-                              <div className="flex items-center justify-between gap-2">
-                                <span className="text-[11px] font-bold uppercase tracking-wider text-[#003893] bg-blue-50 px-2.5 py-1 rounded-lg">
-                                  Step-by-Step Guide
-                                </span>
-                                <span className="text-[11px] font-mono text-gray-400">
-                                  #{idx + 1}
-                                </span>
-                              </div>
-
-                              <h3 className="text-base sm:text-lg font-bold text-gray-900 group-hover:text-[#003893] transition-colors leading-snug">
+                              <h3 className="text-base sm:text-lg font-bold text-zinc-900 group-hover:text-zinc-700 transition-colors leading-snug">
                                 {sub.name}
                               </h3>
 
                               {sub.description && (
-                                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed line-clamp-3">
+                                <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed line-clamp-3">
                                   {sub.description}
                                 </p>
                               )}
                             </div>
 
-                            <div className="pt-4 mt-4 border-t border-gray-100 flex items-center justify-between text-xs font-semibold text-[#003893]">
+                            <div className="pt-4 mt-4 border-t border-zinc-100 flex items-center justify-between text-xs font-semibold text-zinc-900">
                               <span>Read Full Guide &amp; Requirements</span>
-                              <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-[#003893]" />
+                              <ChevronRight className="w-4 h-4 text-zinc-600 group-hover:translate-x-1 transition-transform" />
                             </div>
                           </Link>
                         ))}
@@ -614,31 +593,23 @@ const Services: React.FC = () => {
                           <Link
                             key={sub.slug || idx}
                             to={`/services/${category}/${sub.slug}`}
-                            className="group bg-white rounded-2xl p-5 border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all duration-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+                            className="group bg-white rounded-2xl p-5 border border-zinc-200 hover:border-zinc-400 hover:shadow-xs transition-all duration-150 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
                           >
                             <div className="space-y-1.5 min-w-0">
-                              <div className="flex items-center gap-2">
-                                <span className="text-[10px] font-bold uppercase tracking-wider text-[#003893] bg-blue-50 px-2 py-0.5 rounded">
-                                  Citizen Charter
-                                </span>
-                                <span className="text-xs font-semibold text-gray-500">
-                                  Guide #{idx + 1}
-                                </span>
-                              </div>
-                              <h3 className="text-base sm:text-lg font-bold text-gray-900 group-hover:text-[#003893] transition-colors">
+                              <h3 className="text-base sm:text-lg font-bold text-zinc-900 group-hover:text-zinc-700 transition-colors">
                                 {sub.name}
                               </h3>
                               {sub.description && (
-                                <p className="text-xs sm:text-sm text-gray-600 line-clamp-2">
+                                <p className="text-xs sm:text-sm text-zinc-600 line-clamp-2">
                                   {sub.description}
                                 </p>
                               )}
                             </div>
 
-                            <div className="flex items-center justify-between sm:justify-end gap-3 shrink-0 pt-3 sm:pt-0 border-t sm:border-t-0 border-gray-100">
-                              <span className="inline-flex items-center gap-1 text-xs font-bold text-[#003893] group-hover:underline">
+                            <div className="flex items-center justify-between sm:justify-end gap-3 shrink-0 pt-3 sm:pt-0 border-t sm:border-t-0 border-zinc-100">
+                              <span className="inline-flex items-center gap-1 text-xs font-semibold text-zinc-900 group-hover:underline">
                                 <span>Open Guide</span>
-                                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                                <ArrowRight className="w-3.5 h-3.5 text-zinc-600 group-hover:translate-x-0.5 transition-transform" />
                               </span>
                             </div>
                           </Link>
@@ -651,17 +622,13 @@ const Services: React.FC = () => {
             )}
 
             {/* Helpful Citizen Tips & Office Info Banner */}
-            <div className="mt-12 bg-white rounded-3xl p-6 sm:p-8 border border-gray-200 shadow-xs">
+            <div className="mt-12 bg-white rounded-3xl p-6 sm:p-8 border border-zinc-200 shadow-2xs">
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
                 <div className="space-y-2 max-w-2xl">
-                  <div className="flex items-center gap-2 text-[#003893] font-bold text-xs uppercase tracking-wider">
-                    <Info className="w-4 h-4 text-amber-500" />
-                    <span>Citizen Assistance Note</span>
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-black text-gray-900">
+                  <h3 className="text-lg sm:text-xl font-black text-zinc-900">
                     Preparing for your visit to Trece Martires City Hall?
                   </h3>
-                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
                     Always bring at least one (1) valid government-issued ID,
                     your Barangay Clearance, and necessary supporting documents
                     to ensure fast and smooth transaction processing.
@@ -671,16 +638,16 @@ const Services: React.FC = () => {
                 <div className="flex flex-wrap items-center gap-3 shrink-0">
                   <Link
                     to="/government#departments"
-                    className="inline-flex items-center gap-2 bg-slate-100 hover:bg-slate-200 text-gray-800 font-bold px-4 py-2.5 rounded-xl text-xs transition-colors"
+                    className="inline-flex items-center gap-2 bg-zinc-100 hover:bg-zinc-200 text-zinc-900 font-semibold px-4 py-2.5 rounded-xl text-xs transition-colors border border-zinc-200"
                   >
-                    <Building2 className="w-4 h-4 text-[#003893]" />
+                    <Building2 className="w-4 h-4 text-zinc-900" />
                     <span>City Departments Directory</span>
                   </Link>
                   <Link
                     to="/government#hotlines"
-                    className="inline-flex items-center gap-2 bg-[#003893] hover:bg-blue-800 text-white font-bold px-4 py-2.5 rounded-xl text-xs transition-colors"
+                    className="inline-flex items-center gap-2 bg-[#003893] hover:bg-blue-800 text-white font-semibold px-4 py-2.5 rounded-xl text-xs transition-colors"
                   >
-                    <Phone className="w-4 h-4 text-amber-300" />
+                    <Phone className="w-4 h-4 text-blue-200" />
                     <span>Public Hotlines</span>
                   </Link>
                 </div>
@@ -705,7 +672,7 @@ const Services: React.FC = () => {
 
       <main className="flex-grow bg-slate-50/50 pb-20">
         {/* Top Header Hero */}
-        <section className="bg-gradient-to-r from-slate-900 via-[#00225e] to-[#003893] text-white pt-44 sm:pt-44 lg:pt-48 pb-12 sm:pb-16 border-b border-blue-900/40 shadow-inner">
+        <section className="bg-gradient-to-r from-[#001f54] via-[#00225e] to-[#003893] text-white pt-44 sm:pt-44 lg:pt-48 pb-12 sm:pb-16 border-b border-blue-900/40 shadow-inner">
           <div className="container mx-auto px-4 max-w-7xl">
             <Breadcrumbs
               items={[
@@ -717,18 +684,9 @@ const Services: React.FC = () => {
 
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
               <div className="space-y-3 max-w-3xl">
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-white/10 text-blue-100 border border-white/15">
-                    10 Categories &bull; {totalGuidesCount}+ Detailed Guides
-                  </span>
-                  <span className="px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 flex items-center gap-1">
-                    <CheckCircle2 className="w-3 h-3" />
-                    <span>100% Free &amp; Open Access</span>
-                  </span>
-                </div>
-
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
-                  Trece Martires City Services Directory
+                  Trece Martires City{' '}
+                  <span className="text-amber-300">Services</span> Directory
                 </h1>
 
                 <p className="text-sm sm:text-base text-blue-100/90 leading-relaxed">
@@ -740,26 +698,24 @@ const Services: React.FC = () => {
               </div>
 
               {/* Fast Stats Pill Box */}
-              <div className="grid grid-cols-2 gap-3 bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/15 shrink-0 max-w-xs">
+              <div className="grid grid-cols-2 gap-3 bg-gradient-to-br from-[#001f54]/90 to-[#002e7a]/90 p-4 rounded-2xl border border-blue-400/30 shrink-0 max-w-xs">
                 <div className="space-y-1">
                   <div className="text-xs font-semibold text-blue-200">
                     Categories
                   </div>
-                  <div className="text-2xl font-black text-white font-mono">
+                  <div className="text-2xl font-black text-amber-300 font-mono">
                     10
                   </div>
-                  <div className="text-[11px] text-blue-200/80">
-                    Public Sectors
-                  </div>
+                  <div className="text-xs text-blue-200/80">Public Sectors</div>
                 </div>
-                <div className="space-y-1 border-l border-white/20 pl-3">
+                <div className="space-y-1 border-l border-blue-400/20 pl-3">
                   <div className="text-xs font-semibold text-blue-200">
                     Procedures
                   </div>
                   <div className="text-2xl font-black text-amber-300 font-mono">
                     {totalGuidesCount}+
                   </div>
-                  <div className="text-[11px] text-blue-200/80">
+                  <div className="text-xs text-blue-200/80">
                     Documented Guides
                   </div>
                 </div>
@@ -769,19 +725,19 @@ const Services: React.FC = () => {
             {/* Global Real-time Search Box */}
             <div className="mt-8 max-w-3xl">
               <div className="relative">
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-400" />
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={handleSearchChange}
                   placeholder="Search all services, permits, health programs, or scholarships..."
-                  className="w-full pl-12 pr-10 py-3.5 text-sm sm:text-base bg-white rounded-2xl shadow-lg border-2 border-transparent focus:border-amber-400 focus:outline-hidden text-gray-900 placeholder:text-gray-400 transition-all"
+                  className="w-full pl-12 pr-10 py-3.5 text-sm sm:text-base bg-white rounded-2xl shadow-md border border-zinc-200 focus:border-zinc-900 focus:outline-hidden text-zinc-900 placeholder:text-zinc-400 transition-all"
                 />
                 {searchQuery && (
                   <button
                     onClick={clearSearch}
                     aria-label="Clear search"
-                    className="absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 p-1"
+                    className="absolute right-3.5 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-zinc-600 p-1"
                   >
                     <X className="w-4 h-4" />
                   </button>
@@ -792,10 +748,10 @@ const Services: React.FC = () => {
         </section>
 
         {/* Category Quick Jump Bar */}
-        <div className="bg-white border-b border-gray-200 shadow-xs">
+        <div className="bg-white border-b border-zinc-200 shadow-2xs">
           <div className="container mx-auto px-4 max-w-7xl">
             <div className="flex items-center gap-2 py-2.5 overflow-x-auto no-scrollbar scroll-smooth">
-              <span className="text-xs font-bold text-gray-500 uppercase tracking-wider shrink-0 mr-1 hidden sm:inline">
+              <span className="text-xs font-semibold text-zinc-500 uppercase tracking-wider shrink-0 mr-1 hidden sm:inline">
                 Jump To:
               </span>
               {serviceCategories.categories.map(cat => {
@@ -804,9 +760,9 @@ const Services: React.FC = () => {
                   <Link
                     key={cat.slug}
                     to={`/services/${cat.slug}`}
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap bg-slate-100 hover:bg-blue-50 text-gray-700 hover:text-[#003893] transition-all shrink-0 border border-gray-200/80 hover:border-blue-200 min-h-[36px]"
+                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap bg-zinc-100 hover:bg-zinc-200 text-zinc-800 transition-all shrink-0 border border-zinc-200 min-h-[36px]"
                   >
-                    <IconComp className="w-3.5 h-3.5 text-[#003893]" />
+                    <IconComp className="w-3.5 h-3.5 text-zinc-900" />
                     <span>{cat.category}</span>
                   </Link>
                 );
@@ -820,12 +776,12 @@ const Services: React.FC = () => {
           {/* SEARCH RESULTS VIEW (if search input is active) */}
           {searchQuery.trim() ? (
             <div className="space-y-6">
-              <div className="flex items-center justify-between bg-white rounded-2xl p-4 border border-gray-200 shadow-xs">
+              <div className="flex items-center justify-between bg-white rounded-2xl p-4 border border-zinc-200 shadow-2xs">
                 <div>
-                  <h2 className="text-base sm:text-lg font-bold text-gray-900">
+                  <h2 className="text-base sm:text-lg font-bold text-zinc-900">
                     Search Results for &quot;{searchQuery}&quot;
                   </h2>
-                  <p className="text-xs text-gray-600 mt-0.5">
+                  <p className="text-xs text-zinc-600 mt-0.5">
                     Found {globalSearchResults.length} matching service guide
                     {globalSearchResults.length === 1 ? '' : 's'} across all
                     categories.
@@ -833,22 +789,22 @@ const Services: React.FC = () => {
                 </div>
                 <button
                   onClick={clearSearch}
-                  className="text-xs font-bold text-[#003893] hover:underline"
+                  className="text-xs font-semibold text-zinc-900 hover:underline"
                 >
                   Clear Search
                 </button>
               </div>
 
               {globalSearchResults.length === 0 ? (
-                <div className="bg-white rounded-3xl p-10 border border-gray-200 text-center max-w-lg mx-auto shadow-xs space-y-4">
-                  <div className="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mx-auto">
-                    <Search className="w-6 h-6" />
+                <div className="bg-white rounded-3xl p-10 border border-zinc-200 text-center max-w-lg mx-auto shadow-2xs space-y-4">
+                  <div className="w-12 h-12 rounded-2xl bg-zinc-100 text-zinc-900 border border-zinc-200 flex items-center justify-center mx-auto">
+                    <Search className="w-6 h-6 text-zinc-900" />
                   </div>
                   <div>
-                    <h3 className="text-base font-bold text-gray-900">
+                    <h3 className="text-base font-bold text-zinc-900">
                       No matching services found
                     </h3>
-                    <p className="text-xs text-gray-600 mt-1">
+                    <p className="text-xs text-zinc-600 mt-1">
                       We could not find any service guide matching &quot;
                       {searchQuery}&quot;. Please try a different query or
                       browse categories below.
@@ -856,7 +812,7 @@ const Services: React.FC = () => {
                   </div>
                   <button
                     onClick={clearSearch}
-                    className="bg-[#003893] text-white hover:bg-blue-800 font-bold px-4 py-2 rounded-xl text-xs transition-colors"
+                    className="bg-[#003893] text-white hover:bg-blue-800 font-semibold px-4 py-2 rounded-xl text-xs transition-colors"
                   >
                     View All Categories
                   </button>
@@ -869,31 +825,31 @@ const Services: React.FC = () => {
                       <Link
                         key={`${res.categorySlug}-${res.subcategory.slug}-${i}`}
                         to={`/services/${res.categorySlug}/${res.subcategory.slug}`}
-                        className="group bg-white rounded-2xl p-5 sm:p-6 border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all duration-200 flex flex-col justify-between"
+                        className="group bg-white rounded-2xl p-5 sm:p-6 border border-zinc-200 hover:border-zinc-400 hover:shadow-xs transition-all duration-150 flex flex-col justify-between"
                       >
                         <div className="space-y-3">
                           <div className="flex items-center justify-between gap-2">
-                            <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#003893] bg-blue-50 px-2.5 py-1 rounded-lg">
-                              <CatIcon className="w-3 h-3" />
+                            <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-900 bg-zinc-100 border border-zinc-200 px-2.5 py-1 rounded-lg">
+                              <CatIcon className="w-3 h-3 text-zinc-900" />
                               <span>{res.categoryName}</span>
                             </span>
-                            <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-[#003893] group-hover:translate-x-0.5 transition-all" />
+                            <ChevronRight className="w-4 h-4 text-zinc-400 group-hover:text-zinc-900 group-hover:translate-x-0.5 transition-all" />
                           </div>
 
-                          <h3 className="text-base font-bold text-gray-900 group-hover:text-[#003893] transition-colors leading-snug">
+                          <h3 className="text-base font-bold text-zinc-900 group-hover:text-zinc-700 transition-colors leading-snug">
                             {res.subcategory.name}
                           </h3>
 
                           {res.subcategory.description && (
-                            <p className="text-xs text-gray-600 leading-relaxed line-clamp-3">
+                            <p className="text-xs text-zinc-600 leading-relaxed line-clamp-3">
                               {res.subcategory.description}
                             </p>
                           )}
                         </div>
 
-                        <div className="pt-3 mt-3 border-t border-gray-100 text-xs font-semibold text-[#003893] flex items-center gap-1">
+                        <div className="pt-3 mt-3 border-t border-zinc-100 text-xs font-semibold text-zinc-900 flex items-center gap-1">
                           <span>Open Guide &amp; Requirements</span>
-                          <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                          <ArrowRight className="w-3.5 h-3.5 text-zinc-600 group-hover:translate-x-1 transition-transform" />
                         </div>
                       </Link>
                     );
@@ -907,12 +863,12 @@ const Services: React.FC = () => {
               <section className="mb-12">
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-amber-500" />
-                    <h2 className="text-lg sm:text-xl font-extrabold text-gray-900">
+                    <Sparkles className="w-4 h-4 text-zinc-900" />
+                    <h2 className="text-lg sm:text-xl font-bold text-zinc-900">
                       Most Requested Public Services
                     </h2>
                   </div>
-                  <span className="text-xs text-gray-500 hidden sm:inline font-medium">
+                  <span className="text-xs text-zinc-500 hidden sm:inline font-medium">
                     Frequently accessed citizen procedures
                   </span>
                 </div>
@@ -924,30 +880,30 @@ const Services: React.FC = () => {
                       <Link
                         key={idx}
                         to={`/services/${item.categorySlug}/${item.docSlug}`}
-                        className="group bg-gradient-to-br from-white to-blue-50/30 p-5 rounded-2xl border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between"
+                        className="group bg-white p-5 rounded-2xl border border-zinc-200 hover:border-zinc-400 hover:shadow-xs transition-all flex flex-col justify-between"
                       >
                         <div className="space-y-2.5">
                           <div className="flex items-center justify-between">
-                            <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#003893] group-hover:bg-[#003893] group-hover:text-white flex items-center justify-center transition-colors">
-                              <ItemIcon className="w-5 h-5" />
+                            <div className="w-10 h-10 rounded-xl bg-zinc-100 text-zinc-900 border border-zinc-200 flex items-center justify-center transition-colors">
+                              <ItemIcon className="w-5 h-5 text-zinc-900" />
                             </div>
-                            <span className="text-[10px] font-bold uppercase tracking-wider bg-amber-100 text-amber-900 px-2 py-0.5 rounded">
+                            <span className="text-xs font-medium text-zinc-700 bg-zinc-100 border border-zinc-200 px-2 py-0.5 rounded">
                               {item.badge}
                             </span>
                           </div>
 
-                          <h3 className="text-sm font-bold text-gray-900 group-hover:text-[#003893] transition-colors leading-snug">
+                          <h3 className="text-sm font-bold text-zinc-900 group-hover:text-zinc-700 transition-colors leading-snug">
                             {item.title}
                           </h3>
 
-                          <p className="text-xs text-gray-600 line-clamp-2">
+                          <p className="text-xs text-zinc-600 line-clamp-2">
                             {item.desc}
                           </p>
                         </div>
 
-                        <div className="pt-3 mt-3 border-t border-gray-100 flex items-center justify-between text-xs font-semibold text-[#003893]">
+                        <div className="pt-3 mt-3 border-t border-zinc-100 flex items-center justify-between text-xs font-semibold text-zinc-900">
                           <span>{item.category}</span>
-                          <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                          <ChevronRight className="w-3.5 h-3.5 text-zinc-600 group-hover:translate-x-0.5 transition-transform" />
                         </div>
                       </Link>
                     );
@@ -959,11 +915,11 @@ const Services: React.FC = () => {
               <section className="space-y-6">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                   <div>
-                    <h2 className="text-xl sm:text-2xl font-black text-gray-900">
+                    <h2 className="text-xl sm:text-2xl font-black text-zinc-900">
                       All 10 Local Government Service Categories
                     </h2>
                   </div>
-                  <p className="text-xs text-gray-500 max-w-md">
+                  <p className="text-xs text-zinc-500 max-w-md">
                     Select a category below to explore all available citizen
                     guides, schedules, and processing requirements.
                   </p>
@@ -976,14 +932,14 @@ const Services: React.FC = () => {
                     return (
                       <div
                         key={cat.slug}
-                        className="group bg-white rounded-3xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-xl transition-all duration-200 flex flex-col justify-between"
+                        className="group bg-white rounded-2xl p-6 border border-zinc-200 hover:border-zinc-400 hover:shadow-xs transition-all duration-150 flex flex-col justify-between"
                       >
                         <div className="space-y-4">
                           <div className="flex items-center justify-between">
-                            <div className="w-12 h-12 rounded-2xl bg-blue-50 text-[#003893] group-hover:bg-[#003893] group-hover:text-white flex items-center justify-center transition-all shadow-xs">
-                              <CatIcon className="w-6 h-6" />
+                            <div className="w-11 h-11 rounded-xl bg-zinc-100 text-zinc-900 border border-zinc-200 flex items-center justify-center transition-all">
+                              <CatIcon className="w-5 h-5 text-zinc-900" />
                             </div>
-                            <span className="text-xs font-bold text-[#003893] bg-blue-50/80 px-2.5 py-1 rounded-xl">
+                            <span className="text-xs font-semibold text-zinc-700 bg-zinc-100 border border-zinc-200 px-2.5 py-1 rounded-lg">
                               {pagesCount} Guide{pagesCount === 1 ? '' : 's'}
                             </span>
                           </div>
@@ -991,19 +947,19 @@ const Services: React.FC = () => {
                           <div>
                             <Link
                               to={`/services/${cat.slug}`}
-                              className="text-lg font-bold text-gray-900 group-hover:text-[#003893] transition-colors inline-block"
+                              className="text-lg font-bold text-zinc-900 group-hover:text-zinc-700 transition-colors inline-block"
                             >
                               {cat.category}
                             </Link>
-                            <p className="text-xs sm:text-sm text-gray-600 mt-1.5 leading-relaxed line-clamp-3">
+                            <p className="text-xs sm:text-sm text-zinc-600 mt-1.5 leading-relaxed line-clamp-3">
                               {cat.description}
                             </p>
                           </div>
 
                           {/* Quick sub-service preview links */}
                           {cat.pages && cat.pages.length > 0 && (
-                            <div className="space-y-1.5 pt-2 border-t border-gray-100">
-                              <div className="text-[11px] font-bold text-gray-400 uppercase tracking-wider">
+                            <div className="space-y-1.5 pt-2 border-t border-zinc-100">
+                              <div className="text-xs font-semibold text-zinc-500 uppercase tracking-wider">
                                 Key Guides:
                               </div>
                               <ul className="space-y-1">
@@ -1011,9 +967,9 @@ const Services: React.FC = () => {
                                   <li key={pIdx}>
                                     <Link
                                       to={`/services/${cat.slug}/${page.slug}`}
-                                      className="text-xs font-medium text-gray-700 hover:text-[#003893] flex items-center gap-1.5 group/item transition-colors"
+                                      className="text-xs font-medium text-zinc-700 hover:text-zinc-900 flex items-center gap-1.5 group/item transition-colors"
                                     >
-                                      <ChevronRight className="w-3 h-3 text-gray-400 group-hover/item:text-[#003893] shrink-0" />
+                                      <ChevronRight className="w-3 h-3 text-zinc-400 group-hover/item:text-zinc-900 shrink-0" />
                                       <span className="line-clamp-1">
                                         {page.name}
                                       </span>
@@ -1025,13 +981,13 @@ const Services: React.FC = () => {
                           )}
                         </div>
 
-                        <div className="pt-4 mt-4 border-t border-gray-100">
+                        <div className="pt-4 mt-4 border-t border-zinc-100">
                           <Link
                             to={`/services/${cat.slug}`}
-                            className="inline-flex items-center justify-between w-full text-xs font-bold text-[#003893] group-hover:text-blue-800 transition-colors"
+                            className="inline-flex items-center justify-between w-full text-xs font-semibold text-zinc-900 hover:text-zinc-700 transition-colors"
                           >
                             <span>Browse All {cat.category}</span>
-                            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                            <ArrowRight className="w-3.5 h-3.5 text-zinc-600 group-hover:translate-x-1 transition-transform" />
                           </Link>
                         </div>
                       </div>
@@ -1043,13 +999,13 @@ const Services: React.FC = () => {
           )}
 
           {/* CITIZEN ASSISTANCE & HOTLINE STRIP */}
-          <section className="mt-14 bg-gradient-to-br from-slate-900 to-[#00225e] text-white rounded-3xl p-6 sm:p-10 shadow-xl border border-blue-900/40 relative overflow-hidden">
+          <section className="mt-14 bg-gradient-to-r from-[#001f54] via-[#00225e] to-[#003893] text-white rounded-3xl p-6 sm:p-10 shadow-lg border border-blue-900/30 relative overflow-hidden">
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 relative z-10">
               <div className="space-y-2 max-w-2xl">
                 <h3 className="text-2xl font-bold text-white">
                   Need Help or Urgent Public Service Assistance?
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                <p className="text-xs sm:text-sm text-blue-100/90 leading-relaxed">
                   The City Government of Trece Martires provides round-the-clock
                   emergency hotlines, public health offices, and a dedicated
                   City Hall Helpdesk for immediate citizen inquiries.
@@ -1059,9 +1015,9 @@ const Services: React.FC = () => {
               <div className="flex flex-wrap items-center gap-3 shrink-0">
                 <Link
                   to="/government#hotlines"
-                  className="bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold px-5 py-2.5 rounded-xl text-xs sm:text-sm transition-all shadow-xs flex items-center gap-1.5"
+                  className="bg-white text-[#00225e] hover:bg-blue-50 font-bold px-5 py-2.5 rounded-xl text-xs sm:text-sm transition-all shadow-xs flex items-center gap-1.5"
                 >
-                  <Phone className="w-4 h-4" />
+                  <Phone className="w-4 h-4 text-[#00225e]" />
                   <span>24/7 Emergency Hotlines</span>
                 </Link>
                 <Link

@@ -68,7 +68,7 @@ export const BetterTreceLogo: React.FC<TreceLogoProps> = ({
               }`}
             >
               Better
-              <span className={isLight ? 'text-amber-300' : 'text-[#003893]'}>
+              <span className={isLight ? 'text-amber-300' : 'text-amber-500'}>
                 Trece
               </span>
             </span>

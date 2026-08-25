@@ -120,7 +120,7 @@ export default function DpwhTransparency() {
         {/* Top Header Banner */}
         <section
           aria-label="Page Header"
-          className="bg-gradient-to-r from-slate-900 via-[#00225e] to-[#003893] text-white pt-44 sm:pt-44 lg:pt-48 pb-10 sm:pb-14 border-b border-blue-900/40 shadow-inner"
+          className="bg-gradient-to-r from-[#001f54] via-[#00225e] to-[#003893] text-white pt-44 sm:pt-44 lg:pt-48 pb-12 sm:pb-16 border-b border-blue-900/40 shadow-inner"
         >
           <div className="container mx-auto px-4 max-w-7xl">
             <Breadcrumbs
@@ -130,32 +130,27 @@ export default function DpwhTransparency() {
 
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
               <div className="space-y-3 max-w-3xl">
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-white/10 text-blue-100">
-                    GAA &bull; COA &bull; DBM &bull; DOF-BLGF &bull; DPWH
-                  </span>
-                </div>
-
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
-                  Trece Martires Transparency Portal
+                  Trece Martires{' '}
+                  <span className="text-amber-300">Transparency</span> Portal
                 </h1>
 
                 <p className="text-sm sm:text-base text-blue-100/90 leading-relaxed">
                   Open data access to the{' '}
-                  <strong className="text-emerald-300">
+                  <strong className="text-amber-300 font-bold">
                     National Budget (GAA 2020–2026)
                   </strong>
                   , the{' '}
-                  <strong className="text-amber-300">
+                  <strong className="text-amber-300 font-bold">
                     COA Annual Audit Report (AAR 2024)
                   </strong>
                   , the{' '}
-                  <strong className="text-amber-300">
+                  <strong className="text-amber-300 font-bold">
                     City Financial Statement of Receipts &amp; Expenditures
                     (DBM)
                   </strong>
                   , and DPWH infrastructure public works across the{' '}
-                  <strong className="text-amber-300">
+                  <strong className="text-amber-300 font-bold">
                     13 Barangays of Trece Martires City
                   </strong>
                   .
@@ -163,9 +158,9 @@ export default function DpwhTransparency() {
               </div>
 
               <div className="flex flex-wrap items-center gap-3 shrink-0">
-                <div className="bg-white/10 backdrop-blur-xs px-4 py-2.5 rounded-2xl border border-white/20 text-xs font-medium text-blue-100 space-y-0.5">
+                <div className="bg-white/10 px-4 py-2.5 rounded-2xl border border-white/20 text-xs font-medium text-blue-200 space-y-0.5">
                   <div className="font-bold text-white">Official Sources</div>
-                  <div>
+                  <div className="text-blue-100/90">
                     DBM GAA &bull; COA Reg. IV-A &bull; BLGF &bull; DPWH
                   </div>
                 </div>
@@ -175,7 +170,7 @@ export default function DpwhTransparency() {
         </section>
 
         {/* Tab Navigation - 5 Unified Tabs */}
-        <div className="bg-white border-b border-gray-200 shadow-xs sticky top-16 z-30">
+        <div className="bg-white border-b border-zinc-200 shadow-2xs sticky top-16 z-30">
           <div className="container mx-auto px-4 max-w-7xl">
             <div
               role="tablist"
@@ -189,10 +184,10 @@ export default function DpwhTransparency() {
                 aria-selected={activeTab === 'budget-revenue'}
                 aria-controls="panel-budget-revenue"
                 onClick={() => handleTabChange('budget-revenue')}
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#0a4d3c] min-h-[40px] ${
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#003893] min-h-[40px] ${
                   activeTab === 'budget-revenue'
-                    ? 'bg-[#0a4d3c] text-white shadow-xs'
-                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                    ? 'bg-[#003893] text-white shadow-2xs'
+                    : 'text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100'
                 }`}
               >
                 <Coins className="w-4 h-4" aria-hidden="true" />
@@ -206,16 +201,13 @@ export default function DpwhTransparency() {
                 aria-selected={activeTab === 'gaa'}
                 aria-controls="panel-gaa"
                 onClick={() => handleTabChange('gaa')}
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#00225e] min-h-[40px] ${
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#003893] min-h-[40px] ${
                   activeTab === 'gaa'
-                    ? 'bg-[#00225e] text-white shadow-xs'
-                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                    ? 'bg-[#003893] text-white shadow-2xs'
+                    : 'text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100'
                 }`}
               >
-                <Landmark
-                  className="w-4 h-4 text-blue-300"
-                  aria-hidden="true"
-                />
+                <Landmark className="w-4 h-4" aria-hidden="true" />
                 <span>National Budget (GAA 2020–2026)</span>
               </button>
 
@@ -226,10 +218,10 @@ export default function DpwhTransparency() {
                 aria-selected={activeTab === 'audit'}
                 aria-controls="panel-audit"
                 onClick={() => handleTabChange('audit')}
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#00225e] min-h-[40px] ${
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#003893] min-h-[40px] ${
                   activeTab === 'audit'
-                    ? 'bg-[#00225e] text-white shadow-xs'
-                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                    ? 'bg-[#003893] text-white shadow-2xs'
+                    : 'text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100'
                 }`}
               >
                 <FileCheck2 className="w-4 h-4" aria-hidden="true" />
@@ -243,10 +235,10 @@ export default function DpwhTransparency() {
                 aria-selected={activeTab === 'explorer'}
                 aria-controls="panel-explorer"
                 onClick={() => handleTabChange('explorer')}
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#003893] min-h-[40px] ${
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#003893] min-h-[40px] ${
                   activeTab === 'explorer'
-                    ? 'bg-[#003893] text-white shadow-xs'
-                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                    ? 'bg-[#003893] text-white shadow-2xs'
+                    : 'text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100'
                 }`}
               >
                 <HardHat className="w-4 h-4" aria-hidden="true" />
@@ -260,10 +252,10 @@ export default function DpwhTransparency() {
                 aria-selected={activeTab === 'trece-focus'}
                 aria-controls="panel-trece-focus"
                 onClick={() => handleTabChange('trece-focus')}
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#003893] min-h-[40px] ${
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#003893] min-h-[40px] ${
                   activeTab === 'trece-focus'
-                    ? 'bg-[#003893] text-white shadow-xs'
-                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                    ? 'bg-[#003893] text-white shadow-2xs'
+                    : 'text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100'
                 }`}
               >
                 <Landmark className="w-4 h-4" aria-hidden="true" />

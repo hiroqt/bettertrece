@@ -5,7 +5,6 @@ import {
   ShieldCheck,
   Users,
   MapPin,
-  Landmark,
   Vote,
   Compass,
 } from 'lucide-react';
@@ -41,17 +40,17 @@ export default function Hero() {
           {/* LEFT COLUMN: HERO HEADLINE & CTAs (6 cols on lg) */}
           <div className="lg:col-span-6 space-y-6">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.1]">
-              Better<span className="text-yellow-300">Trece</span>.org
+              Better<span className="text-amber-300">Trece</span>.org
             </h1>
 
-            <p className="text-xl sm:text-2xl font-bold text-amber-300 tracking-tight leading-snug">
+            <p className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug">
               {t(
                 'hero.tagline',
                 'Transparent Governance & Accessible Public Services'
               )}
             </p>
 
-            <p className="text-base sm:text-lg text-blue-100/95 leading-relaxed max-w-xl font-normal">
+            <p className="text-base sm:text-lg text-blue-100/90 leading-relaxed max-w-xl font-normal">
               {t(
                 'hero.subtitle',
                 'The verified open civic portal for Trece Martires City, Cavite. Access city services, track public infrastructure projects, and explore transparent municipal data for all 13 barangays.'
@@ -61,17 +60,17 @@ export default function Hero() {
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <Link
                 to="/services"
-                className="inline-flex items-center justify-center gap-2 bg-white text-[#003893] hover:bg-blue-50 font-bold px-6 py-3 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-200 text-sm sm:text-base group"
+                className="inline-flex items-center justify-center gap-2 bg-white text-[#00225e] hover:bg-blue-50 font-bold px-6 py-3 rounded-xl shadow-lg transition-all duration-150 text-sm sm:text-base group"
               >
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform text-[#003893]" />
                 <span>{t('hero.browseServices', 'Explore City Services')}</span>
+                <ArrowRight className="w-4 h-4 text-[#00225e] group-hover:translate-x-0.5 transition-transform" />
               </Link>
 
               <Link
                 to="/transparency/dpwh"
-                className="inline-flex items-center justify-center gap-2 bg-[#002a70] hover:bg-[#003893] text-white border border-[#2b59a8] font-semibold px-5 py-3 rounded-lg shadow-lg transition-all duration-200 text-sm sm:text-base hover:border-amber-400/50 hover:text-amber-300 group"
+                className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-5 py-3 rounded-xl shadow-md transition-all duration-150 text-sm sm:text-base group"
               >
-                <ShieldCheck className="w-4 h-4 text-amber-300 group-hover:scale-110 transition-transform" />
+                <ShieldCheck className="w-4 h-4 text-blue-200" />
                 <span>
                   {t(
                     'hero.transparencyProjects',
@@ -82,14 +81,14 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* RIGHT COLUMN: CLEAN & SIMPLE SOLID WIDGET (6 cols on lg) */}
+          {/* RIGHT COLUMN: REFINED BLUE GRADIENT WIDGET (6 cols on lg) */}
           <div className="lg:col-span-6 lg:pl-2">
-            <div className="bg-[#0b1b3d] border border-[#1d3d75] rounded-2xl p-5 sm:p-6 shadow-2xl shadow-black/70">
-              {/* Clean Widget Header */}
-              <div className="flex items-center justify-between pb-4 mb-4 border-b border-[#1d3d75]">
+            <div className="bg-gradient-to-br from-[#00225e]/90 to-[#003893]/90 border border-blue-400/30 rounded-2xl p-5 sm:p-6 shadow-xl backdrop-blur-md">
+              {/* Widget Header */}
+              <div className="flex items-center justify-between pb-4 mb-4 border-b border-white/15">
                 <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-[#163570] text-amber-300 flex items-center justify-center border border-[#2653a3]">
-                    <ShieldCheck className="w-4 h-4" />
+                  <div className="w-8 h-8 rounded-lg bg-white/15 text-white flex items-center justify-center border border-white/20">
+                    <ShieldCheck className="w-4 h-4 text-amber-300" />
                   </div>
                   <div>
                     <h2 className="text-sm font-bold text-white leading-tight">
@@ -98,7 +97,7 @@ export default function Hero() {
                         'Open Governance & City Data'
                       )}
                     </h2>
-                    <p className="text-xs text-blue-200">
+                    <p className="text-xs text-blue-200/90">
                       {t(
                         'hero.cityClassificationValue',
                         '2nd Class Component City'
@@ -109,101 +108,104 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* 4 Clean Solid Stat Cards (2x2 Grid) */}
+              {/* 4 Blue Gradient Stat Cards (2x2 Grid) */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {/* 1. Population */}
-                <div className="bg-[#10244f] border border-[#204582] rounded-xl p-4 hover:border-emerald-400/60 transition-all">
+                <div className="bg-gradient-to-br from-[#001438]/80 to-[#00225e]/80 border border-blue-400/20 rounded-xl p-4 hover:border-blue-400/40 transition-all text-white">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-xs font-semibold text-blue-200 uppercase tracking-wider">
                       {t('hero.population', 'Population')}
                     </span>
-                    <div className="w-7 h-7 rounded-md bg-[#064e3b] text-emerald-300 flex items-center justify-center">
-                      <Users className="w-3.5 h-3.5" />
+                    <div className="w-7 h-7 rounded-md bg-white/10 text-white flex items-center justify-center">
+                      <Users className="w-3.5 h-3.5 text-blue-200" />
                     </div>
                   </div>
-                  <div className="text-2xl font-black text-white font-mono tracking-tight">
+                  <div className="text-2xl font-black text-amber-300 font-mono tracking-tight">
                     <AnimatedCounter
                       value={
                         TRECE_MUNICIPAL_PROFILE.totalPopulation2024 || 227892
                       }
                     />
                   </div>
-                  <div className="text-[11px] text-emerald-300 font-medium mt-1">
+                  <div className="text-xs text-blue-200/80 font-medium mt-1">
                     2024 POPCEN (PSA)
                   </div>
                 </div>
 
                 {/* 2. Barangays */}
-                <div className="bg-[#10244f] border border-[#204582] rounded-xl p-4 hover:border-blue-400/60 transition-all">
+                <div className="bg-gradient-to-br from-[#001438]/80 to-[#00225e]/80 border border-blue-400/20 rounded-xl p-4 hover:border-blue-400/40 transition-all text-white">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-xs font-semibold text-blue-200 uppercase tracking-wider">
                       {t('hero.barangays', 'Barangays')}
                     </span>
-                    <div className="w-7 h-7 rounded-md bg-[#1e3a8a] text-blue-300 flex items-center justify-center">
-                      <MapPin className="w-3.5 h-3.5" />
+                    <div className="w-7 h-7 rounded-md bg-white/10 text-white flex items-center justify-center">
+                      <MapPin className="w-3.5 h-3.5 text-blue-200" />
                     </div>
                   </div>
-                  <div className="text-2xl font-black text-white tracking-tight">
+                  <div className="text-2xl font-black text-amber-300 tracking-tight">
                     <AnimatedCounter
                       value={TRECE_MUNICIPAL_PROFILE.totalBarangays}
                     />
                   </div>
-                  <div className="text-[11px] text-blue-200 font-medium mt-1">
+                  <div className="text-xs text-blue-200/80 font-medium mt-1">
                     13 Historical Barangays
                   </div>
                 </div>
 
                 {/* 3. Registered Voters */}
-                <div className="bg-[#10244f] border border-[#204582] rounded-xl p-4 hover:border-amber-400/60 transition-all">
+                <div className="bg-gradient-to-br from-[#001438]/80 to-[#00225e]/80 border border-blue-400/20 rounded-xl p-4 hover:border-blue-400/40 transition-all text-white">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-xs font-semibold text-blue-200 uppercase tracking-wider">
                       {t('hero.registeredVoters', 'Registered Voters')}
                     </span>
-                    <div className="w-7 h-7 rounded-md bg-[#78350f] text-amber-300 flex items-center justify-center">
-                      <Vote className="w-3.5 h-3.5" />
+                    <div className="w-7 h-7 rounded-md bg-white/10 text-white flex items-center justify-center">
+                      <Vote className="w-3.5 h-3.5 text-blue-200" />
                     </div>
                   </div>
-                  <div className="text-2xl font-black text-white font-mono tracking-tight">
+                  <div className="text-2xl font-black text-amber-300 font-mono tracking-tight">
                     <AnimatedCounter
                       value={TRECE_VOTER_STATISTICS_2025.registeredVoters}
                     />
                   </div>
-                  <div className="text-[11px] text-amber-300 font-medium mt-1">
+                  <div className="text-xs text-blue-200/80 font-medium mt-1">
                     COMELEC 2025 Elections
                   </div>
                 </div>
 
                 {/* 4. Land Area */}
-                <div className="bg-[#10244f] border border-[#204582] rounded-xl p-4 hover:border-indigo-400/60 transition-all">
+                <div className="bg-gradient-to-br from-[#001438]/80 to-[#00225e]/80 border border-blue-400/20 rounded-xl p-4 hover:border-blue-400/40 transition-all text-white">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-xs font-semibold text-blue-200 uppercase tracking-wider">
                       Land Area
                     </span>
-                    <div className="w-7 h-7 rounded-md bg-[#312e81] text-indigo-300 flex items-center justify-center">
-                      <Landmark className="w-3.5 h-3.5" />
+                    <div className="w-7 h-7 rounded-md bg-white/10 text-white flex items-center justify-center">
+                      <Compass className="w-3.5 h-3.5 text-blue-200" />
                     </div>
                   </div>
-                  <div className="text-2xl font-black text-white font-mono tracking-tight">
-                    {TRECE_MUNICIPAL_PROFILE.totalLandAreaKm2}{' '}
+                  <div className="text-2xl font-black text-amber-300 font-mono tracking-tight">
+                    <AnimatedCounter
+                      value={TRECE_MUNICIPAL_PROFILE.totalLandAreaKm2}
+                      decimals={2}
+                    />{' '}
                     <span className="text-sm font-normal text-blue-200">
                       km²
                     </span>
                   </div>
-                  <div className="text-[11px] text-indigo-200 font-medium mt-1">
-                    Seat of Cavite Province
+                  <div className="text-xs text-blue-200/80 font-medium mt-1">
+                    3,917 Hectares
                   </div>
                 </div>
               </div>
 
               {/* Simple Bottom Link */}
-              <div className="mt-4 pt-3.5 border-t border-[#1d3d75] flex items-center justify-between">
-                <span className="text-xs text-blue-200 flex items-center gap-1.5">
-                  <Compass className="w-3.5 h-3.5 text-amber-400" />
+              <div className="mt-4 pt-3.5 border-t border-white/15 flex items-center justify-between">
+                <span className="text-xs text-blue-200/90 flex items-center gap-1.5">
+                  <Compass className="w-3.5 h-3.5 text-blue-200" />
                   PSGC Code: {TRECE_MUNICIPAL_PROFILE.psgcCityCode}
                 </span>
                 <Link
                   to="/demographics"
-                  className="text-xs font-semibold text-amber-300 hover:text-amber-200 transition-colors flex items-center gap-1"
+                  className="text-xs font-semibold text-white hover:text-blue-200 transition-colors flex items-center gap-1"
                 >
                   {t('hero.fullDemographics', 'Full Demographics →')}
                 </Link>

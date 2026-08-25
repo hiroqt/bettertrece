@@ -12,6 +12,7 @@ import {
   Layers,
   ArrowUpRight,
   ShieldCheck,
+  TrendingUp,
 } from 'lucide-react';
 import AnimatedCounter from '../ui/AnimatedCounter';
 
@@ -54,7 +55,7 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
             <div
               role="tablist"
               aria-label="Fiscal Year Selection"
-              className="inline-flex bg-slate-100 p-1 rounded-xl border border-slate-200 text-xs font-bold"
+              className="inline-flex bg-zinc-100 p-1 rounded-xl border border-zinc-200 text-xs font-bold"
             >
               {[2026, 2025, 2024].map(year => (
                 <button
@@ -68,8 +69,8 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
                   onClick={() => setSelectedYear(year)}
                   className={`px-3 py-1 rounded-lg transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#003893] ${
                     selectedYear === year
-                      ? 'bg-[#00225e] text-white shadow-xs'
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60'
+                      ? 'bg-[#003893] text-white shadow-2xs'
+                      : 'text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/60'
                   }`}
                 >
                   {year === 2026 ? 'FY 2026 (Latest)' : `FY ${year}`}
@@ -81,10 +82,10 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
           {/* Main Headline */}
           <h2
             id="city-revenue-headline"
-            className="text-2xl sm:text-4xl lg:text-[42px] font-black text-gray-900 tracking-tight leading-[1.15]"
+            className="text-2xl sm:text-4xl lg:text-[42px] font-black text-zinc-900 tracking-tight leading-[1.15]"
           >
             Trece Martires collected{' '}
-            <span className="text-[#003893]">
+            <span className="text-amber-500 font-black">
               <AnimatedCounter
                 value={currentData.totalReceipts / 1000}
                 prefix="₱"
@@ -100,12 +101,12 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
         </div>
 
         {/* Right side subtitle */}
-        <div className="lg:max-w-md text-slate-600 text-sm sm:text-base leading-relaxed lg:pt-8 font-normal">
+        <div className="lg:max-w-md text-zinc-600 text-sm sm:text-base leading-relaxed lg:pt-8 font-normal">
           <p>{currentData.subtitle}</p>
         </div>
       </div>
 
-      {/* 2. Four Deep Navy Stat Cards (Theme color: #00225e to #003893) */}
+      {/* 2. Four Blue Gradient Stat Cards */}
       <div
         id={`panel-year-${selectedYear}`}
         role="region"
@@ -115,7 +116,7 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
         {/* Card 1: City Taxes */}
         <div className="bg-gradient-to-br from-[#00225e] to-[#003893] text-white p-6 rounded-2xl shadow-sm border border-blue-900/30 flex flex-col justify-between hover:shadow-md transition-all group">
           <div>
-            <div className="text-3xl sm:text-4xl font-extrabold tracking-tight font-mono text-white">
+            <div className="text-3xl sm:text-4xl font-extrabold tracking-tight font-mono text-amber-300">
               <AnimatedCounter
                 value={currentData.cards.cityTaxes.rawAmount}
                 prefix="₱"
@@ -123,11 +124,11 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
                 decimals={1}
               />
             </div>
-            <div className="text-sm sm:text-base font-medium text-blue-100 mt-2">
+            <div className="text-sm font-medium text-blue-100 mt-2">
               From city taxes
             </div>
           </div>
-          <div className="text-xs sm:text-sm text-amber-300 mt-4 pt-3 border-t border-white/15 font-semibold flex items-center justify-between">
+          <div className="text-xs text-blue-200 mt-4 pt-3 border-t border-white/15 font-semibold flex items-center justify-between">
             <span>
               <AnimatedCounter
                 value={parseFloat(currentData.cards.cityTaxes.percentage)}
@@ -142,7 +143,7 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
         {/* Card 2: Non-Tax Sources */}
         <div className="bg-gradient-to-br from-[#00225e] to-[#003893] text-white p-6 rounded-2xl shadow-sm border border-blue-900/30 flex flex-col justify-between hover:shadow-md transition-all group">
           <div>
-            <div className="text-3xl sm:text-4xl font-extrabold tracking-tight font-mono text-white">
+            <div className="text-3xl sm:text-4xl font-extrabold tracking-tight font-mono text-amber-300">
               <AnimatedCounter
                 value={currentData.cards.nonTaxSources.rawAmount}
                 prefix="₱"
@@ -150,11 +151,11 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
                 decimals={1}
               />
             </div>
-            <div className="text-sm sm:text-base font-medium text-blue-100 mt-2">
+            <div className="text-sm font-medium text-blue-100 mt-2">
               From non-tax sources
             </div>
           </div>
-          <div className="text-xs sm:text-sm text-amber-300 mt-4 pt-3 border-t border-white/15 font-semibold flex items-center justify-between">
+          <div className="text-xs text-blue-200 mt-4 pt-3 border-t border-white/15 font-semibold flex items-center justify-between">
             <span>
               <AnimatedCounter
                 value={parseFloat(currentData.cards.nonTaxSources.percentage)}
@@ -169,7 +170,7 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
         {/* Card 3: National Tax Share */}
         <div className="bg-gradient-to-br from-[#00225e] to-[#003893] text-white p-6 rounded-2xl shadow-sm border border-blue-900/30 flex flex-col justify-between hover:shadow-md transition-all group">
           <div>
-            <div className="text-3xl sm:text-4xl font-extrabold tracking-tight font-mono text-white">
+            <div className="text-3xl sm:text-4xl font-extrabold tracking-tight font-mono text-amber-300">
               <AnimatedCounter
                 value={currentData.cards.nationalTaxShare.rawAmount}
                 prefix="₱"
@@ -177,11 +178,11 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
                 decimals={1}
               />
             </div>
-            <div className="text-sm sm:text-base font-medium text-blue-100 mt-2">
+            <div className="text-sm font-medium text-blue-100 mt-2">
               From the national tax share
             </div>
           </div>
-          <div className="text-xs sm:text-sm text-amber-300 mt-4 pt-3 border-t border-white/15 font-semibold flex items-center justify-between">
+          <div className="text-xs text-blue-200 mt-4 pt-3 border-t border-white/15 font-semibold flex items-center justify-between">
             <span>
               <AnimatedCounter
                 value={parseFloat(
@@ -198,7 +199,7 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
         {/* Card 4: Change in Total Revenue */}
         <div className="bg-gradient-to-br from-[#00225e] to-[#003893] text-white p-6 rounded-2xl shadow-sm border border-blue-900/30 flex flex-col justify-between hover:shadow-md transition-all group">
           <div>
-            <div className="text-3xl sm:text-4xl font-extrabold tracking-tight font-mono text-white flex items-center gap-1.5">
+            <div className="text-3xl sm:text-4xl font-extrabold tracking-tight font-mono text-amber-300 flex items-center gap-1.5">
               {selectedYear === 2024 ? (
                 <span>Baseline</span>
               ) : (
@@ -212,17 +213,22 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
               {currentData.cards.yoyChange.isPositive &&
                 selectedYear !== 2024 && (
                   <ArrowUpRight
-                    className="w-6 h-6 text-amber-300"
+                    className="w-5 h-5 text-amber-300"
                     aria-hidden="true"
                   />
                 )}
             </div>
-            <div className="text-sm sm:text-base font-medium text-blue-100 mt-2">
+            <div className="text-sm font-medium text-blue-100 mt-2">
               Change in total revenue
             </div>
           </div>
-          <div className="text-xs sm:text-sm text-amber-300 mt-4 pt-3 border-t border-white/15 font-semibold">
-            {currentData.cards.yoyChange.label}
+          <div className="text-xs text-blue-200 mt-4 pt-3 border-t border-white/15 font-semibold flex items-center justify-between">
+            <span>
+              {selectedYear === 2024
+                ? 'Base reporting year'
+                : `vs. FY ${selectedYear - 1}`}
+            </span>
+            <TrendingUp className="w-4 h-4 text-blue-200" aria-hidden="true" />
           </div>
         </div>
       </div>

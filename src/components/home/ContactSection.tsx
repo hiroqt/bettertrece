@@ -26,72 +26,72 @@ const ContactSection: React.FC = () => {
 
           <Link
             to="/government"
-            className="inline-flex items-center gap-1.5 text-sm font-bold text-[#003893] hover:text-blue-800 hover:underline transition-colors group"
+            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-zinc-900 hover:text-zinc-700 hover:underline transition-colors group"
           >
             <span>
               {t('contact.viewAllDepartments', 'View All Departments')}
             </span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+            <ArrowRight className="w-4 h-4 text-zinc-600 group-hover:translate-x-0.5 transition-transform" />
           </Link>
         </div>
 
         {/* 3 Main Contact Cards (Phone, Email, Address) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
           {/* 1. Phone Card */}
-          <div className="bg-white rounded-2xl p-5 sm:p-6 border border-gray-200/80 shadow-xs hover:shadow-md transition-shadow flex items-start gap-4">
-            <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#003893] flex items-center justify-center shrink-0">
-              <Phone className="w-5 h-5" />
+          <div className="bg-white rounded-2xl p-5 sm:p-6 border border-zinc-200 shadow-2xs hover:border-zinc-400 hover:shadow-xs transition-all flex items-start gap-4">
+            <div className="w-10 h-10 rounded-xl bg-zinc-100 text-zinc-900 border border-zinc-200 flex items-center justify-center shrink-0">
+              <Phone className="w-5 h-5 text-zinc-900" />
             </div>
             <div className="min-w-0">
-              <div className="text-[11px] font-bold text-gray-500 uppercase tracking-wider">
+              <div className="text-xs font-semibold text-zinc-500 uppercase tracking-wider">
                 {t('contact.phone', 'PHONE')}
               </div>
               <a
                 href="tel:0464190268"
-                className="text-sm sm:text-base font-bold text-[#003893] hover:underline block mt-0.5 truncate"
+                className="text-sm sm:text-base font-bold text-zinc-900 hover:underline block mt-0.5 truncate"
               >
                 (046) 419-0268
               </a>
-              <div className="text-xs text-gray-500 mt-1">
+              <div className="text-xs text-zinc-600 mt-1">
                 {t('contact.phoneHours', 'Mon–Fri, 8AM–5PM')}
               </div>
             </div>
           </div>
 
           {/* 2. Email Card */}
-          <div className="bg-white rounded-2xl p-5 sm:p-6 border border-gray-200/80 shadow-xs hover:shadow-md transition-shadow flex items-start gap-4">
-            <div className="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
-              <Mail className="w-5 h-5" />
+          <div className="bg-white rounded-2xl p-5 sm:p-6 border border-zinc-200 shadow-2xs hover:border-zinc-400 hover:shadow-xs transition-all flex items-start gap-4">
+            <div className="w-10 h-10 rounded-xl bg-zinc-100 text-zinc-900 border border-zinc-200 flex items-center justify-center shrink-0">
+              <Mail className="w-5 h-5 text-zinc-900" />
             </div>
             <div className="min-w-0">
-              <div className="text-[11px] font-bold text-gray-500 uppercase tracking-wider">
+              <div className="text-xs font-semibold text-zinc-500 uppercase tracking-wider">
                 {t('contact.email', 'EMAIL')}
               </div>
               <a
                 href="mailto:cmo@trecemartirescity.gov.ph"
-                className="text-sm sm:text-base font-bold text-emerald-700 hover:underline block mt-0.5 truncate"
+                className="text-sm sm:text-base font-bold text-zinc-900 hover:underline block mt-0.5 truncate"
               >
                 cmo@trecemartirescity.gov.ph
               </a>
-              <div className="text-xs text-gray-500 mt-1">
+              <div className="text-xs text-zinc-600 mt-1">
                 {t('contact.emailResponse', 'Response within 2 business days')}
               </div>
             </div>
           </div>
 
           {/* 3. Address Card */}
-          <div className="bg-white rounded-2xl p-5 sm:p-6 border border-gray-200/80 shadow-xs hover:shadow-md transition-shadow flex items-start gap-4">
-            <div className="w-12 h-12 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center shrink-0">
-              <MapPin className="w-5 h-5" />
+          <div className="bg-white rounded-2xl p-5 sm:p-6 border border-zinc-200 shadow-2xs hover:border-zinc-400 hover:shadow-xs transition-all flex items-start gap-4">
+            <div className="w-10 h-10 rounded-xl bg-zinc-100 text-zinc-900 border border-zinc-200 flex items-center justify-center shrink-0">
+              <MapPin className="w-5 h-5 text-zinc-900" />
             </div>
             <div className="min-w-0">
-              <div className="text-[11px] font-bold text-gray-500 uppercase tracking-wider">
+              <div className="text-xs font-semibold text-zinc-500 uppercase tracking-wider">
                 {t('contact.address', 'ADDRESS')}
               </div>
-              <div className="text-sm sm:text-base font-bold text-amber-800 mt-0.5 truncate">
+              <div className="text-sm sm:text-base font-bold text-zinc-900 mt-0.5 truncate">
                 {t('contact.cityHall', 'City Hall, Trece Martires City')}
               </div>
-              <div className="text-xs text-gray-500 mt-1 line-clamp-1">
+              <div className="text-xs text-zinc-600 mt-1 line-clamp-1">
                 {t(
                   'contact.addressDetail',
                   'Gov. Drive, Brgy. San Agustin, Trece Martires, Cavite 4109'

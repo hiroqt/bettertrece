@@ -99,10 +99,10 @@ export default function ServicesSection({
 
         <Link
           to="/services"
-          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#003893] hover:text-blue-700 transition-colors group shrink-0 bg-white px-4 py-2.5 rounded-xl border border-gray-200 shadow-2xs hover:shadow-sm"
+          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-zinc-900 hover:text-zinc-700 transition-colors group shrink-0 bg-white px-4 py-2.5 rounded-xl border border-zinc-200 shadow-2xs hover:border-zinc-300"
         >
           <span>{t('services.viewAll', 'View all 10 categories')}</span>
-          <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+          <ArrowRight className="w-4 h-4 text-zinc-600 group-hover:translate-x-0.5 transition-transform" />
         </Link>
       </div>
 
@@ -113,25 +113,25 @@ export default function ServicesSection({
             <Link
               key={category.slug}
               to={`/services/${category.slug}`}
-              className="group flex flex-col justify-between p-5 sm:p-6 bg-white rounded-2xl border border-gray-200 hover:border-blue-300 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
+              className="group flex flex-col justify-between p-5 sm:p-6 bg-white rounded-2xl border border-zinc-200 hover:border-zinc-400 hover:shadow-xs transition-all duration-150"
             >
               <div>
-                <div className="w-11 h-11 rounded-xl bg-blue-50 text-[#003893] group-hover:bg-[#003893] group-hover:text-white flex items-center justify-center mb-4 transition-all shadow-2xs">
-                  <IconComp className="w-5 h-5" />
+                <div className="w-10 h-10 rounded-xl bg-zinc-100 text-zinc-900 border border-zinc-200 flex items-center justify-center mb-4 transition-colors">
+                  <IconComp className="w-5 h-5 text-zinc-900" />
                 </div>
 
-                <h3 className="text-base font-bold text-gray-900 group-hover:text-[#003893] transition-colors mb-2 leading-snug">
+                <h3 className="text-base font-bold text-zinc-900 group-hover:text-zinc-700 transition-colors mb-2 leading-snug">
                   {category.category}
                 </h3>
 
-                <p className="text-xs text-gray-600 leading-relaxed line-clamp-3 mb-4">
+                <p className="text-xs text-zinc-600 leading-relaxed line-clamp-3 mb-4">
                   {category.description}
                 </p>
               </div>
 
-              <div className="flex items-center text-xs font-bold text-[#003893] pt-3 border-t border-gray-100 group-hover:translate-x-0.5 transition-transform">
+              <div className="flex items-center text-xs font-semibold text-zinc-900 pt-3 border-t border-zinc-100 group-hover:translate-x-0.5 transition-transform">
                 <span>{t('services.learnMore', 'Browse guides')}</span>
-                <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
+                <ArrowRight className="w-3.5 h-3.5 ml-1.5 text-zinc-600" />
               </div>
             </Link>
           );
@@ -140,26 +140,23 @@ export default function ServicesSection({
         {/* 6th Card: View All Services */}
         <Link
           to="/services"
-          className="group flex flex-col justify-between p-5 sm:p-6 bg-gradient-to-br from-[#003893] via-[#002868] to-slate-950 text-white rounded-2xl border border-blue-900/60 hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 relative overflow-hidden"
+          className="group flex flex-col justify-between p-5 sm:p-6 bg-white rounded-2xl border border-zinc-300 hover:border-zinc-900 hover:shadow-xs transition-all duration-150 relative"
         >
-          {/* Subtle decorative glow element */}
-          <div className="absolute -right-8 -bottom-8 w-32 h-32 bg-blue-500/15 rounded-full blur-2xl pointer-events-none group-hover:bg-blue-400/25 transition-all" />
-
           <div>
             <div className="flex items-center justify-between mb-4">
-              <div className="w-11 h-11 rounded-xl bg-white/10 text-amber-300 border border-white/10 group-hover:bg-amber-400 group-hover:text-slate-950 flex items-center justify-center transition-all shadow-2xs">
-                <LayoutGrid className="w-5 h-5" />
+              <div className="w-10 h-10 rounded-xl bg-zinc-900 text-white flex items-center justify-center transition-colors">
+                <LayoutGrid className="w-5 h-5 text-white" />
               </div>
-              <span className="text-[11px] font-bold text-amber-300 bg-amber-400/15 border border-amber-400/30 px-2.5 py-0.5 rounded-full">
+              <span className="text-xs font-medium text-zinc-600 bg-zinc-100 border border-zinc-200 px-2.5 py-0.5 rounded-md">
                 {t('services.allCategoriesCount', '10 Categories')}
               </span>
             </div>
 
-            <h3 className="text-base font-bold text-white group-hover:text-amber-200 transition-colors mb-2 leading-snug">
+            <h3 className="text-base font-bold text-zinc-900 group-hover:text-zinc-700 transition-colors mb-2 leading-snug">
               {t('services.viewAllCardTitle', 'View All Services')}
             </h3>
 
-            <p className="text-xs text-blue-100/80 leading-relaxed mb-4">
+            <p className="text-xs text-zinc-600 leading-relaxed mb-4">
               {t(
                 'services.viewAllCardDesc',
                 'Explore the full directory of government services, requirements, citizen charters, and step-by-step guides.'
@@ -167,11 +164,11 @@ export default function ServicesSection({
             </p>
           </div>
 
-          <div className="flex items-center text-xs font-bold text-amber-300 pt-3 border-t border-white/10 group-hover:translate-x-1 transition-transform">
+          <div className="flex items-center text-xs font-semibold text-zinc-900 pt-3 border-t border-zinc-100 group-hover:translate-x-1 transition-transform">
             <span>
               {t('services.viewAllCardAction', 'Explore full directory')}
             </span>
-            <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
+            <ArrowRight className="w-3.5 h-3.5 ml-1.5 text-zinc-600" />
           </div>
         </Link>
       </div>

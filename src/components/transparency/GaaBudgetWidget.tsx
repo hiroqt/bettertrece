@@ -216,29 +216,21 @@ export const GaaBudgetWidget: React.FC<{ className?: string }> = ({
   return (
     <div className={`space-y-8 ${className}`}>
       {/* 1. Header & Hero Metric Cards */}
-      <div className="bg-gradient-to-r from-slate-900 via-[#00225e] to-[#003893] rounded-3xl p-6 sm:p-8 lg:p-10 text-white shadow-xl border border-white/10 relative overflow-hidden">
+      <div className="bg-gradient-to-r from-[#001f54] via-[#00225e] to-[#003893] rounded-3xl p-6 sm:p-8 lg:p-10 text-white shadow-xl border border-blue-900/40 relative overflow-hidden">
         {/* Background glow effects */}
         <div className="absolute top-0 right-0 -mt-10 -mr-10 w-80 h-80 bg-blue-400/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-80 h-80 bg-emerald-400/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-80 h-80 bg-blue-300/10 rounded-full blur-3xl pointer-events-none" />
 
         <div className="relative z-10 space-y-6">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 border-b border-white/15 pb-6">
             <div className="space-y-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-white/10 text-blue-200 border border-white/20">
-                <Landmark
-                  className="w-3.5 h-3.5 text-blue-300"
-                  aria-hidden="true"
-                />
-                <span>
-                  Source: BetterGov Hugging Face Datasets &bull; GAA (2020–2026)
-                </span>
-              </div>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight text-white">
-                National Budget Allocations for Trece Martires City
+                National <span className="text-amber-300">Budget</span>{' '}
+                Allocations for Trece Martires City
               </h2>
               <p className="text-xs sm:text-sm text-blue-100/90 max-w-3xl leading-relaxed">
                 Curated from the BetterGov Hugging Face GAA dataset (
-                <code className="bg-white/10 px-1.5 py-0.5 rounded text-white font-mono text-xs">
+                <code className="bg-white/15 px-1.5 py-0.5 rounded text-white font-mono text-xs">
                   bettergovph/gaa
                 </code>
                 ). Complete line-item transparency of national appropriations
@@ -255,7 +247,7 @@ export const GaaBudgetWidget: React.FC<{ className?: string }> = ({
                 aria-label="Download Trece Martires GAA Dataset as CSV"
               >
                 <FileSpreadsheet
-                  className="w-4 h-4 text-[#003893]"
+                  className="w-4 h-4 text-[#00225e]"
                   aria-hidden="true"
                 />
                 <span>Download CSV</span>
@@ -278,15 +270,15 @@ export const GaaBudgetWidget: React.FC<{ className?: string }> = ({
           {/* 4 KPI Metrics */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
             {/* KPI 1: Grand Total */}
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-5 border border-white/15 hover:bg-white/15 transition-all">
-              <div className="flex items-center justify-between text-blue-200 text-xs font-bold uppercase tracking-wider mb-2">
+            <div className="bg-gradient-to-br from-[#001438]/80 to-[#00225e]/80 backdrop-blur-md rounded-2xl p-4 sm:p-5 border border-blue-400/20 hover:border-blue-400/40 transition-all text-white">
+              <div className="flex items-center justify-between text-blue-200 text-xs font-semibold uppercase tracking-wider mb-2">
                 <span>Grand Total (2020–2026)</span>
                 <TrendingUp
-                  className="w-4 h-4 text-emerald-400"
+                  className="w-4 h-4 text-amber-300"
                   aria-hidden="true"
                 />
               </div>
-              <div className="text-2xl sm:text-3xl font-black text-white">
+              <div className="text-2xl sm:text-3xl font-black text-amber-300">
                 <AnimatedCounter
                   value={gaaSummary.grand_total_php / 1000000000}
                   prefix="₱"
@@ -294,14 +286,14 @@ export const GaaBudgetWidget: React.FC<{ className?: string }> = ({
                   decimals={3}
                 />
               </div>
-              <div className="text-[11px] text-blue-200/80 mt-1 font-mono">
+              <div className="text-xs text-blue-200/80 mt-1 font-mono">
                 {gaaSummary.grand_total_formatted}
               </div>
             </div>
 
             {/* KPI 2: DPWH Infrastructure */}
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-5 border border-white/15 hover:bg-white/15 transition-all">
-              <div className="flex items-center justify-between text-blue-200 text-xs font-bold uppercase tracking-wider mb-2">
+            <div className="bg-gradient-to-br from-[#001438]/80 to-[#00225e]/80 backdrop-blur-md rounded-2xl p-4 sm:p-5 border border-blue-400/20 hover:border-blue-400/40 transition-all text-white">
+              <div className="flex items-center justify-between text-blue-200 text-xs font-semibold uppercase tracking-wider mb-2">
                 <span>DPWH Infrastructure</span>
                 <HardHat
                   className="w-4 h-4 text-amber-300"
@@ -320,21 +312,21 @@ export const GaaBudgetWidget: React.FC<{ className?: string }> = ({
                   decimals={2}
                 />
               </div>
-              <div className="text-[11px] text-blue-200/80 mt-1">
+              <div className="text-xs text-blue-200/80 mt-1">
                 793 Project Line Items (Flood &amp; Roads)
               </div>
             </div>
 
             {/* KPI 3: DepEd Public High Schools */}
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-5 border border-white/15 hover:bg-white/15 transition-all">
-              <div className="flex items-center justify-between text-blue-200 text-xs font-bold uppercase tracking-wider mb-2">
+            <div className="bg-gradient-to-br from-[#001438]/80 to-[#00225e]/80 backdrop-blur-md rounded-2xl p-4 sm:p-5 border border-blue-400/20 hover:border-blue-400/40 transition-all text-white">
+              <div className="flex items-center justify-between text-blue-200 text-xs font-semibold uppercase tracking-wider mb-2">
                 <span>DepEd Public Schools</span>
                 <GraduationCap
-                  className="w-4 h-4 text-cyan-300"
+                  className="w-4 h-4 text-amber-300"
                   aria-hidden="true"
                 />
               </div>
-              <div className="text-2xl sm:text-3xl font-black text-cyan-300">
+              <div className="text-2xl sm:text-3xl font-black text-amber-300">
                 <AnimatedCounter
                   value={
                     gaaSummary.totals_by_department[
@@ -346,27 +338,24 @@ export const GaaBudgetWidget: React.FC<{ className?: string }> = ({
                   decimals={2}
                 />
               </div>
-              <div className="text-[11px] text-blue-200/80 mt-1">
+              <div className="text-xs text-blue-200/80 mt-1">
                 6 High Schools (Salaries &amp; MOOE)
               </div>
             </div>
 
             {/* KPI 4: Total Records */}
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-5 border border-white/15 hover:bg-white/15 transition-all">
-              <div className="flex items-center justify-between text-blue-200 text-xs font-bold uppercase tracking-wider mb-2">
+            <div className="bg-gradient-to-br from-[#001438]/80 to-[#00225e]/80 backdrop-blur-md rounded-2xl p-4 sm:p-5 border border-blue-400/20 hover:border-blue-400/40 transition-all text-white">
+              <div className="flex items-center justify-between text-blue-200 text-xs font-semibold uppercase tracking-wider mb-2">
                 <span>Line-Item Records</span>
-                <Layers
-                  className="w-4 h-4 text-emerald-400"
-                  aria-hidden="true"
-                />
+                <Layers className="w-4 h-4 text-amber-300" aria-hidden="true" />
               </div>
-              <div className="text-2xl sm:text-3xl font-black text-emerald-300">
+              <div className="text-2xl sm:text-3xl font-black text-amber-300">
                 <AnimatedCounter
                   value={gaaSummary.total_records}
                   decimals={0}
                 />
               </div>
-              <div className="text-[11px] text-blue-200/80 mt-1">
+              <div className="text-xs text-blue-200/80 mt-1">
                 7 Fiscal Years (UACS Classified)
               </div>
             </div>
@@ -375,7 +364,7 @@ export const GaaBudgetWidget: React.FC<{ className?: string }> = ({
       </div>
 
       {/* 2. Sub-Navigation Tabs */}
-      <div className="bg-white rounded-2xl p-2 border border-slate-200 shadow-xs flex flex-wrap gap-2">
+      <div className="bg-white rounded-2xl p-2 border border-zinc-200 shadow-2xs flex flex-wrap gap-2">
         <button
           type="button"
           role="tab"
@@ -383,13 +372,16 @@ export const GaaBudgetWidget: React.FC<{ className?: string }> = ({
           aria-selected={subTab === 'explorer'}
           aria-controls="subpanel-explorer"
           onClick={() => setSubTab('explorer')}
-          className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#00225e] ${
+          className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#003893] ${
             subTab === 'explorer'
-              ? 'bg-[#00225e] text-white shadow-xs'
-              : 'text-slate-700 hover:text-slate-900 hover:bg-slate-100'
+              ? 'bg-[#003893] text-white shadow-2xs'
+              : 'text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100'
           }`}
         >
-          <Search className="w-4 h-4" aria-hidden="true" />
+          <Search
+            className={`w-4 h-4 ${subTab === 'explorer' ? 'text-blue-200' : 'text-zinc-400'}`}
+            aria-hidden="true"
+          />
           <span>Line-Item Explorer ({filteredRecords.length})</span>
         </button>
 
@@ -400,13 +392,16 @@ export const GaaBudgetWidget: React.FC<{ className?: string }> = ({
           aria-selected={subTab === 'schools'}
           aria-controls="subpanel-schools"
           onClick={() => setSubTab('schools')}
-          className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#00225e] ${
+          className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#003893] ${
             subTab === 'schools'
-              ? 'bg-[#00225e] text-white shadow-xs'
-              : 'text-slate-700 hover:text-slate-900 hover:bg-slate-100'
+              ? 'bg-[#003893] text-white shadow-2xs'
+              : 'text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100'
           }`}
         >
-          <GraduationCap className="w-4 h-4" aria-hidden="true" />
+          <GraduationCap
+            className={`w-4 h-4 ${subTab === 'schools' ? 'text-blue-200' : 'text-zinc-400'}`}
+            aria-hidden="true"
+          />
           <span>Public High Schools (6 Schools)</span>
         </button>
 
@@ -417,13 +412,16 @@ export const GaaBudgetWidget: React.FC<{ className?: string }> = ({
           aria-selected={subTab === 'infrastructure'}
           aria-controls="subpanel-infrastructure"
           onClick={() => setSubTab('infrastructure')}
-          className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#00225e] ${
+          className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#003893] ${
             subTab === 'infrastructure'
-              ? 'bg-[#00225e] text-white shadow-xs'
-              : 'text-slate-700 hover:text-slate-900 hover:bg-slate-100'
+              ? 'bg-[#003893] text-white shadow-2xs'
+              : 'text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100'
           }`}
         >
-          <HardHat className="w-4 h-4" aria-hidden="true" />
+          <HardHat
+            className={`w-4 h-4 ${subTab === 'infrastructure' ? 'text-blue-200' : 'text-zinc-400'}`}
+            aria-hidden="true"
+          />
           <span>DPWH Infrastructure Highlights</span>
         </button>
 
@@ -434,13 +432,16 @@ export const GaaBudgetWidget: React.FC<{ className?: string }> = ({
           aria-selected={subTab === 'overview'}
           aria-controls="subpanel-overview"
           onClick={() => setSubTab('overview')}
-          className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#00225e] ${
+          className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#003893] ${
             subTab === 'overview'
-              ? 'bg-[#00225e] text-white shadow-xs'
-              : 'text-slate-700 hover:text-slate-900 hover:bg-slate-100'
+              ? 'bg-[#003893] text-white shadow-2xs'
+              : 'text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100'
           }`}
         >
-          <Calendar className="w-4 h-4" aria-hidden="true" />
+          <Calendar
+            className={`w-4 h-4 ${subTab === 'overview' ? 'text-blue-200' : 'text-zinc-400'}`}
+            aria-hidden="true"
+          />
           <span>Yearly Trends (2020–2026)</span>
         </button>
       </div>
