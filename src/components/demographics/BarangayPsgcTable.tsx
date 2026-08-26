@@ -10,23 +10,18 @@ import {
   Search,
   Copy,
   Check,
-  Building2,
-  TrendingUp,
-  Users,
-  MapPin,
   ArrowUpDown,
-  Vote,
-  CheckSquare2,
-  Layers,
-  School,
   X,
   CheckCircle2,
   Info,
+  Globe2,
+  History,
 } from 'lucide-react';
 
 export default function BarangayPsgcTable() {
   const [searchQuery, setSearchQuery] = useState('');
   const [filterType, setFilterType] = useState<string>('All');
+  const [codeFormat, setCodeFormat] = useState<'10digit' | '9digit'>('10digit');
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
   const [selectedBarangay, setSelectedBarangay] =
     useState<BarangayPsgcData | null>(null);
@@ -43,13 +38,17 @@ export default function BarangayPsgcTable() {
 
   const filteredBarangays = useMemo(() => {
     return TRECE_BARANGAYS_PSGC.filter((brgy: BarangayPsgcData) => {
+      const q = searchQuery.toLowerCase().trim();
       const matchesSearch =
-        brgy.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        brgy.psgcCode.includes(searchQuery) ||
-        brgy.type.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        brgy.historicalName.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        (brgy.captain &&
-          brgy.captain.toLowerCase().includes(searchQuery.toLowerCase()));
+        !q ||
+        brgy.name.toLowerCase().includes(q) ||
+        brgy.psgcCode.includes(q) ||
+        (brgy.psgc10DigitCode && brgy.psgc10DigitCode.includes(q)) ||
+        brgy.type.toLowerCase().includes(q) ||
+        brgy.historicalName.toLowerCase().includes(q) ||
+        (brgy.oldBarangayName &&
+          brgy.oldBarangayName.toLowerCase().includes(q)) ||
+        (brgy.captain && brgy.captain.toLowerCase().includes(q));
 
       const matchesFilter =
         filterType === 'All' || brgy.urbanRural === filterType;
@@ -87,200 +86,152 @@ export default function BarangayPsgcTable() {
 
   return (
     <div className="space-y-8">
-      {/* 1. ELECTORAL & REGISTERED VOTERS PROFILE (COMELEC 2025) */}
+      {/* 1. PSGC GEOGRAPHIC HIERARCHY & ADMINISTRATIVE PROFILE */}
       <div className="bg-gradient-to-br from-slate-900 via-[#00225e] to-indigo-950 text-white rounded-3xl p-6 sm:p-8 shadow-md border border-blue-900/40 relative overflow-hidden">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/10 pb-5 mb-6">
-          <div className="space-y-1">
-            <div className="flex items-center gap-2">
-              <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-400/20 text-amber-300 border border-amber-400/30 inline-flex items-center gap-1.5">
-                <Vote className="w-3.5 h-3.5" />
-                <span>Electoral &amp; Voters Profile</span>
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 border-b border-white/10 pb-6 mb-6">
+          <div className="space-y-2 max-w-3xl">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="px-3 py-1 rounded-full text-xs font-bold bg-amber-400/20 text-amber-300 border border-amber-400/30 inline-flex items-center gap-1.5">
+                <Globe2 className="w-3.5 h-3.5" />
+                <span>Official Geographic Classification (PSGC Q2_2024)</span>
               </span>
-              <span className="text-[11px] font-mono text-blue-200">
-                {TRECE_VOTER_STATISTICS_2025.electionName}
+              <span className="px-2.5 py-0.5 rounded-full text-xs font-mono font-bold bg-white/10 text-blue-100">
+                PSGC 0402122000 / 042122000
               </span>
             </div>
-            <h3 className="text-xl sm:text-2xl font-black text-white">
-              City of Trece Martires — Official Voter Registry
+            <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
+              City of Trece Martires Geographic Profile
             </h3>
-            <p className="text-xs text-blue-200">
-              Official data verified by the{' '}
-              <strong>{TRECE_VOTER_STATISTICS_2025.sourceAgency}</strong> as of{' '}
-              <strong>{TRECE_VOTER_STATISTICS_2025.asOfDate}</strong>.
+            <p className="text-xs sm:text-sm text-blue-100/90 leading-relaxed">
+              Official standard geographic hierarchy, administrative
+              classifications, census demographics, and 13 constituent barangays
+              established by the Philippine Statistics Authority (PSA).
             </p>
           </div>
 
-          <div className="text-right shrink-0 hidden sm:block">
-            <div className="text-xs text-blue-300 uppercase tracking-wider font-semibold">
-              Cavite Province Total
-            </div>
-            <div className="text-lg font-bold font-mono text-white">
-              <AnimatedCounter
-                value={TRECE_VOTER_STATISTICS_2025.caviteProvinceTotalVoters}
-              />{' '}
-              voters
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
+            <div className="bg-white/10 p-3.5 rounded-2xl border border-white/15 text-center">
+              <div className="text-[11px] text-blue-200 uppercase tracking-wider font-semibold">
+                Income &amp; City Class
+              </div>
+              <div className="font-bold text-white text-sm mt-0.5">
+                1st Class Component City
+              </div>
+              <div className="text-[11px] text-amber-300 font-medium">
+                Provincial Capital of Cavite
+              </div>
             </div>
           </div>
         </div>
 
-        {/* 4 Voter Stats Cards */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="bg-white/10 backdrop-blur-xs p-4 sm:p-5 rounded-2xl border border-white/15">
-            <div className="flex items-center justify-between text-blue-200 text-xs font-semibold mb-2">
-              <span>REGISTERED VOTERS</span>
-              <Users className="w-4 h-4 text-amber-300" />
+        {/* 4 Geographic Hierarchy Level Steps */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
+          <div className="bg-white/5 p-4 rounded-2xl border border-white/10 flex flex-col justify-between">
+            <div>
+              <div className="text-blue-300 font-semibold text-[11px] uppercase tracking-wider flex items-center justify-between">
+                <span>Level 1: Region</span>
+                <span className="font-mono text-white font-bold bg-white/10 px-1.5 py-0.2 rounded">
+                  04
+                </span>
+              </div>
+              <div className="font-bold text-white text-base mt-1">
+                Region IV-A (CALABARZON)
+              </div>
             </div>
-            <div className="text-2xl sm:text-3xl font-black font-mono text-white">
+            <div className="text-blue-200/70 text-[11px] mt-2 pt-2 border-t border-white/10">
+              Island Group: Luzon
+            </div>
+          </div>
+
+          <div className="bg-white/5 p-4 rounded-2xl border border-white/10 flex flex-col justify-between">
+            <div>
+              <div className="text-blue-300 font-semibold text-[11px] uppercase tracking-wider flex items-center justify-between">
+                <span>Level 2: Province</span>
+                <span className="font-mono text-white font-bold bg-white/10 px-1.5 py-0.2 rounded">
+                  21
+                </span>
+              </div>
+              <div className="font-bold text-white text-base mt-1">
+                Province of Cavite
+              </div>
+            </div>
+            <div className="text-blue-200/70 text-[11px] mt-2 pt-2 border-t border-white/10">
+              PSGC Code: 0402100000
+            </div>
+          </div>
+
+          <div className="bg-white/5 p-4 rounded-2xl border border-white/10 flex flex-col justify-between">
+            <div>
+              <div className="text-blue-300 font-semibold text-[11px] uppercase tracking-wider flex items-center justify-between">
+                <span>Level 3: City</span>
+                <span className="font-mono text-white font-bold bg-white/10 px-1.5 py-0.2 rounded">
+                  22
+                </span>
+              </div>
+              <div className="font-bold text-white text-base mt-1">
+                City of Trece Martires
+              </div>
+            </div>
+            <div className="text-blue-200/70 text-[11px] mt-2 pt-2 border-t border-white/10">
+              Chartered under RA 981 (1954)
+            </div>
+          </div>
+
+          <div className="bg-white/5 p-4 rounded-2xl border border-white/10 flex flex-col justify-between">
+            <div>
+              <div className="text-blue-300 font-semibold text-[11px] uppercase tracking-wider flex items-center justify-between">
+                <span>Level 4: Barangays</span>
+                <span className="font-mono text-amber-300 font-bold bg-amber-400/20 px-1.5 py-0.2 rounded">
+                  13 Units
+                </span>
+              </div>
+              <div className="font-bold text-white text-base mt-1">
+                13 Constituent Barangays
+              </div>
+            </div>
+            <div className="text-blue-200/70 text-[11px] mt-2 pt-2 border-t border-white/10">
+              Named after Cavite Martyrs
+            </div>
+          </div>
+        </div>
+
+        {/* Electoral & Demographics Summary Stats */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4 pt-4 border-t border-white/10 text-xs">
+          <div>
+            <div className="text-blue-200/80">2024 Population (POPCEN)</div>
+            <div className="text-lg sm:text-xl font-black text-white font-mono mt-0.5">
+              <AnimatedCounter
+                value={TRECE_MUNICIPAL_PROFILE.totalPopulation2024}
+              />
+            </div>
+          </div>
+
+          <div>
+            <div className="text-blue-200/80">Registered Voters (2025)</div>
+            <div className="text-lg sm:text-xl font-black text-amber-300 font-mono mt-0.5">
               <AnimatedCounter
                 value={TRECE_VOTER_STATISTICS_2025.registeredVoters}
               />
             </div>
-            <div className="text-[11px] text-blue-200 mt-2">
-              City of Trece Martires
+          </div>
+
+          <div>
+            <div className="text-blue-200/80">Voting Centers (COMELEC)</div>
+            <div className="text-lg sm:text-xl font-black text-white font-mono mt-0.5">
+              {TRECE_VOTER_STATISTICS_2025.votingCenters} Schools
             </div>
           </div>
 
-          <div className="bg-white/10 backdrop-blur-xs p-4 sm:p-5 rounded-2xl border border-white/15">
-            <div className="flex items-center justify-between text-blue-200 text-xs font-semibold mb-2">
-              <span>VOTING CENTERS</span>
-              <School className="w-4 h-4 text-emerald-300" />
-            </div>
-            <div className="text-2xl sm:text-3xl font-black font-mono text-white">
-              <AnimatedCounter
-                value={TRECE_VOTER_STATISTICS_2025.votingCenters}
-              />
-            </div>
-            <div className="text-[11px] text-blue-200 mt-2">
-              Designated school centers
-            </div>
-          </div>
-
-          <div className="bg-white/10 backdrop-blur-xs p-4 sm:p-5 rounded-2xl border border-white/15">
-            <div className="flex items-center justify-between text-blue-200 text-xs font-semibold mb-2">
-              <span>CLUSTERED PRECINCTS</span>
-              <CheckSquare2 className="w-4 h-4 text-blue-300" />
-            </div>
-            <div className="text-2xl sm:text-3xl font-black font-mono text-white">
-              <AnimatedCounter
-                value={TRECE_VOTER_STATISTICS_2025.clusteredPrecincts}
-              />
-            </div>
-            <div className="text-[11px] text-blue-200 mt-2">
-              Active clustered precincts
-            </div>
-          </div>
-
-          <div className="bg-white/10 backdrop-blur-xs p-4 sm:p-5 rounded-2xl border border-white/15">
-            <div className="flex items-center justify-between text-blue-200 text-xs font-semibold mb-2">
-              <span>ESTABLISHED PRECINCTS</span>
-              <Layers className="w-4 h-4 text-purple-300" />
-            </div>
-            <div className="text-2xl sm:text-3xl font-black font-mono text-white">
-              <AnimatedCounter
-                value={TRECE_VOTER_STATISTICS_2025.establishedPrecincts}
-              />
-            </div>
-            <div className="text-[11px] text-blue-200 mt-2">
-              Total established precincts
+          <div>
+            <div className="text-blue-200/80">Clustered Precincts</div>
+            <div className="text-lg sm:text-xl font-black text-white font-mono mt-0.5">
+              {TRECE_VOTER_STATISTICS_2025.clusteredPrecincts} Precincts
             </div>
           </div>
         </div>
       </div>
 
-      {/* 2. DEMOGRAPHIC & GEOGRAPHIC INDICATORS (2024 POPCEN) */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="bg-white p-5 rounded-2xl border border-gray-200 shadow-xs">
-          <div className="flex items-center justify-between text-gray-500 text-xs font-semibold mb-2">
-            <span>TOTAL POPULATION (2024)</span>
-            <Users className="w-4 h-4 text-[#003893]" />
-          </div>
-          <div className="text-2xl sm:text-3xl font-black text-gray-900 font-mono">
-            <AnimatedCounter
-              value={TRECE_MUNICIPAL_PROFILE.totalPopulation2024}
-            />
-          </div>
-          <div className="text-xs text-gray-500 mt-2 flex items-center gap-1">
-            <TrendingUp className="w-3.5 h-3.5 text-emerald-600" />
-            <span className="text-emerald-700 font-bold">
-              {TRECE_MUNICIPAL_PROFILE.populationGrowthRate}
-            </span>{' '}
-            (vs{' '}
-            <AnimatedCounter
-              value={TRECE_MUNICIPAL_PROFILE.totalPopulation2020}
-            />{' '}
-            in 2020)
-          </div>
-        </div>
-
-        <div className="bg-white p-5 rounded-2xl border border-gray-200 shadow-xs">
-          <div className="flex items-center justify-between text-gray-500 text-xs font-semibold mb-2">
-            <span>CITY PSGC CODE</span>
-            <MapPin className="w-4 h-4 text-[#003893]" />
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="text-2xl font-black text-gray-900 font-mono">
-              {TRECE_MUNICIPAL_PROFILE.psgcCityCode}
-            </span>
-            <button
-              onClick={() =>
-                copyToClipboard(
-                  TRECE_MUNICIPAL_PROFILE.psgcCityCode,
-                  'city-psgc'
-                )
-              }
-              className="p-1.5 hover:bg-gray-100 rounded-lg text-gray-400 hover:text-gray-700 transition-colors cursor-pointer"
-              title="Copy City PSGC Code"
-            >
-              {copiedCode === 'city-psgc' ? (
-                <Check className="w-4 h-4 text-emerald-600" />
-              ) : (
-                <Copy className="w-4 h-4" />
-              )}
-            </button>
-          </div>
-          <div className="text-xs text-gray-500 mt-2">
-            Region IV-A (04) • Cavite (21)
-          </div>
-        </div>
-
-        <div className="bg-white p-5 rounded-2xl border border-gray-200 shadow-xs">
-          <div className="flex items-center justify-between text-gray-500 text-xs font-semibold mb-2">
-            <span>HIGHEST POPULATION</span>
-            <Building2 className="w-4 h-4 text-amber-600" />
-          </div>
-          <div className="text-xl font-bold text-gray-900 truncate">
-            Brgy. Hugo Perez
-          </div>
-          <div className="text-xs text-gray-600 mt-2 flex items-center justify-between">
-            <span>
-              <AnimatedCounter value={52860} /> residents (2024)
-            </span>
-            <span className="font-mono text-[11px] text-gray-400 font-medium">
-              <AnimatedCounter value={23.2} decimals={1} />% of city
-            </span>
-          </div>
-        </div>
-
-        <div className="bg-white p-5 rounded-2xl border border-gray-200 shadow-xs">
-          <div className="flex items-center justify-between text-gray-500 text-xs font-semibold mb-2">
-            <span>FASTEST GROWING</span>
-            <TrendingUp className="w-4 h-4 text-emerald-600" />
-          </div>
-          <div className="text-xl font-bold text-gray-900 truncate">
-            Brgy. Aguado
-          </div>
-          <div className="text-xs text-gray-600 mt-2 flex items-center justify-between">
-            <span className="text-emerald-700 font-bold">
-              +<AnimatedCounter value={77.4} decimals={1} />% growth
-            </span>
-            <span className="font-mono text-[11px] text-gray-400 font-medium">
-              <AnimatedCounter value={39240} /> residents (2024)
-            </span>
-          </div>
-        </div>
-      </div>
-
-      {/* 3. 13 CONSTITUENT BARANGAYS & DEMOGRAPHICS DIRECTORY */}
+      {/* 2. BARANGAY DEMOGRAPHIC DIRECTORY & PSGC TABLE */}
       <div className="bg-white rounded-3xl border border-gray-200 shadow-xs overflow-hidden">
         {/* Table Top Header */}
         <div className="p-5 sm:p-6 border-b border-gray-200 bg-gradient-to-r from-slate-900 via-[#00225e] to-[#003893] text-white flex flex-col md:flex-row md:items-center justify-between gap-4">
@@ -292,13 +243,37 @@ export default function BarangayPsgcTable() {
               </span>
             </div>
             <h3 className="text-xl sm:text-2xl font-black text-white">
-              Barangay Demographics &amp; Geographic Directory
+              13 Constituent Barangays Directory
             </h3>
             <p className="text-xs text-blue-100/90 max-w-2xl leading-relaxed">
-              Explore the official population census records, PSGC location
-              codes, and elected Barangay Captains for all 13 constituent
+              Explore the official population census records, PSGC geocodes,
+              historical native names, and elected Barangay Captains for all 13
               barangays of Trece Martires City.
             </p>
+          </div>
+
+          {/* 10-Digit vs 9-Digit Code Format Toggle */}
+          <div className="flex items-center bg-white/10 p-1 rounded-xl border border-white/20 shrink-0">
+            <button
+              onClick={() => setCodeFormat('10digit')}
+              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                codeFormat === '10digit'
+                  ? 'bg-white text-slate-950 shadow-xs'
+                  : 'text-blue-100 hover:text-white'
+              }`}
+            >
+              10-Digit PSGC
+            </button>
+            <button
+              onClick={() => setCodeFormat('9digit')}
+              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                codeFormat === '9digit'
+                  ? 'bg-white text-slate-950 shadow-xs'
+                  : 'text-blue-100 hover:text-white'
+              }`}
+            >
+              9-Digit Standard
+            </button>
           </div>
         </div>
 
@@ -308,10 +283,10 @@ export default function BarangayPsgcTable() {
             <Search className="w-4 h-4 text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
             <input
               type="text"
-              placeholder="Search barangay, captain, or PSGC..."
+              placeholder="Search barangay, historical name, captain, or PSGC..."
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition-all"
+              className="w-full pl-10 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition-all text-gray-900"
             />
           </div>
 
@@ -340,13 +315,15 @@ export default function BarangayPsgcTable() {
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="bg-gray-50/80 border-b border-gray-200 text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                <th className="py-3.5 px-4">PSGC Code</th>
+                <th className="py-3.5 px-4">
+                  {codeFormat === '10digit' ? '10-Digit PSGC' : '9-Digit Code'}
+                </th>
                 <th
                   className="py-3.5 px-4 cursor-pointer hover:text-gray-900"
                   onClick={() => toggleSort('name')}
                 >
                   <div className="flex items-center gap-1">
-                    <span>Barangay &amp; Martyr Honor</span>
+                    <span>Barangay &amp; Martyr Namesake</span>
                     <ArrowUpDown className="w-3 h-3 text-gray-400" />
                   </div>
                 </th>
@@ -391,88 +368,95 @@ export default function BarangayPsgcTable() {
                   </td>
                 </tr>
               ) : (
-                filteredBarangays.map((brgy: BarangayPsgcData) => (
-                  <tr
-                    key={brgy.psgcCode}
-                    className="hover:bg-blue-50/40 transition-colors group cursor-pointer"
-                    onClick={() => setSelectedBarangay(brgy)}
-                  >
-                    <td className="py-3.5 px-4 font-mono font-bold text-xs text-[#003893] whitespace-nowrap">
-                      <div className="flex items-center gap-2">
-                        <span>{brgy.psgcCode}</span>
+                filteredBarangays.map((brgy: BarangayPsgcData) => {
+                  const displayedCode =
+                    codeFormat === '10digit'
+                      ? brgy.psgc10DigitCode || brgy.psgcCode
+                      : brgy.psgcCode;
+
+                  return (
+                    <tr
+                      key={brgy.psgcCode}
+                      className="hover:bg-blue-50/40 transition-colors group cursor-pointer"
+                      onClick={() => setSelectedBarangay(brgy)}
+                    >
+                      <td className="py-3.5 px-4 font-mono font-bold text-xs text-[#003893] whitespace-nowrap">
+                        <div className="flex items-center gap-2">
+                          <span>{displayedCode}</span>
+                          <button
+                            onClick={e => {
+                              e.stopPropagation();
+                              copyToClipboard(displayedCode, displayedCode);
+                            }}
+                            className="opacity-0 group-hover:opacity-100 p-1 hover:bg-blue-100 rounded text-gray-500 hover:text-blue-700 transition-all cursor-pointer"
+                            title="Copy PSGC Code"
+                          >
+                            {copiedCode === displayedCode ? (
+                              <Check className="w-3.5 h-3.5 text-emerald-600" />
+                            ) : (
+                              <Copy className="w-3.5 h-3.5" />
+                            )}
+                          </button>
+                        </div>
+                      </td>
+
+                      <td className="py-3.5 px-4">
+                        <div className="font-bold text-gray-900">
+                          Brgy. {brgy.name}
+                        </div>
+                        <div className="text-xs text-gray-500 line-clamp-1">
+                          {brgy.historicalName}
+                        </div>
+                        {brgy.captain && (
+                          <div className="text-[11px] font-semibold text-[#003893] mt-0.5 flex items-center gap-1">
+                            <span className="text-gray-400 font-normal">
+                              Captain:
+                            </span>
+                            <span>{brgy.captain}</span>
+                          </div>
+                        )}
+                      </td>
+
+                      <td className="py-3.5 px-4 whitespace-nowrap">
+                        <span
+                          className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
+                            brgy.urbanRural === 'Urban'
+                              ? 'bg-blue-100 text-blue-800'
+                              : 'bg-emerald-100 text-emerald-800'
+                          }`}
+                        >
+                          {brgy.urbanRural}
+                        </span>
+                      </td>
+
+                      <td className="py-3.5 px-4 text-right font-mono text-gray-500 text-xs">
+                        {brgy.population2020.toLocaleString()}
+                      </td>
+
+                      <td className="py-3.5 px-4 text-right font-mono font-black text-[#003893] text-xs bg-blue-50/50">
+                        {brgy.population2024.toLocaleString()}
+                      </td>
+
+                      <td className="py-3.5 px-4 text-right">
+                        <span className="font-mono font-bold text-xs text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">
+                          {brgy.growthRate}
+                        </span>
+                      </td>
+
+                      <td className="py-3.5 px-4 text-right">
                         <button
                           onClick={e => {
                             e.stopPropagation();
-                            copyToClipboard(brgy.psgcCode, brgy.psgcCode);
+                            setSelectedBarangay(brgy);
                           }}
-                          className="opacity-0 group-hover:opacity-100 p-1 hover:bg-blue-100 rounded text-gray-500 hover:text-blue-700 transition-all cursor-pointer"
-                          title="Copy PSGC"
+                          className="text-xs font-bold text-[#003893] hover:underline cursor-pointer"
                         >
-                          {copiedCode === brgy.psgcCode ? (
-                            <Check className="w-3.5 h-3.5 text-emerald-600" />
-                          ) : (
-                            <Copy className="w-3.5 h-3.5" />
-                          )}
+                          View Details
                         </button>
-                      </div>
-                    </td>
-
-                    <td className="py-3.5 px-4">
-                      <div className="font-bold text-gray-900">
-                        Brgy. {brgy.name}
-                      </div>
-                      <div className="text-xs text-gray-500 line-clamp-1">
-                        {brgy.historicalName}
-                      </div>
-                      {brgy.captain && (
-                        <div className="text-[11px] font-semibold text-[#003893] mt-0.5 flex items-center gap-1">
-                          <span className="text-gray-400 font-normal">
-                            Captain:
-                          </span>
-                          <span>{brgy.captain}</span>
-                        </div>
-                      )}
-                    </td>
-
-                    <td className="py-3.5 px-4 whitespace-nowrap">
-                      <span
-                        className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
-                          brgy.urbanRural === 'Urban'
-                            ? 'bg-blue-100 text-blue-800'
-                            : 'bg-emerald-100 text-emerald-800'
-                        }`}
-                      >
-                        {brgy.urbanRural}
-                      </span>
-                    </td>
-
-                    <td className="py-3.5 px-4 text-right font-mono text-gray-500 text-xs">
-                      {brgy.population2020.toLocaleString()}
-                    </td>
-
-                    <td className="py-3.5 px-4 text-right font-mono font-black text-[#003893] text-xs bg-blue-50/50">
-                      {brgy.population2024.toLocaleString()}
-                    </td>
-
-                    <td className="py-3.5 px-4 text-right">
-                      <span className="font-mono font-bold text-xs text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">
-                        {brgy.growthRate}
-                      </span>
-                    </td>
-
-                    <td className="py-3.5 px-4 text-right">
-                      <button
-                        onClick={e => {
-                          e.stopPropagation();
-                          setSelectedBarangay(brgy);
-                        }}
-                        className="text-xs font-bold text-[#003893] hover:underline cursor-pointer"
-                      >
-                        View Details
-                      </button>
-                    </td>
-                  </tr>
-                ))
+                      </td>
+                    </tr>
+                  );
+                })
               )}
             </tbody>
           </table>
@@ -501,7 +485,7 @@ export default function BarangayPsgcTable() {
         </div>
       </div>
 
-      {/* 4. BARANGAY DETAILS MODAL */}
+      {/* 3. BARANGAY DETAILS MODAL */}
       {selectedBarangay && (
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4">
           <div className="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-7 shadow-2xl border border-gray-200 relative animate-in fade-in zoom-in duration-200">
@@ -512,9 +496,13 @@ export default function BarangayPsgcTable() {
               <X className="w-5 h-5" />
             </button>
 
-            <div className="flex items-center gap-2 mb-1">
+            <div className="flex items-center gap-2 mb-1 flex-wrap">
               <span className="px-2.5 py-0.5 rounded-full text-xs font-mono font-bold bg-blue-100 text-[#003893]">
-                PSGC: {selectedBarangay.psgcCode}
+                10-Digit:{' '}
+                {selectedBarangay.psgc10DigitCode || selectedBarangay.psgcCode}
+              </span>
+              <span className="px-2.5 py-0.5 rounded-full text-xs font-mono text-slate-700 bg-slate-100 border border-slate-200">
+                9-Digit: {selectedBarangay.psgcCode}
               </span>
               <span className="px-2 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">
                 {selectedBarangay.urbanRural}
@@ -527,6 +515,15 @@ export default function BarangayPsgcTable() {
             <p className="text-xs text-gray-600 mt-0.5 italic">
               {selectedBarangay.historicalName}
             </p>
+            {selectedBarangay.oldBarangayName && (
+              <div className="text-[11px] text-amber-900 bg-amber-50 px-2.5 py-1 rounded-lg border border-amber-200/80 mt-2 flex items-center gap-1.5">
+                <History className="w-3.5 h-3.5 text-amber-700" />
+                <span>
+                  Historical / Native Village Name:{' '}
+                  <strong>{selectedBarangay.oldBarangayName}</strong>
+                </span>
+              </div>
+            )}
 
             <div className="mt-4 p-4 bg-slate-50 rounded-2xl border border-slate-100 space-y-2 text-xs">
               <div className="flex justify-between py-1 border-b border-slate-200/60">
@@ -609,7 +606,11 @@ export default function BarangayPsgcTable() {
             <div className="mt-6 flex items-center justify-between gap-3">
               <button
                 onClick={() =>
-                  copyToClipboard(selectedBarangay.psgcCode, 'modal-psgc')
+                  copyToClipboard(
+                    selectedBarangay.psgc10DigitCode ||
+                      selectedBarangay.psgcCode,
+                    'modal-psgc'
+                  )
                 }
                 className="px-4 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold rounded-xl text-xs flex items-center gap-1.5 transition-colors cursor-pointer"
               >
@@ -618,7 +619,7 @@ export default function BarangayPsgcTable() {
                 ) : (
                   <Copy className="w-4 h-4" />
                 )}
-                <span>Copy PSGC Code</span>
+                <span>Copy 10-Digit PSGC</span>
               </button>
 
               <button

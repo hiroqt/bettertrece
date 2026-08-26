@@ -23,9 +23,11 @@ export interface PsaClassification {
 }
 
 export interface BarangayPsgcData {
-  psgcCode: string;
+  psgcCode: string; // 9-digit correspondence code (e.g. 042122001)
+  psgc10DigitCode?: string; // 10-digit official code (e.g. 0402122001)
   name: string;
   historicalName: string;
+  oldBarangayName?: string;
   type: string;
   desc: string;
   captain?: string;
@@ -326,8 +328,10 @@ export const TRECE_VOTER_STATISTICS_2025 = {
 export const TRECE_BARANGAYS_PSGC: BarangayPsgcData[] = [
   {
     psgcCode: '042122001',
+    psgc10DigitCode: '0402122001',
     name: 'Aguado',
     historicalName: 'Named in honor of Martyr Luis Aguado',
+    oldBarangayName: 'Fiscal Mundo',
     type: 'Residential & Community',
     desc: 'Dense residential subdivisions, community clinics, and youth education centers.',
     captain: 'Jaimer M. Sierra',
@@ -339,8 +343,10 @@ export const TRECE_BARANGAYS_PSGC: BarangayPsgcData[] = [
   },
   {
     psgcCode: '042122002',
+    psgc10DigitCode: '0402122002',
     name: 'Cabezas',
     historicalName: 'Named in honor of Martyr Eugenio Cabezas',
+    oldBarangayName: 'Palawit',
     type: 'Community & Agri-Residential',
     desc: 'Active community spaces, local civic initiatives, and farming cooperatives.',
     captain: 'Jaddy C. Alarca',
@@ -352,8 +358,10 @@ export const TRECE_BARANGAYS_PSGC: BarangayPsgcData[] = [
   },
   {
     psgcCode: '042122003',
+    psgc10DigitCode: '0402122003',
     name: 'Cabuco',
     historicalName: 'Named in honor of Martyr Feliciano Cabuco',
+    oldBarangayName: 'Cabuco',
     type: 'Growing Urban Corridor',
     desc: 'Rapidly growing residential zones, transport terminals, and commercial centers.',
     captain: 'Mark Albert Montehermoso',
@@ -365,8 +373,10 @@ export const TRECE_BARANGAYS_PSGC: BarangayPsgcData[] = [
   },
   {
     psgcCode: '042122004',
+    psgc10DigitCode: '0402122004',
     name: 'Conchu',
     historicalName: 'Named in honor of Martyr Agapito Conchu',
+    oldBarangayName: 'Lagundi',
     type: 'Agri-Residential Zone',
     desc: 'Green spaces, agricultural enterprises, and expanding housing developments.',
     captain: 'Irene R. Aure',
@@ -378,8 +388,10 @@ export const TRECE_BARANGAYS_PSGC: BarangayPsgcData[] = [
   },
   {
     psgcCode: '042122005',
+    psgc10DigitCode: '0402122005',
     name: 'De Ocampo',
     historicalName: 'Named in honor of Martyr Alfonso de Ocampo',
+    oldBarangayName: 'Quintana / Panghulo',
     type: 'Commercial & Transport Hub',
     desc: 'High-density commercial avenue along Trece-Indang Road with banks and retailers.',
     captain: 'Nelson Lubigan Montehermoso',
@@ -391,8 +403,10 @@ export const TRECE_BARANGAYS_PSGC: BarangayPsgcData[] = [
   },
   {
     psgcCode: '042122006',
+    psgc10DigitCode: '0402122006',
     name: 'Gregorio',
     historicalName: 'Named in honor of Martyr Maximo Gregorio',
+    oldBarangayName: 'Aliang',
     type: 'Residential Community',
     desc: 'Peaceful residential neighborhoods with local primary schools and barangay hall.',
     captain: 'Eliseo C. Dela Luya',
@@ -404,8 +418,10 @@ export const TRECE_BARANGAYS_PSGC: BarangayPsgcData[] = [
   },
   {
     psgcCode: '042122007',
+    psgc10DigitCode: '0402122007',
     name: 'Hugo Perez',
     historicalName: 'Named in honor of Martyr Hugo Perez',
+    oldBarangayName: 'Pulonan / Perez',
     type: 'Major Urban & Enterprise Corridor',
     desc: 'Major population center with industrial parks, enterprise strips, and schools.',
     captain: 'Raymundo A. Villa',
@@ -417,8 +433,10 @@ export const TRECE_BARANGAYS_PSGC: BarangayPsgcData[] = [
   },
   {
     psgcCode: '042122008',
+    psgc10DigitCode: '0402122008',
     name: 'Inocencio',
     historicalName: 'Named in honor of Martyr Maximo Inocencio',
+    oldBarangayName: 'Bagong Pook',
     type: 'Civic & Educational Hub',
     desc: 'Active civic center, school zones, and thriving local market stalls.',
     captain: 'Rosendo P. Dilidli',
@@ -430,8 +448,10 @@ export const TRECE_BARANGAYS_PSGC: BarangayPsgcData[] = [
   },
   {
     psgcCode: '042122009',
+    psgc10DigitCode: '0402122009',
     name: 'Lallana',
     historicalName: 'Named in honor of Martyr Jose Lallana',
+    oldBarangayName: 'Panungyanan',
     type: 'Community & Livelihood',
     desc: 'Livelihood cooperatives, farming plots, and suburban residences.',
     captain: 'Cecilia M. Decillo',
@@ -443,8 +463,10 @@ export const TRECE_BARANGAYS_PSGC: BarangayPsgcData[] = [
   },
   {
     psgcCode: '042122010',
+    psgc10DigitCode: '0402122010',
     name: 'Lapidario',
     historicalName: 'Named in honor of Martyr Severino Lapidario',
+    oldBarangayName: 'Bayog',
     type: 'Historic & Civic District',
     desc: 'Central historical district, community civic spaces, and public facilities.',
     captain: 'Remelyn D. Sierra',
@@ -456,8 +478,10 @@ export const TRECE_BARANGAYS_PSGC: BarangayPsgcData[] = [
   },
   {
     psgcCode: '042122011',
+    psgc10DigitCode: '0402122011',
     name: 'Luciano',
     historicalName: 'Named in honor of Martyr Victoriano Luciano',
+    oldBarangayName: 'Bitangan',
     type: 'Institutional & Healthcare Hub',
     desc: 'Home of General Emilio Aguinaldo Memorial Hospital (GEAMH) and provincial annexes.',
     captain: 'Luisito R. Diloy',
@@ -469,8 +493,10 @@ export const TRECE_BARANGAYS_PSGC: BarangayPsgcData[] = [
   },
   {
     psgcCode: '042122012',
+    psgc10DigitCode: '0402122012',
     name: 'Osorio',
     historicalName: 'Named in honor of Martyr Francisco Osorio',
+    oldBarangayName: 'Project',
     type: 'Commercial & Transport Junction',
     desc: 'Key junction along Governor’s Drive with commercial centers and transport loops.',
     captain: 'Robert E. Penus',
@@ -482,9 +508,11 @@ export const TRECE_BARANGAYS_PSGC: BarangayPsgcData[] = [
   },
   {
     psgcCode: '042122013',
+    psgc10DigitCode: '0402122013',
     name: 'San Agustin (Poblacion)',
     historicalName:
       'Named in honor of Martyr Antonio San Agustin (City Capitol)',
+    oldBarangayName: 'Poblacion',
     type: 'City Proper / Government Capitol',
     desc: 'The official seat of Trece Martires City Hall, Cavite Provincial Capitol, and courts.',
     captain: 'Cornelio L. De Sagun',
