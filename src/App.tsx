@@ -1,6 +1,7 @@
 import { NuqsAdapter } from 'nuqs/adapters/react';
 import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/layout/Navbar';
+import DataDisclaimerBanner from './components/layout/DataDisclaimerBanner';
 import Footer from './components/layout/Footer';
 import Home from './pages/Home';
 import ScrollToTop from './components/ui/ScrollToTop';
@@ -49,6 +50,7 @@ function App() {
               <Route path="/:lang/:documentSlug" element={<Document />} />
               <Route path="/:documentSlug" element={<Document />} />
             </Routes>
+            <DataDisclaimerBanner />
             <Footer />
             <Analytics />
           </div>

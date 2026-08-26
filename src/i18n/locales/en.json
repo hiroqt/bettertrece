@@ -173,5 +173,12 @@
     "copyright": "© {{year}} BetterTrece.org • Built by Arnel Baylon",
     "dataSource": "All public information sourced from official government portals.",
     "sitemap": "Sitemap"
+  },
+  "disclaimer": {
+    "badge": "Civic Open Data Notice",
+    "title": "Report Inaccurate Data & Help Us Improve",
+    "text": "BetterTrece is an independent open-source civic initiative. All information is compiled from official government sources (PSA, DBM, DPWH, Trece Martires City LGU) and public records. If you spot any incorrect figures, outdated procedures, or broken records, please let us know so we can update them immediately.",
+    "reportButton": "Report Inaccurate Data",
+    "improveButton": "Help Us Improve Data"
   }
 }

@@ -173,5 +173,12 @@
     "copyright": "© {{year}} BetterTrece.org • Binuo ni Arnel Baylon",
     "dataSource": "Lahat ng pampublikong impormasyon ay nagmula sa mga opisyal na portal ng gobyerno.",
     "sitemap": "Sitemap"
+  },
+  "disclaimer": {
+    "badge": "Pabatid ukol sa Bukas na Datos",
+    "title": "Mag-ulat ng Maling Datos at Tumulong sa Pagpapabuti",
+    "text": "Ang BetterTrece ay isang malayang inisyatiba ng mamamayan para sa bukas na datos. Ang lahat ng impormasyon ay pinagsama-sama mula sa mga opisyal na portal ng gobyerno (PSA, DBM, DPWH, Pamahalaang Lungsod ng Trece Martires) at pampublikong talaan. Kung may napansing maling numero, lumang proseso, o sirang talaan, mangyaring ipagbigay-alam sa amin upang maiwasto agad.",
+    "reportButton": "Mag-ulat ng Maling Datos",
+    "improveButton": "Tumulong sa Pagpapabuti"
   }
 }
