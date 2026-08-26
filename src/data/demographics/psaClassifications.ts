@@ -105,10 +105,10 @@ export const PSA_CLASSIFICATIONS: PsaClassification[] = [
     purpose:
       'Used for labor force surveys, employment profiling, job matching, wage benchmarking, and workforce development programs.',
     baseUrl: 'https://classification.psa.gov.ph/psoc',
-    apiDocsUrl: 'https://psa.gov.ph/classifications-api/psoc',
+    apiDocsUrl: 'https://psa.gov.ph/classification/psoc',
     swaggerUrl: 'https://classification.psa.gov.ph/api/documentation',
-    version: 'Q2_2024',
-    sampleEndpoint: 'https://classification.psa.gov.ph/psoc/Q2_2024/all',
+    version: '2012',
+    sampleEndpoint: 'https://classification.psa.gov.ph/psoc/2012/major',
     sampleParams: {
       token: '[YOUR_TOKEN]',
       page: '1',
@@ -239,14 +239,14 @@ export const PSA_CLASSIFICATIONS: PsaClassification[] = [
     name: 'Philippine Standard Classification of Crime for Statistical Purposes',
     category: 'Justice & Safety',
     description:
-      'Comprehensive statistical classification of criminal offenses for standard crime reporting, modeled on ICCS.',
+      'Comprehensive statistical classification of criminal offenses for standard crime reporting, modeled on UNODC ICCS v1.0.',
     purpose:
       'Enables synchronized crime reporting across PNP, courts, prosecution, correctional agencies, and local peace and order councils.',
     baseUrl: 'https://classification.psa.gov.ph/psccs',
-    apiDocsUrl: 'https://psa.gov.ph/classifications-api/psccs',
+    apiDocsUrl: 'https://psa.gov.ph/classification/psccs',
     swaggerUrl: 'https://classification.psa.gov.ph/api/documentation',
-    version: 'Q2_2024',
-    sampleEndpoint: 'https://classification.psa.gov.ph/psccs/Q2_2024/all',
+    version: '2018',
+    sampleEndpoint: 'https://classification.psa.gov.ph/psccs/2018/sections',
     sampleParams: {
       token: '[YOUR_TOKEN]',
       page: '1',
@@ -254,7 +254,7 @@ export const PSA_CLASSIFICATIONS: PsaClassification[] = [
     },
     icon: 'ShieldAlert',
     localApplication:
-      'Utilized by PNP Trece Martires Police Station and City Peace and Order Council for crime statistics and barangay blotter monitoring.',
+      'Utilized by PNP Trece Martires Police Station and City Peace and Order Council for crime statistics, VAWC desks, and 13 barangay blotter monitoring.',
   },
   {
     code: 'PTSCS',
@@ -532,4 +532,30 @@ export const SAMPLE_API_RESPONSES = {
       ],
     },
   },
+  PSOC_SAMPLE: [
+    {
+      id: 31,
+      majorcode: 1,
+      title: 'MANAGERS',
+      description:
+        'Managers plan, direct, coordinate and evaluate the overall activities of enterprises, governments and other organizations, or of organizational units within them, and formulate and review their policies, laws, rules and regulations.',
+      version: '2012',
+    },
+    {
+      id: 125,
+      majorcode: 2,
+      title: 'PROFESSIONALS',
+      description:
+        'Professionals increase the existing stock of knowledge, apply scientific or artistic concepts and theories, teach about the foregoing in a systematic manner, or engage in any combination of these activities. Competent performance in most occupations in this major group requires skills at the fourth ISCO skill level.',
+      version: '2012',
+    },
+    {
+      id: 209,
+      majorcode: 3,
+      title: 'TECHNICIANS AND ASSOCIATE PROFESSIONALS',
+      description:
+        'Technicians and associate professionals perform mostly technical and related tasks connected with research and the application of scientific or artistic concepts and operational methods, and government or business regulations. Most occupations in this major group require skills at the third ISCO skill level.',
+      version: '2012',
+    },
+  ],
 };

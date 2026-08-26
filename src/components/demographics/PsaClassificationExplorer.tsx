@@ -6,8 +6,6 @@ import {
 import {
   Search,
   ExternalLink,
-  Copy,
-  Check,
   MapPin,
   Briefcase,
   ShoppingCart,
@@ -17,8 +15,9 @@ import {
   GraduationCap,
   ShieldAlert,
   Compass,
-  FileCode2,
   Building,
+  CheckCircle2,
+  HelpCircle,
 } from 'lucide-react';
 
 const ICON_MAP: Record<string, React.ReactNode> = {
@@ -47,13 +46,6 @@ const CATEGORIES = [
 export default function PsaClassificationExplorer() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
-  const [copiedUrl, setCopiedUrl] = useState<string | null>(null);
-
-  const copyUrl = (url: string) => {
-    navigator.clipboard.writeText(url);
-    setCopiedUrl(url);
-    setTimeout(() => setCopiedUrl(null), 2000);
-  };
 
   const filteredClassifications = useMemo(() => {
     return PSA_CLASSIFICATIONS.filter((item: PsaClassification) => {
@@ -76,24 +68,24 @@ export default function PsaClassificationExplorer() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h2 className="text-xl sm:text-2xl font-black text-gray-900">
-            Philippine Standard Classification Systems
+            Philippine National Statistical &amp; Classification Standards
           </h2>
-          <p className="text-sm text-gray-600 mt-1">
-            Standard statistical classification systems maintained by the
-            Philippine Statistics Authority (PSA) for national and local
-            government units.
+          <p className="text-sm text-gray-600 mt-1 max-w-3xl">
+            The 9 official classification systems established by the Philippine
+            Statistics Authority (PSA) to ensure standard naming, data
+            interoperability, and accurate records across all local government
+            units and national agencies.
           </p>
         </div>
         <div className="flex items-center gap-2 shrink-0">
           <a
-            href="https://classification.psa.gov.ph/api/documentation"
+            href="https://psa.gov.ph/classification"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold bg-blue-50 text-[#003893] hover:bg-blue-100 transition-colors border border-blue-200"
+            className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-white text-[#003893] hover:bg-blue-50 transition-colors border border-blue-200 shadow-2xs"
           >
-            <FileCode2 className="w-4 h-4" />
-            <span>PSA Swagger Docs</span>
-            <ExternalLink className="w-3 h-3" />
+            <span>Official PSA Classifications</span>
+            <ExternalLink className="w-3.5 h-3.5" />
           </a>
         </div>
       </div>
@@ -104,19 +96,19 @@ export default function PsaClassificationExplorer() {
           <Search className="w-4 h-4 text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
           <input
             type="text"
-            placeholder="Search PSGC, PSIC, Education, Crime..."
+            placeholder="Search standards (e.g. Geography, Jobs, Education, Business)..."
             value={searchQuery}
             onChange={e => setSearchQuery(e.target.value)}
-            className="w-full pl-10 pr-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition-all"
+            className="w-full pl-10 pr-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition-all text-gray-900"
           />
         </div>
 
-        <div className="flex items-center gap-1.5 overflow-x-auto w-full md:w-auto pb-1 md:pb-0">
+        <div className="flex items-center gap-1.5 overflow-x-auto w-full md:w-auto pb-1 md:pb-0 no-scrollbar">
           {CATEGORIES.map(cat => (
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-3 py-1.5 text-xs font-medium rounded-lg whitespace-nowrap transition-colors ${
+              className={`px-3 py-1.5 text-xs font-medium rounded-lg whitespace-nowrap transition-colors cursor-pointer ${
                 selectedCategory === cat
                   ? 'bg-[#003893] text-white shadow-xs'
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
@@ -144,14 +136,14 @@ export default function PsaClassificationExplorer() {
                   <span className="text-[11px] font-bold px-2 py-0.5 rounded-md bg-gray-100 text-gray-700">
                     {item.category}
                   </span>
-                  <span className="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-blue-50 text-blue-800">
-                    {item.version}
+                  <span className="text-[10px] font-semibold px-2 py-0.5 rounded-md bg-blue-50 text-blue-800">
+                    Version {item.version}
                   </span>
                 </div>
               </div>
 
               <div className="mb-2">
-                <span className="text-xs font-extrabold text-[#003893] tracking-wide">
+                <span className="text-xs font-black text-[#003893] tracking-wide">
                   {item.acronym}
                 </span>
                 <h3 className="text-base font-bold text-gray-900 group-hover:text-[#003893] transition-colors leading-snug">
@@ -163,60 +155,43 @@ export default function PsaClassificationExplorer() {
                 {item.description}
               </p>
 
-              {/* Local Trece application badge */}
-              <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-100 mb-4">
-                <div className="text-[11px] font-bold text-gray-700 flex items-center gap-1 mb-0.5">
-                  <Building className="w-3 h-3 text-amber-600" />
-                  <span>Trece Martires Application</span>
+              {/* Purpose in National Statistics */}
+              <div className="bg-slate-50 p-3 rounded-xl border border-slate-100 mb-3 text-xs">
+                <div className="text-[11px] font-bold text-gray-800 flex items-center gap-1 mb-1">
+                  <HelpCircle className="w-3.5 h-3.5 text-blue-700" />
+                  <span>Purpose &amp; Use</span>
                 </div>
                 <p className="text-[11px] text-gray-600 leading-relaxed line-clamp-2">
-                  {item.localApplication}
+                  {item.purpose}
                 </p>
               </div>
 
-              {/* Base URL Box */}
-              <div className="space-y-1">
-                <div className="text-[10px] font-semibold uppercase tracking-wider text-gray-400">
-                  Base URL
+              {/* Local Trece Martires application badge */}
+              <div className="bg-blue-50/50 p-3 rounded-xl border border-blue-100/70 mb-2 text-xs">
+                <div className="text-[11px] font-bold text-[#00225e] flex items-center gap-1 mb-1">
+                  <Building className="w-3.5 h-3.5 text-amber-600" />
+                  <span>Trece Martires Application</span>
                 </div>
-                <div className="flex items-center justify-between gap-2 bg-gray-50 border border-gray-200 rounded-lg px-2.5 py-1.5">
-                  <code className="text-[11px] font-mono text-gray-800 truncate select-all">
-                    {item.baseUrl}
-                  </code>
-                  <button
-                    onClick={() => copyUrl(item.baseUrl)}
-                    className="p-1 hover:bg-gray-200 rounded text-gray-500 hover:text-gray-900 transition-colors shrink-0"
-                    title="Copy Base URL"
-                  >
-                    {copiedUrl === item.baseUrl ? (
-                      <Check className="w-3.5 h-3.5 text-emerald-600" />
-                    ) : (
-                      <Copy className="w-3.5 h-3.5" />
-                    )}
-                  </button>
-                </div>
+                <p className="text-[11px] text-blue-950 leading-relaxed line-clamp-2">
+                  {item.localApplication}
+                </p>
               </div>
             </div>
 
             {/* Action Links Footer */}
-            <div className="bg-gray-50/70 border-t border-gray-100 px-5 py-3 flex items-center justify-between text-xs">
-              <a
-                href={item.apiDocsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 font-bold text-[#003893] hover:text-blue-700 hover:underline"
-              >
-                <span>API Documentation</span>
-                <ExternalLink className="w-3 h-3" />
-              </a>
+            <div className="bg-gray-50/70 border-t border-gray-100 px-5 py-3.5 flex items-center justify-between text-xs">
+              <span className="text-[11px] text-gray-500 font-medium flex items-center gap-1">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                <span>PSA Official Standard</span>
+              </span>
 
               <a
-                href={item.baseUrl}
+                href={item.apiDocsUrl || item.baseUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 font-medium text-gray-500 hover:text-gray-800"
+                className="inline-flex items-center gap-1.5 font-bold text-[#003893] hover:text-blue-700 hover:underline"
               >
-                <span>Portal</span>
+                <span>Official Guidelines</span>
                 <ExternalLink className="w-3 h-3" />
               </a>
             </div>

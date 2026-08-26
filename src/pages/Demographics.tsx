@@ -5,6 +5,8 @@ import Section from '../components/ui/Section';
 import Breadcrumbs from '../components/ui/Breadcrumbs';
 import BarangayPsgcTable from '../components/demographics/BarangayPsgcTable';
 import PsaClassificationExplorer from '../components/demographics/PsaClassificationExplorer';
+import PsocOccupationsDirectory from '../components/demographics/PsocOccupationsDirectory';
+import TrecePeaceSafetyDirectory from '../components/demographics/TrecePeaceSafetyDirectory';
 import SchoolsExplorer from '../components/services/SchoolsExplorer';
 import AnimatedCounter from '../components/ui/AnimatedCounter';
 import {
@@ -20,11 +22,31 @@ import {
   BookOpen,
   Database,
   GraduationCap,
+  Briefcase,
+  Shield,
 } from 'lucide-react';
 
-type DemographicsTab = 'overview' | 'education' | 'classifications';
+type DemographicsTab =
+  'overview' | 'occupations' | 'safety' | 'education' | 'classifications';
 
 const getTabFromHash = (hash: string): DemographicsTab => {
+  if (
+    hash === '#occupations' ||
+    hash === '#psoc' ||
+    hash === '#careers' ||
+    hash === '#peso' ||
+    hash === '#jobs'
+  )
+    return 'occupations';
+  if (
+    hash === '#safety' ||
+    hash === '#psccs' ||
+    hash === '#crime' ||
+    hash === '#peace' ||
+    hash === '#police' ||
+    hash === '#pnp'
+  )
+    return 'safety';
   if (
     hash === '#education' ||
     hash === '#schools' ||
@@ -46,6 +68,8 @@ export default function Demographics() {
   const setActiveTab = (tab: DemographicsTab) => {
     setUserSelectedTab(tab);
     let newHash = '#overview';
+    if (tab === 'occupations') newHash = '#occupations';
+    if (tab === 'safety') newHash = '#safety';
     if (tab === 'education') newHash = '#education';
     if (tab === 'classifications') newHash = '#psa-classifications';
     window.history.replaceState(null, '', newHash);
@@ -54,9 +78,9 @@ export default function Demographics() {
   return (
     <>
       <SEO
-        title="Summary Demographics, Senior High Schools & PSA Classification Systems | BetterTrece"
-        description="Official summary demographics for Trece Martires City, Cavite (PSGC 042122000), 12 DepEd Senior High Schools directory with STEM/ABM/HUMSS/GAS/TVL strands, COMELEC 2025 registered voters (121,194 voters), and PSA classification standards."
-        keywords="Trece Martires senior high schools, DepEd schools Trece, SHS strands ABM STEM HUMSS GAS TVL, Trece Martires summary demographics, registered voters 2025, COMELEC Trece, PSGC API, PSA classification, Cavite census, 13 barangays"
+        title="Demographics, Careers, Peace & Safety, Schools & PSA Classifications | BetterTrece"
+        description="Official demographics for Trece Martires City (PSGC 042122000), PSOC 2012 career directory for PESO, PSCCS 2018 Peace, Order & Crime classification, 60 DepEd schools, COMELEC 2025 voters, and 9 PSA classification standards."
+        keywords="Trece Martires occupational classification, PSOC 2012, PESO Trece Martires, PSCCS 2018, Trece Martires police station, PNP Trece blotter, VAWC Trece Martires, Katarungang Pambarangay, DepEd schools Trece, senior high school strands, Trece Martires summary demographics, registered voters 2025, COMELEC Trece, PSGC directory, PSA classifications, Cavite census, 13 barangays"
       />
 
       <main className="flex-grow bg-slate-50/50 pb-16">
@@ -102,7 +126,7 @@ export default function Demographics() {
           </div>
         </section>
 
-        {/* Tab Navigation (Clean 3 Tabs) */}
+        {/* Tab Navigation (4 Tabs) */}
         <div className="bg-white border-b border-zinc-200 shadow-2xs sticky top-[108px] z-30">
           <div className="container mx-auto px-4 max-w-7xl">
             <div className="flex items-center gap-2 overflow-x-auto py-2.5 no-scrollbar">
@@ -117,6 +141,50 @@ export default function Demographics() {
               >
                 <Users className="w-4 h-4" />
                 <span>Summary Demographics</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setActiveTab('occupations')}
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap cursor-pointer ${
+                  activeTab === 'occupations'
+                    ? 'bg-[#003893] text-white shadow-2xs'
+                    : 'text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100'
+                }`}
+              >
+                <Briefcase className="w-4 h-4" />
+                <span>PSOC Occupations &amp; Careers</span>
+                <span
+                  className={`text-xs px-1.5 py-0.2 rounded-md font-mono font-semibold ${
+                    activeTab === 'occupations'
+                      ? 'bg-blue-800 text-white'
+                      : 'bg-zinc-100 text-zinc-800 border border-zinc-200'
+                  }`}
+                >
+                  PSOC 2012
+                </span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setActiveTab('safety')}
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap cursor-pointer ${
+                  activeTab === 'safety'
+                    ? 'bg-[#003893] text-white shadow-2xs'
+                    : 'text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100'
+                }`}
+              >
+                <Shield className="w-4 h-4" />
+                <span>Peace, Safety &amp; Crime (PSCCS)</span>
+                <span
+                  className={`text-xs px-1.5 py-0.2 rounded-md font-mono font-semibold ${
+                    activeTab === 'safety'
+                      ? 'bg-blue-800 text-white'
+                      : 'bg-zinc-100 text-zinc-800 border border-zinc-200'
+                  }`}
+                >
+                  PSCCS 2018
+                </span>
               </button>
 
               <button
@@ -172,7 +240,7 @@ export default function Demographics() {
                 </p>
               </div>
 
-              {/* 1. Electoral & Demographic Summary Cards + Unified Official PSA REST API Table */}
+              {/* 1. Electoral & Demographic Summary Cards + Official Barangay Directory */}
               <BarangayPsgcTable />
 
               {/* 2. Dataset Metadata & Provenance Callout */}
@@ -287,6 +355,44 @@ export default function Demographics() {
                   </p>
                 </div>
               </div>
+            </Section>
+          )}
+
+          {activeTab === 'occupations' && (
+            <Section className="space-y-6">
+              <div>
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900">
+                  Trece Martires Occupational &amp; Career Directory
+                </h2>
+                <p className="text-sm text-gray-600 mt-1 max-w-3xl">
+                  Official standard occupational classifications, qualification
+                  requirements, and local employment sectors across Trece
+                  Martires Public Employment Service Office (PESO) and the
+                  Cavite economic corridor.
+                </p>
+              </div>
+
+              {/* Public Employment Service Office (PESO) & Workforce Directory */}
+              <PsocOccupationsDirectory />
+            </Section>
+          )}
+
+          {activeTab === 'safety' && (
+            <Section className="space-y-6">
+              <div>
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900">
+                  Trece Martires Peace, Order &amp; Crime Classification Guide
+                </h2>
+                <p className="text-sm text-gray-600 mt-1 max-w-3xl">
+                  Official classification of criminal offenses under the 2018
+                  PSCCS standard, jurisdiction guides for Katarungang
+                  Pambarangay vs. Police Blotter, VAWC protocols, and 24/7
+                  emergency contacts across Trece Martires City.
+                </p>
+              </div>
+
+              {/* Trece Peace, Public Safety & Crime Directory */}
+              <TrecePeaceSafetyDirectory />
             </Section>
           )}
 
