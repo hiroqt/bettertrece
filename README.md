@@ -1,13 +1,13 @@
-# 🏛️ BetterTrece.org — Civic Tech Portal for Trece Martires City, Cavite
+# 🏛️ BetterTreceMartires.org — Civic Tech Portal for Trece Martires City, Cavite
 
-[![BetterGov Initiative](https://img.shields.io/badge/BetterGov-Civic%20Tech%20Initiative-003893.svg)](https://bettertrece.org)
+[![BetterGov Initiative](https://img.shields.io/badge/BetterGov-Civic%20Tech%20Initiative-003893.svg)](https://bettertrecemartires.org)
 [![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-blue.svg)](LICENSE)
 [![React](https://img.shields.io/badge/React-19.x-61DAFB.svg?logo=react&logoColor=black)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6.svg?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38B2AC.svg?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Leaflet](https://img.shields.io/badge/Maps-Leaflet%20%2B%20OSM-199900.svg?logo=leaflet&logoColor=white)](https://leafletjs.com/)
 
-**BetterTrece** ([bettertrece.org](https://bettertrece.org)) is an open-source, community-driven civic portal designed to empower residents, businesses, students, motorists, and visitors of the **City of Trece Martires, Cavite**.
+**BetterTrece** ([bettertrece.org](https://bettertrecemartires.org)) is an open-source, community-driven civic portal designed to empower residents, businesses, students, motorists, and visitors of the **City of Trece Martires, Cavite**.
 
 Part of the volunteer-led **BetterGov** initiative, BetterTrece aims to make local government services accessible and provide genuine transparency in public funds and infrastructure.
 
@@ -175,7 +175,42 @@ npm run build
 
 #### Step 5: Submit a Pull Request
 
-Push your branch to your GitHub fork and open a Pull Request against the `main` branch with a clear description of your changes and data sources.
+Push your branch to your GitHub fork and open a Pull Request using our [Pull Request Template](.github/pull_request_template.md).
+
+For complete details on branch naming, conventional commit messages, and PR review standards, check out the **[CONTRIBUTING.md](CONTRIBUTING.md)** guide.
+
+---
+
+### 📋 Pull Request (PR) Format Quick Reference
+
+When submitting a PR, use the following title and structure:
+
+```text
+[Type] Short, descriptive summary of changes (e.g., [Feature] Add DOE fuel price monitoring module)
+```
+
+```markdown
+## 📌 Pull Request Overview
+
+### 📝 Summary of Changes
+
+- Brief bullet points explaining what was added, updated, or fixed.
+
+### 🏛️ Module / Area Affected
+
+- [x] Fuel Price Monitor & Gas Station Map
+
+### 🔍 Data Source & Verification
+
+- **Official Source Agency**: Department of Energy (DOE) - OIMB
+- **Reference / Link**: https://www.doe.gov.ph/retail-pump-prices-luzon
+
+### ✅ Pre-Submission Checklist
+
+- [x] `npm run lint` and `npm run build` pass with zero errors.
+- [x] Mobile and desktop views tested.
+- [x] Updated translations in `en.json` and `fil.json`.
+```
 
 ---
 
