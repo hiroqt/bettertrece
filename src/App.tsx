@@ -12,6 +12,7 @@ import Demographics from './pages/Demographics';
 import DpwhTransparency from './pages/DpwhTransparency';
 import Search from './pages/Search';
 import About from './pages/About';
+import FuelPrices from './pages/FuelPrices';
 import { isMeilisearchEnabled } from './lib/meilisearch';
 import { BrowserRouter as Router, Routes, Route } from 'react-router';
 import { Analytics } from '@vercel/analytics/react';
@@ -28,6 +29,8 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/why-i-built-this" element={<About />} />
+              <Route path="/fuel-prices" element={<FuelPrices />} />
+              <Route path="/services/fuel-prices" element={<FuelPrices />} />
               <Route path="/demographics" element={<Demographics />} />
               <Route path="/municipal-profile" element={<Demographics />} />
               <Route path="/transparency" element={<DpwhTransparency />} />

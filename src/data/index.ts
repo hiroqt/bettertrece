@@ -5,3 +5,4 @@ export * from './demographics';
 export * from './government';
 export * from './services';
 export * from './navigation';
+export * from './fuel';

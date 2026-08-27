@@ -39,7 +39,9 @@ import {
   TrendingUp,
   Baby,
   AlertTriangle,
+  Fuel,
 } from 'lucide-react';
+import FuelPriceWidget from '../components/fuel/FuelPriceWidget';
 
 // Icon Map for reliable Lucide icon rendering
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -60,6 +62,7 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Baby,
   AlertTriangle,
   FileText,
+  Fuel,
 };
 
 const getCategoryIcon = (
@@ -110,6 +113,15 @@ const POPULAR_SERVICES = [
     desc: 'Financial educational assistance for deserving high school and college students.',
     icon: GraduationCap,
     badge: 'Education Aid',
+  },
+  {
+    title: 'Fuel Price Monitor (DOE)',
+    category: 'Infrastructure & Public Works',
+    categorySlug: 'infrastructure-public-works',
+    docSlug: '../fuel-prices',
+    desc: 'Official DOE retail pump prices and 25+ gas station locator in Trece Martires.',
+    icon: Fuel,
+    badge: 'DOE Cavite',
   },
   {
     title: 'Garbage Collection Schedules',
@@ -275,6 +287,33 @@ const Services: React.FC = () => {
   // =========================================================================
   // VIEW 1: CATEGORY SPECIFIC VIEW (/services/:category)
   // =========================================================================
+  if (category === 'fuel-prices') {
+    return (
+      <main className="flex-grow bg-slate-50/50 pb-20">
+        <section className="bg-gradient-to-r from-slate-900 via-[#00225e] to-[#003893] text-white pt-44 sm:pt-44 lg:pt-48 pb-12">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <Breadcrumbs
+              items={[
+                { label: 'Home', href: '/' },
+                { label: 'Services', href: '/services' },
+                { label: 'Fuel Price Monitor', href: '/services/fuel-prices' },
+              ]}
+              className="mb-6 text-blue-200"
+            />
+            <h1 className="text-3xl font-bold">Fuel Price Monitor (DOE)</h1>
+            <p className="text-blue-100 mt-2">
+              Official retail liquid fuel pump prices and 25+ gas station
+              locator for Trece Martires City, Cavite.
+            </p>
+          </div>
+        </section>
+        <div className="container mx-auto px-4 max-w-7xl py-10">
+          <FuelPriceWidget isFullWidthSection={false} showMap={true} />
+        </div>
+      </main>
+    );
+  }
+
   if (category) {
     if (!categoryData) {
       return (

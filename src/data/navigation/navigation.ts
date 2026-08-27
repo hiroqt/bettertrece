@@ -154,6 +154,13 @@ export const mainNavigation: MainNavItem[] = [
               iconName: 'Wrench',
             },
             {
+              title: 'Fuel Price Monitor (DOE)',
+              description: 'Official pump prices & 25+ gas stations in Trece',
+              href: '/fuel-prices',
+              iconName: 'Fuel',
+              badge: 'DOE Cavite',
+            },
+            {
               title: 'Disaster Preparedness',
               description: 'Evacuation centers & CDRRMO response',
               href: '/services/disaster-preparedness',

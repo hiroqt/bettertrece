@@ -5,6 +5,7 @@ import ServicesSection from '../components/home/ServicesSection';
 import WeatherMapSection from '../components/home/WeatherMapSection';
 import ContactSection from '../components/home/ContactSection';
 import CityRevenueWidget from '../components/transparency/CityRevenueWidget';
+import FuelPriceWidget from '../components/fuel/FuelPriceWidget';
 import SEO from '../components/SEO';
 import { Link } from 'react-router';
 import {
@@ -52,7 +53,18 @@ const Home: React.FC = () => {
         {/* 3. CITY SERVICES SECTION */}
         <ServicesSection />
 
-        {/* 4. WEATHER & GEOGRAPHICAL MAP SECTION */}
+        {/* 4. FUEL PRICE MONITOR MODULE & GAS STATION LOCATOR (DOE REGION IV-A) */}
+        <section
+          id="fuel-prices-section"
+          aria-labelledby="fuel-prices-headline"
+          className="w-full py-12 lg:py-16 bg-white border-b border-gray-200"
+        >
+          <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-12 max-w-7xl mx-auto">
+            <FuelPriceWidget isFullWidthSection={true} showMap={true} />
+          </div>
+        </section>
+
+        {/* 5. WEATHER & GEOGRAPHICAL MAP SECTION */}
         <WeatherMapSection />
 
         {/* 5. SUMMARY DEMOGRAPHICS SECTION */}

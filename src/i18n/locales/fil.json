@@ -180,5 +180,15 @@
     "text": "Ang BetterTrece ay isang malayang inisyatiba ng mamamayan para sa bukas na datos. Ang lahat ng impormasyon ay pinagsama-sama mula sa mga opisyal na portal ng gobyerno (PSA, DBM, DPWH, Pamahalaang Lungsod ng Trece Martires) at pampublikong talaan. Kung may napansing maling numero, lumang proseso, o sirang talaan, mangyaring ipagbigay-alam sa amin upang maiwasto agad.",
     "reportButton": "Mag-ulat ng Maling Datos",
     "improveButton": "Tumulong sa Pagpapabuti"
+  },
+  "fuelPrices": {
+    "title": "Presyo ng Petrolyo at Gasolina sa Lungsod ng Trece Martires",
+    "subtitle": "Opisyal na pagsubaybay sa presyo ng petrolyo mula sa Kagawaran ng Enerhiya (DOE) - Oil Industry Management Bureau.",
+    "monitoringPeriod": "Panahon ng Pagsubaybay",
+    "lowestInCity": "Pinakamababa sa Lungsod",
+    "priceRange": "Saklaw ng Presyo",
+    "reportPrice": "Mag-ulat ng Presyo sa Bomba",
+    "brandComparison": "Paghahambing ng mga Brand",
+    "disclaimer": "Ito ay opisyal na datos ng sanggunian mula sa Kagawaran ng Enerhiya (DOE) - Oil Industry Management Bureau. Maaaring magkaiba ang aktwal na presyo sa bawat gasolinahan sa Lungsod ng Trece Martires."
   }
 }

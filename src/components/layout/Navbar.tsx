@@ -50,6 +50,7 @@ import {
   Binary,
   Database,
   Sparkles,
+  Fuel,
 } from 'lucide-react';
 import {
   mainNavigation,
@@ -128,6 +129,8 @@ const getMegaIcon = (name?: string) => {
       return FileText;
     case 'Scale':
       return Scale;
+    case 'Fuel':
+      return Fuel;
     case 'MessageSquare':
       return MessageSquare;
     case 'BarChart2':

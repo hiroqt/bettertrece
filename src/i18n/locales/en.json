@@ -180,5 +180,15 @@
     "text": "BetterTrece is an independent open-source civic initiative. All information is compiled from official government sources (PSA, DBM, DPWH, Trece Martires City LGU) and public records. If you spot any incorrect figures, outdated procedures, or broken records, please let us know so we can update them immediately.",
     "reportButton": "Report Inaccurate Data",
     "improveButton": "Help Us Improve Data"
+  },
+  "fuelPrices": {
+    "title": "Trece Martires City Fuel Price Monitor",
+    "subtitle": "Curated official retail liquid fuel pump prices from the Department of Energy (DOE) - Oil Industry Management Bureau.",
+    "monitoringPeriod": "Monitoring Period",
+    "lowestInCity": "Lowest in City",
+    "priceRange": "Price Range",
+    "reportPrice": "Report Pump Price",
+    "brandComparison": "Brand Comparison",
+    "disclaimer": "This is official reference data sourced from the Department of Energy (DOE) - Oil Industry Management Bureau. Retail pump prices may vary across individual gas stations in Trece Martires City."
   }
 }
