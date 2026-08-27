@@ -1,6 +1,6 @@
 # 🤝 Contributing to BetterTrece
 
-Thank you for your interest in contributing to **BetterTrece** ([bettertrece.org](https://bettertrece.org))! This project is part of the **BetterGov** initiative—an open-source civic tech movement dedicated to making local government services accessible and public data transparent for the people of **Trece Martires City, Cavite**.
+Thank you for your interest in contributing to **BetterTreceMartires** ([bettertrecemartires.org](https://bettertrecemartires.org))! This project is part of the **BetterGov** initiative—an open-source civic tech movement dedicated to making local government services accessible and public data transparent for the people of **Trece Martires City, Cavite**.
 
 ---
 
@@ -64,19 +64,62 @@ Use clear, descriptive branch names prefixed by the change type:
 
 ## 💬 Commit Message Standards
 
-We follow the **Conventional Commits** specification:
+We follow the **Conventional Commits** specification to keep our git history clear, searchable, and professional.
+
+### 1. Commit Structure
 
 ```text
-<type>(<scope>): <short description>
+<type>(<scope>): <short imperative description>
+
+[optional body: explain WHAT changed and WHY, not HOW]
+
+[optional footer: reference GitHub issues or data sources]
 ```
 
-### Examples:
+### 2. Supported Types
 
-- `feat(fuel): add openstreetmap station locator for trece martires`
-- `fix(navbar): prevent header overlap on service pages`
-- `data(education): update 2026 senior high school tracks for trece deped`
-- `i18n(transparency): add filipino translations for coa audit widget`
-- `docs(readme): add contributor and pr formatting guidelines`
+- `feat`: A new user-facing civic feature, page, or widget
+- `fix`: A bug fix or layout/responsive correction
+- `data`: Adding or updating civic datasets (DOE fuel, DepEd schools, GAA budgets, COA audits)
+- `docs`: Documentation, README, contributor guides, or code comments
+- `i18n`: Adding, fixing, or refining English/Tagalog translations
+- `style`: Code styling, formatting, or UI visual polish (no logic changes)
+- `refactor`: Code restructuring without adding features or fixing bugs
+- `chore`: Maintenance, dependencies, build scripts, or config updates
+
+---
+
+### 3. Commit Message Samples
+
+#### Example A: One-Liner Commits (For simple, focused changes)
+
+```bash
+# Adding a new feature
+git commit -m "feat(fuel): add interactive openstreetmap gas station locator"
+
+# Fixing a bug
+git commit -m "fix(navbar): add top padding offset to prevent page header overlap"
+
+# Updating civic data
+git commit -m "data(fuel): update DOE weekly retail pump price benchmarks for Trece"
+
+# Updating translations
+git commit -m "i18n(transparency): add Tagalog localization for COA audit widget"
+
+# Updating documentation
+git commit -m "docs(contributing): add pull request guidelines and commit samples"
+```
+
+#### Example B: Multi-Line Detailed Commit (Recommended for Pull Requests)
+
+```bash
+git commit -m "feat(fuel): add DOE fuel price monitor and gas station map
+
+- Sourced official retail price benchmarks from DOE-OIMB for Trece Martires
+- Integrated keyless Leaflet map with 25+ gas stations and route navigation
+- Added community pump price reporting modal with local persistence
+- Added status freshness badges and official DOE disclaimer banner"
+```
 
 ---
 
@@ -179,6 +222,6 @@ All three must pass with **zero errors**.
 
 1. **Automated Verification**: GitHub Actions will check build and lint status.
 2. **Review Feedback**: Maintainers will review your PR for code quality, civic data accuracy, and mobile responsiveness.
-3. **Merge**: Once approved, your contribution will be merged and deployed live to [bettertrece.org](https://bettertrece.org)!
+3. **Merge**: Once approved, your contribution will be merged and deployed live to [bettertrecemartires.org](https://bettertrecemartires.org)!
 
 Thank you for helping build a better, more transparent Trece Martires! 🏛️🇵🇭

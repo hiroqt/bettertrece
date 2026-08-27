@@ -7,7 +7,7 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38B2AC.svg?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Leaflet](https://img.shields.io/badge/Maps-Leaflet%20%2B%20OSM-199900.svg?logo=leaflet&logoColor=white)](https://leafletjs.com/)
 
-**BetterTrece** ([bettertrece.org](https://bettertrecemartires.org)) is an open-source, community-driven civic portal designed to empower residents, businesses, students, motorists, and visitors of the **City of Trece Martires, Cavite**.
+**BetterTrece** ([bettertrecemartires.org](https://bettertrecemartires.org)) is an open-source, community-driven civic portal designed to empower residents, businesses, students, motorists, and visitors of the **City of Trece Martires, Cavite**.
 
 Part of the volunteer-led **BetterGov** initiative, BetterTrece aims to make local government services accessible and provide genuine transparency in public funds and infrastructure.
 
