@@ -939,6 +939,30 @@ export default function Government() {
                     </div>
                   </Link>
 
+                  {/* Political Dynasties Card */}
+                  <Link
+                    to="/transparency/political-dynasties"
+                    className="p-5 rounded-2xl bg-white border border-zinc-200 hover:border-zinc-400 hover:shadow-xs transition-all flex flex-col justify-between group"
+                  >
+                    <div className="space-y-2">
+                      <div className="w-10 h-10 rounded-xl bg-zinc-100 text-zinc-900 border border-zinc-200 flex items-center justify-center">
+                        <ShieldCheck className="w-5 h-5 text-zinc-900" />
+                      </div>
+                      <h3 className="text-base font-bold text-zinc-900 group-hover:text-zinc-700 transition-colors">
+                        Political Dynasties Tracker
+                      </h3>
+                      <p className="text-xs text-zinc-600 leading-relaxed">
+                        Ateneo Policy Center dataset tracking Trece Martires
+                        &amp; Cavite dynasties, clans, and 30-year longitudinal
+                        trends.
+                      </p>
+                    </div>
+                    <div className="mt-4 pt-3 border-t border-zinc-100 text-xs font-semibold text-zinc-900 flex items-center justify-between">
+                      <span>Explore Dynasties</span>
+                      <ChevronRight className="w-4 h-4 text-zinc-600 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </Link>
+
                   {/* Demographics Card */}
                   <Link
                     to="/demographics"
@@ -980,7 +1004,7 @@ export default function Government() {
                       </p>
                     </div>
                     <div className="mt-4 pt-3 border-t border-zinc-100 text-xs font-semibold text-zinc-900 flex items-center justify-between">
-                      <span>View Reports</span>
+                      <span>View Full Disclosure</span>
                       <ChevronRight className="w-4 h-4 text-zinc-600 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </Link>

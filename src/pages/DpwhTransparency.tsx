@@ -5,6 +5,7 @@ import DpwhProjectsExplorer from '../components/transparency/DpwhProjectsExplore
 import CityRevenueWidget from '../components/transparency/CityRevenueWidget';
 import CoaAuditWidget from '../components/transparency/CoaAuditWidget';
 import GaaBudgetWidget from '../components/transparency/GaaBudgetWidget';
+import PoliticalDynastiesExplorer from '../components/transparency/PoliticalDynastiesExplorer';
 import {
   Building2,
   ShieldCheck,
@@ -14,6 +15,7 @@ import {
   Coins,
   HardHat,
   FileCheck2,
+  Users,
 } from 'lucide-react';
 
 export default function DpwhTransparency() {
@@ -21,8 +23,20 @@ export default function DpwhTransparency() {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const getInitialTab = ():
-    'budget-revenue' | 'gaa' | 'explorer' | 'trece-focus' | 'audit' => {
+    | 'budget-revenue'
+    | 'gaa'
+    | 'explorer'
+    | 'trece-focus'
+    | 'audit'
+    | 'dynasty' => {
     const tabParam = searchParams.get('tab');
+    if (
+      tabParam === 'dynasty' ||
+      tabParam === 'dynasties' ||
+      tabParam === 'political-dynasties'
+    ) {
+      return 'dynasty';
+    }
     if (
       tabParam === 'gaa' ||
       tabParam === 'national-budget' ||
@@ -58,6 +72,13 @@ export default function DpwhTransparency() {
       return 'budget-revenue';
     }
 
+    if (
+      location.hash === '#dynasty' ||
+      location.hash === '#dynasties' ||
+      location.hash === '#political-dynasties'
+    ) {
+      return 'dynasty';
+    }
     if (location.hash === '#gaa' || location.hash === '#national-budget') {
       return 'gaa';
     }
@@ -83,7 +104,13 @@ export default function DpwhTransparency() {
   const activeTab = getInitialTab();
 
   const handleTabChange = (
-    tab: 'budget-revenue' | 'gaa' | 'explorer' | 'trece-focus' | 'audit'
+    tab:
+      | 'budget-revenue'
+      | 'gaa'
+      | 'explorer'
+      | 'trece-focus'
+      | 'audit'
+      | 'dynasty'
   ) => {
     setSearchParams(
       prev => {
@@ -245,7 +272,24 @@ export default function DpwhTransparency() {
                 <span>DPWH Infrastructure Tracker</span>
               </button>
 
-              {/* Tab 5: Strategic Corridors & Facilities */}
+              {/* Tab 5: Political Dynasties & Governance */}
+              <button
+                role="tab"
+                id="tab-dynasty"
+                aria-selected={activeTab === 'dynasty'}
+                aria-controls="panel-dynasty"
+                onClick={() => handleTabChange('dynasty')}
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#003893] min-h-[40px] ${
+                  activeTab === 'dynasty'
+                    ? 'bg-[#003893] text-white shadow-2xs'
+                    : 'text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100'
+                }`}
+              >
+                <Users className="w-4 h-4" aria-hidden="true" />
+                <span>Political Dynasties</span>
+              </button>
+
+              {/* Tab 6: Strategic Corridors & Facilities */}
               <button
                 role="tab"
                 id="tab-trece-focus"
@@ -297,6 +341,17 @@ export default function DpwhTransparency() {
               className="space-y-8 animate-fadeIn"
             >
               <CoaAuditWidget />
+            </div>
+          )}
+
+          {activeTab === 'dynasty' && (
+            <div
+              id="panel-dynasty"
+              role="tabpanel"
+              aria-labelledby="tab-dynasty"
+              className="space-y-8 animate-fadeIn"
+            >
+              <PoliticalDynastiesExplorer />
             </div>
           )}
 

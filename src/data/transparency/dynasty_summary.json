@@ -1,0 +1,1773 @@
+{
+  "metadata": {
+    "datasetTitle": "The Ateneo Policy Center Philippine Political Dynasties Dataset (2022 Update)",
+    "institution": "Ateneo School of Government - Ateneo Policy Center (ASOG-APC)",
+    "curatedFor": "Trece Martires City & Province of Cavite",
+    "yearsCovered": "1987 - 2022",
+    "totalCaviteRecords": 3059,
+    "totalTreceRecords": 134,
+    "lastUpdated": "2026-08",
+    "definition": "Fat Dynasties: Elected politicians who have at least 1 family member concurrently holding local elected office in the same province during the same term."
+  },
+  "treceSummary": {
+    "totalRecords": 134,
+    "fatDynastyTerms": 55,
+    "nonFatTerms": 79,
+    "overallFatShare": 41.0,
+    "keyClans": [
+      {
+        "clan": "Lubigan",
+        "totalTerms": 21,
+        "fatTerms": 20,
+        "fatRatio": 95.2,
+        "uniqueMembers": 8,
+        "membersList": [
+          "Alexander Lubigan",
+          "Antonio Lubigan",
+          "Gemma Lubigan",
+          "Josefo Lubigan",
+          "Kim Paolo Lubigan",
+          "Kimpaolo Lubigan",
+          "Lamberto Lubigan",
+          "Severino Lubigan"
+        ],
+        "yearsActive": [
+          1992, 1995, 2001, 2004, 2007, 2010, 2013, 2016, 2019, 2022
+        ],
+        "positions": ["Councilor", "Mayor", "Vice Mayor"]
+      },
+      {
+        "clan": "De Sagun",
+        "totalTerms": 17,
+        "fatTerms": 10,
+        "fatRatio": 58.8,
+        "uniqueMembers": 5,
+        "membersList": [
+          "Bong De Sagun",
+          "Melandres De Sagun",
+          "Melencio De Sagun",
+          "Remigio Sagun",
+          "Romeo De Sagun"
+        ],
+        "yearsActive": [
+          1988, 1992, 1995, 1998, 2001, 2004, 2007, 2010, 2013, 2016, 2019
+        ],
+        "positions": [
+          "Councilor",
+          "Mayor",
+          "Provincial Board Member",
+          "Vice Mayor"
+        ]
+      },
+      {
+        "clan": "Lontoc",
+        "totalTerms": 7,
+        "fatTerms": 5,
+        "fatRatio": 71.4,
+        "uniqueMembers": 3,
+        "membersList": ["Felixberto Lontoc", "Rolando Lontoc", "Tony Lontoc"],
+        "yearsActive": [1992, 1995, 1998, 2001, 2019, 2022],
+        "positions": ["Councilor"]
+      },
+      {
+        "clan": "Mojica",
+        "totalTerms": 7,
+        "fatTerms": 7,
+        "fatRatio": 100.0,
+        "uniqueMembers": 2,
+        "membersList": ["Alvin Mojica", "Joyce Mojica"],
+        "yearsActive": [1995, 1998, 2001, 2004, 2007, 2019, 2022],
+        "positions": ["Councilor", "Vice Mayor"]
+      },
+      {
+        "clan": "Panganiban",
+        "totalTerms": 7,
+        "fatTerms": 2,
+        "fatRatio": 28.6,
+        "uniqueMembers": 3,
+        "membersList": [
+          "Agnes Panganiban",
+          "Noel Panganiban",
+          "Prudencio Panganiban"
+        ],
+        "yearsActive": [1992, 1995, 1998, 2001, 2007, 2013, 2016],
+        "positions": ["Councilor", "Mayor", "Vice Mayor"]
+      },
+      {
+        "clan": "Montehermoso",
+        "totalTerms": 6,
+        "fatTerms": 0,
+        "fatRatio": 0.0,
+        "uniqueMembers": 3,
+        "membersList": [
+          "Bobby Montehermoso",
+          "Danilo Montehermoso",
+          "Mark Albert Montehermoso"
+        ],
+        "yearsActive": [2004, 2010, 2013, 2016, 2019, 2022],
+        "positions": ["Councilor", "Vice Mayor"]
+      },
+      {
+        "clan": "Bago",
+        "totalTerms": 6,
+        "fatTerms": 0,
+        "fatRatio": 0.0,
+        "uniqueMembers": 2,
+        "membersList": ["Arvin Bago", "Rona Bago"],
+        "yearsActive": [2004, 2007, 2010, 2013, 2016, 2019],
+        "positions": ["Councilor"]
+      },
+      {
+        "clan": "Colada",
+        "totalTerms": 5,
+        "fatTerms": 0,
+        "fatRatio": 0.0,
+        "uniqueMembers": 2,
+        "membersList": ["Luis Colada", "Reden Colada"],
+        "yearsActive": [1992, 1995, 1998, 2001, 2004],
+        "positions": ["Councilor"]
+      }
+    ],
+    "timeline": [
+      {
+        "year": 2022,
+        "totalSeats": 12,
+        "fatDynastySeats": 5,
+        "fatDynastyShare": 41.7,
+        "mayor": "Gemma Lubigan",
+        "viceMayor": "Bobby Montehermoso",
+        "councilorsCount": 10,
+        "topClans": [
+          {
+            "clan": "Lubigan",
+            "count": 2
+          },
+          {
+            "clan": "Anacan",
+            "count": 1
+          },
+          {
+            "clan": "Balite",
+            "count": 1
+          },
+          {
+            "clan": "Buendia",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "year": 2019,
+        "totalSeats": 12,
+        "fatDynastySeats": 5,
+        "fatDynastyShare": 41.7,
+        "mayor": "Gemma Lubigan",
+        "viceMayor": "Bobby Montehermoso",
+        "councilorsCount": 10,
+        "topClans": [
+          {
+            "clan": "Lubigan",
+            "count": 2
+          },
+          {
+            "clan": "Anacan",
+            "count": 1
+          },
+          {
+            "clan": "Aure",
+            "count": 1
+          },
+          {
+            "clan": "Bago",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "year": 2016,
+        "totalSeats": 11,
+        "fatDynastySeats": 5,
+        "fatDynastyShare": 45.5,
+        "mayor": "Melandres De Sagun",
+        "viceMayor": "Alexander Lubigan",
+        "councilorsCount": 9,
+        "topClans": [
+          {
+            "clan": "De Sagun",
+            "count": 2
+          },
+          {
+            "clan": "Lubigan",
+            "count": 2
+          },
+          {
+            "clan": "Aure",
+            "count": 1
+          },
+          {
+            "clan": "Bago",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "year": 2013,
+        "totalSeats": 12,
+        "fatDynastySeats": 5,
+        "fatDynastyShare": 41.7,
+        "mayor": "Melandres De Sagun",
+        "viceMayor": "Alexander Lubigan",
+        "councilorsCount": 10,
+        "topClans": [
+          {
+            "clan": "De Sagun",
+            "count": 2
+          },
+          {
+            "clan": "Lubigan",
+            "count": 2
+          },
+          {
+            "clan": "Aure",
+            "count": 1
+          },
+          {
+            "clan": "Bago",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "year": 2010,
+        "totalSeats": 12,
+        "fatDynastySeats": 5,
+        "fatDynastyShare": 41.7,
+        "mayor": "Melandres De Sagun",
+        "viceMayor": "Alexander Lubigan",
+        "councilorsCount": 10,
+        "topClans": [
+          {
+            "clan": "Lubigan",
+            "count": 3
+          },
+          {
+            "clan": "Aure",
+            "count": 1
+          },
+          {
+            "clan": "Bago",
+            "count": 1
+          },
+          {
+            "clan": "Colorado",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "year": 2007,
+        "totalSeats": 12,
+        "fatDynastySeats": 7,
+        "fatDynastyShare": 58.3,
+        "mayor": "Melencio De Sagun",
+        "viceMayor": "Alvin Mojica",
+        "councilorsCount": 10,
+        "topClans": [
+          {
+            "clan": "De Sagun",
+            "count": 2
+          },
+          {
+            "clan": "Lubigan",
+            "count": 2
+          },
+          {
+            "clan": "Bago",
+            "count": 1
+          },
+          {
+            "clan": "Comia",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "year": 2004,
+        "totalSeats": 12,
+        "fatDynastySeats": 6,
+        "fatDynastyShare": 50.0,
+        "mayor": "Melencio De Sagun",
+        "viceMayor": "Alvin Mojica",
+        "councilorsCount": 10,
+        "topClans": [
+          {
+            "clan": "De Sagun",
+            "count": 2
+          },
+          {
+            "clan": "Lubigan",
+            "count": 2
+          },
+          {
+            "clan": "Bago",
+            "count": 1
+          },
+          {
+            "clan": "Cabaya",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "year": 2001,
+        "totalSeats": 12,
+        "fatDynastySeats": 4,
+        "fatDynastyShare": 33.3,
+        "mayor": "Melencio De Sagun",
+        "viceMayor": "Noel Panganiban",
+        "councilorsCount": 10,
+        "topClans": [
+          {
+            "clan": "De Sagun",
+            "count": 2
+          },
+          {
+            "clan": "Alberto",
+            "count": 1
+          },
+          {
+            "clan": "Cabaya",
+            "count": 1
+          },
+          {
+            "clan": "Colada",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "year": 1998,
+        "totalSeats": 12,
+        "fatDynastySeats": 1,
+        "fatDynastyShare": 8.3,
+        "mayor": "Prudencio Panganiban",
+        "viceMayor": "Benigno Colorado",
+        "councilorsCount": 10,
+        "topClans": [
+          {
+            "clan": "Adelante",
+            "count": 1
+          },
+          {
+            "clan": "Cabaya",
+            "count": 1
+          },
+          {
+            "clan": "Colada",
+            "count": 1
+          },
+          {
+            "clan": "De Sagun",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "year": 1995,
+        "totalSeats": 13,
+        "fatDynastySeats": 7,
+        "fatDynastyShare": 53.8,
+        "mayor": "Prudencio Panganiban",
+        "viceMayor": "Severino Lubigan",
+        "councilorsCount": 10,
+        "topClans": [
+          {
+            "clan": "Lubigan",
+            "count": 3
+          },
+          {
+            "clan": "Lontoc",
+            "count": 2
+          },
+          {
+            "clan": "Adelante",
+            "count": 1
+          },
+          {
+            "clan": "Colada",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "year": 1992,
+        "totalSeats": 13,
+        "fatDynastySeats": 5,
+        "fatDynastyShare": 38.5,
+        "mayor": "Prudencio Panganiban",
+        "viceMayor": "Remigio Sagun",
+        "councilorsCount": 10,
+        "topClans": [
+          {
+            "clan": "Lubigan",
+            "count": 2
+          },
+          {
+            "clan": "De Sagun",
+            "count": 2
+          },
+          {
+            "clan": "Adelante",
+            "count": 1
+          },
+          {
+            "clan": "Amparo",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "year": 1988,
+        "totalSeats": 1,
+        "fatDynastySeats": 0,
+        "fatDynastyShare": 0.0,
+        "mayor": null,
+        "viceMayor": null,
+        "councilorsCount": 0,
+        "topClans": [
+          {
+            "clan": "De Sagun",
+            "count": 1
+          }
+        ]
+      }
+    ]
+  },
+  "caviteSummary": {
+    "totalRecords": 3059,
+    "fatDynastyTerms": 978,
+    "overallFatShare2022": 41.01,
+    "longitudinalTrends": [
+      {
+        "year": 1992,
+        "provincialFatShare": 23.11
+      },
+      {
+        "year": 1995,
+        "provincialFatShare": 27.89
+      },
+      {
+        "year": 1998,
+        "provincialFatShare": 28.29
+      },
+      {
+        "year": 2001,
+        "provincialFatShare": 29.05
+      },
+      {
+        "year": 2004,
+        "provincialFatShare": 33.47
+      },
+      {
+        "year": 2007,
+        "provincialFatShare": 31.54
+      },
+      {
+        "year": 2010,
+        "provincialFatShare": 29.66
+      },
+      {
+        "year": 2013,
+        "provincialFatShare": 41.11
+      },
+      {
+        "year": 2016,
+        "provincialFatShare": 39.16
+      },
+      {
+        "year": 2019,
+        "provincialFatShare": 35.74
+      },
+      {
+        "year": 2022,
+        "provincialFatShare": 41.01
+      }
+    ],
+    "muniComparison": [
+      {
+        "municipality": "Provincial (Cavite At-Large)",
+        "totalSeats": 120,
+        "fatSeats": 67,
+        "fatShare": 55.8,
+        "topClans": [
+          {
+            "clan": "Remulla",
+            "count": 19
+          },
+          {
+            "clan": "Revilla / Bautista",
+            "count": 8
+          },
+          {
+            "clan": "Abaya",
+            "count": 8
+          }
+        ]
+      },
+      {
+        "municipality": "Noveleta",
+        "totalSeats": 112,
+        "fatSeats": 48,
+        "fatShare": 42.9,
+        "topClans": [
+          {
+            "clan": "Alvarez",
+            "count": 13
+          },
+          {
+            "clan": "Torres",
+            "count": 9
+          },
+          {
+            "clan": "Salud",
+            "count": 7
+          }
+        ]
+      },
+      {
+        "municipality": "Tagaytay City",
+        "totalSeats": 146,
+        "fatSeats": 62,
+        "fatShare": 42.5,
+        "topClans": [
+          {
+            "clan": "Tolentino",
+            "count": 18
+          },
+          {
+            "clan": "Ambion",
+            "count": 13
+          },
+          {
+            "clan": "Vergara",
+            "count": 7
+          }
+        ]
+      },
+      {
+        "municipality": "Trece Martires City",
+        "totalSeats": 134,
+        "fatSeats": 55,
+        "fatShare": 41.0,
+        "topClans": [
+          {
+            "clan": "Lubigan",
+            "count": 21
+          },
+          {
+            "clan": "De Sagun",
+            "count": 17
+          },
+          {
+            "clan": "Lontoc",
+            "count": 7
+          }
+        ]
+      },
+      {
+        "municipality": "Magallanes",
+        "totalSeats": 116,
+        "fatSeats": 44,
+        "fatShare": 37.9,
+        "topClans": [
+          {
+            "clan": "Sisante",
+            "count": 10
+          },
+          {
+            "clan": "Maligaya",
+            "count": 9
+          },
+          {
+            "clan": "Beratio",
+            "count": 8
+          }
+        ]
+      },
+      {
+        "municipality": "Bacoor City",
+        "totalSeats": 141,
+        "fatSeats": 53,
+        "fatShare": 37.6,
+        "topClans": [
+          {
+            "clan": "Revilla / Bautista",
+            "count": 16
+          },
+          {
+            "clan": "Gawaran",
+            "count": 11
+          },
+          {
+            "clan": "De Castro",
+            "count": 7
+          }
+        ]
+      },
+      {
+        "municipality": "Dasmariñas City",
+        "totalSeats": 148,
+        "fatSeats": 54,
+        "fatShare": 36.5,
+        "topClans": [
+          {
+            "clan": "Barzaga",
+            "count": 16
+          },
+          {
+            "clan": "Cantimbuhan",
+            "count": 12
+          },
+          {
+            "clan": "Encabo",
+            "count": 10
+          }
+        ]
+      },
+      {
+        "municipality": "Silang",
+        "totalSeats": 118,
+        "fatSeats": 43,
+        "fatShare": 36.4,
+        "topClans": [
+          {
+            "clan": "Amutan",
+            "count": 10
+          },
+          {
+            "clan": "Patawe",
+            "count": 9
+          },
+          {
+            "clan": "Reyes",
+            "count": 8
+          }
+        ]
+      },
+      {
+        "municipality": "Amadeo",
+        "totalSeats": 112,
+        "fatSeats": 39,
+        "fatShare": 34.8,
+        "topClans": [
+          {
+            "clan": "Villanueva",
+            "count": 16
+          },
+          {
+            "clan": "Bayot",
+            "count": 15
+          },
+          {
+            "clan": "Ambagan",
+            "count": 9
+          }
+        ]
+      },
+      {
+        "municipality": "General Emilio Aguinaldo (Bailen)",
+        "totalSeats": 117,
+        "fatSeats": 40,
+        "fatShare": 34.2,
+        "topClans": [
+          {
+            "clan": "Glean",
+            "count": 11
+          },
+          {
+            "clan": "Bencito",
+            "count": 10
+          },
+          {
+            "clan": "Angat",
+            "count": 10
+          }
+        ]
+      },
+      {
+        "municipality": "Naic",
+        "totalSeats": 112,
+        "fatSeats": 38,
+        "fatShare": 33.9,
+        "topClans": [
+          {
+            "clan": "Nazareno",
+            "count": 13
+          },
+          {
+            "clan": "Dualan",
+            "count": 13
+          },
+          {
+            "clan": "Wakay",
+            "count": 7
+          }
+        ]
+      },
+      {
+        "municipality": "Tanza",
+        "totalSeats": 118,
+        "fatSeats": 39,
+        "fatShare": 33.1,
+        "topClans": [
+          {
+            "clan": "Arayata",
+            "count": 15
+          },
+          {
+            "clan": "Del Rosario",
+            "count": 14
+          },
+          {
+            "clan": "Pacumio",
+            "count": 11
+          }
+        ]
+      },
+      {
+        "municipality": "Cavite Local",
+        "totalSeats": 158,
+        "fatSeats": 49,
+        "fatShare": 31.0,
+        "topClans": [
+          {
+            "clan": "Chua",
+            "count": 5
+          },
+          {
+            "clan": "Gutierrez",
+            "count": 4
+          },
+          {
+            "clan": "Nolasco",
+            "count": 4
+          }
+        ]
+      },
+      {
+        "municipality": "General Trias City",
+        "totalSeats": 134,
+        "fatSeats": 39,
+        "fatShare": 29.1,
+        "topClans": [
+          {
+            "clan": "Grepo",
+            "count": 16
+          },
+          {
+            "clan": "Ferrer",
+            "count": 16
+          },
+          {
+            "clan": "Campana",
+            "count": 9
+          }
+        ]
+      },
+      {
+        "municipality": "Kawit",
+        "totalSeats": 114,
+        "fatSeats": 33,
+        "fatShare": 28.9,
+        "topClans": [
+          {
+            "clan": "Aguinaldo",
+            "count": 15
+          },
+          {
+            "clan": "Caimol",
+            "count": 10
+          },
+          {
+            "clan": "Bernal",
+            "count": 5
+          }
+        ]
+      },
+      {
+        "municipality": "Carmona City",
+        "totalSeats": 121,
+        "fatSeats": 35,
+        "fatShare": 28.9,
+        "topClans": [
+          {
+            "clan": "Loyola",
+            "count": 20
+          },
+          {
+            "clan": "Reyes",
+            "count": 9
+          },
+          {
+            "clan": "Tenedero",
+            "count": 9
+          }
+        ]
+      },
+      {
+        "municipality": "Imus City",
+        "totalSeats": 141,
+        "fatSeats": 39,
+        "fatShare": 27.7,
+        "topClans": [
+          {
+            "clan": "Maliksi",
+            "count": 15
+          },
+          {
+            "clan": "Nato",
+            "count": 9
+          },
+          {
+            "clan": "Advincula",
+            "count": 9
+          }
+        ]
+      },
+      {
+        "municipality": "Cavite City",
+        "totalSeats": 127,
+        "fatSeats": 33,
+        "fatShare": 26.0,
+        "topClans": [
+          {
+            "clan": "Barron",
+            "count": 6
+          },
+          {
+            "clan": "Tirona",
+            "count": 6
+          },
+          {
+            "clan": "Paredes",
+            "count": 6
+          }
+        ]
+      },
+      {
+        "municipality": "Mendez (Mendez-Nuñez)",
+        "totalSeats": 112,
+        "fatSeats": 29,
+        "fatShare": 25.9,
+        "topClans": [
+          {
+            "clan": "Mendoza",
+            "count": 10
+          },
+          {
+            "clan": "Romera",
+            "count": 8
+          },
+          {
+            "clan": "Dimapilis",
+            "count": 6
+          }
+        ]
+      },
+      {
+        "municipality": "Alfonso",
+        "totalSeats": 118,
+        "fatSeats": 29,
+        "fatShare": 24.6,
+        "topClans": [
+          {
+            "clan": "Varias",
+            "count": 14
+          },
+          {
+            "clan": "Rosanes",
+            "count": 8
+          },
+          {
+            "clan": "Rom",
+            "count": 7
+          }
+        ]
+      },
+      {
+        "municipality": "Rosario",
+        "totalSeats": 111,
+        "fatSeats": 27,
+        "fatShare": 24.3,
+        "topClans": [
+          {
+            "clan": "Ricafrente",
+            "count": 11
+          },
+          {
+            "clan": "Hernandez",
+            "count": 10
+          },
+          {
+            "clan": "Luna",
+            "count": 9
+          }
+        ]
+      },
+      {
+        "municipality": "Ternate",
+        "totalSeats": 104,
+        "fatSeats": 24,
+        "fatShare": 23.1,
+        "topClans": [
+          {
+            "clan": "Lindo",
+            "count": 10
+          },
+          {
+            "clan": "Nigoza",
+            "count": 8
+          },
+          {
+            "clan": "Federico",
+            "count": 5
+          }
+        ]
+      },
+      {
+        "municipality": "Maragondon",
+        "totalSeats": 115,
+        "fatSeats": 25,
+        "fatShare": 21.7,
+        "topClans": [
+          {
+            "clan": "Angeles",
+            "count": 16
+          },
+          {
+            "clan": "Rillo",
+            "count": 9
+          },
+          {
+            "clan": "Ramirez",
+            "count": 7
+          }
+        ]
+      },
+      {
+        "municipality": "General Mariano Alvarez (GMA)",
+        "totalSeats": 100,
+        "fatSeats": 17,
+        "fatShare": 17.0,
+        "topClans": [
+          {
+            "clan": "Virata",
+            "count": 10
+          },
+          {
+            "clan": "Cabuhat",
+            "count": 9
+          },
+          {
+            "clan": "Echevarria",
+            "count": 7
+          }
+        ]
+      },
+      {
+        "municipality": "Indang",
+        "totalSeats": 110,
+        "fatSeats": 17,
+        "fatShare": 15.5,
+        "topClans": [
+          {
+            "clan": "Bernarte",
+            "count": 10
+          },
+          {
+            "clan": "Rodil",
+            "count": 7
+          },
+          {
+            "clan": "Lopez",
+            "count": 7
+          }
+        ]
+      }
+    ],
+    "topClans": [
+      {
+        "clan": "Reyes",
+        "totalTerms": 38,
+        "fatTerms": 37,
+        "fatRatio": 97.4,
+        "uniqueMembers": 19,
+        "membersList": [
+          "Angelito Reyes",
+          "Argel Joseph Reyes",
+          "Argel Reyes",
+          "Augusto Reyes",
+          "Bicky Reyes",
+          "Dolor Reyes",
+          "Efren Reyes",
+          "Elmer Reyes",
+          "Ivee Jayne Reyes",
+          "Ivee Reyes",
+          "Iveejayne Reyes",
+          "Leonardo Reyes",
+          "Lydia Reyes",
+          "Manuel Reyes",
+          "Martin John Reyes",
+          "Martin Reyes",
+          "Renz Reyes",
+          "Ruben Reyes",
+          "Zoilo Reyes"
+        ],
+        "yearsActive": [
+          1988, 1992, 1995, 1998, 2001, 2004, 2007, 2010, 2013, 2016, 2019, 2022
+        ],
+        "positions": ["Councilor", "Provincial Board Member", "Vice Mayor"],
+        "municipalities": [
+          "Alfonso",
+          "Carmona City",
+          "Cavite City",
+          "Cavite Local",
+          "Dasmariñas City",
+          "Imus City",
+          "Magallanes",
+          "Naic",
+          "Noveleta",
+          "Provincial (Cavite At-Large)",
+          "Silang"
+        ]
+      },
+      {
+        "clan": "Mendoza",
+        "totalTerms": 37,
+        "fatTerms": 35,
+        "fatRatio": 94.6,
+        "uniqueMembers": 14,
+        "membersList": [
+          "Cocoy Mendoza",
+          "Edgardo Mendoza",
+          "Edwina Mendoza",
+          "Esteban Mendoza",
+          "Fermin Mendoza",
+          "Francisco Jr. Mendoza",
+          "Francisco Mendoza",
+          "Guillermo Mendoza",
+          "Hermenegildo Mendoza",
+          "Herminigildo Mendoza",
+          "Hilda Mendoza",
+          "Laureano Mendoza",
+          "Ricardo Mendoza",
+          "Santiago Mendoza"
+        ],
+        "yearsActive": [
+          1988, 1992, 1995, 1998, 2001, 2004, 2007, 2010, 2013, 2016, 2019, 2022
+        ],
+        "positions": [
+          "Councilor",
+          "Mayor",
+          "Provincial Board Member",
+          "Vice Mayor"
+        ],
+        "municipalities": [
+          "Alfonso",
+          "Dasmariñas City",
+          "General Emilio Aguinaldo (Bailen)",
+          "Mendez (Mendez-Nuñez)",
+          "Naic",
+          "Provincial (Cavite At-Large)",
+          "Tagaytay City",
+          "Ternate"
+        ]
+      },
+      {
+        "clan": "Revilla / Bautista",
+        "totalTerms": 32,
+        "fatTerms": 26,
+        "fatRatio": 81.2,
+        "uniqueMembers": 18,
+        "membersList": [
+          "Bernard Michael Bautista",
+          "Buenaventura Bautista",
+          "Edwin Bautista",
+          "Hernando Bautista",
+          "Jasmin Angelli Bautista",
+          "Jose Marie Bautista",
+          "Lani Revilla",
+          "Luisito Bautista",
+          "Miguel Bautista",
+          "Mike Bautista",
+          "Ram Revilla Bautista",
+          "Ramon Jolo Iii Revilla",
+          "Ramon Jolo Revilla",
+          "Ramon Revilla",
+          "Ramonjoloiii Revilla",
+          "Rowena Bautista",
+          "Strike Bautista",
+          "Strike Revilla"
+        ],
+        "yearsActive": [
+          1988, 1995, 1998, 2001, 2007, 2010, 2013, 2016, 2019, 2022
+        ],
+        "positions": [
+          "Councilor",
+          "Governor",
+          "Mayor",
+          "Member, House of Representatives",
+          "Provincial Board Member",
+          "Vice Governor"
+        ],
+        "municipalities": [
+          "Bacoor City",
+          "Cavite Local",
+          "Dasmariñas City",
+          "General Emilio Aguinaldo (Bailen)",
+          "Imus City",
+          "Provincial (Cavite At-Large)",
+          "Ternate"
+        ]
+      },
+      {
+        "clan": "Del Rosario",
+        "totalTerms": 32,
+        "fatTerms": 30,
+        "fatRatio": 93.8,
+        "uniqueMembers": 12,
+        "membersList": [
+          "Antonio Del Rosario",
+          "Antonio Jr. Del Rosario",
+          "Cesario Del Rosario",
+          "Diosdado Del Rosario",
+          "Dominador Del Rosario",
+          "Leonardo Del Rosario",
+          "Michael Del Rosario",
+          "Munding Del Rosario",
+          "Raymundo Del Rosario",
+          "Reynaldo Del Rosario",
+          "Virgilio Del Rosario",
+          "Virginio Del Rosario"
+        ],
+        "yearsActive": [
+          1988, 1992, 1995, 1998, 2001, 2004, 2007, 2010, 2013, 2016, 2019, 2022
+        ],
+        "positions": [
+          "Councilor",
+          "Mayor",
+          "Provincial Board Member",
+          "Vice Mayor"
+        ],
+        "municipalities": [
+          "Bacoor City",
+          "Cavite Local",
+          "Dasmariñas City",
+          "Imus City",
+          "Kawit",
+          "Mendez (Mendez-Nuñez)",
+          "Provincial (Cavite At-Large)",
+          "Rosario",
+          "Tanza",
+          "Ternate"
+        ]
+      },
+      {
+        "clan": "Loyola",
+        "totalTerms": 31,
+        "fatTerms": 28,
+        "fatRatio": 90.3,
+        "uniqueMembers": 7,
+        "membersList": [
+          "Cesar Jr Loyola",
+          "Cesar Loyola",
+          "Dahlia Loyola",
+          "Jaime Loyola",
+          "Oyet Loyola",
+          "Rosalie Loyola",
+          "Roy Loyola"
+        ],
+        "yearsActive": [
+          1988, 1992, 1995, 1998, 2001, 2004, 2007, 2010, 2013, 2016, 2019, 2022
+        ],
+        "positions": [
+          "Councilor",
+          "Mayor",
+          "Member, House of Representatives",
+          "Vice Mayor"
+        ],
+        "municipalities": [
+          "Carmona City",
+          "Cavite Local",
+          "General Emilio Aguinaldo (Bailen)",
+          "Provincial (Cavite At-Large)",
+          "Silang"
+        ]
+      },
+      {
+        "clan": "Mojica",
+        "totalTerms": 29,
+        "fatTerms": 28,
+        "fatRatio": 96.6,
+        "uniqueMembers": 16,
+        "membersList": [
+          "Aj Mojica",
+          "Alexander Mojica",
+          "Alvin Mojica",
+          "Cesar Mojica",
+          "Che-Che Mojica",
+          "Clemente Mojica",
+          "Daniel Mojica",
+          "Felipe Mojica",
+          "Florencio Mojica",
+          "Gerry Mojica",
+          "Jovita Mojica",
+          "Joyce Mojica",
+          "Modesto Mojica",
+          "Rolando Mojica",
+          "Teodor Ico Mojica",
+          "Teodoro Mojica"
+        ],
+        "yearsActive": [
+          1988, 1992, 1995, 1998, 2001, 2004, 2007, 2010, 2016, 2019, 2022
+        ],
+        "positions": ["Councilor", "Mayor", "Vice Mayor"],
+        "municipalities": [
+          "Alfonso",
+          "Amadeo",
+          "Cavite Local",
+          "General Mariano Alvarez (GMA)",
+          "Indang",
+          "Magallanes",
+          "Mendez (Mendez-Nuñez)",
+          "Naic",
+          "Ternate",
+          "Trece Martires City"
+        ]
+      },
+      {
+        "clan": "Tolentino",
+        "totalTerms": 28,
+        "fatTerms": 24,
+        "fatRatio": 85.7,
+        "uniqueMembers": 11,
+        "membersList": [
+          "Abraham Tolentino",
+          "Agnes Tolentino",
+          "Allan Tolentino",
+          "Aniela Tolentino",
+          "Athena Bryana Tolentino",
+          "Athena Tolentino",
+          "Bambol Tolentino",
+          "Domingo Tolentino",
+          "Eloisa Tolentino",
+          "Francis Tolentino",
+          "Micko Tolentino"
+        ],
+        "yearsActive": [
+          1992, 1995, 1998, 2001, 2004, 2007, 2010, 2013, 2016, 2019, 2022
+        ],
+        "positions": [
+          "Councilor",
+          "Mayor",
+          "Member, House of Representatives",
+          "Provincial Board Member",
+          "Vice Governor",
+          "Vice Mayor"
+        ],
+        "municipalities": [
+          "Alfonso",
+          "Carmona City",
+          "Provincial (Cavite At-Large)",
+          "Silang",
+          "Tagaytay City"
+        ]
+      },
+      {
+        "clan": "Villanueva",
+        "totalTerms": 27,
+        "fatTerms": 25,
+        "fatRatio": 92.6,
+        "uniqueMembers": 15,
+        "membersList": [
+          "Alex Villanueva",
+          "Alexander Villanueva",
+          "Angelito Villanueva",
+          "Ato Villanueva",
+          "Benjarde Villanueva",
+          "Florentino Villanueva",
+          "Jeremias Villanueva",
+          "Kenniccolo Villanueva",
+          "Manolito Villanueva",
+          "Mark Villanueva",
+          "Nicetos Villanueva",
+          "Renato Villanueva",
+          "Rogelio Villanueva",
+          "Victor Villanueva",
+          "Yolanda Villanueva"
+        ],
+        "yearsActive": [
+          1988, 1995, 1998, 2001, 2004, 2007, 2010, 2013, 2016, 2019, 2022
+        ],
+        "positions": ["Councilor", "Mayor", "Vice Mayor"],
+        "municipalities": [
+          "Amadeo",
+          "Cavite Local",
+          "Imus City",
+          "Magallanes",
+          "Maragondon",
+          "Trece Martires City"
+        ]
+      },
+      {
+        "clan": "Remulla",
+        "totalTerms": 24,
+        "fatTerms": 19,
+        "fatRatio": 79.2,
+        "uniqueMembers": 9,
+        "membersList": [
+          "Boying Remulla",
+          "Darwin Remulla",
+          "Gilbert Cesar Remulla",
+          "Jesus Crispin Remulla",
+          "Jonvic Remulla",
+          "Juanito Remulla",
+          "Juanito Victor Remulla",
+          "Ping Remulla",
+          "Rolando Remulla"
+        ],
+        "yearsActive": [
+          1988, 1992, 1995, 1998, 2001, 2004, 2007, 2010, 2013, 2016, 2019, 2022
+        ],
+        "positions": [
+          "Councilor",
+          "Governor",
+          "Member, House of Representatives",
+          "Provincial Board Member",
+          "Vice Governor"
+        ],
+        "municipalities": [
+          "Amadeo",
+          "Bacoor City",
+          "Imus City",
+          "Provincial (Cavite At-Large)"
+        ]
+      },
+      {
+        "clan": "Ramos",
+        "totalTerms": 24,
+        "fatTerms": 21,
+        "fatRatio": 87.5,
+        "uniqueMembers": 8,
+        "membersList": [
+          "Arcadio Ramos",
+          "Danilo Ramos",
+          "Democreto Ramos",
+          "Gloria Ramos",
+          "Iniego Ramos",
+          "Juan Ramos",
+          "Renato Ramos",
+          "Romeo Ramos"
+        ],
+        "yearsActive": [
+          1988, 1992, 1995, 1998, 2001, 2004, 2007, 2010, 2013, 2016
+        ],
+        "positions": ["Councilor", "Mayor", "Vice Mayor"],
+        "municipalities": [
+          "Amadeo",
+          "Cavite City",
+          "Cavite Local",
+          "Indang",
+          "Magallanes",
+          "Silang"
+        ]
+      },
+      {
+        "clan": "Poblete",
+        "totalTerms": 22,
+        "fatTerms": 21,
+        "fatRatio": 95.5,
+        "uniqueMembers": 8,
+        "membersList": [
+          "Antonio Poblete",
+          "Clarito Poblete",
+          "Corie Poblete",
+          "Emilia Lourdes Poblete",
+          "Emilia Poblete",
+          "Federico Poblete",
+          "Nolasco Poblete",
+          "Sofia Poblete"
+        ],
+        "yearsActive": [
+          1988, 1992, 1995, 2001, 2004, 2007, 2010, 2013, 2016, 2019
+        ],
+        "positions": ["Councilor", "Mayor", "Provincial Board Member"],
+        "municipalities": [
+          "Cavite Local",
+          "Kawit",
+          "Naic",
+          "Provincial (Cavite At-Large)",
+          "Silang"
+        ]
+      },
+      {
+        "clan": "De Castro",
+        "totalTerms": 22,
+        "fatTerms": 20,
+        "fatRatio": 90.9,
+        "uniqueMembers": 5,
+        "membersList": [
+          "Avelino De Castro",
+          "Celso De Castro",
+          "Justiniano De Castro",
+          "Lamberto De Castro",
+          "Venus De Castro"
+        ],
+        "yearsActive": [1992, 1995, 1998, 2001, 2004, 2007, 2010, 2013, 2016],
+        "positions": ["Councilor", "Vice Mayor"],
+        "municipalities": ["Alfonso", "Bacoor City", "Silang", "Tagaytay City"]
+      },
+      {
+        "clan": "Aguinaldo",
+        "totalTerms": 21,
+        "fatTerms": 20,
+        "fatRatio": 95.2,
+        "uniqueMembers": 9,
+        "membersList": [
+          "Angelo Aguinaldo",
+          "Angelo Emilio Aguinaldo",
+          "Angeloemilio Aguinaldo",
+          "Armie Aguinaldo",
+          "Carlito Aguinaldo",
+          "Emilio Aguinaldo",
+          "Emilio V Aguinaldo",
+          "Miong Aguinaldo",
+          "Reynaldo Aguinaldo"
+        ],
+        "yearsActive": [1998, 2001, 2004, 2007, 2010, 2013, 2016, 2019, 2022],
+        "positions": ["Councilor", "Mayor", "Vice Mayor"],
+        "municipalities": ["Imus City", "Kawit"]
+      },
+      {
+        "clan": "Lubigan",
+        "totalTerms": 21,
+        "fatTerms": 20,
+        "fatRatio": 95.2,
+        "uniqueMembers": 8,
+        "membersList": [
+          "Alexander Lubigan",
+          "Antonio Lubigan",
+          "Gemma Lubigan",
+          "Josefo Lubigan",
+          "Kim Paolo Lubigan",
+          "Kimpaolo Lubigan",
+          "Lamberto Lubigan",
+          "Severino Lubigan"
+        ],
+        "yearsActive": [
+          1992, 1995, 2001, 2004, 2007, 2010, 2013, 2016, 2019, 2022
+        ],
+        "positions": ["Councilor", "Mayor", "Vice Mayor"],
+        "municipalities": ["Trece Martires City"]
+      },
+      {
+        "clan": "Manalo",
+        "totalTerms": 20,
+        "fatTerms": 15,
+        "fatRatio": 75.0,
+        "uniqueMembers": 7,
+        "membersList": [
+          "Crispin Manalo",
+          "Dave Manalo",
+          "Gregorio Manalo",
+          "Meynardo Manalo",
+          "Michael Manalo",
+          "Pedro Manalo",
+          "Romel Manalo"
+        ],
+        "yearsActive": [
+          1988, 1992, 1995, 1998, 2001, 2004, 2007, 2010, 2013, 2016, 2019, 2022
+        ],
+        "positions": ["Councilor", "Vice Mayor"],
+        "municipalities": [
+          "Alfonso",
+          "General Emilio Aguinaldo (Bailen)",
+          "General Trias City",
+          "Magallanes",
+          "Maragondon",
+          "Naic",
+          "Noveleta"
+        ]
+      },
+      {
+        "clan": "Dimapilis",
+        "totalTerms": 20,
+        "fatTerms": 14,
+        "fatRatio": 70.0,
+        "uniqueMembers": 8,
+        "membersList": [
+          "Ato Dimapilis",
+          "Calixto Dimapilis",
+          "David Dimapilis",
+          "Luis Dimapilis",
+          "Ma. Loida Amor Dimapilis",
+          "Ma. Loida Dimapilis",
+          "Raygan Dimapilis",
+          "Renato Dimapilis"
+        ],
+        "yearsActive": [
+          1988, 1992, 1995, 1998, 2001, 2004, 2007, 2010, 2013, 2016, 2019, 2022
+        ],
+        "positions": ["Councilor", "Vice Mayor"],
+        "municipalities": [
+          "Cavite Local",
+          "General Emilio Aguinaldo (Bailen)",
+          "Magallanes",
+          "Mendez (Mendez-Nuñez)",
+          "Tagaytay City"
+        ]
+      },
+      {
+        "clan": "Nazareno",
+        "totalTerms": 20,
+        "fatTerms": 16,
+        "fatRatio": 80.0,
+        "uniqueMembers": 11,
+        "membersList": [
+          "Antonio Nazareno",
+          "Cesar Ryan Nazareno",
+          "Crisanto Nazareno",
+          "Danilo Nazareno",
+          "Dominador Nazareno",
+          "Efren Nazareno",
+          "Eimeren Nazareno",
+          "Mark Rainier Nazareno",
+          "Napoleon Nazareno",
+          "Rodolfo Nazareno",
+          "Sj Nazareno"
+        ],
+        "yearsActive": [
+          1992, 1995, 1998, 2001, 2004, 2007, 2010, 2013, 2016, 2019, 2022
+        ],
+        "positions": [
+          "Councilor",
+          "Mayor",
+          "Member, House of Representatives",
+          "Vice Mayor"
+        ],
+        "municipalities": [
+          "Cavite City",
+          "Cavite Local",
+          "Naic",
+          "Provincial (Cavite At-Large)",
+          "Rosario"
+        ]
+      },
+      {
+        "clan": "Cantimbuhan",
+        "totalTerms": 19,
+        "fatTerms": 14,
+        "fatRatio": 73.7,
+        "uniqueMembers": 7,
+        "membersList": [
+          "Arnel Cantimbuhan",
+          "Luciano Cantimbuhan",
+          "Ony Cantimbuhan",
+          "Recto Cantimbuhan",
+          "Robin C Cantimbuhan",
+          "Robin Cantimbuhan",
+          "Robinchester Cantimbuhan"
+        ],
+        "yearsActive": [
+          1988, 1992, 1995, 2001, 2004, 2007, 2010, 2013, 2016, 2019, 2022
+        ],
+        "positions": [
+          "Councilor",
+          "Mayor",
+          "Provincial Board Member",
+          "Vice Governor",
+          "Vice Mayor"
+        ],
+        "municipalities": [
+          "Dasmariñas City",
+          "Imus City",
+          "Provincial (Cavite At-Large)"
+        ]
+      },
+      {
+        "clan": "Lara",
+        "totalTerms": 19,
+        "fatTerms": 13,
+        "fatRatio": 68.4,
+        "uniqueMembers": 7,
+        "membersList": [
+          "Danilo Lara",
+          "Manuel Lara",
+          "Peter Simon Lara",
+          "Richard Lara",
+          "Rudy Lara",
+          "Teofilo Lara",
+          "Wency Lara"
+        ],
+        "yearsActive": [
+          1988, 1992, 1995, 1998, 2001, 2004, 2007, 2010, 2013, 2016, 2019, 2022
+        ],
+        "positions": ["Councilor", "Provincial Board Member", "Vice Mayor"],
+        "municipalities": [
+          "Bacoor City",
+          "Dasmariñas City",
+          "General Mariano Alvarez (GMA)",
+          "Imus City",
+          "Provincial (Cavite At-Large)"
+        ]
+      },
+      {
+        "clan": "Torres",
+        "totalTerms": 19,
+        "fatTerms": 13,
+        "fatRatio": 68.4,
+        "uniqueMembers": 9,
+        "membersList": [
+          "Addre Torres",
+          "Arlynn Torres",
+          "Bonifacio Torres",
+          "Dionisio Torres",
+          "Maricel Torres",
+          "Rosanno Torres",
+          "Rossano Torres",
+          "Sonny Torres",
+          "Teodorico Torres"
+        ],
+        "yearsActive": [
+          1988, 1992, 1995, 1998, 2001, 2004, 2010, 2013, 2016, 2019, 2022
+        ],
+        "positions": ["Councilor", "Mayor", "Vice Mayor"],
+        "municipalities": [
+          "Cavite Local",
+          "Dasmariñas City",
+          "General Mariano Alvarez (GMA)",
+          "Noveleta",
+          "Tanza"
+        ]
+      },
+      {
+        "clan": "Angeles",
+        "totalTerms": 19,
+        "fatTerms": 13,
+        "fatRatio": 68.4,
+        "uniqueMembers": 7,
+        "membersList": [
+          "Alan Angeles",
+          "Angelito Angeles",
+          "Avelino Angeles",
+          "Danilo Angeles",
+          "Ireneo Angeles",
+          "Nelia Angeles",
+          "Teodorico Angeles"
+        ],
+        "yearsActive": [
+          1988, 1992, 1995, 1998, 2004, 2007, 2010, 2013, 2016, 2019, 2022
+        ],
+        "positions": ["Councilor", "Mayor", "Vice Mayor"],
+        "municipalities": [
+          "Cavite Local",
+          "General Emilio Aguinaldo (Bailen)",
+          "Maragondon",
+          "Ternate"
+        ]
+      },
+      {
+        "clan": "Ferrer",
+        "totalTerms": 18,
+        "fatTerms": 11,
+        "fatRatio": 61.1,
+        "uniqueMembers": 5,
+        "membersList": [
+          "Antonio Ferrer",
+          "Enzo-Asistio Ferrer",
+          "Luis Ferrer",
+          "Luis Iv Ferrer",
+          "Luisiv Ferrer"
+        ],
+        "yearsActive": [
+          1988, 1992, 1995, 1998, 2001, 2004, 2007, 2010, 2013, 2016, 2019, 2022
+        ],
+        "positions": [
+          "Councilor",
+          "Mayor",
+          "Member, House of Representatives",
+          "Provincial Board Member",
+          "Vice Governor",
+          "Vice Mayor"
+        ],
+        "municipalities": [
+          "General Trias City",
+          "Imus City",
+          "Provincial (Cavite At-Large)"
+        ]
+      },
+      {
+        "clan": "Alvarez",
+        "totalTerms": 18,
+        "fatTerms": 16,
+        "fatRatio": 88.9,
+        "uniqueMembers": 8,
+        "membersList": [
+          "Amorico Alvarez",
+          "Boy Alvarez",
+          "Dante Alvarez",
+          "Donato Alvarez",
+          "Donn Alvarez",
+          "Enrico Alvarez",
+          "Enricq Joseph Alvarez",
+          "Konkon Alvarez"
+        ],
+        "yearsActive": [1998, 2001, 2004, 2007, 2010, 2013, 2016, 2019, 2022],
+        "positions": ["Councilor", "Mayor", "Vice Mayor"],
+        "municipalities": ["Cavite City", "Noveleta"]
+      },
+      {
+        "clan": "Ambion",
+        "totalTerms": 18,
+        "fatTerms": 11,
+        "fatRatio": 61.1,
+        "uniqueMembers": 6,
+        "membersList": [
+          "Marlon Ambion",
+          "Mok Ambion",
+          "Rainier Ambion",
+          "Reymond Ambion",
+          "Reyniel Ambion",
+          "Virgilio Ambion"
+        ],
+        "yearsActive": [
+          1988, 1992, 1995, 1998, 2001, 2004, 2007, 2010, 2013, 2016, 2019, 2022
+        ],
+        "positions": ["Councilor", "Provincial Board Member", "Vice Mayor"],
+        "municipalities": [
+          "Amadeo",
+          "Provincial (Cavite At-Large)",
+          "Tagaytay City"
+        ]
+      },
+      {
+        "clan": "Barzaga",
+        "totalTerms": 17,
+        "fatTerms": 14,
+        "fatRatio": 82.4,
+        "uniqueMembers": 6,
+        "membersList": [
+          "Elpidio Barzaga",
+          "Elpidio Jr. Barzaga",
+          "Jennifer Barzaga",
+          "Jenny Barzaga",
+          "Kiko Barzaga",
+          "Pidi Barzaga"
+        ],
+        "yearsActive": [1998, 2001, 2004, 2007, 2010, 2013, 2016, 2019, 2022],
+        "positions": ["Councilor", "Mayor", "Member, House of Representatives"],
+        "municipalities": ["Dasmariñas City", "Provincial (Cavite At-Large)"]
+      }
+    ]
+  }
+}

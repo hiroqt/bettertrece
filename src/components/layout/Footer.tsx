@@ -22,7 +22,10 @@ const Footer: React.FC = () => {
       case 'quick links':
         return t('footer.quickLinks', 'Quick Links');
       case 'resources':
-        return t('footer.resources', 'Resources');
+      case 'civic datasets & open data':
+      case 'civic datasets':
+      case 'open datasets':
+        return t('footer.civicDatasets', 'Civic Datasets & Open Data');
       default:
         return title;
     }

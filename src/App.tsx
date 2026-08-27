@@ -10,6 +10,7 @@ import Document from './pages/Document';
 import Government from './pages/Government';
 import Demographics from './pages/Demographics';
 import DpwhTransparency from './pages/DpwhTransparency';
+import PoliticalDynasties from './pages/PoliticalDynasties';
 import Search from './pages/Search';
 import About from './pages/About';
 import FuelPrices from './pages/FuelPrices';
@@ -35,6 +36,18 @@ function App() {
               <Route path="/municipal-profile" element={<Demographics />} />
               <Route path="/transparency" element={<DpwhTransparency />} />
               <Route path="/transparency/dpwh" element={<DpwhTransparency />} />
+              <Route
+                path="/transparency/political-dynasties"
+                element={<PoliticalDynasties />}
+              />
+              <Route
+                path="/transparency/dynasty"
+                element={<PoliticalDynasties />}
+              />
+              <Route
+                path="/transparency/dynasties"
+                element={<PoliticalDynasties />}
+              />
               <Route path="/services/:category" element={<Services />} />
               <Route path="/services" element={<Services />} />
               <Route
