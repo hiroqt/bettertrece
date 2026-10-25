@@ -1,0 +1,5159 @@
+{
+  "source": "OpenStreetMap API map extract",
+  "license": "Open Database License (ODbL) 1.0",
+  "retrievedAt": "2026-10-25T13:22:01.354Z",
+  "coverage": "Named features tagged as amenities, shops, leisure, tourism, sport, healthcare, crafts, offices, historic places, and public transport inside the Trece Martires OSM boundary box.",
+  "places": [
+    {
+      "id": "node/13682678209",
+      "name": "39ers Milk Tea",
+      "class": "amenity",
+      "subclass": "cafe",
+      "categories": ["amenity:cafe"],
+      "coordinate": [120.8497087, 14.2814863],
+      "osmUrl": "https://www.openstreetmap.org/node/13682678209"
+    },
+    {
+      "id": "node/12682628444",
+      "name": "7-Eleven",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.8775414, 14.2529691],
+      "osmUrl": "https://www.openstreetmap.org/node/12682628444"
+    },
+    {
+      "id": "node/2865755615",
+      "name": "7-Eleven",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.868836, 14.2801348],
+      "osmUrl": "https://www.openstreetmap.org/node/2865755615"
+    },
+    {
+      "id": "node/12495525311",
+      "name": "7-Eleven",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.8678833, 14.2876163],
+      "osmUrl": "https://www.openstreetmap.org/node/12495525311"
+    },
+    {
+      "id": "node/2728960143",
+      "name": "7-Eleven",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.8903185, 14.2820005],
+      "osmUrl": "https://www.openstreetmap.org/node/2728960143"
+    },
+    {
+      "id": "node/13382866444",
+      "name": "7-Eleven",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.8976979, 14.2876403],
+      "osmUrl": "https://www.openstreetmap.org/node/13382866444"
+    },
+    {
+      "id": "way/1493182639",
+      "name": "7-Eleven",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.84848919999999, 14.28088864],
+      "osmUrl": "https://www.openstreetmap.org/way/1493182639"
+    },
+    {
+      "id": "way/1498161674",
+      "name": "7-Eleven",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.87112104, 14.274834520000002],
+      "osmUrl": "https://www.openstreetmap.org/way/1498161674"
+    },
+    {
+      "id": "way/420996813",
+      "name": "7-Eleven",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.86636452, 14.294093620000002],
+      "osmUrl": "https://www.openstreetmap.org/way/420996813"
+    },
+    {
+      "id": "node/13343995918",
+      "name": "A1C Driving Academy - Trece Branch",
+      "class": "amenity",
+      "subclass": "driving_school",
+      "categories": ["amenity:driving_school"],
+      "coordinate": [120.8734998, 14.2707194],
+      "osmUrl": "https://www.openstreetmap.org/node/13343995918"
+    },
+    {
+      "id": "node/13434036426",
+      "name": "Abenson",
+      "class": "shop",
+      "subclass": "electronics",
+      "categories": ["shop:electronics"],
+      "coordinate": [120.8711493, 14.2802341],
+      "osmUrl": "https://www.openstreetmap.org/node/13434036426"
+    },
+    {
+      "id": "node/13076905593",
+      "name": "Ace Hardware",
+      "class": "shop",
+      "subclass": "doityourself",
+      "categories": ["shop:doityourself"],
+      "coordinate": [120.8665529, 14.2814599],
+      "osmUrl": "https://www.openstreetmap.org/node/13076905593"
+    },
+    {
+      "id": "node/5369593752",
+      "name": "Adlei Sari Sari Store",
+      "class": "shop",
+      "subclass": "supermarket",
+      "categories": ["shop:supermarket"],
+      "coordinate": [120.8649367, 14.2881818],
+      "osmUrl": "https://www.openstreetmap.org/node/5369593752"
+    },
+    {
+      "id": "way/318087874",
+      "name": "Agricultural Training Institute Regional Center",
+      "class": "office",
+      "subclass": "government",
+      "categories": ["office:government"],
+      "coordinate": [120.86742678, 14.27365346],
+      "osmUrl": "https://www.openstreetmap.org/way/318087874"
+    },
+    {
+      "id": "way/1225108193",
+      "name": "Agtas Elementary School",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.85439634, 14.261745320000003],
+      "osmUrl": "https://www.openstreetmap.org/way/1225108193"
+    },
+    {
+      "id": "way/1082229435",
+      "name": "Aguado Barangay Hall",
+      "class": "amenity",
+      "subclass": "townhall",
+      "categories": ["amenity:townhall"],
+      "coordinate": [120.86560811999998, 14.2551168],
+      "osmUrl": "https://www.openstreetmap.org/way/1082229435"
+    },
+    {
+      "id": "way/980917902",
+      "name": "Aguado Elementary School",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.86460124, 14.256671939999999],
+      "osmUrl": "https://www.openstreetmap.org/way/980917902"
+    },
+    {
+      "id": "way/1086509506",
+      "name": "Agus-os Elementary School",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.86022075999999, 14.222027460000001],
+      "osmUrl": "https://www.openstreetmap.org/way/1086509506"
+    },
+    {
+      "id": "node/13081237519",
+      "name": "Aice Trece Martires",
+      "class": "office",
+      "subclass": "company",
+      "categories": ["office:company"],
+      "coordinate": [120.8783919, 14.2493792],
+      "osmUrl": "https://www.openstreetmap.org/node/13081237519"
+    },
+    {
+      "id": "node/11413930469",
+      "name": "aidaAndmonching",
+      "class": "shop",
+      "subclass": "beverages",
+      "categories": ["shop:beverages"],
+      "coordinate": [120.8733977, 14.3128104],
+      "osmUrl": "https://www.openstreetmap.org/node/11413930469"
+    },
+    {
+      "id": "node/12682692331",
+      "name": "Alfamart",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.8475851, 14.2199252],
+      "osmUrl": "https://www.openstreetmap.org/node/12682692331"
+    },
+    {
+      "id": "node/4887689822",
+      "name": "Alfamart",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.8776474, 14.2522954],
+      "osmUrl": "https://www.openstreetmap.org/node/4887689822"
+    },
+    {
+      "id": "node/8695642617",
+      "name": "Alfamart",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.8663788, 14.2542335],
+      "osmUrl": "https://www.openstreetmap.org/node/8695642617"
+    },
+    {
+      "id": "node/12682628474",
+      "name": "Alfamart",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.8882059, 14.2203278],
+      "osmUrl": "https://www.openstreetmap.org/node/12682628474"
+    },
+    {
+      "id": "node/4830875327",
+      "name": "Alfamart",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.8906662, 14.2825597],
+      "osmUrl": "https://www.openstreetmap.org/node/4830875327"
+    },
+    {
+      "id": "node/8889613617",
+      "name": "Alfamart",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.8767145, 14.298386],
+      "osmUrl": "https://www.openstreetmap.org/node/8889613617"
+    },
+    {
+      "id": "node/12495525310",
+      "name": "Alfamart",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.8659092, 14.2950371],
+      "osmUrl": "https://www.openstreetmap.org/node/12495525310"
+    },
+    {
+      "id": "node/12744085568",
+      "name": "Alfamart",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.8682499, 14.2911019],
+      "osmUrl": "https://www.openstreetmap.org/node/12744085568"
+    },
+    {
+      "id": "node/12744085573",
+      "name": "Alfamart",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.8649201, 14.2978846],
+      "osmUrl": "https://www.openstreetmap.org/node/12744085573"
+    },
+    {
+      "id": "way/1350621521",
+      "name": "Alfamart",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.89547625, 14.262761533333334],
+      "osmUrl": "https://www.openstreetmap.org/way/1350621521"
+    },
+    {
+      "id": "way/1350620247",
+      "name": "Alfamart",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.86679668333333, 14.273722566666668],
+      "osmUrl": "https://www.openstreetmap.org/way/1350620247"
+    },
+    {
+      "id": "way/1350620249",
+      "name": "Alfamart",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.86821198333332, 14.288449300000002],
+      "osmUrl": "https://www.openstreetmap.org/way/1350620249"
+    },
+    {
+      "id": "way/1350620250",
+      "name": "Alfamart",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.86925922857142, 14.278352028571431],
+      "osmUrl": "https://www.openstreetmap.org/way/1350620250"
+    },
+    {
+      "id": "way/1350621522",
+      "name": "Alfamart",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.87304405000002, 14.271712866666668],
+      "osmUrl": "https://www.openstreetmap.org/way/1350621522"
+    },
+    {
+      "id": "way/409928518",
+      "name": "Alfamart",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.90023956666666, 14.306783516666668],
+      "osmUrl": "https://www.openstreetmap.org/way/409928518"
+    },
+    {
+      "id": "way/1350622490",
+      "name": "Alfamart",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.89731920000001, 14.313478283333332],
+      "osmUrl": "https://www.openstreetmap.org/way/1350622490"
+    },
+    {
+      "id": "way/980922965",
+      "name": "Aliang Elementary School",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.87146906000001, 14.287735800000002],
+      "osmUrl": "https://www.openstreetmap.org/way/980922965"
+    },
+    {
+      "id": "node/6335494185",
+      "name": "Almazan Pharmacy",
+      "class": "amenity",
+      "subclass": "pharmacy",
+      "categories": ["amenity:pharmacy"],
+      "coordinate": [120.8640945, 14.2755201],
+      "osmUrl": "https://www.openstreetmap.org/node/6335494185"
+    },
+    {
+      "id": "node/5369593753",
+      "name": "Alpha Gym",
+      "class": "leisure",
+      "subclass": "fitness_centre",
+      "categories": ["leisure:fitness_centre"],
+      "coordinate": [120.8680772, 14.2844291],
+      "osmUrl": "https://www.openstreetmap.org/node/5369593753"
+    },
+    {
+      "id": "way/1376672002",
+      "name": "Alson's Trading",
+      "class": "shop",
+      "subclass": "appliance",
+      "categories": ["shop:appliance"],
+      "coordinate": [120.87021719999998, 14.277562460000002],
+      "osmUrl": "https://www.openstreetmap.org/way/1376672002"
+    },
+    {
+      "id": "way/318090546",
+      "name": "Amore Academy of TMC, Cavite",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.87279903333335, 14.271149199999998],
+      "osmUrl": "https://www.openstreetmap.org/way/318090546"
+    },
+    {
+      "id": "way/818969662",
+      "name": "Amore Leisure Park",
+      "class": "leisure",
+      "subclass": "park",
+      "categories": ["leisure:park"],
+      "coordinate": [120.86616489999999, 14.250511771428572],
+      "osmUrl": "https://www.openstreetmap.org/way/818969662"
+    },
+    {
+      "id": "way/1499812258",
+      "name": "Amung Laundry",
+      "class": "shop",
+      "subclass": "laundry",
+      "categories": ["shop:laundry"],
+      "coordinate": [120.8700782, 14.2746398],
+      "osmUrl": "https://www.openstreetmap.org/way/1499812258"
+    },
+    {
+      "id": "node/13343994957",
+      "name": "Andok's",
+      "class": "amenity",
+      "subclass": "fast_food",
+      "categories": ["amenity:fast_food"],
+      "coordinate": [120.8779257, 14.2524888],
+      "osmUrl": "https://www.openstreetmap.org/node/13343994957"
+    },
+    {
+      "id": "node/12682535752",
+      "name": "Andok's",
+      "class": "amenity",
+      "subclass": "fast_food",
+      "categories": ["amenity:fast_food"],
+      "coordinate": [120.8682163, 14.2832858],
+      "osmUrl": "https://www.openstreetmap.org/node/12682535752"
+    },
+    {
+      "id": "node/13343994956",
+      "name": "Angel's Burger",
+      "class": "amenity",
+      "subclass": "fast_food",
+      "categories": ["amenity:fast_food"],
+      "coordinate": [120.8775682, 14.2527254],
+      "osmUrl": "https://www.openstreetmap.org/node/13343994956"
+    },
+    {
+      "id": "way/1119116701",
+      "name": "Angel's Burger",
+      "class": "amenity",
+      "subclass": "fast_food",
+      "categories": ["amenity:fast_food"],
+      "coordinate": [120.86715634000002, 14.28327434],
+      "osmUrl": "https://www.openstreetmap.org/way/1119116701"
+    },
+    {
+      "id": "node/12682535774",
+      "name": "Angel's Pizza",
+      "class": "amenity",
+      "subclass": "restaurant",
+      "categories": ["amenity:restaurant"],
+      "coordinate": [120.8706633, 14.2804639],
+      "osmUrl": "https://www.openstreetmap.org/node/12682535774"
+    },
+    {
+      "id": "node/13565914312",
+      "name": "Anytime Fitness",
+      "class": "leisure",
+      "subclass": "fitness_centre",
+      "categories": [
+        "leisure:fitness_centre",
+        "sport:fitness;gymnastics;multi;yoga"
+      ],
+      "coordinate": [120.8654678, 14.2821474],
+      "osmUrl": "https://www.openstreetmap.org/node/13565914312"
+    },
+    {
+      "id": "node/10748392302",
+      "name": "Aqua Mira Resort @ Saddle & Clubs",
+      "class": "tourism",
+      "subclass": "hotel",
+      "categories": ["tourism:hotel"],
+      "coordinate": [120.8238158, 14.3116593],
+      "osmUrl": "https://www.openstreetmap.org/node/10748392302"
+    },
+    {
+      "id": "node/12159057493",
+      "name": "Asia United Bank",
+      "class": "amenity",
+      "subclass": "bank",
+      "categories": ["amenity:bank"],
+      "coordinate": [120.8402053, 14.2869967],
+      "osmUrl": "https://www.openstreetmap.org/node/12159057493"
+    },
+    {
+      "id": "node/12032707267",
+      "name": "Asia United Bank",
+      "class": "amenity",
+      "subclass": "bank",
+      "categories": ["amenity:bank"],
+      "coordinate": [120.8689391, 14.2824113],
+      "osmUrl": "https://www.openstreetmap.org/node/12032707267"
+    },
+    {
+      "id": "node/13343994960",
+      "name": "Asis Poultry Supply",
+      "class": "shop",
+      "subclass": "agrarian",
+      "categories": ["shop:agrarian"],
+      "coordinate": [120.8773194, 14.2527179],
+      "osmUrl": "https://www.openstreetmap.org/node/13343994960"
+    },
+    {
+      "id": "node/13682678278",
+      "name": "Auntie Anne's",
+      "class": "amenity",
+      "subclass": "fast_food",
+      "categories": ["amenity:fast_food"],
+      "coordinate": [120.8658226, 14.2819028],
+      "osmUrl": "https://www.openstreetmap.org/node/13682678278"
+    },
+    {
+      "id": "way/1498157230",
+      "name": "Auto B's Car Wash",
+      "class": "amenity",
+      "subclass": "car_wash",
+      "categories": ["amenity:car_wash"],
+      "coordinate": [120.84823934, 14.28056732],
+      "osmUrl": "https://www.openstreetmap.org/way/1498157230"
+    },
+    {
+      "id": "way/318095668",
+      "name": "Bagong Pook Elementary School",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.87653719999999, 14.261605966666666],
+      "osmUrl": "https://www.openstreetmap.org/way/318095668"
+    },
+    {
+      "id": "way/1076999817",
+      "name": "Bagong Trece People's Park",
+      "class": "leisure",
+      "subclass": "park",
+      "categories": ["leisure:park"],
+      "coordinate": [120.86242719285714, 14.281832878571427],
+      "osmUrl": "https://www.openstreetmap.org/way/1076999817"
+    },
+    {
+      "id": "way/415481272",
+      "name": "Bagong Trece People's Park Gymnasium",
+      "class": "leisure",
+      "subclass": "sports_centre",
+      "categories": [
+        "leisure:sports_centre",
+        "sport:basketball;volleyball;badminton;multi"
+      ],
+      "coordinate": [120.86202009285716, 14.28211522142857],
+      "osmUrl": "https://www.openstreetmap.org/way/415481272"
+    },
+    {
+      "id": "way/318087857",
+      "name": "Bahay Sanayan",
+      "class": "office",
+      "subclass": "government",
+      "categories": ["office:government"],
+      "coordinate": [120.86719552999998, 14.279102470000002],
+      "osmUrl": "https://www.openstreetmap.org/way/318087857"
+    },
+    {
+      "id": "way/594796581",
+      "name": "Banaba Lejos Elementary School",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.82972278, 14.23480288],
+      "osmUrl": "https://www.openstreetmap.org/way/594796581"
+    },
+    {
+      "id": "node/13673820861",
+      "name": "BanKo",
+      "class": "amenity",
+      "subclass": "bank",
+      "categories": ["amenity:bank"],
+      "coordinate": [120.869402, 14.2807473],
+      "osmUrl": "https://www.openstreetmap.org/node/13673820861"
+    },
+    {
+      "id": "way/1533532916",
+      "name": "Barangay Cabuco Satelite Market",
+      "class": "amenity",
+      "subclass": "marketplace",
+      "categories": ["amenity:marketplace"],
+      "coordinate": [120.84802045555557, 14.28063571111111],
+      "osmUrl": "https://www.openstreetmap.org/way/1533532916"
+    },
+    {
+      "id": "node/5436681719",
+      "name": "Basement Parking Entrance",
+      "class": "amenity",
+      "subclass": "parking_entrance",
+      "categories": ["amenity:parking_entrance"],
+      "coordinate": [120.8665143, 14.2809206],
+      "osmUrl": "https://www.openstreetmap.org/node/5436681719"
+    },
+    {
+      "id": "node/7353447585",
+      "name": "BDO",
+      "class": "amenity",
+      "subclass": "bank",
+      "categories": ["amenity:bank"],
+      "coordinate": [120.8682523, 14.2819667],
+      "osmUrl": "https://www.openstreetmap.org/node/7353447585"
+    },
+    {
+      "id": "node/13394539580",
+      "name": "BDO",
+      "class": "amenity",
+      "subclass": "bank",
+      "categories": ["amenity:bank"],
+      "coordinate": [120.8658418, 14.2813305],
+      "osmUrl": "https://www.openstreetmap.org/node/13394539580"
+    },
+    {
+      "id": "node/5407579522",
+      "name": "Ben's Halo-halo",
+      "class": "amenity",
+      "subclass": "restaurant",
+      "categories": ["amenity:restaurant"],
+      "coordinate": [120.8679444, 14.2883342],
+      "osmUrl": "https://www.openstreetmap.org/node/5407579522"
+    },
+    {
+      "id": "way/228088013",
+      "name": "Better Life Trading",
+      "class": "shop",
+      "subclass": "hardware",
+      "categories": ["shop:hardware"],
+      "coordinate": [120.87124481999999, 14.281178180000001],
+      "osmUrl": "https://www.openstreetmap.org/way/228088013"
+    },
+    {
+      "id": "way/421917456",
+      "name": "Beverly Homes Basketball Court",
+      "class": "leisure",
+      "subclass": "pitch",
+      "categories": ["leisure:pitch", "sport:basketball"],
+      "coordinate": [120.88897534, 14.2849513],
+      "osmUrl": "https://www.openstreetmap.org/way/421917456"
+    },
+    {
+      "id": "way/421917490",
+      "name": "Beverly Homes Multi-Purpose Clubhouse",
+      "class": "amenity",
+      "subclass": "community_centre",
+      "categories": ["amenity:community_centre"],
+      "coordinate": [120.88922818571427, 14.284939714285715],
+      "osmUrl": "https://www.openstreetmap.org/way/421917490"
+    },
+    {
+      "id": "node/13682678280",
+      "name": "Bibingkinitan",
+      "class": "shop",
+      "subclass": "pastry",
+      "categories": ["shop:pastry"],
+      "coordinate": [120.8660867, 14.2818426],
+      "osmUrl": "https://www.openstreetmap.org/node/13682678280"
+    },
+    {
+      "id": "node/13343994959",
+      "name": "Big Brew",
+      "class": "amenity",
+      "subclass": "cafe",
+      "categories": ["amenity:cafe"],
+      "coordinate": [120.8774113, 14.2527207],
+      "osmUrl": "https://www.openstreetmap.org/node/13343994959"
+    },
+    {
+      "id": "way/271981220",
+      "name": "BIR Revenue District Office 54A",
+      "class": "office",
+      "subclass": "government",
+      "categories": ["office:government"],
+      "coordinate": [120.86846133750001, 14.279890562499999],
+      "osmUrl": "https://www.openstreetmap.org/way/271981220"
+    },
+    {
+      "id": "node/6295458130",
+      "name": "BIR Trece Martires",
+      "class": "public_transport",
+      "subclass": "stop_position",
+      "categories": ["public_transport:stop_position"],
+      "coordinate": [120.8687375, 14.280041],
+      "osmUrl": "https://www.openstreetmap.org/node/6295458130"
+    },
+    {
+      "id": "node/12014393970",
+      "name": "Blaire",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.8467998, 14.2662737],
+      "osmUrl": "https://www.openstreetmap.org/node/12014393970"
+    },
+    {
+      "id": "node/12715207583",
+      "name": "Blue Cops on Mobile Wheels",
+      "class": "amenity",
+      "subclass": "police",
+      "categories": ["amenity:police"],
+      "coordinate": [120.8670946, 14.2820671],
+      "osmUrl": "https://www.openstreetmap.org/node/12715207583"
+    },
+    {
+      "id": "way/1063457820",
+      "name": "Bonus Shopping Mart",
+      "class": "shop",
+      "subclass": "department_store",
+      "categories": ["shop:department_store"],
+      "coordinate": [120.86940152, 14.28090053],
+      "osmUrl": "https://www.openstreetmap.org/way/1063457820"
+    },
+    {
+      "id": "way/988447486",
+      "name": "Buenavista Elementary School",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.9017052, 14.307613179999999],
+      "osmUrl": "https://www.openstreetmap.org/way/988447486"
+    },
+    {
+      "id": "way/158463548",
+      "name": "Buenavista II Barangay Hall",
+      "class": "amenity",
+      "subclass": "townhall",
+      "categories": ["amenity:townhall"],
+      "coordinate": [120.89845371999999, 14.309299180000002],
+      "osmUrl": "https://www.openstreetmap.org/way/158463548"
+    },
+    {
+      "id": "node/13476169514",
+      "name": "Building C Pentaque Court",
+      "class": "leisure",
+      "subclass": "pitch",
+      "categories": ["leisure:pitch", "sport:pentaque"],
+      "coordinate": [120.8505196, 14.2821639],
+      "osmUrl": "https://www.openstreetmap.org/node/13476169514"
+    },
+    {
+      "id": "way/882448420",
+      "name": "Cabeza's Gym",
+      "class": "leisure",
+      "subclass": "sports_hall",
+      "categories": ["leisure:sports_hall", "sport:multi"],
+      "coordinate": [120.89560532, 14.26318148],
+      "osmUrl": "https://www.openstreetmap.org/way/882448420"
+    },
+    {
+      "id": "node/12976083922",
+      "name": "Cabezas Barangay Council",
+      "class": "office",
+      "subclass": "government",
+      "categories": ["office:government"],
+      "coordinate": [120.8955451, 14.263495],
+      "osmUrl": "https://www.openstreetmap.org/node/12976083922"
+    },
+    {
+      "id": "node/12976083921",
+      "name": "Cabezas Barangay Disaster Risk Reduction and Management Committee",
+      "class": "office",
+      "subclass": "government",
+      "categories": ["office:government"],
+      "coordinate": [120.8955472, 14.2634838],
+      "osmUrl": "https://www.openstreetmap.org/node/12976083921"
+    },
+    {
+      "id": "way/411928170",
+      "name": "Cabezas Barangay Hall",
+      "class": "amenity",
+      "subclass": "townhall",
+      "categories": ["amenity:townhall"],
+      "coordinate": [120.89553848, 14.26348164],
+      "osmUrl": "https://www.openstreetmap.org/way/411928170"
+    },
+    {
+      "id": "node/12976083923",
+      "name": "Cabezas Barangay Health Station",
+      "class": "amenity",
+      "subclass": "health_post",
+      "categories": [
+        "amenity:health_post",
+        "healthcare:community_health_worker"
+      ],
+      "coordinate": [120.8955606, 14.2635058],
+      "osmUrl": "https://www.openstreetmap.org/node/12976083923"
+    },
+    {
+      "id": "node/12976083920",
+      "name": "Cabezas SK Council",
+      "class": "office",
+      "subclass": "government",
+      "categories": ["office:government"],
+      "coordinate": [120.8955497, 14.263471],
+      "osmUrl": "https://www.openstreetmap.org/node/12976083920"
+    },
+    {
+      "id": "node/12047128520",
+      "name": "Cabuco",
+      "class": "public_transport",
+      "subclass": "platform",
+      "categories": ["public_transport:platform"],
+      "coordinate": [120.8442423, 14.2796079],
+      "osmUrl": "https://www.openstreetmap.org/node/12047128520"
+    },
+    {
+      "id": "node/12047128529",
+      "name": "Cabuco",
+      "class": "public_transport",
+      "subclass": "platform",
+      "categories": ["public_transport:platform"],
+      "coordinate": [120.8447479, 14.2791426],
+      "osmUrl": "https://www.openstreetmap.org/node/12047128529"
+    },
+    {
+      "id": "way/267448198",
+      "name": "Cabuco Barangay Hall",
+      "class": "amenity",
+      "subclass": "townhall",
+      "categories": ["amenity:townhall"],
+      "coordinate": [120.844572025, 14.279149024999999],
+      "osmUrl": "https://www.openstreetmap.org/way/267448198"
+    },
+    {
+      "id": "node/13682678202",
+      "name": "Cabuco Dental Clinic",
+      "class": "amenity",
+      "subclass": "dentist",
+      "categories": ["amenity:dentist", "healthcare:dentist"],
+      "coordinate": [120.8504282, 14.2818836],
+      "osmUrl": "https://www.openstreetmap.org/node/13682678202"
+    },
+    {
+      "id": "way/411293153",
+      "name": "Cabuco United Methodist Church",
+      "class": "amenity",
+      "subclass": "place_of_worship",
+      "categories": ["amenity:place_of_worship"],
+      "coordinate": [120.84440758000001, 14.278266780000001],
+      "osmUrl": "https://www.openstreetmap.org/way/411293153"
+    },
+    {
+      "id": "way/1502090855",
+      "name": "Cabuko Resort",
+      "class": "leisure",
+      "subclass": "resort",
+      "categories": ["leisure:resort"],
+      "coordinate": [120.8437487375, 14.281563025000002],
+      "osmUrl": "https://www.openstreetmap.org/way/1502090855"
+    },
+    {
+      "id": "relation/14123316",
+      "name": "Cafe Mia at The Primrose",
+      "class": "amenity",
+      "subclass": "cafe",
+      "categories": ["amenity:cafe"],
+      "coordinate": [120.89998544999999, 14.285379025],
+      "osmUrl": "https://www.openstreetmap.org/relation/14123316"
+    },
+    {
+      "id": "node/13476169646",
+      "name": "Cafeteria",
+      "class": "leisure",
+      "subclass": "outdoor_seating",
+      "categories": ["leisure:outdoor_seating"],
+      "coordinate": [120.8494649, 14.2823035],
+      "osmUrl": "https://www.openstreetmap.org/node/13476169646"
+    },
+    {
+      "id": "way/1369414095",
+      "name": "Caltex",
+      "class": "amenity",
+      "subclass": "fuel",
+      "categories": ["amenity:fuel"],
+      "coordinate": [120.87848606, 14.244255479999998],
+      "osmUrl": "https://www.openstreetmap.org/way/1369414095"
+    },
+    {
+      "id": "way/1375807397",
+      "name": "Calumpang Integrated National High School",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.87117257777777, 14.218409266666667],
+      "osmUrl": "https://www.openstreetmap.org/way/1375807397"
+    },
+    {
+      "id": "node/13927856893",
+      "name": "Calumpang Lejos Barangay Council",
+      "class": "office",
+      "subclass": "government",
+      "categories": ["office:government"],
+      "coordinate": [120.8456169, 14.2364285],
+      "osmUrl": "https://www.openstreetmap.org/node/13927856893"
+    },
+    {
+      "id": "node/13927856894",
+      "name": "Calumpang Lejos Barangay Disaster Risk Reduction and Management Committee",
+      "class": "office",
+      "subclass": "government",
+      "categories": ["office:government"],
+      "coordinate": [120.8455827, 14.2364896],
+      "osmUrl": "https://www.openstreetmap.org/node/13927856894"
+    },
+    {
+      "id": "way/409718874",
+      "name": "Calumpang Lejos Barangay Hall",
+      "class": "amenity",
+      "subclass": "townhall",
+      "categories": ["amenity:townhall"],
+      "coordinate": [120.84563224285715, 14.236469514285716],
+      "osmUrl": "https://www.openstreetmap.org/way/409718874"
+    },
+    {
+      "id": "way/877693405",
+      "name": "Calumpang Lejos Elementary School",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.84943544000001, 14.23342542],
+      "osmUrl": "https://www.openstreetmap.org/way/877693405"
+    },
+    {
+      "id": "way/1528362301",
+      "name": "Calumpang Lejos Ⅰ Barangay Health Station",
+      "class": "amenity",
+      "subclass": "health_post",
+      "categories": ["amenity:health_post", "healthcare:health_aide"],
+      "coordinate": [120.84572768000001, 14.236381260000002],
+      "osmUrl": "https://www.openstreetmap.org/way/1528362301"
+    },
+    {
+      "id": "node/13927856896",
+      "name": "Calumpang Lejos Local Government Unit",
+      "class": "office",
+      "subclass": "government",
+      "categories": ["office:government"],
+      "coordinate": [120.8456273, 14.2365107],
+      "osmUrl": "https://www.openstreetmap.org/node/13927856896"
+    },
+    {
+      "id": "node/13927856892",
+      "name": "Calumpang Lejos SK Council",
+      "class": "office",
+      "subclass": "government",
+      "categories": ["office:government"],
+      "coordinate": [120.845632, 14.2364168],
+      "osmUrl": "https://www.openstreetmap.org/node/13927856892"
+    },
+    {
+      "id": "node/13927856895",
+      "name": "Calumpang Lejos VAW Desk",
+      "class": "amenity",
+      "subclass": "reception_desk",
+      "categories": ["amenity:reception_desk"],
+      "coordinate": [120.8455904, 14.2365035],
+      "osmUrl": "https://www.openstreetmap.org/node/13927856895"
+    },
+    {
+      "id": "way/588815815",
+      "name": "Camp Melencio C. De Sagun",
+      "class": "amenity",
+      "subclass": "police",
+      "categories": ["amenity:police"],
+      "coordinate": [120.87343365000001, 14.2923092125],
+      "osmUrl": "https://www.openstreetmap.org/way/588815815"
+    },
+    {
+      "id": "node/13682678281",
+      "name": "Candy Corner",
+      "class": "shop",
+      "subclass": "confectionery",
+      "categories": ["shop:confectionery"],
+      "coordinate": [120.8661862, 14.2818082],
+      "osmUrl": "https://www.openstreetmap.org/node/13682678281"
+    },
+    {
+      "id": "way/546481926",
+      "name": "Capitol Park",
+      "class": "leisure",
+      "subclass": "park",
+      "categories": ["leisure:park"],
+      "coordinate": [120.86617783809528, 14.279966628571428],
+      "osmUrl": "https://www.openstreetmap.org/way/546481926"
+    },
+    {
+      "id": "relation/9349268",
+      "name": "Cavite Center for Mental Health",
+      "class": "amenity",
+      "subclass": "hospital",
+      "categories": ["amenity:hospital", "healthcare:hospital"],
+      "coordinate": [120.86930896842104, 14.277188115789473],
+      "osmUrl": "https://www.openstreetmap.org/relation/9349268"
+    },
+    {
+      "id": "way/415480204",
+      "name": "Cavite Cooperative Development Center",
+      "class": "office",
+      "subclass": "government",
+      "categories": ["office:government"],
+      "coordinate": [120.86727755625002, 14.281151587500002],
+      "osmUrl": "https://www.openstreetmap.org/way/415480204"
+    },
+    {
+      "id": "way/318087858",
+      "name": "Cavite Finance Center Building",
+      "class": "office",
+      "subclass": "government",
+      "categories": ["office:government"],
+      "coordinate": [120.86836916000001, 14.279327329999997],
+      "osmUrl": "https://www.openstreetmap.org/way/318087858"
+    },
+    {
+      "id": "way/271981219",
+      "name": "Cavite Legislative Building",
+      "class": "office",
+      "subclass": "government",
+      "categories": ["office:government"],
+      "coordinate": [120.867974005, 14.27966376],
+      "osmUrl": "https://www.openstreetmap.org/way/271981219"
+    },
+    {
+      "id": "way/1450182977",
+      "name": "Cavite Provincial Capitol",
+      "class": "amenity",
+      "subclass": "townhall",
+      "categories": ["amenity:townhall"],
+      "coordinate": [120.85439456744187, 14.286017523255813],
+      "osmUrl": "https://www.openstreetmap.org/way/1450182977"
+    },
+    {
+      "id": "way/939987878",
+      "name": "Cavite Provincial Environment and Natural Resources Office",
+      "class": "office",
+      "subclass": "government",
+      "categories": ["office:government"],
+      "coordinate": [120.87645878333335, 14.282548466666666],
+      "osmUrl": "https://www.openstreetmap.org/way/939987878"
+    },
+    {
+      "id": "way/415485307",
+      "name": "Cavite Provincial Gymnasium",
+      "class": "leisure",
+      "subclass": "sports_centre",
+      "categories": ["leisure:sports_centre", "sport:multi"],
+      "coordinate": [120.8677968, 14.281053420000001],
+      "osmUrl": "https://www.openstreetmap.org/way/415485307"
+    },
+    {
+      "id": "way/318087872",
+      "name": "Cavite Provincial Jail",
+      "class": "amenity",
+      "subclass": "prison",
+      "categories": ["amenity:prison"],
+      "coordinate": [120.86634919999999, 14.274203640000001],
+      "osmUrl": "https://www.openstreetmap.org/way/318087872"
+    },
+    {
+      "id": "way/1376672001",
+      "name": "Cavite State University - Trece Martires City Campus",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.8757647, 14.283750771428572],
+      "osmUrl": "https://www.openstreetmap.org/way/1376672001"
+    },
+    {
+      "id": "node/12682535756",
+      "name": "Cebuana Lhuillier",
+      "class": "shop",
+      "subclass": "pawnbroker",
+      "categories": ["shop:pawnbroker"],
+      "coordinate": [120.8683987, 14.2833142],
+      "osmUrl": "https://www.openstreetmap.org/node/12682535756"
+    },
+    {
+      "id": "node/13343995917",
+      "name": "Cebuana Lhuillier",
+      "class": "shop",
+      "subclass": "pawnbroker",
+      "categories": ["shop:pawnbroker"],
+      "coordinate": [120.8735105, 14.2706783],
+      "osmUrl": "https://www.openstreetmap.org/node/13343995917"
+    },
+    {
+      "id": "node/13673820860",
+      "name": "Cebuana Lhuillier",
+      "class": "shop",
+      "subclass": "pawnbroker",
+      "categories": ["shop:pawnbroker"],
+      "coordinate": [120.8693409, 14.2807385],
+      "osmUrl": "https://www.openstreetmap.org/node/13673820860"
+    },
+    {
+      "id": "node/6171963585",
+      "name": "Celeste Store",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.8741636, 14.267178],
+      "osmUrl": "https://www.openstreetmap.org/node/6171963585"
+    },
+    {
+      "id": "way/1451863112",
+      "name": "Centrum Fuel",
+      "class": "amenity",
+      "subclass": "fuel",
+      "categories": ["amenity:fuel"],
+      "coordinate": [120.87422918, 14.28024659],
+      "osmUrl": "https://www.openstreetmap.org/way/1451863112"
+    },
+    {
+      "id": "node/14106360472",
+      "name": "Ces Marie Aesthetic and Wellness Clinic",
+      "class": "amenity",
+      "subclass": "clinic",
+      "categories": ["amenity:clinic", "healthcare:clinic"],
+      "coordinate": [120.8688997, 14.2825288],
+      "osmUrl": "https://www.openstreetmap.org/node/14106360472"
+    },
+    {
+      "id": "relation/14123315",
+      "name": "Champions Sports Bar & Restaurant",
+      "class": "amenity",
+      "subclass": "restaurant",
+      "categories": ["amenity:restaurant"],
+      "coordinate": [120.89727258888888, 14.286847288888888],
+      "osmUrl": "https://www.openstreetmap.org/relation/14123315"
+    },
+    {
+      "id": "node/12728067333",
+      "name": "Chatime",
+      "class": "amenity",
+      "subclass": "cafe",
+      "categories": ["amenity:cafe"],
+      "coordinate": [120.8659626, 14.2819911],
+      "osmUrl": "https://www.openstreetmap.org/node/12728067333"
+    },
+    {
+      "id": "node/13682678171",
+      "name": "Chef Choi",
+      "class": "amenity",
+      "subclass": "restaurant",
+      "categories": ["amenity:restaurant"],
+      "coordinate": [120.8506646, 14.2820411],
+      "osmUrl": "https://www.openstreetmap.org/node/13682678171"
+    },
+    {
+      "id": "node/13300934998",
+      "name": "Chickok's Inasal",
+      "class": "amenity",
+      "subclass": "fast_food",
+      "categories": ["amenity:fast_food"],
+      "coordinate": [120.8767999, 14.2582902],
+      "osmUrl": "https://www.openstreetmap.org/node/13300934998"
+    },
+    {
+      "id": "node/2367318975",
+      "name": "Chinabank",
+      "class": "amenity",
+      "subclass": "bank",
+      "categories": ["amenity:bank"],
+      "coordinate": [120.8708033, 14.2805106],
+      "osmUrl": "https://www.openstreetmap.org/node/2367318975"
+    },
+    {
+      "id": "node/12682535755",
+      "name": "Chooks to Go",
+      "class": "amenity",
+      "subclass": "fast_food",
+      "categories": ["amenity:fast_food"],
+      "coordinate": [120.8683857, 14.2833812],
+      "osmUrl": "https://www.openstreetmap.org/node/12682535755"
+    },
+    {
+      "id": "node/2367318981",
+      "name": "Chowking",
+      "class": "amenity",
+      "subclass": "fast_food",
+      "categories": ["amenity:fast_food"],
+      "coordinate": [120.8712446, 14.2803433],
+      "osmUrl": "https://www.openstreetmap.org/node/2367318981"
+    },
+    {
+      "id": "node/13076905592",
+      "name": "Chowking",
+      "class": "amenity",
+      "subclass": "fast_food",
+      "categories": ["amenity:fast_food"],
+      "coordinate": [120.8666432, 14.281748],
+      "osmUrl": "https://www.openstreetmap.org/node/13076905592"
+    },
+    {
+      "id": "node/14007936705",
+      "name": "Chowking",
+      "class": "amenity",
+      "subclass": "fast_food",
+      "categories": ["amenity:fast_food"],
+      "coordinate": [120.8893876, 14.2821473],
+      "osmUrl": "https://www.openstreetmap.org/node/14007936705"
+    },
+    {
+      "id": "way/1374348306",
+      "name": "Chowking",
+      "class": "amenity",
+      "subclass": "fast_food",
+      "categories": ["amenity:fast_food"],
+      "coordinate": [120.86796158, 14.28201046],
+      "osmUrl": "https://www.openstreetmap.org/way/1374348306"
+    },
+    {
+      "id": "way/411296640",
+      "name": "Christian Child Development Learning Center",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.84456372, 14.278409020000002],
+      "osmUrl": "https://www.openstreetmap.org/way/411296640"
+    },
+    {
+      "id": "node/4985870521",
+      "name": "Chua's Residence",
+      "class": "craft",
+      "subclass": "tailor",
+      "categories": ["craft:tailor"],
+      "coordinate": [120.8433007, 14.2850421],
+      "osmUrl": "https://www.openstreetmap.org/node/4985870521"
+    },
+    {
+      "id": "node/12679516609",
+      "name": "Church of God, World Missions",
+      "class": "amenity",
+      "subclass": "place_of_worship",
+      "categories": ["amenity:place_of_worship"],
+      "coordinate": [120.8692822, 14.2805958],
+      "osmUrl": "https://www.openstreetmap.org/node/12679516609"
+    },
+    {
+      "id": "node/13343995906",
+      "name": "Citi Mini Home Depot",
+      "class": "shop",
+      "subclass": "hardware",
+      "categories": ["shop:hardware"],
+      "coordinate": [120.8741404, 14.2694746],
+      "osmUrl": "https://www.openstreetmap.org/node/13343995906"
+    },
+    {
+      "id": "way/1493182633",
+      "name": "Citi Mini Home Depot",
+      "class": "shop",
+      "subclass": "doityourself",
+      "categories": ["shop:doityourself"],
+      "coordinate": [120.84914864, 14.28120974],
+      "osmUrl": "https://www.openstreetmap.org/way/1493182633"
+    },
+    {
+      "id": "way/1167790233",
+      "name": "Citi Tile Builders",
+      "class": "shop",
+      "subclass": "hardware",
+      "categories": ["shop:hardware"],
+      "coordinate": [120.87986156000002, 14.2342455],
+      "osmUrl": "https://www.openstreetmap.org/way/1167790233"
+    },
+    {
+      "id": "node/335162461",
+      "name": "City Command Center",
+      "class": "office",
+      "subclass": "government",
+      "categories": ["office:government"],
+      "coordinate": [120.8754448, 14.2794752],
+      "osmUrl": "https://www.openstreetmap.org/node/335162461"
+    },
+    {
+      "id": "node/13081073663",
+      "name": "Civil Service Commission Cavite Field Office",
+      "class": "office",
+      "subclass": "government",
+      "categories": ["office:government"],
+      "coordinate": [120.8672583, 14.2805151],
+      "osmUrl": "https://www.openstreetmap.org/node/13081073663"
+    },
+    {
+      "id": "node/11413924269",
+      "name": "clarise and christian",
+      "class": "shop",
+      "subclass": "beverages",
+      "categories": ["shop:beverages"],
+      "coordinate": [120.8753897, 14.3116091],
+      "osmUrl": "https://www.openstreetmap.org/node/11413924269"
+    },
+    {
+      "id": "node/13394539570",
+      "name": "Classic Savory",
+      "class": "amenity",
+      "subclass": "restaurant",
+      "categories": ["amenity:restaurant"],
+      "coordinate": [120.8661547, 14.2818982],
+      "osmUrl": "https://www.openstreetmap.org/node/13394539570"
+    },
+    {
+      "id": "node/13682678190",
+      "name": "Claudette's Bread & Bakes",
+      "class": "shop",
+      "subclass": "bakery",
+      "categories": ["shop:bakery"],
+      "coordinate": [120.8504844, 14.2819072],
+      "osmUrl": "https://www.openstreetmap.org/node/13682678190"
+    },
+    {
+      "id": "way/1451863105",
+      "name": "Cleanfuel",
+      "class": "amenity",
+      "subclass": "fuel",
+      "categories": ["amenity:fuel"],
+      "coordinate": [120.88058045999999, 14.279896739999998],
+      "osmUrl": "https://www.openstreetmap.org/way/1451863105"
+    },
+    {
+      "id": "node/13076905594",
+      "name": "CoCo Fresh Tea & Juice",
+      "class": "amenity",
+      "subclass": "cafe",
+      "categories": ["amenity:cafe"],
+      "coordinate": [120.8662347, 14.2818736],
+      "osmUrl": "https://www.openstreetmap.org/node/13076905594"
+    },
+    {
+      "id": "way/318090545",
+      "name": "Colegio de Amore",
+      "class": "amenity",
+      "subclass": "college",
+      "categories": ["amenity:college"],
+      "coordinate": [120.8736646, 14.271546928571428],
+      "osmUrl": "https://www.openstreetmap.org/way/318090545"
+    },
+    {
+      "id": "way/318095671",
+      "name": "Conchu Elementary School",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.88287118333334, 14.260480933333334],
+      "osmUrl": "https://www.openstreetmap.org/way/318095671"
+    },
+    {
+      "id": "node/13473874324",
+      "name": "Corner Convenience Store",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.855733, 14.280453],
+      "osmUrl": "https://www.openstreetmap.org/node/13473874324"
+    },
+    {
+      "id": "node/13394539571",
+      "name": "Dairy Queen",
+      "class": "amenity",
+      "subclass": "fast_food",
+      "categories": ["amenity:fast_food"],
+      "coordinate": [120.8664055, 14.2816594],
+      "osmUrl": "https://www.openstreetmap.org/node/13394539571"
+    },
+    {
+      "id": "node/13472869940",
+      "name": "Dali",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.8455205, 14.2370178],
+      "osmUrl": "https://www.openstreetmap.org/node/13472869940"
+    },
+    {
+      "id": "node/7908090049",
+      "name": "Dali",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.8662847, 14.2544297],
+      "osmUrl": "https://www.openstreetmap.org/node/7908090049"
+    },
+    {
+      "id": "node/12553657553",
+      "name": "Dali",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.8867626, 14.2487095],
+      "osmUrl": "https://www.openstreetmap.org/node/12553657553"
+    },
+    {
+      "id": "node/12682628443",
+      "name": "Dali",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.8776674, 14.2517364],
+      "osmUrl": "https://www.openstreetmap.org/node/12682628443"
+    },
+    {
+      "id": "node/12682628475",
+      "name": "Dali",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.8836189, 14.2268808],
+      "osmUrl": "https://www.openstreetmap.org/node/12682628475"
+    },
+    {
+      "id": "node/12581861263",
+      "name": "Dali",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.8304242, 14.2918251],
+      "osmUrl": "https://www.openstreetmap.org/node/12581861263"
+    },
+    {
+      "id": "node/12495491146",
+      "name": "Dali",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.8690432, 14.2805609],
+      "osmUrl": "https://www.openstreetmap.org/node/12495491146"
+    },
+    {
+      "id": "node/12758913166",
+      "name": "Dali",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.8715076, 14.2892575],
+      "osmUrl": "https://www.openstreetmap.org/node/12758913166"
+    },
+    {
+      "id": "node/12963759518",
+      "name": "Dali",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.872666, 14.2717751],
+      "osmUrl": "https://www.openstreetmap.org/node/12963759518"
+    },
+    {
+      "id": "node/12758913165",
+      "name": "Dali",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.8766345, 14.2961662],
+      "osmUrl": "https://www.openstreetmap.org/node/12758913165"
+    },
+    {
+      "id": "node/12566753318",
+      "name": "Dali",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.8994984, 14.3077882],
+      "osmUrl": "https://www.openstreetmap.org/node/12566753318"
+    },
+    {
+      "id": "way/435582327",
+      "name": "Dali",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.82420506000001, 14.26734442],
+      "osmUrl": "https://www.openstreetmap.org/way/435582327"
+    },
+    {
+      "id": "way/417553370",
+      "name": "Dali",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.86797274, 14.28395046],
+      "osmUrl": "https://www.openstreetmap.org/way/417553370"
+    },
+    {
+      "id": "way/417838407",
+      "name": "Dali",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.8673088, 14.283333619999999],
+      "osmUrl": "https://www.openstreetmap.org/way/417838407"
+    },
+    {
+      "id": "way/417839435",
+      "name": "Dali",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.86662057999999, 14.27356628],
+      "osmUrl": "https://www.openstreetmap.org/way/417839435"
+    },
+    {
+      "id": "way/415479506",
+      "name": "Dali",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.86776870000001, 14.2918971],
+      "osmUrl": "https://www.openstreetmap.org/way/415479506"
+    },
+    {
+      "id": "node/14070105790",
+      "name": "De Ocampo",
+      "class": "public_transport",
+      "subclass": "platform",
+      "categories": ["public_transport:platform"],
+      "coordinate": [120.8660795, 14.2948304],
+      "osmUrl": "https://www.openstreetmap.org/node/14070105790"
+    },
+    {
+      "id": "node/14070105791",
+      "name": "De Ocampo",
+      "class": "public_transport",
+      "subclass": "platform",
+      "categories": ["public_transport:platform"],
+      "coordinate": [120.8660004, 14.295245],
+      "osmUrl": "https://www.openstreetmap.org/node/14070105791"
+    },
+    {
+      "id": "node/11192777155",
+      "name": "De Ocampo Barangay Council",
+      "class": "office",
+      "subclass": "government",
+      "categories": ["office:government"],
+      "coordinate": [120.8643863, 14.3003588],
+      "osmUrl": "https://www.openstreetmap.org/node/11192777155"
+    },
+    {
+      "id": "way/421004710",
+      "name": "De Ocampo Barangay Hall",
+      "class": "amenity",
+      "subclass": "townhall",
+      "categories": ["amenity:townhall"],
+      "coordinate": [120.86429087999997, 14.30038452],
+      "osmUrl": "https://www.openstreetmap.org/way/421004710"
+    },
+    {
+      "id": "way/420968506",
+      "name": "De Ocampo Elementary School",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.86707462, 14.29545522],
+      "osmUrl": "https://www.openstreetmap.org/way/420968506"
+    },
+    {
+      "id": "way/282643981",
+      "name": "Dei Gracia Academy",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.85489453999999, 14.276965],
+      "osmUrl": "https://www.openstreetmap.org/way/282643981"
+    },
+    {
+      "id": "way/282643982",
+      "name": "Dei Gracia Academy",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.85196887500001, 14.276355512499999],
+      "osmUrl": "https://www.openstreetmap.org/way/282643982"
+    },
+    {
+      "id": "way/415480027",
+      "name": "Department of Labor and Employment",
+      "class": "office",
+      "subclass": "government",
+      "categories": ["office:government"],
+      "coordinate": [120.88210496666666, 14.280340433333334],
+      "osmUrl": "https://www.openstreetmap.org/way/415480027"
+    },
+    {
+      "id": "node/13682678176",
+      "name": "Designphie Sportswear",
+      "class": "shop",
+      "subclass": "clothes",
+      "categories": ["shop:clothes"],
+      "coordinate": [120.8504976, 14.2819552],
+      "osmUrl": "https://www.openstreetmap.org/node/13682678176"
+    },
+    {
+      "id": "node/13682738294",
+      "name": "DF Cafe",
+      "class": "amenity",
+      "subclass": "cafe",
+      "categories": ["amenity:cafe"],
+      "coordinate": [120.8484579, 14.281115],
+      "osmUrl": "https://www.openstreetmap.org/node/13682738294"
+    },
+    {
+      "id": "way/318087861",
+      "name": "DOST Provincial Office",
+      "class": "office",
+      "subclass": "government",
+      "categories": ["office:government"],
+      "coordinate": [120.86832352000002, 14.27820236],
+      "osmUrl": "https://www.openstreetmap.org/way/318087861"
+    },
+    {
+      "id": "node/14070105792",
+      "name": "DPWH Cavite 1st District Engineering Office",
+      "class": "public_transport",
+      "subclass": "platform",
+      "categories": ["public_transport:platform"],
+      "coordinate": [120.8640893, 14.3011268],
+      "osmUrl": "https://www.openstreetmap.org/node/14070105792"
+    },
+    {
+      "id": "node/14070105793",
+      "name": "DPWH Cavite 1st District Engineering Office",
+      "class": "public_transport",
+      "subclass": "platform",
+      "categories": ["public_transport:platform"],
+      "coordinate": [120.8639579, 14.3010086],
+      "osmUrl": "https://www.openstreetmap.org/node/14070105793"
+    },
+    {
+      "id": "way/1158217150",
+      "name": "DPWH Cavite I District Engineering Office",
+      "class": "office",
+      "subclass": "government",
+      "categories": ["office:government"],
+      "coordinate": [120.86495739230769, 14.301050153846157],
+      "osmUrl": "https://www.openstreetmap.org/way/1158217150"
+    },
+    {
+      "id": "node/13671122030",
+      "name": "DTI Cavite Provincial Office",
+      "class": "office",
+      "subclass": "government",
+      "categories": ["office:government"],
+      "coordinate": [120.8675752, 14.2794656],
+      "osmUrl": "https://www.openstreetmap.org/node/13671122030"
+    },
+    {
+      "id": "node/12682535765",
+      "name": "Dunkin'",
+      "class": "amenity",
+      "subclass": "fast_food",
+      "categories": ["amenity:fast_food"],
+      "coordinate": [120.8682573, 14.2817457],
+      "osmUrl": "https://www.openstreetmap.org/node/12682535765"
+    },
+    {
+      "id": "node/13394539574",
+      "name": "Dunkin'",
+      "class": "amenity",
+      "subclass": "fast_food",
+      "categories": ["amenity:fast_food"],
+      "coordinate": [120.8665504, 14.2816159],
+      "osmUrl": "https://www.openstreetmap.org/node/13394539574"
+    },
+    {
+      "id": "node/13434036424",
+      "name": "Dunkin'",
+      "class": "amenity",
+      "subclass": "fast_food",
+      "categories": ["amenity:fast_food"],
+      "coordinate": [120.8707535, 14.2803037],
+      "osmUrl": "https://www.openstreetmap.org/node/13434036424"
+    },
+    {
+      "id": "node/8794652327",
+      "name": "E.C. Creencia Trading",
+      "class": "shop",
+      "subclass": "trade",
+      "categories": ["shop:trade"],
+      "coordinate": [120.8857247, 14.2805226],
+      "osmUrl": "https://www.openstreetmap.org/node/8794652327"
+    },
+    {
+      "id": "relation/10296616",
+      "name": "Eagle Ridge Golf Club",
+      "class": "leisure",
+      "subclass": "golf_course",
+      "categories": ["leisure:golf_course"],
+      "coordinate": [120.90085829905662, 14.254980175471703],
+      "osmUrl": "https://www.openstreetmap.org/relation/10296616"
+    },
+    {
+      "id": "node/7353448586",
+      "name": "EastWest Unibank",
+      "class": "amenity",
+      "subclass": "bank",
+      "categories": ["amenity:bank"],
+      "coordinate": [120.8686113, 14.2815178],
+      "osmUrl": "https://www.openstreetmap.org/node/7353448586"
+    },
+    {
+      "id": "way/1499812256",
+      "name": "Elad School of Potentials Therapy Center",
+      "class": "amenity",
+      "subclass": "clinic",
+      "categories": ["amenity:clinic", "healthcare:occupational_therapist"],
+      "coordinate": [120.87027269999999, 14.274739239999999],
+      "osmUrl": "https://www.openstreetmap.org/way/1499812256"
+    },
+    {
+      "id": "node/12344166311",
+      "name": "EM's Resort",
+      "class": "leisure",
+      "subclass": "resort",
+      "categories": ["leisure:resort"],
+      "coordinate": [120.8254091, 14.2650928],
+      "osmUrl": "https://www.openstreetmap.org/node/12344166311"
+    },
+    {
+      "id": "node/3244614207",
+      "name": "Emilio Aguinaldo",
+      "class": "historic",
+      "subclass": "memorial",
+      "categories": ["historic:memorial"],
+      "coordinate": [120.8697258, 14.275486],
+      "osmUrl": "https://www.openstreetmap.org/node/3244614207"
+    },
+    {
+      "id": "node/6536260596",
+      "name": "Emilio Aguinaldo Statue",
+      "class": "amenity",
+      "subclass": "fountain",
+      "categories": ["amenity:fountain", "tourism:artwork"],
+      "coordinate": [120.8668786, 14.2804818],
+      "osmUrl": "https://www.openstreetmap.org/node/6536260596"
+    },
+    {
+      "id": "way/417552543",
+      "name": "ERS Clinic",
+      "class": "amenity",
+      "subclass": "hospital",
+      "categories": ["amenity:hospital", "healthcare:hospital"],
+      "coordinate": [120.8697394, 14.277611680000001],
+      "osmUrl": "https://www.openstreetmap.org/way/417552543"
+    },
+    {
+      "id": "way/627676154",
+      "name": "ERS Maternity Clinic",
+      "class": "amenity",
+      "subclass": "clinic",
+      "categories": ["amenity:clinic", "healthcare:clinic"],
+      "coordinate": [120.86959654999998, 14.27771985625],
+      "osmUrl": "https://www.openstreetmap.org/way/627676154"
+    },
+    {
+      "id": "node/12682535764",
+      "name": "Ever",
+      "class": "shop",
+      "subclass": "supermarket",
+      "categories": ["shop:supermarket"],
+      "coordinate": [120.8686774, 14.281766],
+      "osmUrl": "https://www.openstreetmap.org/node/12682535764"
+    },
+    {
+      "id": "node/13394539567",
+      "name": "Executive Optical",
+      "class": "shop",
+      "subclass": "optician",
+      "categories": ["shop:optician"],
+      "coordinate": [120.8665817, 14.2815613],
+      "osmUrl": "https://www.openstreetmap.org/node/13394539567"
+    },
+    {
+      "id": "node/13682678282",
+      "name": "Famous Belgian Waffles",
+      "class": "amenity",
+      "subclass": "fast_food",
+      "categories": ["amenity:fast_food"],
+      "coordinate": [120.8658488, 14.2818893],
+      "osmUrl": "https://www.openstreetmap.org/node/13682678282"
+    },
+    {
+      "id": "node/12682535767",
+      "name": "FC Home Center",
+      "class": "shop",
+      "subclass": "appliance",
+      "categories": ["shop:appliance"],
+      "coordinate": [120.8686713, 14.2809961],
+      "osmUrl": "https://www.openstreetmap.org/node/12682535767"
+    },
+    {
+      "id": "relation/16005949",
+      "name": "Feliciano Cabuco Elementary School",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.84738737142857, 14.267541685714287],
+      "osmUrl": "https://www.openstreetmap.org/relation/16005949"
+    },
+    {
+      "id": "node/11841364073",
+      "name": "FiberBlaze Trece Martires",
+      "class": "office",
+      "subclass": "telecommunication",
+      "categories": ["office:telecommunication"],
+      "coordinate": [120.8680568, 14.2845937],
+      "osmUrl": "https://www.openstreetmap.org/node/11841364073"
+    },
+    {
+      "id": "node/6355913285",
+      "name": "Fidgie Homes",
+      "class": "tourism",
+      "subclass": "apartment",
+      "categories": ["tourism:apartment"],
+      "coordinate": [120.8597802, 14.2903506],
+      "osmUrl": "https://www.openstreetmap.org/node/6355913285"
+    },
+    {
+      "id": "way/1225108144",
+      "name": "Fiscal Mundo National High School",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.8640051, 14.260311333333334],
+      "osmUrl": "https://www.openstreetmap.org/way/1225108144"
+    },
+    {
+      "id": "node/12682535750",
+      "name": "Fish2Go",
+      "class": "shop",
+      "subclass": "seafood",
+      "categories": ["shop:seafood"],
+      "coordinate": [120.8682191, 14.2831135],
+      "osmUrl": "https://www.openstreetmap.org/node/12682535750"
+    },
+    {
+      "id": "node/12682535761",
+      "name": "Five Star",
+      "class": "amenity",
+      "subclass": "fast_food",
+      "categories": ["amenity:fast_food"],
+      "coordinate": [120.8684396, 14.2830288],
+      "osmUrl": "https://www.openstreetmap.org/node/12682535761"
+    },
+    {
+      "id": "node/13633101392",
+      "name": "Flash Express",
+      "class": "office",
+      "subclass": "courier",
+      "categories": ["office:courier"],
+      "coordinate": [120.8680618, 14.2845581],
+      "osmUrl": "https://www.openstreetmap.org/node/13633101392"
+    },
+    {
+      "id": "way/1493182643",
+      "name": "Ford's Ice Cream Parlor",
+      "class": "amenity",
+      "subclass": "ice_cream",
+      "categories": ["amenity:ice_cream"],
+      "coordinate": [120.8495360142857, 14.281315457142856],
+      "osmUrl": "https://www.openstreetmap.org/way/1493182643"
+    },
+    {
+      "id": "node/1044469816",
+      "name": "Francia Poultry Supply",
+      "class": "shop",
+      "subclass": "trade",
+      "categories": ["shop:trade"],
+      "coordinate": [120.9013363, 14.3059902],
+      "osmUrl": "https://www.openstreetmap.org/node/1044469816"
+    },
+    {
+      "id": "node/11413924369",
+      "name": "francis yuan",
+      "class": "shop",
+      "subclass": "beverages",
+      "categories": ["shop:beverages"],
+      "coordinate": [120.8738037, 14.3114408],
+      "osmUrl": "https://www.openstreetmap.org/node/11413924369"
+    },
+    {
+      "id": "relation/16764153",
+      "name": "Francisco Osorio National High School",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.87996303846154, 14.292005876923078],
+      "osmUrl": "https://www.openstreetmap.org/relation/16764153"
+    },
+    {
+      "id": "way/1455081393",
+      "name": "Fuel Express",
+      "class": "amenity",
+      "subclass": "fuel",
+      "categories": ["amenity:fuel"],
+      "coordinate": [120.874478, 14.26887718],
+      "osmUrl": "https://www.openstreetmap.org/way/1455081393"
+    },
+    {
+      "id": "node/12682628460",
+      "name": "Fuel Force",
+      "class": "amenity",
+      "subclass": "fuel",
+      "categories": ["amenity:fuel"],
+      "coordinate": [120.8795678, 14.2418487],
+      "osmUrl": "https://www.openstreetmap.org/node/12682628460"
+    },
+    {
+      "id": "way/1493182635",
+      "name": "Fuel Force",
+      "class": "amenity",
+      "subclass": "fuel",
+      "categories": ["amenity:fuel"],
+      "coordinate": [120.84870446, 14.280984100000001],
+      "osmUrl": "https://www.openstreetmap.org/way/1493182635"
+    },
+    {
+      "id": "way/421943054",
+      "name": "Funeraria Mabini",
+      "class": "shop",
+      "subclass": "funeral_directors",
+      "categories": ["shop:funeral_directors"],
+      "coordinate": [120.87482155000002, 14.267404516666664],
+      "osmUrl": "https://www.openstreetmap.org/way/421943054"
+    },
+    {
+      "id": "node/13682678203",
+      "name": "Gem & Paul's Auto Parts",
+      "class": "shop",
+      "subclass": "car_parts",
+      "categories": ["shop:car_parts"],
+      "coordinate": [120.8503242, 14.281812],
+      "osmUrl": "https://www.openstreetmap.org/node/13682678203"
+    },
+    {
+      "id": "relation/15916120",
+      "name": "General Emilio Aguinaldo Memorial Hospital",
+      "class": "amenity",
+      "subclass": "hospital",
+      "categories": ["amenity:hospital", "healthcare:hospital"],
+      "coordinate": [120.86969886500003, 14.276132690000003],
+      "osmUrl": "https://www.openstreetmap.org/relation/15916120"
+    },
+    {
+      "id": "way/627675093",
+      "name": "General Emilio Aguinaldo Memorial Hospital Garden",
+      "class": "amenity",
+      "subclass": "parking",
+      "categories": ["amenity:parking", "leisure:garden"],
+      "coordinate": [120.8697310521739, 14.275473660869565],
+      "osmUrl": "https://www.openstreetmap.org/way/627675093"
+    },
+    {
+      "id": "way/1374003301",
+      "name": "General Services Office Building",
+      "class": "office",
+      "subclass": "government",
+      "categories": ["office:government"],
+      "coordinate": [120.86709748888886, 14.279343994444446],
+      "osmUrl": "https://www.openstreetmap.org/way/1374003301"
+    },
+    {
+      "id": "node/12682535746",
+      "name": "Generika",
+      "class": "amenity",
+      "subclass": "pharmacy",
+      "categories": ["amenity:pharmacy", "healthcare:pharmacy"],
+      "coordinate": [120.8685033, 14.282404],
+      "osmUrl": "https://www.openstreetmap.org/node/12682535746"
+    },
+    {
+      "id": "node/12682535768",
+      "name": "Generika",
+      "class": "amenity",
+      "subclass": "pharmacy",
+      "categories": ["amenity:pharmacy", "healthcare:pharmacy"],
+      "coordinate": [120.8686802, 14.2809371],
+      "osmUrl": "https://www.openstreetmap.org/node/12682535768"
+    },
+    {
+      "id": "way/1021257687",
+      "name": "Genesis Hamstery",
+      "class": "shop",
+      "subclass": "pet",
+      "categories": ["shop:pet"],
+      "coordinate": [120.85847039999999, 14.227293560000001],
+      "osmUrl": "https://www.openstreetmap.org/way/1021257687"
+    },
+    {
+      "id": "way/1527465976",
+      "name": "Global Oil",
+      "class": "amenity",
+      "subclass": "fuel",
+      "categories": ["amenity:fuel"],
+      "coordinate": [120.85261462000001, 14.283231820000001],
+      "osmUrl": "https://www.openstreetmap.org/way/1527465976"
+    },
+    {
+      "id": "node/13682678311",
+      "name": "Globe",
+      "class": "shop",
+      "subclass": "telecommunication",
+      "categories": ["shop:telecommunication"],
+      "coordinate": [120.8664326, 14.2812711],
+      "osmUrl": "https://www.openstreetmap.org/node/13682678311"
+    },
+    {
+      "id": "node/4605183592",
+      "name": "GOLDEN CAPED FARMS",
+      "class": "tourism",
+      "subclass": "viewpoint",
+      "categories": ["tourism:viewpoint"],
+      "coordinate": [120.8504705, 14.3004992],
+      "osmUrl": "https://www.openstreetmap.org/node/4605183592"
+    },
+    {
+      "id": "node/12728067334",
+      "name": "Goldilocks",
+      "class": "shop",
+      "subclass": "bakery",
+      "categories": ["shop:bakery"],
+      "coordinate": [120.8655407, 14.2815393],
+      "osmUrl": "https://www.openstreetmap.org/node/12728067334"
+    },
+    {
+      "id": "node/13452005815",
+      "name": "Goldilocks",
+      "class": "shop",
+      "subclass": "bakery",
+      "categories": ["shop:bakery"],
+      "coordinate": [120.8707848, 14.2802124],
+      "osmUrl": "https://www.openstreetmap.org/node/13452005815"
+    },
+    {
+      "id": "node/13081237520",
+      "name": "Gomags Car Care Center",
+      "class": "shop",
+      "subclass": "tyres",
+      "categories": ["shop:tyres"],
+      "coordinate": [120.8783618, 14.249608],
+      "osmUrl": "https://www.openstreetmap.org/node/13081237520"
+    },
+    {
+      "id": "node/13394539575",
+      "name": "Gong Cha",
+      "class": "amenity",
+      "subclass": "cafe",
+      "categories": ["amenity:cafe"],
+      "coordinate": [120.8664952, 14.2816325],
+      "osmUrl": "https://www.openstreetmap.org/node/13394539575"
+    },
+    {
+      "id": "way/184153917",
+      "name": "Government Center Building",
+      "class": "office",
+      "subclass": "government",
+      "categories": ["office:government"],
+      "coordinate": [120.86756782, 14.279368893333332],
+      "osmUrl": "https://www.openstreetmap.org/way/184153917"
+    },
+    {
+      "id": "way/980923474",
+      "name": "Governor Ferrer Memorial National High School – Buenavista Annex",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.89775492857143, 14.305101899999999],
+      "osmUrl": "https://www.openstreetmap.org/way/980923474"
+    },
+    {
+      "id": "node/1044475087",
+      "name": "Great Sun Construction Supply",
+      "class": "shop",
+      "subclass": "hardware",
+      "categories": ["shop:hardware"],
+      "coordinate": [120.8999866, 14.3075759],
+      "osmUrl": "https://www.openstreetmap.org/node/1044475087"
+    },
+    {
+      "id": "node/13476169644",
+      "name": "Greenfield Football Field",
+      "class": "leisure",
+      "subclass": "pitch",
+      "categories": ["leisure:pitch", "sport:soccer;volleyball;badminton"],
+      "coordinate": [120.8497599, 14.2820754],
+      "osmUrl": "https://www.openstreetmap.org/node/13476169644"
+    },
+    {
+      "id": "node/13394539566",
+      "name": "Greenwich",
+      "class": "amenity",
+      "subclass": "fast_food",
+      "categories": ["amenity:fast_food"],
+      "coordinate": [120.8661381, 14.2817415],
+      "osmUrl": "https://www.openstreetmap.org/node/13394539566"
+    },
+    {
+      "id": "node/11126652205",
+      "name": "GTSLPA45NAP8",
+      "class": "tourism",
+      "subclass": "attraction",
+      "categories": ["tourism:attraction"],
+      "coordinate": [120.8799144, 14.3120248],
+      "osmUrl": "https://www.openstreetmap.org/node/11126652205"
+    },
+    {
+      "id": "node/11124136305",
+      "name": "GTSLPA46NAP1",
+      "class": "tourism",
+      "subclass": "attraction",
+      "categories": ["tourism:attraction"],
+      "coordinate": [120.8811155, 14.3118164],
+      "osmUrl": "https://www.openstreetmap.org/node/11124136305"
+    },
+    {
+      "id": "node/12725016909",
+      "name": "Happy Haus Donuts",
+      "class": "amenity",
+      "subclass": "fast_food",
+      "categories": ["amenity:fast_food"],
+      "coordinate": [120.868565, 14.281419],
+      "osmUrl": "https://www.openstreetmap.org/node/12725016909"
+    },
+    {
+      "id": "way/417838042",
+      "name": "HBR Enterprises",
+      "class": "shop",
+      "subclass": "supermarket",
+      "categories": ["shop:supermarket"],
+      "coordinate": [120.86908964000001, 14.279940419999999],
+      "osmUrl": "https://www.openstreetmap.org/way/417838042"
+    },
+    {
+      "id": "way/1376672028",
+      "name": "Hebron",
+      "class": "amenity",
+      "subclass": "fuel",
+      "categories": ["amenity:fuel"],
+      "coordinate": [120.86409982222222, 14.283623344444445],
+      "osmUrl": "https://www.openstreetmap.org/way/1376672028"
+    },
+    {
+      "id": "node/12032750279",
+      "name": "Helix Oilchange+",
+      "class": "shop",
+      "subclass": "car_repair",
+      "categories": ["shop:car_repair"],
+      "coordinate": [120.8691157, 14.2825234],
+      "osmUrl": "https://www.openstreetmap.org/node/12032750279"
+    },
+    {
+      "id": "node/8794670529",
+      "name": "Highwind trading",
+      "class": "shop",
+      "subclass": "hardware",
+      "categories": ["shop:hardware"],
+      "coordinate": [120.8345906, 14.2910117],
+      "osmUrl": "https://www.openstreetmap.org/node/8794670529"
+    },
+    {
+      "id": "node/13682678264",
+      "name": "Hiromitsu",
+      "class": "amenity",
+      "subclass": "restaurant",
+      "categories": ["amenity:restaurant"],
+      "coordinate": [120.8601052, 14.2859316],
+      "osmUrl": "https://www.openstreetmap.org/node/13682678264"
+    },
+    {
+      "id": "way/1063457819",
+      "name": "Home Along",
+      "class": "shop",
+      "subclass": "electronics",
+      "categories": ["shop:electronics"],
+      "coordinate": [120.86869404000001, 14.2811465],
+      "osmUrl": "https://www.openstreetmap.org/way/1063457819"
+    },
+    {
+      "id": "node/1652549607",
+      "name": "Hugo Perez",
+      "class": "public_transport",
+      "subclass": "platform",
+      "categories": ["public_transport:platform"],
+      "coordinate": [120.8898734, 14.2821673],
+      "osmUrl": "https://www.openstreetmap.org/node/1652549607"
+    },
+    {
+      "id": "node/7805434895",
+      "name": "Hugo Perez",
+      "class": "public_transport",
+      "subclass": "platform",
+      "categories": ["public_transport:platform"],
+      "coordinate": [120.8903615, 14.2821137],
+      "osmUrl": "https://www.openstreetmap.org/node/7805434895"
+    },
+    {
+      "id": "way/980914738",
+      "name": "Hugo Perez Elementary School",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.89185858, 14.278983880000002],
+      "osmUrl": "https://www.openstreetmap.org/way/980914738"
+    },
+    {
+      "id": "way/997059508",
+      "name": "Hugo Perez Elementary School-Annex",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.89198695714286, 14.29810147142857],
+      "osmUrl": "https://www.openstreetmap.org/way/997059508"
+    },
+    {
+      "id": "node/11841364078",
+      "name": "ICC Trece",
+      "class": "amenity",
+      "subclass": "college",
+      "categories": ["amenity:college"],
+      "coordinate": [120.8683486, 14.284333],
+      "osmUrl": "https://www.openstreetmap.org/node/11841364078"
+    },
+    {
+      "id": "way/318119367",
+      "name": "iCoop Fuel",
+      "class": "amenity",
+      "subclass": "fuel",
+      "categories": ["amenity:fuel"],
+      "coordinate": [120.88539759999999, 14.223794380000001],
+      "osmUrl": "https://www.openstreetmap.org/way/318119367"
+    },
+    {
+      "id": "node/12683870961",
+      "name": "Iglesia ni Cristo - Locale of Inocencio",
+      "class": "amenity",
+      "subclass": "place_of_worship",
+      "categories": ["amenity:place_of_worship"],
+      "coordinate": [120.8783624, 14.2490741],
+      "osmUrl": "https://www.openstreetmap.org/node/12683870961"
+    },
+    {
+      "id": "way/1369414081",
+      "name": "Iglesia ni Cristo - Locale of Trece Martires",
+      "class": "amenity",
+      "subclass": "place_of_worship",
+      "categories": ["amenity:place_of_worship"],
+      "coordinate": [120.86239401111109, 14.2811905],
+      "osmUrl": "https://www.openstreetmap.org/way/1369414081"
+    },
+    {
+      "id": "node/12682535776",
+      "name": "Ingco",
+      "class": "shop",
+      "subclass": "hardware",
+      "categories": ["shop:hardware"],
+      "coordinate": [120.8716211, 14.2807646],
+      "osmUrl": "https://www.openstreetmap.org/node/12682535776"
+    },
+    {
+      "id": "node/10315787955",
+      "name": "Inocencio Barangay Council",
+      "class": "office",
+      "subclass": "government",
+      "categories": ["office:government"],
+      "coordinate": [120.8775761, 14.253292],
+      "osmUrl": "https://www.openstreetmap.org/node/10315787955"
+    },
+    {
+      "id": "way/1128343604",
+      "name": "Inocencio Barangay Hall",
+      "class": "amenity",
+      "subclass": "townhall",
+      "categories": ["amenity:townhall"],
+      "coordinate": [120.877553, 14.253382199999999],
+      "osmUrl": "https://www.openstreetmap.org/way/1128343604"
+    },
+    {
+      "id": "node/10315787954",
+      "name": "Inocencio Barangay Multipurpose Hall",
+      "class": "amenity",
+      "subclass": "community_centre",
+      "categories": ["amenity:community_centre"],
+      "coordinate": [120.8775687, 14.2533706],
+      "osmUrl": "https://www.openstreetmap.org/node/10315787954"
+    },
+    {
+      "id": "way/421228869",
+      "name": "Inocencio VAWC",
+      "class": "amenity",
+      "subclass": "social_facility",
+      "categories": ["amenity:social_facility"],
+      "coordinate": [120.87775526, 14.25358728],
+      "osmUrl": "https://www.openstreetmap.org/way/421228869"
+    },
+    {
+      "id": "way/872166447",
+      "name": "Integrated Waste Management Facility",
+      "class": "amenity",
+      "subclass": "recycling",
+      "categories": ["amenity:recycling"],
+      "coordinate": [120.85907850833333, 14.256867425000001],
+      "osmUrl": "https://www.openstreetmap.org/way/872166447"
+    },
+    {
+      "id": "way/1376672015",
+      "name": "Inter Oil",
+      "class": "amenity",
+      "subclass": "fuel",
+      "categories": ["amenity:fuel"],
+      "coordinate": [120.86662803333336, 14.284708083333333],
+      "osmUrl": "https://www.openstreetmap.org/way/1376672015"
+    },
+    {
+      "id": "way/1369414089",
+      "name": "Interoil",
+      "class": "amenity",
+      "subclass": "fuel",
+      "categories": ["amenity:fuel"],
+      "coordinate": [120.87671826, 14.260513500000002],
+      "osmUrl": "https://www.openstreetmap.org/way/1369414089"
+    },
+    {
+      "id": "node/12747288983",
+      "name": "Irish T. Zabala's Dental Clinic",
+      "class": "amenity",
+      "subclass": "dentist",
+      "categories": ["amenity:dentist", "healthcare:dentist"],
+      "coordinate": [120.869955, 14.2778071],
+      "osmUrl": "https://www.openstreetmap.org/node/12747288983"
+    },
+    {
+      "id": "node/13682678277",
+      "name": "JACK",
+      "class": "office",
+      "subclass": "yes",
+      "categories": ["office:yes"],
+      "coordinate": [120.8625613, 14.2844638],
+      "osmUrl": "https://www.openstreetmap.org/node/13682678277"
+    },
+    {
+      "id": "way/1451863110",
+      "name": "JAE Terminal",
+      "class": "amenity",
+      "subclass": "bus_station",
+      "categories": ["amenity:bus_station", "public_transport:station"],
+      "coordinate": [120.87747062000001, 14.28036244],
+      "osmUrl": "https://www.openstreetmap.org/way/1451863110"
+    },
+    {
+      "id": "node/12682535747",
+      "name": "Jaro Pawnshop",
+      "class": "shop",
+      "subclass": "pawnbroker",
+      "categories": ["shop:pawnbroker"],
+      "coordinate": [120.8685005, 14.2824403],
+      "osmUrl": "https://www.openstreetmap.org/node/12682535747"
+    },
+    {
+      "id": "node/12725016906",
+      "name": "Jaro Pawnshop",
+      "class": "shop",
+      "subclass": "pawnbroker",
+      "categories": ["shop:pawnbroker"],
+      "coordinate": [120.8685744, 14.2813072],
+      "osmUrl": "https://www.openstreetmap.org/node/12725016906"
+    },
+    {
+      "id": "node/14013733201",
+      "name": "Jeraldin Store",
+      "class": "shop",
+      "subclass": "variety_store",
+      "categories": ["shop:variety_store"],
+      "coordinate": [120.8880495, 14.2867939],
+      "osmUrl": "https://www.openstreetmap.org/node/14013733201"
+    },
+    {
+      "id": "way/421004687",
+      "name": "Jetron",
+      "class": "amenity",
+      "subclass": "fuel",
+      "categories": ["amenity:fuel"],
+      "coordinate": [120.86346619999999, 14.30223466],
+      "osmUrl": "https://www.openstreetmap.org/way/421004687"
+    },
+    {
+      "id": "way/318087863",
+      "name": "Jetti",
+      "class": "amenity",
+      "subclass": "fuel",
+      "categories": ["amenity:fuel"],
+      "coordinate": [120.86919757999999, 14.27857482],
+      "osmUrl": "https://www.openstreetmap.org/way/318087863"
+    },
+    {
+      "id": "node/13357043001",
+      "name": "Jheg'z Store",
+      "class": "shop",
+      "subclass": "wholesale",
+      "categories": ["shop:wholesale"],
+      "coordinate": [120.8672732, 14.2827564],
+      "osmUrl": "https://www.openstreetmap.org/node/13357043001"
+    },
+    {
+      "id": "way/1376672016",
+      "name": "Jim's Grocery",
+      "class": "shop",
+      "subclass": "supermarket",
+      "categories": ["shop:supermarket"],
+      "coordinate": [120.86657842857143, 14.284700657142858],
+      "osmUrl": "https://www.openstreetmap.org/way/1376672016"
+    },
+    {
+      "id": "way/1389305142",
+      "name": "JKJ Home Depot",
+      "class": "shop",
+      "subclass": "doityourself",
+      "categories": ["shop:doityourself"],
+      "coordinate": [120.8627982142857, 14.309440514285713],
+      "osmUrl": "https://www.openstreetmap.org/way/1389305142"
+    },
+    {
+      "id": "node/2367318986",
+      "name": "Jollibee",
+      "class": "amenity",
+      "subclass": "fast_food",
+      "categories": ["amenity:fast_food"],
+      "coordinate": [120.8711405, 14.2804482],
+      "osmUrl": "https://www.openstreetmap.org/node/2367318986"
+    },
+    {
+      "id": "node/13394539565",
+      "name": "Jollibee",
+      "class": "amenity",
+      "subclass": "fast_food",
+      "categories": ["amenity:fast_food"],
+      "coordinate": [120.8662644, 14.2817019],
+      "osmUrl": "https://www.openstreetmap.org/node/13394539565"
+    },
+    {
+      "id": "way/1450441041",
+      "name": "Jollibee",
+      "class": "amenity",
+      "subclass": "fast_food",
+      "categories": ["amenity:fast_food"],
+      "coordinate": [120.86819248571429, 14.28146347142857],
+      "osmUrl": "https://www.openstreetmap.org/way/1450441041"
+    },
+    {
+      "id": "way/1476032276",
+      "name": "Jollibee",
+      "class": "amenity",
+      "subclass": "fast_food",
+      "categories": ["amenity:fast_food"],
+      "coordinate": [120.88901249999999, 14.282022520000002],
+      "osmUrl": "https://www.openstreetmap.org/way/1476032276"
+    },
+    {
+      "id": "node/12682535770",
+      "name": "JP's Pizza",
+      "class": "amenity",
+      "subclass": "fast_food",
+      "categories": ["amenity:fast_food"],
+      "coordinate": [120.8686333, 14.2810908],
+      "osmUrl": "https://www.openstreetmap.org/node/12682535770"
+    },
+    {
+      "id": "node/2865755609",
+      "name": "JRS Express",
+      "class": "amenity",
+      "subclass": "post_office",
+      "categories": ["amenity:post_office"],
+      "coordinate": [120.8691195, 14.2796807],
+      "osmUrl": "https://www.openstreetmap.org/node/2865755609"
+    },
+    {
+      "id": "relation/13378830",
+      "name": "Juliana Wet and Dry Market",
+      "class": "amenity",
+      "subclass": "marketplace",
+      "categories": ["amenity:marketplace"],
+      "coordinate": [120.88903011111113, 14.299401255555555],
+      "osmUrl": "https://www.openstreetmap.org/relation/13378830"
+    },
+    {
+      "id": "node/13315680448",
+      "name": "Jun-kou Cafe",
+      "class": "amenity",
+      "subclass": "cafe",
+      "categories": ["amenity:cafe"],
+      "coordinate": [120.8872073, 14.2807025],
+      "osmUrl": "https://www.openstreetmap.org/node/13315680448"
+    },
+    {
+      "id": "node/13476169643",
+      "name": "Jungle Basketball Court",
+      "class": "leisure",
+      "subclass": "pitch",
+      "categories": ["leisure:pitch", "sport:basketball"],
+      "coordinate": [120.8501364, 14.2822985],
+      "osmUrl": "https://www.openstreetmap.org/node/13476169643"
+    },
+    {
+      "id": "way/1469439677",
+      "name": "Jungle Basketball Court",
+      "class": "leisure",
+      "subclass": "pitch",
+      "categories": ["leisure:pitch", "sport:basketball"],
+      "coordinate": [120.85013819999999, 14.282270060000002],
+      "osmUrl": "https://www.openstreetmap.org/way/1469439677"
+    },
+    {
+      "id": "node/13476169648",
+      "name": "Jungle Way Swimming Pool",
+      "class": "leisure",
+      "subclass": "swimming_pool",
+      "categories": ["leisure:swimming_pool"],
+      "coordinate": [120.849907, 14.2823805],
+      "osmUrl": "https://www.openstreetmap.org/node/13476169648"
+    },
+    {
+      "id": "node/13720431720",
+      "name": "K-2 Pharmacy",
+      "class": "shop",
+      "subclass": "chemist",
+      "categories": ["shop:chemist"],
+      "coordinate": [120.8706156, 14.2749324],
+      "osmUrl": "https://www.openstreetmap.org/node/13720431720"
+    },
+    {
+      "id": "node/13682678263",
+      "name": "K-Ramyeon",
+      "class": "amenity",
+      "subclass": "restaurant",
+      "categories": ["amenity:restaurant"],
+      "coordinate": [120.8600882, 14.2860047],
+      "osmUrl": "https://www.openstreetmap.org/node/13682678263"
+    },
+    {
+      "id": "node/12683870951",
+      "name": "Kalikhasan Leisure Farm",
+      "class": "tourism",
+      "subclass": "camp_site",
+      "categories": ["tourism:camp_site"],
+      "coordinate": [120.8426532, 14.2206115],
+      "osmUrl": "https://www.openstreetmap.org/node/12683870951"
+    },
+    {
+      "id": "way/267448202",
+      "name": "Kanggahan Elementary School",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.84823632, 14.28015786],
+      "osmUrl": "https://www.openstreetmap.org/way/267448202"
+    },
+    {
+      "id": "way/421935628",
+      "name": "Kapilya ng Birhen ng Santo Rosario",
+      "class": "amenity",
+      "subclass": "place_of_worship",
+      "categories": ["amenity:place_of_worship"],
+      "coordinate": [120.8905924357143, 14.268035671428574],
+      "osmUrl": "https://www.openstreetmap.org/way/421935628"
+    },
+    {
+      "id": "node/13076905588",
+      "name": "Kenny Rogers Roasters",
+      "class": "amenity",
+      "subclass": "restaurant",
+      "categories": ["amenity:restaurant"],
+      "coordinate": [120.8658543, 14.2813677],
+      "osmUrl": "https://www.openstreetmap.org/node/13076905588"
+    },
+    {
+      "id": "node/12682535773",
+      "name": "KFC",
+      "class": "amenity",
+      "subclass": "fast_food",
+      "categories": ["amenity:fast_food"],
+      "coordinate": [120.8706879, 14.2804046],
+      "osmUrl": "https://www.openstreetmap.org/node/12682535773"
+    },
+    {
+      "id": "node/13076905591",
+      "name": "KFC",
+      "class": "amenity",
+      "subclass": "fast_food",
+      "categories": ["amenity:fast_food"],
+      "coordinate": [120.8662942, 14.2818553],
+      "osmUrl": "https://www.openstreetmap.org/node/13076905591"
+    },
+    {
+      "id": "node/5090438322",
+      "name": "Kingdom Hall of Jehovah's Witnesses",
+      "class": "amenity",
+      "subclass": "place_of_worship",
+      "categories": ["amenity:place_of_worship"],
+      "coordinate": [120.8793194, 14.2796218],
+      "osmUrl": "https://www.openstreetmap.org/node/5090438322"
+    },
+    {
+      "id": "node/6295466457",
+      "name": "Korea-Philippines Friendship Hospital",
+      "class": "public_transport",
+      "subclass": "stop_position",
+      "categories": ["public_transport:stop_position"],
+      "coordinate": [120.8709107, 14.27561],
+      "osmUrl": "https://www.openstreetmap.org/node/6295466457"
+    },
+    {
+      "id": "relation/15916119",
+      "name": "Korea-Philippines Friendship Hospital",
+      "class": "amenity",
+      "subclass": "hospital",
+      "categories": ["amenity:hospital", "healthcare:hospital"],
+      "coordinate": [120.87058306249999, 14.2755771875],
+      "osmUrl": "https://www.openstreetmap.org/relation/15916119"
+    },
+    {
+      "id": "way/418539135",
+      "name": "Krislizz International Academy",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.86058322, 14.27737144],
+      "osmUrl": "https://www.openstreetmap.org/way/418539135"
+    },
+    {
+      "id": "way/1376672033",
+      "name": "KServico",
+      "class": "shop",
+      "subclass": "motorcycle",
+      "categories": ["shop:motorcycle"],
+      "coordinate": [120.86406071666669, 14.2837587],
+      "osmUrl": "https://www.openstreetmap.org/way/1376672033"
+    },
+    {
+      "id": "node/5567030521",
+      "name": "Kumpares",
+      "class": "amenity",
+      "subclass": "restaurant",
+      "categories": ["amenity:restaurant"],
+      "coordinate": [120.8696578, 14.2784508],
+      "osmUrl": "https://www.openstreetmap.org/node/5567030521"
+    },
+    {
+      "id": "node/13682678276",
+      "name": "Kura Cafe",
+      "class": "amenity",
+      "subclass": "cafe",
+      "categories": ["amenity:cafe"],
+      "coordinate": [120.8626129, 14.2845098],
+      "osmUrl": "https://www.openstreetmap.org/node/13682678276"
+    },
+    {
+      "id": "node/12679516611",
+      "name": "Kuromake E-Bike",
+      "class": "shop",
+      "subclass": "bicycle",
+      "categories": ["shop:bicycle"],
+      "coordinate": [120.869545, 14.2806171],
+      "osmUrl": "https://www.openstreetmap.org/node/12679516611"
+    },
+    {
+      "id": "node/13583586349",
+      "name": "Kyukyu Ramen 99",
+      "class": "amenity",
+      "subclass": "restaurant",
+      "categories": ["amenity:restaurant"],
+      "coordinate": [120.8655611, 14.2816024],
+      "osmUrl": "https://www.openstreetmap.org/node/13583586349"
+    },
+    {
+      "id": "way/192082000",
+      "name": "La Traviesa",
+      "class": "leisure",
+      "subclass": "water_park",
+      "categories": ["leisure:water_park"],
+      "coordinate": [120.89759848000001, 14.309849280000003],
+      "osmUrl": "https://www.openstreetmap.org/way/192082000"
+    },
+    {
+      "id": "node/13682678170",
+      "name": "Laba-daba Laundry Shop",
+      "class": "shop",
+      "subclass": "laundry",
+      "categories": ["shop:laundry"],
+      "coordinate": [120.8505673, 14.2819833],
+      "osmUrl": "https://www.openstreetmap.org/node/13682678170"
+    },
+    {
+      "id": "node/13064841862",
+      "name": "Landbank",
+      "class": "amenity",
+      "subclass": "bank",
+      "categories": ["amenity:bank"],
+      "coordinate": [120.8550171, 14.2868152],
+      "osmUrl": "https://www.openstreetmap.org/node/13064841862"
+    },
+    {
+      "id": "way/1372255421",
+      "name": "Landbank",
+      "class": "office",
+      "subclass": "financial",
+      "categories": ["office:financial"],
+      "coordinate": [120.87300404, 14.27222998],
+      "osmUrl": "https://www.openstreetmap.org/way/1372255421"
+    },
+    {
+      "id": "way/1450182957",
+      "name": "Landbank",
+      "class": "amenity",
+      "subclass": "bank",
+      "categories": ["amenity:bank"],
+      "coordinate": [120.87297629999999, 14.272265322222223],
+      "osmUrl": "https://www.openstreetmap.org/way/1450182957"
+    },
+    {
+      "id": "way/318087873",
+      "name": "Lapidario Barangay Hall",
+      "class": "amenity",
+      "subclass": "townhall",
+      "categories": ["amenity:townhall"],
+      "coordinate": [120.86631066, 14.27376086],
+      "osmUrl": "https://www.openstreetmap.org/way/318087873"
+    },
+    {
+      "id": "relation/13190082",
+      "name": "Lapidario Elementary School",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.86646989411763, 14.271876547058824],
+      "osmUrl": "https://www.openstreetmap.org/relation/13190082"
+    },
+    {
+      "id": "node/12682692332",
+      "name": "Little HQ Cafe",
+      "class": "amenity",
+      "subclass": "cafe",
+      "categories": ["amenity:cafe"],
+      "coordinate": [120.8454282, 14.2217491],
+      "osmUrl": "https://www.openstreetmap.org/node/12682692332"
+    },
+    {
+      "id": "node/1044476408",
+      "name": "Locale of Buenavista",
+      "class": "amenity",
+      "subclass": "place_of_worship",
+      "categories": ["amenity:place_of_worship"],
+      "coordinate": [120.9001328, 14.3074278],
+      "osmUrl": "https://www.openstreetmap.org/node/1044476408"
+    },
+    {
+      "id": "node/7859834785",
+      "name": "Locale of Osorio",
+      "class": "amenity",
+      "subclass": "place_of_worship",
+      "categories": ["amenity:place_of_worship"],
+      "coordinate": [120.8766725, 14.2918465],
+      "osmUrl": "https://www.openstreetmap.org/node/7859834785"
+    },
+    {
+      "id": "way/409718727",
+      "name": "Lokal ng Calumpang Lejos, Iglesia ni Cristo",
+      "class": "amenity",
+      "subclass": "place_of_worship",
+      "categories": ["amenity:place_of_worship"],
+      "coordinate": [120.84606780000001, 14.236098033333333],
+      "osmUrl": "https://www.openstreetmap.org/way/409718727"
+    },
+    {
+      "id": "node/12679516621",
+      "name": "Lola Nena's",
+      "class": "amenity",
+      "subclass": "fast_food",
+      "categories": ["amenity:fast_food"],
+      "coordinate": [120.8715691, 14.2807937],
+      "osmUrl": "https://www.openstreetmap.org/node/12679516621"
+    },
+    {
+      "id": "node/12682535749",
+      "name": "Lots'a Pizza",
+      "class": "amenity",
+      "subclass": "fast_food",
+      "categories": ["amenity:fast_food"],
+      "coordinate": [120.8684507, 14.2828535],
+      "osmUrl": "https://www.openstreetmap.org/node/12682535749"
+    },
+    {
+      "id": "way/1481056869",
+      "name": "LTO Trece Martires Extension Office",
+      "class": "office",
+      "subclass": "government",
+      "categories": ["office:government"],
+      "coordinate": [120.8613158, 14.281809399999998],
+      "osmUrl": "https://www.openstreetmap.org/way/1481056869"
+    },
+    {
+      "id": "way/415480557",
+      "name": "Luciano Barangay Hall",
+      "class": "amenity",
+      "subclass": "townhall",
+      "categories": ["amenity:townhall"],
+      "coordinate": [120.86902468000001, 14.27490656],
+      "osmUrl": "https://www.openstreetmap.org/way/415480557"
+    },
+    {
+      "id": "node/12679516612",
+      "name": "Lucky Lion E-Bike",
+      "class": "shop",
+      "subclass": "bicycle",
+      "categories": ["shop:bicycle"],
+      "coordinate": [120.8695909, 14.2806229],
+      "osmUrl": "https://www.openstreetmap.org/node/12679516612"
+    },
+    {
+      "id": "way/318095678",
+      "name": "Luis Aguado National High School",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.86821995454547, 14.252915545454545],
+      "osmUrl": "https://www.openstreetmap.org/way/318095678"
+    },
+    {
+      "id": "node/2865755608",
+      "name": "Luzon Development Bank",
+      "class": "amenity",
+      "subclass": "bank",
+      "categories": ["amenity:bank"],
+      "coordinate": [120.8688582, 14.2802447],
+      "osmUrl": "https://www.openstreetmap.org/node/2865755608"
+    },
+    {
+      "id": "node/12682535754",
+      "name": "M Lhuillier",
+      "class": "shop",
+      "subclass": "pawnbroker",
+      "categories": ["shop:pawnbroker"],
+      "coordinate": [120.8682027, 14.2834363],
+      "osmUrl": "https://www.openstreetmap.org/node/12682535754"
+    },
+    {
+      "id": "node/12682535772",
+      "name": "M Lhuillier",
+      "class": "shop",
+      "subclass": "pawnbroker",
+      "categories": ["shop:pawnbroker"],
+      "coordinate": [120.8690427, 14.2803433],
+      "osmUrl": "https://www.openstreetmap.org/node/12682535772"
+    },
+    {
+      "id": "way/420997083",
+      "name": "M. V. Santiago Medical Center",
+      "class": "amenity",
+      "subclass": "hospital",
+      "categories": ["amenity:hospital", "healthcare:hospital"],
+      "coordinate": [120.86617747777778, 14.294188488888892],
+      "osmUrl": "https://www.openstreetmap.org/way/420997083"
+    },
+    {
+      "id": "way/1216382727",
+      "name": "Maliksi Central Grounds",
+      "class": "leisure",
+      "subclass": "park",
+      "categories": ["leisure:park"],
+      "coordinate": [120.87386461999999, 14.31392702],
+      "osmUrl": "https://www.openstreetmap.org/way/1216382727"
+    },
+    {
+      "id": "way/1499812353",
+      "name": "Market Protected Parking",
+      "class": "amenity",
+      "subclass": "parking",
+      "categories": ["amenity:parking"],
+      "coordinate": [120.86733096, 14.28323752],
+      "osmUrl": "https://www.openstreetmap.org/way/1499812353"
+    },
+    {
+      "id": "node/13682678208",
+      "name": "Masining Printing Services",
+      "class": "shop",
+      "subclass": "copyshop",
+      "categories": ["shop:copyshop"],
+      "coordinate": [120.8496766, 14.2813892],
+      "osmUrl": "https://www.openstreetmap.org/node/13682678208"
+    },
+    {
+      "id": "way/411545286",
+      "name": "Mataas na Lupa Barangay Hall",
+      "class": "amenity",
+      "subclass": "townhall",
+      "categories": ["amenity:townhall"],
+      "coordinate": [120.88211069999998, 14.2312905],
+      "osmUrl": "https://www.openstreetmap.org/way/411545286"
+    },
+    {
+      "id": "way/318121926",
+      "name": "Mataas na Lupa Elementary School",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.88084818, 14.2294942],
+      "osmUrl": "https://www.openstreetmap.org/way/318121926"
+    },
+    {
+      "id": "way/1422947181",
+      "name": "Materials Recovery Facility",
+      "class": "amenity",
+      "subclass": "recycling",
+      "categories": ["amenity:recycling"],
+      "coordinate": [120.86485420000001, 14.28176166],
+      "osmUrl": "https://www.openstreetmap.org/way/1422947181"
+    },
+    {
+      "id": "node/13394539569",
+      "name": "Max's Restaurant",
+      "class": "amenity",
+      "subclass": "restaurant",
+      "categories": ["amenity:restaurant"],
+      "coordinate": [120.866073, 14.2819233],
+      "osmUrl": "https://www.openstreetmap.org/node/13394539569"
+    },
+    {
+      "id": "way/1368994847",
+      "name": "Maxifuel",
+      "class": "amenity",
+      "subclass": "fuel",
+      "categories": ["amenity:fuel"],
+      "coordinate": [120.87155795, 14.273594416666668],
+      "osmUrl": "https://www.openstreetmap.org/way/1368994847"
+    },
+    {
+      "id": "node/13076905590",
+      "name": "McDonald's",
+      "class": "amenity",
+      "subclass": "fast_food",
+      "categories": ["amenity:fast_food"],
+      "coordinate": [120.8664939, 14.2817939],
+      "osmUrl": "https://www.openstreetmap.org/node/13076905590"
+    },
+    {
+      "id": "node/13583586352",
+      "name": "McDonald's",
+      "class": "amenity",
+      "subclass": "fast_food",
+      "categories": ["amenity:fast_food"],
+      "coordinate": [120.8668557, 14.2819431],
+      "osmUrl": "https://www.openstreetmap.org/node/13583586352"
+    },
+    {
+      "id": "way/1449916886",
+      "name": "McDonald's",
+      "class": "amenity",
+      "subclass": "fast_food",
+      "categories": ["amenity:fast_food"],
+      "coordinate": [120.88951612222223, 14.281518588888888],
+      "osmUrl": "https://www.openstreetmap.org/way/1449916886"
+    },
+    {
+      "id": "node/12682535775",
+      "name": "Meralco",
+      "class": "office",
+      "subclass": "energy_supplier",
+      "categories": ["office:energy_supplier"],
+      "coordinate": [120.8713816, 14.2809201],
+      "osmUrl": "https://www.openstreetmap.org/node/12682535775"
+    },
+    {
+      "id": "node/2367318991",
+      "name": "Mercury Drug",
+      "class": "amenity",
+      "subclass": "pharmacy",
+      "categories": ["amenity:pharmacy", "healthcare:pharmacy"],
+      "coordinate": [120.8710318, 14.2805854],
+      "osmUrl": "https://www.openstreetmap.org/node/2367318991"
+    },
+    {
+      "id": "way/282631961",
+      "name": "Mercury Drug",
+      "class": "amenity",
+      "subclass": "pharmacy",
+      "categories": ["amenity:pharmacy", "healthcare:pharmacy"],
+      "coordinate": [120.86881744000002, 14.28060036],
+      "osmUrl": "https://www.openstreetmap.org/way/282631961"
+    },
+    {
+      "id": "node/10888988705",
+      "name": "merit Field",
+      "class": "tourism",
+      "subclass": "attraction",
+      "categories": ["tourism:attraction"],
+      "coordinate": [120.8963067, 14.2253048],
+      "osmUrl": "https://www.openstreetmap.org/node/10888988705"
+    },
+    {
+      "id": "node/11539760818",
+      "name": "Metro South Executive Village",
+      "class": "public_transport",
+      "subclass": "platform",
+      "categories": ["public_transport:platform"],
+      "coordinate": [120.8979589, 14.2882311],
+      "osmUrl": "https://www.openstreetmap.org/node/11539760818"
+    },
+    {
+      "id": "node/14070105782",
+      "name": "Metro South Executive Village",
+      "class": "public_transport",
+      "subclass": "platform",
+      "categories": ["public_transport:platform"],
+      "coordinate": [120.8982549, 14.2881859],
+      "osmUrl": "https://www.openstreetmap.org/node/14070105782"
+    },
+    {
+      "id": "way/1450182960",
+      "name": "Metrobank",
+      "class": "amenity",
+      "subclass": "bank",
+      "categories": ["amenity:bank"],
+      "coordinate": [120.86498794444444, 14.282503400000003],
+      "osmUrl": "https://www.openstreetmap.org/way/1450182960"
+    },
+    {
+      "id": "node/6040860704",
+      "name": "Metroland terraces",
+      "class": "tourism",
+      "subclass": "attraction",
+      "categories": ["tourism:attraction"],
+      "coordinate": [120.856924, 14.3047955],
+      "osmUrl": "https://www.openstreetmap.org/node/6040860704"
+    },
+    {
+      "id": "node/6355913087",
+      "name": "Metroland terraces",
+      "class": "tourism",
+      "subclass": "apartment",
+      "categories": ["tourism:apartment"],
+      "coordinate": [120.8569157, 14.3047953],
+      "osmUrl": "https://www.openstreetmap.org/node/6355913087"
+    },
+    {
+      "id": "node/4481179189",
+      "name": "Miles&Millers Meatshop",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.8665806, 14.2736799],
+      "osmUrl": "https://www.openstreetmap.org/node/4481179189"
+    },
+    {
+      "id": "node/13394539577",
+      "name": "Miniso",
+      "class": "shop",
+      "subclass": "variety_store",
+      "categories": ["shop:variety_store"],
+      "coordinate": [120.8662271, 14.2817131],
+      "osmUrl": "https://www.openstreetmap.org/node/13394539577"
+    },
+    {
+      "id": "node/13434036425",
+      "name": "Miniso",
+      "class": "shop",
+      "subclass": "variety_store",
+      "categories": ["shop:variety_store"],
+      "coordinate": [120.8709047, 14.2803911],
+      "osmUrl": "https://www.openstreetmap.org/node/13434036425"
+    },
+    {
+      "id": "way/417553077",
+      "name": "Minute Burger",
+      "class": "amenity",
+      "subclass": "fast_food",
+      "categories": ["amenity:fast_food"],
+      "coordinate": [120.86824229999999, 14.28269306],
+      "osmUrl": "https://www.openstreetmap.org/way/417553077"
+    },
+    {
+      "id": "way/1498161673",
+      "name": "Minute Burger",
+      "class": "amenity",
+      "subclass": "fast_food",
+      "categories": ["amenity:fast_food"],
+      "coordinate": [120.87101454285714, 14.275136971428571],
+      "osmUrl": "https://www.openstreetmap.org/way/1498161673"
+    },
+    {
+      "id": "node/12679516610",
+      "name": "Mitsukoshi",
+      "class": "shop",
+      "subclass": "motorcycle",
+      "categories": ["shop:motorcycle"],
+      "coordinate": [120.8694936, 14.2806139],
+      "osmUrl": "https://www.openstreetmap.org/node/12679516610"
+    },
+    {
+      "id": "node/12682535771",
+      "name": "Mixue",
+      "class": "amenity",
+      "subclass": "cafe",
+      "categories": ["amenity:cafe"],
+      "coordinate": [120.8686838, 14.2813809],
+      "osmUrl": "https://www.openstreetmap.org/node/12682535771"
+    },
+    {
+      "id": "way/1481056871",
+      "name": "Monument of the Thirteen Martyrs of Cavite",
+      "class": "historic",
+      "subclass": "memorial",
+      "categories": ["historic:memorial"],
+      "coordinate": [120.8707724375, 14.2809505],
+      "osmUrl": "https://www.openstreetmap.org/way/1481056871"
+    },
+    {
+      "id": "way/1481056872",
+      "name": "Monument of the Thirteen Martyrs of Cavite",
+      "class": "leisure",
+      "subclass": "park",
+      "categories": ["leisure:park"],
+      "coordinate": [120.87078223333333, 14.28093264444444],
+      "osmUrl": "https://www.openstreetmap.org/way/1481056872"
+    },
+    {
+      "id": "node/12682628445",
+      "name": "Motoexpress",
+      "class": "shop",
+      "subclass": "motorcycle",
+      "categories": ["shop:motorcycle"],
+      "coordinate": [120.8777028, 14.2518547],
+      "osmUrl": "https://www.openstreetmap.org/node/12682628445"
+    },
+    {
+      "id": "node/13343995908",
+      "name": "MotorcycleCity",
+      "class": "shop",
+      "subclass": "motorcycle",
+      "categories": ["shop:motorcycle"],
+      "coordinate": [120.8740207, 14.2697107],
+      "osmUrl": "https://www.openstreetmap.org/node/13343995908"
+    },
+    {
+      "id": "node/12682535777",
+      "name": "Motortrade",
+      "class": "shop",
+      "subclass": "motorcycle",
+      "categories": ["shop:motorcycle"],
+      "coordinate": [120.8705041, 14.2818637],
+      "osmUrl": "https://www.openstreetmap.org/node/12682535777"
+    },
+    {
+      "id": "way/941353235",
+      "name": "MRP Farm Resort",
+      "class": "leisure",
+      "subclass": "resort",
+      "categories": ["leisure:resort"],
+      "coordinate": [120.84488106, 14.240175200000001],
+      "osmUrl": "https://www.openstreetmap.org/way/941353235"
+    },
+    {
+      "id": "way/421222128",
+      "name": "Multi Purpose Hall",
+      "class": "amenity",
+      "subclass": "community_centre",
+      "categories": ["amenity:community_centre"],
+      "coordinate": [120.87828511666667, 14.252156883333333],
+      "osmUrl": "https://www.openstreetmap.org/way/421222128"
+    },
+    {
+      "id": "node/10277115970",
+      "name": "MVP Oil Co. Tire Recycling Facility",
+      "class": "amenity",
+      "subclass": "recycling",
+      "categories": ["amenity:recycling"],
+      "coordinate": [120.8913516, 14.2323419],
+      "osmUrl": "https://www.openstreetmap.org/node/10277115970"
+    },
+    {
+      "id": "node/13733033539",
+      "name": "MyLaksa",
+      "class": "amenity",
+      "subclass": "restaurant",
+      "categories": ["amenity:restaurant"],
+      "coordinate": [120.8660189, 14.2817591],
+      "osmUrl": "https://www.openstreetmap.org/node/13733033539"
+    },
+    {
+      "id": "node/11411447769",
+      "name": "Myra store",
+      "class": "shop",
+      "subclass": "beverages",
+      "categories": ["shop:beverages"],
+      "coordinate": [120.8493525, 14.2667752],
+      "osmUrl": "https://www.openstreetmap.org/node/11411447769"
+    },
+    {
+      "id": "node/13394539578",
+      "name": "National Book Store",
+      "class": "shop",
+      "subclass": "books",
+      "categories": ["shop:books"],
+      "coordinate": [120.8657598, 14.2820121],
+      "osmUrl": "https://www.openstreetmap.org/node/13394539578"
+    },
+    {
+      "id": "node/13476169647",
+      "name": "New Basketball Court",
+      "class": "leisure",
+      "subclass": "pitch",
+      "categories": ["leisure:pitch", "sport:basketball"],
+      "coordinate": [120.8491575, 14.2822173],
+      "osmUrl": "https://www.openstreetmap.org/node/13476169647"
+    },
+    {
+      "id": "node/2729099065",
+      "name": "New Generation International School",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.865424, 14.2824761],
+      "osmUrl": "https://www.openstreetmap.org/node/2729099065"
+    },
+    {
+      "id": "relation/8754489",
+      "name": "New Generation International School",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.86162433333334, 14.294553366666667],
+      "osmUrl": "https://www.openstreetmap.org/relation/8754489"
+    },
+    {
+      "id": "way/1422947205",
+      "name": "Ningnangan",
+      "class": "amenity",
+      "subclass": "restaurant",
+      "categories": ["amenity:restaurant"],
+      "coordinate": [120.88837076, 14.28195374],
+      "osmUrl": "https://www.openstreetmap.org/way/1422947205"
+    },
+    {
+      "id": "way/1450414527",
+      "name": "Notre Dame of Trece Martires",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.84988145499999, 14.282101785],
+      "osmUrl": "https://www.openstreetmap.org/way/1450414527"
+    },
+    {
+      "id": "node/12679516607",
+      "name": "NWOW E-Bike",
+      "class": "shop",
+      "subclass": "bicycle",
+      "categories": ["shop:bicycle"],
+      "coordinate": [120.8691334, 14.2805714],
+      "osmUrl": "https://www.openstreetmap.org/node/12679516607"
+    },
+    {
+      "id": "node/13081073667",
+      "name": "O!Save",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.8711086, 14.257816],
+      "osmUrl": "https://www.openstreetmap.org/node/13081073667"
+    },
+    {
+      "id": "way/542695076",
+      "name": "Office of the Provincial Agriculturist",
+      "class": "office",
+      "subclass": "government",
+      "categories": ["office:government"],
+      "coordinate": [120.86842834, 14.27894676],
+      "osmUrl": "https://www.openstreetmap.org/way/542695076"
+    },
+    {
+      "id": "node/12697899021",
+      "name": "Office of the Provincial Prosecutor",
+      "class": "office",
+      "subclass": "government",
+      "categories": ["office:government"],
+      "coordinate": [120.8677999, 14.2793114],
+      "osmUrl": "https://www.openstreetmap.org/node/12697899021"
+    },
+    {
+      "id": "way/184153918",
+      "name": "Old Cavite Provincial Capitol",
+      "class": "amenity",
+      "subclass": "townhall",
+      "categories": ["amenity:townhall"],
+      "coordinate": [120.86685709375, 14.279870691666673],
+      "osmUrl": "https://www.openstreetmap.org/way/184153918"
+    },
+    {
+      "id": "node/6295474063",
+      "name": "Osorio",
+      "class": "public_transport",
+      "subclass": "platform",
+      "categories": ["public_transport:platform"],
+      "coordinate": [120.8791307, 14.2799176],
+      "osmUrl": "https://www.openstreetmap.org/node/6295474063"
+    },
+    {
+      "id": "node/6418616486",
+      "name": "Osorio",
+      "class": "public_transport",
+      "subclass": "platform",
+      "categories": ["public_transport:platform"],
+      "coordinate": [120.8786958, 14.2800502],
+      "osmUrl": "https://www.openstreetmap.org/node/6418616486"
+    },
+    {
+      "id": "relation/16764154",
+      "name": "Osorio Elementary School",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.8795891, 14.291267175000002],
+      "osmUrl": "https://www.openstreetmap.org/relation/16764154"
+    },
+    {
+      "id": "way/407836337",
+      "name": "Palangue 2 & 3 Barangay Health Station",
+      "class": "amenity",
+      "subclass": "health_post",
+      "categories": ["amenity:health_post", "healthcare:health_aide"],
+      "coordinate": [120.83384423999999, 14.257707700000001],
+      "osmUrl": "https://www.openstreetmap.org/way/407836337"
+    },
+    {
+      "id": "way/772076970",
+      "name": "Palangue 3 Elementary School",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.82997293333334, 14.262009316666669],
+      "osmUrl": "https://www.openstreetmap.org/way/772076970"
+    },
+    {
+      "id": "node/13343994954",
+      "name": "Palawan Pawnshop",
+      "class": "shop",
+      "subclass": "pawnbroker",
+      "categories": ["shop:pawnbroker"],
+      "coordinate": [120.8772154, 14.2526336],
+      "osmUrl": "https://www.openstreetmap.org/node/13343994954"
+    },
+    {
+      "id": "way/980916465",
+      "name": "Palawit Elementary School",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.89607346666666, 14.261584616666667],
+      "osmUrl": "https://www.openstreetmap.org/way/980916465"
+    },
+    {
+      "id": "way/318087856",
+      "name": "Pamayanang Maliksi",
+      "class": "office",
+      "subclass": "government",
+      "categories": ["office:government"],
+      "coordinate": [120.86693488571427, 14.279179242857143],
+      "osmUrl": "https://www.openstreetmap.org/way/318087856"
+    },
+    {
+      "id": "way/1216383304",
+      "name": "Pamayanang Maliksi - Phase 4 Community Park",
+      "class": "leisure",
+      "subclass": "park",
+      "categories": ["leisure:park"],
+      "coordinate": [120.87103482, 14.31235978],
+      "osmUrl": "https://www.openstreetmap.org/way/1216383304"
+    },
+    {
+      "id": "way/487229115",
+      "name": "Pamayanang Maliksi - Phase 5 - Playground & Park",
+      "class": "leisure",
+      "subclass": "park",
+      "categories": ["leisure:park"],
+      "coordinate": [120.87483436, 14.312096919999998],
+      "osmUrl": "https://www.openstreetmap.org/way/487229115"
+    },
+    {
+      "id": "way/487226361",
+      "name": "Pamayanang Maliksi Covered Court",
+      "class": "leisure",
+      "subclass": "sports_hall",
+      "categories": [
+        "leisure:sports_hall",
+        "sport:basketball;volleyball;badminton"
+      ],
+      "coordinate": [120.87375454000001, 14.313688080000002],
+      "osmUrl": "https://www.openstreetmap.org/way/487226361"
+    },
+    {
+      "id": "node/13076905597",
+      "name": "Pancake House",
+      "class": "amenity",
+      "subclass": "restaurant",
+      "categories": ["amenity:restaurant"],
+      "coordinate": [120.865985, 14.2819477],
+      "osmUrl": "https://www.openstreetmap.org/node/13076905597"
+    },
+    {
+      "id": "way/1502076312",
+      "name": "Paragon Basketball Court",
+      "class": "leisure",
+      "subclass": "pitch",
+      "categories": ["leisure:pitch", "sport:basketball"],
+      "coordinate": [120.85166672, 14.283974019999999],
+      "osmUrl": "https://www.openstreetmap.org/way/1502076312"
+    },
+    {
+      "id": "node/13394539579",
+      "name": "Penshoppe",
+      "class": "shop",
+      "subclass": "clothes",
+      "categories": ["shop:clothes"],
+      "coordinate": [120.8655923, 14.2816991],
+      "osmUrl": "https://www.openstreetmap.org/node/13394539579"
+    },
+    {
+      "id": "node/11088384405",
+      "name": "Petro Gazz",
+      "class": "amenity",
+      "subclass": "fuel",
+      "categories": ["amenity:fuel"],
+      "coordinate": [120.8806424, 14.2696639],
+      "osmUrl": "https://www.openstreetmap.org/node/11088384405"
+    },
+    {
+      "id": "way/318087854",
+      "name": "Petro Gazz",
+      "class": "amenity",
+      "subclass": "fuel",
+      "categories": ["amenity:fuel"],
+      "coordinate": [120.86874562, 14.279597339999999],
+      "osmUrl": "https://www.openstreetmap.org/way/318087854"
+    },
+    {
+      "id": "way/282644978",
+      "name": "Petron",
+      "class": "amenity",
+      "subclass": "fuel",
+      "categories": ["amenity:fuel"],
+      "coordinate": [120.87747180000001, 14.252570599999999],
+      "osmUrl": "https://www.openstreetmap.org/way/282644978"
+    },
+    {
+      "id": "way/1369414096",
+      "name": "Petron",
+      "class": "amenity",
+      "subclass": "fuel",
+      "categories": ["amenity:fuel"],
+      "coordinate": [120.88098298, 14.23837838],
+      "osmUrl": "https://www.openstreetmap.org/way/1369414096"
+    },
+    {
+      "id": "way/1158217149",
+      "name": "Petron",
+      "class": "amenity",
+      "subclass": "fuel",
+      "categories": ["amenity:fuel"],
+      "coordinate": [120.86390875999999, 14.300474900000001],
+      "osmUrl": "https://www.openstreetmap.org/way/1158217149"
+    },
+    {
+      "id": "way/672297872",
+      "name": "Phase 1 Basketball Court",
+      "class": "leisure",
+      "subclass": "pitch",
+      "categories": ["leisure:pitch", "sport:basketball"],
+      "coordinate": [120.87830566, 14.25200756],
+      "osmUrl": "https://www.openstreetmap.org/way/672297872"
+    },
+    {
+      "id": "node/6449456085",
+      "name": "PhilHealth",
+      "class": "office",
+      "subclass": "government",
+      "categories": ["office:government"],
+      "coordinate": [120.8816493, 14.2804134],
+      "osmUrl": "https://www.openstreetmap.org/node/6449456085"
+    },
+    {
+      "id": "node/11841364079",
+      "name": "Philippine Business Bank",
+      "class": "amenity",
+      "subclass": "bank",
+      "categories": ["amenity:bank"],
+      "coordinate": [120.8683322, 14.2843316],
+      "osmUrl": "https://www.openstreetmap.org/node/11841364079"
+    },
+    {
+      "id": "node/12679516620",
+      "name": "Philippine Statistics Authority",
+      "class": "office",
+      "subclass": "government",
+      "categories": ["office:government"],
+      "coordinate": [120.8719544, 14.280751],
+      "osmUrl": "https://www.openstreetmap.org/node/12679516620"
+    },
+    {
+      "id": "way/1369414093",
+      "name": "Phoenix",
+      "class": "amenity",
+      "subclass": "fuel",
+      "categories": ["amenity:fuel"],
+      "coordinate": [120.87770784, 14.251542460000001],
+      "osmUrl": "https://www.openstreetmap.org/way/1369414093"
+    },
+    {
+      "id": "node/13434036427",
+      "name": "Pickup Coffee",
+      "class": "amenity",
+      "subclass": "cafe",
+      "categories": ["amenity:cafe"],
+      "coordinate": [120.8704777, 14.2805834],
+      "osmUrl": "https://www.openstreetmap.org/node/13434036427"
+    },
+    {
+      "id": "node/13673820854",
+      "name": "Pickup Coffee",
+      "class": "amenity",
+      "subclass": "cafe",
+      "categories": ["amenity:cafe"],
+      "coordinate": [120.8669436, 14.2815785],
+      "osmUrl": "https://www.openstreetmap.org/node/13673820854"
+    },
+    {
+      "id": "node/13476169645",
+      "name": "Plaza Sports",
+      "class": "leisure",
+      "subclass": "pitch",
+      "categories": ["leisure:pitch", "sport:volleyball;badminton;tennis"],
+      "coordinate": [120.8496569, 14.2820369],
+      "osmUrl": "https://www.openstreetmap.org/node/13476169645"
+    },
+    {
+      "id": "way/415482255",
+      "name": "PLDT",
+      "class": "office",
+      "subclass": "telecommunication",
+      "categories": ["office:telecommunication"],
+      "coordinate": [120.86833005714287, 14.280829328571429],
+      "osmUrl": "https://www.openstreetmap.org/way/415482255"
+    },
+    {
+      "id": "node/13064879126",
+      "name": "PNB",
+      "class": "amenity",
+      "subclass": "bank",
+      "categories": ["amenity:bank"],
+      "coordinate": [120.8688952, 14.280028],
+      "osmUrl": "https://www.openstreetmap.org/node/13064879126"
+    },
+    {
+      "id": "node/13076905586",
+      "name": "Potato Corner",
+      "class": "amenity",
+      "subclass": "fast_food",
+      "categories": ["amenity:fast_food"],
+      "coordinate": [120.8655837, 14.281344],
+      "osmUrl": "https://www.openstreetmap.org/node/13076905586"
+    },
+    {
+      "id": "way/415482164",
+      "name": "Power Fill Trece Martires",
+      "class": "amenity",
+      "subclass": "fuel",
+      "categories": ["amenity:fuel"],
+      "coordinate": [120.86711774, 14.2929279],
+      "osmUrl": "https://www.openstreetmap.org/way/415482164"
+    },
+    {
+      "id": "way/1451916439",
+      "name": "Power Fuel",
+      "class": "amenity",
+      "subclass": "fuel",
+      "categories": ["amenity:fuel"],
+      "coordinate": [120.88786882500001, 14.281462287499998],
+      "osmUrl": "https://www.openstreetmap.org/way/1451916439"
+    },
+    {
+      "id": "node/13076905587",
+      "name": "Power Mac Center",
+      "class": "shop",
+      "subclass": "mobile_phone",
+      "categories": ["shop:mobile_phone"],
+      "coordinate": [120.8659161, 14.2815521],
+      "osmUrl": "https://www.openstreetmap.org/node/13076905587"
+    },
+    {
+      "id": "node/12697899023",
+      "name": "Probation and Parole Office",
+      "class": "office",
+      "subclass": "government",
+      "categories": ["office:government"],
+      "coordinate": [120.8677699, 14.2791963],
+      "osmUrl": "https://www.openstreetmap.org/node/12697899023"
+    },
+    {
+      "id": "node/5369593761",
+      "name": "Profit Saver",
+      "class": "shop",
+      "subclass": "supermarket",
+      "categories": ["shop:supermarket"],
+      "coordinate": [120.8654638, 14.2872271],
+      "osmUrl": "https://www.openstreetmap.org/node/5369593761"
+    },
+    {
+      "id": "node/12679516604",
+      "name": "Provincial Veterinary Office",
+      "class": "amenity",
+      "subclass": "veterinary",
+      "categories": ["amenity:veterinary"],
+      "coordinate": [120.8678759, 14.2792556],
+      "osmUrl": "https://www.openstreetmap.org/node/12679516604"
+    },
+    {
+      "id": "node/7368442885",
+      "name": "PSBank",
+      "class": "amenity",
+      "subclass": "bank",
+      "categories": ["amenity:bank"],
+      "coordinate": [120.8719653, 14.2805719],
+      "osmUrl": "https://www.openstreetmap.org/node/7368442885"
+    },
+    {
+      "id": "way/1451863102",
+      "name": "PTT",
+      "class": "amenity",
+      "subclass": "fuel",
+      "categories": ["amenity:fuel"],
+      "coordinate": [120.88329092857143, 14.280484885714285],
+      "osmUrl": "https://www.openstreetmap.org/way/1451863102"
+    },
+    {
+      "id": "node/12697899022",
+      "name": "Public Attorney's Office",
+      "class": "office",
+      "subclass": "lawyer",
+      "categories": ["office:lawyer"],
+      "coordinate": [120.8674781, 14.2790699],
+      "osmUrl": "https://www.openstreetmap.org/node/12697899022"
+    },
+    {
+      "id": "way/1494532448",
+      "name": "Publico",
+      "class": "amenity",
+      "subclass": "restaurant",
+      "categories": ["amenity:restaurant"],
+      "coordinate": [120.8609058, 14.27789726],
+      "osmUrl": "https://www.openstreetmap.org/way/1494532448"
+    },
+    {
+      "id": "node/12682628424",
+      "name": "Puregold",
+      "class": "shop",
+      "subclass": "supermarket",
+      "categories": ["shop:supermarket"],
+      "coordinate": [120.8763093, 14.2604012],
+      "osmUrl": "https://www.openstreetmap.org/node/12682628424"
+    },
+    {
+      "id": "way/608815742",
+      "name": "Puregold",
+      "class": "shop",
+      "subclass": "supermarket",
+      "categories": ["shop:supermarket"],
+      "coordinate": [120.88959853333334, 14.28250545],
+      "osmUrl": "https://www.openstreetmap.org/way/608815742"
+    },
+    {
+      "id": "node/12553647273",
+      "name": "Puremart",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.8670666, 14.2520715],
+      "osmUrl": "https://www.openstreetmap.org/node/12553647273"
+    },
+    {
+      "id": "node/12553657552",
+      "name": "Puremart",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.8863313, 14.2487529],
+      "osmUrl": "https://www.openstreetmap.org/node/12553657552"
+    },
+    {
+      "id": "way/414936221",
+      "name": "Puremart",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.84433856000001, 14.2792227],
+      "osmUrl": "https://www.openstreetmap.org/way/414936221"
+    },
+    {
+      "id": "way/1350620822",
+      "name": "Puremart",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.8669709, 14.27409198],
+      "osmUrl": "https://www.openstreetmap.org/way/1350620822"
+    },
+    {
+      "id": "node/12725016928",
+      "name": "Quali-Meds Pharmacy",
+      "class": "amenity",
+      "subclass": "pharmacy",
+      "categories": ["amenity:pharmacy", "healthcare:pharmacy"],
+      "coordinate": [120.8686217, 14.281209],
+      "osmUrl": "https://www.openstreetmap.org/node/12725016928"
+    },
+    {
+      "id": "node/13734027565",
+      "name": "R&B Restaurant and Bar",
+      "class": "amenity",
+      "subclass": "restaurant",
+      "categories": ["amenity:restaurant"],
+      "coordinate": [120.8666565, 14.2737026],
+      "osmUrl": "https://www.openstreetmap.org/node/13734027565"
+    },
+    {
+      "id": "node/12725016916",
+      "name": "Ramyun Zone",
+      "class": "amenity",
+      "subclass": "restaurant",
+      "categories": ["amenity:restaurant"],
+      "coordinate": [120.8686031, 14.2816103],
+      "osmUrl": "https://www.openstreetmap.org/node/12725016916"
+    },
+    {
+      "id": "node/12682535748",
+      "name": "RCBC",
+      "class": "amenity",
+      "subclass": "bank",
+      "categories": ["amenity:bank"],
+      "coordinate": [120.8684827, 14.2826939],
+      "osmUrl": "https://www.openstreetmap.org/node/12682535748"
+    },
+    {
+      "id": "node/12682535757",
+      "name": "RD",
+      "class": "shop",
+      "subclass": "pawnbroker",
+      "categories": ["shop:pawnbroker"],
+      "coordinate": [120.8684433, 14.2831675],
+      "osmUrl": "https://www.openstreetmap.org/node/12682535757"
+    },
+    {
+      "id": "node/2729099066",
+      "name": "Red Ribbon",
+      "class": "shop",
+      "subclass": "bakery",
+      "categories": ["shop:bakery"],
+      "coordinate": [120.8682325, 14.2820252],
+      "osmUrl": "https://www.openstreetmap.org/node/2729099066"
+    },
+    {
+      "id": "node/13452005816",
+      "name": "Red Ribbon",
+      "class": "shop",
+      "subclass": "bakery",
+      "categories": ["shop:bakery"],
+      "coordinate": [120.8707537, 14.2801674],
+      "osmUrl": "https://www.openstreetmap.org/node/13452005816"
+    },
+    {
+      "id": "node/13583586353",
+      "name": "Regatta",
+      "class": "shop",
+      "subclass": "clothes",
+      "categories": ["shop:clothes"],
+      "coordinate": [120.8655541, 14.2815807],
+      "osmUrl": "https://www.openstreetmap.org/node/13583586353"
+    },
+    {
+      "id": "node/1092841588",
+      "name": "Regina",
+      "class": "public_transport",
+      "subclass": "stop_position",
+      "categories": ["public_transport:stop_position"],
+      "coordinate": [120.8778097, 14.2522776],
+      "osmUrl": "https://www.openstreetmap.org/node/1092841588"
+    },
+    {
+      "id": "way/888882465",
+      "name": "Regina Ville Classic Basketball Court",
+      "class": "leisure",
+      "subclass": "pitch",
+      "categories": ["leisure:pitch", "sport:basketball"],
+      "coordinate": [120.86324066000002, 14.299175479999999],
+      "osmUrl": "https://www.openstreetmap.org/way/888882465"
+    },
+    {
+      "id": "node/6295471699",
+      "name": "Reginaville",
+      "class": "public_transport",
+      "subclass": "stop_position",
+      "categories": ["public_transport:stop_position"],
+      "coordinate": [120.8778647, 14.2518546],
+      "osmUrl": "https://www.openstreetmap.org/node/6295471699"
+    },
+    {
+      "id": "node/6355913088",
+      "name": "Reginaville 2000",
+      "class": "tourism",
+      "subclass": "apartment",
+      "categories": ["tourism:apartment"],
+      "coordinate": [120.8781137, 14.252288],
+      "osmUrl": "https://www.openstreetmap.org/node/6355913088"
+    },
+    {
+      "id": "way/318087855",
+      "name": "Regional Trial Court Branches 130 and 131",
+      "class": "amenity",
+      "subclass": "courthouse",
+      "categories": ["amenity:courthouse"],
+      "coordinate": [120.86614302000001, 14.279575159999998],
+      "osmUrl": "https://www.openstreetmap.org/way/318087855"
+    },
+    {
+      "id": "way/672293990",
+      "name": "Registry of Deeds Cavite",
+      "class": "office",
+      "subclass": "government",
+      "categories": ["office:government"],
+      "coordinate": [120.8686277, 14.2790169],
+      "osmUrl": "https://www.openstreetmap.org/way/672293990"
+    },
+    {
+      "id": "way/1451916440",
+      "name": "Rephil",
+      "class": "amenity",
+      "subclass": "fuel",
+      "categories": ["amenity:fuel"],
+      "coordinate": [120.89907880000001, 14.288402599999998],
+      "osmUrl": "https://www.openstreetmap.org/way/1451916440"
+    },
+    {
+      "id": "way/421004869",
+      "name": "Rephil",
+      "class": "amenity",
+      "subclass": "fuel",
+      "categories": ["amenity:fuel"],
+      "coordinate": [120.86287001999999, 14.30585748],
+      "osmUrl": "https://www.openstreetmap.org/way/421004869"
+    },
+    {
+      "id": "node/14070105794",
+      "name": "RePhil De Ocampo",
+      "class": "public_transport",
+      "subclass": "platform",
+      "categories": ["public_transport:platform"],
+      "coordinate": [120.863058, 14.3063379],
+      "osmUrl": "https://www.openstreetmap.org/node/14070105794"
+    },
+    {
+      "id": "node/14070105795",
+      "name": "RePhil De Ocampo",
+      "class": "public_transport",
+      "subclass": "platform",
+      "categories": ["public_transport:platform"],
+      "coordinate": [120.8629507, 14.3062288],
+      "osmUrl": "https://www.openstreetmap.org/node/14070105795"
+    },
+    {
+      "id": "way/318087853",
+      "name": "Republic of Cavite Restaurant",
+      "class": "amenity",
+      "subclass": "restaurant",
+      "categories": ["amenity:restaurant"],
+      "coordinate": [120.86996261111113, 14.280693611111111],
+      "osmUrl": "https://www.openstreetmap.org/way/318087853"
+    },
+    {
+      "id": "node/12683870952",
+      "name": "Rightlife Rehabilitation Center",
+      "class": "healthcare",
+      "subclass": "rehabilitation",
+      "categories": ["healthcare:rehabilitation"],
+      "coordinate": [120.8429722, 14.2246603],
+      "osmUrl": "https://www.openstreetmap.org/node/12683870952"
+    },
+    {
+      "id": "node/13584298436",
+      "name": "Rizal Monument",
+      "class": "historic",
+      "subclass": "monument",
+      "categories": ["historic:monument"],
+      "coordinate": [120.8623105, 14.2818244],
+      "osmUrl": "https://www.openstreetmap.org/node/13584298436"
+    },
+    {
+      "id": "node/12754575901",
+      "name": "Rowel Bakery",
+      "class": "shop",
+      "subclass": "bakery",
+      "categories": ["shop:bakery"],
+      "coordinate": [120.8662363, 14.2739215],
+      "osmUrl": "https://www.openstreetmap.org/node/12754575901"
+    },
+    {
+      "id": "way/1466678797",
+      "name": "Royal Palm Academy",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.8519022, 14.232779540000001],
+      "osmUrl": "https://www.openstreetmap.org/way/1466678797"
+    },
+    {
+      "id": "node/13673820859",
+      "name": "Rural Bank of Angeles",
+      "class": "amenity",
+      "subclass": "bank",
+      "categories": ["amenity:bank"],
+      "coordinate": [120.869446, 14.280621],
+      "osmUrl": "https://www.openstreetmap.org/node/13673820859"
+    },
+    {
+      "id": "way/1376672003",
+      "name": "Rusi",
+      "class": "shop",
+      "subclass": "motorcycle",
+      "categories": ["shop:motorcycle"],
+      "coordinate": [120.87025752, 14.27741532],
+      "osmUrl": "https://www.openstreetmap.org/way/1376672003"
+    },
+    {
+      "id": "node/13394539573",
+      "name": "S&R New York Style Pizza",
+      "class": "amenity",
+      "subclass": "restaurant",
+      "categories": ["amenity:restaurant"],
+      "coordinate": [120.8663498, 14.2816762],
+      "osmUrl": "https://www.openstreetmap.org/node/13394539573"
+    },
+    {
+      "id": "way/267448204",
+      "name": "Saint Jude Parish Church",
+      "class": "amenity",
+      "subclass": "place_of_worship",
+      "categories": ["amenity:place_of_worship"],
+      "coordinate": [120.86968502500001, 14.28178911],
+      "osmUrl": "https://www.openstreetmap.org/way/267448204"
+    },
+    {
+      "id": "way/1369406245",
+      "name": "Saint Jude Parish School",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.86934114615383, 14.281829007692311],
+      "osmUrl": "https://www.openstreetmap.org/way/1369406245"
+    },
+    {
+      "id": "way/683802068",
+      "name": "Saint Thomas Becket Academy",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.8772947, 14.252168757142856],
+      "osmUrl": "https://www.openstreetmap.org/way/683802068"
+    },
+    {
+      "id": "node/12725016915",
+      "name": "Salon Thirty Six",
+      "class": "shop",
+      "subclass": "hairdresser",
+      "categories": ["shop:hairdresser"],
+      "coordinate": [120.8685998, 14.281647],
+      "osmUrl": "https://www.openstreetmap.org/node/12725016915"
+    },
+    {
+      "id": "node/5369564399",
+      "name": "Saluysoy Badminton Court",
+      "class": "leisure",
+      "subclass": "pitch",
+      "categories": ["leisure:pitch", "sport:badminton"],
+      "coordinate": [120.865506, 14.2898852],
+      "osmUrl": "https://www.openstreetmap.org/node/5369564399"
+    },
+    {
+      "id": "way/556655712",
+      "name": "Saluysoy Badminton Court",
+      "class": "leisure",
+      "subclass": "sports_centre",
+      "categories": ["leisure:sports_centre"],
+      "coordinate": [120.86544796000001, 14.289876859999998],
+      "osmUrl": "https://www.openstreetmap.org/way/556655712"
+    },
+    {
+      "id": "node/4797402025",
+      "name": "Samantha's Internet Shop",
+      "class": "amenity",
+      "subclass": "internet_cafe",
+      "categories": ["amenity:internet_cafe"],
+      "coordinate": [120.8743982, 14.3124962],
+      "osmUrl": "https://www.openstreetmap.org/node/4797402025"
+    },
+    {
+      "id": "node/12682628430",
+      "name": "Samgyup 199",
+      "class": "amenity",
+      "subclass": "restaurant",
+      "categories": ["amenity:restaurant"],
+      "coordinate": [120.8765296, 14.2600709],
+      "osmUrl": "https://www.openstreetmap.org/node/12682628430"
+    },
+    {
+      "id": "node/13081237517",
+      "name": "Samgyup sa Farm Indang",
+      "class": "amenity",
+      "subclass": "restaurant",
+      "categories": ["amenity:restaurant"],
+      "coordinate": [120.8794525, 14.2410787],
+      "osmUrl": "https://www.openstreetmap.org/node/13081237517"
+    },
+    {
+      "id": "node/13583586347",
+      "name": "Samgyupsalamat",
+      "class": "amenity",
+      "subclass": "restaurant",
+      "categories": ["amenity:restaurant"],
+      "coordinate": [120.8665303, 14.2816219],
+      "osmUrl": "https://www.openstreetmap.org/node/13583586347"
+    },
+    {
+      "id": "way/318095666",
+      "name": "Sampaguita Church",
+      "class": "amenity",
+      "subclass": "place_of_worship",
+      "categories": ["amenity:place_of_worship"],
+      "coordinate": [120.87287164, 14.26172392],
+      "osmUrl": "https://www.openstreetmap.org/way/318095666"
+    },
+    {
+      "id": "node/6295467308",
+      "name": "Sampaguita Village",
+      "class": "public_transport",
+      "subclass": "stop_position",
+      "categories": ["public_transport:stop_position"],
+      "coordinate": [120.8769348, 14.2606094],
+      "osmUrl": "https://www.openstreetmap.org/node/6295467308"
+    },
+    {
+      "id": "node/6295470119",
+      "name": "Sampaguita Village",
+      "class": "public_transport",
+      "subclass": "stop_position",
+      "categories": ["public_transport:stop_position"],
+      "coordinate": [120.876924, 14.2607554],
+      "osmUrl": "https://www.openstreetmap.org/node/6295470119"
+    },
+    {
+      "id": "node/13682678310",
+      "name": "Samsung",
+      "class": "shop",
+      "subclass": "electronics",
+      "categories": ["shop:electronics"],
+      "coordinate": [120.8659861, 14.2815357],
+      "osmUrl": "https://www.openstreetmap.org/node/13682678310"
+    },
+    {
+      "id": "way/1369545958",
+      "name": "San Gregorio Magno Parish",
+      "class": "amenity",
+      "subclass": "place_of_worship",
+      "categories": ["amenity:place_of_worship"],
+      "coordinate": [120.87895072, 14.24934078],
+      "osmUrl": "https://www.openstreetmap.org/way/1369545958"
+    },
+    {
+      "id": "way/411929897",
+      "name": "San Isidro Labrador Chapel",
+      "class": "amenity",
+      "subclass": "place_of_worship",
+      "categories": ["amenity:place_of_worship"],
+      "coordinate": [120.89570746, 14.2635903],
+      "osmUrl": "https://www.openstreetmap.org/way/411929897"
+    },
+    {
+      "id": "way/318087860",
+      "name": "Schools Division Office of Cavite Province",
+      "class": "office",
+      "subclass": "government",
+      "categories": ["office:government"],
+      "coordinate": [120.86772616428573, 14.278554407142858],
+      "osmUrl": "https://www.openstreetmap.org/way/318087860"
+    },
+    {
+      "id": "way/1455081395",
+      "name": "Seaoil",
+      "class": "amenity",
+      "subclass": "fuel",
+      "categories": ["amenity:fuel"],
+      "coordinate": [120.87362937999998, 14.270531219999999],
+      "osmUrl": "https://www.openstreetmap.org/way/1455081395"
+    },
+    {
+      "id": "way/940639388",
+      "name": "Seventh Day Adventist",
+      "class": "amenity",
+      "subclass": "place_of_worship",
+      "categories": ["amenity:place_of_worship"],
+      "coordinate": [120.84316888000001, 14.2831911],
+      "osmUrl": "https://www.openstreetmap.org/way/940639388"
+    },
+    {
+      "id": "node/13583586350",
+      "name": "Shakey's",
+      "class": "amenity",
+      "subclass": "restaurant",
+      "categories": ["amenity:restaurant"],
+      "coordinate": [120.8662088, 14.2818816],
+      "osmUrl": "https://www.openstreetmap.org/node/13583586350"
+    },
+    {
+      "id": "node/12725016907",
+      "name": "Shawarma Shack",
+      "class": "amenity",
+      "subclass": "fast_food",
+      "categories": ["amenity:fast_food"],
+      "coordinate": [120.8686116, 14.2813106],
+      "osmUrl": "https://www.openstreetmap.org/node/12725016907"
+    },
+    {
+      "id": "way/1455081374",
+      "name": "Shell",
+      "class": "amenity",
+      "subclass": "fuel",
+      "categories": ["amenity:fuel"],
+      "coordinate": [120.87772927142858, 14.250655285714286],
+      "osmUrl": "https://www.openstreetmap.org/way/1455081374"
+    },
+    {
+      "id": "way/1298951758",
+      "name": "Shell",
+      "class": "amenity",
+      "subclass": "fuel",
+      "categories": ["amenity:fuel"],
+      "coordinate": [120.869254, 14.2825061],
+      "osmUrl": "https://www.openstreetmap.org/way/1298951758"
+    },
+    {
+      "id": "way/608815736",
+      "name": "Shell",
+      "class": "amenity",
+      "subclass": "fuel",
+      "categories": ["amenity:fuel"],
+      "coordinate": [120.88716781999999, 14.28051911],
+      "osmUrl": "https://www.openstreetmap.org/way/608815736"
+    },
+    {
+      "id": "node/13343994933",
+      "name": "Shell Select",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.8775824, 14.2505377],
+      "osmUrl": "https://www.openstreetmap.org/node/13343994933"
+    },
+    {
+      "id": "node/12032750278",
+      "name": "Shell Shop",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.8691121, 14.2824123],
+      "osmUrl": "https://www.openstreetmap.org/node/12032750278"
+    },
+    {
+      "id": "node/12032750284",
+      "name": "Shellane",
+      "class": "shop",
+      "subclass": "gas",
+      "categories": ["shop:gas"],
+      "coordinate": [120.8691526, 14.2825526],
+      "osmUrl": "https://www.openstreetmap.org/node/12032750284"
+    },
+    {
+      "id": "way/987623407",
+      "name": "Sherwood Hills Golf Club",
+      "class": "leisure",
+      "subclass": "golf_course",
+      "categories": ["leisure:golf_course"],
+      "coordinate": [120.89167958099176, 14.259604036363639],
+      "osmUrl": "https://www.openstreetmap.org/way/987623407"
+    },
+    {
+      "id": "way/318116902",
+      "name": "Sherwood Hills Golf Club House",
+      "class": "leisure",
+      "subclass": "sports_centre",
+      "categories": ["leisure:sports_centre"],
+      "coordinate": [120.89257775454547, 14.259226881818181],
+      "osmUrl": "https://www.openstreetmap.org/way/318116902"
+    },
+    {
+      "id": "node/12682535759",
+      "name": "Sinag",
+      "class": "shop",
+      "subclass": "pawnbroker",
+      "categories": ["shop:pawnbroker"],
+      "coordinate": [120.8684495, 14.2829026],
+      "osmUrl": "https://www.openstreetmap.org/node/12682535759"
+    },
+    {
+      "id": "node/13394539572",
+      "name": "SM Cinema",
+      "class": "amenity",
+      "subclass": "cinema",
+      "categories": ["amenity:cinema"],
+      "coordinate": [120.8662674, 14.2812546],
+      "osmUrl": "https://www.openstreetmap.org/node/13394539572"
+    },
+    {
+      "id": "node/5984190958",
+      "name": "SM City Trece Martires",
+      "class": "public_transport",
+      "subclass": "stop_position",
+      "categories": ["public_transport:stop_position"],
+      "coordinate": [120.867108, 14.2815483],
+      "osmUrl": "https://www.openstreetmap.org/node/5984190958"
+    },
+    {
+      "id": "node/8703583247",
+      "name": "SM City Trece Martires",
+      "class": "public_transport",
+      "subclass": "platform",
+      "categories": ["public_transport:platform"],
+      "coordinate": [120.8659861, 14.2822939],
+      "osmUrl": "https://www.openstreetmap.org/node/8703583247"
+    },
+    {
+      "id": "way/939604551",
+      "name": "SM City Trece Martires",
+      "class": "public_transport",
+      "subclass": "platform",
+      "categories": ["public_transport:platform"],
+      "coordinate": [120.86599656666665, 14.282253400000002],
+      "osmUrl": "https://www.openstreetmap.org/way/939604551"
+    },
+    {
+      "id": "relation/8754473",
+      "name": "SM City Trece Martires",
+      "class": "shop",
+      "subclass": "mall",
+      "categories": ["shop:mall"],
+      "coordinate": [120.86599462558142, 14.281411309302332],
+      "osmUrl": "https://www.openstreetmap.org/relation/8754473"
+    },
+    {
+      "id": "way/469524103",
+      "name": "SM City Trece Martires Park",
+      "class": "leisure",
+      "subclass": "park",
+      "categories": ["leisure:park"],
+      "coordinate": [120.86685378999998, 14.28203762],
+      "osmUrl": "https://www.openstreetmap.org/way/469524103"
+    },
+    {
+      "id": "node/4319003070",
+      "name": "SM Food Court",
+      "class": "amenity",
+      "subclass": "food_court",
+      "categories": ["amenity:food_court"],
+      "coordinate": [120.8667087, 14.2815969],
+      "osmUrl": "https://www.openstreetmap.org/node/4319003070"
+    },
+    {
+      "id": "way/1493182664",
+      "name": "SM Food Court",
+      "class": "amenity",
+      "subclass": "food_court",
+      "categories": ["amenity:food_court"],
+      "coordinate": [120.86665922000002, 14.281651160000001],
+      "osmUrl": "https://www.openstreetmap.org/way/1493182664"
+    },
+    {
+      "id": "node/13394539576",
+      "name": "SM Supermarket",
+      "class": "shop",
+      "subclass": "supermarket",
+      "categories": ["shop:supermarket"],
+      "coordinate": [120.8666891, 14.2816841],
+      "osmUrl": "https://www.openstreetmap.org/node/13394539576"
+    },
+    {
+      "id": "way/1422947191",
+      "name": "SM Trece TODA",
+      "class": "amenity",
+      "subclass": "taxi",
+      "categories": ["amenity:taxi"],
+      "coordinate": [120.86677278999998, 14.280862250000002],
+      "osmUrl": "https://www.openstreetmap.org/way/1422947191"
+    },
+    {
+      "id": "node/12682535760",
+      "name": "SMJ",
+      "class": "shop",
+      "subclass": "pawnbroker",
+      "categories": ["shop:pawnbroker"],
+      "coordinate": [120.8684382, 14.282965],
+      "osmUrl": "https://www.openstreetmap.org/node/12682535760"
+    },
+    {
+      "id": "node/12682628425",
+      "name": "Southstar Drug",
+      "class": "amenity",
+      "subclass": "pharmacy",
+      "categories": ["amenity:pharmacy", "healthcare:pharmacy"],
+      "coordinate": [120.8765204, 14.2603465],
+      "osmUrl": "https://www.openstreetmap.org/node/12682628425"
+    },
+    {
+      "id": "node/12679516608",
+      "name": "Southstar Drug",
+      "class": "amenity",
+      "subclass": "pharmacy",
+      "categories": ["amenity:pharmacy", "healthcare:pharmacy"],
+      "coordinate": [120.8692318, 14.2805864],
+      "osmUrl": "https://www.openstreetmap.org/node/12679516608"
+    },
+    {
+      "id": "node/12682535766",
+      "name": "Southstar Drug",
+      "class": "amenity",
+      "subclass": "pharmacy",
+      "categories": ["amenity:pharmacy", "healthcare:pharmacy"],
+      "coordinate": [120.8682559, 14.2818072],
+      "osmUrl": "https://www.openstreetmap.org/node/12682535766"
+    },
+    {
+      "id": "way/1187058828",
+      "name": "Southville Elementary School",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.86957364, 14.2567533],
+      "osmUrl": "https://www.openstreetmap.org/way/1187058828"
+    },
+    {
+      "id": "node/12682535753",
+      "name": "Sr. Pedro",
+      "class": "amenity",
+      "subclass": "fast_food",
+      "categories": ["amenity:fast_food"],
+      "coordinate": [120.8682137, 14.2833628],
+      "osmUrl": "https://www.openstreetmap.org/node/12682535753"
+    },
+    {
+      "id": "node/13343995907",
+      "name": "SSL 888 Trading Corporation",
+      "class": "shop",
+      "subclass": "motorcycle",
+      "categories": ["shop:motorcycle"],
+      "coordinate": [120.8739904, 14.2697706],
+      "osmUrl": "https://www.openstreetmap.org/node/13343995907"
+    },
+    {
+      "id": "node/13081237518",
+      "name": "St. Peter",
+      "class": "shop",
+      "subclass": "funeral_directors",
+      "categories": ["shop:funeral_directors"],
+      "coordinate": [120.8791675, 14.2455033],
+      "osmUrl": "https://www.openstreetmap.org/node/13081237518"
+    },
+    {
+      "id": "node/12697808069",
+      "name": "Starbucks",
+      "class": "amenity",
+      "subclass": "cafe",
+      "categories": ["amenity:cafe"],
+      "coordinate": [120.8658015, 14.2820385],
+      "osmUrl": "https://www.openstreetmap.org/node/12697808069"
+    },
+    {
+      "id": "node/13682670490",
+      "name": "Step Mart Supermarket",
+      "class": "shop",
+      "subclass": "supermarket",
+      "categories": ["shop:supermarket"],
+      "coordinate": [120.8485124, 14.2813292],
+      "osmUrl": "https://www.openstreetmap.org/node/13682670490"
+    },
+    {
+      "id": "way/1455081386",
+      "name": "Stepmart Inocencio",
+      "class": "shop",
+      "subclass": "mall",
+      "categories": ["shop:mall"],
+      "coordinate": [120.87632410909092, 14.260218554545453],
+      "osmUrl": "https://www.openstreetmap.org/way/1455081386"
+    },
+    {
+      "id": "node/6335465388",
+      "name": "Super8",
+      "class": "shop",
+      "subclass": "supermarket",
+      "categories": ["shop:supermarket"],
+      "coordinate": [120.8708951, 14.2747595],
+      "osmUrl": "https://www.openstreetmap.org/node/6335465388"
+    },
+    {
+      "id": "way/1499688316",
+      "name": "Superb Autotech Services",
+      "class": "amenity",
+      "subclass": "car_wash",
+      "categories": ["amenity:car_wash"],
+      "coordinate": [120.86565043750001, 14.2830063625],
+      "osmUrl": "https://www.openstreetmap.org/way/1499688316"
+    },
+    {
+      "id": "node/5369593754",
+      "name": "Sustamina",
+      "class": "shop",
+      "subclass": "butcher",
+      "categories": ["shop:butcher"],
+      "coordinate": [120.8683006, 14.2845059],
+      "osmUrl": "https://www.openstreetmap.org/node/5369593754"
+    },
+    {
+      "id": "node/14001442901",
+      "name": "Sweet siblings Store",
+      "class": "shop",
+      "subclass": "variety_store",
+      "categories": ["shop:variety_store"],
+      "coordinate": [120.8892179, 14.2861698],
+      "osmUrl": "https://www.openstreetmap.org/node/14001442901"
+    },
+    {
+      "id": "node/12682535758",
+      "name": "Tambunting",
+      "class": "shop",
+      "subclass": "pawnbroker",
+      "categories": ["shop:pawnbroker"],
+      "coordinate": [120.8684453, 14.2831138],
+      "osmUrl": "https://www.openstreetmap.org/node/12682535758"
+    },
+    {
+      "id": "way/1341831488",
+      "name": "Tanauan Barangay Hall",
+      "class": "amenity",
+      "subclass": "townhall",
+      "categories": ["amenity:townhall"],
+      "coordinate": [120.83210286, 14.291434559999999],
+      "osmUrl": "https://www.openstreetmap.org/way/1341831488"
+    },
+    {
+      "id": "node/8794652042",
+      "name": "Tanauan cs",
+      "class": "shop",
+      "subclass": "hardware",
+      "categories": ["shop:hardware"],
+      "coordinate": [120.8295235, 14.2921748],
+      "osmUrl": "https://www.openstreetmap.org/node/8794652042"
+    },
+    {
+      "id": "node/11413917970",
+      "name": "tepzmart",
+      "class": "shop",
+      "subclass": "beverages",
+      "categories": ["shop:beverages"],
+      "coordinate": [120.8746102, 14.3121472],
+      "osmUrl": "https://www.openstreetmap.org/node/11413917970"
+    },
+    {
+      "id": "way/418866053",
+      "name": "TESDA Cavite Provincial Office",
+      "class": "office",
+      "subclass": "government",
+      "categories": ["office:government"],
+      "coordinate": [120.86440971818183, 14.281334145454547],
+      "osmUrl": "https://www.openstreetmap.org/way/418866053"
+    },
+    {
+      "id": "node/12682535762",
+      "name": "Text Master",
+      "class": "shop",
+      "subclass": "copyshop",
+      "categories": ["shop:copyshop"],
+      "coordinate": [120.8684736, 14.2827441],
+      "osmUrl": "https://www.openstreetmap.org/node/12682535762"
+    },
+    {
+      "id": "node/13343994958",
+      "name": "TGP",
+      "class": "amenity",
+      "subclass": "pharmacy",
+      "categories": ["amenity:pharmacy", "healthcare:pharmacy"],
+      "coordinate": [120.8774555, 14.252722],
+      "osmUrl": "https://www.openstreetmap.org/node/13343994958"
+    },
+    {
+      "id": "node/12682535745",
+      "name": "TGP",
+      "class": "amenity",
+      "subclass": "pharmacy",
+      "categories": ["amenity:pharmacy", "healthcare:pharmacy"],
+      "coordinate": [120.8687375, 14.2823914],
+      "osmUrl": "https://www.openstreetmap.org/node/12682535745"
+    },
+    {
+      "id": "node/14001452101",
+      "name": "Thatzkie store",
+      "class": "shop",
+      "subclass": "variety_store",
+      "categories": ["shop:variety_store"],
+      "coordinate": [120.8892792, 14.2860309],
+      "osmUrl": "https://www.openstreetmap.org/node/14001452101"
+    },
+    {
+      "id": "way/267448210",
+      "name": "The Church of Jesus Christ of Latter-day Saints - Trece Martires",
+      "class": "amenity",
+      "subclass": "place_of_worship",
+      "categories": ["amenity:place_of_worship"],
+      "coordinate": [120.85954916923076, 14.285990100000003],
+      "osmUrl": "https://www.openstreetmap.org/way/267448210"
+    },
+    {
+      "id": "node/13583586348",
+      "name": "The Coffee Bean & Tea Leaf",
+      "class": "amenity",
+      "subclass": "cafe",
+      "categories": ["amenity:cafe"],
+      "coordinate": [120.8654291, 14.2818504],
+      "osmUrl": "https://www.openstreetmap.org/node/13583586348"
+    },
+    {
+      "id": "way/563319612",
+      "name": "The Gentri Heights Basketball Court",
+      "class": "leisure",
+      "subclass": "pitch",
+      "categories": ["leisure:pitch", "sport:basketball"],
+      "coordinate": [120.89560683333336, 14.294774258333334],
+      "osmUrl": "https://www.openstreetmap.org/way/563319612"
+    },
+    {
+      "id": "node/10589743864",
+      "name": "The Gentri Heights Homeowners Association",
+      "class": "office",
+      "subclass": "association",
+      "categories": ["office:association"],
+      "coordinate": [120.8953223, 14.2947148],
+      "osmUrl": "https://www.openstreetmap.org/node/10589743864"
+    },
+    {
+      "id": "relation/8515838",
+      "name": "The Gentri Heights Swimming Pool Facility",
+      "class": "leisure",
+      "subclass": "sports_centre",
+      "categories": ["leisure:sports_centre", "sport:swimming"],
+      "coordinate": [120.89528106000004, 14.294950630000002],
+      "osmUrl": "https://www.openstreetmap.org/relation/8515838"
+    },
+    {
+      "id": "node/13076905585",
+      "name": "The Shawarma Shack",
+      "class": "amenity",
+      "subclass": "fast_food",
+      "categories": ["amenity:fast_food"],
+      "coordinate": [120.8656743, 14.2813152],
+      "osmUrl": "https://www.openstreetmap.org/node/13076905585"
+    },
+    {
+      "id": "node/12728067332",
+      "name": "The SM Store",
+      "class": "shop",
+      "subclass": "department_store",
+      "categories": ["shop:department_store"],
+      "coordinate": [120.8654033, 14.2817355],
+      "osmUrl": "https://www.openstreetmap.org/node/12728067332"
+    },
+    {
+      "id": "node/8280402597",
+      "name": "Thirteen Martyrs of Cavite",
+      "class": "historic",
+      "subclass": "memorial",
+      "categories": ["historic:memorial"],
+      "coordinate": [120.8707909, 14.2809048],
+      "osmUrl": "https://www.openstreetmap.org/node/8280402597"
+    },
+    {
+      "id": "node/12679516613",
+      "name": "THM Motorcycles & Scooters",
+      "class": "shop",
+      "subclass": "motorcycle",
+      "categories": ["shop:motorcycle"],
+      "coordinate": [120.8696505, 14.2806261],
+      "osmUrl": "https://www.openstreetmap.org/node/12679516613"
+    },
+    {
+      "id": "node/13720431708",
+      "name": "Time Fries",
+      "class": "amenity",
+      "subclass": "fast_food",
+      "categories": ["amenity:fast_food"],
+      "coordinate": [120.8709896, 14.2748299],
+      "osmUrl": "https://www.openstreetmap.org/node/13720431708"
+    },
+    {
+      "id": "node/11175875137",
+      "name": "TMSL291NAP3",
+      "class": "tourism",
+      "subclass": "attraction",
+      "categories": ["tourism:attraction"],
+      "coordinate": [120.8529141, 14.2914219],
+      "osmUrl": "https://www.openstreetmap.org/node/11175875137"
+    },
+    {
+      "id": "node/11175863037",
+      "name": "TMSLP291 NAP1&2",
+      "class": "tourism",
+      "subclass": "attraction",
+      "categories": ["tourism:attraction"],
+      "coordinate": [120.8532398, 14.2917826],
+      "osmUrl": "https://www.openstreetmap.org/node/11175863037"
+    },
+    {
+      "id": "node/11526661169",
+      "name": "TMSLP311NAP4",
+      "class": "amenity",
+      "subclass": "post_box",
+      "categories": ["amenity:post_box"],
+      "coordinate": [120.8450443, 14.2685833],
+      "osmUrl": "https://www.openstreetmap.org/node/11526661169"
+    },
+    {
+      "id": "node/11140289605",
+      "name": "TMSLP48NAP5",
+      "class": "tourism",
+      "subclass": "attraction",
+      "categories": ["tourism:attraction"],
+      "coordinate": [120.8582644, 14.3045434],
+      "osmUrl": "https://www.openstreetmap.org/node/11140289605"
+    },
+    {
+      "id": "node/13076905584",
+      "name": "Tokyo Tokyo",
+      "class": "amenity",
+      "subclass": "fast_food",
+      "categories": ["amenity:fast_food"],
+      "coordinate": [120.865497, 14.2814034],
+      "osmUrl": "https://www.openstreetmap.org/node/13076905584"
+    },
+    {
+      "id": "way/1376672034",
+      "name": "Tops Sizzling",
+      "class": "amenity",
+      "subclass": "restaurant",
+      "categories": ["amenity:restaurant"],
+      "coordinate": [120.86400258, 14.283803699999998],
+      "osmUrl": "https://www.openstreetmap.org/way/1376672034"
+    },
+    {
+      "id": "node/12679516614",
+      "name": "Transcycle",
+      "class": "shop",
+      "subclass": "motorcycle",
+      "categories": ["shop:motorcycle"],
+      "coordinate": [120.8697371, 14.2806355],
+      "osmUrl": "https://www.openstreetmap.org/node/12679516614"
+    },
+    {
+      "id": "node/13682678262",
+      "name": "Trece Cafe & Kitchen",
+      "class": "amenity",
+      "subclass": "cafe",
+      "categories": ["amenity:cafe"],
+      "coordinate": [120.8600357, 14.2858165],
+      "osmUrl": "https://www.openstreetmap.org/node/13682678262"
+    },
+    {
+      "id": "way/419666427",
+      "name": "Trece Central United Methodist Church",
+      "class": "amenity",
+      "subclass": "place_of_worship",
+      "categories": ["amenity:place_of_worship"],
+      "coordinate": [120.87508992000001, 14.266825880000003],
+      "osmUrl": "https://www.openstreetmap.org/way/419666427"
+    },
+    {
+      "id": "node/13673730613",
+      "name": "Trece Martires",
+      "class": "public_transport",
+      "subclass": "platform",
+      "categories": ["public_transport:platform"],
+      "coordinate": [120.8684996, 14.2805298],
+      "osmUrl": "https://www.openstreetmap.org/node/13673730613"
+    },
+    {
+      "id": "node/14070110410",
+      "name": "Trece Martires Bus Terminal",
+      "class": "public_transport",
+      "subclass": "platform",
+      "categories": ["public_transport:platform"],
+      "coordinate": [120.8672851, 14.2815795],
+      "osmUrl": "https://www.openstreetmap.org/node/14070110410"
+    },
+    {
+      "id": "way/318090547",
+      "name": "Trece Martires City College",
+      "class": "amenity",
+      "subclass": "college",
+      "categories": ["amenity:college"],
+      "coordinate": [120.87122888181821, 14.27394601818182],
+      "osmUrl": "https://www.openstreetmap.org/way/318090547"
+    },
+    {
+      "id": "way/318087862",
+      "name": "Trece Martires City College - College of Criminology",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.86859914166668, 14.278075558333335],
+      "osmUrl": "https://www.openstreetmap.org/way/318087862"
+    },
+    {
+      "id": "node/14070105788",
+      "name": "Trece Martires City Elementary School",
+      "class": "public_transport",
+      "subclass": "platform",
+      "categories": ["public_transport:platform"],
+      "coordinate": [120.8680844, 14.2870055],
+      "osmUrl": "https://www.openstreetmap.org/node/14070105788"
+    },
+    {
+      "id": "node/14070105789",
+      "name": "Trece Martires City Elementary School",
+      "class": "public_transport",
+      "subclass": "platform",
+      "categories": ["public_transport:platform"],
+      "coordinate": [120.8679557, 14.2866273],
+      "osmUrl": "https://www.openstreetmap.org/node/14070105789"
+    },
+    {
+      "id": "relation/8814264",
+      "name": "Trece Martires City Elementary School",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.86871910555553, 14.287207638888889],
+      "osmUrl": "https://www.openstreetmap.org/relation/8814264"
+    },
+    {
+      "id": "way/672283883",
+      "name": "Trece Martires City Fire Station",
+      "class": "amenity",
+      "subclass": "fire_station",
+      "categories": ["amenity:fire_station"],
+      "coordinate": [120.86842574166666, 14.2804741],
+      "osmUrl": "https://www.openstreetmap.org/way/672283883"
+    },
+    {
+      "id": "node/8703583245",
+      "name": "Trece Martires City Hall",
+      "class": "public_transport",
+      "subclass": "platform",
+      "categories": ["public_transport:platform"],
+      "coordinate": [120.8707137, 14.2814125],
+      "osmUrl": "https://www.openstreetmap.org/node/8703583245"
+    },
+    {
+      "id": "way/153794659",
+      "name": "Trece Martires City Hall",
+      "class": "amenity",
+      "subclass": "townhall",
+      "categories": ["amenity:townhall"],
+      "coordinate": [120.87026409999999, 14.281258562500001],
+      "osmUrl": "https://www.openstreetmap.org/way/153794659"
+    },
+    {
+      "id": "way/939987877",
+      "name": "Trece Martires City Jail",
+      "class": "amenity",
+      "subclass": "prison",
+      "categories": ["amenity:prison"],
+      "coordinate": [120.87668281666667, 14.282437583333333],
+      "osmUrl": "https://www.openstreetmap.org/way/939987877"
+    },
+    {
+      "id": "way/153794657",
+      "name": "Trece Martires City National High School",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.86469242857142, 14.280157621428572],
+      "osmUrl": "https://www.openstreetmap.org/way/153794657"
+    },
+    {
+      "id": "way/1370283171",
+      "name": "Trece Martires City National High School - Cabuco Extension",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.85147803333332, 14.27965245],
+      "osmUrl": "https://www.openstreetmap.org/way/1370283171"
+    },
+    {
+      "id": "way/980916010",
+      "name": "Trece Martires City National High School – Cabezas Annex",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.89598861249999, 14.2622080125],
+      "osmUrl": "https://www.openstreetmap.org/way/980916010"
+    },
+    {
+      "id": "way/985008725",
+      "name": "Trece Martires City National High School – Conchu Annex",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.88329607142859, 14.245371514285713],
+      "osmUrl": "https://www.openstreetmap.org/way/985008725"
+    },
+    {
+      "id": "way/271981216",
+      "name": "Trece Martires City Public Market",
+      "class": "amenity",
+      "subclass": "marketplace",
+      "categories": ["amenity:marketplace"],
+      "coordinate": [120.86755080571427, 14.282626634285716],
+      "osmUrl": "https://www.openstreetmap.org/way/271981216"
+    },
+    {
+      "id": "node/5624366602",
+      "name": "Trece Martires City Public Transport Terminal",
+      "class": "public_transport",
+      "subclass": "stop_position",
+      "categories": ["public_transport:stop_position"],
+      "coordinate": [120.8684055, 14.2810713],
+      "osmUrl": "https://www.openstreetmap.org/node/5624366602"
+    },
+    {
+      "id": "way/588419424",
+      "name": "Trece Martires City Public Transport Terminal",
+      "class": "amenity",
+      "subclass": "bus_station",
+      "categories": ["amenity:bus_station", "public_transport:station"],
+      "coordinate": [120.8682531, 14.28114458888889],
+      "osmUrl": "https://www.openstreetmap.org/way/588419424"
+    },
+    {
+      "id": "way/1225108051",
+      "name": "Trece Martires City Senior High School",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.8761399, 14.283149500000002],
+      "osmUrl": "https://www.openstreetmap.org/way/1225108051"
+    },
+    {
+      "id": "way/1119117875",
+      "name": "Trece Martires City Water District",
+      "class": "office",
+      "subclass": "water_utility",
+      "categories": ["office:water_utility"],
+      "coordinate": [120.86423352, 14.28196872],
+      "osmUrl": "https://www.openstreetmap.org/way/1119117875"
+    },
+    {
+      "id": "way/318116874",
+      "name": "Trece Martires Component City Police Station",
+      "class": "amenity",
+      "subclass": "police",
+      "categories": ["amenity:police"],
+      "coordinate": [120.87708669999999, 14.2825829],
+      "osmUrl": "https://www.openstreetmap.org/way/318116874"
+    },
+    {
+      "id": "way/318090543",
+      "name": "Trece Martires Forest Park",
+      "class": "leisure",
+      "subclass": "park",
+      "categories": ["leisure:park"],
+      "coordinate": [120.86932571538462, 14.274006438461535],
+      "osmUrl": "https://www.openstreetmap.org/way/318090543"
+    },
+    {
+      "id": "way/997059507",
+      "name": "Trece Martires National High School - Hugo Perez Extension",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.89244884545455, 14.298190218181817],
+      "osmUrl": "https://www.openstreetmap.org/way/997059507"
+    },
+    {
+      "id": "node/13632928825",
+      "name": "Trece Martires Night Market",
+      "class": "amenity",
+      "subclass": "food_court",
+      "categories": ["amenity:food_court"],
+      "coordinate": [120.8682431, 14.2823576],
+      "osmUrl": "https://www.openstreetmap.org/node/13632928825"
+    },
+    {
+      "id": "node/12682535789",
+      "name": "Trece Martires Post Office",
+      "class": "amenity",
+      "subclass": "post_office",
+      "categories": ["amenity:post_office"],
+      "coordinate": [120.8707454, 14.2809509],
+      "osmUrl": "https://www.openstreetmap.org/node/12682535789"
+    },
+    {
+      "id": "way/1490920848",
+      "name": "Trece Martires Tricycle Stand",
+      "class": "amenity",
+      "subclass": "taxi",
+      "categories": ["amenity:taxi"],
+      "coordinate": [120.86703894444446, 14.282353311111113],
+      "osmUrl": "https://www.openstreetmap.org/way/1490920848"
+    },
+    {
+      "id": "node/13682678275",
+      "name": "TriStellar",
+      "class": "shop",
+      "subclass": "rice",
+      "categories": ["shop:rice"],
+      "coordinate": [120.8625797, 14.2845432],
+      "osmUrl": "https://www.openstreetmap.org/node/13682678275"
+    },
+    {
+      "id": "node/12682535744",
+      "name": "U Super Service Center",
+      "class": "amenity",
+      "subclass": "payment_centre",
+      "categories": ["amenity:payment_centre"],
+      "coordinate": [120.8685741, 14.2823311],
+      "osmUrl": "https://www.openstreetmap.org/node/12682535744"
+    },
+    {
+      "id": "node/13452005817",
+      "name": "U Super Service Center",
+      "class": "amenity",
+      "subclass": "payment_centre",
+      "categories": ["amenity:payment_centre"],
+      "coordinate": [120.8707898, 14.2800787],
+      "osmUrl": "https://www.openstreetmap.org/node/13452005817"
+    },
+    {
+      "id": "way/415482634",
+      "name": "Uncle John's",
+      "class": "shop",
+      "subclass": "convenience",
+      "categories": ["shop:convenience"],
+      "coordinate": [120.87092378, 14.27596948],
+      "osmUrl": "https://www.openstreetmap.org/way/415482634"
+    },
+    {
+      "id": "way/419138920",
+      "name": "Unioil",
+      "class": "amenity",
+      "subclass": "fuel",
+      "categories": ["amenity:fuel"],
+      "coordinate": [120.86195502000001, 14.312225960000001],
+      "osmUrl": "https://www.openstreetmap.org/way/419138920"
+    },
+    {
+      "id": "way/415483501",
+      "name": "Union of Enterprising Cooperatives",
+      "class": "office",
+      "subclass": "quango",
+      "categories": ["office:quango"],
+      "coordinate": [120.86714366000001, 14.28101044],
+      "osmUrl": "https://www.openstreetmap.org/way/415483501"
+    },
+    {
+      "id": "way/1369414092",
+      "name": "Uno Fuel",
+      "class": "amenity",
+      "subclass": "fuel",
+      "categories": ["amenity:fuel"],
+      "coordinate": [120.87702306000001, 14.263316839999998],
+      "osmUrl": "https://www.openstreetmap.org/way/1369414092"
+    },
+    {
+      "id": "way/1312721594",
+      "name": "Uno Fuel",
+      "class": "amenity",
+      "subclass": "fuel",
+      "categories": ["amenity:fuel"],
+      "coordinate": [120.85990671666666, 14.285927066666666],
+      "osmUrl": "https://www.openstreetmap.org/way/1312721594"
+    },
+    {
+      "id": "way/1451863101",
+      "name": "Uno Fuel",
+      "class": "amenity",
+      "subclass": "fuel",
+      "categories": ["amenity:fuel"],
+      "coordinate": [120.89754453333332, 14.287483166666668],
+      "osmUrl": "https://www.openstreetmap.org/way/1451863101"
+    },
+    {
+      "id": "way/1037869661",
+      "name": "Uno Fuel",
+      "class": "amenity",
+      "subclass": "fuel",
+      "categories": ["amenity:fuel"],
+      "coordinate": [120.86779636000001, 14.292533299999999],
+      "osmUrl": "https://www.openstreetmap.org/way/1037869661"
+    },
+    {
+      "id": "way/1225108412",
+      "name": "Victoriano Luciano Elementary School",
+      "class": "amenity",
+      "subclass": "school",
+      "categories": ["amenity:school"],
+      "coordinate": [120.87131738000001, 14.26849178],
+      "osmUrl": "https://www.openstreetmap.org/way/1225108412"
+    },
+    {
+      "id": "node/7161478985",
+      "name": "Victory Christian Church (VCC)",
+      "class": "amenity",
+      "subclass": "place_of_worship",
+      "categories": ["amenity:place_of_worship"],
+      "coordinate": [120.8880681, 14.2783649],
+      "osmUrl": "https://www.openstreetmap.org/node/7161478985"
+    },
+    {
+      "id": "node/10277115971",
+      "name": "Villa Armando Private Resort",
+      "class": "leisure",
+      "subclass": "resort",
+      "categories": ["leisure:resort"],
+      "coordinate": [120.8977657, 14.2216719],
+      "osmUrl": "https://www.openstreetmap.org/node/10277115971"
+    },
+    {
+      "id": "way/318095674",
+      "name": "Villa Inocencio",
+      "class": "tourism",
+      "subclass": "yes",
+      "categories": ["tourism:yes"],
+      "coordinate": [120.87652348000002, 14.259031240000002],
+      "osmUrl": "https://www.openstreetmap.org/way/318095674"
+    },
+    {
+      "id": "way/228088016",
+      "name": "WalterMart",
+      "class": "shop",
+      "subclass": "mall",
+      "categories": ["shop:mall"],
+      "coordinate": [120.87069284333332, 14.280369050000001],
+      "osmUrl": "https://www.openstreetmap.org/way/228088016"
+    },
+    {
+      "id": "node/2367318997",
+      "name": "WalterMart Supermarket",
+      "class": "shop",
+      "subclass": "supermarket",
+      "categories": ["shop:supermarket"],
+      "coordinate": [120.8703193, 14.2800969],
+      "osmUrl": "https://www.openstreetmap.org/node/2367318997"
+    },
+    {
+      "id": "node/5620738110",
+      "name": "WalterMart Trece Martires",
+      "class": "amenity",
+      "subclass": "bus_station",
+      "categories": ["amenity:bus_station", "public_transport:station"],
+      "coordinate": [120.8711815, 14.2805845],
+      "osmUrl": "https://www.openstreetmap.org/node/5620738110"
+    },
+    {
+      "id": "node/8703583244",
+      "name": "WalterMart Trece Martires",
+      "class": "public_transport",
+      "subclass": "platform",
+      "categories": ["public_transport:platform"],
+      "coordinate": [120.8715944, 14.2806025],
+      "osmUrl": "https://www.openstreetmap.org/node/8703583244"
+    },
+    {
+      "id": "node/8703584964",
+      "name": "WalterMart Trece Martires 1",
+      "class": "public_transport",
+      "subclass": "platform",
+      "categories": ["public_transport:platform"],
+      "coordinate": [120.8707557, 14.2807369],
+      "osmUrl": "https://www.openstreetmap.org/node/8703584964"
+    },
+    {
+      "id": "node/8703583243",
+      "name": "WalterMart Trece Martires 2",
+      "class": "public_transport",
+      "subclass": "platform",
+      "categories": ["public_transport:platform"],
+      "coordinate": [120.8718914, 14.2802974],
+      "osmUrl": "https://www.openstreetmap.org/node/8703583243"
+    },
+    {
+      "id": "node/12682535769",
+      "name": "Watsons",
+      "class": "shop",
+      "subclass": "chemist",
+      "categories": ["shop:chemist"],
+      "coordinate": [120.8687024, 14.2807886],
+      "osmUrl": "https://www.openstreetmap.org/node/12682535769"
+    },
+    {
+      "id": "node/13394539568",
+      "name": "Watsons",
+      "class": "shop",
+      "subclass": "chemist",
+      "categories": ["shop:chemist"],
+      "coordinate": [120.8659733, 14.2817894],
+      "osmUrl": "https://www.openstreetmap.org/node/13394539568"
+    },
+    {
+      "id": "node/8794670528",
+      "name": "Widesky hardwarr",
+      "class": "shop",
+      "subclass": "hardware",
+      "categories": ["shop:hardware"],
+      "coordinate": [120.8307018, 14.2917072],
+      "osmUrl": "https://www.openstreetmap.org/node/8794670528"
+    },
+    {
+      "id": "node/12725016908",
+      "name": "Wow Japanese Cakes",
+      "class": "amenity",
+      "subclass": "fast_food",
+      "categories": ["amenity:fast_food"],
+      "coordinate": [120.8685595, 14.2814313],
+      "osmUrl": "https://www.openstreetmap.org/node/12725016908"
+    },
+    {
+      "id": "way/282644353",
+      "name": "Yamaha",
+      "class": "shop",
+      "subclass": "motorcycle",
+      "categories": ["shop:motorcycle"],
+      "coordinate": [120.86906078, 14.27912326],
+      "osmUrl": "https://www.openstreetmap.org/way/282644353"
+    },
+    {
+      "id": "node/14001452301",
+      "name": "Yanna store",
+      "class": "shop",
+      "subclass": "variety_store",
+      "categories": ["shop:variety_store"],
+      "coordinate": [120.8932389, 14.2976617],
+      "osmUrl": "https://www.openstreetmap.org/node/14001452301"
+    },
+    {
+      "id": "node/13583586351",
+      "name": "Zark's Burgers",
+      "class": "amenity",
+      "subclass": "fast_food",
+      "categories": ["amenity:fast_food"],
+      "coordinate": [120.8662688, 14.2818631],
+      "osmUrl": "https://www.openstreetmap.org/node/13583586351"
+    },
+    {
+      "id": "node/13583586346",
+      "name": "ZUS Coffee",
+      "class": "amenity",
+      "subclass": "cafe",
+      "categories": ["amenity:cafe"],
+      "coordinate": [120.8664439, 14.2816479],
+      "osmUrl": "https://www.openstreetmap.org/node/13583586346"
+    }
+  ]
+}
