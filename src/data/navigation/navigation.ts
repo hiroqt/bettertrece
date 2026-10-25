@@ -38,6 +38,10 @@ export const mainNavigation: MainNavItem[] = [
     href: '/',
   },
   {
+    label: 'Shade Map',
+    href: '/shade-map',
+  },
+  {
     label: 'Services',
     href: '/services',
     megaMenu: {

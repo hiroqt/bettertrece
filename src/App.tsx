@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react';
 import { NuqsAdapter } from 'nuqs/adapters/react';
 import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/layout/Navbar';
@@ -18,6 +19,8 @@ import { isMeilisearchEnabled } from './lib/meilisearch';
 import { BrowserRouter as Router, Routes, Route } from 'react-router';
 import { Analytics } from '@vercel/analytics/react';
 
+const ShadeMap = lazy(() => import('./pages/ShadeMap'));
+
 function App() {
   return (
     <HelmetProvider>
@@ -32,6 +35,16 @@ function App() {
               <Route path="/why-i-built-this" element={<About />} />
               <Route path="/fuel-prices" element={<FuelPrices />} />
               <Route path="/services/fuel-prices" element={<FuelPrices />} />
+              <Route
+                path="/shade-map"
+                element={
+                  <Suspense
+                    fallback={<div className="flex-grow bg-slate-50" />}
+                  >
+                    <ShadeMap />
+                  </Suspense>
+                }
+              />
               <Route path="/demographics" element={<Demographics />} />
               <Route path="/municipal-profile" element={<Demographics />} />
               <Route path="/transparency" element={<DpwhTransparency />} />
