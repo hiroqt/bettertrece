@@ -338,6 +338,8 @@ const Navbar: React.FC = () => {
     switch (label.toLowerCase()) {
       case 'home':
         return t('navbar.home', 'Home');
+      case 'shade map':
+        return t('navbar.shadeMap', 'Shade Map');
       case 'services':
         return t('navbar.services', 'Services');
       case 'government':
