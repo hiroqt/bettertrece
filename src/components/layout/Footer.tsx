@@ -51,10 +51,10 @@ const Footer: React.FC = () => {
                   </svg>
                 </a>
                 <a
-                  href="https://github.com/bettersanfernando/bettersanfernando.git"
+                  href="https://github.com/hiroqt/bettertrece.git"
                   target="_blank"
                   rel="noreferrer"
-                  aria-label="Better San Fernando on GitHub"
+                  aria-label="BetterTrece on GitHub"
                   className="text-slate-300 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-300"
                 >
                   <Github className="h-5 w-5" aria-hidden="true" />
