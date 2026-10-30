@@ -19,7 +19,7 @@ import {
   FileText,
   UserCheck,
   HeartHandshake,
-} from 'lucide-react';
+} from '../../lib/icons';
 
 export default function TrecePeaceSafetyDirectory() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -52,7 +52,7 @@ export default function TrecePeaceSafetyDirectory() {
   return (
     <div className="space-y-8">
       {/* Header & Local Trece Peace & Order Context */}
-      <div className="bg-gradient-to-br from-slate-900 via-slate-950 to-blue-950 text-white p-6 sm:p-8 rounded-3xl shadow-sm border border-slate-800">
+      <div className="bg-gradient-to-br from-slate-900 via-slate-950 to-blue-950 text-primary-700 p-6 sm:p-8 rounded-3xl shadow-sm border border-primary-200">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
           <div className="space-y-3 max-w-3xl">
             <div className="flex flex-wrap items-center gap-2">
@@ -98,7 +98,7 @@ export default function TrecePeaceSafetyDirectory() {
             {TRECE_EMERGENCY_HOTLINES.slice(0, 3).map(h => (
               <div
                 key={h.name}
-                className="bg-white/5 p-3 rounded-2xl border border-white/10 space-y-1"
+                className="bg-white/5 p-3 rounded-2xl border border-primary-300/40 border-white/10 space-y-1"
               >
                 <div className="font-bold text-white text-xs truncate">
                   {h.name}
@@ -116,7 +116,7 @@ export default function TrecePeaceSafetyDirectory() {
       </div>
 
       {/* Citizen Flow Guide: Barangay Lupon vs. Police Blotter */}
-      <div className="bg-white rounded-3xl border border-gray-200 p-6 shadow-xs space-y-4">
+      <div className="bg-white rounded-3xl border border-primary-200 p-6 shadow-xs space-y-4">
         <div className="flex items-center gap-2 text-gray-900 font-extrabold text-base">
           <Scale className="w-5 h-5 text-[#003893]" />
           <h3>Where Should You File a Complaint in Trece Martires?</h3>
@@ -124,7 +124,7 @@ export default function TrecePeaceSafetyDirectory() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
           {/* Box 1: Barangay Lupon (KP) */}
-          <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200/80 space-y-2">
+          <div className="bg-slate-50 p-4 rounded-2xl border border-primary-200 space-y-2">
             <div className="flex items-center gap-1.5 text-[#003893] font-bold text-sm">
               <HeartHandshake className="w-4 h-4" />
               <h4>Barangay Lupon Tagapamayapa</h4>
@@ -141,7 +141,7 @@ export default function TrecePeaceSafetyDirectory() {
           </div>
 
           {/* Box 2: PNP Trece Police Station */}
-          <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200/80 space-y-2">
+          <div className="bg-slate-50 p-4 rounded-2xl border border-primary-200 space-y-2">
             <div className="flex items-center gap-1.5 text-rose-700 font-bold text-sm">
               <Shield className="w-4 h-4" />
               <h4>PNP Police Station / Blotter</h4>
@@ -158,7 +158,7 @@ export default function TrecePeaceSafetyDirectory() {
           </div>
 
           {/* Box 3: VAWC Desks */}
-          <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200/80 space-y-2">
+          <div className="bg-slate-50 p-4 rounded-2xl border border-primary-200 space-y-2">
             <div className="flex items-center gap-1.5 text-purple-700 font-bold text-sm">
               <UserCheck className="w-4 h-4" />
               <h4>Barangay VAWC Desk</h4>
@@ -219,9 +219,9 @@ export default function TrecePeaceSafetyDirectory() {
       </div>
 
       {/* Search Input Bar */}
-      <div className="bg-white p-4 rounded-2xl border border-gray-200 shadow-xs flex items-center gap-3">
+      <div className="bg-white p-4 rounded-2xl border border-primary-200 shadow-xs flex items-center gap-3">
         <div className="relative flex-1">
-          <Search className="w-4 h-4 text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+          <Search className="w-4 h-4 text-primary-700 absolute left-3.5 top-1/2 -translate-y-1/2" />
           <input
             type="text"
             placeholder="Search offenses or legal remedies (e.g. VAWC, Noise, Theft, Drugs, Cybercrime, Traffic Accident, Extortion)..."
@@ -251,7 +251,7 @@ export default function TrecePeaceSafetyDirectory() {
           return (
             <div
               key={item.id}
-              className="bg-white rounded-2xl border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all p-5 flex flex-col justify-between"
+              className="bg-white rounded-2xl border border-primary-200 hover:border-primary-500 hover:shadow-md transition-all p-5 flex flex-col justify-between"
             >
               <div>
                 {/* Header Badges */}
@@ -288,7 +288,7 @@ export default function TrecePeaceSafetyDirectory() {
                 </div>
 
                 {/* Trece Local Context */}
-                <div className="bg-blue-50/60 p-3 rounded-xl border border-blue-100/80 mb-3 text-xs">
+                <div className="bg-blue-50/60 p-3 rounded-xl border border-primary-200 mb-3 text-xs">
                   <div className="text-[10px] font-bold uppercase tracking-wider text-[#003893] mb-1 flex items-center gap-1">
                     <MapPin className="w-3 h-3" />
                     <span>Trece Martires Application &amp; Protocol:</span>
@@ -299,9 +299,9 @@ export default function TrecePeaceSafetyDirectory() {
                 </div>
 
                 {/* What Citizens Should Do (Action Guide) */}
-                <div className="bg-amber-50/60 p-3 rounded-xl border border-amber-200/60 mb-3 text-xs">
+                <div className="bg-amber-50/60 p-3 rounded-xl border border-primary-200 mb-3 text-xs">
                   <div className="text-[10px] font-bold uppercase tracking-wider text-amber-900 mb-1 flex items-center gap-1">
-                    <AlertTriangle className="w-3 h-3 text-amber-700" />
+                    <AlertTriangle className="w-3 h-3 text-primary-700" />
                     <span>What to Do / How to Report:</span>
                   </div>
                   <p className="text-[11px] text-amber-950 leading-relaxed font-medium">
@@ -331,7 +331,7 @@ export default function TrecePeaceSafetyDirectory() {
                   </button>
 
                   {isExpanded && (
-                    <div className="p-3 bg-slate-50 rounded-xl border border-slate-200 space-y-1 text-xs">
+                    <div className="p-3 bg-slate-50 rounded-xl border border-primary-200 space-y-1 text-xs">
                       <div className="font-bold text-gray-700 text-[11px]">
                         Applicable Statutes &amp; Penal Laws:
                       </div>

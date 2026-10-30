@@ -19,7 +19,7 @@ import {
   HardHat,
   Coins,
   FileCheck2,
-} from 'lucide-react';
+} from '../lib/icons';
 import Breadcrumbs from '../components/ui/Breadcrumbs';
 import SEO from '../components/SEO';
 import {
@@ -38,7 +38,7 @@ import { Banner } from '@bettergov/kapwa/banner';
 import Section from '../components/ui/Section';
 import { Heading } from '../components/ui/Heading';
 import { Text } from '../components/ui/Text';
-import * as LucideIcons from 'lucide-react';
+import { iconMap } from '../lib/icons';
 
 type SectionId =
   | 'executive'
@@ -120,9 +120,7 @@ export default function Government() {
   };
 
   const categoryData = getCategory();
-  const Icon = LucideIcons[
-    categoryData?.icon as keyof typeof LucideIcons
-  ] as React.ComponentType<{ className?: string }>;
+  const Icon = categoryData?.icon ? iconMap[categoryData.icon] : undefined;
 
   useEffect(() => {
     if (category && categoryData) {
@@ -349,7 +347,7 @@ export default function Government() {
               </div>
 
               {/* Fast Stats Pill Box */}
-              <div className="flex items-center gap-4 bg-gradient-to-br from-[#001f54]/90 to-[#002e7a]/90 p-4 rounded-2xl border border-blue-400/30 shrink-0">
+              <div className="flex items-center gap-4 bg-gradient-to-br from-[#001f54]/90 to-[#002e7a]/90 p-4 rounded-2xl border border-primary-300/40 shrink-0">
                 <div className="w-12 h-12 rounded-xl bg-white/15 text-white flex items-center justify-center shrink-0">
                   <Landmark className="w-6 h-6 text-blue-200" />
                 </div>
@@ -442,7 +440,7 @@ export default function Government() {
               </nav>
 
               {/* Sidebar Quick Card: Leadership Term & Verification */}
-              <div className="bg-gradient-to-br from-[#001f54] to-[#002e7a] text-white p-4.5 rounded-2xl border border-blue-400/30 shadow-2xs space-y-2.5">
+              <div className="bg-gradient-to-br from-[#001f54] to-[#002e7a] text-blue-200 p-4.5 rounded-2xl border border-primary-300/40 shadow-2xs space-y-2.5">
                 <div className="flex items-center gap-2 text-blue-200 text-xs font-bold uppercase tracking-wider">
                   <ShieldCheck className="w-4 h-4 text-blue-200" />
                   <span>Official Roster</span>
@@ -487,7 +485,7 @@ export default function Government() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
                   {/* City Mayor Card - Blue Gradient Card */}
-                  <div className="bg-gradient-to-br from-[#00225e] to-[#003893] text-white p-6 sm:p-7 rounded-3xl shadow-md border border-blue-800/40 hover:shadow-xl transition-all flex flex-col justify-between group">
+                  <div className="bg-gradient-to-br from-[#00225e] to-[#003893] text-blue-200 p-6 sm:p-7 rounded-3xl shadow-md border border-primary-300/40 hover:shadow-xl transition-all flex flex-col justify-between group">
                     <div className="space-y-3">
                       <div className="flex items-center justify-between">
                         <span className="px-2.5 py-1 rounded-md text-xs font-bold uppercase tracking-wider bg-amber-400/20 text-amber-300 border border-amber-400/30">
@@ -516,7 +514,7 @@ export default function Government() {
 
                     <div className="pt-4 mt-4 border-t border-white/15 flex items-center justify-between text-xs text-blue-200 font-medium">
                       <span className="flex items-center gap-1.5 text-white font-semibold">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-amber-300" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-blue-200" />
                         <span>Active in Office</span>
                       </span>
                       <Link
@@ -530,7 +528,7 @@ export default function Government() {
                   </div>
 
                   {/* City Vice Mayor Card - Blue Gradient Card */}
-                  <div className="bg-gradient-to-br from-[#00225e] to-[#003893] text-white p-6 sm:p-7 rounded-3xl shadow-md border border-blue-800/40 hover:shadow-xl transition-all flex flex-col justify-between group">
+                  <div className="bg-gradient-to-br from-[#00225e] to-[#003893] text-blue-200 p-6 sm:p-7 rounded-3xl shadow-md border border-primary-300/40 hover:shadow-xl transition-all flex flex-col justify-between group">
                     <div className="space-y-3">
                       <div className="flex items-center justify-between">
                         <span className="px-2.5 py-1 rounded-md text-xs font-bold uppercase tracking-wider bg-amber-400/20 text-amber-300 border border-amber-400/30">
@@ -559,7 +557,7 @@ export default function Government() {
 
                     <div className="pt-4 mt-4 border-t border-white/15 flex items-center justify-between text-xs text-blue-200 font-medium">
                       <span className="flex items-center gap-1.5 text-white font-semibold">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-amber-300" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-blue-200" />
                         <span>Presiding Officer</span>
                       </span>
                       <Link
@@ -610,9 +608,9 @@ export default function Government() {
                 </div>
 
                 {/* Sangguniang Panlungsod Presiding Officer Banner */}
-                <div className="bg-gradient-to-r from-[#001f54] via-[#00225e] to-[#003893] text-white px-4.5 py-3 rounded-xl border border-blue-800/40 flex items-center justify-between text-xs sm:text-sm shadow-xs">
+                <div className="bg-gradient-to-r from-[#001f54] via-[#00225e] to-[#003893] text-blue-200 px-4.5 py-3 rounded-xl border border-primary-300/40 flex items-center justify-between text-xs sm:text-sm shadow-xs">
                   <div className="flex items-center gap-2">
-                    <Landmark className="w-4 h-4 text-amber-300 shrink-0" />
+                    <Landmark className="w-4 h-4 text-blue-200 shrink-0" />
                     <span className="font-semibold text-blue-200">
                       Presiding Officer:
                     </span>
@@ -634,7 +632,7 @@ export default function Government() {
                     return (
                       <div
                         key={c.name}
-                        className="p-4 rounded-xl border border-zinc-200 bg-white hover:border-zinc-400 hover:shadow-xs transition-all duration-150 flex flex-col justify-between"
+                        className="p-4 rounded-xl border border-primary-200 bg-white hover:border-primary-500 hover:shadow-xs transition-all duration-150 flex flex-col justify-between"
                       >
                         <div className="space-y-1">
                           <div className="flex items-center justify-between text-xs">
@@ -709,7 +707,7 @@ export default function Government() {
                   {filteredBarangays.map(brgy => (
                     <div
                       key={`${brgy.number}-${brgy.barangay}`}
-                      className="bg-white p-4 rounded-xl border border-zinc-200 hover:border-zinc-400 hover:shadow-xs transition-all flex flex-col justify-between group"
+                      className="bg-white p-4 rounded-xl border border-primary-200 hover:border-primary-500 hover:shadow-xs transition-all flex flex-col justify-between group"
                     >
                       <div className="space-y-2">
                         <div className="flex items-center justify-between text-xs">
@@ -725,7 +723,7 @@ export default function Government() {
                                 title="Copy PSGC"
                               >
                                 {copiedCode === brgy.psgcCode ? (
-                                  <Check className="w-3 h-3 text-zinc-900" />
+                                  <Check className="w-3 h-3 text-primary-700" />
                                 ) : (
                                   <Copy className="w-3 h-3" />
                                 )}
@@ -787,19 +785,17 @@ export default function Government() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                   {governmentCategories.categories.map(cat => {
-                    const CatIcon = LucideIcons[
-                      cat.icon as keyof typeof LucideIcons
-                    ] as React.ComponentType<{ className?: string }>;
+                    const CatIcon = iconMap[cat.icon];
                     return (
                       <Link
                         key={cat.slug}
                         to={`/government/${cat.slug}`}
-                        className="group flex flex-col justify-between p-5 bg-white rounded-xl border border-zinc-200 hover:border-zinc-400 hover:shadow-xs transition-all duration-150"
+                        className="group flex flex-col justify-between p-5 bg-white rounded-xl border border-primary-200 hover:border-primary-500 hover:shadow-xs transition-all duration-150"
                       >
                         <div>
-                          <div className="w-10 h-10 rounded-xl bg-zinc-100 text-zinc-900 border border-zinc-200 flex items-center justify-center mb-3 transition-colors">
+                          <div className="w-10 h-10 rounded-xl bg-primary-50 text-primary-700 border border-primary-200 flex items-center justify-center mb-3 transition-colors">
                             {CatIcon && (
-                              <CatIcon className="w-5 h-5 text-zinc-900" />
+                              <CatIcon className="w-5 h-5 text-primary-700" />
                             )}
                           </div>
 
@@ -814,7 +810,7 @@ export default function Government() {
 
                         <div className="flex items-center text-xs font-semibold text-zinc-900 group-hover:translate-x-1 transition-transform">
                           <span>View Directory &amp; Pages</span>
-                          <ChevronRight className="w-3.5 h-3.5 ml-1 text-zinc-600" />
+                          <ChevronRight className="w-3.5 h-3.5 ml-1 text-primary-700" />
                         </div>
                       </Link>
                     );
@@ -848,11 +844,11 @@ export default function Government() {
                   {/* City Revenue & Budget Card */}
                   <Link
                     to="/transparency"
-                    className="p-5 rounded-2xl bg-white border border-zinc-200 hover:border-zinc-400 hover:shadow-xs transition-all flex flex-col justify-between group"
+                    className="p-5 rounded-2xl bg-white border border-primary-200 hover:border-primary-500 hover:shadow-xs transition-all flex flex-col justify-between group"
                   >
                     <div className="space-y-2">
-                      <div className="w-10 h-10 rounded-xl bg-zinc-100 text-zinc-900 border border-zinc-200 flex items-center justify-center">
-                        <Coins className="w-5 h-5 text-zinc-900" />
+                      <div className="w-10 h-10 rounded-xl bg-primary-50 text-primary-700 border border-primary-200 flex items-center justify-center">
+                        <Coins className="w-5 h-5 text-primary-700" />
                       </div>
                       <h3 className="text-base font-bold text-zinc-900 group-hover:text-zinc-700 transition-colors">
                         City Revenue &amp; Budget
@@ -864,18 +860,18 @@ export default function Government() {
                     </div>
                     <div className="mt-4 pt-3 border-t border-zinc-100 text-xs font-semibold text-zinc-900 flex items-center justify-between">
                       <span>View Revenue Data</span>
-                      <ChevronRight className="w-4 h-4 text-zinc-600 group-hover:translate-x-1 transition-transform" />
+                      <ChevronRight className="w-4 h-4 text-primary-700 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </Link>
 
                   {/* GAA National Budget Card */}
                   <Link
                     to="/transparency?tab=gaa"
-                    className="p-5 rounded-2xl bg-white border border-zinc-200 hover:border-zinc-400 hover:shadow-xs transition-all flex flex-col justify-between group"
+                    className="p-5 rounded-2xl bg-white border border-primary-200 hover:border-primary-500 hover:shadow-xs transition-all flex flex-col justify-between group"
                   >
                     <div className="space-y-2">
-                      <div className="w-10 h-10 rounded-xl bg-zinc-100 text-zinc-900 border border-zinc-200 flex items-center justify-center">
-                        <Landmark className="w-5 h-5 text-zinc-900" />
+                      <div className="w-10 h-10 rounded-xl bg-primary-50 text-primary-700 border border-primary-200 flex items-center justify-center">
+                        <Landmark className="w-5 h-5 text-primary-700" />
                       </div>
                       <h3 className="text-base font-bold text-zinc-900 group-hover:text-zinc-700 transition-colors">
                         National Budget (GAA 2020–2026)
@@ -888,18 +884,18 @@ export default function Government() {
                     </div>
                     <div className="mt-4 pt-3 border-t border-zinc-100 text-xs font-semibold text-zinc-900 flex items-center justify-between">
                       <span>View National Budget</span>
-                      <ChevronRight className="w-4 h-4 text-zinc-600 group-hover:translate-x-1 transition-transform" />
+                      <ChevronRight className="w-4 h-4 text-primary-700 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </Link>
 
                   {/* COA Annual Audit Card */}
                   <Link
                     to="/transparency?tab=audit"
-                    className="p-5 rounded-2xl bg-white border border-zinc-200 hover:border-zinc-400 hover:shadow-xs transition-all flex flex-col justify-between group"
+                    className="p-5 rounded-2xl bg-white border border-primary-200 hover:border-primary-500 hover:shadow-xs transition-all flex flex-col justify-between group"
                   >
                     <div className="space-y-2">
-                      <div className="w-10 h-10 rounded-xl bg-zinc-100 text-zinc-900 border border-zinc-200 flex items-center justify-center">
-                        <FileCheck2 className="w-5 h-5 text-zinc-900" />
+                      <div className="w-10 h-10 rounded-xl bg-primary-50 text-primary-700 border border-primary-200 flex items-center justify-center">
+                        <FileCheck2 className="w-5 h-5 text-primary-700" />
                       </div>
                       <h3 className="text-base font-bold text-zinc-900 group-hover:text-zinc-700 transition-colors">
                         COA Annual Audit Report (2024)
@@ -912,18 +908,18 @@ export default function Government() {
                     </div>
                     <div className="mt-4 pt-3 border-t border-zinc-100 text-xs font-semibold text-zinc-900 flex items-center justify-between">
                       <span>View Audit Report</span>
-                      <ChevronRight className="w-4 h-4 text-zinc-600 group-hover:translate-x-1 transition-transform" />
+                      <ChevronRight className="w-4 h-4 text-primary-700 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </Link>
 
                   {/* DPWH Card */}
                   <Link
                     to="/transparency/dpwh"
-                    className="p-5 rounded-2xl bg-white border border-zinc-200 hover:border-zinc-400 hover:shadow-xs transition-all flex flex-col justify-between group"
+                    className="p-5 rounded-2xl bg-white border border-primary-200 hover:border-primary-500 hover:shadow-xs transition-all flex flex-col justify-between group"
                   >
                     <div className="space-y-2">
-                      <div className="w-10 h-10 rounded-xl bg-zinc-100 text-zinc-900 border border-zinc-200 flex items-center justify-center">
-                        <HardHat className="w-5 h-5 text-zinc-900" />
+                      <div className="w-10 h-10 rounded-xl bg-primary-50 text-primary-700 border border-primary-200 flex items-center justify-center">
+                        <HardHat className="w-5 h-5 text-primary-700" />
                       </div>
                       <h3 className="text-base font-bold text-zinc-900 group-hover:text-zinc-700 transition-colors">
                         DPWH Infrastructure Transparency
@@ -935,18 +931,18 @@ export default function Government() {
                     </div>
                     <div className="mt-4 pt-3 border-t border-zinc-100 text-xs font-semibold text-zinc-900 flex items-center justify-between">
                       <span>Explore Projects</span>
-                      <ChevronRight className="w-4 h-4 text-zinc-600 group-hover:translate-x-1 transition-transform" />
+                      <ChevronRight className="w-4 h-4 text-primary-700 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </Link>
 
                   {/* Political Dynasties Card */}
                   <Link
                     to="/transparency/political-dynasties"
-                    className="p-5 rounded-2xl bg-white border border-zinc-200 hover:border-zinc-400 hover:shadow-xs transition-all flex flex-col justify-between group"
+                    className="p-5 rounded-2xl bg-white border border-primary-200 hover:border-primary-500 hover:shadow-xs transition-all flex flex-col justify-between group"
                   >
                     <div className="space-y-2">
-                      <div className="w-10 h-10 rounded-xl bg-zinc-100 text-zinc-900 border border-zinc-200 flex items-center justify-center">
-                        <ShieldCheck className="w-5 h-5 text-zinc-900" />
+                      <div className="w-10 h-10 rounded-xl bg-primary-50 text-primary-700 border border-primary-200 flex items-center justify-center">
+                        <ShieldCheck className="w-5 h-5 text-primary-700" />
                       </div>
                       <h3 className="text-base font-bold text-zinc-900 group-hover:text-zinc-700 transition-colors">
                         Political Dynasties Tracker
@@ -959,18 +955,18 @@ export default function Government() {
                     </div>
                     <div className="mt-4 pt-3 border-t border-zinc-100 text-xs font-semibold text-zinc-900 flex items-center justify-between">
                       <span>Explore Dynasties</span>
-                      <ChevronRight className="w-4 h-4 text-zinc-600 group-hover:translate-x-1 transition-transform" />
+                      <ChevronRight className="w-4 h-4 text-primary-700 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </Link>
 
                   {/* Demographics Card */}
                   <Link
                     to="/demographics"
-                    className="p-5 rounded-2xl bg-white border border-zinc-200 hover:border-zinc-400 hover:shadow-xs transition-all flex flex-col justify-between group"
+                    className="p-5 rounded-2xl bg-white border border-primary-200 hover:border-primary-500 hover:shadow-xs transition-all flex flex-col justify-between group"
                   >
                     <div className="space-y-2">
-                      <div className="w-10 h-10 rounded-xl bg-zinc-100 text-zinc-900 border border-zinc-200 flex items-center justify-center">
-                        <Users className="w-5 h-5 text-zinc-900" />
+                      <div className="w-10 h-10 rounded-xl bg-primary-50 text-primary-700 border border-primary-200 flex items-center justify-center">
+                        <Users className="w-5 h-5 text-primary-700" />
                       </div>
                       <h3 className="text-base font-bold text-zinc-900 group-hover:text-zinc-700 transition-colors">
                         Summary Demographics &amp; PSA PSGC
@@ -982,18 +978,18 @@ export default function Government() {
                     </div>
                     <div className="mt-4 pt-3 border-t border-zinc-100 text-xs font-semibold text-zinc-900 flex items-center justify-between">
                       <span>View Demographics</span>
-                      <ChevronRight className="w-4 h-4 text-zinc-600 group-hover:translate-x-1 transition-transform" />
+                      <ChevronRight className="w-4 h-4 text-primary-700 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </Link>
 
                   {/* Full Disclosure Card */}
                   <Link
                     to="/government/transparency-documents/full-disclosure-policy"
-                    className="p-5 rounded-2xl bg-white border border-zinc-200 hover:border-zinc-400 hover:shadow-xs transition-all flex flex-col justify-between group"
+                    className="p-5 rounded-2xl bg-white border border-primary-200 hover:border-primary-500 hover:shadow-xs transition-all flex flex-col justify-between group"
                   >
                     <div className="space-y-2">
-                      <div className="w-10 h-10 rounded-xl bg-zinc-100 text-zinc-900 border border-zinc-200 flex items-center justify-center">
-                        <FileSpreadsheet className="w-5 h-5 text-zinc-900" />
+                      <div className="w-10 h-10 rounded-xl bg-primary-50 text-primary-700 border border-primary-200 flex items-center justify-center">
+                        <FileSpreadsheet className="w-5 h-5 text-primary-700" />
                       </div>
                       <h3 className="text-base font-bold text-zinc-900 group-hover:text-zinc-700 transition-colors">
                         Full Disclosure Policy (FDP)
@@ -1005,7 +1001,7 @@ export default function Government() {
                     </div>
                     <div className="mt-4 pt-3 border-t border-zinc-100 text-xs font-semibold text-zinc-900 flex items-center justify-between">
                       <span>View Full Disclosure</span>
-                      <ChevronRight className="w-4 h-4 text-zinc-600 group-hover:translate-x-1 transition-transform" />
+                      <ChevronRight className="w-4 h-4 text-primary-700 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </Link>
                 </div>
@@ -1034,9 +1030,9 @@ export default function Government() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {/* CDRRMO */}
-                  <div className="p-4.5 rounded-2xl bg-white border border-zinc-200 hover:border-zinc-400 hover:shadow-xs transition-all flex items-start gap-3.5">
-                    <div className="w-10 h-10 rounded-xl bg-zinc-100 text-zinc-900 border border-zinc-200 flex items-center justify-center shrink-0">
-                      <Shield className="w-5 h-5 text-zinc-900" />
+                  <div className="p-4.5 rounded-2xl bg-white border border-primary-200 hover:border-primary-500 hover:shadow-xs transition-all flex items-start gap-3.5">
+                    <div className="w-10 h-10 rounded-xl bg-primary-50 text-primary-700 border border-primary-200 flex items-center justify-center shrink-0">
+                      <Shield className="w-5 h-5 text-primary-700" />
                     </div>
                     <div>
                       <h3 className="font-bold text-sm text-zinc-900">
@@ -1064,9 +1060,9 @@ export default function Government() {
                   </div>
 
                   {/* BFP */}
-                  <div className="p-4.5 rounded-2xl bg-white border border-zinc-200 hover:border-zinc-400 hover:shadow-xs transition-all flex items-start gap-3.5">
-                    <div className="w-10 h-10 rounded-xl bg-zinc-100 text-zinc-900 border border-zinc-200 flex items-center justify-center shrink-0">
-                      <Flame className="w-5 h-5 text-zinc-900" />
+                  <div className="p-4.5 rounded-2xl bg-white border border-primary-200 hover:border-primary-500 hover:shadow-xs transition-all flex items-start gap-3.5">
+                    <div className="w-10 h-10 rounded-xl bg-primary-50 text-primary-700 border border-primary-200 flex items-center justify-center shrink-0">
+                      <Flame className="w-5 h-5 text-primary-700" />
                     </div>
                     <div>
                       <h3 className="font-bold text-sm text-zinc-900">
@@ -1094,9 +1090,9 @@ export default function Government() {
                   </div>
 
                   {/* PNP */}
-                  <div className="p-4.5 rounded-2xl bg-white border border-zinc-200 hover:border-zinc-400 hover:shadow-xs transition-all flex items-start gap-3.5">
-                    <div className="w-10 h-10 rounded-xl bg-zinc-100 text-zinc-900 border border-zinc-200 flex items-center justify-center shrink-0">
-                      <Building2 className="w-5 h-5 text-zinc-900" />
+                  <div className="p-4.5 rounded-2xl bg-white border border-primary-200 hover:border-primary-500 hover:shadow-xs transition-all flex items-start gap-3.5">
+                    <div className="w-10 h-10 rounded-xl bg-primary-50 text-primary-700 border border-primary-200 flex items-center justify-center shrink-0">
+                      <Building2 className="w-5 h-5 text-primary-700" />
                     </div>
                     <div>
                       <h3 className="font-bold text-sm text-zinc-900">
@@ -1124,9 +1120,9 @@ export default function Government() {
                   </div>
 
                   {/* CHO */}
-                  <div className="p-4.5 rounded-2xl bg-white border border-zinc-200 hover:border-zinc-400 hover:shadow-xs transition-all flex items-start gap-3.5">
-                    <div className="w-10 h-10 rounded-xl bg-zinc-100 text-zinc-900 border border-zinc-200 flex items-center justify-center shrink-0">
-                      <HeartPulse className="w-5 h-5 text-zinc-900" />
+                  <div className="p-4.5 rounded-2xl bg-white border border-primary-200 hover:border-primary-500 hover:shadow-xs transition-all flex items-start gap-3.5">
+                    <div className="w-10 h-10 rounded-xl bg-primary-50 text-primary-700 border border-primary-200 flex items-center justify-center shrink-0">
+                      <HeartPulse className="w-5 h-5 text-primary-700" />
                     </div>
                     <div>
                       <h3 className="font-bold text-sm text-zinc-900">

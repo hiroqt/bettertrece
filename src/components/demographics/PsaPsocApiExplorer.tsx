@@ -33,10 +33,9 @@ import {
   ChevronUp,
   Briefcase,
   ShieldCheck,
-  Sparkles,
   Layers,
   Search,
-} from 'lucide-react';
+} from '../../lib/icons';
 
 type ConsoleSubTab = 'cards' | 'response' | 'code' | 'docs';
 type CodeSnippetTab = 'curl' | 'javascript' | 'python' | 'postman';
@@ -335,7 +334,7 @@ except requests.exceptions.RequestException as e:
   }, [version, group, currentQueryParams, token, includeRealTokenInSnippets]);
 
   return (
-    <div className="bg-white rounded-3xl border border-gray-200 shadow-xs overflow-hidden">
+    <div className="bg-white rounded-3xl border border-primary-200 shadow-xs overflow-hidden">
       {/* Console Header */}
       <div className="p-5 sm:p-6 bg-gradient-to-r from-slate-900 via-[#002855] to-[#004b87] text-white flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="space-y-1">
@@ -388,7 +387,7 @@ except requests.exceptions.RequestException as e:
           {/* Quick Presets Strip */}
           <div>
             <div className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-              <Zap className="w-3.5 h-3.5 text-amber-500" />
+              <Zap className="w-3.5 h-3.5 text-primary-700" />
               <span>Quick Query Presets:</span>
             </div>
             <div className="flex items-center gap-2 overflow-x-auto pb-1">
@@ -412,7 +411,7 @@ except requests.exceptions.RequestException as e:
           </div>
 
           {/* Interactive Controls Bar */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 bg-slate-50/70 p-4 rounded-2xl border border-slate-200/80">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 bg-slate-50/70 p-4 rounded-2xl border border-primary-200">
             {/* Version */}
             <div>
               <label className="block text-[11px] font-bold text-gray-600 uppercase tracking-wider mb-1">
@@ -505,7 +504,7 @@ except requests.exceptions.RequestException as e:
                 </label>
                 {token && (
                   <span className="text-[10px] text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded font-mono flex items-center gap-0.5">
-                    <ShieldCheck className="w-3 h-3 text-emerald-600" />
+                    <ShieldCheck className="w-3 h-3 text-primary-700" />
                     <span>Protected</span>
                   </span>
                 )}
@@ -563,7 +562,7 @@ except requests.exceptions.RequestException as e:
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2 bg-slate-900 text-sky-400 rounded-2xl p-3 sm:px-4 border border-slate-800 shadow-inner">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2 bg-slate-900 text-blue-200 rounded-2xl p-3 sm:px-4 border border-primary-300/40 shadow-inner">
               <code className="text-xs font-mono truncate select-all">
                 GET {maskedFullUrl}
               </code>
@@ -574,7 +573,7 @@ except requests.exceptions.RequestException as e:
                   title="Copy working URL to clipboard"
                 >
                   {copiedText === 'real-url' ? (
-                    <Check className="w-3.5 h-3.5 text-emerald-400" />
+                    <Check className="w-3.5 h-3.5 text-blue-200" />
                   ) : (
                     <Copy className="w-3.5 h-3.5" />
                   )}
@@ -674,9 +673,9 @@ except requests.exceptions.RequestException as e:
             {activeSubTab === 'cards' && (
               <div className="space-y-4">
                 {/* Search / Filter within current result set */}
-                <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 bg-slate-50 p-3 rounded-2xl border border-slate-200">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 bg-slate-50 p-3 rounded-2xl border border-primary-200">
                   <div className="relative flex-1">
-                    <Search className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                    <Search className="w-4 h-4 text-primary-700 absolute left-3 top-1/2 -translate-y-1/2" />
                     <input
                       type="text"
                       placeholder="Filter current results by title, keyword, or job role (e.g. Engineer, Driver, Manager)..."
@@ -712,7 +711,7 @@ except requests.exceptions.RequestException as e:
                     return (
                       <div
                         key={`${item.id}-${code}`}
-                        className="bg-white p-5 rounded-2xl border border-gray-200 hover:border-sky-300 hover:shadow-md transition-all flex flex-col justify-between"
+                        className="bg-white p-5 rounded-2xl border border-primary-200 hover:border-primary-500 hover:shadow-md transition-all flex flex-col justify-between"
                       >
                         <div>
                           <div className="flex items-center justify-between gap-2 mb-2">
@@ -744,7 +743,7 @@ except requests.exceptions.RequestException as e:
                             item.example_jobs.length > 0 && (
                               <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-100 mb-3">
                                 <div className="text-[10px] font-bold uppercase tracking-wider text-gray-500 mb-1 flex items-center gap-1">
-                                  <Sparkles className="w-3 h-3 text-amber-500" />
+                                  <Briefcase className="w-3 h-3 text-primary-700" />
                                   <span>Representative Occupations:</span>
                                 </div>
                                 <div className="flex flex-wrap gap-1">
@@ -816,7 +815,7 @@ except requests.exceptions.RequestException as e:
                     >
                       {copiedText === 'json-payload' ? (
                         <>
-                          <Check className="w-3 h-3 text-emerald-400" />
+                          <Check className="w-3 h-3 text-primary-700" />
                           <span>Copied</span>
                         </>
                       ) : (
@@ -902,7 +901,7 @@ except requests.exceptions.RequestException as e:
                     >
                       {copiedText === `code-${codeTab}` ? (
                         <>
-                          <Check className="w-3 h-3 text-emerald-400" />
+                          <Check className="w-3 h-3 text-primary-700" />
                           <span className="text-emerald-400">Copied</span>
                         </>
                       ) : (
@@ -924,7 +923,7 @@ except requests.exceptions.RequestException as e:
             {activeSubTab === 'docs' && (
               <div className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-                  <div className="p-4 bg-gray-50 rounded-2xl border border-gray-200 space-y-2">
+                  <div className="p-4 bg-gray-50 rounded-2xl border border-primary-200 space-y-2">
                     <h4 className="font-bold text-gray-900 text-sm flex items-center gap-1.5">
                       <Database className="w-4 h-4 text-[#003893]" />
                       <span>PSOC Endpoints Structure</span>
@@ -946,9 +945,9 @@ except requests.exceptions.RequestException as e:
                     </div>
                   </div>
 
-                  <div className="p-4 bg-gray-50 rounded-2xl border border-gray-200 space-y-2">
+                  <div className="p-4 bg-gray-50 rounded-2xl border border-primary-200 space-y-2">
                     <h4 className="font-bold text-gray-900 text-sm flex items-center gap-1.5">
-                      <Info className="w-4 h-4 text-amber-600" />
+                      <Info className="w-4 h-4 text-primary-700" />
                       <span>Hierarchy &amp; Parameter Rules</span>
                     </h4>
                     <div className="space-y-1 text-[11px] text-gray-600">
@@ -984,7 +983,7 @@ except requests.exceptions.RequestException as e:
                 </div>
 
                 {/* 10 Major Groups Summary Matrix */}
-                <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                <div className="bg-slate-50 p-4 rounded-2xl border border-primary-200">
                   <h4 className="font-bold text-gray-900 text-sm mb-3">
                     PSOC 2012: The 10 Major Occupational Groups Matrix
                   </h4>
@@ -992,7 +991,7 @@ except requests.exceptions.RequestException as e:
                     {PSA_PSOC_MAJOR_SUMMARIES.map(item => (
                       <div
                         key={item.code}
-                        className="bg-white p-3 rounded-xl border border-gray-200 shadow-2xs space-y-1"
+                        className="bg-white p-3 rounded-xl border border-primary-200 shadow-2xs space-y-1"
                       >
                         <div className="flex items-center justify-between">
                           <span className="font-mono font-bold text-xs bg-[#003893] text-white px-2 py-0.5 rounded">

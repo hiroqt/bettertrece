@@ -38,10 +38,6 @@ export const mainNavigation: MainNavItem[] = [
     href: '/',
   },
   {
-    label: 'Shade Map',
-    href: '/shade-map',
-  },
-  {
     label: 'Services',
     href: '/services',
     megaMenu: {
@@ -175,6 +171,17 @@ export const mainNavigation: MainNavItem[] = [
               description: 'Clean-up drives & tree planting activities',
               href: '/services/environment',
               iconName: 'TreePine',
+            },
+          ],
+        },
+        {
+          heading: 'Community Initiatives',
+          items: [
+            {
+              title: 'Community Shade Map',
+              description: 'Explore community-mapped walking routes and shade',
+              href: '/shade-map',
+              iconName: 'Map',
             },
           ],
         },
@@ -526,104 +533,24 @@ export const mainNavigation: MainNavItem[] = [
 export const footerNavigation = {
   mainSections: [
     {
-      title: 'Quick Links',
+      title: 'Explore',
       links: [
-        {
-          label: 'Political Dynasties Tracker',
-          href: '/transparency/political-dynasties',
-        },
-        {
-          label: 'City Revenue & Budget (DBM)',
-          href: '/transparency',
-        },
-        {
-          label: 'DPWH Infrastructure Tracker',
-          href: '/transparency/dpwh',
-        },
-        {
-          label: 'National Budget (GAA 2020–2026)',
-          href: '/transparency?tab=gaa',
-        },
-        {
-          label: 'COA Annual Audit Report (2024)',
-          href: '/transparency?tab=audit',
-        },
-        {
-          label: 'Summary Demographics & Census',
-          href: '/demographics',
-        },
-        {
-          label: 'Trece Fuel Price Monitor',
-          href: '/fuel-prices',
-        },
-        {
-          label: '13 Barangays Directory',
-          href: '/government#barangays',
-        },
-        {
-          label: "Mayor's Business Permits (BPLO)",
-          href: '/services/business/apply-for-barangay-clearance-and-mayors-business-permits',
-        },
-        {
-          label: 'About This Project (Why I Built This)',
-          href: '/about',
-        },
+        { label: 'Services', href: '/services' },
+        { label: 'Projects', href: '/transparency/dpwh' },
+        { label: 'Government', href: '/government' },
+        { label: 'Transparency', href: '/transparency' },
+        { label: 'Statistics', href: '/demographics' },
       ],
     },
     {
-      title: 'Civic Datasets & Open Data',
+      title: 'Public information',
       links: [
-        {
-          label: 'Ateneo Policy Center Political Dynasties Data (1987–2022)',
-          href: '/transparency/political-dynasties',
-        },
-        {
-          label: 'PSA 2024 Population Census (POPCEN 227,892)',
-          href: '/demographics',
-        },
-        {
-          label: 'PSA PSGC Geocodes (0402122000)',
-          href: '/demographics#psa-classifications',
-        },
-        {
-          label: 'DBM & DOF-BLGF City Revenue Datasets',
-          href: '/transparency',
-        },
-        {
-          label: 'National Budget (GAA) Appropriations Data',
-          href: '/transparency?tab=gaa',
-        },
-        {
-          label: 'COA Region IV-A Annual Audit Reports',
-          href: '/transparency?tab=audit',
-        },
-        {
-          label: 'DPWH Cavite 1st DEO Public Works Registry',
-          href: '/transparency/dpwh',
-        },
-        {
-          label: 'DOE Retail Fuel Price Monitor Data',
-          href: '/fuel-prices',
-        },
-        {
-          label: 'DBM Full Disclosure Policy (FDP)',
-          href: '/government/transparency-documents/full-disclosure-policy',
-        },
-        {
-          label: 'BetterGov Hugging Face Open Datasets',
-          href: 'https://huggingface.co/bettergov',
-        },
-        {
-          label: 'PSA OpenSTAT Official Portal',
-          href: 'https://openstat.psa.gov.ph',
-        },
+        { label: 'City Offices', href: '/government' },
+        { label: 'Contact the City', href: '/#contact' },
+        { label: 'Emergency Hotlines', href: '/government#hotlines' },
+        { label: 'City Government', href: '/government#executive' },
+        { label: 'Barangays', href: '/government#barangays' },
       ],
     },
-  ],
-  socialLinks: [
-    { label: 'Facebook', href: 'https://facebook.com/trecemartirescity' },
-    { label: 'Twitter', href: 'https://twitter.com/trecemartires' },
-    { label: 'Instagram', href: 'https://instagram.com/trecemartirescity' },
-    { label: 'YouTube', href: 'https://youtube.com/@trecemartirescity' },
   ],
 };

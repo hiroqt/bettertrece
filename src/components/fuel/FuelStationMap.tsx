@@ -14,7 +14,7 @@ import {
   Maximize2,
   Minimize2,
   RotateCcw,
-} from 'lucide-react';
+} from '../../lib/icons';
 
 // Trece Martires City Center Coordinates
 const TRECE_CENTER: [number, number] = [14.2828, 120.8667];
@@ -393,7 +393,7 @@ export default function FuelStationMap({
 
   return (
     <div
-      className={`relative bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-md overflow-hidden flex flex-col ${
+      className={`relative bg-white rounded-2xl sm:rounded-3xl border border-primary-200 shadow-md overflow-hidden flex flex-col ${
         isFullscreen ? 'fixed inset-4 z-50 shadow-2xl' : 'w-full'
       } ${className}`}
     >
@@ -403,7 +403,7 @@ export default function FuelStationMap({
         <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3">
           {/* Search bar */}
           <div className="relative flex-grow max-w-md">
-            <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+            <Search className="w-4 h-4 text-primary-700 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
             <input
               type="text"
               value={searchQuery}
@@ -457,7 +457,7 @@ export default function FuelStationMap({
               title="Toggle Map Style"
               className="inline-flex items-center gap-1 text-xs text-slate-700 bg-white py-2 px-3 rounded-xl border border-slate-200 hover:border-slate-300 shadow-2xs font-semibold cursor-pointer transition-colors"
             >
-              <Layers className="w-3.5 h-3.5 text-blue-600" />
+              <Layers className="w-3.5 h-3.5 text-primary-700" />
               <span className="hidden sm:inline">
                 {tileLayerType === 'osm' ? 'OSM Standard' : 'OSM Detailed'}
               </span>
@@ -469,7 +469,7 @@ export default function FuelStationMap({
               title="Recenter to Trece Martires Center"
               className="inline-flex items-center gap-1 text-xs text-slate-700 bg-white py-2 px-3 rounded-xl border border-slate-200 hover:border-slate-300 shadow-2xs font-semibold cursor-pointer transition-colors"
             >
-              <RotateCcw className="w-3.5 h-3.5 text-slate-600" />
+              <RotateCcw className="w-3.5 h-3.5 text-primary-700" />
               <span className="hidden sm:inline">Reset</span>
             </button>
 
@@ -540,7 +540,7 @@ export default function FuelStationMap({
         />
 
         {/* Floating City Banner & Quick Legend */}
-        <div className="absolute top-3 left-3 z-[400] bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-2xl border border-slate-200/90 shadow-md flex items-center gap-2.5 pointer-events-auto">
+        <div className="absolute top-3 left-3 z-[400] bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-2xl border border-primary-300/40 shadow-md flex items-center gap-2.5 pointer-events-auto">
           <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
           <div className="text-xs">
             <span className="font-black text-slate-900">
@@ -553,7 +553,7 @@ export default function FuelStationMap({
         </div>
 
         {/* Floating Brand Legend Bar at Bottom */}
-        <div className="absolute bottom-3 left-3 right-3 z-[400] bg-white/95 backdrop-blur-md px-3 py-2 rounded-2xl border border-slate-200/90 shadow-md flex flex-wrap items-center justify-between gap-2 pointer-events-auto text-[11px]">
+        <div className="absolute bottom-3 left-3 right-3 z-[400] bg-white/95 backdrop-blur-md px-3 py-2 rounded-2xl border border-primary-300/40 shadow-md flex flex-wrap items-center justify-between gap-2 pointer-events-auto text-[11px]">
           <div className="flex flex-wrap items-center gap-2">
             <span className="font-bold text-slate-700 uppercase tracking-wider text-[10px]">
               Brand Legend:

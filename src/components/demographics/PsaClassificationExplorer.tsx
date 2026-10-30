@@ -18,7 +18,7 @@ import {
   Building,
   CheckCircle2,
   HelpCircle,
-} from 'lucide-react';
+} from '../../lib/icons';
 
 const ICON_MAP: Record<string, React.ReactNode> = {
   MapPin: <MapPin className="w-5 h-5" />,
@@ -82,7 +82,7 @@ export default function PsaClassificationExplorer() {
             href="https://psa.gov.ph/classification"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-white text-[#003893] hover:bg-blue-50 transition-colors border border-blue-200 shadow-2xs"
+            className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-white text-[#003893] hover:bg-blue-50 transition-colors border border-primary-200 shadow-2xs"
           >
             <span>Official PSA Classifications</span>
             <ExternalLink className="w-3.5 h-3.5" />
@@ -91,9 +91,9 @@ export default function PsaClassificationExplorer() {
       </div>
 
       {/* Filter and Search Bar */}
-      <div className="bg-white p-4 rounded-2xl border border-gray-200 shadow-xs flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="bg-white p-4 rounded-2xl border border-primary-200 shadow-xs flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="relative w-full md:w-80">
-          <Search className="w-4 h-4 text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+          <Search className="w-4 h-4 text-primary-700 absolute left-3.5 top-1/2 -translate-y-1/2" />
           <input
             type="text"
             placeholder="Search standards (e.g. Geography, Jobs, Education, Business)..."
@@ -125,7 +125,7 @@ export default function PsaClassificationExplorer() {
         {filteredClassifications.map((item: PsaClassification) => (
           <div
             key={item.code}
-            className="bg-white rounded-2xl border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all duration-200 flex flex-col justify-between overflow-hidden group"
+            className="bg-white rounded-2xl border border-primary-200 hover:border-primary-500 hover:shadow-lg transition-all duration-200 flex flex-col justify-between overflow-hidden group"
           >
             <div className="p-5">
               <div className="flex items-start justify-between gap-3 mb-3">
@@ -156,9 +156,9 @@ export default function PsaClassificationExplorer() {
               </p>
 
               {/* Purpose in National Statistics */}
-              <div className="bg-slate-50 p-3 rounded-xl border border-slate-100 mb-3 text-xs">
+              <div className="bg-slate-50 p-3 rounded-xl border border-primary-200 mb-3 text-xs">
                 <div className="text-[11px] font-bold text-gray-800 flex items-center gap-1 mb-1">
-                  <HelpCircle className="w-3.5 h-3.5 text-blue-700" />
+                  <HelpCircle className="w-3.5 h-3.5 text-primary-700" />
                   <span>Purpose &amp; Use</span>
                 </div>
                 <p className="text-[11px] text-gray-600 leading-relaxed line-clamp-2">
@@ -167,9 +167,9 @@ export default function PsaClassificationExplorer() {
               </div>
 
               {/* Local Trece Martires application badge */}
-              <div className="bg-blue-50/50 p-3 rounded-xl border border-blue-100/70 mb-2 text-xs">
+              <div className="bg-blue-50/50 p-3 rounded-xl border border-primary-200 mb-2 text-xs">
                 <div className="text-[11px] font-bold text-[#00225e] flex items-center gap-1 mb-1">
-                  <Building className="w-3.5 h-3.5 text-amber-600" />
+                  <Building className="w-3.5 h-3.5 text-primary-700" />
                   <span>Trece Martires Application</span>
                 </div>
                 <p className="text-[11px] text-blue-950 leading-relaxed line-clamp-2">
@@ -181,7 +181,7 @@ export default function PsaClassificationExplorer() {
             {/* Action Links Footer */}
             <div className="bg-gray-50/70 border-t border-gray-100 px-5 py-3.5 flex items-center justify-between text-xs">
               <span className="text-[11px] text-gray-500 font-medium flex items-center gap-1">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-primary-700" />
                 <span>PSA Official Standard</span>
               </span>
 

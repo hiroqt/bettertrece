@@ -9,7 +9,7 @@ import {
   useMemo,
   useEffect,
 } from 'react';
-import { Table, List } from 'lucide-react';
+import { Table, List } from './icons';
 import { type TypographyTheme } from './typographyThemes';
 
 // Helper functions to extract text from React children
@@ -250,7 +250,7 @@ export const TableWithToggle = ({
             tableData.rows.map((row, index) => (
               <div
                 key={index}
-                className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm mx-2 sm:mx-0"
+                className="bg-white border border-primary-200 rounded-lg p-4 shadow-sm mx-2 sm:mx-0"
               >
                 <div className="grid gap-3">
                   {tableData.headers.map((header, headerIndex) => (
@@ -270,7 +270,7 @@ export const TableWithToggle = ({
               </div>
             ))
           ) : (
-            <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mx-2 sm:mx-0">
+            <div className="bg-yellow-50 border border-primary-200 rounded-lg p-4 mx-2 sm:mx-0">
               <div className="text-yellow-800 text-sm">
                 <strong>Debug Info:</strong>
                 <br />

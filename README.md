@@ -1,4 +1,6 @@
-# 🏛️ BetterTreceMartires.org — Civic Tech Portal for Trece Martires City, Cavite
+![Better Trece Martires civic banner](public/images/better-trece-martires-civic-banner.png)
+
+# BetterTreceMartires.org — Civic Tech Portal for Trece Martires City, Cavite
 
 [![BetterGov Initiative](https://img.shields.io/badge/BetterGov-Civic%20Tech%20Initiative-003893.svg)](https://bettertrecemartires.org)
 [![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-blue.svg)](LICENSE)
@@ -13,24 +15,24 @@ Part of the volunteer-led **BetterGov** initiative, BetterTrece aims to make loc
 
 ---
 
-## 🌟 Features in BetterTrece
+## Features in BetterTrece
 
-- 📋 **City Services & Citizen Guides**: Step-by-step instructions, documentary requirements, and fees for Mayor's business permits, barangay clearances, local scholarships, civil registry, and social welfare programs.
-- 📊 **Financial & Infrastructure Transparency Hub**:
+- **City Services & Citizen Guides**: Step-by-step instructions, documentary requirements, and fees for Mayor's business permits, barangay clearances, local scholarships, civil registry, and social welfare programs.
+- **Financial & Infrastructure Transparency Hub**:
   - **National Budget (GAA 2020–2026)**: Multi-year breakdown of national budget allocations for Trece Martires.
   - **COA Annual Audit Reports (AAR 2024)**: Verified public audit findings and fund accountability summaries.
   - **City Revenues & Tax Collections**: DOF-BLGF local revenue breakdown and budget allocations.
   - **DPWH Infrastructure Explorer**: Live road, flood control, and public works tracking in Trece Martires and Cavite arterial corridors.
-- 🏫 **Education & Schools Directory**: Comprehensive directory of all 60+ DepEd public and private schools (Preschool, Elementary, JHS, Senior High, and Integrated) with Senior High School tracks and strands.
-- 💼 **PESO & Career Classifications**: Public Employment Service Office (PESO) occupation explorer powered by the PSA Standard Occupational Classification (PSOC 2012).
-- ⛽ **DOE Fuel Price Monitor & Gas Station Locator**: Weekly retail pump prices from the Department of Energy (DOE) with major vs. independent brand price comparisons, 25+ gas stations mapped with 1-click Google Maps / Waze navigation, and crowd-sourced community price reporting.
-- 🛡️ **Peace, Order & Safety Directory**: Trece Martires PNP Police Station, VAWC help desks, and Barangay Katarungang Pambarangay directory mapped under PSCCS 2018 standards.
-- 🚨 **Emergency Hotlines**: Instant 24/7 access to CDRRMO, PNP, BFP, and local utility emergency hotlines.
-- 🌐 **Multilingual & Accessible**: Full English and Filipino (Tagalog) localization, mobile-first design, fast load times, and zero trackers or ads.
+- **Education & Schools Directory**: Comprehensive directory of all 60+ DepEd public and private schools (Preschool, Elementary, JHS, Senior High, and Integrated) with Senior High School tracks and strands.
+- **PESO & Career Classifications**: Public Employment Service Office (PESO) occupation explorer powered by the PSA Standard Occupational Classification (PSOC 2012).
+- **DOE Fuel Price Monitor & Gas Station Locator**: Weekly retail pump prices from the Department of Energy (DOE) with major vs. independent brand price comparisons, 25+ gas stations mapped with 1-click Google Maps / Waze navigation, and crowd-sourced community price reporting.
+- **Peace, Order & Safety Directory**: Trece Martires PNP Police Station, VAWC help desks, and Barangay Katarungang Pambarangay directory mapped under PSCCS 2018 standards.
+- **Emergency Hotlines**: Instant 24/7 access to CDRRMO, PNP, BFP, and local utility emergency hotlines.
+- **Multilingual & Accessible**: Full English and Filipino (Tagalog) localization, mobile-first design, fast load times, and zero trackers or ads.
 
 ---
 
-## 🚀 Quick Start for Developers
+## Quick Start for Developers
 
 ### Prerequisites
 
@@ -77,7 +79,7 @@ Part of the volunteer-led **BetterGov** initiative, BetterTrece aims to make loc
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 bettertrece/
@@ -118,11 +120,11 @@ bettertrece/
 
 ---
 
-## 🤝 Contributor Guide: How You Can Help
+## Contributor Guide: How You Can Help
 
 We welcome contributions from developers, researchers, students, and citizens of Trece Martires and Cavite!
 
-### 🌟 1. Non-Technical / Content Contributions
+### 1. Non-Technical / Content Contributions
 
 You do not need coding experience to contribute valuable information:
 
@@ -133,7 +135,7 @@ You do not need coding experience to contribute valuable information:
 
 ---
 
-### 💻 2. Technical Contributions
+### 2. Technical Contributions
 
 #### Step 1: Sync Your Fork
 
@@ -181,7 +183,7 @@ For complete details on branch naming, conventional commit messages, and PR revi
 
 ---
 
-### 📋 Pull Request (PR) Format Quick Reference
+### Pull Request (PR) Format Quick Reference
 
 When submitting a PR, use the following title and structure:
 
@@ -190,22 +192,22 @@ When submitting a PR, use the following title and structure:
 ```
 
 ```markdown
-## 📌 Pull Request Overview
+## Pull Request Overview
 
-### 📝 Summary of Changes
+### Summary of Changes
 
 - Brief bullet points explaining what was added, updated, or fixed.
 
-### 🏛️ Module / Area Affected
+### Module / Area Affected
 
 - [x] Fuel Price Monitor & Gas Station Map
 
-### 🔍 Data Source & Verification
+### Data Source & Verification
 
 - **Official Source Agency**: Department of Energy (DOE) - OIMB
 - **Reference / Link**: https://www.doe.gov.ph/retail-pump-prices-luzon
 
-### ✅ Pre-Submission Checklist
+### Pre-Submission Checklist
 
 - [x] `npm run lint` and `npm run build` pass with zero errors.
 - [x] Mobile and desktop views tested.
@@ -214,7 +216,7 @@ When submitting a PR, use the following title and structure:
 
 ---
 
-## 🏛️ Data Sources & Verification Principles
+## Data Sources & Verification Principles
 
 BetterTrece adheres strictly to verified public data sources:
 
@@ -227,10 +229,10 @@ BetterTrece adheres strictly to verified public data sources:
 
 ---
 
-## 📄 License
+## License
 
 This project is open-source and licensed under the **Creative Commons Zero v1.0 Universal (CC0 1.0) Public Domain Dedication**. You are free to use, modify, and build upon this work for public and civic good.
 
 ---
 
-**Built with ❤️ by the community for the people of Trece Martires City, Cavite.**
+**Built by the community for the people of Trece Martires City, Cavite.**

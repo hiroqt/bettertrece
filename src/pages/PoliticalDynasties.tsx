@@ -2,7 +2,7 @@ import { useSearchParams, useLocation, Link } from 'react-router';
 import SEO from '../components/SEO';
 import Breadcrumbs from '../components/ui/Breadcrumbs';
 import PoliticalDynastiesExplorer from '../components/transparency/PoliticalDynastiesExplorer';
-import { Landmark, ArrowLeft, ShieldCheck } from 'lucide-react';
+import { Landmark, ArrowLeft, ShieldCheck } from '../lib/icons';
 import { DYNASTY_SUMMARY } from '../data/transparency/politicalDynasties';
 
 export default function PoliticalDynasties() {
@@ -135,7 +135,7 @@ export default function PoliticalDynasties() {
 
               {/* Hero Stat Cards */}
               <div className="grid grid-cols-2 gap-3 shrink-0">
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-5 border border-white/20 text-center">
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-5 border border-primary-300/40 border-white/20 text-center">
                   <span className="block text-2xl sm:text-4xl font-black text-amber-300">
                     {treceSummary.overallFatShare}%
                   </span>
@@ -148,7 +148,7 @@ export default function PoliticalDynasties() {
                   </span>
                 </div>
 
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-5 border border-white/20 text-center">
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-5 border border-primary-300/40 border-white/20 text-center">
                   <span className="block text-2xl sm:text-4xl font-black text-blue-300">
                     {caviteSummary.overallFatShare2022}%
                   </span>

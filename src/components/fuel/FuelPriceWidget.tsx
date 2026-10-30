@@ -30,7 +30,7 @@ import {
   CheckCircle2,
   PlusCircle,
   BarChart3,
-} from 'lucide-react';
+} from '../../lib/icons';
 import { Link } from 'react-router';
 
 interface FuelPriceWidgetProps {
@@ -80,7 +80,7 @@ export default function FuelPriceWidget({
       className={`w-full ${
         isFullWidthSection
           ? ''
-          : 'bg-white rounded-3xl p-6 sm:p-8 lg:p-10 border border-slate-200/90 shadow-md'
+          : 'bg-white rounded-3xl p-6 sm:p-8 lg:p-10 border border-primary-200 shadow-md'
       } ${className}`}
     >
       {/* 1. OFFICIAL DOE HEADER WITH FRESHNESS & COMMUNITY BADGES */}
@@ -107,7 +107,7 @@ export default function FuelPriceWidget({
               onClick={() => setIsReportModalOpen(true)}
               className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-50 text-amber-800 border border-amber-300/80 hover:bg-amber-100 transition-colors cursor-pointer"
             >
-              <Users className="w-3.5 h-3.5 text-amber-600" />
+              <Users className="w-3.5 h-3.5 text-primary-700" />
               <span>{communityReports.length} Community Reports</span>
             </button>
           </div>
@@ -128,7 +128,7 @@ export default function FuelPriceWidget({
           {/* Monitoring Period Metadata */}
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-slate-500 font-medium">
             <span className="flex items-center gap-1">
-              <Clock className="w-3.5 h-3.5 text-slate-400" />
+              <Clock className="w-3.5 h-3.5 text-primary-700" />
               <span>Monitoring Period: </span>
               <strong className="text-slate-800 font-semibold">
                 {TRECE_DOE_FUEL_META.periodLabel}
@@ -136,7 +136,7 @@ export default function FuelPriceWidget({
             </span>
             <span className="text-slate-300">•</span>
             <span className="flex items-center gap-1">
-              <MapPin className="w-3.5 h-3.5 text-slate-400" />
+              <MapPin className="w-3.5 h-3.5 text-primary-700" />
               <span>Coverage: </span>
               <strong className="text-slate-800 font-semibold">
                 Trece Martires City & Major Corridors
@@ -166,7 +166,7 @@ export default function FuelPriceWidget({
       </div>
 
       {/* 2. OFFICIAL DOE DISCLAIMER CARD */}
-      <div className="my-5 p-4 sm:p-5 bg-gradient-to-r from-amber-50/90 via-amber-50/50 to-amber-50/90 border border-amber-200/90 rounded-2xl sm:rounded-3xl flex flex-col sm:flex-row items-start sm:items-center gap-3.5 shadow-2xs">
+      <div className="my-5 p-4 sm:p-5 bg-gradient-to-r from-amber-50/90 via-amber-50/50 to-amber-50/90 border border-primary-200 rounded-2xl sm:rounded-3xl flex flex-col sm:flex-row items-start sm:items-center gap-3.5 shadow-2xs">
         <div className="p-2.5 bg-amber-100/80 rounded-2xl text-amber-800 shrink-0">
           <Info className="w-5 h-5" />
         </div>
@@ -187,7 +187,7 @@ export default function FuelPriceWidget({
           return (
             <div
               key={product.id}
-              className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 border border-slate-200/90 shadow-2xs hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between group"
+              className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 border border-primary-200 shadow-2xs hover:shadow-md hover:border-primary-500 transition-all flex flex-col justify-between group"
             >
               {/* Product Header */}
               <div>
@@ -228,7 +228,7 @@ export default function FuelPriceWidget({
                 {/* Lowest Price & Potential Savings */}
                 <div className="bg-emerald-50/80 rounded-xl p-2.5 border border-emerald-200/70 flex items-center justify-between text-xs">
                   <span className="text-emerald-800 font-bold flex items-center gap-1">
-                    <TrendingDown className="w-3.5 h-3.5 text-emerald-600" />
+                    <TrendingDown className="w-3.5 h-3.5 text-primary-700" />
                     <span>Lowest in City:</span>
                   </span>
                   <span className="font-black text-emerald-900 font-mono">
@@ -273,10 +273,10 @@ export default function FuelPriceWidget({
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
         {/* Cheapest Diesel Spot */}
         {cheapestDieselStation && (
-          <div className="bg-gradient-to-r from-amber-500/10 via-amber-50/50 to-white p-4 sm:p-5 rounded-2xl sm:rounded-3xl border border-amber-200/80 flex items-center justify-between gap-4">
+          <div className="bg-gradient-to-r from-amber-500/10 via-amber-50/50 to-white p-4 sm:p-5 rounded-2xl sm:rounded-3xl border border-primary-200 flex items-center justify-between gap-4">
             <div className="space-y-1 min-w-0">
               <div className="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider text-amber-800 bg-amber-100/80 px-2.5 py-0.5 rounded-full">
-                <Flame className="w-3 h-3 text-amber-600" />
+                <Flame className="w-3 h-3 text-primary-700" />
                 <span>Lowest Diesel in Trece</span>
               </div>
               <h4 className="font-black text-slate-900 text-sm sm:text-base truncate">
@@ -309,10 +309,10 @@ export default function FuelPriceWidget({
 
         {/* Cheapest Unleaded Spot */}
         {cheapestUnleadedStation && (
-          <div className="bg-gradient-to-r from-sky-500/10 via-sky-50/50 to-white p-4 sm:p-5 rounded-2xl sm:rounded-3xl border border-sky-200/80 flex items-center justify-between gap-4">
+          <div className="bg-gradient-to-r from-sky-500/10 via-sky-50/50 to-white p-4 sm:p-5 rounded-2xl sm:rounded-3xl border border-primary-200 flex items-center justify-between gap-4">
             <div className="space-y-1 min-w-0">
               <div className="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider text-sky-800 bg-sky-100/80 px-2.5 py-0.5 rounded-full">
-                <Fuel className="w-3 h-3 text-sky-600" />
+                <Fuel className="w-3 h-3 text-primary-700" />
                 <span>Lowest Unleaded 91 in Trece</span>
               </div>
               <h4 className="font-black text-slate-900 text-sm sm:text-base truncate">
@@ -380,7 +380,7 @@ export default function FuelPriceWidget({
       )}
 
       {/* 6. BRAND SCHEDULE BREAKDOWN TABLE */}
-      <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 p-5 sm:p-7 shadow-2xs mb-8">
+      <div className="bg-white rounded-2xl sm:rounded-3xl border border-primary-200 p-5 sm:p-7 shadow-2xs mb-8">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5">
           <div>
             <h3 className="text-lg font-bold text-slate-900 tracking-tight flex items-center gap-2">
@@ -457,7 +457,7 @@ export default function FuelPriceWidget({
       </div>
 
       {/* 7. COMMUNITY REPORTS ACTIVITY FEED */}
-      <div className="bg-slate-50/80 rounded-2xl sm:rounded-3xl border border-slate-200/90 p-5 sm:p-7">
+      <div className="bg-slate-50/80 rounded-2xl sm:rounded-3xl border border-primary-200 p-5 sm:p-7">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
           <div className="flex items-center gap-2">
             <Users className="w-5 h-5 text-[#003893]" />
@@ -485,7 +485,7 @@ export default function FuelPriceWidget({
           {communityReports.slice(0, 4).map(report => (
             <div
               key={report.id}
-              className="bg-white p-4 rounded-2xl border border-slate-200 shadow-2xs space-y-2 text-xs"
+              className="bg-white p-4 rounded-2xl border border-primary-200 shadow-2xs space-y-2 text-xs"
             >
               <div className="flex items-center justify-between">
                 <span className="font-bold text-slate-900 truncate">

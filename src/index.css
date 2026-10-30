@@ -310,3 +310,52 @@
     animation: none !important;
   }
 }
+
+.currency-ticker {
+  display: grid;
+  align-items: center;
+  height: 1.25rem;
+}
+
+.currency-ticker__item {
+  grid-area: 1 / 1;
+  white-space: nowrap;
+  animation: currencyTicker 8s ease-in-out infinite both;
+}
+
+.currency-ticker__item--next {
+  animation-delay: 4s;
+}
+
+@keyframes currencyTicker {
+  0% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  8%,
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  58%,
+  100% {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .currency-ticker {
+    display: flex;
+    gap: 0.75rem;
+    height: auto;
+  }
+
+  .currency-ticker__item {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -14,7 +14,7 @@ import {
   Send,
   Users,
   ShieldCheck,
-} from 'lucide-react';
+} from '../../lib/icons';
 
 interface CommunityReportModalProps {
   isOpen: boolean;
@@ -90,7 +90,7 @@ export default function CommunityReportModal({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs animate-in fade-in duration-200">
-      <div className="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-slate-200 relative overflow-hidden">
+      <div className="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-primary-200 relative overflow-hidden">
         {/* Close Button */}
         <button
           onClick={onClose}
@@ -130,7 +130,7 @@ export default function CommunityReportModal({
             </div>
 
             {errorMsg && (
-              <div className="p-3 bg-red-50 text-red-700 border border-red-200 rounded-xl text-xs flex items-center gap-2">
+              <div className="p-3 bg-red-50 text-primary-700 border border-primary-200 rounded-xl text-xs flex items-center gap-2">
                 <AlertCircle className="w-4 h-4 shrink-0" />
                 <span>{errorMsg}</span>
               </div>
@@ -244,8 +244,8 @@ export default function CommunityReportModal({
             </div>
 
             {/* Disclaimer in Modal */}
-            <div className="p-3 bg-amber-50/70 border border-amber-200/80 rounded-xl text-[11px] text-amber-900 leading-relaxed flex items-start gap-2">
-              <ShieldCheck className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
+            <div className="p-3 bg-amber-50/70 border border-primary-200 rounded-xl text-[11px] text-primary-700 leading-relaxed flex items-start gap-2">
+              <ShieldCheck className="w-4 h-4 text-primary-700 shrink-0 mt-0.5" />
               <span>
                 Community reports help verify actual pump prices in Trece
                 Martires against official DOE weekly monitoring records.

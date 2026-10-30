@@ -24,7 +24,7 @@ import {
   GraduationCap,
   Briefcase,
   Shield,
-} from 'lucide-react';
+} from '../lib/icons';
 
 type DemographicsTab =
   'overview' | 'occupations' | 'safety' | 'education' | 'classifications';
@@ -244,13 +244,13 @@ export default function Demographics() {
               <BarangayPsgcTable />
 
               {/* 2. Dataset Metadata & Provenance Callout */}
-              <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-xs">
+              <div className="bg-white rounded-2xl border border-primary-200 p-6 shadow-xs">
                 <div className="flex items-center gap-2 mb-3 text-gray-900 font-bold text-base">
                   <Database className="w-5 h-5 text-[#003893]" />
                   <h3>About the Displayed Datasets &amp; Sources</h3>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
-                  <div className="bg-slate-50 p-3.5 rounded-xl border border-slate-100">
+                  <div className="bg-slate-50 p-3.5 rounded-xl border border-primary-200">
                     <div className="text-gray-500 font-semibold mb-1">
                       Electoral Registry Data
                     </div>
@@ -268,7 +268,7 @@ export default function Demographics() {
                     </div>
                   </div>
 
-                  <div className="bg-slate-50 p-3.5 rounded-xl border border-slate-100">
+                  <div className="bg-slate-50 p-3.5 rounded-xl border border-primary-200">
                     <div className="text-gray-500 font-semibold mb-1">
                       Population Census
                     </div>
@@ -283,7 +283,7 @@ export default function Demographics() {
                     </div>
                   </div>
 
-                  <div className="bg-slate-50 p-3.5 rounded-xl border border-slate-100">
+                  <div className="bg-slate-50 p-3.5 rounded-xl border border-primary-200">
                     <div className="text-gray-500 font-semibold mb-1">
                       Geographic Standard
                     </div>
@@ -295,7 +295,7 @@ export default function Demographics() {
                     </div>
                   </div>
 
-                  <div className="bg-slate-50 p-3.5 rounded-xl border border-slate-100">
+                  <div className="bg-slate-50 p-3.5 rounded-xl border border-primary-200">
                     <div className="text-gray-500 font-semibold mb-1">
                       Land Area &amp; Status
                     </div>
@@ -315,7 +315,7 @@ export default function Demographics() {
 
               {/* 4. Information Cards Strip */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-5 pt-2">
-                <div className="bg-white p-5 rounded-2xl border border-gray-200 shadow-xs">
+                <div className="bg-white p-5 rounded-2xl border border-primary-200 shadow-xs">
                   <div className="w-9 h-9 rounded-xl bg-blue-50 text-[#003893] flex items-center justify-center mb-3">
                     <MapPin className="w-5 h-5" />
                   </div>
@@ -329,7 +329,7 @@ export default function Demographics() {
                   </p>
                 </div>
 
-                <div className="bg-white p-5 rounded-2xl border border-gray-200 shadow-xs">
+                <div className="bg-white p-5 rounded-2xl border border-primary-200 shadow-xs">
                   <div className="w-9 h-9 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center mb-3">
                     <BookOpen className="w-5 h-5" />
                   </div>
@@ -342,7 +342,7 @@ export default function Demographics() {
                   </p>
                 </div>
 
-                <div className="bg-white p-5 rounded-2xl border border-gray-200 shadow-xs">
+                <div className="bg-white p-5 rounded-2xl border border-primary-200 shadow-xs">
                   <div className="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center mb-3">
                     <FileSpreadsheet className="w-5 h-5" />
                   </div>

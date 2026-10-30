@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router';
-import { ChevronRight, Home } from 'lucide-react';
+import { ChevronRight, Home } from '../../lib/icons';
 
 export interface BreadcrumbItem {
   label: string;

@@ -2,7 +2,7 @@ import { lazy, Suspense } from 'react';
 import { NuqsAdapter } from 'nuqs/adapters/react';
 import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/layout/Navbar';
-import DataDisclaimerBanner from './components/layout/DataDisclaimerBanner';
+import CommunityCTA from './components/layout/CommunityCTA';
 import Footer from './components/layout/Footer';
 import Home from './pages/Home';
 import ScrollToTop from './components/ui/ScrollToTop';
@@ -15,7 +15,8 @@ import PoliticalDynasties from './pages/PoliticalDynasties';
 import Search from './pages/Search';
 import About from './pages/About';
 import FuelPrices from './pages/FuelPrices';
-import { isMeilisearchEnabled } from './lib/meilisearch';
+import Sitemap from './pages/Sitemap';
+import Accessibility from './pages/Accessibility';
 import { BrowserRouter as Router, Routes, Route } from 'react-router';
 import { Analytics } from '@vercel/analytics/react';
 
@@ -32,6 +33,8 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
+              <Route path="/sitemap" element={<Sitemap />} />
+              <Route path="/accessibility" element={<Accessibility />} />
               <Route path="/why-i-built-this" element={<About />} />
               <Route path="/fuel-prices" element={<FuelPrices />} />
               <Route path="/services/fuel-prices" element={<FuelPrices />} />
@@ -73,13 +76,11 @@ function App() {
                 path="/government/:category/:documentSlug"
                 element={<Document categoryType="government" />}
               />
-              {isMeilisearchEnabled && (
-                <Route path="/search" element={<Search />} />
-              )}
+              <Route path="/search" element={<Search />} />
               <Route path="/:lang/:documentSlug" element={<Document />} />
               <Route path="/:documentSlug" element={<Document />} />
             </Routes>
-            <DataDisclaimerBanner />
+            <CommunityCTA />
             <Footer />
             <Analytics />
           </div>

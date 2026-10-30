@@ -16,7 +16,7 @@ import {
   HardHat,
   FileCheck2,
   Users,
-} from 'lucide-react';
+} from '../lib/icons';
 
 export default function DpwhTransparency() {
   const location = useLocation();
@@ -374,7 +374,7 @@ export default function DpwhTransparency() {
               className="space-y-8 animate-fadeIn"
             >
               {/* Local Trece Highlight Card */}
-              <div className="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200 shadow-sm space-y-6">
+              <div className="bg-white rounded-3xl p-6 sm:p-8 border border-primary-200 shadow-sm space-y-6">
                 <div className="max-w-3xl space-y-3">
                   <span className="px-3 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-900 border border-amber-300">
                     City Strategic Infrastructure
@@ -391,10 +391,10 @@ export default function DpwhTransparency() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
-                  <div className="bg-slate-50 p-5 rounded-2xl border border-gray-200 space-y-3">
+                  <div className="bg-slate-50 p-5 rounded-2xl border border-primary-200 space-y-3">
                     <div className="flex items-center gap-2 text-[#003893] font-bold text-sm">
                       <Layers
-                        className="w-4 h-4 text-amber-500"
+                        className="w-4 h-4 text-primary-700"
                         aria-hidden="true"
                       />
                       <span>Governor’s Drive Multi-Lane Widening</span>
@@ -410,10 +410,10 @@ export default function DpwhTransparency() {
                     </div>
                   </div>
 
-                  <div className="bg-slate-50 p-5 rounded-2xl border border-gray-200 space-y-3">
+                  <div className="bg-slate-50 p-5 rounded-2xl border border-primary-200 space-y-3">
                     <div className="flex items-center gap-2 text-[#003893] font-bold text-sm">
                       <Building2
-                        className="w-4 h-4 text-amber-500"
+                        className="w-4 h-4 text-primary-700"
                         aria-hidden="true"
                       />
                       <span>City Evacuation &amp; Convention Center</span>
@@ -427,10 +427,10 @@ export default function DpwhTransparency() {
                     </div>
                   </div>
 
-                  <div className="bg-slate-50 p-5 rounded-2xl border border-gray-200 space-y-3">
+                  <div className="bg-slate-50 p-5 rounded-2xl border border-primary-200 space-y-3">
                     <div className="flex items-center gap-2 text-[#003893] font-bold text-sm">
                       <ShieldCheck
-                        className="w-4 h-4 text-amber-500"
+                        className="w-4 h-4 text-primary-700"
                         aria-hidden="true"
                       />
                       <span>Rio Grande River Basin Protection</span>
@@ -446,7 +446,7 @@ export default function DpwhTransparency() {
                   </div>
                 </div>
 
-                <div className="bg-blue-50/70 rounded-2xl p-5 border border-blue-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div className="bg-blue-50/70 rounded-2xl p-5 border border-primary-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                   <div className="space-y-1">
                     <h3 className="text-sm font-bold text-[#003893]">
                       Responsible District Engineering Office

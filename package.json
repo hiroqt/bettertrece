@@ -29,6 +29,8 @@
   },
   "dependencies": {
     "@bettergov/kapwa": "^1.2.4",
+    "@hugeicons/core-free-icons": "^4.4.0",
+    "@hugeicons/react": "^1.1.10",
     "@tailwindcss/typography": "^0.5.18",
     "@vercel/analytics": "^2.0.1",
     "clsx": "^2.1.1",
@@ -38,7 +40,6 @@
     "i18next-http-backend": "^4.0.1",
     "js-yaml": "^5.2.2",
     "leaflet": "^1.9.4",
-    "lucide-react": "^0.575.0",
     "maplibre-gl": "^6.15.0",
     "meilisearch": "^0.60.0",
     "nuqs": "^2.6.0",

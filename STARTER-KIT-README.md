@@ -102,7 +102,7 @@ colors: {
 
 #### Update Logo and Images
 
-- Replace `public/logo.svg` with your government logo
+- Replace `public/images/better-trece-martires-logo.png` with your government logo
 - Update `public/favicon.ico` with your government's favicon
 - Add your government's images to `public/images/`
 - Create a custom Open Graph image (`public/og-image.jpg`) for social media sharing

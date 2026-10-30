@@ -49,9 +49,9 @@ import {
   Map,
   Binary,
   Database,
-  Sparkles,
+  CircleHelp,
   Fuel,
-} from 'lucide-react';
+} from '../../lib/icons';
 import {
   mainNavigation,
   type MegaMenuFeatured,
@@ -148,12 +148,12 @@ const getMegaIcon = (name?: string) => {
     case 'ExternalLink':
       return ExternalLink;
     default:
-      return Sparkles;
+      return CircleHelp;
   }
 };
 
-import { BetterTreceLogo, TreceMonumentEmblem } from '../ui/TreceLogo';
-export { BetterTreceLogo, TreceMonumentEmblem };
+import { BetterTreceLogo } from '../ui/TreceLogo';
+export { BetterTreceLogo };
 
 const EMERGENCY_HOTLINES = [
   {
@@ -205,6 +205,7 @@ const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const { t, i18n } = useTranslation();
   const location = useLocation();
+  const isShadePage = location.pathname === '/shade-map';
 
   const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const navRef = useRef<HTMLElement | null>(null);
@@ -446,7 +447,7 @@ const Navbar: React.FC = () => {
 
   // Check if current page has a dark hero header at the top
   // All main pages in BetterTrece feature a dark navy/blue gradient hero header banner
-  const isDarkHeroPage = true;
+  const isDarkHeroPage = !isShadePage;
 
   // Should navbar use light text theme (when transparent over dark hero)
   const isLightNavTheme = !isScrolled && isDarkHeroPage;
@@ -458,7 +459,7 @@ const Navbar: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 ${isShadePage ? 'z-[110]' : 'z-50'} transition-all duration-300 ${
         isScrolled ? 'shadow-md' : 'shadow-none'
       }`}
     >
@@ -563,33 +564,40 @@ const Navbar: React.FC = () => {
 
           <div className="flex items-center justify-end w-full md:w-auto gap-4 sm:gap-6 text-slate-300 ml-auto">
             {/* Currency */}
-            <div className="flex items-center gap-1.5">
+            <div className="hidden sm:flex items-center gap-1.5">
               <Coins className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-              <span>
-                S$1 SGD ={' '}
-                <strong className="text-white font-mono">₱44.50</strong>
-              </span>
-              <span className="text-gray-600 hidden sm:inline">|</span>
-              <span className="hidden sm:inline">
-                $1 USD ={' '}
-                <strong className="text-white font-mono">₱58.45</strong>
+              <span
+                className="currency-ticker"
+                aria-label="Indicative exchange rates as of October 30, 2026: 1 Singapore dollar equals 49 pesos and 82 centavos; 1 US dollar equals 63 pesos and 81 centavos."
+                title="Indicative reference rates · October 30, 2026"
+              >
+                <span className="currency-ticker__item">
+                  S$1 SGD ={' '}
+                  <strong className="text-white font-mono">₱49.82</strong>{' '}
+                  <span className="text-slate-400 text-[9px]">· 10/30/26</span>
+                </span>
+                <span className="currency-ticker__item currency-ticker__item--next">
+                  $1 USD ={' '}
+                  <strong className="text-white font-mono">₱63.81</strong>{' '}
+                  <span className="text-slate-400 text-[9px]">· 10/30/26</span>
+                </span>
               </span>
             </div>
 
-            <span className="text-gray-700">|</span>
+            <span className="hidden sm:inline text-gray-700">|</span>
 
             {/* Weather */}
-            <div className="flex items-center gap-1.5 text-slate-200">
+            <div className="flex items-center gap-1.5 text-slate-200 whitespace-nowrap">
               <Sun className="w-3.5 h-3.5 text-amber-400 shrink-0" />
               <span>
                 Trece Martires <strong className="text-white">28°C</strong>
               </span>
             </div>
 
-            <span className="text-gray-700">|</span>
+            <span className="hidden md:inline text-gray-700">|</span>
 
             {/* Live Clock */}
-            <div className="flex items-center gap-1.5 text-slate-200 font-mono text-[11px]">
+            <div className="hidden md:flex items-center gap-1.5 text-slate-200 font-mono text-[11px] whitespace-nowrap">
               <Clock className="w-3.5 h-3.5 text-blue-400 shrink-0" />
               <span>{currentTime || 'PHT Live'}</span>
             </div>
@@ -605,7 +613,9 @@ const Navbar: React.FC = () => {
             ? 'bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-md text-gray-900'
             : isDarkHeroPage
               ? 'bg-[#001438]/90 lg:bg-transparent border-b border-white/10 text-white'
-              : 'bg-white/90 lg:bg-transparent border-b border-gray-100 text-gray-900'
+              : isShadePage
+                ? 'bg-white/95 backdrop-blur-md border-b border-gray-100 text-gray-900'
+                : 'bg-white/90 lg:bg-transparent border-b border-gray-100 text-gray-900'
         }`}
       >
         <div className="container mx-auto px-4 max-w-7xl">
@@ -803,17 +813,19 @@ const Navbar: React.FC = () => {
                 onMouseEnter={handleMegaPanelMouseEnter}
                 onMouseLeave={handleMegaPanelMouseLeave}
               >
-                <div className="container mx-auto px-4 max-w-7xl">
-                  <div className="bg-white rounded-2xl shadow-2xl border border-gray-200/90 text-gray-900 p-6 lg:p-7 grid grid-cols-12 gap-6 ring-1 ring-black/5 overflow-hidden">
-                    {/* 3 Categorized Columns (9 cols) */}
-                    <div className="col-span-8 lg:col-span-9 grid grid-cols-3 gap-6">
+                <div className="w-full mx-auto px-4">
+                  <div className="bg-white rounded-2xl shadow-2xl border border-primary-200 text-primary-700 p-6 lg:p-7 grid grid-cols-12 gap-6 ring-1 ring-black/5 overflow-hidden">
+                    {/* Categorized columns (9 cols) */}
+                    <div
+                      className="col-span-8 lg:col-span-9 grid gap-6"
+                      style={{
+                        gridTemplateColumns: `repeat(${activeMegaMenuData.columns.length}, minmax(0, 1fr))`,
+                      }}
+                    >
                       {activeMegaMenuData.columns.map(col => (
                         <div key={col.heading} className="space-y-3">
-                          <div className="text-xs font-black uppercase tracking-wider text-[#003893] pb-1.5 border-b border-blue-100 flex items-center justify-between">
-                            <span>{col.heading}</span>
-                            <span className="text-[10px] text-gray-400 font-semibold font-mono">
-                              {col.items.length} links
-                            </span>
+                          <div className="text-xs font-black uppercase tracking-wider text-[#003893] pb-1.5 border-b border-blue-100">
+                            {col.heading}
                           </div>
 
                           <div className="space-y-1.5">
@@ -875,7 +887,7 @@ const Navbar: React.FC = () => {
 
                     {/* Side Featured Card (3 cols) */}
                     <div className="col-span-4 lg:col-span-3">
-                      <div className="bg-gradient-to-br from-[#003893] via-[#00225e] to-slate-900 text-white p-5 rounded-2xl h-full flex flex-col justify-between shadow-md border border-blue-800/40 relative overflow-hidden group/card">
+                      <div className="bg-gradient-to-br from-[#003893] via-[#00225e] to-slate-900 text-blue-200 p-5 rounded-2xl h-full flex flex-col justify-between shadow-md border border-primary-300/40 relative overflow-hidden group/card">
                         <div className="space-y-2 relative z-10">
                           {featuredData.tag && (
                             <span className="text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-400 text-slate-950 font-sans shadow-xs inline-block">
@@ -981,7 +993,7 @@ const Navbar: React.FC = () => {
                               <Link
                                 to={mobileFeatured.href}
                                 onClick={closeMenu}
-                                className="block text-center text-xs font-bold text-[#003893] bg-white p-2 rounded-lg border border-gray-200 shadow-xs"
+                                className="block text-center text-xs font-bold text-[#003893] bg-white p-2 rounded-lg border border-primary-200 shadow-xs"
                               >
                                 {mobileFeatured.ctaText} &rarr;
                               </Link>

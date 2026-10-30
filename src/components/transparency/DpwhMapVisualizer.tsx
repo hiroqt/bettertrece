@@ -12,7 +12,7 @@ import {
   Eye,
   SlidersHorizontal,
   Compass,
-} from 'lucide-react';
+} from '../../lib/icons';
 
 type AnyProject = DpwhProject | DPWHProject;
 
@@ -95,12 +95,12 @@ export default function DpwhMapVisualizer({
   return (
     <div className="space-y-6 animate-fadeIn">
       {/* Map Header & Controls */}
-      <div className="bg-white rounded-3xl p-6 border border-gray-200 shadow-sm space-y-4">
+      <div className="bg-white rounded-3xl p-6 border border-primary-200 shadow-sm space-y-4">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-gray-100 pb-4">
           <div>
             <div className="flex items-center gap-2 mb-1">
               <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-blue-50 text-blue-800 border border-blue-200 flex items-center gap-1">
-                <Compass className="w-3.5 h-3.5 text-blue-600" />
+                <Compass className="w-3.5 h-3.5 text-primary-700" />
                 Live Map View
               </span>
               <span className="text-xs font-semibold text-gray-500">
@@ -133,7 +133,7 @@ export default function DpwhMapVisualizer({
         {/* Filter Controls Bar */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
           <div className="relative">
-            <Search className="w-4 h-4 absolute left-3 top-2.5 text-gray-400" />
+            <Search className="w-4 h-4 absolute left-3 top-2.5 text-primary-700" />
             <input
               type="text"
               value={searchQuery}
@@ -182,12 +182,12 @@ export default function DpwhMapVisualizer({
       {/* Main Map & Project List Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Real OpenStreetMap Interactive Embed */}
-        <div className="lg:col-span-7 xl:col-span-8 bg-white rounded-3xl border border-gray-200 shadow-sm overflow-hidden flex flex-col h-[520px] sm:h-[580px]">
+        <div className="lg:col-span-7 xl:col-span-8 bg-white rounded-3xl border border-primary-200 shadow-sm overflow-hidden flex flex-col h-[520px] sm:h-[580px]">
           {/* Active Project Location Bar */}
           {selectedProject && (
             <div className="bg-slate-900 text-white px-5 py-3 flex items-center justify-between gap-3 text-xs border-b border-slate-800 shrink-0">
               <div className="flex items-center gap-2 truncate">
-                <MapPin className="w-4 h-4 text-amber-400 shrink-0" />
+                <MapPin className="w-4 h-4 text-primary-700 shrink-0" />
                 <span className="font-bold text-white truncate">
                   {selectedProject.location?.barangay || 'Trece Martires City'}:{' '}
                   <span className="text-slate-300 font-normal">
@@ -221,10 +221,10 @@ export default function DpwhMapVisualizer({
         </div>
 
         {/* Mapped Project List Sidebar */}
-        <div className="lg:col-span-5 xl:col-span-4 bg-white rounded-3xl border border-gray-200 shadow-sm p-4 sm:p-5 flex flex-col h-[520px] sm:h-[580px]">
+        <div className="lg:col-span-5 xl:col-span-4 bg-white rounded-3xl border border-primary-200 shadow-sm p-4 sm:p-5 flex flex-col h-[520px] sm:h-[580px]">
           <div className="flex items-center justify-between border-b border-gray-100 pb-3 mb-3 shrink-0">
             <div className="flex items-center gap-2">
-              <Layers className="w-4 h-4 text-blue-600" />
+              <Layers className="w-4 h-4 text-primary-700" />
               <h4 className="text-xs font-bold text-gray-900 uppercase tracking-wider">
                 Select Location to Pin
               </h4>
@@ -238,7 +238,7 @@ export default function DpwhMapVisualizer({
           <div className="overflow-y-auto space-y-2.5 flex-grow pr-1 custom-scrollbar">
             {geoProjects.length === 0 ? (
               <div className="py-12 text-center text-xs text-gray-500 space-y-2">
-                <SlidersHorizontal className="w-6 h-6 text-gray-400 mx-auto" />
+                <SlidersHorizontal className="w-6 h-6 text-primary-700 mx-auto" />
                 <p>No projects match your filter selection.</p>
               </div>
             ) : (
@@ -250,9 +250,9 @@ export default function DpwhMapVisualizer({
                   <div
                     key={p.contractId}
                     onClick={() => setSelectedProject(p)}
-                    className={`p-3.5 rounded-2xl border transition-all cursor-pointer space-y-2 ${
+                    className={`p-3.5 rounded-2xl border border-primary-200 transition-all cursor-pointer space-y-2 ${
                       isSelected
-                        ? 'bg-blue-50/80 border-blue-500 shadow-xs ring-2 ring-blue-500/20'
+                        ? 'bg-blue-50/80 border-primary-200 shadow-xs ring-2 ring-blue-500/20'
                         : 'bg-white hover:bg-slate-50 border-gray-200'
                     }`}
                   >
@@ -269,12 +269,12 @@ export default function DpwhMapVisualizer({
                       >
                         {isCompleted ? (
                           <span className="inline-flex items-center gap-1">
-                            <CheckCircle2 className="w-3 h-3 text-emerald-600" />
+                            <CheckCircle2 className="w-3 h-3 text-primary-700" />
                             Completed
                           </span>
                         ) : (
                           <span className="inline-flex items-center gap-1">
-                            <HardHat className="w-3 h-3 text-amber-600" />
+                            <HardHat className="w-3 h-3 text-primary-700" />
                             {p.progress}%
                           </span>
                         )}
@@ -287,7 +287,7 @@ export default function DpwhMapVisualizer({
 
                     <div className="flex items-center justify-between text-[11px] text-gray-500 pt-1 border-t border-gray-100">
                       <span className="inline-flex items-center gap-1 font-semibold text-blue-900">
-                        <MapPin className="w-3 h-3 text-blue-500" />
+                        <MapPin className="w-3 h-3 text-primary-700" />
                         Brgy. {p.location?.barangay || 'Trece'}
                       </span>
                       <span className="font-black text-gray-900">
