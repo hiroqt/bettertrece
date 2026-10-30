@@ -42,7 +42,7 @@ import {
   Landmark,
   PieChart,
   Map as MapIcon,
-} from 'lucide-react';
+} from '../../lib/icons';
 
 export default function DpwhProjectsExplorer() {
   const [projects] = useState<DpwhProject[]>(ALL_DPWH_PROJECTS);
@@ -442,7 +442,7 @@ export default function DpwhProjectsExplorer() {
       />
 
       {/* Main View Mode Selector Tabs */}
-      <div className="flex flex-wrap items-center justify-between gap-3 bg-slate-100/90 p-1.5 rounded-2xl border border-slate-200 shadow-2xs">
+      <div className="flex flex-wrap items-center justify-between gap-3 bg-slate-100/90 p-1.5 rounded-2xl border border-primary-200 shadow-2xs">
         <div className="flex items-center gap-1.5">
           <button
             onClick={() => setActiveExplorerTab('directory')}
@@ -486,11 +486,11 @@ export default function DpwhProjectsExplorer() {
       {activeExplorerTab === 'directory' && (
         <div className="space-y-6 animate-fadeIn">
           {/* GAA National Budget Integration Banner */}
-          <div className="bg-gradient-to-r from-slate-900 via-[#00225e] to-[#003893] rounded-3xl p-5 sm:p-7 text-white shadow-md border border-white/15 flex flex-col md:flex-row md:items-center justify-between gap-5 relative overflow-hidden">
+          <div className="bg-gradient-to-r from-slate-900 via-[#00225e] to-[#003893] rounded-3xl p-5 sm:p-7 text-primary-700 shadow-md border border-primary-200 border-white/15 flex flex-col md:flex-row md:items-center justify-between gap-5 relative overflow-hidden">
             <div className="space-y-2 max-w-2xl relative z-10">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-white/10 text-blue-200 border border-white/20">
                 <Landmark
-                  className="w-3.5 h-3.5 text-blue-300"
+                  className="w-3.5 h-3.5 text-primary-700"
                   aria-hidden="true"
                 />
                 <span>
@@ -522,7 +522,7 @@ export default function DpwhProjectsExplorer() {
                 />
                 <span>View National GAA Budget</span>
                 <ChevronRight
-                  className="w-4 h-4 text-slate-400"
+                  className="w-4 h-4 text-primary-700"
                   aria-hidden="true"
                 />
               </Link>
@@ -532,7 +532,7 @@ export default function DpwhProjectsExplorer() {
           {/* Enhanced Filter & Search Control Panel */}
           <section
             aria-label="Search and Categorization Filters"
-            className="bg-white rounded-3xl p-5 sm:p-7 border border-slate-200/80 shadow-sm space-y-6 transition-all"
+            className="bg-white rounded-3xl p-5 sm:p-7 border border-primary-200 shadow-sm space-y-6 transition-all"
           >
             {/* Top Header: Title, Active Filter Summary, and View Switcher */}
             <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 pb-4">
@@ -555,7 +555,7 @@ export default function DpwhProjectsExplorer() {
               <div
                 role="radiogroup"
                 aria-label="View layout options"
-                className="flex items-center gap-1 bg-slate-100 p-1.5 rounded-2xl border border-slate-200/60 shadow-inner"
+                className="flex items-center gap-1 bg-slate-100 p-1.5 rounded-2xl border border-primary-200 shadow-inner"
               >
                 <button
                   role="radio"
@@ -660,7 +660,7 @@ export default function DpwhProjectsExplorer() {
                 </label>
                 <div className="relative group">
                   <Search
-                    className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within:text-[#003893] transition-colors pointer-events-none"
+                    className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-primary-700 group-focus-within:text-[#003893] transition-colors pointer-events-none"
                     aria-hidden="true"
                   />
                   <input
@@ -725,7 +725,7 @@ export default function DpwhProjectsExplorer() {
                     ))}
                   </select>
                   <ChevronDown
-                    className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-hover:text-slate-700 pointer-events-none transition-transform group-focus-within:rotate-180"
+                    className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-primary-700 group-hover:text-slate-700 pointer-events-none transition-transform group-focus-within:rotate-180"
                     aria-hidden="true"
                   />
                 </div>
@@ -772,7 +772,7 @@ export default function DpwhProjectsExplorer() {
                     ))}
                   </select>
                   <ChevronDown
-                    className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-hover:text-slate-700 pointer-events-none transition-transform group-focus-within:rotate-180"
+                    className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-primary-700 group-hover:text-slate-700 pointer-events-none transition-transform group-focus-within:rotate-180"
                     aria-hidden="true"
                   />
                 </div>
@@ -819,7 +819,7 @@ export default function DpwhProjectsExplorer() {
                     ))}
                   </select>
                   <ChevronDown
-                    className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-hover:text-slate-700 pointer-events-none transition-transform group-focus-within:rotate-180"
+                    className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-primary-700 group-hover:text-slate-700 pointer-events-none transition-transform group-focus-within:rotate-180"
                     aria-hidden="true"
                   />
                 </div>
@@ -903,7 +903,7 @@ export default function DpwhProjectsExplorer() {
                         <span>
                           {filter.label}: {filter.value}
                         </span>
-                        <X className="w-3 h-3 text-blue-600 group-hover:text-red-600 transition-colors" />
+                        <X className="w-3 h-3 text-primary-700 group-hover:text-red-600 transition-colors" />
                       </button>
                     ))}
 
@@ -1008,7 +1008,7 @@ export default function DpwhProjectsExplorer() {
           {filteredProjects.length === 0 ? (
             <div
               role="status"
-              className="bg-white rounded-3xl p-8 sm:p-12 text-center border border-slate-200 shadow-xs space-y-4"
+              className="bg-white rounded-3xl p-8 sm:p-12 text-center border border-primary-200 shadow-xs space-y-4"
             >
               <div className="w-16 h-16 rounded-full bg-blue-50 text-[#003893] flex items-center justify-center mx-auto">
                 <Building2 className="w-8 h-8" aria-hidden="true" />
@@ -1037,7 +1037,7 @@ export default function DpwhProjectsExplorer() {
                 <article
                   key={project.contractId}
                   onClick={() => setActiveProject(project)}
-                  className="bg-white rounded-3xl p-5 sm:p-6 border border-slate-200 hover:border-blue-400 hover:shadow-lg transition-all cursor-pointer flex flex-col justify-between group"
+                  className="bg-white rounded-3xl p-5 sm:p-6 border border-primary-200 hover:border-primary-500 hover:shadow-lg transition-all cursor-pointer flex flex-col justify-between group"
                   aria-labelledby={`grid-title-${project.contractId}`}
                 >
                   <div className="space-y-3">
@@ -1055,7 +1055,7 @@ export default function DpwhProjectsExplorer() {
                         >
                           {copiedId === project.contractId ? (
                             <Check
-                              className="w-3.5 h-3.5 text-emerald-600"
+                              className="w-3.5 h-3.5 text-primary-700"
                               aria-hidden="true"
                             />
                           ) : (
@@ -1066,7 +1066,7 @@ export default function DpwhProjectsExplorer() {
 
                       <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-900 border border-amber-300">
                         <MapPin
-                          className="w-3 h-3 text-amber-700"
+                          className="w-3 h-3 text-primary-700"
                           aria-hidden="true"
                         />
                         Brgy. {project.location.barangay}
@@ -1149,7 +1149,7 @@ export default function DpwhProjectsExplorer() {
             </div>
           ) : (
             /* Enhanced Proportional Table View (Table on Desktop, Cards on Mobile/Tablet) */
-            <div className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
+            <div className="bg-white rounded-3xl border border-primary-200 shadow-sm overflow-hidden">
               {/* Desktop Proportional Data Table (lg screens - fits container without horizontal scroll) */}
               <div className="hidden lg:block">
                 <table
@@ -1169,7 +1169,7 @@ export default function DpwhProjectsExplorer() {
                         >
                           <span>Contract ID</span>
                           <ArrowUpDown
-                            className="w-3 h-3 text-slate-400"
+                            className="w-3 h-3 text-primary-700"
                             aria-hidden="true"
                           />
                         </button>
@@ -1191,7 +1191,7 @@ export default function DpwhProjectsExplorer() {
                         >
                           <span>Barangay</span>
                           <ArrowUpDown
-                            className="w-3 h-3 text-slate-400"
+                            className="w-3 h-3 text-primary-700"
                             aria-hidden="true"
                           />
                         </button>
@@ -1207,7 +1207,7 @@ export default function DpwhProjectsExplorer() {
                         >
                           <span>Budget (PHP)</span>
                           <ArrowUpDown
-                            className="w-3 h-3 text-slate-400"
+                            className="w-3 h-3 text-primary-700"
                             aria-hidden="true"
                           />
                         </button>
@@ -1223,7 +1223,7 @@ export default function DpwhProjectsExplorer() {
                         >
                           <span>Progress</span>
                           <ArrowUpDown
-                            className="w-3 h-3 text-slate-400"
+                            className="w-3 h-3 text-primary-700"
                             aria-hidden="true"
                           />
                         </button>
@@ -1259,7 +1259,7 @@ export default function DpwhProjectsExplorer() {
                             >
                               {copiedId === project.contractId ? (
                                 <Check
-                                  className="w-3.5 h-3.5 text-emerald-600"
+                                  className="w-3.5 h-3.5 text-primary-700"
                                   aria-hidden="true"
                                 />
                               ) : (
@@ -1280,7 +1280,7 @@ export default function DpwhProjectsExplorer() {
                           <div className="flex items-center gap-2 text-xs text-slate-500 mt-1 flex-wrap">
                             <span className="inline-flex items-center gap-1">
                               <HardHat
-                                className="w-3 h-3 text-slate-400"
+                                className="w-3 h-3 text-primary-700"
                                 aria-hidden="true"
                               />
                               <span className="truncate max-w-[180px]">
@@ -1302,7 +1302,7 @@ export default function DpwhProjectsExplorer() {
                         <td className="py-4 px-4 align-top">
                           <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-900 border border-amber-300">
                             <MapPin
-                              className="w-3 h-3 text-amber-700"
+                              className="w-3 h-3 text-primary-700"
                               aria-hidden="true"
                             />
                             <span>{project.location.barangay}</span>
@@ -1394,7 +1394,7 @@ export default function DpwhProjectsExplorer() {
                         >
                           {copiedId === project.contractId ? (
                             <Check
-                              className="w-3.5 h-3.5 text-emerald-600"
+                              className="w-3.5 h-3.5 text-primary-700"
                               aria-hidden="true"
                             />
                           ) : (
@@ -1404,7 +1404,7 @@ export default function DpwhProjectsExplorer() {
                       </div>
                       <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-900 border border-amber-300">
                         <MapPin
-                          className="w-3 h-3 text-amber-700"
+                          className="w-3 h-3 text-primary-700"
                           aria-hidden="true"
                         />
                         Brgy. {project.location.barangay}

@@ -1,13 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router';
-import {
-  ArrowRight,
-  ShieldCheck,
-  Users,
-  MapPin,
-  Vote,
-  Compass,
-} from 'lucide-react';
+import { ArrowRight, Search } from '../../lib/icons';
 import {
   TRECE_MUNICIPAL_PROFILE,
   TRECE_VOTER_STATISTICS_2025,
@@ -18,202 +11,133 @@ export default function Hero() {
   const { t } = useTranslation();
 
   return (
-    <div className="relative bg-[#001438] text-white overflow-hidden pt-44 sm:pt-44 lg:pt-48 pb-14 lg:pb-20">
-      {/* Background Monument Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center opacity-60 sm:opacity-70 pointer-events-none"
-        style={{
-          backgroundImage: `url('/images/trece-martires-monument.png')`,
-        }}
+    <section className="relative isolate flex min-h-[min(100svh,56rem)] flex-col justify-between overflow-hidden bg-[#071a42] pt-44 pb-8 text-white sm:pt-48 lg:pt-48">
+      <img
+        src="/images/thirteen-martyrs-line.svg"
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-0 h-full w-full object-contain object-center opacity-20 sm:opacity-25 lg:opacity-30"
       />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(7,26,66,0.38)_0%,rgba(7,26,66,0.72)_58%,#071a42_100%)]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#071a42]/55 via-transparent to-[#071a42]"
+      />
+      <div className="container relative z-10 mx-auto w-full max-w-7xl px-4 text-center sm:px-6">
+        <div className="mx-auto max-w-4xl">
+          <p className="mb-5 text-xs font-bold uppercase tracking-[0.22em] text-amber-300 sm:text-sm">
+            {TRECE_MUNICIPAL_PROFILE.cityName} ·{' '}
+            {TRECE_MUNICIPAL_PROFILE.province}
+          </p>
+          <h1 className="mx-auto max-w-4xl text-4xl font-black leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
+            {t('hero.headline', 'Find your way around Trece Martires.')}
+          </h1>
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-blue-100 sm:text-xl">
+            {t(
+              'hero.subtitle',
+              'A community-run guide to city services, public projects, government information, and data for all 13 barangays.'
+            )}
+          </p>
 
-      {/* High-contrast gradient overlays */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#001438]/95 via-[#00225e]/85 to-[#002868]/70 pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#001438] via-transparent to-[#001438]/65 pointer-events-none" />
-
-      {/* Decorative ambient glows */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-amber-400/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
-
-      <div className="container mx-auto px-4 sm:px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          {/* LEFT COLUMN: HERO HEADLINE & CTAs (6 cols on lg) */}
-          <div className="lg:col-span-6 space-y-6">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.1]">
-              Better<span className="text-amber-300">Trece</span>.org
-            </h1>
-
-            <p className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug">
-              {t(
-                'hero.tagline',
-                'Transparent Governance & Accessible Public Services'
+          <form
+            action="/search"
+            method="get"
+            role="search"
+            className="mx-auto mt-8 flex max-w-2xl rounded-lg bg-white p-1.5 text-left shadow-xl focus-within:ring-2 focus-within:ring-amber-300 sm:mt-9 sm:p-2"
+          >
+            <label className="sr-only" htmlFor="hero-search">
+              {t('hero.searchLabel', 'Search BetterTrece')}
+            </label>
+            <Search
+              aria-hidden="true"
+              className="my-auto ml-3 h-5 w-5 shrink-0 text-slate-400 sm:ml-4"
+            />
+            <input
+              id="hero-search"
+              name="q"
+              type="search"
+              required
+              placeholder={t(
+                'hero.searchPlaceholder',
+                'Search city projects, barangays, population, voters, or public records…'
               )}
+              className="min-w-0 flex-1 bg-transparent px-3 py-3 text-sm text-slate-900 outline-none placeholder:text-slate-400 sm:px-4 sm:text-base"
+            />
+            <button
+              type="submit"
+              className="inline-flex shrink-0 items-center gap-2 rounded-md bg-[#0734b5] px-4 py-3 text-sm font-bold text-white transition-colors hover:bg-[#052b98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:px-6 sm:text-base"
+            >
+              {t('hero.search', 'Search')}
+              <ArrowRight aria-hidden="true" className="h-4 w-4" />
+            </button>
+          </form>
+
+          <nav
+            aria-label={t('hero.quickLinksLabel', 'Explore the city')}
+            className="mt-7 flex flex-wrap items-center justify-center gap-x-7 gap-y-3 text-sm font-semibold sm:mt-8 sm:text-base"
+          >
+            <Link
+              to="/services"
+              className="inline-flex min-h-11 items-center gap-2 text-white transition-colors hover:text-amber-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+            >
+              {t('hero.browseServices', 'Explore City Services')}
+              <ArrowRight aria-hidden="true" className="h-4 w-4" />
+            </Link>
+            <Link
+              to="/transparency/dpwh"
+              className="inline-flex min-h-11 items-center gap-2 text-white transition-colors hover:text-amber-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+            >
+              {t('hero.projects', 'Explore Public Projects')}
+              <ArrowRight aria-hidden="true" className="h-4 w-4" />
+            </Link>
+          </nav>
+        </div>
+      </div>
+
+      <div className="container relative z-10 mx-auto mt-12 w-full max-w-7xl px-4 sm:px-6 lg:mt-16">
+        <div className="mx-auto grid max-w-4xl grid-cols-2 border-t border-white/25 pt-5 text-center sm:grid-cols-3 sm:pt-6">
+          <div className="border-r border-white/20 py-2 px-3 sm:px-8">
+            <p className="text-2xl font-black tracking-tight sm:text-4xl">
+              <AnimatedCounter
+                value={TRECE_MUNICIPAL_PROFILE.totalPopulation2024}
+              />
             </p>
-
-            <p className="text-base sm:text-lg text-blue-100/90 leading-relaxed max-w-xl font-normal">
-              {t(
-                'hero.subtitle',
-                'The verified open civic portal for Trece Martires City, Cavite. Access city services, track public infrastructure projects, and explore transparent municipal data for all 13 barangays.'
-              )}
+            <p className="mt-1 text-xs font-semibold text-blue-100 sm:text-sm">
+              {t('hero.population', 'Population')}
             </p>
-
-            <div className="flex flex-wrap items-center gap-4 pt-2">
-              <Link
-                to="/services"
-                className="inline-flex items-center justify-center gap-2 bg-white text-[#00225e] hover:bg-blue-50 font-bold px-6 py-3 rounded-xl shadow-lg transition-all duration-150 text-sm sm:text-base group"
-              >
-                <span>{t('hero.browseServices', 'Explore City Services')}</span>
-                <ArrowRight className="w-4 h-4 text-[#00225e] group-hover:translate-x-0.5 transition-transform" />
-              </Link>
-
-              <Link
-                to="/transparency/dpwh"
-                className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-5 py-3 rounded-xl shadow-md transition-all duration-150 text-sm sm:text-base group"
-              >
-                <ShieldCheck className="w-4 h-4 text-blue-200" />
-                <span>
-                  {t(
-                    'hero.transparencyProjects',
-                    'Public Works & Transparency'
-                  )}
-                </span>
-              </Link>
-            </div>
+            <p className="mt-1 text-[10px] text-blue-200 sm:text-xs">
+              2024 POPCEN · PSA
+            </p>
           </div>
-
-          {/* RIGHT COLUMN: REFINED BLUE GRADIENT WIDGET (6 cols on lg) */}
-          <div className="lg:col-span-6 lg:pl-2">
-            <div className="bg-gradient-to-br from-[#00225e]/90 to-[#003893]/90 border border-blue-400/30 rounded-2xl p-5 sm:p-6 shadow-xl backdrop-blur-md">
-              {/* Widget Header */}
-              <div className="flex items-center justify-between pb-4 mb-4 border-b border-white/15">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-white/15 text-white flex items-center justify-center border border-white/20">
-                    <ShieldCheck className="w-4 h-4 text-amber-300" />
-                  </div>
-                  <div>
-                    <h2 className="text-sm font-bold text-white leading-tight">
-                      {t(
-                        'hero.cityProfileAndFacts',
-                        'Open Governance & City Data'
-                      )}
-                    </h2>
-                    <p className="text-xs text-blue-200/90">
-                      {t(
-                        'hero.cityClassificationValue',
-                        '2nd Class Component City'
-                      )}{' '}
-                      · Seat of Cavite Province
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* 4 Blue Gradient Stat Cards (2x2 Grid) */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {/* 1. Population */}
-                <div className="bg-gradient-to-br from-[#001438]/80 to-[#00225e]/80 border border-blue-400/20 rounded-xl p-4 hover:border-blue-400/40 transition-all text-white">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs font-semibold text-blue-200 uppercase tracking-wider">
-                      {t('hero.population', 'Population')}
-                    </span>
-                    <div className="w-7 h-7 rounded-md bg-white/10 text-white flex items-center justify-center">
-                      <Users className="w-3.5 h-3.5 text-blue-200" />
-                    </div>
-                  </div>
-                  <div className="text-2xl font-black text-amber-300 font-mono tracking-tight">
-                    <AnimatedCounter
-                      value={
-                        TRECE_MUNICIPAL_PROFILE.totalPopulation2024 || 227892
-                      }
-                    />
-                  </div>
-                  <div className="text-xs text-blue-200/80 font-medium mt-1">
-                    2024 POPCEN (PSA)
-                  </div>
-                </div>
-
-                {/* 2. Barangays */}
-                <div className="bg-gradient-to-br from-[#001438]/80 to-[#00225e]/80 border border-blue-400/20 rounded-xl p-4 hover:border-blue-400/40 transition-all text-white">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs font-semibold text-blue-200 uppercase tracking-wider">
-                      {t('hero.barangays', 'Barangays')}
-                    </span>
-                    <div className="w-7 h-7 rounded-md bg-white/10 text-white flex items-center justify-center">
-                      <MapPin className="w-3.5 h-3.5 text-blue-200" />
-                    </div>
-                  </div>
-                  <div className="text-2xl font-black text-amber-300 tracking-tight">
-                    <AnimatedCounter
-                      value={TRECE_MUNICIPAL_PROFILE.totalBarangays}
-                    />
-                  </div>
-                  <div className="text-xs text-blue-200/80 font-medium mt-1">
-                    13 Historical Barangays
-                  </div>
-                </div>
-
-                {/* 3. Registered Voters */}
-                <div className="bg-gradient-to-br from-[#001438]/80 to-[#00225e]/80 border border-blue-400/20 rounded-xl p-4 hover:border-blue-400/40 transition-all text-white">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs font-semibold text-blue-200 uppercase tracking-wider">
-                      {t('hero.registeredVoters', 'Registered Voters')}
-                    </span>
-                    <div className="w-7 h-7 rounded-md bg-white/10 text-white flex items-center justify-center">
-                      <Vote className="w-3.5 h-3.5 text-blue-200" />
-                    </div>
-                  </div>
-                  <div className="text-2xl font-black text-amber-300 font-mono tracking-tight">
-                    <AnimatedCounter
-                      value={TRECE_VOTER_STATISTICS_2025.registeredVoters}
-                    />
-                  </div>
-                  <div className="text-xs text-blue-200/80 font-medium mt-1">
-                    COMELEC 2025 Elections
-                  </div>
-                </div>
-
-                {/* 4. Land Area */}
-                <div className="bg-gradient-to-br from-[#001438]/80 to-[#00225e]/80 border border-blue-400/20 rounded-xl p-4 hover:border-blue-400/40 transition-all text-white">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs font-semibold text-blue-200 uppercase tracking-wider">
-                      Land Area
-                    </span>
-                    <div className="w-7 h-7 rounded-md bg-white/10 text-white flex items-center justify-center">
-                      <Compass className="w-3.5 h-3.5 text-blue-200" />
-                    </div>
-                  </div>
-                  <div className="text-2xl font-black text-amber-300 font-mono tracking-tight">
-                    <AnimatedCounter
-                      value={TRECE_MUNICIPAL_PROFILE.totalLandAreaKm2}
-                      decimals={2}
-                    />{' '}
-                    <span className="text-sm font-normal text-blue-200">
-                      km²
-                    </span>
-                  </div>
-                  <div className="text-xs text-blue-200/80 font-medium mt-1">
-                    3,917 Hectares
-                  </div>
-                </div>
-              </div>
-
-              {/* Simple Bottom Link */}
-              <div className="mt-4 pt-3.5 border-t border-white/15 flex items-center justify-between">
-                <span className="text-xs text-blue-200/90 flex items-center gap-1.5">
-                  <Compass className="w-3.5 h-3.5 text-blue-200" />
-                  PSGC Code: {TRECE_MUNICIPAL_PROFILE.psgcCityCode}
-                </span>
-                <Link
-                  to="/demographics"
-                  className="text-xs font-semibold text-white hover:text-blue-200 transition-colors flex items-center gap-1"
-                >
-                  {t('hero.fullDemographics', 'Full Demographics →')}
-                </Link>
-              </div>
-            </div>
+          <div className="border-white/20 py-2 px-3 sm:border-r sm:px-8">
+            <p className="text-2xl font-black tracking-tight sm:text-4xl">
+              <AnimatedCounter value={TRECE_MUNICIPAL_PROFILE.totalBarangays} />
+            </p>
+            <p className="mt-1 text-xs font-semibold text-blue-100 sm:text-sm">
+              {t('hero.barangays', 'Barangays')}
+            </p>
+            <p className="mt-1 text-[10px] text-blue-200 sm:text-xs">
+              {TRECE_MUNICIPAL_PROFILE.cityName}
+            </p>
+          </div>
+          <div className="col-span-2 mt-3 border-t border-white/20 py-3 sm:col-span-1 sm:mt-0 sm:border-t-0 sm:py-2 sm:px-8">
+            <p className="text-2xl font-black tracking-tight sm:text-4xl">
+              <AnimatedCounter
+                value={TRECE_VOTER_STATISTICS_2025.registeredVoters}
+              />
+            </p>
+            <p className="mt-1 text-xs font-semibold text-blue-100 sm:text-sm">
+              {t('hero.registeredVoters', 'Registered Voters')}
+            </p>
+            <p className="mt-1 text-[10px] text-blue-200 sm:text-xs">
+              2025 · COMELEC
+            </p>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

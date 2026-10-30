@@ -28,7 +28,7 @@ import {
   ArrowRight,
   ArrowLeft,
   Info,
-} from 'lucide-react';
+} from '../lib/icons';
 
 interface DocumentProps {
   theme?: string;
@@ -170,7 +170,7 @@ export default function Document({
           </div>
         </section>
         <div className="container mx-auto px-4 max-w-7xl -mt-6">
-          <div className="bg-white rounded-3xl p-12 border border-gray-200 shadow-sm flex flex-col items-center justify-center space-y-3 text-center">
+          <div className="bg-white rounded-3xl p-12 border border-primary-200 shadow-sm flex flex-col items-center justify-center space-y-3 text-center">
             <div className="w-10 h-10 border-3 border-blue-200 border-t-[#003893] rounded-full animate-spin" />
             <p className="text-sm font-semibold text-gray-600">
               Loading official citizen guide...
@@ -256,7 +256,7 @@ export default function Document({
                 <Link
                   key={page.slug ?? i}
                   to={`${sectionHref}/${category}/${documentSlug}/${page.slug}`}
-                  className="group bg-white rounded-2xl p-5 sm:p-6 border border-zinc-200 hover:border-[#003893] hover:shadow-xs transition-all flex flex-col justify-between"
+                  className="group bg-white rounded-2xl p-5 sm:p-6 border border-primary-200 hover:border-primary-500 hover:shadow-xs transition-all flex flex-col justify-between"
                 >
                   <div className="space-y-2">
                     <span className="text-[11px] font-bold uppercase tracking-wider text-[#003893] bg-blue-50 px-2.5 py-1 rounded-lg">
@@ -380,7 +380,7 @@ export default function Document({
             {/* Left Main Reading Area */}
             <div className="lg:col-span-8 space-y-6">
               {/* Document Content Card */}
-              <article className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 lg:p-10 border border-zinc-200 shadow-2xs markdown-content">
+              <article className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 lg:p-10 border border-primary-200 shadow-2xs markdown-content">
                 <ReactMarkdown
                   remarkPlugins={[remarkGfm]}
                   components={markdownComponents}
@@ -393,9 +393,9 @@ export default function Document({
                   {prevGuide ? (
                     <Link
                       to={`${sectionHref}/${category}/${prevGuide.slug}`}
-                      className="group flex items-center gap-2.5 text-xs text-zinc-600 hover:text-zinc-900 transition-colors w-full sm:w-auto p-3 rounded-xl hover:bg-zinc-50 border border-transparent hover:border-zinc-200"
+                      className="group flex items-center gap-2.5 text-xs text-primary-700 hover:text-primary-700 transition-colors w-full sm:w-auto p-3 rounded-xl hover:bg-zinc-50 border border-transparent hover:border-primary-500"
                     >
-                      <ArrowLeft className="w-4 h-4 text-zinc-400 group-hover:text-zinc-900 transition-transform group-hover:-translate-x-0.5" />
+                      <ArrowLeft className="w-4 h-4 text-primary-700 group-hover:text-zinc-900 transition-transform group-hover:-translate-x-0.5" />
                       <div className="text-left">
                         <div className="text-[10px] text-zinc-400 uppercase font-semibold">
                           Previous Guide
@@ -412,7 +412,7 @@ export default function Document({
                   {nextGuide && (
                     <Link
                       to={`${sectionHref}/${category}/${nextGuide.slug}`}
-                      className="group flex items-center gap-2.5 text-xs text-zinc-600 hover:text-zinc-900 transition-colors w-full sm:w-auto p-3 rounded-xl hover:bg-zinc-50 border border-transparent hover:border-zinc-200 justify-end text-right"
+                      className="group flex items-center gap-2.5 text-xs text-primary-700 hover:text-primary-700 transition-colors w-full sm:w-auto p-3 rounded-xl hover:bg-zinc-50 border border-transparent hover:border-primary-500 justify-end text-right"
                     >
                       <div className="text-right">
                         <div className="text-[10px] text-zinc-400 uppercase font-semibold">
@@ -422,7 +422,7 @@ export default function Document({
                           {nextGuide.name}
                         </div>
                       </div>
-                      <ArrowRight className="w-4 h-4 text-zinc-400 group-hover:text-zinc-900 transition-transform group-hover:translate-x-0.5" />
+                      <ArrowRight className="w-4 h-4 text-primary-700 group-hover:text-zinc-900 transition-transform group-hover:translate-x-0.5" />
                     </Link>
                   )}
                 </div>
@@ -452,9 +452,9 @@ export default function Document({
             <aside className="lg:col-span-4 space-y-6">
               <div className="space-y-6 lg:sticky lg:top-24">
                 {/* At a Glance Box */}
-                <div className="bg-white rounded-2xl p-5 border border-zinc-200 shadow-2xs space-y-4">
+                <div className="bg-white rounded-2xl p-5 border border-primary-200 shadow-2xs space-y-4">
                   <div className="flex items-center gap-2 text-zinc-900 font-bold text-xs uppercase tracking-wider">
-                    <Info className="w-4 h-4 text-zinc-900" />
+                    <Info className="w-4 h-4 text-primary-700" />
                     <span>Quick Summary</span>
                   </div>
 
@@ -478,7 +478,7 @@ export default function Document({
                     </div>
                     <div className="pt-2.5 flex items-start justify-between gap-2">
                       <span className="text-zinc-500 flex items-center gap-1">
-                        <Clock className="w-3 h-3 text-zinc-900" />
+                        <Clock className="w-3 h-3 text-primary-700" />
                         <span>Office Hours:</span>
                       </span>
                       <span className="font-semibold text-zinc-900 text-right">
@@ -496,7 +496,7 @@ export default function Document({
 
                 {/* Sibling Guides in Same Category */}
                 {otherSiblingGuides.length > 0 && (
-                  <div className="bg-white rounded-2xl p-5 border border-zinc-200 shadow-2xs space-y-3">
+                  <div className="bg-white rounded-2xl p-5 border border-primary-200 shadow-2xs space-y-3">
                     <div className="flex items-center justify-between">
                       <h3 className="text-xs font-bold uppercase tracking-wider text-zinc-700">
                         More {categoryData?.category || 'Related'} Guides
@@ -513,7 +513,7 @@ export default function Document({
                             to={`${sectionHref}/${category}/${guide.slug}`}
                             className="group/item flex items-start gap-2 p-2.5 rounded-xl hover:bg-zinc-50 transition-colors border border-transparent hover:border-zinc-200"
                           >
-                            <ChevronRight className="w-3.5 h-3.5 text-zinc-400 group-hover/item:text-zinc-900 shrink-0 mt-0.5" />
+                            <ChevronRight className="w-3.5 h-3.5 text-primary-700 group-hover/item:text-zinc-900 shrink-0 mt-0.5" />
                             <div className="min-w-0">
                               <div className="text-xs font-semibold text-zinc-800 group-hover/item:text-zinc-900 transition-colors line-clamp-2 leading-snug">
                                 {guide.name}
@@ -541,7 +541,7 @@ export default function Document({
                 )}
 
                 {/* Emergency & Citizen Hotlines Callout - Blue Gradient Card */}
-                <div className="bg-gradient-to-br from-[#001f54] to-[#003893] text-white rounded-2xl p-5 shadow-2xs space-y-3 border border-blue-900/30">
+                <div className="bg-gradient-to-br from-[#001f54] to-[#003893] text-blue-200 rounded-2xl p-5 shadow-2xs space-y-3 border border-primary-300/40">
                   <div className="flex items-center gap-2 text-blue-200 font-bold text-xs uppercase tracking-wider">
                     <Phone className="w-4 h-4 text-blue-200" />
                     <span>24/7 Citizen Hotlines</span>

@@ -9,7 +9,7 @@ import {
   Route,
   Search,
   Sun,
-} from 'lucide-react';
+} from '../lib/icons';
 import SEO from '../components/SEO';
 import ShadeMapCanvas, {
   type MapSearchResult,
@@ -240,11 +240,11 @@ export default function ShadeMap() {
   };
 
   const timeCard = (
-    <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+    <section className="rounded-2xl border border-primary-200 bg-white p-5 shadow-sm">
       <div className="mb-4 flex items-start justify-between gap-3">
         <div>
           <div className="flex items-center gap-2 text-sm font-bold text-slate-900">
-            <Clock3 className="h-4 w-4 text-emerald-700" aria-hidden="true" />
+            <Clock3 className="h-4 w-4 text-primary-700" aria-hidden="true" />
             {t('shadeMap.previewTime')}
           </div>
           <p className="mt-1 text-xs text-slate-500">{dateLabel} · PHT</p>
@@ -669,10 +669,10 @@ export default function ShadeMap() {
               <aside className="space-y-4">
                 {timeCard}
 
-                <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                <section className="rounded-2xl border border-primary-200 bg-white p-5 shadow-sm">
                   <div className="mb-4 flex items-center gap-2 text-sm font-bold text-slate-900">
                     <Sun
-                      className="h-4 w-4 text-amber-500"
+                      className="h-4 w-4 text-primary-700"
                       aria-hidden="true"
                     />
                     {t('shadeMap.sunPosition')}
@@ -692,7 +692,7 @@ export default function ShadeMap() {
                       </p>
                       <p className="mt-1 flex items-center gap-1.5 text-xl font-bold tabular-nums text-slate-900">
                         <Compass
-                          className="h-4 w-4 text-slate-400"
+                          className="h-4 w-4 text-primary-700"
                           aria-hidden="true"
                         />
                         {sunPosition.azimuthDegrees.toFixed(0)}°
@@ -706,7 +706,7 @@ export default function ShadeMap() {
                   )}
                 </section>
 
-                <section className="rounded-2xl border border-emerald-200 bg-emerald-50/80 p-5">
+                <section className="rounded-2xl border border-primary-200 bg-emerald-50/80 p-5">
                   <h2 className="flex items-center gap-2 text-sm font-bold text-emerald-950">
                     <Sun className="h-4 w-4" aria-hidden="true" />
                     {t('shadeMap.buildingShadows')}
@@ -738,10 +738,10 @@ export default function ShadeMap() {
                   </p>
                 </section>
 
-                <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                <section className="rounded-2xl border border-primary-200 bg-white p-5 shadow-sm">
                   <h2 className="flex items-center gap-2 text-sm font-bold text-slate-900">
                     <Route
-                      className="h-4 w-4 text-slate-500"
+                      className="h-4 w-4 text-primary-700"
                       aria-hidden="true"
                     />
                     {t('shadeMap.routeTitle')}

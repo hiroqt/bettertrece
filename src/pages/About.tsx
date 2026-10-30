@@ -15,10 +15,9 @@ import {
   Landmark,
   HelpCircle,
   Quote,
-  Sparkles,
   Smartphone,
   Globe2,
-} from 'lucide-react';
+} from '../lib/icons';
 import SEO from '../components/SEO';
 import Breadcrumbs from '../components/ui/Breadcrumbs';
 
@@ -115,7 +114,7 @@ const About: React.FC = () => {
       desc: 'Official government records',
     },
     {
-      icon: Sparkles,
+      icon: ShieldCheck,
       label: 'Zero Ads & Tracking',
       desc: '100% Non-profit & open',
     },
@@ -176,10 +175,10 @@ const About: React.FC = () => {
         {/* MAIN ARTICLE / THE STORY */}
         <div className="container mx-auto px-4 sm:px-6 max-w-5xl py-12 lg:py-16 space-y-16">
           {/* SECTION 1: THE SPARK & DEVELOPER'S STORY */}
-          <section className="bg-white rounded-2xl border border-gray-200 p-6 sm:p-10 shadow-xs">
+          <section className="bg-white rounded-2xl border border-primary-200 p-6 sm:p-10 shadow-xs">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-zinc-100 text-zinc-900 border border-zinc-200 flex items-center justify-center font-bold">
-                <Heart className="w-5 h-5 text-zinc-900" />
+              <div className="w-10 h-10 rounded-xl bg-primary-50 text-primary-700 border border-primary-200 flex items-center justify-center font-bold">
+                <Heart className="w-5 h-5 text-primary-700" />
               </div>
               <div>
                 <h2 className="text-xl sm:text-2xl font-black text-zinc-900">
@@ -232,9 +231,9 @@ const About: React.FC = () => {
               </p>
 
               {/* MODERN QUOTE CARD */}
-              <div className="relative overflow-hidden rounded-2xl bg-zinc-50 border border-zinc-200 p-6 sm:p-8 my-8 shadow-2xs">
+              <div className="relative overflow-hidden rounded-2xl bg-zinc-50 border border-primary-200 p-6 sm:p-8 my-8 shadow-2xs">
                 <div className="relative z-10 space-y-4">
-                  <div className="w-10 h-10 rounded-xl bg-zinc-900 text-white flex items-center justify-center shadow-xs shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-zinc-900 text-primary-700 flex items-center justify-center shadow-xs shrink-0">
                     <Quote className="w-5 h-5 fill-current" />
                   </div>
 
@@ -280,10 +279,10 @@ const About: React.FC = () => {
                   return (
                     <div
                       key={idx}
-                      className="bg-white border border-zinc-200 rounded-xl p-3.5 flex flex-col justify-between shadow-2xs"
+                      className="bg-white border border-primary-200 rounded-xl p-3.5 flex flex-col justify-between shadow-2xs"
                     >
-                      <div className="w-8 h-8 rounded-lg bg-zinc-100 text-zinc-900 border border-zinc-200 flex items-center justify-center mb-2">
-                        <FeatIcon className="w-4 h-4 text-zinc-900" />
+                      <div className="w-8 h-8 rounded-lg bg-primary-50 text-primary-700 border border-primary-200 flex items-center justify-center mb-2">
+                        <FeatIcon className="w-4 h-4 text-primary-700" />
                       </div>
                       <div>
                         <div className="text-xs font-bold text-zinc-900">
@@ -318,12 +317,12 @@ const About: React.FC = () => {
                 return (
                   <div
                     key={idx}
-                    className="bg-white rounded-2xl border border-zinc-200 p-6 shadow-2xs hover:border-zinc-400 hover:shadow-xs transition-all flex flex-col justify-between relative"
+                    className="bg-white rounded-2xl border border-primary-200 p-6 shadow-2xs hover:border-primary-500 hover:shadow-xs transition-all flex flex-col justify-between relative"
                   >
                     <div>
                       <div className="flex items-center justify-between mb-4">
-                        <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-zinc-100 text-zinc-900 border border-zinc-200">
-                          <Icon className="w-5 h-5 text-zinc-900" />
+                        <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-primary-50 text-primary-700 border border-primary-200">
+                          <Icon className="w-5 h-5 text-primary-700" />
                         </div>
                         <span className="text-xs font-bold text-zinc-400 font-mono">
                           {pillar.number}
@@ -343,10 +342,10 @@ const About: React.FC = () => {
           </section>
 
           {/* SECTION 3: OFFICIAL DATA SOURCES & INTEGRATIONS */}
-          <section className="bg-white rounded-2xl border border-zinc-200 p-6 sm:p-10 shadow-2xs">
+          <section className="bg-white rounded-2xl border border-primary-200 p-6 sm:p-10 shadow-2xs">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-zinc-100 text-zinc-900 border border-zinc-200 flex items-center justify-center font-bold">
-                <BarChart3 className="w-5 h-5 text-zinc-900" />
+              <div className="w-10 h-10 rounded-xl bg-primary-50 text-primary-700 border border-primary-200 flex items-center justify-center font-bold">
+                <BarChart3 className="w-5 h-5 text-primary-700" />
               </div>
               <div>
                 <h2 className="text-xl sm:text-2xl font-black text-zinc-900">
@@ -376,7 +375,7 @@ const About: React.FC = () => {
                 >
                   <div className="space-y-1">
                     <div className="font-bold text-zinc-900 text-sm sm:text-base flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-zinc-900 shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-primary-700 shrink-0" />
                       {source.name}
                     </div>
                     <p className="text-xs text-zinc-600 leading-relaxed max-w-2xl pl-6">
@@ -390,7 +389,7 @@ const About: React.FC = () => {
                     className="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-900 hover:text-zinc-700 bg-zinc-100 border border-zinc-200 px-3 py-1.5 rounded-lg shrink-0 self-start sm:self-center transition-colors"
                   >
                     <span>Visit Source</span>
-                    <ExternalLink className="w-3.5 h-3.5 text-zinc-600" />
+                    <ExternalLink className="w-3.5 h-3.5 text-primary-700" />
                   </a>
                 </div>
               ))}
@@ -409,10 +408,10 @@ const About: React.FC = () => {
               {faqs.map((faq, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-2xl border border-zinc-200 p-6 shadow-2xs"
+                  className="bg-white rounded-2xl border border-primary-200 p-6 shadow-2xs"
                 >
                   <h3 className="font-bold text-zinc-900 text-base mb-2 flex items-start gap-2">
-                    <HelpCircle className="w-5 h-5 text-zinc-900 shrink-0 mt-0.5" />
+                    <HelpCircle className="w-5 h-5 text-primary-700 shrink-0 mt-0.5" />
                     <span>{faq.q}</span>
                   </h3>
                   <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed pl-7">
@@ -424,7 +423,7 @@ const About: React.FC = () => {
           </section>
 
           {/* SECTION 5: CTA BANNER */}
-          <section className="bg-gradient-to-r from-[#001f54] via-[#00225e] to-[#003893] text-white rounded-3xl p-8 sm:p-12 shadow-lg border border-blue-900/30 text-center">
+          <section className="bg-gradient-to-r from-[#001f54] via-[#00225e] to-[#003893] text-blue-200 rounded-3xl p-8 sm:p-12 shadow-lg border border-primary-300/40 text-center">
             <div className="relative z-10 max-w-2xl mx-auto space-y-6">
               <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
                 Explore Trece Martires City Today

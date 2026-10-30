@@ -13,7 +13,7 @@ import {
   ArrowUpRight,
   ShieldCheck,
   TrendingUp,
-} from 'lucide-react';
+} from '../../lib/icons';
 import AnimatedCounter from '../ui/AnimatedCounter';
 
 interface CityRevenueWidgetProps {
@@ -43,7 +43,7 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
       className={`w-full ${
         isFullWidthSection
           ? ''
-          : 'bg-white rounded-3xl p-6 sm:p-8 lg:p-10 border border-gray-200/90 shadow-sm'
+          : 'bg-white rounded-3xl p-6 sm:p-8 lg:p-10 border border-primary-200 shadow-sm'
       } ${className}`}
     >
       {/* 1. Header Section */}
@@ -114,7 +114,7 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 my-6"
       >
         {/* Card 1: City Taxes */}
-        <div className="bg-gradient-to-br from-[#00225e] to-[#003893] text-white p-6 rounded-2xl shadow-sm border border-blue-900/30 flex flex-col justify-between hover:shadow-md transition-all group">
+        <div className="bg-gradient-to-br from-[#00225e] to-[#003893] text-blue-200 p-6 rounded-2xl shadow-sm border border-primary-300/40 flex flex-col justify-between hover:shadow-md transition-all group">
           <div>
             <div className="text-3xl sm:text-4xl font-extrabold tracking-tight font-mono text-amber-300">
               <AnimatedCounter
@@ -141,7 +141,7 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
         </div>
 
         {/* Card 2: Non-Tax Sources */}
-        <div className="bg-gradient-to-br from-[#00225e] to-[#003893] text-white p-6 rounded-2xl shadow-sm border border-blue-900/30 flex flex-col justify-between hover:shadow-md transition-all group">
+        <div className="bg-gradient-to-br from-[#00225e] to-[#003893] text-blue-200 p-6 rounded-2xl shadow-sm border border-primary-300/40 flex flex-col justify-between hover:shadow-md transition-all group">
           <div>
             <div className="text-3xl sm:text-4xl font-extrabold tracking-tight font-mono text-amber-300">
               <AnimatedCounter
@@ -168,7 +168,7 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
         </div>
 
         {/* Card 3: National Tax Share */}
-        <div className="bg-gradient-to-br from-[#00225e] to-[#003893] text-white p-6 rounded-2xl shadow-sm border border-blue-900/30 flex flex-col justify-between hover:shadow-md transition-all group">
+        <div className="bg-gradient-to-br from-[#00225e] to-[#003893] text-blue-200 p-6 rounded-2xl shadow-sm border border-primary-300/40 flex flex-col justify-between hover:shadow-md transition-all group">
           <div>
             <div className="text-3xl sm:text-4xl font-extrabold tracking-tight font-mono text-amber-300">
               <AnimatedCounter
@@ -197,7 +197,7 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
         </div>
 
         {/* Card 4: Change in Total Revenue */}
-        <div className="bg-gradient-to-br from-[#00225e] to-[#003893] text-white p-6 rounded-2xl shadow-sm border border-blue-900/30 flex flex-col justify-between hover:shadow-md transition-all group">
+        <div className="bg-gradient-to-br from-[#00225e] to-[#003893] text-blue-200 p-6 rounded-2xl shadow-sm border border-primary-300/40 flex flex-col justify-between hover:shadow-md transition-all group">
           <div>
             <div className="text-3xl sm:text-4xl font-extrabold tracking-tight font-mono text-amber-300 flex items-center gap-1.5">
               {selectedYear === 2024 ? (
@@ -213,7 +213,7 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
               {currentData.cards.yoyChange.isPositive &&
                 selectedYear !== 2024 && (
                   <ArrowUpRight
-                    className="w-5 h-5 text-amber-300"
+                    className="w-5 h-5 text-blue-200"
                     aria-hidden="true"
                   />
                 )}
@@ -234,7 +234,7 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
       </div>
 
       {/* 3. About the math callout banner (WCAG High Contrast compliant) */}
-      <div className="bg-amber-50/90 border-l-4 border-amber-500 p-4 sm:p-5 rounded-r-2xl text-slate-900 text-xs sm:text-sm leading-relaxed shadow-2xs">
+      <div className="bg-amber-50/90 border-l-4 border-primary-200 p-4 sm:p-5 rounded-r-2xl text-primary-700 text-xs sm:text-sm leading-relaxed shadow-2xs">
         <p>
           <strong className="text-slate-950 font-bold">About the math:</strong>{' '}
           {currentData.mathNote}
@@ -342,7 +342,7 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
               {detailsTab === 'receipts' && (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Local Tax Revenue */}
-                  <div className="bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-3">
+                  <div className="bg-slate-50 p-5 rounded-2xl border border-primary-200 space-y-3">
                     <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
                       <Receipt
                         className="w-4 h-4 text-[#003893]"
@@ -414,7 +414,7 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
                   </div>
 
                   {/* Local Non-Tax & External Revenue */}
-                  <div className="bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-3">
+                  <div className="bg-slate-50 p-5 rounded-2xl border border-primary-200 space-y-3">
                     <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
                       <Coins
                         className="w-4 h-4 text-[#003893]"
@@ -497,7 +497,7 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
               {detailsTab === 'expenditures' && (
                 <div className="space-y-4">
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                    <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                    <div className="bg-slate-50 p-4 rounded-xl border border-primary-200">
                       <span className="text-xs text-slate-500 font-semibold block">
                         GENERAL SERVICES
                       </span>
@@ -515,7 +515,7 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
                         Admin, governance, operations
                       </span>
                     </div>
-                    <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                    <div className="bg-slate-50 p-4 rounded-xl border border-primary-200">
                       <span className="text-xs text-slate-500 font-semibold block">
                         ECONOMIC SERVICES
                       </span>
@@ -533,7 +533,7 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
                         Commerce, agriculture, livelihood
                       </span>
                     </div>
-                    <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                    <div className="bg-slate-50 p-4 rounded-xl border border-primary-200">
                       <span className="text-xs text-slate-500 font-semibold block">
                         SOCIAL SERVICES
                       </span>
@@ -551,7 +551,7 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
                         Health, education, welfare
                       </span>
                     </div>
-                    <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                    <div className="bg-slate-50 p-4 rounded-xl border border-primary-200">
                       <span className="text-xs text-slate-500 font-semibold block">
                         CAPITAL OUTLAY (PPE)
                       </span>
@@ -570,7 +570,7 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
                   </div>
 
                   {/* Cash Position summary */}
-                  <div className="bg-blue-50/80 p-5 rounded-2xl border border-blue-200 text-xs sm:text-sm space-y-2">
+                  <div className="bg-blue-50/80 p-5 rounded-2xl border border-primary-200 text-xs sm:text-sm space-y-2">
                     <div className="font-bold text-[#00225e] flex items-center justify-between">
                       <span>
                         Fund &amp; Cash Position Summary (FY {selectedYear})
@@ -639,7 +639,7 @@ export const CityRevenueWidget: React.FC<CityRevenueWidgetProps> = ({
 
               {/* Tab 3: 3-Year Comparison Table */}
               {detailsTab === 'comparison' && (
-                <div className="overflow-x-auto rounded-2xl border border-slate-200 shadow-2xs">
+                <div className="overflow-x-auto rounded-2xl border border-primary-200 shadow-2xs">
                   <table className="w-full text-left text-xs sm:text-sm border-collapse">
                     <thead className="bg-slate-100 text-slate-900 font-bold border-b border-slate-200">
                       <tr>

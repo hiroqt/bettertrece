@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Maximize2, Minimize2 } from 'lucide-react';
+import { Maximize2, Minimize2 } from '../../lib/icons';
 import {
   GeoJSONSource,
   Map as MapLibreMap,
@@ -1072,7 +1072,7 @@ export default function ShadeMapCanvas({
       className={`relative isolate overflow-hidden bg-slate-100 ${
         isFullscreen
           ? 'h-full w-full'
-          : 'h-[58vh] min-h-[420px] max-h-[760px] rounded-2xl border border-slate-200 shadow-sm sm:h-[66vh]'
+          : 'h-[58vh] min-h-[420px] max-h-[760px] rounded-2xl border border-primary-200 shadow-sm sm:h-[66vh]'
       }`}
     >
       <div
@@ -1112,7 +1112,7 @@ export default function ShadeMapCanvas({
       {mapState === 'error' && (
         <div
           role="alert"
-          className="absolute inset-x-4 top-4 z-20 rounded-xl border border-red-200 bg-white px-4 py-3 text-sm text-red-800 shadow-md"
+          className="absolute inset-x-4 top-4 z-20 rounded-xl border border-primary-200 bg-white px-4 py-3 text-sm text-primary-700 shadow-md"
         >
           {labels.mapError}
         </div>

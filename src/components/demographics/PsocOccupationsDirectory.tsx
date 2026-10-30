@@ -7,7 +7,6 @@ import type { PsocMajorGroupSummary, PsocRecord } from '../../types/psoc';
 import {
   Search,
   Briefcase,
-  Sparkles,
   GraduationCap,
   MapPin,
   ExternalLink,
@@ -15,7 +14,7 @@ import {
   Filter,
   CheckCircle2,
   ListChecks,
-} from 'lucide-react';
+} from '../../lib/icons';
 
 const QUALIFICATION_MAP: Record<string, string> = {
   '4': "Bachelor's / Professional Degree",
@@ -71,7 +70,7 @@ export default function PsocOccupationsDirectory() {
   return (
     <div className="space-y-6">
       {/* Header & Local PESO / Labor Context */}
-      <div className="bg-gradient-to-br from-slate-900 via-blue-950 to-[#002855] text-white p-6 sm:p-8 rounded-3xl shadow-sm border border-blue-900/50">
+      <div className="bg-gradient-to-br from-slate-900 via-blue-950 to-[#002855] text-primary-700 p-6 sm:p-8 rounded-3xl shadow-sm border border-primary-200">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
           <div className="space-y-3 max-w-3xl">
             <div className="flex flex-wrap items-center gap-2">
@@ -108,7 +107,7 @@ export default function PsocOccupationsDirectory() {
 
         {/* 3 Citizen Highlight Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-6 pt-6 border-t border-white/10 text-xs">
-          <div className="bg-white/5 p-3.5 rounded-2xl border border-white/10">
+          <div className="bg-white/5 p-3.5 rounded-2xl border border-primary-300/40 border-white/10">
             <div className="text-blue-200 font-semibold mb-0.5">
               10 Major Sectors
             </div>
@@ -120,7 +119,7 @@ export default function PsocOccupationsDirectory() {
             </div>
           </div>
 
-          <div className="bg-white/5 p-3.5 rounded-2xl border border-white/10">
+          <div className="bg-white/5 p-3.5 rounded-2xl border border-primary-300/40 border-white/10">
             <div className="text-blue-200 font-semibold mb-0.5">
               Qualification Standards
             </div>
@@ -132,7 +131,7 @@ export default function PsocOccupationsDirectory() {
             </div>
           </div>
 
-          <div className="bg-white/5 p-3.5 rounded-2xl border border-white/10">
+          <div className="bg-white/5 p-3.5 rounded-2xl border border-primary-300/40 border-white/10">
             <div className="text-blue-200 font-semibold mb-0.5">
               Cavite Industrial Hub
             </div>
@@ -189,9 +188,9 @@ export default function PsocOccupationsDirectory() {
       </div>
 
       {/* Search Input Bar */}
-      <div className="bg-white p-4 rounded-2xl border border-gray-200 shadow-xs flex items-center gap-3">
+      <div className="bg-white p-4 rounded-2xl border border-primary-200 shadow-xs flex items-center gap-3">
         <div className="relative flex-1">
-          <Search className="w-4 h-4 text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+          <Search className="w-4 h-4 text-primary-700 absolute left-3.5 top-1/2 -translate-y-1/2" />
           <input
             type="text"
             placeholder="Search occupations by job title, skill, or keyword (e.g. Software, Nurse, Welder, Teacher, Driver, Cashier, Police)..."
@@ -234,7 +233,7 @@ export default function PsocOccupationsDirectory() {
           return (
             <div
               key={item.id}
-              className="bg-white rounded-2xl border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all p-5 flex flex-col justify-between"
+              className="bg-white rounded-2xl border border-primary-200 hover:border-primary-500 hover:shadow-md transition-all p-5 flex flex-col justify-between"
             >
               <div>
                 {/* Header Badges */}
@@ -245,7 +244,7 @@ export default function PsocOccupationsDirectory() {
 
                   {qualificationText && (
                     <span className="text-[10px] font-medium text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-md border border-emerald-200 flex items-center gap-1">
-                      <GraduationCap className="w-3 h-3 text-emerald-600" />
+                      <GraduationCap className="w-3 h-3 text-primary-700" />
                       <span>{qualificationText}</span>
                     </span>
                   )}
@@ -263,9 +262,9 @@ export default function PsocOccupationsDirectory() {
 
                 {/* Representative Titles */}
                 {item.example_jobs && item.example_jobs.length > 0 && (
-                  <div className="bg-slate-50 p-3 rounded-xl border border-slate-100 mb-3">
+                  <div className="bg-slate-50 p-3 rounded-xl border border-primary-200 mb-3">
                     <div className="text-[10px] font-bold uppercase tracking-wider text-gray-500 mb-1.5 flex items-center gap-1">
-                      <Sparkles className="w-3 h-3 text-amber-500" />
+                      <Briefcase className="w-3 h-3 text-primary-700" />
                       <span>Sample Job Titles:</span>
                     </div>
                     <div className="flex flex-wrap gap-1.5">
@@ -284,7 +283,7 @@ export default function PsocOccupationsDirectory() {
                 {/* Cavite & Local Trece Relevance */}
                 {majorSummary?.caviteRelevance &&
                   item.hierarchy_level === 'Major' && (
-                    <div className="bg-blue-50/60 p-3 rounded-xl border border-blue-100 mb-3 text-xs">
+                    <div className="bg-blue-50/60 p-3 rounded-xl border border-primary-200 mb-3 text-xs">
                       <div className="text-[10px] font-bold uppercase tracking-wider text-[#003893] mb-1 flex items-center gap-1">
                         <MapPin className="w-3 h-3" />
                         <span>Trece Martires &amp; Cavite Employment Hub:</span>
@@ -330,7 +329,7 @@ export default function PsocOccupationsDirectory() {
               {/* Card Footer */}
               <div className="pt-3 mt-3 border-t border-gray-100 flex items-center justify-between text-[11px] text-gray-500">
                 <span className="flex items-center gap-1 font-medium text-emerald-700">
-                  <CheckCircle2 className="w-3 h-3 text-emerald-600" />
+                  <CheckCircle2 className="w-3 h-3 text-primary-700" />
                   <span>Official PSA Standard</span>
                 </span>
                 <span className="text-[11px] text-gray-400">

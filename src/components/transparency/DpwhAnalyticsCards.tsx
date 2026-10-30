@@ -12,7 +12,7 @@ import {
   CheckCircle2,
   Layers,
   Award,
-} from 'lucide-react';
+} from '../../lib/icons';
 
 interface DpwhAnalyticsCardsProps {
   projects: (DPWHProject | DpwhProject)[];
@@ -44,7 +44,7 @@ export default function DpwhAnalyticsCards({
     <div className="space-y-8 animate-fadeIn">
       {/* Top 4 KPI Metrics */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-        <div className="bg-gradient-to-br from-blue-50 to-blue-100/60 rounded-3xl p-5 sm:p-6 border border-blue-200/70 shadow-xs space-y-2">
+        <div className="bg-gradient-to-br from-blue-50 to-blue-100/60 rounded-3xl p-5 sm:p-6 border border-primary-200 shadow-xs space-y-2">
           <div className="flex items-center justify-between text-blue-800">
             <span className="text-xs font-bold uppercase tracking-wider">
               Total Budget
@@ -63,7 +63,7 @@ export default function DpwhAnalyticsCards({
           </div>
         </div>
 
-        <div className="bg-gradient-to-br from-emerald-50 to-emerald-100/60 rounded-3xl p-5 sm:p-6 border border-emerald-200/70 shadow-xs space-y-2">
+        <div className="bg-gradient-to-br from-emerald-50 to-emerald-100/60 rounded-3xl p-5 sm:p-6 border border-primary-200 shadow-xs space-y-2">
           <div className="flex items-center justify-between text-emerald-800">
             <span className="text-xs font-bold uppercase tracking-wider">
               Amount Disbursed
@@ -80,7 +80,7 @@ export default function DpwhAnalyticsCards({
           </div>
         </div>
 
-        <div className="bg-gradient-to-br from-indigo-50 to-indigo-100/60 rounded-3xl p-5 sm:p-6 border border-indigo-200/70 shadow-xs space-y-2">
+        <div className="bg-gradient-to-br from-indigo-50 to-indigo-100/60 rounded-3xl p-5 sm:p-6 border border-primary-200 shadow-xs space-y-2">
           <div className="flex items-center justify-between text-indigo-800">
             <span className="text-xs font-bold uppercase tracking-wider">
               Average Progress
@@ -95,7 +95,7 @@ export default function DpwhAnalyticsCards({
           </div>
         </div>
 
-        <div className="bg-gradient-to-br from-amber-50 to-amber-100/60 rounded-3xl p-5 sm:p-6 border border-amber-200/70 shadow-xs space-y-2">
+        <div className="bg-gradient-to-br from-amber-50 to-amber-100/60 rounded-3xl p-5 sm:p-6 border border-primary-200 shadow-xs space-y-2">
           <div className="flex items-center justify-between text-amber-800">
             <span className="text-xs font-bold uppercase tracking-wider">
               Active Projects
@@ -115,7 +115,7 @@ export default function DpwhAnalyticsCards({
       {/* Two Column Layout: Budget by Category & Status Distribution */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
         {/* Card 1: Budget by Infrastructure Category */}
-        <div className="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200 shadow-sm space-y-6">
+        <div className="bg-white rounded-3xl p-6 sm:p-8 border border-primary-200 shadow-sm space-y-6">
           <div className="flex items-center justify-between border-b border-gray-100 pb-4">
             <div>
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-blue-50 text-blue-800 border border-blue-100 mb-1">
@@ -177,7 +177,7 @@ export default function DpwhAnalyticsCards({
         </div>
 
         {/* Card 2: Status Breakdown & Delivery Ratios */}
-        <div className="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200 shadow-sm space-y-6">
+        <div className="bg-white rounded-3xl p-6 sm:p-8 border border-primary-200 shadow-sm space-y-6">
           <div className="flex items-center justify-between border-b border-gray-100 pb-4">
             <div>
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-800 border border-emerald-100 mb-1">
@@ -245,9 +245,9 @@ export default function DpwhAnalyticsCards({
           </div>
 
           {/* Key Takeaway insight badge */}
-          <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-4 text-xs text-slate-700 space-y-1">
+          <div className="bg-slate-50 border border-primary-200 rounded-2xl p-4 text-xs text-primary-700 space-y-1">
             <div className="font-bold text-slate-900 flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+              <CheckCircle2 className="w-4 h-4 text-primary-700" />
               Delivery Efficiency Rate
             </div>
             <p className="text-slate-600 leading-relaxed">
@@ -264,11 +264,11 @@ export default function DpwhAnalyticsCards({
       </div>
 
       {/* Top Contractors Leaderboard */}
-      <div className="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200 shadow-sm space-y-6">
+      <div className="bg-white rounded-3xl p-6 sm:p-8 border border-primary-200 shadow-sm space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-gray-100 pb-4">
           <div>
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-50 text-amber-900 border border-amber-200 mb-1">
-              <Award className="w-3.5 h-3.5 text-amber-600" />
+              <Award className="w-3.5 h-3.5 text-primary-700" />
               Procurement &amp; Awardees
             </span>
             <h3 className="text-lg sm:text-xl font-bold text-gray-900">
@@ -302,7 +302,7 @@ export default function DpwhAnalyticsCards({
                   </td>
                   <td className="py-3.5 px-4 text-gray-900 font-bold">
                     <div className="flex items-center gap-2">
-                      <Building className="w-4 h-4 text-slate-400 shrink-0" />
+                      <Building className="w-4 h-4 text-primary-700 shrink-0" />
                       <span>{c.name}</span>
                     </div>
                   </td>

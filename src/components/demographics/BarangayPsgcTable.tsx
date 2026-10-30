@@ -16,7 +16,7 @@ import {
   Info,
   Globe2,
   History,
-} from 'lucide-react';
+} from '../../lib/icons';
 
 export default function BarangayPsgcTable() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -87,7 +87,7 @@ export default function BarangayPsgcTable() {
   return (
     <div className="space-y-8">
       {/* 1. PSGC GEOGRAPHIC HIERARCHY & ADMINISTRATIVE PROFILE */}
-      <div className="bg-gradient-to-br from-slate-900 via-[#00225e] to-indigo-950 text-white rounded-3xl p-6 sm:p-8 shadow-md border border-blue-900/40 relative overflow-hidden">
+      <div className="bg-gradient-to-br from-slate-900 via-[#00225e] to-indigo-950 text-primary-700 rounded-3xl p-6 sm:p-8 shadow-md border border-primary-200 relative overflow-hidden">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 border-b border-white/10 pb-6 mb-6">
           <div className="space-y-2 max-w-3xl">
             <div className="flex flex-wrap items-center gap-2">
@@ -110,7 +110,7 @@ export default function BarangayPsgcTable() {
           </div>
 
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
-            <div className="bg-white/10 p-3.5 rounded-2xl border border-white/15 text-center">
+            <div className="bg-white/10 p-3.5 rounded-2xl border border-primary-300/40 border-white/15 text-center">
               <div className="text-[11px] text-blue-200 uppercase tracking-wider font-semibold">
                 Income &amp; City Class
               </div>
@@ -126,7 +126,7 @@ export default function BarangayPsgcTable() {
 
         {/* 4 Geographic Hierarchy Level Steps */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
-          <div className="bg-white/5 p-4 rounded-2xl border border-white/10 flex flex-col justify-between">
+          <div className="bg-white/5 p-4 rounded-2xl border border-primary-300/40 border-white/10 flex flex-col justify-between">
             <div>
               <div className="text-blue-300 font-semibold text-[11px] uppercase tracking-wider flex items-center justify-between">
                 <span>Level 1: Region</span>
@@ -143,7 +143,7 @@ export default function BarangayPsgcTable() {
             </div>
           </div>
 
-          <div className="bg-white/5 p-4 rounded-2xl border border-white/10 flex flex-col justify-between">
+          <div className="bg-white/5 p-4 rounded-2xl border border-primary-300/40 border-white/10 flex flex-col justify-between">
             <div>
               <div className="text-blue-300 font-semibold text-[11px] uppercase tracking-wider flex items-center justify-between">
                 <span>Level 2: Province</span>
@@ -160,7 +160,7 @@ export default function BarangayPsgcTable() {
             </div>
           </div>
 
-          <div className="bg-white/5 p-4 rounded-2xl border border-white/10 flex flex-col justify-between">
+          <div className="bg-white/5 p-4 rounded-2xl border border-primary-300/40 border-white/10 flex flex-col justify-between">
             <div>
               <div className="text-blue-300 font-semibold text-[11px] uppercase tracking-wider flex items-center justify-between">
                 <span>Level 3: City</span>
@@ -177,7 +177,7 @@ export default function BarangayPsgcTable() {
             </div>
           </div>
 
-          <div className="bg-white/5 p-4 rounded-2xl border border-white/10 flex flex-col justify-between">
+          <div className="bg-white/5 p-4 rounded-2xl border border-primary-300/40 border-white/10 flex flex-col justify-between">
             <div>
               <div className="text-blue-300 font-semibold text-[11px] uppercase tracking-wider flex items-center justify-between">
                 <span>Level 4: Barangays</span>
@@ -232,7 +232,7 @@ export default function BarangayPsgcTable() {
       </div>
 
       {/* 2. BARANGAY DEMOGRAPHIC DIRECTORY & PSGC TABLE */}
-      <div className="bg-white rounded-3xl border border-gray-200 shadow-xs overflow-hidden">
+      <div className="bg-white rounded-3xl border border-primary-200 shadow-xs overflow-hidden">
         {/* Table Top Header */}
         <div className="p-5 sm:p-6 border-b border-gray-200 bg-gradient-to-r from-slate-900 via-[#00225e] to-[#003893] text-white flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="space-y-1">
@@ -280,7 +280,7 @@ export default function BarangayPsgcTable() {
         {/* Filter and Search Bar */}
         <div className="p-4 bg-white border-b border-gray-200 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="relative w-full md:w-80">
-            <Search className="w-4 h-4 text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+            <Search className="w-4 h-4 text-primary-700 absolute left-3.5 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               placeholder="Search barangay, historical name, captain, or PSGC..."
@@ -324,7 +324,7 @@ export default function BarangayPsgcTable() {
                 >
                   <div className="flex items-center gap-1">
                     <span>Barangay &amp; Martyr Namesake</span>
-                    <ArrowUpDown className="w-3 h-3 text-gray-400" />
+                    <ArrowUpDown className="w-3 h-3 text-primary-700" />
                   </div>
                 </th>
                 <th className="py-3.5 px-4">Classification</th>
@@ -334,7 +334,7 @@ export default function BarangayPsgcTable() {
                 >
                   <div className="flex items-center justify-end gap-1">
                     <span>2020 Census</span>
-                    <ArrowUpDown className="w-3 h-3 text-gray-400" />
+                    <ArrowUpDown className="w-3 h-3 text-primary-700" />
                   </div>
                 </th>
                 <th
@@ -354,7 +354,7 @@ export default function BarangayPsgcTable() {
                 >
                   <div className="flex items-center justify-end gap-1">
                     <span>Growth (%)</span>
-                    <ArrowUpDown className="w-3 h-3 text-gray-400" />
+                    <ArrowUpDown className="w-3 h-3 text-primary-700" />
                   </div>
                 </th>
                 <th className="py-3.5 px-4 text-right">Action</th>
@@ -392,7 +392,7 @@ export default function BarangayPsgcTable() {
                             title="Copy PSGC Code"
                           >
                             {copiedCode === displayedCode ? (
-                              <Check className="w-3.5 h-3.5 text-emerald-600" />
+                              <Check className="w-3.5 h-3.5 text-primary-700" />
                             ) : (
                               <Copy className="w-3.5 h-3.5" />
                             )}
@@ -488,7 +488,7 @@ export default function BarangayPsgcTable() {
       {/* 3. BARANGAY DETAILS MODAL */}
       {selectedBarangay && (
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-7 shadow-2xl border border-gray-200 relative animate-in fade-in zoom-in duration-200">
+          <div className="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-7 shadow-2xl border border-primary-200 relative animate-in fade-in zoom-in duration-200">
             <button
               onClick={() => setSelectedBarangay(null)}
               className="absolute top-5 right-5 p-2 rounded-xl text-gray-400 hover:text-gray-700 hover:bg-gray-100 transition-colors cursor-pointer"
@@ -517,7 +517,7 @@ export default function BarangayPsgcTable() {
             </p>
             {selectedBarangay.oldBarangayName && (
               <div className="text-[11px] text-amber-900 bg-amber-50 px-2.5 py-1 rounded-lg border border-amber-200/80 mt-2 flex items-center gap-1.5">
-                <History className="w-3.5 h-3.5 text-amber-700" />
+                <History className="w-3.5 h-3.5 text-primary-700" />
                 <span>
                   Historical / Native Village Name:{' '}
                   <strong>{selectedBarangay.oldBarangayName}</strong>
@@ -525,7 +525,7 @@ export default function BarangayPsgcTable() {
               </div>
             )}
 
-            <div className="mt-4 p-4 bg-slate-50 rounded-2xl border border-slate-100 space-y-2 text-xs">
+            <div className="mt-4 p-4 bg-slate-50 rounded-2xl border border-primary-200 space-y-2 text-xs">
               <div className="flex justify-between py-1 border-b border-slate-200/60">
                 <span className="text-gray-500">
                   Punong Barangay (Captain):
@@ -615,7 +615,7 @@ export default function BarangayPsgcTable() {
                 className="px-4 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold rounded-xl text-xs flex items-center gap-1.5 transition-colors cursor-pointer"
               >
                 {copiedCode === 'modal-psgc' ? (
-                  <Check className="w-4 h-4 text-emerald-600" />
+                  <Check className="w-4 h-4 text-primary-700" />
                 ) : (
                   <Copy className="w-4 h-4" />
                 )}

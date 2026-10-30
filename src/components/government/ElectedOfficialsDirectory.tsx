@@ -5,7 +5,13 @@ import {
   BARANGAY_CAPTAINS,
   OFFICIALS_METADATA,
 } from '../../data/government/electedOfficials';
-import { Landmark, Search, CheckCircle2, Award, GitFork } from 'lucide-react';
+import {
+  Landmark,
+  Search,
+  CheckCircle2,
+  Award,
+  GitFork,
+} from '../../lib/icons';
 
 export default function ElectedOfficialsDirectory() {
   const [activeTab, setActiveTab] = useState<
@@ -49,7 +55,7 @@ export default function ElectedOfficialsDirectory() {
   }, [searchQuery]);
 
   return (
-    <div className="bg-white rounded-3xl border border-zinc-200 shadow-2xs overflow-hidden my-8">
+    <div className="bg-white rounded-3xl border border-primary-200 shadow-2xs overflow-hidden my-8">
       {/* Header Banner */}
       <div className="bg-gradient-to-r from-[#001f54] via-[#00225e] to-[#003893] text-white p-6 sm:p-8">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
@@ -68,7 +74,7 @@ export default function ElectedOfficialsDirectory() {
             </p>
           </div>
 
-          <div className="shrink-0 flex items-center gap-2 bg-white/10 p-3 rounded-2xl border border-white/20">
+          <div className="shrink-0 flex items-center gap-2 bg-white/10 p-3 rounded-2xl border border-primary-300/40 border-white/20">
             <Landmark className="w-6 h-6 text-blue-200 shrink-0" />
             <div className="text-right">
               <div className="text-xs font-semibold text-blue-200 uppercase tracking-wider">
@@ -85,7 +91,7 @@ export default function ElectedOfficialsDirectory() {
       {/* Tabs & Search Bar Strip */}
       <div className="p-4 sm:p-6 bg-zinc-50 border-b border-zinc-200 flex flex-col md:flex-row md:items-center justify-between gap-4">
         {/* Tabs */}
-        <div className="flex flex-wrap items-center gap-1.5 p-1 bg-white rounded-xl border border-zinc-200 shadow-2xs">
+        <div className="flex flex-wrap items-center gap-1.5 p-1 bg-white rounded-xl border border-primary-200 shadow-2xs">
           <button
             onClick={() => setActiveTab('all')}
             className={`px-3.5 py-2 text-xs font-semibold rounded-lg transition-all ${
@@ -143,7 +149,7 @@ export default function ElectedOfficialsDirectory() {
 
         {/* Search Input */}
         <div className="relative min-w-[240px]">
-          <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-zinc-400" />
+          <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-primary-700" />
           <input
             type="text"
             value={searchQuery}
@@ -174,9 +180,9 @@ export default function ElectedOfficialsDirectory() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* Mayor Card */}
-                <div className="bg-gradient-to-br from-blue-900 via-[#002a70] to-[#001f54] text-white p-5 sm:p-6 rounded-2xl border border-blue-800/50 shadow-md relative overflow-hidden group">
+                <div className="bg-gradient-to-br from-blue-900 via-[#002a70] to-[#001f54] text-primary-700 p-5 sm:p-6 rounded-2xl border border-primary-200 shadow-md relative overflow-hidden group">
                   <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                    <Award className="w-24 h-24 text-amber-300" />
+                    <Award className="w-24 h-24 text-primary-700" />
                   </div>
                   <div className="relative z-10 space-y-3">
                     <span className="px-2.5 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-wider bg-amber-400 text-slate-950 inline-block font-sans">
@@ -200,9 +206,9 @@ export default function ElectedOfficialsDirectory() {
                 </div>
 
                 {/* Vice Mayor Card */}
-                <div className="bg-gradient-to-br from-slate-900 via-[#00225e] to-slate-950 text-white p-5 sm:p-6 rounded-2xl border border-blue-900/40 shadow-md relative overflow-hidden group">
+                <div className="bg-gradient-to-br from-slate-900 via-[#00225e] to-slate-950 text-primary-700 p-5 sm:p-6 rounded-2xl border border-primary-200 shadow-md relative overflow-hidden group">
                   <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                    <Landmark className="w-24 h-24 text-blue-300" />
+                    <Landmark className="w-24 h-24 text-primary-700" />
                   </div>
                   <div className="relative z-10 space-y-3">
                     <span className="px-2.5 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-wider bg-blue-500 text-white inline-block font-sans">
@@ -250,10 +256,10 @@ export default function ElectedOfficialsDirectory() {
                   return (
                     <div
                       key={councilor.name}
-                      className={`p-4 rounded-2xl border transition-all hover:shadow-md flex flex-col justify-between ${
+                      className={`p-4 rounded-2xl border border-primary-200 transition-all hover:shadow-md flex flex-col justify-between ${
                         isExOfficio
-                          ? 'bg-amber-50/60 border-amber-200 hover:border-amber-400'
-                          : 'bg-white border-gray-200 hover:border-blue-300'
+                          ? 'bg-amber-50/60 border-primary-200 hover:border-amber-400'
+                          : 'bg-white border-primary-200 hover:border-blue-300'
                       }`}
                     >
                       <div className="space-y-1.5">
@@ -316,7 +322,7 @@ export default function ElectedOfficialsDirectory() {
                 {filteredBarangays.map(b => (
                   <div
                     key={`${b.number}-${b.barangay}`}
-                    className="p-4 rounded-2xl bg-white border border-gray-200 hover:border-purple-300 hover:shadow-md transition-all flex flex-col justify-between group"
+                    className="p-4 rounded-2xl bg-white border border-primary-200 hover:border-primary-500 hover:shadow-md transition-all flex flex-col justify-between group"
                   >
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-xs">
@@ -376,7 +382,7 @@ export default function ElectedOfficialsDirectory() {
               </span>
             </div>
 
-            <div className="bg-slate-900 text-slate-100 p-6 rounded-2xl border border-slate-800 shadow-inner font-mono text-xs sm:text-sm overflow-x-auto leading-relaxed">
+            <div className="bg-slate-900 text-blue-200 p-6 rounded-2xl border border-primary-300/40 shadow-inner font-mono text-xs sm:text-sm overflow-x-auto leading-relaxed">
               <div className="text-amber-400 font-bold text-base mb-2">
                 City of Trece Martires (Cavite)
               </div>

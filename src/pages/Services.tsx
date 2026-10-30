@@ -30,7 +30,6 @@ import {
   Clock,
   FileText,
   Layers,
-  Sparkles,
   Grid,
   List as ListIcon,
   Briefcase,
@@ -40,10 +39,10 @@ import {
   Baby,
   AlertTriangle,
   Fuel,
-} from 'lucide-react';
+} from '../lib/icons';
 import FuelPriceWidget from '../components/fuel/FuelPriceWidget';
 
-// Icon Map for reliable Lucide icon rendering
+// Icon map for reliable Hugeicons rendering.
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Heart,
   GraduationCap,
@@ -379,7 +378,7 @@ const Services: React.FC = () => {
                 </div>
 
                 {/* Fast Service Metadata Card */}
-                <div className="flex items-center gap-4 bg-gradient-to-br from-[#001f54]/90 to-[#002e7a]/90 p-4 sm:p-5 rounded-2xl border border-blue-400/30 shrink-0 max-w-md">
+                <div className="flex items-center gap-4 bg-gradient-to-br from-[#001f54]/90 to-[#002e7a]/90 p-4 sm:p-5 rounded-2xl border border-primary-300/40 shrink-0 max-w-md">
                   <div className="w-12 h-12 rounded-xl bg-white/15 text-white flex items-center justify-center shrink-0">
                     <CategoryIcon
                       iconName={categoryData.icon}
@@ -445,7 +444,7 @@ const Services: React.FC = () => {
           <div className="container mx-auto px-4 max-w-7xl mt-8">
             {/* Education Category Sub-tab Navigation */}
             {category === 'education' && (
-              <div className="flex items-center gap-2 mb-8 bg-white p-1.5 rounded-2xl border border-gray-200 shadow-xs w-fit">
+              <div className="flex items-center gap-2 mb-8 bg-white p-1.5 rounded-2xl border border-primary-200 shadow-xs w-fit">
                 <button
                   type="button"
                   onClick={() => {
@@ -511,10 +510,10 @@ const Services: React.FC = () => {
             ) : (
               <>
                 {/* Filter & Search Strip */}
-                <div className="bg-white rounded-2xl p-4 border border-gray-200 shadow-xs mb-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="bg-white rounded-2xl p-4 border border-primary-200 shadow-xs mb-8 flex flex-col sm:flex-row items-center justify-between gap-4">
                   {/* Search Within Category */}
                   <div className="relative w-full sm:max-w-md">
-                    <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                    <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-primary-700" />
                     <input
                       type="text"
                       value={searchQuery}
@@ -576,7 +575,7 @@ const Services: React.FC = () => {
                     </p>
                   </div>
                 ) : filteredSubcategories.length === 0 ? (
-                  <div className="bg-white rounded-3xl p-10 border border-gray-200 text-center max-w-lg mx-auto shadow-xs space-y-4">
+                  <div className="bg-white rounded-3xl p-10 border border-primary-200 text-center max-w-lg mx-auto shadow-xs space-y-4">
                     <div className="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mx-auto">
                       <Search className="w-6 h-6" />
                     </div>
@@ -605,7 +604,7 @@ const Services: React.FC = () => {
                           <Link
                             key={sub.slug || idx}
                             to={`/services/${category}/${sub.slug}`}
-                            className="group bg-white rounded-2xl p-5 sm:p-6 border border-zinc-200 hover:border-zinc-400 hover:shadow-xs transition-all duration-150 flex flex-col justify-between"
+                            className="group bg-white rounded-2xl p-5 sm:p-6 border border-primary-200 hover:border-primary-500 hover:shadow-xs transition-all duration-150 flex flex-col justify-between"
                           >
                             <div className="space-y-3">
                               <h3 className="text-base sm:text-lg font-bold text-zinc-900 group-hover:text-zinc-700 transition-colors leading-snug">
@@ -621,7 +620,7 @@ const Services: React.FC = () => {
 
                             <div className="pt-4 mt-4 border-t border-zinc-100 flex items-center justify-between text-xs font-semibold text-zinc-900">
                               <span>Read Full Guide &amp; Requirements</span>
-                              <ChevronRight className="w-4 h-4 text-zinc-600 group-hover:translate-x-1 transition-transform" />
+                              <ChevronRight className="w-4 h-4 text-primary-700 group-hover:translate-x-1 transition-transform" />
                             </div>
                           </Link>
                         ))}
@@ -632,7 +631,7 @@ const Services: React.FC = () => {
                           <Link
                             key={sub.slug || idx}
                             to={`/services/${category}/${sub.slug}`}
-                            className="group bg-white rounded-2xl p-5 border border-zinc-200 hover:border-zinc-400 hover:shadow-xs transition-all duration-150 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+                            className="group bg-white rounded-2xl p-5 border border-primary-200 hover:border-primary-500 hover:shadow-xs transition-all duration-150 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
                           >
                             <div className="space-y-1.5 min-w-0">
                               <h3 className="text-base sm:text-lg font-bold text-zinc-900 group-hover:text-zinc-700 transition-colors">
@@ -648,7 +647,7 @@ const Services: React.FC = () => {
                             <div className="flex items-center justify-between sm:justify-end gap-3 shrink-0 pt-3 sm:pt-0 border-t sm:border-t-0 border-zinc-100">
                               <span className="inline-flex items-center gap-1 text-xs font-semibold text-zinc-900 group-hover:underline">
                                 <span>Open Guide</span>
-                                <ArrowRight className="w-3.5 h-3.5 text-zinc-600 group-hover:translate-x-0.5 transition-transform" />
+                                <ArrowRight className="w-3.5 h-3.5 text-primary-700 group-hover:translate-x-0.5 transition-transform" />
                               </span>
                             </div>
                           </Link>
@@ -661,7 +660,7 @@ const Services: React.FC = () => {
             )}
 
             {/* Helpful Citizen Tips & Office Info Banner */}
-            <div className="mt-12 bg-white rounded-3xl p-6 sm:p-8 border border-zinc-200 shadow-2xs">
+            <div className="mt-12 bg-white rounded-3xl p-6 sm:p-8 border border-primary-200 shadow-2xs">
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
                 <div className="space-y-2 max-w-2xl">
                   <h3 className="text-lg sm:text-xl font-black text-zinc-900">
@@ -679,14 +678,14 @@ const Services: React.FC = () => {
                     to="/government#departments"
                     className="inline-flex items-center gap-2 bg-zinc-100 hover:bg-zinc-200 text-zinc-900 font-semibold px-4 py-2.5 rounded-xl text-xs transition-colors border border-zinc-200"
                   >
-                    <Building2 className="w-4 h-4 text-zinc-900" />
+                    <Building2 className="w-4 h-4 text-primary-700" />
                     <span>City Departments Directory</span>
                   </Link>
                   <Link
                     to="/government#hotlines"
                     className="inline-flex items-center gap-2 bg-[#003893] hover:bg-blue-800 text-white font-semibold px-4 py-2.5 rounded-xl text-xs transition-colors"
                   >
-                    <Phone className="w-4 h-4 text-blue-200" />
+                    <Phone className="w-4 h-4 text-primary-700" />
                     <span>Public Hotlines</span>
                   </Link>
                 </div>
@@ -737,7 +736,7 @@ const Services: React.FC = () => {
               </div>
 
               {/* Fast Stats Pill Box */}
-              <div className="grid grid-cols-2 gap-3 bg-gradient-to-br from-[#001f54]/90 to-[#002e7a]/90 p-4 rounded-2xl border border-blue-400/30 shrink-0 max-w-xs">
+              <div className="grid grid-cols-2 gap-3 bg-gradient-to-br from-[#001f54]/90 to-[#002e7a]/90 p-4 rounded-2xl border border-primary-300/40 shrink-0 max-w-xs">
                 <div className="space-y-1">
                   <div className="text-xs font-semibold text-blue-200">
                     Categories
@@ -815,7 +814,7 @@ const Services: React.FC = () => {
           {/* SEARCH RESULTS VIEW (if search input is active) */}
           {searchQuery.trim() ? (
             <div className="space-y-6">
-              <div className="flex items-center justify-between bg-white rounded-2xl p-4 border border-zinc-200 shadow-2xs">
+              <div className="flex items-center justify-between bg-white rounded-2xl p-4 border border-primary-200 shadow-2xs">
                 <div>
                   <h2 className="text-base sm:text-lg font-bold text-zinc-900">
                     Search Results for &quot;{searchQuery}&quot;
@@ -835,9 +834,9 @@ const Services: React.FC = () => {
               </div>
 
               {globalSearchResults.length === 0 ? (
-                <div className="bg-white rounded-3xl p-10 border border-zinc-200 text-center max-w-lg mx-auto shadow-2xs space-y-4">
+                <div className="bg-white rounded-3xl p-10 border border-primary-200 text-center max-w-lg mx-auto shadow-2xs space-y-4">
                   <div className="w-12 h-12 rounded-2xl bg-zinc-100 text-zinc-900 border border-zinc-200 flex items-center justify-center mx-auto">
-                    <Search className="w-6 h-6 text-zinc-900" />
+                    <Search className="w-6 h-6 text-primary-700" />
                   </div>
                   <div>
                     <h3 className="text-base font-bold text-zinc-900">
@@ -864,15 +863,15 @@ const Services: React.FC = () => {
                       <Link
                         key={`${res.categorySlug}-${res.subcategory.slug}-${i}`}
                         to={`/services/${res.categorySlug}/${res.subcategory.slug}`}
-                        className="group bg-white rounded-2xl p-5 sm:p-6 border border-zinc-200 hover:border-zinc-400 hover:shadow-xs transition-all duration-150 flex flex-col justify-between"
+                        className="group bg-white rounded-2xl p-5 sm:p-6 border border-primary-200 hover:border-primary-500 hover:shadow-xs transition-all duration-150 flex flex-col justify-between"
                       >
                         <div className="space-y-3">
                           <div className="flex items-center justify-between gap-2">
                             <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-900 bg-zinc-100 border border-zinc-200 px-2.5 py-1 rounded-lg">
-                              <CatIcon className="w-3 h-3 text-zinc-900" />
+                              <CatIcon className="w-3 h-3 text-primary-700" />
                               <span>{res.categoryName}</span>
                             </span>
-                            <ChevronRight className="w-4 h-4 text-zinc-400 group-hover:text-zinc-900 group-hover:translate-x-0.5 transition-all" />
+                            <ChevronRight className="w-4 h-4 text-primary-700 group-hover:text-zinc-900 group-hover:translate-x-0.5 transition-all" />
                           </div>
 
                           <h3 className="text-base font-bold text-zinc-900 group-hover:text-zinc-700 transition-colors leading-snug">
@@ -888,7 +887,7 @@ const Services: React.FC = () => {
 
                         <div className="pt-3 mt-3 border-t border-zinc-100 text-xs font-semibold text-zinc-900 flex items-center gap-1">
                           <span>Open Guide &amp; Requirements</span>
-                          <ArrowRight className="w-3.5 h-3.5 text-zinc-600 group-hover:translate-x-1 transition-transform" />
+                          <ArrowRight className="w-3.5 h-3.5 text-primary-700 group-hover:translate-x-1 transition-transform" />
                         </div>
                       </Link>
                     );
@@ -902,7 +901,7 @@ const Services: React.FC = () => {
               <section className="mb-12">
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-zinc-900" />
+                    <TrendingUp className="w-4 h-4 text-zinc-900" />
                     <h2 className="text-lg sm:text-xl font-bold text-zinc-900">
                       Most Requested Public Services
                     </h2>
@@ -919,12 +918,12 @@ const Services: React.FC = () => {
                       <Link
                         key={idx}
                         to={`/services/${item.categorySlug}/${item.docSlug}`}
-                        className="group bg-white p-5 rounded-2xl border border-zinc-200 hover:border-zinc-400 hover:shadow-xs transition-all flex flex-col justify-between"
+                        className="group bg-white p-5 rounded-2xl border border-primary-200 hover:border-primary-500 hover:shadow-xs transition-all flex flex-col justify-between"
                       >
                         <div className="space-y-2.5">
                           <div className="flex items-center justify-between">
-                            <div className="w-10 h-10 rounded-xl bg-zinc-100 text-zinc-900 border border-zinc-200 flex items-center justify-center transition-colors">
-                              <ItemIcon className="w-5 h-5 text-zinc-900" />
+                            <div className="w-10 h-10 rounded-xl bg-primary-50 text-primary-700 border border-primary-200 flex items-center justify-center transition-colors">
+                              <ItemIcon className="w-5 h-5 text-primary-700" />
                             </div>
                             <span className="text-xs font-medium text-zinc-700 bg-zinc-100 border border-zinc-200 px-2 py-0.5 rounded">
                               {item.badge}
@@ -942,7 +941,7 @@ const Services: React.FC = () => {
 
                         <div className="pt-3 mt-3 border-t border-zinc-100 flex items-center justify-between text-xs font-semibold text-zinc-900">
                           <span>{item.category}</span>
-                          <ChevronRight className="w-3.5 h-3.5 text-zinc-600 group-hover:translate-x-0.5 transition-transform" />
+                          <ChevronRight className="w-3.5 h-3.5 text-primary-700 group-hover:translate-x-0.5 transition-transform" />
                         </div>
                       </Link>
                     );
@@ -971,12 +970,12 @@ const Services: React.FC = () => {
                     return (
                       <div
                         key={cat.slug}
-                        className="group bg-white rounded-2xl p-6 border border-zinc-200 hover:border-zinc-400 hover:shadow-xs transition-all duration-150 flex flex-col justify-between"
+                        className="group bg-white rounded-2xl p-6 border border-primary-200 hover:border-primary-500 hover:shadow-xs transition-all duration-150 flex flex-col justify-between"
                       >
                         <div className="space-y-4">
                           <div className="flex items-center justify-between">
                             <div className="w-11 h-11 rounded-xl bg-zinc-100 text-zinc-900 border border-zinc-200 flex items-center justify-center transition-all">
-                              <CatIcon className="w-5 h-5 text-zinc-900" />
+                              <CatIcon className="w-5 h-5 text-primary-700" />
                             </div>
                             <span className="text-xs font-semibold text-zinc-700 bg-zinc-100 border border-zinc-200 px-2.5 py-1 rounded-lg">
                               {pagesCount} Guide{pagesCount === 1 ? '' : 's'}
@@ -1008,7 +1007,7 @@ const Services: React.FC = () => {
                                       to={`/services/${cat.slug}/${page.slug}`}
                                       className="text-xs font-medium text-zinc-700 hover:text-zinc-900 flex items-center gap-1.5 group/item transition-colors"
                                     >
-                                      <ChevronRight className="w-3 h-3 text-zinc-400 group-hover/item:text-zinc-900 shrink-0" />
+                                      <ChevronRight className="w-3 h-3 text-primary-700 group-hover/item:text-zinc-900 shrink-0" />
                                       <span className="line-clamp-1">
                                         {page.name}
                                       </span>
@@ -1026,7 +1025,7 @@ const Services: React.FC = () => {
                             className="inline-flex items-center justify-between w-full text-xs font-semibold text-zinc-900 hover:text-zinc-700 transition-colors"
                           >
                             <span>Browse All {cat.category}</span>
-                            <ArrowRight className="w-3.5 h-3.5 text-zinc-600 group-hover:translate-x-1 transition-transform" />
+                            <ArrowRight className="w-3.5 h-3.5 text-primary-700 group-hover:translate-x-1 transition-transform" />
                           </Link>
                         </div>
                       </div>
@@ -1038,7 +1037,7 @@ const Services: React.FC = () => {
           )}
 
           {/* CITIZEN ASSISTANCE & HOTLINE STRIP */}
-          <section className="mt-14 bg-gradient-to-r from-[#001f54] via-[#00225e] to-[#003893] text-white rounded-3xl p-6 sm:p-10 shadow-lg border border-blue-900/30 relative overflow-hidden">
+          <section className="mt-14 bg-gradient-to-r from-[#001f54] via-[#00225e] to-[#003893] text-blue-200 rounded-3xl p-6 sm:p-10 shadow-lg border border-primary-300/40 relative overflow-hidden">
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 relative z-10">
               <div className="space-y-2 max-w-2xl">
                 <h3 className="text-2xl font-bold text-white">

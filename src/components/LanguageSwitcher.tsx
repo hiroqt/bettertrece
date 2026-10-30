@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Globe } from 'lucide-react';
+import { Globe } from '../lib/icons';
 
 const languages = [
   { code: 'en', name: 'English', flag: '🇺🇸' },

@@ -8,7 +8,7 @@ import {
   Clock,
   Fuel,
   ExternalLink,
-} from 'lucide-react';
+} from '../lib/icons';
 
 export default function FuelPrices() {
   return (
@@ -111,7 +111,7 @@ export default function FuelPrices() {
               </div>
 
               <div className="space-y-4 pt-4">
-                <div className="bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-1.5">
+                <div className="bg-slate-50 p-5 rounded-2xl border border-primary-200 space-y-1.5">
                   <h4 className="font-bold text-slate-900 text-sm sm:text-base">
                     Why do fuel prices vary across gas stations in Trece
                     Martires?
@@ -127,7 +127,7 @@ export default function FuelPrices() {
                   </p>
                 </div>
 
-                <div className="bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-1.5">
+                <div className="bg-slate-50 p-5 rounded-2xl border border-primary-200 space-y-1.5">
                   <h4 className="font-bold text-slate-900 text-sm sm:text-base">
                     How often does the DOE update fuel price monitoring?
                   </h4>
@@ -140,7 +140,7 @@ export default function FuelPrices() {
                   </p>
                 </div>
 
-                <div className="bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-1.5">
+                <div className="bg-slate-50 p-5 rounded-2xl border border-primary-200 space-y-1.5">
                   <h4 className="font-bold text-slate-900 text-sm sm:text-base">
                     How can I report an outdated or inaccurate pump price?
                   </h4>

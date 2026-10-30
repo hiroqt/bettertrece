@@ -22,7 +22,7 @@ import {
   Building2,
   FileSpreadsheet,
   CheckCircle2,
-} from 'lucide-react';
+} from '../../lib/icons';
 import AnimatedCounter from '../ui/AnimatedCounter';
 
 interface CompactRecord {
@@ -216,7 +216,7 @@ export const GaaBudgetWidget: React.FC<{ className?: string }> = ({
   return (
     <div className={`space-y-8 ${className}`}>
       {/* 1. Header & Hero Metric Cards */}
-      <div className="bg-gradient-to-r from-[#001f54] via-[#00225e] to-[#003893] rounded-3xl p-6 sm:p-8 lg:p-10 text-white shadow-xl border border-blue-900/40 relative overflow-hidden">
+      <div className="bg-gradient-to-r from-[#001f54] via-[#00225e] to-[#003893] rounded-3xl p-6 sm:p-8 lg:p-10 text-blue-200 shadow-xl border border-primary-300/40 relative overflow-hidden">
         {/* Background glow effects */}
         <div className="absolute top-0 right-0 -mt-10 -mr-10 w-80 h-80 bg-blue-400/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-80 h-80 bg-blue-300/10 rounded-full blur-3xl pointer-events-none" />
@@ -255,7 +255,7 @@ export const GaaBudgetWidget: React.FC<{ className?: string }> = ({
               <a
                 href="/src/data/transparency/trece_martires_gaa_2020_2026.json"
                 download="trece_martires_gaa_2020_2026.json"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-bold transition-all border border-white/20 shadow-xs focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-white"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-blue-200 text-xs font-bold transition-all border border-primary-300/40 border-white/20 shadow-xs focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-white"
                 aria-label="Download Trece Martires GAA Dataset as JSON"
               >
                 <Download
@@ -270,11 +270,11 @@ export const GaaBudgetWidget: React.FC<{ className?: string }> = ({
           {/* 4 KPI Metrics */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
             {/* KPI 1: Grand Total */}
-            <div className="bg-gradient-to-br from-[#001438]/80 to-[#00225e]/80 backdrop-blur-md rounded-2xl p-4 sm:p-5 border border-blue-400/20 hover:border-blue-400/40 transition-all text-white">
+            <div className="bg-gradient-to-br from-[#001438]/80 to-[#00225e]/80 backdrop-blur-md rounded-2xl p-4 sm:p-5 border border-primary-300/40 hover:border-primary-500 transition-all text-blue-200">
               <div className="flex items-center justify-between text-blue-200 text-xs font-semibold uppercase tracking-wider mb-2">
                 <span>Grand Total (2020–2026)</span>
                 <TrendingUp
-                  className="w-4 h-4 text-amber-300"
+                  className="w-4 h-4 text-blue-200"
                   aria-hidden="true"
                 />
               </div>
@@ -292,13 +292,10 @@ export const GaaBudgetWidget: React.FC<{ className?: string }> = ({
             </div>
 
             {/* KPI 2: DPWH Infrastructure */}
-            <div className="bg-gradient-to-br from-[#001438]/80 to-[#00225e]/80 backdrop-blur-md rounded-2xl p-4 sm:p-5 border border-blue-400/20 hover:border-blue-400/40 transition-all text-white">
+            <div className="bg-gradient-to-br from-[#001438]/80 to-[#00225e]/80 backdrop-blur-md rounded-2xl p-4 sm:p-5 border border-primary-300/40 hover:border-primary-500 transition-all text-blue-200">
               <div className="flex items-center justify-between text-blue-200 text-xs font-semibold uppercase tracking-wider mb-2">
                 <span>DPWH Infrastructure</span>
-                <HardHat
-                  className="w-4 h-4 text-amber-300"
-                  aria-hidden="true"
-                />
+                <HardHat className="w-4 h-4 text-blue-200" aria-hidden="true" />
               </div>
               <div className="text-2xl sm:text-3xl font-black text-amber-300">
                 <AnimatedCounter
@@ -318,11 +315,11 @@ export const GaaBudgetWidget: React.FC<{ className?: string }> = ({
             </div>
 
             {/* KPI 3: DepEd Public High Schools */}
-            <div className="bg-gradient-to-br from-[#001438]/80 to-[#00225e]/80 backdrop-blur-md rounded-2xl p-4 sm:p-5 border border-blue-400/20 hover:border-blue-400/40 transition-all text-white">
+            <div className="bg-gradient-to-br from-[#001438]/80 to-[#00225e]/80 backdrop-blur-md rounded-2xl p-4 sm:p-5 border border-primary-300/40 hover:border-primary-500 transition-all text-blue-200">
               <div className="flex items-center justify-between text-blue-200 text-xs font-semibold uppercase tracking-wider mb-2">
                 <span>DepEd Public Schools</span>
                 <GraduationCap
-                  className="w-4 h-4 text-amber-300"
+                  className="w-4 h-4 text-blue-200"
                   aria-hidden="true"
                 />
               </div>
@@ -344,10 +341,10 @@ export const GaaBudgetWidget: React.FC<{ className?: string }> = ({
             </div>
 
             {/* KPI 4: Total Records */}
-            <div className="bg-gradient-to-br from-[#001438]/80 to-[#00225e]/80 backdrop-blur-md rounded-2xl p-4 sm:p-5 border border-blue-400/20 hover:border-blue-400/40 transition-all text-white">
+            <div className="bg-gradient-to-br from-[#001438]/80 to-[#00225e]/80 backdrop-blur-md rounded-2xl p-4 sm:p-5 border border-primary-300/40 hover:border-primary-500 transition-all text-blue-200">
               <div className="flex items-center justify-between text-blue-200 text-xs font-semibold uppercase tracking-wider mb-2">
                 <span>Line-Item Records</span>
-                <Layers className="w-4 h-4 text-amber-300" aria-hidden="true" />
+                <Layers className="w-4 h-4 text-blue-200" aria-hidden="true" />
               </div>
               <div className="text-2xl sm:text-3xl font-black text-amber-300">
                 <AnimatedCounter
@@ -364,7 +361,7 @@ export const GaaBudgetWidget: React.FC<{ className?: string }> = ({
       </div>
 
       {/* 2. Sub-Navigation Tabs */}
-      <div className="bg-white rounded-2xl p-2 border border-zinc-200 shadow-2xs flex flex-wrap gap-2">
+      <div className="bg-white rounded-2xl p-2 border border-primary-200 shadow-2xs flex flex-wrap gap-2">
         <button
           type="button"
           role="tab"
@@ -457,7 +454,7 @@ export const GaaBudgetWidget: React.FC<{ className?: string }> = ({
           className="space-y-6 animate-fadeIn"
         >
           {/* Filter Bar */}
-          <div className="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm space-y-5">
+          <div className="bg-white rounded-3xl p-6 border border-primary-200 shadow-sm space-y-5">
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
               {/* Search Box */}
               <div className="relative flex-grow max-w-xl">
@@ -628,7 +625,7 @@ export const GaaBudgetWidget: React.FC<{ className?: string }> = ({
           </div>
 
           {/* Records Table / Cards */}
-          <div className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
+          <div className="bg-white rounded-3xl border border-primary-200 shadow-sm overflow-hidden">
             {/* Desktop Table View */}
             <div className="overflow-x-auto">
               <table
@@ -746,7 +743,7 @@ export const GaaBudgetWidget: React.FC<{ className?: string }> = ({
                               className="p-4 sm:p-6 border-b border-blue-100"
                             >
                               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
-                                <div className="space-y-1 bg-white p-3.5 rounded-xl border border-slate-200">
+                                <div className="space-y-1 bg-white p-3.5 rounded-xl border border-primary-200">
                                   <span className="font-bold text-slate-500 uppercase text-[10px]">
                                     Department &amp; Agency
                                   </span>
@@ -755,7 +752,7 @@ export const GaaBudgetWidget: React.FC<{ className?: string }> = ({
                                   </div>
                                   <div className="text-slate-600">{item.a}</div>
                                 </div>
-                                <div className="space-y-1 bg-white p-3.5 rounded-xl border border-slate-200">
+                                <div className="space-y-1 bg-white p-3.5 rounded-xl border border-primary-200">
                                   <span className="font-bold text-slate-500 uppercase text-[10px]">
                                     UACS Classification
                                   </span>
@@ -767,7 +764,7 @@ export const GaaBudgetWidget: React.FC<{ className?: string }> = ({
                                     {item.u || 'National Office'}
                                   </div>
                                 </div>
-                                <div className="space-y-1 bg-white p-3.5 rounded-xl border border-slate-200">
+                                <div className="space-y-1 bg-white p-3.5 rounded-xl border border-primary-200">
                                   <span className="font-bold text-slate-500 uppercase text-[10px]">
                                     Appropriation Amount
                                   </span>
@@ -957,7 +954,7 @@ export const GaaBudgetWidget: React.FC<{ className?: string }> = ({
           aria-labelledby="subtab-schools"
           className="space-y-6 animate-fadeIn"
         >
-          <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6">
+          <div className="bg-white rounded-3xl p-6 sm:p-8 border border-primary-200 shadow-sm space-y-6">
             <div className="max-w-3xl space-y-2">
               <span className="px-3 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-900 border border-blue-200">
                 Department of Education (DepEd) &bull; Division of Cavite
@@ -978,7 +975,7 @@ export const GaaBudgetWidget: React.FC<{ className?: string }> = ({
                 ([schoolName, data]) => (
                   <div
                     key={schoolName}
-                    className="bg-slate-50/80 rounded-2xl p-5 border border-slate-200 hover:border-blue-300 hover:bg-blue-50/30 transition-all flex flex-col justify-between space-y-4"
+                    className="bg-slate-50/80 rounded-2xl p-5 border border-primary-200 hover:border-primary-500 hover:bg-blue-50/30 transition-all flex flex-col justify-between space-y-4"
                   >
                     <div className="space-y-2">
                       <div className="flex items-center justify-between">
@@ -1022,7 +1019,7 @@ export const GaaBudgetWidget: React.FC<{ className?: string }> = ({
           aria-labelledby="subtab-infrastructure"
           className="space-y-6 animate-fadeIn"
         >
-          <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6">
+          <div className="bg-white rounded-3xl p-6 sm:p-8 border border-primary-200 shadow-sm space-y-6">
             <div className="max-w-3xl space-y-2">
               <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-900 border border-emerald-200">
                 DPWH &amp; National Infrastructure Public Works
@@ -1041,7 +1038,7 @@ export const GaaBudgetWidget: React.FC<{ className?: string }> = ({
               {topGaaProjects.map((proj, idx) => (
                 <div
                   key={idx}
-                  className="bg-slate-50/90 rounded-2xl p-5 border border-slate-200 hover:border-emerald-300 hover:bg-emerald-50/20 transition-all flex flex-col justify-between space-y-4"
+                  className="bg-slate-50/90 rounded-2xl p-5 border border-primary-200 hover:border-primary-500 hover:bg-emerald-50/20 transition-all flex flex-col justify-between space-y-4"
                 >
                   <div className="space-y-2">
                     <div className="flex items-center justify-between gap-2">
@@ -1073,11 +1070,11 @@ export const GaaBudgetWidget: React.FC<{ className?: string }> = ({
             </div>
 
             {/* Cross-Link Card to DPWH Contract Implementation Tracker */}
-            <div className="bg-gradient-to-r from-slate-900 via-[#00225e] to-[#003893] rounded-2xl p-5 sm:p-6 text-white flex flex-col md:flex-row md:items-center justify-between gap-4 border border-white/10 shadow-md">
+            <div className="bg-gradient-to-r from-slate-900 via-[#00225e] to-[#003893] rounded-2xl p-5 sm:p-6 text-primary-700 flex flex-col md:flex-row md:items-center justify-between gap-4 border border-primary-200 border-white/10 shadow-md">
               <div className="space-y-1.5 max-w-2xl">
                 <div className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-200">
                   <HardHat
-                    className="w-4 h-4 text-blue-300"
+                    className="w-4 h-4 text-primary-700"
                     aria-hidden="true"
                   />
                   <span>
@@ -1111,7 +1108,7 @@ export const GaaBudgetWidget: React.FC<{ className?: string }> = ({
                   />
                   <span>Open DPWH Tracker</span>
                   <ChevronRight
-                    className="w-4 h-4 text-slate-400"
+                    className="w-4 h-4 text-primary-700"
                     aria-hidden="true"
                   />
                 </a>
@@ -1129,7 +1126,7 @@ export const GaaBudgetWidget: React.FC<{ className?: string }> = ({
           aria-labelledby="subtab-overview"
           className="space-y-6 animate-fadeIn"
         >
-          <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6">
+          <div className="bg-white rounded-3xl p-6 sm:p-8 border border-primary-200 shadow-sm space-y-6">
             <div className="max-w-3xl space-y-2">
               <span className="px-3 py-1 rounded-full text-xs font-bold bg-purple-100 text-purple-900 border border-purple-200">
                 Annual Appropriations Comparison
@@ -1147,7 +1144,7 @@ export const GaaBudgetWidget: React.FC<{ className?: string }> = ({
               {Object.entries(gaaSummary.totals_by_year).map(([year, data]) => (
                 <div
                   key={year}
-                  className="bg-slate-50 rounded-2xl p-5 border border-slate-200 flex flex-col justify-between space-y-3"
+                  className="bg-slate-50 rounded-2xl p-5 border border-primary-200 flex flex-col justify-between space-y-3"
                 >
                   <div className="space-y-1">
                     <div className="flex items-center justify-between">
@@ -1173,12 +1170,9 @@ export const GaaBudgetWidget: React.FC<{ className?: string }> = ({
       )}
 
       {/* 4. Official Sources, Open Data Citations & Disclaimer */}
-      <div className="bg-slate-900 rounded-3xl p-6 sm:p-8 text-white space-y-6 border border-slate-800 shadow-lg">
+      <div className="bg-slate-900 rounded-3xl p-6 sm:p-8 text-blue-200 space-y-6 border border-primary-300/40 shadow-lg">
         <div className="flex items-center gap-3 border-b border-white/10 pb-4">
-          <Info
-            className="w-5 h-5 text-amber-400 shrink-0"
-            aria-hidden="true"
-          />
+          <Info className="w-5 h-5 text-blue-200 shrink-0" aria-hidden="true" />
           <h4 className="text-base sm:text-lg font-bold text-white">
             Official Data Sources, Methodology &amp; Civic Disclaimer
           </h4>
@@ -1188,7 +1182,7 @@ export const GaaBudgetWidget: React.FC<{ className?: string }> = ({
           <div className="space-y-2">
             <h5 className="font-bold text-white text-sm flex items-center gap-2">
               <CheckCircle2
-                className="w-4 h-4 text-emerald-400"
+                className="w-4 h-4 text-blue-200"
                 aria-hidden="true"
               />
               <span>Data Source: BetterGov Hugging Face Datasets</span>
@@ -1216,7 +1210,7 @@ export const GaaBudgetWidget: React.FC<{ className?: string }> = ({
 
           <div className="space-y-2">
             <h5 className="font-bold text-white text-sm flex items-center gap-2">
-              <Building2 className="w-4 h-4 text-blue-400" aria-hidden="true" />
+              <Building2 className="w-4 h-4 text-blue-200" aria-hidden="true" />
               <span>National vs. Local Appropriations</span>
             </h5>
             <p>

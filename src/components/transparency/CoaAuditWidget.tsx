@@ -31,7 +31,7 @@ import {
   Check,
   FileText,
   Scale,
-} from 'lucide-react';
+} from '../../lib/icons';
 import AnimatedCounter from '../ui/AnimatedCounter';
 
 interface CoaAuditWidgetProps {
@@ -183,7 +183,7 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
   return (
     <div className={`space-y-10 ${className}`}>
       {/* 1. EXECUTIVE AUDIT HEADER & OPINION BANNER */}
-      <div className="bg-white rounded-3xl p-6 sm:p-8 lg:p-10 border border-gray-200/90 shadow-sm space-y-6">
+      <div className="bg-white rounded-3xl p-6 sm:p-8 lg:p-10 border border-primary-200 shadow-sm space-y-6">
         <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6 pb-6 border-b border-gray-100">
           <div className="space-y-3 max-w-3xl">
             <div className="flex flex-wrap items-center gap-2">
@@ -218,7 +218,7 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
           </div>
 
           {/* Audit Opinion Pill & Quick Info */}
-          <div className="bg-slate-50 border border-slate-200 p-5 rounded-2xl lg:max-w-sm shrink-0 space-y-3">
+          <div className="bg-slate-50 border border-primary-200 p-5 rounded-2xl lg:max-w-sm shrink-0 space-y-3">
             <div className="flex items-center justify-between gap-2">
               <span className="text-xs font-bold uppercase tracking-wider text-slate-500">
                 Independent Auditor’s Opinion
@@ -251,7 +251,7 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
             </p>
 
             {showOpinionExplainer && (
-              <div className="mt-3 p-3.5 bg-blue-50/90 border border-blue-200 rounded-xl text-xs text-slate-700 space-y-1.5 animate-fadeIn">
+              <div className="mt-3 p-3.5 bg-blue-50/90 border border-primary-200 rounded-xl text-xs text-primary-700 space-y-1.5 animate-fadeIn">
                 <div className="font-bold text-[#00225e]">
                   Understanding COA Audit Opinions:
                 </div>
@@ -318,7 +318,7 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
       {activeReportView === 'aar' && (
         <div className="space-y-10 animate-fadeIn">
           {/* 2. FOUR FINANCIAL HIGHLIGHT CARDS (2024 vs 2023) */}
-          <div className="bg-white rounded-3xl p-6 sm:p-8 lg:p-10 border border-gray-200/90 shadow-sm space-y-6">
+          <div className="bg-white rounded-3xl p-6 sm:p-8 lg:p-10 border border-primary-200 shadow-sm space-y-6">
             <h3 className="text-base sm:text-lg font-bold text-gray-900 flex items-center gap-2">
               <TrendingUp
                 className="w-5 h-5 text-[#003893]"
@@ -329,7 +329,7 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {/* Card 1: Total Assets */}
-              <div className="bg-gradient-to-br from-[#00225e] to-[#003893] text-white p-5 rounded-2xl shadow-sm border border-blue-900/30 flex flex-col justify-between">
+              <div className="bg-gradient-to-br from-[#00225e] to-[#003893] text-blue-200 p-5 rounded-2xl shadow-sm border border-primary-300/40 flex flex-col justify-between">
                 <div className="space-y-1">
                   <div className="flex items-center justify-between text-blue-200 text-xs font-semibold">
                     <span>Total City Assets</span>
@@ -358,7 +358,7 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
               </div>
 
               {/* Card 2: Operating Revenue */}
-              <div className="bg-gradient-to-br from-slate-900 to-slate-800 text-white p-5 rounded-2xl shadow-sm border border-slate-700 flex flex-col justify-between">
+              <div className="bg-gradient-to-br from-slate-900 to-slate-800 text-primary-700 p-5 rounded-2xl shadow-sm border border-primary-200 flex flex-col justify-between">
                 <div className="space-y-1">
                   <div className="flex items-center justify-between text-slate-300 text-xs font-semibold">
                     <span>Operating Revenue</span>
@@ -387,7 +387,7 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
               </div>
 
               {/* Card 3: Net Surplus */}
-              <div className="bg-white border border-gray-200 p-5 rounded-2xl shadow-xs flex flex-col justify-between">
+              <div className="bg-white border border-primary-200 p-5 rounded-2xl shadow-xs flex flex-col justify-between">
                 <div className="space-y-1">
                   <div className="flex items-center justify-between text-slate-600 text-xs font-semibold">
                     <span>Net Annual Surplus</span>
@@ -416,7 +416,7 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
               </div>
 
               {/* Card 4: City Personnel & Workforce */}
-              <div className="bg-white border border-gray-200 p-5 rounded-2xl shadow-xs flex flex-col justify-between">
+              <div className="bg-white border border-primary-200 p-5 rounded-2xl shadow-xs flex flex-col justify-between">
                 <div className="space-y-1">
                   <div className="flex items-center justify-between text-slate-600 text-xs font-semibold">
                     <span>Personnel Complement</span>
@@ -448,7 +448,7 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
           <section
             id="audit-observations"
             aria-labelledby="audit-observations-title"
-            className="bg-white rounded-3xl p-6 sm:p-8 lg:p-10 border border-gray-200/90 shadow-sm space-y-6"
+            className="bg-white rounded-3xl p-6 sm:p-8 lg:p-10 border border-primary-200 shadow-sm space-y-6"
           >
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div className="space-y-1">
@@ -521,7 +521,7 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
               {/* Search Box */}
               <div className="relative flex-1">
                 <Search
-                  className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none"
+                  className="w-4 h-4 text-primary-700 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none"
                   aria-hidden="true"
                 />
                 <input
@@ -579,7 +579,7 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
               {filteredObservations.length === 0 ? (
                 <div className="text-center py-12 px-4 bg-slate-50 rounded-2xl border border-dashed border-slate-300 space-y-3">
                   <AlertCircle
-                    className="w-8 h-8 text-slate-400 mx-auto"
+                    className="w-8 h-8 text-primary-700 mx-auto"
                     aria-hidden="true"
                   />
                   <div className="text-sm font-bold text-slate-700">
@@ -607,7 +607,7 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
                   return (
                     <div
                       key={obs.id}
-                      className="border border-gray-200/90 rounded-2xl bg-white hover:border-blue-200 transition-all overflow-hidden shadow-2xs"
+                      className="border border-primary-200 rounded-2xl bg-white hover:border-primary-500 transition-all overflow-hidden shadow-2xs"
                     >
                       {/* Accordion Header */}
                       <button
@@ -702,7 +702,7 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
                           <div className="space-y-1.5">
                             <h5 className="text-xs font-bold uppercase tracking-wider text-rose-900 flex items-center gap-1.5">
                               <AlertCircle
-                                className="w-3.5 h-3.5 text-rose-600"
+                                className="w-3.5 h-3.5 text-primary-700"
                                 aria-hidden="true"
                               />
                               <span>COA Audit Observation &amp; Finding</span>
@@ -716,7 +716,7 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
                           <div className="space-y-1.5">
                             <h5 className="text-xs font-bold uppercase tracking-wider text-emerald-900 flex items-center gap-1.5">
                               <CheckCircle2
-                                className="w-3.5 h-3.5 text-emerald-600"
+                                className="w-3.5 h-3.5 text-primary-700"
                                 aria-hidden="true"
                               />
                               <span>Auditor Recommendations</span>
@@ -732,7 +732,7 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
 
                           {/* Agency Action Plan & Status */}
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div className="space-y-1.5 bg-blue-50/60 p-3.5 rounded-xl border border-blue-100">
+                            <div className="space-y-1.5 bg-blue-50/60 p-3.5 rounded-xl border border-primary-200">
                               <h5 className="text-xs font-bold uppercase tracking-wider text-[#00225e] flex items-center gap-1.5">
                                 <Briefcase
                                   className="w-3.5 h-3.5 text-[#003893]"
@@ -759,10 +759,10 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
                               </div>
                             </div>
 
-                            <div className="space-y-1.5 bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+                            <div className="space-y-1.5 bg-slate-50 p-3.5 rounded-xl border border-primary-200">
                               <h5 className="text-xs font-bold uppercase tracking-wider text-slate-700 flex items-center gap-1.5">
                                 <ShieldAlert
-                                  className="w-3.5 h-3.5 text-slate-600"
+                                  className="w-3.5 h-3.5 text-primary-700"
                                   aria-hidden="true"
                                 />
                                 <span>COA Auditor Validation Remarks</span>
@@ -788,7 +788,7 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
           {/* 4. PRIOR YEAR AUDIT TRACKING & SASDC DISALLOWANCES LEDGER */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Prior Year Recommendations Tracking */}
-            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200/90 shadow-sm space-y-5">
+            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-primary-200 shadow-sm space-y-5">
               <div className="flex items-center justify-between gap-4">
                 <div>
                   <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-blue-100 text-[#00225e]">
@@ -836,7 +836,7 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
             </div>
 
             {/* Audit Suspensions, Disallowances & Charges (SASDC) */}
-            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200/90 shadow-sm space-y-5">
+            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-primary-200 shadow-sm space-y-5">
               <div className="flex items-center justify-between gap-4">
                 <div>
                   <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-900">
@@ -854,7 +854,7 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
               </div>
 
               <div className="grid grid-cols-3 gap-3 pt-1">
-                <div className="p-3 bg-slate-50 rounded-xl border border-slate-200 text-center">
+                <div className="p-3 bg-slate-50 rounded-xl border border-primary-200 text-center">
                   <div className="text-[11px] font-bold text-slate-500 uppercase">
                     Suspensions
                   </div>
@@ -866,7 +866,7 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
                   </div>
                 </div>
 
-                <div className="p-3 bg-amber-50/60 rounded-xl border border-amber-200 text-center">
+                <div className="p-3 bg-amber-50/60 rounded-xl border border-primary-200 text-center">
                   <div className="text-[11px] font-bold text-amber-900 uppercase">
                     Disallowances
                   </div>
@@ -878,7 +878,7 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
                   </div>
                 </div>
 
-                <div className="p-3 bg-rose-50/60 rounded-xl border border-rose-200 text-center">
+                <div className="p-3 bg-rose-50/60 rounded-xl border border-primary-200 text-center">
                   <div className="text-[11px] font-bold text-rose-900 uppercase">
                     Charges
                   </div>
@@ -903,7 +903,7 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
       {activeReportView === 'sef' && (
         <div className="space-y-10 animate-fadeIn">
           {/* Executive SEF Summary Banner */}
-          <div className="bg-gradient-to-br from-[#00225e] via-[#003893] to-[#00142f] text-white rounded-3xl p-6 sm:p-8 lg:p-10 shadow-md border border-blue-900/40 space-y-6">
+          <div className="bg-gradient-to-br from-[#00225e] via-[#003893] to-[#00142f] text-blue-200 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-md border border-primary-300/40 space-y-6">
             <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6 pb-6 border-b border-blue-800/40">
               <div className="space-y-3 max-w-3xl">
                 <div className="flex flex-wrap items-center gap-2">
@@ -932,7 +932,7 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
               </div>
 
               {/* Total SEF Budget Badge */}
-              <div className="bg-white/10 backdrop-blur-md border border-white/15 p-5 rounded-2xl lg:max-w-xs shrink-0 space-y-2 text-center lg:text-left">
+              <div className="bg-white/10 backdrop-blur-md border border-primary-300/40 border-white/15 p-5 rounded-2xl lg:max-w-xs shrink-0 space-y-2 text-center lg:text-left">
                 <span className="text-xs font-bold uppercase tracking-wider text-blue-200">
                   Total Final SEF Budget
                 </span>
@@ -952,10 +952,10 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
 
             {/* 4 SEF Key Execution Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
-              <div className="bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-white/10 space-y-1">
+              <div className="bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-primary-300/40 border-white/10 space-y-1">
                 <div className="text-xs text-blue-200 font-semibold flex items-center gap-1.5">
                   <TrendingUp
-                    className="w-3.5 h-3.5 text-emerald-300"
+                    className="w-3.5 h-3.5 text-blue-200"
                     aria-hidden="true"
                   />
                   <span>Total SEF Revenues Collected</span>
@@ -969,10 +969,10 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
                 </div>
               </div>
 
-              <div className="bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-white/10 space-y-1">
+              <div className="bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-primary-300/40 border-white/10 space-y-1">
                 <div className="text-xs text-blue-200 font-semibold flex items-center gap-1.5">
                   <Briefcase
-                    className="w-3.5 h-3.5 text-blue-300"
+                    className="w-3.5 h-3.5 text-blue-200"
                     aria-hidden="true"
                   />
                   <span>MOOE Program Utilization</span>
@@ -989,10 +989,10 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
                 </div>
               </div>
 
-              <div className="bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-white/10 space-y-1">
+              <div className="bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-primary-300/40 border-white/10 space-y-1">
                 <div className="text-xs text-blue-200 font-semibold flex items-center gap-1.5">
                   <Building2
-                    className="w-3.5 h-3.5 text-amber-300"
+                    className="w-3.5 h-3.5 text-blue-200"
                     aria-hidden="true"
                   />
                   <span>Capital Outlay &amp; Facilities</span>
@@ -1009,10 +1009,10 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
                 </div>
               </div>
 
-              <div className="bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-white/10 space-y-1">
+              <div className="bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-primary-300/40 border-white/10 space-y-1">
                 <div className="text-xs text-blue-200 font-semibold flex items-center gap-1.5">
                   <CheckCircle2
-                    className="w-3.5 h-3.5 text-emerald-300"
+                    className="w-3.5 h-3.5 text-blue-200"
                     aria-hidden="true"
                   />
                   <span>Overall Program Execution</span>
@@ -1032,7 +1032,7 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
           </div>
 
           {/* SEF STATEMENT OF COMPARISON OF BUDGET AND ACTUAL AMOUNTS (Annex E-2) */}
-          <div className="bg-white rounded-3xl p-6 sm:p-8 lg:p-10 border border-gray-200/90 shadow-sm space-y-6">
+          <div className="bg-white rounded-3xl p-6 sm:p-8 lg:p-10 border border-primary-200 shadow-sm space-y-6">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-gray-100">
               <div className="space-y-1">
                 <div className="flex items-center gap-2">
@@ -1209,7 +1209,7 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
           </div>
 
           {/* SEF SCHOOL SITES & CAPITAL INFRASTRUCTURE ASSETS (Annex H) */}
-          <div className="bg-white rounded-3xl p-6 sm:p-8 lg:p-10 border border-gray-200/90 shadow-sm space-y-6">
+          <div className="bg-white rounded-3xl p-6 sm:p-8 lg:p-10 border border-primary-200 shadow-sm space-y-6">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-gray-100">
               <div className="space-y-1">
                 <div className="flex items-center gap-2">
@@ -1239,7 +1239,7 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
               {sefAudit.financialBreakdown.schoolLots.map((lot, lIdx) => (
                 <div
                   key={lIdx}
-                  className="bg-slate-50 p-5 rounded-2xl border border-slate-200 flex flex-col justify-between space-y-3"
+                  className="bg-slate-50 p-5 rounded-2xl border border-primary-200 flex flex-col justify-between space-y-3"
                 >
                   <div className="space-y-1.5">
                     <div className="flex items-center justify-between">
@@ -1255,7 +1255,7 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
                     </h5>
                     <p className="text-xs text-slate-500 flex items-center gap-1">
                       <MapPin
-                        className="w-3.5 h-3.5 text-rose-500 shrink-0"
+                        className="w-3.5 h-3.5 text-primary-700 shrink-0"
                         aria-hidden="true"
                       />
                       <span>{lot.location}</span>
@@ -1278,7 +1278,7 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
           {/* SEF Detailed Finding, Management Response & Action Taken */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* COA Findings & Recommendations */}
-            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200/90 shadow-sm space-y-6">
+            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-primary-200 shadow-sm space-y-6">
               <div className="space-y-2">
                 <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-rose-100 text-rose-800 border border-rose-300">
                   COA Audit Observation
@@ -1293,14 +1293,14 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
                 </p>
               </div>
 
-              <div className="p-4 bg-rose-50/60 rounded-2xl border border-rose-100 text-xs sm:text-sm text-gray-700 leading-relaxed space-y-2">
+              <div className="p-4 bg-rose-50/60 rounded-2xl border border-primary-200 text-xs sm:text-sm text-primary-700 leading-relaxed space-y-2">
                 <p>{sefAudit.finding}</p>
               </div>
 
               <div className="space-y-3">
                 <h5 className="text-xs font-bold uppercase tracking-wider text-slate-700 flex items-center gap-1.5">
                   <FileText
-                    className="w-4 h-4 text-emerald-600"
+                    className="w-4 h-4 text-primary-700"
                     aria-hidden="true"
                   />
                   <span>Auditor Recommendations</span>
@@ -1309,10 +1309,10 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
                   {sefAudit.recommendations.map((rec, idx) => (
                     <li
                       key={idx}
-                      className="text-xs sm:text-sm text-gray-700 flex items-start gap-2.5 bg-emerald-50/40 p-3 rounded-xl border border-emerald-100/80"
+                      className="text-xs sm:text-sm text-primary-700 flex items-start gap-2.5 bg-emerald-50/40 p-3 rounded-xl border border-primary-200"
                     >
                       <Check
-                        className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"
+                        className="w-4 h-4 text-primary-700 shrink-0 mt-0.5"
                         aria-hidden="true"
                       />
                       <span>{rec}</span>
@@ -1323,7 +1323,7 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
             </div>
 
             {/* City Response & Corrective Actions */}
-            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200/90 shadow-sm space-y-6">
+            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-primary-200 shadow-sm space-y-6">
               <div className="space-y-2">
                 <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-blue-100 text-[#00225e] border border-blue-300">
                   City Agency Remediation
@@ -1336,7 +1336,7 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
                 </p>
               </div>
 
-              <div className="p-4 bg-blue-50/60 rounded-2xl border border-blue-100 text-xs sm:text-sm text-gray-700 leading-relaxed space-y-2">
+              <div className="p-4 bg-blue-50/60 rounded-2xl border border-primary-200 text-xs sm:text-sm text-primary-700 leading-relaxed space-y-2">
                 <p className="font-semibold text-slate-900">
                   City Comment &amp; Context:
                 </p>
@@ -1346,7 +1346,7 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
               <div className="space-y-3">
                 <h5 className="text-xs font-bold uppercase tracking-wider text-slate-700 flex items-center gap-1.5">
                   <CheckCircle2
-                    className="w-4 h-4 text-blue-600"
+                    className="w-4 h-4 text-primary-700"
                     aria-hidden="true"
                   />
                   <span>Immediate Corrective Actions Instituted</span>
@@ -1355,19 +1355,19 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
                   {sefAudit.correctiveActions.map((action, idx) => (
                     <li
                       key={idx}
-                      className="text-xs sm:text-sm text-gray-700 flex items-start gap-2.5 bg-slate-50 p-3 rounded-xl border border-slate-200"
+                      className="text-xs sm:text-sm text-primary-700 flex items-start gap-2.5 bg-slate-50 p-3 rounded-xl border border-primary-200"
                     >
                       <CheckCircle2
-                        className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"
+                        className="w-4 h-4 text-primary-700 shrink-0 mt-0.5"
                         aria-hidden="true"
                       />
                       <span>{action}</span>
                     </li>
                   ))}
                 </ul>
-                <div className="p-3 bg-slate-100 rounded-xl border border-slate-200 text-xs text-slate-700 flex items-center gap-2">
+                <div className="p-3 bg-slate-100 rounded-xl border border-primary-200 text-xs text-primary-700 flex items-center gap-2">
                   <MapPin
-                    className="w-4 h-4 text-rose-600 shrink-0"
+                    className="w-4 h-4 text-primary-700 shrink-0"
                     aria-hidden="true"
                   />
                   <span>
@@ -1380,7 +1380,7 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
           </div>
 
           {/* Local School Board (LSB) Composition */}
-          <div className="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200/90 shadow-sm space-y-6">
+          <div className="bg-white rounded-3xl p-6 sm:p-8 border border-primary-200 shadow-sm space-y-6">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-gray-100">
               <div className="space-y-1">
                 <div className="flex items-center gap-2">
@@ -1404,7 +1404,7 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 text-xs">
               {/* Chairperson */}
-              <div className="p-3.5 bg-blue-50/60 rounded-xl border border-blue-200 space-y-1">
+              <div className="p-3.5 bg-blue-50/60 rounded-xl border border-primary-200 space-y-1">
                 <span className="text-[10px] font-bold uppercase tracking-wider text-[#00225e]">
                   Chairperson
                 </span>
@@ -1417,7 +1417,7 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
               {sefAudit.boardComposition.coChairpersons.map((coChair, cIdx) => (
                 <div
                   key={cIdx}
-                  className="p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-1"
+                  className="p-3.5 bg-slate-50 rounded-xl border border-primary-200 space-y-1"
                 >
                   <span className="text-[10px] font-bold uppercase tracking-wider text-[#00225e]">
                     Co-Chairperson (DepEd)
@@ -1432,7 +1432,7 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
               {sefAudit.boardComposition.members.map((member, mIdx) => (
                 <div
                   key={mIdx}
-                  className="p-3 bg-slate-50 rounded-xl border border-slate-200 space-y-0.5"
+                  className="p-3 bg-slate-50 rounded-xl border border-primary-200 space-y-0.5"
                 >
                   <span className="text-[10px] font-semibold text-slate-500 uppercase">
                     Board Member
@@ -1474,7 +1474,7 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
           {/* Doc 1: AAR */}
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-white/20 flex flex-col justify-between hover:bg-white/15 transition-all space-y-4">
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-primary-300/40 border-white/20 flex flex-col justify-between hover:bg-white/15 transition-all space-y-4">
             <div className="space-y-2">
               <div className="flex items-center justify-between">
                 <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-amber-400 text-slate-900">
@@ -1509,7 +1509,7 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
           </div>
 
           {/* Doc 2: AAPSI */}
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-white/20 flex flex-col justify-between hover:bg-white/15 transition-all space-y-4">
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-primary-300/40 border-white/20 flex flex-col justify-between hover:bg-white/15 transition-all space-y-4">
             <div className="space-y-2">
               <div className="flex items-center justify-between">
                 <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-400 text-slate-900">
@@ -1545,7 +1545,7 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
           </div>
 
           {/* Doc 3: APMT */}
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-white/20 flex flex-col justify-between hover:bg-white/15 transition-all space-y-4">
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-primary-300/40 border-white/20 flex flex-col justify-between hover:bg-white/15 transition-all space-y-4">
             <div className="space-y-2">
               <div className="flex items-center justify-between">
                 <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-blue-300 text-slate-900">
@@ -1580,7 +1580,7 @@ export const CoaAuditWidget: React.FC<CoaAuditWidgetProps> = ({
           </div>
 
           {/* Doc 4: SEF CAR */}
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-white/20 flex flex-col justify-between hover:bg-white/15 transition-all space-y-4">
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-primary-300/40 border-white/20 flex flex-col justify-between hover:bg-white/15 transition-all space-y-4">
             <div className="space-y-2">
               <div className="flex items-center justify-between">
                 <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-amber-400 text-slate-900">

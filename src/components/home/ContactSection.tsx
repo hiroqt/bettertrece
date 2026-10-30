@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
+import { Phone, Mail, MapPin, ArrowRight } from '../../lib/icons';
 import { Link } from 'react-router';
 import { useTranslation } from 'react-i18next';
 
@@ -10,7 +10,7 @@ const ContactSection: React.FC = () => {
     <section
       id="contact"
       aria-labelledby="contact-us-heading"
-      className="py-12 lg:py-16 bg-slate-50/70 border-b border-gray-200/80"
+      className="py-12 lg:py-16 bg-slate-50/70"
     >
       <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
         {/* Top Header: Contact Us on left, View All Departments on right */}
@@ -38,9 +38,9 @@ const ContactSection: React.FC = () => {
         {/* 3 Main Contact Cards (Phone, Email, Address) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
           {/* 1. Phone Card */}
-          <div className="bg-white rounded-2xl p-5 sm:p-6 border border-zinc-200 shadow-2xs hover:border-zinc-400 hover:shadow-xs transition-all flex items-start gap-4">
-            <div className="w-10 h-10 rounded-xl bg-zinc-100 text-zinc-900 border border-zinc-200 flex items-center justify-center shrink-0">
-              <Phone className="w-5 h-5 text-zinc-900" />
+          <div className="bg-white rounded-2xl p-5 sm:p-6 border border-primary-200 shadow-2xs hover:border-primary-500 hover:shadow-xs transition-all flex items-start gap-4">
+            <div className="w-10 h-10 rounded-xl bg-primary-50 text-primary-700 border border-primary-200 flex items-center justify-center shrink-0">
+              <Phone className="w-5 h-5 text-primary-700" />
             </div>
             <div className="min-w-0">
               <div className="text-xs font-semibold text-zinc-500 uppercase tracking-wider">
@@ -59,9 +59,9 @@ const ContactSection: React.FC = () => {
           </div>
 
           {/* 2. Email Card */}
-          <div className="bg-white rounded-2xl p-5 sm:p-6 border border-zinc-200 shadow-2xs hover:border-zinc-400 hover:shadow-xs transition-all flex items-start gap-4">
-            <div className="w-10 h-10 rounded-xl bg-zinc-100 text-zinc-900 border border-zinc-200 flex items-center justify-center shrink-0">
-              <Mail className="w-5 h-5 text-zinc-900" />
+          <div className="bg-white rounded-2xl p-5 sm:p-6 border border-primary-200 shadow-2xs hover:border-primary-500 hover:shadow-xs transition-all flex items-start gap-4">
+            <div className="w-10 h-10 rounded-xl bg-primary-50 text-primary-700 border border-primary-200 flex items-center justify-center shrink-0">
+              <Mail className="w-5 h-5 text-primary-700" />
             </div>
             <div className="min-w-0">
               <div className="text-xs font-semibold text-zinc-500 uppercase tracking-wider">
@@ -80,9 +80,9 @@ const ContactSection: React.FC = () => {
           </div>
 
           {/* 3. Address Card */}
-          <div className="bg-white rounded-2xl p-5 sm:p-6 border border-zinc-200 shadow-2xs hover:border-zinc-400 hover:shadow-xs transition-all flex items-start gap-4">
-            <div className="w-10 h-10 rounded-xl bg-zinc-100 text-zinc-900 border border-zinc-200 flex items-center justify-center shrink-0">
-              <MapPin className="w-5 h-5 text-zinc-900" />
+          <div className="bg-white rounded-2xl p-5 sm:p-6 border border-primary-200 shadow-2xs hover:border-primary-500 hover:shadow-xs transition-all flex items-start gap-4">
+            <div className="w-10 h-10 rounded-xl bg-primary-50 text-primary-700 border border-primary-200 flex items-center justify-center shrink-0">
+              <MapPin className="w-5 h-5 text-primary-700" />
             </div>
             <div className="min-w-0">
               <div className="text-xs font-semibold text-zinc-500 uppercase tracking-wider">

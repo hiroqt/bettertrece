@@ -1,9 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
-  Wind,
-  Thermometer,
-  Mountain,
   Sun,
   Moon,
   CloudSun,
@@ -12,12 +9,18 @@ import {
   CloudRain,
   CloudLightning,
   CloudFog,
-  ExternalLink,
-  MapPin,
   RefreshCw,
-  Droplets,
-} from 'lucide-react';
-import WeatherCardBackground, { WeatherType } from './WeatherCardBackground';
+} from '../../lib/icons';
+import BarangayPopulationExplorer from './BarangayPopulationExplorer';
+
+type WeatherType =
+  | 'sunny'
+  | 'clear-night'
+  | 'cloudy'
+  | 'cloudy-night'
+  | 'rain'
+  | 'thunderstorm'
+  | 'fog';
 
 interface WeatherData {
   temperature: number;
@@ -161,27 +164,6 @@ function getWeatherDetails(
   }
 }
 
-function getWeatherBorderClasses(type: WeatherType): string {
-  switch (type) {
-    case 'rain':
-      return 'border-sky-300/40 ring-1 ring-sky-300/25 shadow-[0_16px_40px_-8px_rgba(14,165,233,0.35),0_4px_16px_rgba(0,0,0,0.5)]';
-    case 'thunderstorm':
-      return 'border-purple-300/45 ring-1 ring-purple-300/30 shadow-[0_16px_40px_-8px_rgba(168,85,247,0.35),0_4px_16px_rgba(0,0,0,0.5)]';
-    case 'sunny':
-      return 'border-amber-300/45 ring-1 ring-amber-300/30 shadow-[0_16px_40px_-8px_rgba(245,158,11,0.35),0_4px_16px_rgba(0,0,0,0.4)]';
-    case 'clear-night':
-      return 'border-indigo-300/40 ring-1 ring-indigo-300/25 shadow-[0_16px_40px_-8px_rgba(99,102,241,0.35),0_4px_16px_rgba(0,0,0,0.5)]';
-    case 'cloudy':
-      return 'border-blue-200/45 ring-1 ring-blue-200/30 shadow-[0_16px_40px_-8px_rgba(59,130,246,0.3),0_4px_16px_rgba(0,0,0,0.4)]';
-    case 'cloudy-night':
-      return 'border-slate-300/35 ring-1 ring-slate-300/20 shadow-[0_16px_40px_-8px_rgba(15,23,42,0.5),0_4px_16px_rgba(0,0,0,0.6)]';
-    case 'fog':
-      return 'border-slate-300/40 ring-1 ring-slate-300/25 shadow-[0_16px_40px_-8px_rgba(100,116,139,0.35),0_4px_16px_rgba(0,0,0,0.4)]';
-    default:
-      return 'border-white/30 ring-1 ring-white/20 shadow-[0_16px_40px_-8px_rgba(0,56,147,0.3),0_4px_16px_rgba(0,0,0,0.4)]';
-  }
-}
-
 export default function WeatherMapSection() {
   const { t } = useTranslation();
   const [liveWeather, setLiveWeather] = useState<WeatherData>(DEFAULT_WEATHER);
@@ -238,23 +220,22 @@ export default function WeatherMapSection() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6 sm:mb-8">
           <div>
             <h2 className="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight">
-              {t('weather.title', 'Weather & Geographical Map')}
+              {t('weather.title', 'Check the weather and explore the city')}
             </h2>
             <p className="text-sm text-gray-600 mt-1 max-w-2xl">
               {t(
                 'weather.description',
-                'Live meteorological readings and interactive spatial map for Trece Martires City, Cavite.'
+                'See current conditions and explore places around Trece Martires.'
               )}
             </p>
           </div>
 
           {/* Header Controls: Live Updates Status & Refresh Button */}
-          <div className="flex flex-wrap items-center gap-2">
-            <div className="inline-flex items-center gap-2 bg-emerald-50 text-emerald-800 border border-emerald-200/80 px-3 py-1.5 rounded-2xl text-xs font-semibold shadow-2xs">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>Live Weather (Open-Meteo)</span>
+          <div className="flex flex-wrap items-center gap-3">
+            <div className="flex items-center gap-2 text-sm font-semibold text-slate-700">
+              <WeatherIcon className={`h-4 w-4 ${weatherInfo.accentColor}`} />
+              <span>{weatherInfo.label}</span>
             </div>
-
             <button
               onClick={fetchWeather}
               disabled={isLoading}
@@ -269,6 +250,7 @@ export default function WeatherMapSection() {
                   isLoading ? 'animate-spin' : ''
                 }`}
               />
+              <span className="font-bold">{liveWeather.temperature}°C</span>
               <span>
                 {lastUpdated
                   ? `Updated ${lastUpdated.toLocaleTimeString([], {
@@ -281,165 +263,7 @@ export default function WeatherMapSection() {
           </div>
         </div>
 
-        {/* Two-Column Grid: Left (Dynamic Weather Card), Right (Interactive Map) */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
-          {/* 1. LEFT CARD: DYNAMIC ANIMATED WEATHER CARD */}
-          <div
-            className={`relative text-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 flex flex-col justify-between overflow-hidden group min-h-[360px] sm:min-h-[400px] border ${getWeatherBorderClasses(
-              weatherInfo.type
-            )} transition-all duration-500`}
-          >
-            {/* Dynamic Background Rendering Component (Raindrops, Stars, Sunburst, Clouds, Fog, Lightning) */}
-            <WeatherCardBackground weatherType={weatherInfo.type} />
-
-            {/* Front Card Layer Content */}
-            <div className="relative z-10 flex flex-col justify-between h-full">
-              {/* Top Row: Location & Weather Badge */}
-              <div className="flex items-center justify-between gap-2 mb-4">
-                <div className="inline-flex items-center gap-2 bg-black/35 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/30 shadow-sm ring-1 ring-white/10">
-                  <MapPin className="w-4 h-4 text-sky-300 shrink-0" />
-                  <span className="text-xs sm:text-sm font-semibold text-white tracking-wide">
-                    {t('common.treceCity', 'Trece Martires City, Cavite')}
-                  </span>
-                </div>
-
-                <div
-                  className={`text-[11px] sm:text-xs font-semibold px-3 py-1 rounded-full border backdrop-blur-md shadow-sm ring-1 ring-white/15 transition-all ${weatherInfo.badgeBg}`}
-                >
-                  <span>{t('weather.caviteCenter', 'Cavite Center')}</span>
-                </div>
-              </div>
-
-              {/* Main Reading Section: Temperature + Condition */}
-              <div className="my-auto py-4">
-                <div className="flex items-baseline gap-1">
-                  <span className="text-6xl sm:text-7xl lg:text-8xl font-black tracking-tight leading-none text-white drop-shadow-[0_4px_16px_rgba(0,0,0,0.5)] font-mono">
-                    {liveWeather.temperature}°
-                  </span>
-                  <span className="text-2xl sm:text-3xl font-bold text-sky-100 drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] font-mono">
-                    C
-                  </span>
-                </div>
-
-                {/* Weather Condition Label & Dynamic Animated Icon */}
-                <div className="mt-3 flex items-center gap-2.5">
-                  <div className="p-2.5 rounded-2xl bg-black/25 backdrop-blur-md border border-white/30 ring-1 ring-white/15 shadow-sm">
-                    <WeatherIcon
-                      className={`w-6 h-6 sm:w-7 sm:h-7 shrink-0 ${weatherInfo.accentColor}`}
-                    />
-                  </div>
-                  <div>
-                    <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight drop-shadow-xs">
-                      {weatherInfo.label}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-blue-100/90 drop-shadow-xs">
-                      {weatherInfo.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Smooth Gradient Divider */}
-              <div className="mt-6 mb-3 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
-
-              {/* Bottom Weather Indicators Strip */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-xs sm:text-sm font-medium">
-                {/* Wind Speed */}
-                <div className="bg-black/30 hover:bg-black/40 backdrop-blur-md rounded-2xl p-3 border border-white/20 ring-1 ring-white/10 shadow-sm transition-all duration-200 hover:border-white/35 hover:scale-[1.02] flex items-center gap-2">
-                  <Wind className="w-4 h-4 text-sky-300 shrink-0" />
-                  <div className="min-w-0">
-                    <div className="text-[10px] text-blue-200/80 uppercase font-semibold">
-                      {t('weather.wind', 'Wind')}
-                    </div>
-                    <div className="truncate text-white font-bold">
-                      {liveWeather.windSpeed} km/h
-                    </div>
-                  </div>
-                </div>
-
-                {/* Feels Like */}
-                <div className="bg-black/30 hover:bg-black/40 backdrop-blur-md rounded-2xl p-3 border border-white/20 ring-1 ring-white/10 shadow-sm transition-all duration-200 hover:border-white/35 hover:scale-[1.02] flex items-center gap-2">
-                  <Thermometer className="w-4 h-4 text-amber-300 shrink-0" />
-                  <div className="min-w-0">
-                    <div className="text-[10px] text-blue-200/80 uppercase font-semibold">
-                      {t('weather.feelsLike', 'Feels Like')}
-                    </div>
-                    <div className="truncate text-white font-bold">
-                      {liveWeather.apparentTemperature}°C
-                    </div>
-                  </div>
-                </div>
-
-                {/* Humidity */}
-                <div className="bg-black/30 hover:bg-black/40 backdrop-blur-md rounded-2xl p-3 border border-white/20 ring-1 ring-white/10 shadow-sm transition-all duration-200 hover:border-white/35 hover:scale-[1.02] flex items-center gap-2">
-                  <Droplets className="w-4 h-4 text-cyan-300 shrink-0" />
-                  <div className="min-w-0">
-                    <div className="text-[10px] text-blue-200/80 uppercase font-semibold">
-                      {t('weather.humidity', 'Humidity')}
-                    </div>
-                    <div className="truncate text-white font-bold">
-                      {liveWeather.humidity}%
-                    </div>
-                  </div>
-                </div>
-
-                {/* Elevation */}
-                <div className="bg-black/30 hover:bg-black/40 backdrop-blur-md rounded-2xl p-3 border border-white/20 ring-1 ring-white/10 shadow-sm transition-all duration-200 hover:border-white/35 hover:scale-[1.02] flex items-center gap-2">
-                  <Mountain className="w-4 h-4 text-emerald-300 shrink-0" />
-                  <div className="min-w-0">
-                    <div className="text-[10px] text-blue-200/80 uppercase font-semibold">
-                      {t('weather.elevation', 'Elevation')}
-                    </div>
-                    <div className="truncate text-white font-bold">~100m</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* 2. RIGHT CARD: INTERACTIVE GEOGRAPHICAL MAP CARD */}
-          <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-md ring-1 ring-slate-900/5 overflow-hidden flex flex-col relative min-h-[360px] sm:min-h-[400px] transition-all duration-300 hover:shadow-xl hover:border-slate-300">
-            {/* OpenStreetMap Embed */}
-            <iframe
-              title="Map of Trece Martires City, Cavite"
-              width="100%"
-              height="100%"
-              className="w-full flex-grow min-h-[280px] sm:min-h-[320px] border-0"
-              loading="lazy"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=120.8200%2C14.2500%2C120.9100%2C14.3200&layer=mapnik&marker=14.2828%2C120.8667"
-            />
-
-            {/* Open in Map Links / Attribution Overlay Strip */}
-            <div className="bg-white/95 backdrop-blur-xs border-t border-slate-200/90 px-4 py-3 flex flex-wrap items-center justify-between gap-2 text-xs text-gray-600">
-              <span className="flex items-center gap-1.5 font-medium text-gray-700">
-                <MapPin className="w-3.5 h-3.5 text-[#003893]" />
-                <span>14.2828° N, 120.8667° E</span>
-              </span>
-
-              <div className="flex items-center gap-3">
-                <a
-                  href="https://www.openstreetmap.org/?mlat=14.2828&mlon=120.8667#map=14/14.2828/120.8667"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="hover:text-[#003893] font-semibold flex items-center gap-1 transition-colors"
-                >
-                  <span>OpenStreetMap</span>
-                  <ExternalLink className="w-3 h-3" />
-                </a>
-                <span className="text-gray-300">|</span>
-                <a
-                  href="https://maps.google.com/?q=Trece+Martires+City+Hall,+Cavite"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="hover:text-[#003893] font-semibold flex items-center gap-1 transition-colors"
-                >
-                  <span>Google Maps</span>
-                  <ExternalLink className="w-3 h-3" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+        <BarangayPopulationExplorer />
       </div>
     </section>
   );

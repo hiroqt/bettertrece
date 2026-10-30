@@ -13,7 +13,7 @@ import {
   AlertCircle,
   XCircle,
   Landmark,
-} from 'lucide-react';
+} from '../../lib/icons';
 
 interface DpwhProjectModalProps {
   project: DPWHProject | DpwhProject | null;
@@ -104,7 +104,7 @@ export default function DpwhProjectModal({
       onClick={onClose}
     >
       <div
-        className="bg-white rounded-3xl shadow-2xl border border-gray-200 max-w-3xl w-full max-h-[90vh] flex flex-col overflow-hidden"
+        className="bg-white rounded-3xl shadow-2xl border border-primary-200 max-w-3xl w-full max-h-[90vh] flex flex-col overflow-hidden"
         onClick={e => e.stopPropagation()}
       >
         {/* Header */}
@@ -151,15 +151,21 @@ export default function DpwhProjectModal({
 
           <div className="flex flex-wrap items-center gap-4 mt-4 text-xs font-medium text-blue-100">
             <span className="flex items-center gap-1">
-              <Building2 className="w-4 h-4 text-blue-300" aria-hidden="true" />
+              <Building2
+                className="w-4 h-4 text-primary-700"
+                aria-hidden="true"
+              />
               <span>{project.category}</span>
             </span>
             <span className="flex items-center gap-1">
-              <Calendar className="w-4 h-4 text-blue-300" aria-hidden="true" />
+              <Calendar
+                className="w-4 h-4 text-primary-700"
+                aria-hidden="true"
+              />
               <span>Infra Year: {project.infraYear}</span>
             </span>
             <span className="flex items-center gap-1">
-              <MapPin className="w-4 h-4 text-blue-300" aria-hidden="true" />
+              <MapPin className="w-4 h-4 text-primary-700" aria-hidden="true" />
               <span>{project.location.province}</span>
             </span>
           </div>
@@ -169,7 +175,7 @@ export default function DpwhProjectModal({
         <div className="p-6 sm:p-7 space-y-6 overflow-y-auto">
           {/* Key Financial Badges */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+            <div className="bg-slate-50 p-4 rounded-2xl border border-primary-200">
               <span className="text-xs font-bold text-slate-500 uppercase tracking-wider block">
                 Total Budget
               </span>
@@ -178,7 +184,7 @@ export default function DpwhProjectModal({
               </p>
             </div>
 
-            <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+            <div className="bg-slate-50 p-4 rounded-2xl border border-primary-200">
               <span className="text-xs font-bold text-slate-500 uppercase tracking-wider block">
                 Amount Disbursed
               </span>
@@ -187,7 +193,7 @@ export default function DpwhProjectModal({
               </p>
             </div>
 
-            <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+            <div className="bg-slate-50 p-4 rounded-2xl border border-primary-200">
               <span className="text-xs font-bold text-slate-500 uppercase tracking-wider block">
                 Implementation Status
               </span>
@@ -196,7 +202,7 @@ export default function DpwhProjectModal({
           </div>
 
           {/* Progress Bar */}
-          <div className="space-y-2 bg-gray-50 p-4 rounded-2xl border border-gray-200">
+          <div className="space-y-2 bg-gray-50 p-4 rounded-2xl border border-primary-200">
             <div className="flex justify-between text-xs font-bold text-gray-700">
               <span>Physical Completion Status</span>
               <span className="font-mono text-gray-900 font-bold">
@@ -266,7 +272,7 @@ export default function DpwhProjectModal({
                 </span>
                 <p className="font-medium text-gray-800 mt-0.5 flex items-center gap-1.5">
                   <Calendar
-                    className="w-4 h-4 text-gray-500"
+                    className="w-4 h-4 text-primary-700"
                     aria-hidden="true"
                   />
                   <span>
@@ -293,7 +299,7 @@ export default function DpwhProjectModal({
               Location &amp; Geolocation
             </h3>
 
-            <div className="flex flex-wrap items-center justify-between gap-4 p-4 rounded-2xl bg-blue-50/60 border border-blue-100">
+            <div className="flex flex-wrap items-center justify-between gap-4 p-4 rounded-2xl bg-blue-50/60 border border-primary-200">
               <div className="space-y-1">
                 <div className="flex items-center gap-2">
                   <MapPin

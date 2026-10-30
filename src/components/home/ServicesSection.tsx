@@ -23,7 +23,7 @@ import {
   AlertTriangle,
   FileText,
   LayoutGrid,
-} from 'lucide-react';
+} from '../../lib/icons';
 import { serviceCategories } from '../../data/services/yamlLoader';
 
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -99,10 +99,10 @@ export default function ServicesSection({
 
         <Link
           to="/services"
-          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-zinc-900 hover:text-zinc-700 transition-colors group shrink-0 bg-white px-4 py-2.5 rounded-xl border border-zinc-200 shadow-2xs hover:border-zinc-300"
+          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-primary-700 hover:text-primary-700 transition-colors group shrink-0 bg-white px-4 py-2.5 rounded-xl border border-primary-200 shadow-2xs hover:border-primary-500"
         >
           <span>{t('services.viewAll', 'View all 10 categories')}</span>
-          <ArrowRight className="w-4 h-4 text-zinc-600 group-hover:translate-x-0.5 transition-transform" />
+          <ArrowRight className="w-4 h-4 text-primary-700 group-hover:translate-x-0.5 transition-transform" />
         </Link>
       </div>
 
@@ -113,11 +113,11 @@ export default function ServicesSection({
             <Link
               key={category.slug}
               to={`/services/${category.slug}`}
-              className="group flex flex-col justify-between p-5 sm:p-6 bg-white rounded-2xl border border-zinc-200 hover:border-zinc-400 hover:shadow-xs transition-all duration-150"
+              className="group flex flex-col justify-between p-5 sm:p-6 bg-white rounded-2xl border border-primary-200 hover:border-primary-500 hover:shadow-xs transition-all duration-150"
             >
               <div>
-                <div className="w-10 h-10 rounded-xl bg-zinc-100 text-zinc-900 border border-zinc-200 flex items-center justify-center mb-4 transition-colors">
-                  <IconComp className="w-5 h-5 text-zinc-900" />
+                <div className="w-10 h-10 rounded-xl bg-primary-50 text-primary-700 border border-primary-200 flex items-center justify-center mb-4 transition-colors">
+                  <IconComp className="w-5 h-5 text-primary-700" />
                 </div>
 
                 <h3 className="text-base font-bold text-zinc-900 group-hover:text-zinc-700 transition-colors mb-2 leading-snug">
@@ -131,7 +131,7 @@ export default function ServicesSection({
 
               <div className="flex items-center text-xs font-semibold text-zinc-900 pt-3 border-t border-zinc-100 group-hover:translate-x-0.5 transition-transform">
                 <span>{t('services.learnMore', 'Browse guides')}</span>
-                <ArrowRight className="w-3.5 h-3.5 ml-1.5 text-zinc-600" />
+                <ArrowRight className="w-3.5 h-3.5 ml-1.5 text-primary-700" />
               </div>
             </Link>
           );
@@ -140,12 +140,12 @@ export default function ServicesSection({
         {/* 6th Card: View All Services */}
         <Link
           to="/services"
-          className="group flex flex-col justify-between p-5 sm:p-6 bg-white rounded-2xl border border-zinc-300 hover:border-zinc-900 hover:shadow-xs transition-all duration-150 relative"
+          className="group flex flex-col justify-between p-5 sm:p-6 bg-white rounded-2xl border border-primary-200 hover:border-primary-500 hover:shadow-xs transition-all duration-150 relative"
         >
           <div>
             <div className="flex items-center justify-between mb-4">
-              <div className="w-10 h-10 rounded-xl bg-zinc-900 text-white flex items-center justify-center transition-colors">
-                <LayoutGrid className="w-5 h-5 text-white" />
+              <div className="w-10 h-10 rounded-xl bg-primary-50 text-primary-700 flex items-center justify-center transition-colors">
+                <LayoutGrid className="w-5 h-5 text-primary-700" />
               </div>
               <span className="text-xs font-medium text-zinc-600 bg-zinc-100 border border-zinc-200 px-2.5 py-0.5 rounded-md">
                 {t('services.allCategoriesCount', '10 Categories')}
@@ -168,7 +168,7 @@ export default function ServicesSection({
             <span>
               {t('services.viewAllCardAction', 'Explore full directory')}
             </span>
-            <ArrowRight className="w-3.5 h-3.5 ml-1.5 text-zinc-600" />
+            <ArrowRight className="w-3.5 h-3.5 ml-1.5 text-primary-700" />
           </div>
         </Link>
       </div>

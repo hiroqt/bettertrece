@@ -26,7 +26,7 @@ import {
   EyeOff,
   ChevronDown,
   ChevronUp,
-} from 'lucide-react';
+} from '../../lib/icons';
 
 type ConsoleSubTab = 'response' | 'code' | 'docs';
 type CodeSnippetTab = 'curl' | 'javascript' | 'python' | 'postman';
@@ -277,7 +277,7 @@ except requests.exceptions.RequestException as e:
   }, [version, level, currentQueryParams, token]);
 
   return (
-    <div className="bg-white rounded-3xl border border-gray-200 shadow-xs overflow-hidden">
+    <div className="bg-white rounded-3xl border border-primary-200 shadow-xs overflow-hidden">
       {/* Console Header */}
       <div className="p-5 sm:p-6 bg-gradient-to-r from-slate-900 via-[#00225e] to-[#003893] text-white flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="space-y-1">
@@ -329,7 +329,7 @@ except requests.exceptions.RequestException as e:
           {/* Quick Presets Strip */}
           <div>
             <div className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-              <Zap className="w-3.5 h-3.5 text-amber-500" />
+              <Zap className="w-3.5 h-3.5 text-primary-700" />
               <span>Quick Query Presets:</span>
             </div>
             <div className="flex items-center gap-2 overflow-x-auto pb-1">
@@ -353,7 +353,7 @@ except requests.exceptions.RequestException as e:
           </div>
 
           {/* Interactive Controls Bar */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 bg-slate-50/70 p-4 rounded-2xl border border-slate-200/80">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 bg-slate-50/70 p-4 rounded-2xl border border-primary-200">
             {/* Version */}
             <div>
               <label className="block text-[11px] font-bold text-gray-600 uppercase tracking-wider mb-1">
@@ -491,7 +491,7 @@ except requests.exceptions.RequestException as e:
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2 bg-slate-900 text-emerald-400 rounded-2xl p-3 sm:px-4 border border-slate-800 shadow-inner">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2 bg-slate-900 text-blue-200 rounded-2xl p-3 sm:px-4 border border-primary-300/40 shadow-inner">
               <code className="text-xs font-mono truncate select-all">
                 GET {currentFullUrl}
               </code>
@@ -502,7 +502,7 @@ except requests.exceptions.RequestException as e:
                   title="Copy URL"
                 >
                   {copiedText === 'url' ? (
-                    <Check className="w-3.5 h-3.5 text-emerald-400" />
+                    <Check className="w-3.5 h-3.5 text-blue-200" />
                   ) : (
                     <Copy className="w-3.5 h-3.5" />
                   )}
@@ -615,7 +615,7 @@ except requests.exceptions.RequestException as e:
                     >
                       {copiedText === 'json-payload' ? (
                         <>
-                          <Check className="w-3 h-3 text-emerald-400" />
+                          <Check className="w-3 h-3 text-primary-700" />
                           <span>Copied</span>
                         </>
                       ) : (
@@ -685,7 +685,7 @@ except requests.exceptions.RequestException as e:
                   >
                     {copiedText === `code-${codeTab}` ? (
                       <>
-                        <Check className="w-3 h-3 text-emerald-400" />
+                        <Check className="w-3 h-3 text-primary-700" />
                         <span className="text-emerald-400">Copied</span>
                       </>
                     ) : (
@@ -705,7 +705,7 @@ except requests.exceptions.RequestException as e:
             {/* Sub-tab 3: Documentation & Specification */}
             {activeSubTab === 'docs' && (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-                <div className="p-4 bg-gray-50 rounded-2xl border border-gray-200 space-y-2">
+                <div className="p-4 bg-gray-50 rounded-2xl border border-primary-200 space-y-2">
                   <h4 className="font-bold text-gray-900 text-sm flex items-center gap-1.5">
                     <Database className="w-4 h-4 text-[#003893]" />
                     <span>Endpoints Reference</span>
@@ -727,9 +727,9 @@ except requests.exceptions.RequestException as e:
                   </div>
                 </div>
 
-                <div className="p-4 bg-gray-50 rounded-2xl border border-gray-200 space-y-2">
+                <div className="p-4 bg-gray-50 rounded-2xl border border-primary-200 space-y-2">
                   <h4 className="font-bold text-gray-900 text-sm flex items-center gap-1.5">
-                    <Info className="w-4 h-4 text-amber-600" />
+                    <Info className="w-4 h-4 text-primary-700" />
                     <span>Parameters &amp; Auth</span>
                   </h4>
                   <div className="space-y-1 text-[11px] text-gray-600">

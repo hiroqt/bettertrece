@@ -8,7 +8,7 @@ import {
   MapPin,
   Clock,
   CheckCircle2,
-} from 'lucide-react';
+} from '../../lib/icons';
 
 interface DpwhStatsOverviewProps {
   stats: DpwhSummaryStats;
@@ -41,10 +41,10 @@ export default function DpwhStatsOverview({
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
       {/* Total Trece Martires Investment - Blue Gradient Card */}
-      <div className="bg-gradient-to-br from-[#00225e] to-[#003893] text-white p-5 rounded-2xl shadow-sm border border-blue-800/40 hover:shadow-md transition-all">
+      <div className="bg-gradient-to-br from-[#00225e] to-[#003893] text-blue-200 p-5 rounded-2xl shadow-sm border border-primary-300/40 hover:shadow-md transition-all">
         <div className="flex items-center justify-between text-blue-200 text-xs font-semibold uppercase tracking-wider mb-2">
           <span>City Infrastructure Budget</span>
-          <Landmark className="w-4 h-4 text-amber-300" />
+          <Landmark className="w-4 h-4 text-blue-200" />
         </div>
         <div className="text-2xl sm:text-3xl font-black font-mono text-amber-300 tracking-tight">
           {formatPHP(animatedBudget)}
@@ -56,25 +56,25 @@ export default function DpwhStatsOverview({
       </div>
 
       {/* Disbursed Amount / Active Funding */}
-      <div className="bg-white p-5 rounded-2xl border border-zinc-200 shadow-2xs hover:border-zinc-400 hover:shadow-xs transition-all">
+      <div className="bg-white p-5 rounded-2xl border border-primary-200 shadow-2xs hover:border-primary-500 hover:shadow-xs transition-all">
         <div className="flex items-center justify-between text-zinc-500 text-xs font-semibold uppercase tracking-wider mb-2">
           <span>Disbursed / Completed Value</span>
-          <Building2 className="w-4 h-4 text-zinc-900" />
+          <Building2 className="w-4 h-4 text-primary-700" />
         </div>
         <div className="text-2xl sm:text-3xl font-black text-zinc-900 font-mono tracking-tight">
           {formatPHP(animatedPaid)}
         </div>
         <div className="text-xs text-zinc-600 mt-2 flex items-center gap-1">
-          <MapPin className="w-3.5 h-3.5 text-zinc-900" />
+          <MapPin className="w-3.5 h-3.5 text-primary-700" />
           <span>Cavite 1st District Engineering Office</span>
         </div>
       </div>
 
       {/* Average Progress */}
-      <div className="bg-white p-5 rounded-2xl border border-zinc-200 shadow-2xs hover:border-zinc-400 hover:shadow-xs transition-all">
+      <div className="bg-white p-5 rounded-2xl border border-primary-200 shadow-2xs hover:border-primary-500 hover:shadow-xs transition-all">
         <div className="flex items-center justify-between text-zinc-500 text-xs font-semibold uppercase tracking-wider mb-2">
           <span>Avg. Physical Completion</span>
-          <TrendingUp className="w-4 h-4 text-zinc-900" />
+          <TrendingUp className="w-4 h-4 text-primary-700" />
         </div>
         <div className="text-2xl sm:text-3xl font-black text-zinc-900 font-mono flex items-baseline gap-2">
           <span>{animatedProgress}%</span>
@@ -91,16 +91,16 @@ export default function DpwhStatsOverview({
       </div>
 
       {/* Project Status Breakdown */}
-      <div className="bg-white p-5 rounded-2xl border border-zinc-200 shadow-2xs hover:border-zinc-400 hover:shadow-xs transition-all">
+      <div className="bg-white p-5 rounded-2xl border border-primary-200 shadow-2xs hover:border-primary-500 hover:shadow-xs transition-all">
         <div className="flex items-center justify-between text-zinc-500 text-xs font-semibold uppercase tracking-wider mb-2">
           <span>Project Status Breakdown</span>
-          <ShieldCheck className="w-4 h-4 text-zinc-900" />
+          <ShieldCheck className="w-4 h-4 text-primary-700" />
         </div>
         <div className="flex items-center gap-3 text-sm">
           <div className="flex flex-col">
             <span className="text-xs text-zinc-500 font-medium">Completed</span>
             <span className="text-lg font-bold text-zinc-900 font-mono flex items-center gap-1">
-              <CheckCircle2 className="w-3.5 h-3.5 text-zinc-900" />
+              <CheckCircle2 className="w-3.5 h-3.5 text-primary-700" />
               {animatedCompleted}
             </span>
           </div>
@@ -122,7 +122,7 @@ export default function DpwhStatsOverview({
           </div>
         </div>
         <div className="text-xs text-zinc-400 mt-2 flex items-center gap-1">
-          <Clock className="w-3 h-3 text-zinc-400" />
+          <Clock className="w-3 h-3 text-primary-700" />
           <span>Filter: {currentFilter}</span>
         </div>
       </div>
