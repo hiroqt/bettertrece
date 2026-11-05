@@ -1,6 +1,8 @@
 ![Better Trece Martires civic banner](public/images/better-trece-martires-civic-banner.png)
 
-# BetterTreceMartires.org — Civic Tech Portal for Trece Martires City, Cavite
+# Better Trece Martires
+
+## BetterTreceMartires.org — Civic Tech Portal for Trece Martires City, Cavite
 
 [![BetterGov Initiative](https://img.shields.io/badge/BetterGov-Civic%20Tech%20Initiative-003893.svg)](https://bettertrecemartires.org)
 [![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-blue.svg)](LICENSE)
